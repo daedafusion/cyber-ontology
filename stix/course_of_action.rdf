@@ -1,0 +1,427 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:coa="http://stix.mitre.org/CourseOfAction#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://stix.mitre.org/CourseOfAction">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Course of Action.  The Course of Action ontology provides a characterization of a single STIX Course of Action.
+
+A STIX Course of Action component is used to convey information about courses of action that may be taken either in response to an attack or as a preventative measure prior to an attack. They are used to express both courses of action that might be taken (are possible options are are suggested) in the course of an incident to respond to something that has occurred or to mitigate the effect of an exploit target (vulnerability or misconfiguration) apriori.
+
+The course of action component itself contains information about the objective of the action, its efficacy, its likely impact, cost, structured parameter observables, and even a structured course of action meant to be implemented automatically in a tool.
+
+The ontology is based on the STIX Course of Action schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:versionIRI rdf:resource="http://stix.mitre.org/CourseOfAction/1.2"/>
+    <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.2.0-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+    <rdfs:label xml:lang="en-US">STIX Course of Action Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="GenericStructuredCOA">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="specification.cdataEncoded"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
+            <rdfs:domain>
+              <owl:Class rdf:ID="CourseOfAction"/>
+            </rdfs:domain>
+            <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes information for an alternative actionable structured representation to support the generic inclusion of any course of action content.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#id">
+            <rdfs:domain>
+              <owl:Class rdf:ID="StructuredCOA"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Generic Structured COA</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="genericStructuredCOAType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredCOA"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="specification.cdataValue"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StructuredCOA">
+    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:abstract>
+    <rdfs:comment xml:lang="en-US">Characterizes information for an alternative actionable structured representation for the Course Of Action potentially for automated consumption and implementation.
+
+The StructuredCOA class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of this base class allows for extensions that are expressed in a proprietary or externally defined structured courses of action.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Structured COA</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#CourseOfAction">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="efficacy"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a Course of Action to be taken in regards to one of more cyber threats. 
+
+Courses Of Action are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc.</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${title}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
+            <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
+            <rdfs:domain rdf:resource="#CourseOfAction"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="cost"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
+            <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="type"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime">
+            <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="structuredCOA"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="impact"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="parameterObservables"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="stage"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#informationSource">
+            <rdfs:domain rdf:resource="#CourseOfAction"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
+            <rdfs:domain rdf:resource="#CourseOfAction"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Course of Action</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#timestamp"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="objective.applicablityConfidence"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/course_of_action-${@hash(${title})}</edt:iriTemplate>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#cost">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the estimated cost for applying this Course of Action.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Cost</rdfs:label>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CostStatement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#parameterObservables">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to technical parameters to this Course of Action. 
+
+The intention is that the combination of the Course of Action Type and the Parameter Observables could be used to define automated courses of action.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Parameter Observables</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#efficacy">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the effectiveness of this Course of Action in achieving its targeted Objective.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Efficacy</rdfs:label>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#EfficacyStatement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#structuredCOA">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to an actionable structured representation for the Course  of Action potentially for automated consumption and implementation.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Structured COA</rdfs:label>
+    <rdfs:range rdf:resource="#StructuredCOA"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#impact">
+    <rdfs:comment xml:lang="en-US">Specifies a reference the estimated impact of applying this Course of Action.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:label xml:lang="en-US">Impact</rdfs:label>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ImpactStatement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#objective.applicablityConfidence">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the level of confidence held in the applicability of this suggested COA for its targeted Objective.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Objective Applicablity Confidence</rdfs:label>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Confidence"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#genericStructuredCOAType">
+    <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Type of Generic Structured COA</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of Generic Structured COA.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#type">
+    <rdfs:comment xml:lang="en-US">Specifies the type of this Course of Action. 
+
+Examples of types of courses of action include diplomatic, hardening, or eradication (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Course of Action Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#CourseOfActionTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#CourseOfActionTypeVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#stage">
+    <rdfs:comment xml:lang="en-US">Specifies what stage in the cyber threat management lifecycle this CourseOfAction is relevant to (e.g. Remedy or Response). 
+
+Examples of COA stages include remedy and response (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the COA Stage Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Stage</rdfs:label>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#COAStageVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#COAStageVocab-1.0</edt:rangeControlledVocabClass>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#specification.cdataValue">
+    <rdfs:comment xml:lang="en-US">Specifies any test mechnism specification in its native format within a string field. 
+
+The specification should be within a CDATA construct within the string field.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Specification</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="objective.shortDescription">
+    <rdfs:comment xml:lang="en-US">Specifies a short, unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Objective Short Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="objective.description">
+    <rdfs:comment xml:lang="en-US">Specifies an unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Objective Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#specification.cdataEncoded">
+    <rdfs:comment xml:lang="en-US">Specifies whether the content encoded in the element is encoded using Base64 per RFC4648.  
+
+If true, the data is encoded, else the data is not encoded.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en-US">Specification CDATA Encoded</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedCourseOfAction">
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
+    <rdfs:domain rdf:resource="#CourseOfAction"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

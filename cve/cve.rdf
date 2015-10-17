@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:cwe="http://cwe.mitre.org/cwe#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cpe="http://cpe.mitre.org/cpe#"
+    xmlns:cvss="http://nvd.nist.gov/cvss#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:cve="http://nvd.nist.gov/cve#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://nvd.nist.gov/cve">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+    <owl:imports rdf:resource="http://scap.nist.gov/patch"/>
+    <rdfs:label xml:lang="en-US">Common Vulnerability Enumeration (CVE) and Open Source Vulnerabilty Database (OSVDB) Ontology</rdfs:label>
+    <owl:imports rdf:resource="http://cwe.mitre.org/cwe"/>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Common Vulnerability Enumeration (CVE) and Open Source Vulnerability Database (OSVDB) which provides a unified, measurable set of software vulnerability information that is enabling more effective discussion, description, selection, and use of software security tools and services that can find these vulnerabilities in source code and operational systems as well as better understanding and management of software vulnerabilities related to architecture and design. &#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >v1.0.0-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://nvd.nist.gov/cvss"/>
+    <owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
+  </owl:Ontology>
+  <rdfs:Datatype rdf:ID="structuredText">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies that the text description is formatted utilizing some encoding scheme.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Structured Text</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+  </rdfs:Datatype>
+  <owl:Class rdf:ID="Vulnerability">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="title"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${title}: ${description}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="status"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="vulnerabilityImpactScore"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="lastModifiedDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="isPubliclyAcknowledged"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="discoveryDate"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="disclosureDate"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="isKnown"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="externalIdentifier"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="securityProtection"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="publishedDate"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="extendedDescription"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="description"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a vulnerability</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${externalIdentifier}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#externalIdentifier"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#status"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="informationSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Vulnerability</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="VulnerabilityReference">
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${referenceSource} ${referenceType}:  ${referenceName}</edt:displayNameTemplate>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@uuid()}</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Vulnerabilty Reference</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://scap.nist.gov/scap_core#externalLink">
+            <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://scap.nist.gov/scap_core#name">
+            <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Specifies a reference associated with a vulnerability</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="deprecated"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:Class rdf:ID="FixAction">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="fixActionType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="fixActionId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-US">Defines a single action to fix or address a vulnerability.  A fix action should only cover a signle patch application, software update, configuration change, or external fix.  Dependencies should be documented by chainging instance of a FixAction together.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="fixActionDescription"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="patch"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="effectiveness"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cve:/FixAction/${fixActionSource)-${fixActionId}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="fixActionSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Fix Action</rdfs:label>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FIX: ${fixActionSource) - ${fixActionId)</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="configurationRemediation"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VulnerabilityCatalog">
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/catalog-${catalogName}-${catalogDate{</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogVersion"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#description"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#generator"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${catalogName} ${catalogVersion} - ${CatalogDate}</edt:displayNameTemplate>
+    <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Characterizes a collection of vulnerabilities, represented by CVE identifier, in a Vulnerability Catalog</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogDate"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Vulnerability Catalog</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ToolConfiguration">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cve:/ToolConfig/@hash(${toolConfigName})</edt:iriTemplate>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en-US">Tool Configuration</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines configuration information for tool</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${toolConfigName}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="toolName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="vulnerableConfigurations">
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#Platform"/>
+    <rdfs:comment xml:lang="en-US">Specifies the configuration in which the vulnerability exists.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Vulnerable Configurations</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicableConfiguration">
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#Platform"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to an applicable configuration.</rdfs:comment>
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:label xml:lang="en-US">Applicable Configuration</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="attackScenario">
+    <rdfs:label xml:lang="en-US">Attack Scenario</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a description of the attack scenario</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="nextFixAction">
+    <rdfs:range rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies the next fix action in the chain.  This typically specifies a dependency fix action.</rdfs:comment>
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:label xml:lang="en-US">Next Fix Action</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="assessmentCheck">
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Assessment Check</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies zero or more assessment checks used to perform an assesstment of the vulnerability</rdfs:comment>
+    <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="vulnerableProducts">
+    <rdfs:label xml:lang="en-US">Vulnerable Products</rdfs:label>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
+    <rdfs:comment xml:lang="en-US">Specifies the products associated with this vulnerability</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicableCheck">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies the check/test (either OVAL or other) that this particular fix action addresses.  Example, when applying this fix will change the vlue of this test result.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Applicable Check</rdfs:label>
+    <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="deprecatedBy">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
+    <rdfs:label xml:lang="en-US">Deprecated By</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the identifier for zero or more software packages that have deprciated the vulnerable software package.  The identifier is expresses as a Common Platform Enumeration (CPE) name.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#patch">
+    <rdfs:range rdf:resource="http://scap.nist.gov/patch#Patch"/>
+    <rdfs:comment xml:lang="en-US">Specifies a patch that addresses the vulnerability</rdfs:comment>
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:label xml:lang="en-US">Patch</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="defintion">
+    <rdfs:label xml:lang="en-US">Definition</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the definition for the tool configuration information.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#configurationRemediation">
+    <rdfs:label xml:lang="en-US">Configuration Remediation</rdfs:label>
+    <rdfs:range rdf:resource="#VulnerabilityReference"/>
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to configuration information that describes how to address the attack mechanism.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="vulnerabilities">
+    <rdfs:comment xml:lang="en-US">Specifies one or more vulnerabilities, represented by their CVE identifier, in the Vulnerability Catalog</rdfs:comment>
+    <rdfs:domain rdf:resource="#VulnerabilityCatalog"/>
+    <rdfs:range rdf:resource="#Vulnerability"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Vulnerabilities</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="references">
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies references associated with the vulnerability</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Vulnerability Reference</rdfs:label>
+    <rdfs:range rdf:resource="#VulnerabilityReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#informationSource">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Information Source</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies details about the source of the information.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="technicalDescription">
+    <rdfs:label xml:lang="en-US">Technical Description</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a refernce to a technical description of the vulnerability.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fixAction">
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies zero or more actions that can be taken to "fix" or address the vulnerability.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Fix Action</rdfs:label>
+    <rdfs:range rdf:resource="#FixAction"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#vulnerabilityImpactScore">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the Vulnerability Impact score</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Vulnerability Impact Score</rdfs:label>
+    <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fixActionToolConfiguration">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies the configuration information for a tool used in the fix action.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Tool Configuration</rdfs:label>
+    <rdfs:range rdf:resource="#ToolConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="softwareUpdate">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies the identifier for zero or more software update packages.  The software update identifier is expresses as a Common Platform Enumeration (CPE) name.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Software Update</rdfs:label>
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#toolName">
+    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <rdfs:comment xml:lang="en-US"></rdfs:comment>
+    <rdfs:label xml:lang="en-US">Tool Name</rdfs:label>
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relatedWeakness">
+    <rdfs:label xml:lang="en-US">Common Weakness Enumeration (CWE) Identifier</rdfs:label>
+    <rdfs:range rdf:resource="http://cwe.mitre.org/cwe#Weakness"/>
+    <rdfs:comment xml:lang="en-US">Associated Common Weakness (CWE)</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="scanner">
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies a scanner and required configuration that is capable of detecting the referenced vulnerability.  May also be an OVAL defintion.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Scanner</rdfs:label>
+    <rdfs:range rdf:resource="#ToolConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#lastModifiedDate">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">Last Modified</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time vulnerability information was modified.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#extendedDescription">
+    <rdfs:comment xml:lang="en-US">Specifies an unstructured text description</rdfs:comment>
+    <rdfs:range rdf:resource="#structuredText"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Extended Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#effectiveness">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether the fix action fully avoids the risk associated with the vulnerability or reduces risk to some extent.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Effectiveness</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >PARTIAL</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >COMPLETE</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="exploitLocation.Dialup">
+    <rdfs:label xml:lang="en-US">Associated Exploit Location: Dialup</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies that the attack mechanism requires dial-up access.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#isKnown">
+    <rdfs:comment xml:lang="en-US">Specifies whether or not the vulnerability is known (i.e., not a 0-day) at the time of characterization.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Is Known</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#fixActionDescription">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies a description of the fix action</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Fix Action Description</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >PATCH</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >SOFTWARE_UPDATE</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >CONFIGUATION_CHANGE</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >POLICY_CHANGE</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >EXTERNAL_MITIGATION</rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies a piece of human-readable text that provides a meaningful name for the reference</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#description">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies a short description of the vulnerability.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#discoveryDate">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time the vulnerability was discovered.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Discovery Date</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#fixActionSource">
+    <rdfs:label xml:lang="en-US">Source</rdfs:label>
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies the source of the fix item.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#fixActionType">
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of the fix action.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Fix Action Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >MITIGATION</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >REMEDIATION</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="exploitPublicationDate">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time when the exploit was first published.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Exploit Publication Date</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#fixActionId">
+    <rdfs:comment xml:lang="en-US">Specifies a unique identifier associated to be associated with the fix action</rdfs:comment>
+    <rdfs:domain rdf:resource="#FixAction"/>
+    <rdfs:label xml:lang="en-US">Fix Action Id</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceType">
+    <rdfs:comment xml:lang="en-US">Specifies the type of vulnerability reference</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Vulnerabilty Reference Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >UNKNOWN</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >TOOL_CONFIGURATION_DESCRIPTION</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >MITIGATION_PROCEDURE</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >SIGNATURE_SOURCE</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >THIRD_PARTY_ADVISORY</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >VENDOR_ADVISORY</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >PATCH</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="exploitLocation.PhysicalAccess">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Associated Exploit Location: Physical Access</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies that the attack mechanism requires physical access.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="dictionaryLink">
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:seeAlso>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label xml:lang="en-US">Dictionary Link</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies an external link to the vulnerability contained at the Common Vulnerability Enumeration (CVE) or the Open Source Vulnerabiity Database (OSVDB) dictionary.  The link should be in the following form:  http://cve.mitre.org/cgi-bin/cvename.cgi?name={vulnerability-id} or http://nvd.nist.gov/nvd.cfm?cvename=CVE-{vulnerability-id} or http://osvdb.org/{vulnerability-id} , where {vulnerability-id) should be the Identifier of the specific vulnerability.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#securityProtection">
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of security protection gain from the attack mechanism</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Security Protection</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >ALLOWS_ADMIN_ACCESS</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ALLOWS_USER_ACCESS</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >ALLOWS_OTHER_ACCESS</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#deprecated">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en-US">Specifies that the related entity has been deprecated.</rdfs:comment>
+    <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+    <rdfs:label xml:lang="en-US">Deprecated</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#disclosureDate">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time the vulnerability was disclosed.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">Disclosure Date</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#publishedDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time the Vulnerability information was published</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Published Date</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="exploitLocation.Unknown">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Associated Exploit Location: Unknown</rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies that that the location requirements of the attack mechanism is unknown.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#title">
+    <rdfs:comment xml:lang="en-US">Specifies a simple title for the entity</rdfs:comment>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Title</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#status">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Final</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Interim</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Draft</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Incomplete</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Deprecated</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Status</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the status of the vulnerability reporting</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="exploitLocation.VoluntarilyInteract">
+    <rdfs:label xml:lang="en-US">Associated Exploit Location: Voluntarily Interact</rdfs:label>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:comment xml:lang="en-US">Specifies that the victim must voluntarily interact with the attack mechanism.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#isPubliclyAcknowledged">
+    <rdfs:label xml:lang="en-US">Is Publicly Acknowledged</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies whether or not the vulnerability is publicly acknowledged by the vendor.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vulnerability</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceSource">
+    <rdfs:label xml:lang="en-US">Reference Source Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the source of the vulnerability reference</rdfs:comment>
+    <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#externalIdentifier">
+    <rdfs:domain rdf:resource="#Vulnerability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Specifies the external identifier associated with the vulnerability, such as the Common Vulnerability Enumeration (CVE) and Open-Source Vulnerability (OSVDB). &#xD;
+&#xD;
+Common Vulnerability Enumeration (CVE) identifier associated with the vulnerability must follow the CVE identifier pattern of "CVE-yyyy-nnnn" where 'yyyy' specifies a 4-digit year and 'nnnnn' specifies an numerically incrementing number that resets to 0 when a new year is reached.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">External Identifier</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://scap.nist.gov/scap_core#notes">
+    <rdfs:domain rdf:resource="#VulnerabilityReference"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

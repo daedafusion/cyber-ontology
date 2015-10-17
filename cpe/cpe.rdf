@@ -1,0 +1,909 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cpe="http://cpe.mitre.org/cpe#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://cpe.mitre.org/cpe">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment xml:lang="en-US">Ontology that provides a vocabulary and representation for the Common Platform Enumeration (CPE) which provides a standardized method of describing and identifying classes of applications, operating systems, and hardware devices present among an enterprise's computing assets.&#xD;
+&#xD;
+The ontology is based on the Common Platform Enumeration schema maintained by NIST copyright 2011-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2.3-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Device"/>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Product"/>
+    <rdfs:label xml:lang="en-US">Common Platform Enumeration (CPE) Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ChangeDescription">
+    <rdfs:comment xml:lang="en-US">Specifies a description of any changes made to the identifier name or associated metadata.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Change Description</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="changeType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="evidenceType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cpe://Change/${changeDate}/${changeType}/@hash(${comment})</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="changeDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${changeDate} ${changeType} : ${comment}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="evidenceExternalLink"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CPE">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="cpeName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="alternateCPE"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">CPE</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="relatedOperatingSystem"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="productName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="deprecated"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="vendor"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-us">Specifies the label to be used in a human display</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${cpeName})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="edition"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="language"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="submitter"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="version"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="relatedProduct"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="relatedDevice"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="softwareEdition"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${cpeName}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="targetSoftware"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="part"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="updateIdentifier"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="other"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CheckInfo">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="identifier"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="checkSystem"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="description"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="FactRef"/>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${identifier}${checkSystem})}</edt:iriTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes a a check that always evaluates to a TRUE, FALSE, or ERROR</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Check fact ref</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="id"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="externalLink"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${identifier}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="PlatformCatalog">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a catalog of Platform names represented as CPE names.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/catalog-${catalogName}-${catalogDate}</edt:iriTemplate>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${catalogName} ${catalogVersion} - ${catalogDate}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogDate"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="generator"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogName"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogVersion"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://scap.nist.gov/scap_core#generator">
+            <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Platform Catalog</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="generationDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#description"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DeprecationInfo">
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cpe://Deprecation/${deprecationDate)-${deprecationType}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="deprecationDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="deprecatedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Deprecation Info</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="deprecationType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${deprecationDate} ${deprecationType}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Specifies the deprecation information for a specific deprecation of a given identifier name.  If a name is deprecated multiple times, there would be a separate instance of the deprecation element for each deprecation.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:Class rdf:ID="ReferenceInfo">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${title}${externalLink})}</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Reference</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies reference information associated with a CPE</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${title}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="title"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#externalLink"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Platform">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-US">Defines a description or qualifications of a particular IT platform type.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="logicalTest"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${platformIdentifier}</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Platform</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${title}</edt:displayNameTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="platformIdentifier"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LogicalTest">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="logicalOperator"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${logicalOperator}</edt:displayNameTemplate>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-US">Defines a logical test of a platform.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="testIdentifer"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${logicalOperator}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="negate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Logical Test</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#FactRef">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en-US">Fact ref</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cpe</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US"></rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#relatedOperatingSystem">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#OperatingSystemInfo"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the associated operating system to which the CPE names refers</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:label xml:lang="en-US">Related Operating System</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="factRef">
+    <rdfs:label xml:lang="en-US">Fact Reference</rdfs:label>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+    <rdfs:comment xml:lang="en-US">Specifies possible sets of product via CPE Names</rdfs:comment>
+    <rdfs:range rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#relatedDevice">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the associated device to which the CPE names refers</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Related Device</rdfs:label>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Device#Device"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="deprecationInfo">
+    <rdfs:comment xml:lang="en-US">Specifies one or more deprecation entries for the given identifier name. It is possible for a single identifier name to have multiple deprecations that occur at different time periods.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="#DeprecationInfo"/>
+    <rdfs:label xml:lang="en-US">Deprecation Information:</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#logicalTest">
+    <rdfs:label xml:lang="en-US">Logical Test</rdfs:label>
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+    <rdfs:range rdf:resource="#LogicalTest"/>
+    <rdfs:comment xml:lang="en-US">Specifies logical tests to form a complex logical test using AND, OR, and/or negate operators.  This result of evaluating the nested logical test will result in TRUE, FALSE, or ERROR.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="authorities">
+    <rdfs:label xml:lang="en-US">Authorities</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies one or more authorities responsible  for endorsing the identifier name.   Multiple authorities may endorse the  same identifier name.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#relatedProduct">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Product#Product"/>
+    <rdfs:label xml:lang="en-US">Related Product</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the associated product to which the CPE names refers</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="checks">
+    <rdfs:comment xml:lang="en-US">Specifies zero or more checks, such as an OVAL definition, that can confirm or reject an IT system as an instance of the named platform</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Checks</rdfs:label>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="#CheckInfo"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#submitter">
+    <rdfs:comment xml:lang="en-US">Specifies the  organization responsible for submitting the identifier name.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:label xml:lang="en-US">Submitting Organization</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#alternateCPE">
+    <rdfs:label xml:lang="en-US">Alternate CPE</rdfs:label>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:comment xml:lang="en-US">Specifies an alternate CPE that refers to the same platform but in a different format</rdfs:comment>
+    <rdfs:range rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#deprecatedBy">
+    <rdfs:label xml:lang="en-US">Deprecated By</rdfs:label>
+    <rdfs:domain rdf:resource="#DeprecationInfo"/>
+    <rdfs:comment xml:lang="en-US">Specifies one or more CPE names that deprecated the identifier name.</rdfs:comment>
+    <rdfs:range rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="references">
+    <rdfs:range rdf:resource="#ReferenceInfo"/>
+    <rdfs:label xml:lang="en-US">References</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies zero of more external references to additional descriptive material</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="contents">
+    <rdfs:label xml:lang="en-US">Contents</rdfs:label>
+    <rdfs:range rdf:resource="#CPE"/>
+    <rdfs:domain rdf:resource="#PlatformCatalog"/>
+    <rdfs:comment xml:lang="en-US">Specifies the CPE Name entries contained within the Platform Catalog.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="changes">
+    <rdfs:comment xml:lang="en-US">Specifies one or more descriptions of any changes made to  the identifier name or associated metadata.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Changes</rdfs:label>
+    <rdfs:range rdf:resource="#ChangeDescription"/>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#vendor">
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+    <rdfs:label xml:lang="en-US">Vendor</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the identity of the person or organization that manufactured or created the product</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="checkFactRef">
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+    <rdfs:label xml:lang="en-US">Check Fact Reference</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies zero or more references to a check that evaluates to TRUE, FALSE, or ERROR. Examples of types of checks are OVAL and OCIL checks.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#generator">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
+    <rdfs:label xml:lang="en-US">Generator</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies information about the tool used to generate a specific CPE Dictionary</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#generationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">Generation Date</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time when the CPE Dictionary was generated.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#externalLink">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label xml:lang="en-US">External Link</rdfs:label>
+    <rdfs:domain rdf:resource="#ReferenceInfo"/>
+    <rdfs:comment xml:lang="en-US">Specifies a hyperlink to an external source of additional information</rdfs:comment>
+    <rdfs:domain rdf:resource="#CheckInfo"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="vendorName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the vendor.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:label xml:lang="en-US">Vendor Name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#edition">
+    <rdfs:comment xml:lang="en-US">Specifies edition-related terms applied by the vendor to the product</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Edition</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#platformIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:label xml:lang="en-US">Platform Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the unique identifier associated with the platform.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#testIdentifer">
+    <rdfs:comment xml:lang="en-US">Specifies a unique identifier for a logical test</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Test Identifer</rdfs:label>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#logicalOperator">
+    <rdfs:comment xml:lang="en-US">Specifies the logical operator applied to the results of evaluating the factRef, checkFactRef, and &#xD;
+logicalTest elements. The permitted operators are “AND” and “OR”.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Logical Operator</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >OR</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >AND</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#cpeName">
+    <rdfs:label xml:lang="en-US">CPE Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the Common Platform Enumeration item.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#checkSystem">
+    <rdfs:comment xml:lang="en-US">Specifies the URI for a particular version of OVAL or a related system testing language</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label xml:lang="en-US">Check System URI</rdfs:label>
+    <rdfs:domain rdf:resource="#CheckInfo"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#evidenceExternalLink">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label xml:lang="en-US">External Link to Evidence</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies an external link to a specific piece of evidence</rdfs:comment>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#updateIdentifier">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:comment xml:lang="en-US">Specifies the vendor-specific alphanumeric strings characterizing the particular update, service pack, or point release of the product.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Update</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#version">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Version</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the vendor-specific alphanumeric string characterizing the particular release version of the product.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#evidenceType">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >THIRD_PARTY_FIX</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >VENDOR_FIX</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >CURATOR_UPDATE</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Evidence Type</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the type of evidence</rdfs:comment>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#id">
+    <rdfs:domain rdf:resource="#DeprecationInfo"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:domain rdf:resource="#FactRef"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">ID</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the unique identifier associated with the instance</rdfs:comment>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#ReferenceInfo"/>
+    <edt:editorHiddenField rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:editorHiddenField>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="notes">
+    <rdfs:comment xml:lang="en-US">Specifies additional description material for the CPE</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Notes</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="targetHardware">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Target Hardware</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the instruction set architecture (e.g., x86) on which the product being described or identified operates.  Bytecode-intermediate languages, such as Java bytecode or Microsoft CLR) should be considered instruction set architectures.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#other">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Other</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies any other general descriptive or identifying information which is vendor or product-specific and which does not logically fit in any other attribute value</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#targetSoftware">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Target Software</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies how the product is tailored to a particular market or class of end users.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#deprecationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">Date of Deprecation</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specified the date and time when the deprecation occurred.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DeprecationInfo"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="comments">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Comments</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies comments explaining the rationale for the  change.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#language">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Language</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the language tags, per RFC5646, supported in the user interface of the product being described</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#title">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Title</rdfs:label>
+    <rdfs:domain rdf:resource="#ReferenceInfo"/>
+    <rdfs:comment xml:lang="en-US">Specifies a human-readable title associated with the reference</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#deprecationType">
+    <rdfs:domain rdf:resource="#DeprecationInfo"/>
+    <rdfs:label xml:lang="en-US">Type of Deprecation</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the type of the deprecation.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >NAME_CORRECTION</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >NAME_REMOVAL</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >ADDITIONAL_INFORMATION</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >UNSPECIFIED</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#deprecated">
+    <rdfs:label xml:lang="en-US">Deprecated</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether the CPE has been deprecated</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="remark">
+    <rdfs:comment xml:lang="en-US">Specifies additional description information.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Remark</rdfs:label>
+    <rdfs:domain rdf:resource="#Platform"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#negate">
+    <rdfs:label xml:lang="en-US">Negate</rdfs:label>
+    <rdfs:domain rdf:resource="#LogicalTest"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether the result of applying the operator should be negated. Possible values are “TRUE” and “FALSE”. Ignored if the result of applying the operator is “ERROR”</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#description">
+    <rdfs:comment xml:lang="en-US">Specifies a description of an entity</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >platform</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Description</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CheckInfo"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#changeType">
+    <rdfs:label xml:lang="en-US">Change Type</rdfs:label>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of change that occurred.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >DEPRECATION_MODIFICATION</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >DEPRECATION</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >AUTHORITY_CHANGE</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >ORIGINAL_RECORD</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#identifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies an identifier of a test written in that language</rdfs:comment>
+    <rdfs:domain rdf:resource="#CheckInfo"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#productName">
+    <rdfs:label xml:lang="en-US">Product Name</rdfs:label>
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the product</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#part">
+    <rdfs:label xml:lang="en-US">Type of Part</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of part to which the CPE refers.  Valid part values are 'a' for application, 'o' for operating system, and 'h' for hardware devices.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CPE"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#softwareEdition">
+    <rdfs:domain rdf:resource="#CPE"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies how the product is tailored to a particular market or class for end users</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Software Edition</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#changeDate">
+    <rdfs:label xml:lang="en-US">Date of Change</rdfs:label>
+    <rdfs:domain rdf:resource="#ChangeDescription"/>
+    <rdfs:comment xml:lang="en-US">Specifies the date and time when the change occurred.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

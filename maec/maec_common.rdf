@@ -1,0 +1,874 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:maecc="http://maec.mitre.org/maec_common#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://maec.mitre.org/maec_common">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2.1.0-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Code"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/API"/>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the  Malware Attribute Enumeration and Characterization (MAEC)  common  types.  &#xD;
+&#xD;
+MAEC provides a common mechansim (structure and content) for encoding and communicating high-fidelity information about malware based upon attributes such as behaviors, artifacts, and attack patterns.  The Common ontology provides a vocabulary of common data and object types that are commonly used across the related malware ontologies.&#xD;
+&#xD;
+The ontology is based on the MAEC Bundle, Container, and Package schemas maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <rdfs:label xml:lang="en-US">Malware Attribute Enumeration and Characterization (MAEC)  Common Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ActionEquivalence">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="actionReference"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Specifies any Actions that are equivalent to each other, e.g., those that were found for the same Malware Subject when using different analysis tools. It can be used as a way of referencing equivalent actions as a single unit, such as for specifying the Action composition of a Behavior</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Action Equivalence</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ToolInformation">
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/Tool/${toolName}</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Tool</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolDescription">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolServicePack">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#executionEnvironment">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolName">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes the properties of a hardware or software tool, including those related to instances of its use.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolVersion">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolConfiguration">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#compensationModel">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="toolType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#vendor">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#vendorName">
+            <rdfs:domain rdf:resource="#ToolInformation"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Comment">
+    <rdfs:comment xml:lang="en-US">Characterizes a comment relating to some field.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timestamp"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="author"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Comment</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >[${timestamp}] ${author}: ${observationName}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="authorName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="observationName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ObjectEquivalence">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="objectReference"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes the Objects that are equivalent to each other, e.g., those that were found for the same Malware Subject when using different analysis tools.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Object Equivalence</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MalwareAction">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#frequency.scale"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#actionType"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#frequency.rate"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="actionImplType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Malware Action</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#timestamp"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#actionStatus"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#actionName"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes actions found or observed in malware.  Actions can be thought of as system state changes and similar operations that represent the fundamental low-level operation of malware. Some examples include the creation of a file, deletion of a registry key, and the sending of some  data on a socket.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#actionContext"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="implementation"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#frequency.units"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Action"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#frequence.trend"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Source">
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Analysis Source</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="source.personName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="source.person"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="source.obtainMethod"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Source</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="source.internetLocation"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies information about the internal or external source of the analysis, if applicable.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="source.organization"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="source.organizationName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="source.reference"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BaseCollection">
+    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:abstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="collectionName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Base Collection</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="affinityType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="collectionDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="affinityDegree"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes the base type for other Collection types.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ActionImplementation">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="apiCall"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#actionImplType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes an Action Implementations. &#xD;
+&#xD;
+Currently supported are implementations achieved through API function calls and abstractly defined code.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Action Implementation</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="malwareInstanceObject">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">malware instance object</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the attributes of the malware instance object (most commonly a file) that is encompassed in the Malware Subject.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#apiCall">
+    <rdfs:label xml:lang="en-US">APIc Call</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a system-level API call that was used to implement the action. Software must make use of such calls to talk to hardware and perform system-specific functions.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/API#API"/>
+    <rdfs:domain rdf:resource="#ActionImplementation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#source.organization">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the organization from which teh source originated</rdfs:comment>
+    <rdfs:domain rdf:resource="#Source"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Source Organization</rdfs:label>
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#implementation">
+    <rdfs:comment xml:lang="en-US">Specifies attributes that are relevant to how the Action is implemented in the malware, such as the specific API call that was used.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Implementation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="#ActionImplementation"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#MalwareAction"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#author">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Person"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Organization"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Author</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Comment"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the author</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#actionReference">
+    <rdfs:range rdf:resource="#MalwareAction"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a single Action that is part of the Action Equivalency</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Action Reference</rdfs:label>
+    <rdfs:domain rdf:resource="#ActionEquivalence"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#source.person">
+    <rdfs:label xml:lang="en-US">Source Person</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the person linked to the source.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Source"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#objectReference">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a single Object that is part of the Object Equivalency</rdfs:comment>
+    <rdfs:domain rdf:resource="#ObjectEquivalence"/>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Object Reference</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#source.internetLocation">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Source"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
+    <rdfs:comment xml:lang="en-US">Specifies the the Uniform Resource Locator (URL) of the external source, if applicable.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Internet Location</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="code">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Code#Code"/>
+    <rdfs:label xml:lang="en-US">Code</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#ActionImplementation"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies any form of code that was used to implement the action.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="compatiblePlatforms">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#PlatformSpecification"/>
+          <rdf:Description rdf:about="http://cpe.mitre.org/cpe#CPE"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#ActionImplementation"/>
+    <rdfs:label xml:lang="en-US">compatible platforms</rdfs:label>
+    <rdfs:comment xml:lang="en-US"></rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;http://maec.mitre.org/maec_bundle&gt;</rdfs:isDefinedBy>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="creationDateTime">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the date/time the entity was created.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Creation Date</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#source.reference">
+    <rdfs:comment xml:lang="en-US">Specifies a reference name or ID for the source.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Reference</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Source"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#observationName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">observation name</rdfs:label>
+    <rdfs:domain rdf:resource="#Comment"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the name, type, or identifier of an observation, for comments that refer to the observation of particular entities. For example, a comment that refers to a command and control (C2) encryption key could have an observation_name of "C2 Encryption Key". {@en-US}</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#id">
+    <rdfs:comment xml:lang="en-US">Specifies the unique identifier associated with this entity instance.&#xD;
+&#xD;
+The format of the identifier MUST be in the format of [construct-type]-[UUID], where [construct-type] should be associated with the entity's construct and [UUID] SHOULD correspond to a universally unique identifier.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ActionEquivalence"/>
+    <edt:autoGenerate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${@uuid()}</edt:autoGenerate>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Comment"/>
+    <rdfs:domain rdf:resource="#Source"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#BaseCollection"/>
+    <rdfs:domain rdf:resource="#ObjectEquivalence"/>
+    <rdfs:domain rdf:resource="#ActionImplementation"/>
+    <rdfs:label xml:lang="en-US">ID</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#affinityDegree">
+    <rdfs:comment xml:lang="en-US">Specifies the degree to which the objects in a collection are related.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Affinity Degree</rdfs:label>
+    <rdfs:domain rdf:resource="#BaseCollection"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#source.organizationName">
+    <rdfs:domain rdf:resource="#Source"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Organization Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the organization from which the source originated.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#collectionName">
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the collection.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#BaseCollection"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#actionImplType">
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ActionImplTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Action Implementation Type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#ActionImplementation"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of Action Implementation being characterized in this element.</rdfs:comment>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ActionImplTypeVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#affinityType">
+    <rdfs:comment xml:lang="en-US">Specifies how the objects in a collection are related.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Affinity Type</rdfs:label>
+    <rdfs:domain rdf:resource="#BaseCollection"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#authorName">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Author Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Comment"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the author that added the comment.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timestamp">
+    <rdfs:domain rdf:resource="#Comment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Timestamp</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the time and date of an entity</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#source.personName">
+    <rdfs:label xml:lang="en-US">Person Name</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the person linked to the source.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Source"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="version">
+    <rdfs:label xml:lang="en-US">Version</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the version of the entity</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#toolType">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <rdfs:label xml:lang="en-US">Tool Type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of the tool leveraged.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://maec.mitre.org/default_vocabularies-1#MalwareDevelopmentToolVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://maec.mitre.org/default_vocabularies-1#MalwareDevelopmentToolVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="commentText">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Comment</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Comment"/>
+    <rdfs:comment xml:lang="en-US">Specifies the text of the comment</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="lastUpdateDateTime">
+    <rdfs:label xml:lang="en-US">Last Update</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the the last date/time the entity was updated</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#source.obtainMethod">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifys the method used to obtain the data that the Source element refers to.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Source"/>
+    <rdfs:label xml:lang="en-US">Obtain Method</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="importance">
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://maec.mitre.org/default_vocabularies-1#ImportanceTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:comment xml:lang="en-US">Specifies the relative importance of the entity.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Importance</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://maec.mitre.org/default_vocabularies-1#ImportanceTypeVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#collectionDescription">
+    <rdfs:label xml:lang="en-US">Description</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies a textual description of the collection.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#BaseCollection"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maec</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolReferences">
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#errors">
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolSpecificData">
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolHash.value">
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#toolHash.details">
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#metadata">
+    <rdfs:domain rdf:resource="#ToolInformation"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

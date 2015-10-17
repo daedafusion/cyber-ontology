@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:mmdef="http://xml/metadatasharing#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://xml/metadatasharing">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the  Metadata Sharing  component of the Malware Metadata Exchange Format (MMDEF) common  types.  &#xD;
+&#xD;
+The Metadata Sharing ontology provides a set of data types for representing prevalence information associated with malicous software.&#xD;
+&#xD;
+The ontology is based on the Malware Metadata Exchange Format schemas maintained by the IEEE Standards Assocation copyright 2011-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.2.0-000</owl:versionInfo>
+    <rdfs:label xml:lang="en-US">Malware Metadata Exchange Format (MMDEF) Metadata Sharing Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Volume">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="volumeUnits"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="volumeValue"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Specifies the volume quantity</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Volume</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Location">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-US">Characterizes a location</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Location</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="locationValue"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="locationType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="fieldData.location">
+    <rdfs:label xml:lang="en-US">field data.location</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies geolocation information for prevalence.</rdfs:comment>
+    <rdfs:range rdf:resource="#Location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fieldData.volume">
+    <rdfs:range rdf:resource="#Volume"/>
+    <rdfs:comment xml:lang="en-US">Specifies a quantitive measurements of prevalence</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">field data.volume</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="fieldData.importance">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:withRestrictions rdf:parseType="Collection">
+          <rdf:Description>
+            <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</xsd:minInclusive>
+          </rdf:Description>
+          <rdf:Description>
+            <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >100</xsd:maxInclusive>
+          </rdf:Description>
+        </owl:withRestrictions>
+        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">field data.importance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies a qualitative measurement of risk associated with the object.  The value must be a number between 0 and 100.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#locationValue">
+    <rdfs:comment xml:lang="en-US">Specifies the location value</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Location Value</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="fieldData.commonality">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:withRestrictions rdf:parseType="Collection">
+          <rdf:Description>
+            <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >0</xsd:minInclusive>
+          </rdf:Description>
+          <rdf:Description>
+            <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >100</xsd:maxInclusive>
+          </rdf:Description>
+        </owl:withRestrictions>
+        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies a qualitative measurements of prevalence.  The value must be a number between 0 and 100.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">field data.commonality</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#volumeValue">
+    <rdfs:domain rdf:resource="#Volume"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="en-US">volume value</rdfs:label>
+    <rdfs:comment xml:lang="en-US"></rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >maecBundle</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;http://maec.mitre.org/maec_bundle&gt;</rdfs:isDefinedBy>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="fieldData.endDateTime">
+    <rdfs:comment xml:lang="en-US">Specifies the end date of the period over which the prevalence (commonality) and importance is measured.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">field data.end date</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#volumeUnits">
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#MetadataSharingVolUnitVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the associated units in which the volume is stated.</rdfs:comment>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#MetadataSharingVolUnitVocab</edt:rangeControlledVocabSet>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Volume"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Volumn Units</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#id">
+    <rdfs:comment xml:lang="en-US">Specifies the unique identifier associated with this entity instance.
+
+An identifier MUST take the format [ns-prefix]:[construct-type]-[UUID], where [ns-prefix] should be the namespace prefix owned/controlled by the producer of the content
+
+The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID], there the [ns-prefix] SHOULD be a namespace prefix bound to a namespace owned/controlled by the producer of the content, and [UUID] SHOULD correspond to a globally unique identifier. {@en-US}</rdfs:comment>
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:label xml:lang="en-US">Id</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Volume"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="fieldData.origin">
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#MetadataSharingOriginsVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the origins of data associated with the field data.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">field data.origin</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#MetadataSharingOriginsVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="fieldData.startDateTime">
+    <rdfs:comment xml:lang="en-US">Specifies the start date of the period over which the prevalence (commonality) and importance is measured.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Start Date</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#locationType">
+    <rdfs:comment xml:lang="en-US">Specifies the type of the location</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:label xml:lang="en-US">Location Type</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#MetadataSharingLocTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#MetadataSharingLocTypeVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="fieldData.firstSeenDateTime">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metadatasharing</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">field data.first seen</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the date that the object was first seen by the reporting entity.</rdfs:comment>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

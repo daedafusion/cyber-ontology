@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:case="http://daedafusion.com/case#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://daedafusion.com/case">
+  <owl:Ontology rdf:about="">
+    <rdfs:label xml:lang="en-US">ARGOS Case Ontology</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Case">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="associatedCase"/>
+  <owl:ObjectProperty rdf:ID="childCase"/>
+  <owl:ObjectProperty rdf:ID="workspace">
+    <rdfs:domain rdf:resource="#Case"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="asset">
+    <rdfs:domain rdf:resource="#Case"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="instance"/>
+  <owl:DatatypeProperty rdf:ID="creator">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="description">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="assignee">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="compartment">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="updated">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="created">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="state">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

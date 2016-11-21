@@ -1,0 +1,1773 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:processObj="http://cybox.mitre.org/objects/Process#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://cybox.mitre.org/objects/Process">
+  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Process">
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Port"/>
+    <rdfs:label xml:lang="en-US">Cyber Observable eXpression (CybOX) Process Ontology</rdfs:label>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkConnection"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Socket_Address"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Memory"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation of a Process for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the Cybox Process object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2.1.0-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Account"/>
+    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Process">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="imageInfo.currentDirectory"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#creationDateTime">
+            <rdfs:domain rdf:resource="#Process"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:isDefinedBy rdf:resource=""/>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="imageInfo.fileName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="imageInfo.path"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="parentPID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:comment xml:lang="en-US">Characterizes an operating system process.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="imageInfo.commandLine"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Process</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="isHidden"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${id}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="pid"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="userTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="kernelTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="processCreator"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="processName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#processCreator"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="processStatus"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WindowsService">
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isHidden"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="startupInfo.hStdOutput"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLLCertificateSubject"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwY"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.lpDesktop"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.lpTitle"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#userTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="priority"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="aslrEnabled"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLLSignatureDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#processCreator"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${serviceDisplayName} (${serviceName})</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwFillAttribute"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterize Windows services.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="FstartupInfo.dwlags"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.path"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#creationDateTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwXCountChars"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceStatus"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#kernelTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="depEnabled"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwX"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceStartupType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#pid"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:isDefinedBy rdf:resource=""/>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.commandLine"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:label xml:lang="en-US">Windows service</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceGroupName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#parentPID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#securityID">
+            <rdfs:domain>
+              <owl:Class rdf:ID="WindowsProcess"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDisplayName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.currentDirectory"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLLCertificateIssuer"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLLSignatureExists"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwYSize"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#processStatus"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${pid}$(serviceDisplayName}${serviceName})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLLSignatureVerified"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="windowTitle"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwYCountChars"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLLCommandLine"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#securityIDType">
+            <rdfs:domain>
+              <owl:Class rdf:about="#WindowsProcess"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.wShowWindow"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="startupInfo.dwXSize"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceStartedAs"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.fileName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#WindowsProcess"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="serviceDLL"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="startupInfo.hStdError"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="startupInfo.hStdInput"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#processName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+  </owl:Class>
+  <owl:Class rdf:about="#WindowsProcess">
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#userTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwYCountChars"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${pid}: ${processName}</edt:displayNameTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="#Process"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.lpDesktop"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwXSize"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwFlags"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.wShowWindow"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterize Windows processes.</rdfs:comment>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#securityIDType"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#windowTitle"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#securityID"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#depEnabled"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${pid}$(processName})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwYSize"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwY"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.lpTitle"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#startupInfo.hStdError"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#processStatus"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#processCreator"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#priority"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#aslrEnabled"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#startupInfo.hStdOutput"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="processCreatorUsername"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Windows Process</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwX"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#startupInfo.hStdInput"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwFillAttribute"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#processName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startupInfo.dwXCountChars"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#pid"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+  </owl:Class>
+  <owl:Class rdf:ID="UnixProcess">
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.currentDirectory"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:comment xml:lang="en-US">Characterize Unix processes.</rdfs:comment>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ruid"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#kernelTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#creationDateTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${pid}: ${processName}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="sessionID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#isHidden"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf rdf:resource="#Process"/>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#userTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#priority"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:label xml:lang="en-US">Unix Process</rdfs:label>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.fileName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#startDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#pid"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.path"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#processStatus"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${pid}$(processName})}</edt:iriTemplate>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+    <rdfs:isDefinedBy rdf:resource=""/>
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction> 
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#imageInfo.commandLine"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#processName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#processCreator"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#parentPID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf> -->
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#startupInfo.hStdError">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+    <rdfs:label xml:lang="en-US">Startup Info hStdError</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the standard error handle for the process.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ports">
+    <rdfs:label xml:lang="en-US">Ports</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:comment xml:lang="en-US">Specifies a list of ports owned by the process.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#startupInfo.hStdOutput">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+    <rdfs:label xml:lang="en-US">Startup Info hStdOutput</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the standard output handle for the process.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#startupInfo.hStdInput">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:label xml:lang="en-US">Startup Info hStdInput</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the standard input handle for the process.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#processCreator">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:label xml:lang="en-US">Process Creator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the account that created the process.</rdfs:comment>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Account#Account"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="handles">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+    <rdfs:label xml:lang="en-US">Handles</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies a list of Windows Handles opened or used by the process.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="networkConnections">
+    <rdfs:comment xml:lang="en-US">Specifies information about any network connections opened or initiated by the process.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Network Connections</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkConnection#NetworkConnection"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Process"/>
+          <owl:Class rdf:about="#WindowsProcess"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="serviceDLLHash.details">
+    <rdfs:label xml:lang="en-US">Service DLL Hash Details</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies details about any hashes generated for the Service DLL file.</rdfs:comment>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="sections">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Memory#Memory"/>
+    <rdfs:label xml:lang="en-US">Sections</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the memory sections used by the process.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="threads">
+    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Threads</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the trheats used to execute within the virtual address space of the process</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwXSize">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:label xml:lang="en-US">Startup Info dwXSize</rdfs:label>
+    <rdfs:comment xml:lang="en-US">specifies the width of the window if a new window is created, in pixels.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#pid">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:comment xml:lang="en-US">Specifies the Process ID (PID) of the process.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">PID</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.lpTitle">
+    <rdfs:comment xml:lang="en-US">Specifies the title displayed in the title bar if a new console window is created.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Startup Info lpTitle</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceType">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#WinServiceTypeVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#WinServiceTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:comment xml:lang="en-US">Specifies the type of service.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Type</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.wShowWindow">
+    <rdfs:label xml:lang="en-US">Startup Info wShowWindow</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies STARTF_USESHOWWINDOW, this member can be any of the values that can be specified in the nCmdShow parameter for the ShowWindow function, except for SW_SHOWDEFAULT.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwX">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:label xml:lang="en-US">Startup Info dwX</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the title displayed in the title bar if a new console window is created.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.lpDesktop">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the desktop, or the name of both the desktop and window station for this process.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Startup Info lpDesktop</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwFillAttribute">
+    <rdfs:label xml:lang="en-US">Startup Info dwFillAttribute</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the initial text and background colors if a new console window is created in a console application.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwYSize">
+    <rdfs:label xml:lang="en-US">Startup Info dwYSize</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the height of the window if a new window is created, in pixels.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startDateTime">
+    <rdfs:label xml:lang="en-US">Start Time</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:comment xml:lang="en-US">Specifies the local date/time at which the process was started.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLLSignatureExists">
+    <rdfs:label xml:lang="en-US">Service DLL Signature Exists</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether or not the DLL is signed.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#userTime">
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">user time</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the duration of time that the process has executed in user mode.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#processCreatorUsername">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the account that created the process.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Process Creator Username</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ruid">
+    <rdfs:comment xml:lang="en-US">Specifies the real user ID, which represents the Unix user who created the process.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#UnixProcess"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">RUID</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#priority">
+    <rdfs:label xml:lang="en-US">Priority</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the priority of the process.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#UnixProcess"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceGroupName">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the load ordering group of which this service is a member.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Group Name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#imageInfo.currentDirectory">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the current directory of the process image.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Image Current Directory</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#processName">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the process.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDisplayName">
+    <rdfs:comment xml:lang="en-US">Specifies the displayed name of the service in Windows GUI controls. &#xD;
+&#xD;
+See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683228(v=vs.85).aspx.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Display Name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="serviceDescriptions">
+    <rdfs:comment xml:lang="en-US">Specifies a list of description items for this service.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Descriptions</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwYCountChars">
+    <rdfs:label xml:lang="en-US">Startup Info dwYCountChars</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the screen buffer height, in character rows.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceStartupType">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#WinServiceModeVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#WinServiceModeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the service start options. &#xD;
+&#xD;
+See http://msdn.microsoft.com/en-us/library/windows/desktop/ms682450(v=vs.85).aspx.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Startup Type</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLL">
+    <rdfs:comment xml:lang="en-US">Specifies name of the DLL instantiated in the service.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service DLL</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwXCountChars">
+    <rdfs:label xml:lang="en-US">Startup Info dwXCountChars</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies the screen buffer width, in character columns.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="arguments">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Arguments</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies a list of arguments utilized in initiating the process.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#sessionID">
+    <rdfs:comment xml:lang="en-US">Specifies the Unix Session ID of the process.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#UnixProcess"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Session ID</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLLCommandLine">
+    <rdfs:comment xml:lang="en-US">Specifies the full command line used to start the service.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service DLL Command Line</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="serviceDLLHash.value">
+    <rdfs:label xml:lang="en-US">Service DLL Hash Value</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed for the Service DLL file.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#imageInfo.fileName">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the binary file which represents the process image.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Image Filename</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLLCertificateIssuer">
+    <rdfs:comment xml:lang="en-US">Specifies the Certificate Authority (CA) that issued the certificate used to sign the service DLL.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service DLLCertificate Issuer</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="openFileDescriptors">
+    <rdfs:label xml:lang="en-US">Open File Descriptors</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    <rdfs:domain rdf:resource="#UnixProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies a listing of the current file descriptors used by the Unix process.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwY">
+    <rdfs:label xml:lang="en-US">Startup Info dwY</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en-US">Specifies the y offset of the upper left corner of a window if a new window is created, in pixels.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLLSignatureDescription">
+    <rdfs:comment xml:lang="en-US">Specifies a description of the digital signature for the service DLL.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service DLL Signature Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="childPIDs">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">child PIDs</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    <rdfs:comment xml:lang="en-US">Specifies the process ID (PID) of each children process spawned by the process being characterized, by way of a list of PIDs.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceStartedAs">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the account under which the service was started.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Started As</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#isHidden">
+    <rdfs:label xml:lang="en-US">Hidden Process</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Process"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether the process is hidden or not.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#imageInfo.path">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Image Path</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the fully qualified path to the image file, including the file name.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#processStatus">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#UnixProcessStateVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:comment xml:lang="en-US">Specifies the current status of the Unix process.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Process Status</rdfs:label>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ProcessStateVocab</edt:rangeControlledVocabSet>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#startupInfo.dwFlags">
+    <rdfs:label xml:lang="en-US">Startup Info dwFlags</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:comment xml:lang="en-US">Specifies a bitfield that determines whether certain STARTUPINFO members are used when the process creates a window.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceName">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the service. &#xD;
+&#xD;
+See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms683229(v=vs.85).aspx.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceStatus">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#WinServiceStatusVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#WinServiceStatusVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:comment xml:lang="en-US">Specifies status information for a service. &#xD;
+&#xD;
+See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms685996(v=vs.85).aspx.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service Status</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLLSignatureVerified">
+    <rdfs:comment xml:lang="en-US">Specifies whether or not the DLL's signature was verified.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service DLL Signature Verified</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#parentPID">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Parent PID</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the process ID (PID) of the parent process (i.e. the process that spawned this one), if applicable.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#kernelTime">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the duration of time that the process has executed in kernel mode.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Kernel Time</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#aslrEnabled">
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">ASLR Enabled</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#depEnabled">
+    <rdfs:label xml:lang="en-US">DEP Enabled</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en-US">Specifies whether Data Execution Prevention (DEP) is enabled for the process.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#imageInfo.commandLine">
+    <rdfs:domain rdf:resource="#Process"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the complete command used to execute the process image.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Image Command Line</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#windowTitle">
+    <rdfs:label xml:lang="en-US">Window Title</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#WindowsProcess"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the title of the main window of the process.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#serviceDLLCertificateSubject">
+    <rdfs:comment xml:lang="en-US">Specifies the subject of the certifcate (the entity being authenticated).</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#WindowsService"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cybox</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Service DLLCertificate Subject</rdfs:label>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.codeSnippets">
+    <rdfs:domain rdf:resource="#Process"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#environmentVariables">
+    <rdfs:domain rdf:resource="#Process"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.imports">
+    <rdfs:domain rdf:resource="#Process"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.functions">
+    <rdfs:domain rdf:resource="#Process"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.strings">
+    <rdfs:domain rdf:resource="#Process"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

@@ -1,0 +1,1469 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:incident="http://stix.mitre.org/Incident#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://stix.mitre.org/Incident">
+  <owl:Ontology rdf:about="http://stix.mitre.org/Incident">
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Incident.  The STIX Incident ontology provides a characterization of a single cyber Incident.
+
+A STIX Incident conveys information about a cyber security incident. This may be the most familiar STIX construct to those with a background in computer security and incident response. As you'd expect, it contains a good deal of information about what occurred, the impact of the incident on systems and information, the incident timeline, points of contact, and other descriptive information.
+
+In the STIX relationship model, incidents can be related to the threat actors involved, the campaigns that they're a part of, courses of action that were taken or were suggested, indicators that were used to detect the incident or were discovered as part of the investigation, TTPs that were used to carry out the incident, and observables that were detected during the incident.</rdfs:comment>
+    <owl:versionIRI rdf:resource="http://stix.mitre.org/Incident/1.2"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.2.0-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+    <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+    <rdfs:label xml:lang="en-US">STIX Incident Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:ID="ImpactAssessmentModel">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modelReference"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">External Impact Accessment Model</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${modelName} (${modelReference})</edt:displayNameTemplate>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${modelName})}}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modelName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes an abstract type enabling the definition through extension of incident impact assessment models external to STIX.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#id">
+            <rdfs:domain>
+              <owl:Class rdf:ID="COAStatement"/>
+            </rdfs:domain>
+            <rdfs:domain>
+              <owl:Class rdf:ID="ExternalIdentifier"/>
+            </rdfs:domain>
+            <rdfs:domain rdf:resource="#ImpactAssessmentModel"/>
+            <rdfs:domain>
+              <owl:Class rdf:ID="AffectedProperty"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#COAStatement">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#time.endTimestamp">
+            <rdfs:domain rdf:resource="#COAStatement"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="courseOfAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/reified/${@hash(${subject}${predicate}${object})}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#time.startTimestamp">
+            <rdfs:domain rdf:resource="#COAStatement"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes the attributes associated with a relationship between a subject STIX construct and STIX Course Of Action construct.
+
+The COAStatement helps to define a consistent structure for relationships that go beyond a simple statement of "construct A is related to Course of Action B".  Instead, additional properties ofthe relationship can be specified such as the nature of the relationship and the level of confidence in the presence and accuracy of the asserted relationship.
+
+The COAStatement class is designed to support its use in representing the relationship attributes as reified data or as a nary-relationship that can be associated with relationship between a subject STIX construct and another STIX Course of Action through the use of the rdf:subject, rdf:predicate, and rdf:object properties.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">COA Statement</rdfs:label>
+    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/Incident#takenCOAs</edt:reifiedDomain>
+    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/Incident#requestedCOAs</edt:reifiedDomain>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="priorityLevel"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ExternalIdentifier">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="externalId"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">External Id</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="externalSource"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${externalId} (${externalSource})</edt:displayNameTemplate>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-US">Characterizes an identifier of an incident in a remote system</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${parentId}${externalId}${externalSource})}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#parentId">
+            <rdfs:domain rdf:resource="#ExternalIdentifier"/>
+            <rdfs:domain>
+              <owl:Class rdf:about="#AffectedProperty"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:Class rdf:ID="COAActionEntry">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#courseOfAction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#time.startTimestamp"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#time.endTimestamp"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a record of the actions taken during the handling of an incident.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">COA Action Entry</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#ActionEntry"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AffectedProperty">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="typeOfAvailabilityLoss"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${securityProperty}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="dataEncrypted"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="descriptionOfEffect"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#parentId"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Affected Property</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Characterizes aspects of how security properties of an asset, such as Availability, Confidentiality, etc. were affected in a cyber incident.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="nonPublicDataCompromised"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="securityProperty"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="durationOfAvailabilityLoss"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${parentId}${securityProperty})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AffectedAsset">
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${parentId}${assetType}${assetDescription})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#parentId"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes various aspects of an asset negatively impacted in a cyber incident</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#locationClass"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#structuredDescription"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${assetType} ${assetDescription}</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Affected Asset</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#businessFunction"/>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#assetType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#assetDescription"/>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#managementClass"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#location"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#ownershipClass"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="countAffected"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#Asset"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Incident">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="reporter"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="coordinator"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="securityCompromise"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.containmentAchievedDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.incidentReportedDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="incidentStatus"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
+            <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactDirect.businessMissionDisruption"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a single cyber threat Incident.
+
+Incidents are discrete instances of Indicators affecting an organization along with information discovered or decided during an incident response investigation. They consist of data such as time-related information, parties involved, assets affected, impact assessment, related Indicators, related Observables, leveraged TTP, attributed Threat Actors, intended effects, nature of compromise, response Course of Action requested, response Course of Action taken, confidence in characterization, handling guidance, source of the Incident information, log of actions taken, etc.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactDirect.responseAndRecoveryCosts"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactTotalLossEstimation.initialReportCurrency"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactIndirect.increasedOperatingCosts"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactTotalLossEstimation.initialReportAmount"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.firstMaliciousActionDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.incidentClosedDatetime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.incidentDiscoveryDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactIndirect.lossOfCompetitiveAdvantage"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.restorationAchievedDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${title}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.incidentOpenedDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactTotalLossEstimation.actualAmount"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
+            <rdfs:domain rdf:resource="#Incident"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="externalImpactAssessmentModel"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="discoveryMethod"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactDirect.assetLosses"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
+            <rdfs:domain rdf:resource="#Incident"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactIndirect.legalAndRegulatoryCosts"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactIndirect.brandAndMarketDamage"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Incident</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime">
+            <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#timestamp"/>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#confidence">
+            <rdfs:domain rdf:resource="#Incident"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="responder"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${title})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="incidentSpecification"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.initialCompromiseDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeSequence.firstDataExfiltrationDateTime"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
+            <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactTotalLossEstimation.actualCurrency"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#reporter"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#informationSource">
+            <rdfs:domain rdf:resource="#Incident"/>
+          </rdf:Description>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactQualification"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="requestedCOAs">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a requested Course of Action for this Incident as specified by the producer for the consumer of the Incident Report.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">COA Requested</rdfs:label>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#courseOfAction">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the actual Course of Action.</rdfs:comment>
+    <rdfs:domain rdf:resource="#COAStatement"/>
+    <rdfs:domain rdf:resource="#COAActionEntry"/>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Course of Action</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="externalIdReferences">
+    <rdfs:range rdf:resource="#ExternalIdentifier"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">External IDs</rdfs:label>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:comment xml:lang="en-US">Specifies zero or more references to an ID of an incident in a remote system</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#responder">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to information about the assigned responder for this Incident.</rdfs:comment>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Responder</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="victim">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to information about a victim of this Incident.</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#CIQIdentity"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Party"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Organization"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Person"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Victim</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="history">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a log of events or actions taken during the handling of the Incident.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#JournalEntry"/>
+          <owl:Class rdf:about="#COAActionEntry"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">History</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#reporter">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to information about the reporting source of this Incident.</rdfs:comment>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Reporter</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#coordinator">
+    <rdfs:comment xml:lang="en-US">Specifes a reference to information about the assigned coordinator for this Incident.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Coordinator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="contact">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to organizations or personnel involved in this Incident.</rdfs:comment>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Contact</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="attributedThreatActors">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to Threat Actors asserted to be attributed for this Incident.</rdfs:comment>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Attributed Threat Actors</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="affectedAssets">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the particular assets affected during the Incident.</rdfs:comment>
+    <rdfs:range rdf:resource="#AffectedAsset"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Affected Assets</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="takenCOAs">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a Course of Action taken for this Incident.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">COAs Taken</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="intendedEffect">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the suspected intended effect of this incident.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Intended Effect</rdfs:label>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="contributors">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to contributing actors for the Course of Action taken.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Contributors</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Contributor"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#COAStatement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="natureOfSecurityEffect">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to how the security properties of the Asset were affected.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Nature of Security Effect</rdfs:label>
+    <rdfs:domain rdf:resource="#AffectedAsset"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:range rdf:resource="#AffectedProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="leveragedTTPs">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to TTPs asserted to be related to this cyber threat Incident.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Leveraged TTPs</rdfs:label>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#externalImpactAssessmentModel">
+    <rdfs:comment xml:lang="en-US">Specifies a reference to impact assessment details utilizing impact assessment characterization models defined externally.</rdfs:comment>
+    <rdfs:range rdf:resource="#ImpactAssessmentModel"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">External Impact Assessment Model</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#securityCompromise">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing knowledge of whether the Incident involved a compromise of security properties.
+
+Examples of security compromise include Yes, Suspected, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Security Compromise Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Security Compromise</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab</edt:rangeControlledVocabSet>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactIndirect.legalAndRegulatoryCosts">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing (at a high level) the level of impact based on legal and regulatory costs that occured in the Incident including legal fees, lawsuits, customer damages, contract violations, etc. 
+
+Examples of indirect impact to legal and regulatory costs include Yes, Suspected, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Security Compromise Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Indirect Impact from Legal and Regulatory Costs</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactIndirect.lossOfCompetitiveAdvantage">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing (at a high level) the level of impact based on loss of competitive advantage that occured in the Incident including loss/damage/exposure of IP, corporate wisdom, ability to compete, key personnel, etc. 
+
+Examples of indirect impact to loss of competitive advantage include Yes, Suspected, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Security Compromise Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Indirect Impact from Loss of Competitive Advantage</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab</edt:rangeControlledVocabSet>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.restorationAchievedDateTime">
+    <rdfs:label xml:lang="en-US">Restoration Achieved</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the first time at which the incident's assets are restored (e.g., fully functional)”.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactIndirect.increasedOperatingCosts">
+    <rdfs:comment xml:lang="en-US">Specifies value characterizing (at a high level) the level of impact based on increased operating costs that occured in the Incident including cost of additional audits, new hires or training, mandatory action, higher insurance, etc.
+
+Examples of indirect impact of increased operating costs include Yes, Suspected, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Security Compromise Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Indirect Impact from Increased Operating Costs</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#typeOfAvailabilityLoss">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing the type of loss to availability that occurred as part of an incident.
+
+Examples of types of availability loss include Destruction, Interruption, and Obscuration (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Availability Loss Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#AvailabilityLossTypeVocab-1.1.1</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#AvailabilityLossTypeVocab</edt:rangeControlledVocabSet>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Type of Availability Loss</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#AffectedProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.containmentAchievedDateTime">
+    <rdfs:label xml:lang="en-US">Containment Achieved</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the first time at which the incident is contained (e.g., the “bleeding is stopped”).</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#descriptionOfEffect">
+    <rdfs:comment xml:lang="en-US">Specifies  a brief prose description of how the security property was affected.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Description of Effect</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#AffectedProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactTotalLossEstimation.actualAmount">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the actual level of total estimated financial loss for the Incident.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Total Loss Estimation Actual Amount</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#incidentSpecification">
+    <rdfs:comment xml:lang="en-US">Specifies a URL referencing the location for the Incident specification.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Specification</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modelReference">
+    <rdfs:domain rdf:resource="#ImpactAssessmentModel"/>
+    <rdfs:comment xml:lang="en-US">Specifies a URL reference for the externally defined impact assessment model.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Model Reference</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactQualification">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing the subjective level of impact of the Incident. 
+
+Examples of impact qualification include Distracting, Damaging, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Impact Qualification Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactQualificationVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactQualificationVocab</edt:rangeControlledVocabSet>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Impact Qualification</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactTotalLossEstimation.initialReportAmount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the initially reported level of total estimated financial loss for the Incident.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Total Loss Estimation Initial Report Amount</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#securityProperty">
+    <rdfs:comment xml:lang="en-US">Specifies a value characerizing the  security property that was affected by the incident. 
+
+Specifies a value characterizing how the incident was discovered. 
+
+Examples of security properties loss include Accountability, Confidentiality, and Non-Repudiation (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Loss Property Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#LossPropertyVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Security Property</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#LossPropertyVocab</edt:rangeControlledVocabSet>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#AffectedProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.incidentClosedDatetime">
+    <rdfs:label xml:lang="en-US">Incident Closed</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the time at which the Incident was officially closed.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="categories">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing the categories for this incident. 
+
+Examples of categories include Denial of Service, Improper Usage, and Malicious Code (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Incident Category Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#IncidentCategoryVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#IncidentCategoryVocab</edt:rangeControlledVocabSet>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Categories</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactDirect.assetLosses">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing (at a high-level) the level of asset-related losses that occured in the Incident, including lost or damaged assets, stolen funds, cash outlays, etc.
+
+Examples of direct impact asset loss include Minor, Major, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Impact Rating Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Direct Impact Asset Losses</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactRatingVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactRatingVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactIndirect.brandAndMarketDamage">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing (at a high level) the level of impact based on brand or market damage that occured in the Incident including lost customers or partners, decrease in market value or share, advertising, rebranding, etc. 
+
+Examples of indirect impact to brand and market damage include Yes, Suspected, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Security Compromise Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Indirect Impact from Brand and Market Damage</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.incidentOpenedDateTime">
+    <rdfs:label xml:lang="en-US">Incident Opened</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the time at which the Incident was officially opened.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#incidentStatus">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing the current status (sometimes called "state" or "disposition") of the incident.
+
+Examples of incident status include Stalled, Containment Achieved, and Rejected (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Incident Status Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#IncidentStatusVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#IncidentStatusVocab</edt:rangeControlledVocabSet>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Status</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="impactEffects">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing the possible effects of an incident.
+
+Examples of impact effects include Brand or Image Degradation, Financial Loss, and User Data Loss (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Incident Effect Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#IncidentEffectVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Impact Effects</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#IncidentEffectVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactTotalLossEstimation.actualCurrency">
+    <rdfs:comment xml:lang="en-US">Specifies the ISO 4217 currency code if other than USD for the actual total loss estimation.
+
+Examples of ISO 4217 currency codes include AED, BTN, and TND (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the ISO 4217 Currency Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ISO4217CurrencyVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ISO4217CurrencyVocab</edt:rangeControlledVocabSet>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Total Loss Estimation Actual Currency</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.firstDataExfiltrationDateTime">
+    <rdfs:label xml:lang="en-US">First Data Exfiltration</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the first time at which non-public data was taken from the victim environment</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#durationOfAvailabilityLoss">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing the approximate length of time availability was affected (e.g. Permanent, Seconds, Minutes, Hours, Days). 
+
+Examples of loss duration include Weeks, Hours, and Permant (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Loss Duration Low Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#LossDurationVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#LossDurationVocab</edt:rangeControlledVocabSet>
+    <rdfs:label xml:lang="en-US">Duration of Availability Loss</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#AffectedProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.firstMaliciousActionDateTime">
+    <rdfs:comment xml:lang="en-US">Specifies the time that the first malicious action related to this Incident occured.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">First Malicious Action</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#countAffected">
+    <rdfs:comment xml:lang="en-US">Specifies the number of assets of this type affected.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="#AffectedAsset"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Count Affected</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.incidentDiscoveryDateTime">
+    <rdfs:label xml:lang="en-US">Incident Discovery</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the first time at which the organization learned the incident had occurred.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.incidentReportedDateTime">
+    <rdfs:label xml:lang="en-US">Incident Reported</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en-US">Specifies the time at which the Incident was reported.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modelName">
+    <rdfs:domain rdf:resource="#ImpactAssessmentModel"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Model Name</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the externally defined impact assessment model.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#externalSource">
+    <rdfs:domain rdf:resource="#ExternalIdentifier"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">External ID Source</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the source of the External ID.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeSequence.initialCompromiseDateTime">
+    <rdfs:comment xml:lang="en-US">Sspecifies the time that the initial compromise occured for this Incident.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Initial Compromise</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#nonPublicDataCompromised">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing whether non-public data was compromised or exposed. 
+
+Examples of non-public data comprised values include Yes, Suspected, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Security Compromise Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Non-public Data Compromised</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#SecurityCompromiseVocab</edt:rangeControlledVocabSet>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#AffectedProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#priorityLevel">
+    <rdfs:domain rdf:resource="#COAStatement"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Priority Level</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en-US">Specifies a suggested level of priority to be applied to this requested COA.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#externalId">
+    <rdfs:label xml:lang="en-US">External ID</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#ExternalIdentifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to an ID of an incident in a remote system.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#discoveryMethod">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing how the incident was discovered. 
+
+Examples of discovery methods include Agent Disclosure, Law Enforcement, and Audit (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Discovery Method Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#DiscoveryMethodVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#DiscoveryMethodVocab</edt:rangeControlledVocabSet>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Discovery Method</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#dataEncrypted">
+    <rdfs:label xml:lang="en-US">Data Encrypted</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifes whether any of the non-public data compromised or exposed was encrypted.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#AffectedProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactDirect.businessMissionDisruption">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing (at a high-level) the level of business or mission disruption impact that occured in the Incident including unproductive man-hours, lost revenue from system downtime, etc. 
+
+Examples of direct impact business mission distruption include Minor, Major, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Impact Rating Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Incident"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Direct Impact Business/Mission Disruption</rdfs:label>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactRatingVocab-1.0</edt:rangeControlledVocabClass>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactRatingVocab</edt:rangeControlledVocabSet>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactTotalLossEstimation.initialReportCurrency">
+    <rdfs:comment xml:lang="en-US">Specifies the ISO 4217 currency code if other than USD for the initial report total loss estimation.
+
+Examples of ISO 4217 currency codes include AED, BTN, and TND (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the ISO 4217 Currency Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ISO4217CurrencyVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Total Loss Estimation Initial Report Currency</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ISO4217CurrencyVocab</edt:rangeControlledVocabSet>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactDirect.responseAndRecoveryCosts">
+    <rdfs:comment xml:lang="en-US">Specifies a value characterizing (at a high level) the level of response and recovery related costs that occured in the Incident including cost of response, investigation, remediation, restoration, etc. {@en-US}
+
+Examples of direct impact response and recovery costs include Minor, Major, and Unknown (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Impact Rating Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stix</edt:namespacePrefix>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactRatingVocab</edt:rangeControlledVocabSet>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Direct Impact Response and Recovery Costs</rdfs:label>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://stix.mitre.org/default_vocabularies-1#ImpactRatingVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:domain rdf:resource="#Incident"/>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedIncident">
+    <rdfs:domain rdf:resource="#Incident"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
+    <rdfs:domain rdf:resource="#Incident"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedIndicator">
+    <rdfs:domain rdf:resource="#Incident"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedObservable">
+    <rdfs:domain rdf:resource="#Incident"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
+    <rdfs:domain rdf:resource="#Incident"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
+    <rdfs:domain rdf:resource="#Incident"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

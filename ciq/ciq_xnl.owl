@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xnl="http://www.oasis-open.org/ciq_xnl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.oasis-open.org/ciq_xnl">
+  <owl:Ontology rdf:about="http://www.oasis-open.org/ciq_xnl">
+    <owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) eXtensible Naming Language (xNL) Specification V3.0.&#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">OASIS Customer Information Quality (CIQ) eXtensible Naming Language (xNL) Ontology</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.0-001</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="BusinessUnit">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Subdivison"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Defines a business unit of an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Business Unit</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="PersonName">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.validFromDateTime">
+            <rdfs:domain>
+              <owl:Class rdf:ID="NameDetails"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personName.precedingTitle"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${@hash(${personNameType}${personName.firstName}${personName.lastName})}</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Person name</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personName.nickname"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.validToDateTime">
+            <rdfs:domain>
+              <owl:Class rdf:about="#NameDetails"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personNameType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personName.middleName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
+            <rdfs:domain>
+              <owl:Class rdf:ID="OrganizationName"/>
+            </rdfs:domain>
+            <rdfs:domain rdf:resource="#PersonName"/>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel">
+            <rdfs:domain>
+              <owl:Class rdf:about="#NameDetails"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#NameDetails"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personName.firstName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#id">
+            <rdfs:domain>
+              <owl:Class rdf:about="#NameDetails"/>
+            </rdfs:domain>
+          </rdf:Description>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personName.title"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${personName.precedingTitle} ${personName.title} ${personName.firstName} ${personName.middleName} ${personName.lastName} ${personName.generationIdentifier} ${personName.credentials}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes details about a person's name</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="personName.lastName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Branch">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Subdivison"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Defines a branch of an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Branch</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Department">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Subdivison"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Department</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a department of an organization</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Subdivison">
+    <rdfs:comment xml:lang="en-US">Characterizes a subdivision of an organization</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Subdivision</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#NameDetails">
+    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:abstract>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en-US">Name details</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies details about the party's name</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Division">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="#Subdivison"/>
+    <rdfs:label xml:lang="en-US">Division</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a division of an organization</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="School">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="#Subdivison"/>
+    <rdfs:label xml:lang="en-US">School</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a school of an organization</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#OrganizationName">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.validFromDateTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes details about an organization's name</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Name</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="organizationNameType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#status"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#NameDetails"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.validToDateTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="organizationName.fullName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:Class rdf:ID="Section">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="#Subdivison"/>
+    <rdfs:comment xml:lang="en-US">Defines a section of an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Section</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="organizationName.subdivision">
+    <rdfs:comment xml:lang="en-US">Specifies a sub-division of the organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Sub-Division</rdfs:label>
+    <rdfs:range rdf:resource="#Subdivison"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.birthName">
+    <rdfs:comment xml:lang="en-US">Specifies the name given to an individual at birth, but later changed (common in some cultures).</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Name at Birth</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="otherNames">
+    <rdfs:comment xml:lang="en-US">Specifies any other additional names that are not directly used to identify or call the individual, such as names of ancestors, saints, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Other Name</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.knownAs">
+    <rdfs:comment xml:lang="en-US">Specifies names that the person is also known as</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Known As</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.legalName">
+    <rdfs:comment xml:lang="en-US">Specifies the individual's legal name</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Legal Name</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.formerName">
+    <rdfs:label xml:lang="en-US">Former Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the former name of the individual</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.aliases">
+    <rdfs:comment xml:lang="en-US">Specifies other names by which the person is know.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Aliases</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.unofficialName">
+    <rdfs:comment xml:lang="en-US">Specifies an unofficial name that the individual is known to go by.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Unofficial Name</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.commonUse">
+    <rdfs:comment xml:lang="en-US">Specifies the name that is comonly used by others, e.g., a simplied form of the official name.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">person name.Common use</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="nameDetails">
+    <rdfs:comment xml:lang="en-US">Specifies details about the names associated with the party</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Name Details</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#OrganizationName"/>
+          <owl:Class rdf:about="#PersonName"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >xnl</edt:namespacePrefix>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.MaidenName">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the individual before marriage.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Maiden Name</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="personName.officialName">
+    <rdfs:comment xml:lang="en-US">Specifies the official name of the person, e.g., as in the passport, incorporation certificate, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Official Name</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.businessUnit">
+    <rdfs:comment xml:lang="en-US">Specifies the name of a business unit within an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Business Unit Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationNameUsage">
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <rdfs:comment xml:lang="en-US">Specifies how an organization's name can be used and for what purposes.   It provides an indication of which name is a set of names to select for a given purpose. (e..g, used for legal purposes)</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Name Usage</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivision.divisionName">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">subdivision.division name</rdfs:label>
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the division name of an organization's subdivision</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personName.lastName">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Last Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the name elemnt that identifies the group the individual belongs to and is identified by, such as last name, surname, family name, etc.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personName.precedingTitle">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Preceding Title</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the preceding title of a person (e.g., His Excellency, Honorable, etc.)</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personName.generationIdentifier">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Sr.</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Jr.</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >II</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >III</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >IV</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >V</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >VI</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >VII</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >VIII</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >IX</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >X</rdf:first>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:rest>
+                          </rdf:rest>
+                        </rdf:rest>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:comment xml:lang="en-US">Specifies a generational identifier (e.g., Jr, Sr, 2nd, IV, etc.)</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Generation Identifier</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.orgType">
+    <rdfs:label xml:lang="en-US">organization name.org type</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the type of the organization.  "Pty. Ltd" in Sakthisoft Pty.Ltd, where "Sakthisoft" is the name of the organisation, "Inc" in ABC Inc, where "ABC" is organisation name.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Person ID</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a unique identifier of a person</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personName.firstName">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:comment xml:lang="en-US">Specifies the most important name element by which this particular individual is identified in the group (e.g., John, Sam, Brian for Anglo-Saxon cultures)</rdfs:comment>
+    <rdfs:label xml:lang="en-US">First Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="partyName.jointNameConnector">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >AND</rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:comment xml:lang="en-US">Specifies the connector used to join more than one person name.&#xD;
+&#xD;
+E xample: Mr Hunt AND Mrs Clark, where AND is the JointNameConnector.  The flow is from the preceding to the following. If there is more than 2 names then all names are connected using this connector in the natural order.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">party name.Joint name connector</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personName.middleName">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Middle Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the name element related to additional identification of the individual, such names are parents or places</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personNameUsage">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Person Name Usage</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies how a person's name can be used and for what purposes.  It provides an indication of which name is a set of names to select for a given purpose. (e..g, used for legal purposes)</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="partyNameType">
+    <rdfs:comment xml:lang="en-US">Specifies the type of a Party Name ID</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Party Name ID Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Person</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Organization</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Unknown</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personName.preferredName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Preferred Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the name that the individual prefers to be called by, e.g., "Jim" instead of "James", "Bill" instead of "William"</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivision.departmentName">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">subdivision.department name</rdfs:label>
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the department name of an organization's subdivision</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="nameLineType">
+    <rdfs:comment xml:lang="en-US">Specifies what the free form name line means.  For example, the type could be "Unknown"</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Name Line Type</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivision.schoolName">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">subdivision.school name</rdfs:label>
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the school name of an organization's subdivision</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.department">
+    <rdfs:label xml:lang="en-US">Organization Department Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the department within an organization.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="partyName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Name of Party</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the name of a party when it is unknown whether the party is an person or an organziation.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="partyNameUsage">
+    <rdfs:label xml:lang="en-US">Party Name Usage</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies how a party's name can be used and for what purposes (e.g., data exchange, contact, update, create).</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.nameOnly">
+    <rdfs:comment xml:lang="en-US">Specifies just the name of the organization.  For example, in "Sakthisoft Pty. Ltd", "Pty. Ltd" is the legal entity for the organization name "Sakthisoft"</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Organization Name</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivision.branchName">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the branch name of an organization's subdivision</rdfs:comment>
+    <rdfs:label xml:lang="en-US">SubDivision Branch Name</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personName.title">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Mr.</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Mrs.</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Ms.</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Miss</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Professor</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Dr.</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Sir</rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:comment xml:lang="en-US">Specifies a title of some sorts, such as Mr, Miss, Ms (marriage status), or eduction such as Professor, Phd, Dr, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Title</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personIdType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Person ID Type</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a type of person ID</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#organizationName.fullName">
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Full Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the full name of an organization, including its name, propriety type, liability type, etc.(e.g., Sakthisoft Pty. Ltd)</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personName.nickname">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:label xml:lang="en-US">Nickname</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a simple nick name that is commonly used as part of the name (e.g., a fancy kick-boxer can be commonly known as Bill "Storm" Bababoons, where "Storm" is obviously an alias)</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.division">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the division within an organization.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Division</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivisionName">
+    <rdfs:domain rdf:resource="#Subdivison"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of a subdivision of an organziation (e.g. department, branch, division, section)</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Subdivision name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="partyNameId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Party Name ID</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a unique identifier for a party</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.branch">
+    <rdfs:comment xml:lang="en-US">Specifies the name of a branch within an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Branch Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#personNameType">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:comment xml:lang="en-US">Specifies common types of person names</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Person Name Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Alias</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >LegalName</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >KnownAs</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >MaidenName</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >FormerName</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >CommonUse</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >NameAtBirth</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >OfficialName</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >UnofficialName</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >NickName</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >PetName</rdf:first>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:rest>
+                          </rdf:rest>
+                        </rdf:rest>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivision.businessUnitName">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">subdivision.business unit name</rdfs:label>
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the business unit name of an organization's subdivision</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.school">
+    <rdfs:comment xml:lang="en-US">Specifies the name of a school within an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization School Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#organizationNameType">
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <rdfs:comment xml:lang="en-US">Specifies just the type of an organization without its name. For example, in "Sakthisoft Pty. Ltd", "Pty. Ltd" is the legal entity  or type for the organization name "Sakthisoft", "Inc." in "ABC, Inc." "Inc." is the type and "ABC" is the organization name</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >LegalName</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >FormerName</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >CommonUse</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >PublishingName</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >OfficialName</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >UnofficialName</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Undefined</rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="jointNameConnector">
+    <rdfs:comment xml:lang="en-US">Specifies the connector used to join more than one person name.  Example: Mr. Hunt AND Mrs Clark, where AND is the joint name connector.  If there is more than 2 names, then all names are connected using the this connector in the natural order.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Joint Name Connector</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subDivisionType">
+    <rdfs:domain rdf:resource="#Subdivison"/>
+    <rdfs:comment xml:lang="en-US">Specifies a type of subdivision of an organization</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Subdivision Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Section</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >School</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >BusinessUnit</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Branch</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Division</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Department</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personName.petName">
+    <rdfs:comment xml:lang="en-US">Specifies a "pet name" by which the person is known to individuals that have a close relationship with the person.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Pet Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="nameLine">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a name as a free-form text.  Use this when the type of the entity (person or organization) is unknown or is not broken down into individual elements (e.g., unstructured, unparsed) or is beyond the provided types.  The name represented may be formatted in the righ order or may not be as it is not parsed/broken into atomic fields</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationName.section">
+    <rdfs:comment xml:lang="en-US">Specifies the name of a section within an organization.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization Section Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="subdivision.sectionName">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">subdivision.section name</rdfs:label>
+    <rdfs:domain rdf:resource="#OrganizationName"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the section name of an organization's subdivision</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="organizationIdType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the type of an organization ID</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Organization ID Type</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personName.otherName">
+    <rdfs:label xml:lang="en-US">Other Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies any other additional names that are not directly used to identify or call the individual, such as names of ancestors, saints, etc.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ciq</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#PersonName"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="personName.credentials">
+    <rdfs:domain rdf:resource="#PersonName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies an educational degree or credentials (e.g., PhD)</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Credentials</rdfs:label>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

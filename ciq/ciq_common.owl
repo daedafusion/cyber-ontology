@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ciqct="http://www.oasis-open.org/ciq_common#"
+  xml:base="http://www.oasis-open.org/ciq_common">
+  <owl:Ontology rdf:about="http://www.oasis-open.org/ciq_common">
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.0-001</owl:versionInfo>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) Specification V3.0 commonly used types in the name, address, and party ontologies.&#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">OASIS Customer Information Quality (CIQ) Common Types Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:ID="validToDateTime">
+    <rdfs:comment xml:lang="en-US">Specifies date to which the data is valid.  Could be end date, expiry date, validity end date, etc</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Date Valid To</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="textLineOrdinality">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:label xml:lang="en-US">Ordinality</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the ordinality (e.g., 1,2, or 3) of this text line</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="validFromDateTime">
+    <rdfs:comment xml:lang="en-US">Specifies the date from which data is valid.  Could be start date, issue date, validity start date, etc</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Date Valid From</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="textLine">
+    <rdfs:comment xml:lang="en-US">Specifies a line of text</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Text Line</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="dataQuality.reliabilityLevel">
+    <rdfs:comment xml:lang="en-US">Specifes values to indicate the level of reliability of the data</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Data Quality Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Valid</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Invalid</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="status">
+    <rdfs:label xml:lang="en-US">Status</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the status of the entity. e.g. Old, Current, Inactive, Active, etc</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Active</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Inactive</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Current</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Old</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="languageCode">
+    <rdfs:comment xml:lang="en-US">Specifies the language used (name of human language, e.g. en, en-US)</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Language Code</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="parentId">
+    <edt:editorHiddenField rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:editorHiddenField>
+    <rdfs:comment xml:lang="en-US">Specifies the identifier associate with an object's parent</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Parent Id</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="dataQuality.validFromDateTime">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">Valid From</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the date the data quality is valid from</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="dataQuality.validToDateTime">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en-US">Valid To</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the date the data quality is valid to</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="abbreviation">
+    <rdfs:comment xml:lang="en-US">Specifies that the entry has been abbreviated</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Abbreviation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="id">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies a globally unique identifier for this definition</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Globally Unique Identifier</rdfs:label>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:marking="http://data-marking.mitre.org/Data_Marking#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://data-marking.mitre.org/Data_Marking">
+  <owl:Ontology rdf:about="http://data-marking.mitre.org/Data_Marking">
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation which provides a standardized method of describing data markings used to convey sensativity and the ability to share.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Data Markings Ontology</rdfs:label>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.2.0-000</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+    <owl:versionIRI rdf:resource="http://data-marking.mitre.org/Data_Marking/1.2"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="TermsOfUseMarking">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="termsOfUse"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Terms of Use Marking</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modelRef"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a marking used to make a text statement to specify the Terms of Use of the marked content.
+
+For example, the Terms of Use marking can be used to communicate a simple statement, such as "Acme Inc. is not responsible for the content of this file".  The Terms of Use marking is similar to the Simple Marking but has stronger semantic meaning.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/marking-${@hash(${modelName}-${termsOfUse})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="markingStructureId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MarkingStructure"/>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${modelName}: ${termsOfUse}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modelName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SimpleMarking">
+    <rdfs:label xml:lang="en-US">Simple Marking</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#markingStructureId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MarkingStructure"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a simple marking used to allow users to make a text statement to mark the content.
+
+An example of a simple marking is to apply simple copyright information, for example "Copyright 2014 Acme Inc."</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#modelName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="statement"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/marking-$@hash(${modelName}-${statement})}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#modelRef"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${modelName}: ${statement}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:about="#MarkingStructure">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#modelName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:abstract>
+    <rdfs:label xml:lang="en-US">Marking Structure</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#modelRef"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Characterizes the marking information to be applied to STIX content.
+
+The MarkingStructure class provides a simple mechanism for leveraging externally defined marking systems, and it is intended to be extended to enable the expresssion of any structured or unstructured data marking mechanism.
+
+The MarkingStructure class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of this base class in the minimizes the inter-dependencies between ontologies.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#markingStructureId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:Class rdf:ID="TLPMarking">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#modelName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="color"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#MarkingStructure"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Characterizes a data marking scheme that follows the Traffic Light Protocol (TLP) designation.
+
+The Traffic Light Protocol marking was created by US-CERT and used throughout the cyber threat sharing industry to indicate how marked content may be shared via a color (RED, AMBER, GREEN, WHITE) ala "traffic light" scheme.   Each color provides an indication as to how the marked content should be treated with regards to sharing and with whom sharing is permitted.&#xD;
+&#xD;
+RED:  Sources use when information cannot be effectively acted upon by additional parties and could lead to impacts on a party's privacy, reputation, or opertions if misused.  Recepients may not share information with any prarties outside of the specific exchange, meeting, or conversation in which it was originally disclosed.&#xD;
+&#xD;
+AMBER: Sources use when information requires support to be effectively acted upon, but carries risk to privacy, reputation, or operations if shared outside of the organizations involved.  Recepients may only share information with members of their own organization who need to know, and only as widely as necessary to act on that information. &#xD;
+&#xD;
+GREEN: Sources use when information is useful for teh awareness of all participating organizations as well as with peers within the broader community or sector.  Recepients may share information with peers and partner organizations within their sector or community, but not via publicly accessible channels.&#xD;
+&#xD;
+WHITE: Sources use when information carries minimal or no foreseeable risk of misuse, in accordance with applicable rules and procedures for public release.  Recepients may share information without restriction, subject to copyright controls.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#markingStructureId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${modelName}: ${color}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#modelRef"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Traffic Light Protocol (TLP) Marking</rdfs:label>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/marking-${@hash(${modelName}-${color})}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="Marking">
+    <rdfs:comment xml:lang="en-US">Characterizes a structure for marking information to be applied to portions of STIX content</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Marking</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="controlledStructure"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="markingId"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="markingData"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="informationSource"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="handling">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SimpleMarking"/>
+          <owl:Class rdf:about="#TermsOfUseMarking"/>
+          <owl:Class rdf:about="#TLPMarking"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Specifies the appropriate data handling markings for the elements of this entity's characterization.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Handling Instructions</rdfs:label>
+    <edt:defaultRangeClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://data-marking.mitre.org/Data_Marking#TLPMarking</edt:defaultRangeClass>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#informationSource">
+    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
+    <rdfs:comment xml:lang="en-US">Specifies the source of this information</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Information Source for markings</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#Marking"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#markingData">
+    <rdfs:range rdf:resource="#MarkingStructure"/>
+    <rdfs:comment xml:lang="en-US">Specifies the marking information to be applied</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:domain rdf:resource="#Marking"/>
+    <rdfs:label xml:lang="en-US">Marking Data</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#markingStructureId">
+    <rdfs:domain rdf:resource="#MarkingStructure"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the unique identifier associated with this MarkingSpec instance.&#xD;
+&#xD;
+The format of the identifier MUST be in the format of "marking_spec-[UUID]", where [UUID] SHOULD correspond to a universally unique identifier. {@en-US}</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Marking Structure ID</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#termsOfUse">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the terms of use that apply to the structure for hwich the Marking is to be applied.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">terms of use</rdfs:label>
+    <rdfs:domain rdf:resource="#TermsOfUseMarking"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#markingId">
+    <edt:autoGenerate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${@uuid()}</edt:autoGenerate>
+    <rdfs:comment xml:lang="en-US">Specifies the unique identifier associated with this Marking instance.
+
+The format of the identifier MUST be in the format of "marking-[UUID]", where [UUID] SHOULD correspond to a universally unique identifier.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Identifier</rdfs:label>
+    <rdfs:domain rdf:resource="#Marking"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#color">
+    <rdfs:domain rdf:resource="#TLPMarking"/>
+    <rdfs:comment xml:lang="en-US">Specifies the TLP color designation of the marked structure</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Color</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >RED</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >AMBER</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >GREEN</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >WHITE</rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modelName">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Marking Model Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the marking model to be applied within this Marking</rdfs:comment>
+    <rdfs:domain rdf:resource="#MarkingStructure"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modelRef">
+    <rdfs:comment xml:lang="en-US">Specifies an external reference to an authoritative source on the marking model to be applied within this Marking Structure</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Marking Model Reference</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:domain rdf:resource="#MarkingStructure"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#statement">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Specifies the statement to apply to the structure for which the Marking is to be applied.</rdfs:comment>
+    <rdfs:domain rdf:resource="#SimpleMarking"/>
+    <rdfs:label xml:lang="en-US">Statement</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#controlledStructure">
+    <rdfs:comment xml:lang="en-US">Specify the structures for which the Marking is to be applied.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Controlled Structure</rdfs:label>
+    <rdfs:domain rdf:resource="#Marking"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >marking</edt:namespacePrefix>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

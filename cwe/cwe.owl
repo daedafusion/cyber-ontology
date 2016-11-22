@@ -1,0 +1,3272 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:cwe="http://cwe.mitre.org/cwe#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:capec="http://capec.mitre.org/capec#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:cve="http://nvd.nist.gov/cve#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://cwe.mitre.org/cwe">
+  <owl:Ontology rdf:about="http://cwe.mitre.org/cwe">
+    <owl:imports rdf:resource="http://capec.mitre.org/capec"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >v1.0.0-001</owl:versionInfo>
+    <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+    <owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
+    <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
+    <rdfs:label xml:lang="en-US">Common Weakness Enumeration (CWE) Ontology</rdfs:label>
+    <owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+    <owl:imports rdf:resource="http://nvd.nist.gov/cve"/>
+    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Common Weakness Enumeration (CWE) which provides a unified, measurable set of software weaknesses that is enabling more effective discussion, description, selection, and use of software security tools and services that can find these weaknesses in source code and operational systems as well as better understanding and management of software weaknesses related to architecture and design. &#xD;
+&#xD;
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Audience">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="stakeholder"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Audience</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/Audience/${stakeholder}</edt:iriTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes a target audience or group for this view.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="stakeholderDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${stakeholder}</edt:displayNameTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+  </owl:Class>
+  <owl:Class rdf:ID="IntroductionMode">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${titleText}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StructuredText"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Introduction Mode</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the mode in which the weakness can be introduced.</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/IntroMode/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="Block">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredText"/>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${textTitle} (${blockNature})</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Block</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a  Block of structured text</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/Block</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="WeaknessCatalog">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#id"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogDate"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/catalog-${catalogName}-${catalogDate}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogVersion"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Weakness Catalog</rdfs:label>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#description"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#generator"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a collection of software security issues (flaws, faults, bugs, vulnerabilities, weaknesses, etc).  The name used by CWE is usually "CWE".  However, if this collection is a subset of CWE, then a more appropriate name should be used.</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${catalogName} ${catalogVersion) - ${catalogDate}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="CompoundElement">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="extendedDescription"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="formattedIdentifier"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="compoundElementName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a meaningful aggregation of several weaknesses, as in a chain like CWE-690: CWE-252 Unchecked Return Value can result in CWE-476 NULL Pointer Dereference or as in a composite like CWE-352 Cross-Site Request Forgery.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="status"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${formattedIdentifier}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="causalNature"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="id"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">CompoundElement</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="compoundElementStructure"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${formattedIdentifier}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="likelihood"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="descriptionSummary"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="abstraction"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="WeaknessOrdinality">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ordinality"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Weakness Ordinality</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ordinalityDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a Weakness Ordinality and indicates when this entry is primary - where the weakness exists independent of other weaknesses, or when this entry might be resultant - where the weakness is typically related to the presence of some other weaknesses.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TechnologyClass">
+    <rdfs:comment xml:lang="en-US">Characterizes a class of technology in which this entry may exist and with what frequency in the specified class.</rdfs:comment>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/TechClass/${techName}</edt:iriTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="prevalence"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="techName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${techName}</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Technoloy Class</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Reference">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceLink"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referencePublisherName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referencePubDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referencePublication"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/Reference/${localReferenceId}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceEdition"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Reference</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#referenceId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes  a source from which more information and deeper insight can be obtained, such as a 	research paper or an excerpt from a publication.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceSection"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceTitle"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="localReferenceId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${localReferenceId}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="referenceDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HardwareArchitecture">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hardwareArchitectureClassDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/HwArch/${hardwareArcihtectureName}</edt:iriTemplate>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${hardwareArchitectureName}</edt:displayNameTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#prevalence"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hardwareArchitectureName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Hardware Architecture</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Characterizes a hardware achitecture on which this entry may exist and with what frequency on the specified architecture.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DemonstrativeExample">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="relativeId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Demonstrative Example</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="exampleBody"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Characterizes a Demonstrative Example which should contain an example illustrating the problem being described in this weakness.</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${relativeId}</edt:displayNameTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/DemoExample/${relativeId}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="introText"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="demoExampleId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BackgroundDetail">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Background Detail</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredText"/>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${text}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Defines background information regarding the entry or any technologies that are related to it, where the background information is not related to the nature of the weakness itself. It should be filled out where appropriate.</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/BackgroundDetail/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="TaxonomyMapping">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="taxonomyName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Characterizes mappings to nodes of other taxonomies that are similar in meaning to this node.  &#xD;
+&#xD;
+Although this may sound similar to Source  Taxonomy, Source Taxonomy is designed to provide a history and pedigree for the entry, whereas Taxonomy Mapping allows similar nodes in other collections to be identified as matching concepts with this weakness. For example, Taxonomy Mapping should be used to map the CWE entries to their OWASP Top 10 equivalents.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">TaxonomyMapping</rdfs:label>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/TaxonomyMap/${relativeId}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#relativeId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="mappedNodeId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="mappingFit"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="mappedNodeName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >[${relativeId}] ${taxonomyName}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="WhiteBoxDefinition">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredText"/>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${text}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Defines the weakness from a white box perspective, meaning that the view includes the knowledge of control flow, data flow, and all other inner workings of the software in which the weakness exists.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">WhiteBox Definition</rdfs:label>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/WhiteBoxDef/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="ExploitationFactor">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${textTitle}</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Exploitation Factor</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a condition or factor tha could increase the likelihood of exploit for this weakness.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredText"/>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/ExploitationFactor/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="TechnicalImpact">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:label xml:lang="en-US">Technical Impact</rdfs:label>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${impactType}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="impactDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a technical impact that can arise if an attacker attempts to exploit this weakness.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#likelihood"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/TechImpact/${impactType}</edt:iriTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </owl:Class>
+  <owl:Class rdf:ID="Note">
+    <rdfs:label xml:lang="en-US">Note</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="noteType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredText"/>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${textTitle}</edt:displayNameTemplate>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/Note/${noteType}/${@hash(text)}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Defines one or more Relationship Note elements, which each contain details regarding the relationships between CWE entries.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Term">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="termName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${term}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Defines term by which an entity may be known and a description to explain the context in which the term may be relevant. For example, CWE-181 Incorrect Behavior Order: Validate Before Filter, has the alternate terms value "Validate-before-cleanse".</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Term</rdfs:label>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/Term/${term}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="termDescription"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ArchitectureParadigm">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="paradigmName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/ArchParadigm/${paradigmName}</edt:iriTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes a single Architectural Paradigm in which this entry may exist and with what frequency in the specified paradigm.</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${paradigmName}</edt:displayNameTemplate>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en-US">Architecture Paradigm</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#prevalence"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DetectionMethod">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/DetectionMethod/@hash(${detectionMethodName})</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Detection Method</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="methodName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${methodName}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes  information on different techniques that can be used to detect a weakness, including their strengths and limitations.  This should be filled out for some weakness classes and bases.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="detectionMethodId"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Weakness">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="dictionaryLink"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#formattedIdentifier"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#extendedDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes an actual weakness entry in the Common Weakness Enumeration dictionary</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#status"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Weakness</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${formattedIdentifier}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="weaknessName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#descriptionSummary"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#abstraction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${formattedIdentifier}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="Category">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#descriptionSummary"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${formattedIdentifier}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="timeOfIntroduction"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#extendedDescription"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a category entity that represents a collection of weaknesses based on a common attribute, such as CWE-310 Cryptographic Issues or CWE-355 User Interface Security Issues.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#likelihood"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#formattedIdentifier"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#weaknessName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${formattedIdentifier}</edt:iriTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#status"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Weakness Category</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="categoryName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+  </owl:Class>
+  <owl:Class rdf:ID="OperatingSystem">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#prevalence"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${osName)|${osClass}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes an Operating System in which this entry may exist and with what frequency on the specified OS.</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/OpSys/${osName}|${osClass}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="osClass"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="osName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Operating System</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Consequence">
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="consequenceNote"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="consequenceId"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/Consequence/${consequenceId}</edt:iriTemplate>
+    <rdfs:label xml:lang="en-US">Consequence</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Characterizes a consequence that may be associated with the Weakness, Category, View, or Compound Element.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#relativeId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${consequenceId}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="ViewObjective">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">View Objective</rdfs:label>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${text}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructuredText"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Defines the perspective from which this View is constructed.</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/ViewObj/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="Mitigation">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#relativeId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="mitigationId"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/Mitigation/${mitigationId}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="mitigationEffectiveness"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Mitigation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:comment xml:lang="en-US">Characterizes a method for mitigating a weakness.</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${mitigationId}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:about="#StructuredText">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="textTitle"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Structured Text</rdfs:label>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${textTitle}: ${text}</edt:displayNameTemplate>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Characterizes a structured description text that can include a title, text, comments, code examples, and blocks of text.</rdfs:comment>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/${textTitle}/${@hash(text)}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HistoryRecord">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="entryDate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Characterizes a record of history to keep track of the author of the weakness entry and anyone who has made modifications to the content. This provides a means of contacting the authors and modifiers for clarifying ambiguities,  merging overlapping contributions, etc. This should be filled out for all entries.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="submissionSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modificationSource"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="modificationImportance"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="contributionMode"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/Revision/${relativeId}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="authorName"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Content History</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="entryType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#relativeId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${relativeId}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="authorOrganization"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="authorOrganizationName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RelationshipStatement">
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${relationshipNature}</edt:displayNameTemplate>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/reified/${@hash(${subject}${predicate}${object})}</edt:iriTemplate>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="chains"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="relationshipNature"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Characterizes an association between this structure, whether it is a Weakness, Category, or Compound_Element and another structure. The relationship also identifies the views under which the relationship is applicable.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="views"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Relationship</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="form"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://cwe.mitre.org/cwe#relationships</edt:reifiedDomain>
+  </owl:Class>
+  <owl:Class rdf:ID="Environment">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/Env/${environName}</edt:iriTemplate>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#prevalence"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en-US">Environment</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Characterizes a single Environment in which this entry may exist and with what frequency in the specified environment.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="environmentName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${environName}</edt:displayNameTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="ObservedExample">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${referenceIdentifier}</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Observed Example</rdfs:label>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/${referenceIdentifier)/${@hash(observationDescription)}</edt:iriTemplate>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="en-US">Characterizes an observed instance of this weakness in the real-world; typically this will be a CVE reference.  If the reference identifier is for a CVE reference, the cveReference should also be completed. This element should be filled out for as many entries as possible.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#relativeId"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProgrammingLanguage">
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${langName}|${langClass}</edt:displayNameTemplate>
+    <rdfs:comment xml:lang="en-US">Characterizes a Programming Language in which this weakness may exist. &#xD;
+&#xD;
+Do not fill this in if a specific Programming Language was specified.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="langName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:label xml:lang="en-US">Programming Language</rdfs:label>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/ProgLang/${langName}|${langClass}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#prevalence"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="langClass"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="View">
+    <rdfs:label xml:lang="en-US">View</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#weaknessName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:comment xml:lang="en-US">Characterizes a perspective with which one might look at the weaknesses in CWE. CWE-699 Development Concepts, CWE-1000 Research Concepts and are two examples of Views.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#formattedIdentifier"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="viewName"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="objective"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${formattedIdentifier}</edt:displayNameTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#status"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/${formattedIdentifier}</edt:iriTemplate>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#id"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="structureType"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BlackBoxDefinition">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en-US">Defines one or more Black Box Definitions, each of which describes the weakness from an external perspective, 	meaning that the view includes no knowledge of how the software is processing data other than what can be inferred from observing the software's behavior.</rdfs:comment>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${text}</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Black Box Definition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#StructuredText"/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/BlackBoxDef/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:Class rdf:ID="ResearchGap">
+    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weakness</edt:namespacePrefix>
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#text"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >${textTitle}</edt:displayNameTemplate>
+    <rdfs:label xml:lang="en-US">Research Gap</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a potential opportunity for the vulnerability research community to conduct further exploration of issues related to this weakness. It is intended to highlight parts of 	CWE that have not received sufficient attention from researchers. This 	should be filled out where appropriate for weaknesses and categories.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#StructuredText"/>
+    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/CWE/ResearchGap/${@hash(text)}</edt:iriTemplate>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="categories">
+    <rdfs:label xml:lang="en-US">Categories</rdfs:label>
+    <rdfs:domain rdf:resource="#WeaknessCatalog"/>
+    <rdfs:comment xml:lang="en-US">Defines  zero or more Category 	elements. Each Category element represents what used to be referred to in CWE as a "Grouping" entry. That is, a category is now a collection of 	weaknesses based on a common attribute, such as CWE-310 Cryptographic Issues or CWE-355 User Interface Security Issues.</rdfs:comment>
+    <rdfs:range rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="block">
+    <rdfs:label xml:lang="en-US">Block</rdfs:label>
+    <rdfs:domain rdf:resource="#StructuredText"/>
+    <rdfs:comment xml:lang="en-US">Defines a block of text</rdfs:comment>
+    <rdfs:range rdf:resource="#Block"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.TechnologyClasses">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#TechnologyClass"/>
+    <rdfs:label xml:lang="en-US">Applicable Technology Classes</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more individual Technology Class which each represent a technology class in which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="researchGaps">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="#ResearchGap"/>
+    <rdfs:label xml:lang="en-US">Research Gaps</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines zero or more gaps in the research associated with this Weakness, Category, View, or Compound Element</rdfs:comment>
+    <rdfs:domain rdf:resource="#View"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.PlatformNotes">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Defines a additional information related to the applicable platforms of a weakness if needed.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Platform Notes</rdfs:label>
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="referencePublisher">
+    <rdfs:domain rdf:resource="#Reference"/>
+    <rdfs:comment xml:lang="en-US">Specifies the publisher of the reference material, if one exists</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Reference Publisher</rdfs:label>
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="mitigationEffectivenessNotes">
+    <rdfs:label xml:lang="en-US">Mitigation Effectiveness Notes</rdfs:label>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+    <rdfs:comment xml:lang="en-US">Defines the strengths and shortcomings of this mitigation on a specific weakness.</rdfs:comment>
+    <rdfs:range rdf:resource="#Note"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="backgroundDetails">
+    <rdfs:range rdf:resource="#BackgroundDetail"/>
+    <rdfs:label xml:lang="en-US">Background Details</rdfs:label>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:comment xml:lang="en-US">Specifies one or more Background Details, each of which holds information regarding the entry or any technologies that are related to it, where the background information is not related to the nature of the entry itself. It should be filled out where appropriate.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.HardwareArchitecture">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#HardwareArchitecture"/>
+    <rdfs:label xml:lang="en-US">Applicable Hardware Architectures</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Hardware Architectures which each represent an architecture in which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="otherNotes">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:label xml:lang="en-US">Other Notes</rdfs:label>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or ore other notes assoicated with the View.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="commonConsequences">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#Consequence"/>
+    <rdfs:label xml:lang="en-US">Common Consequences</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines zero or more  the common consequences associated with this weakness.  This should be included and completed as much as possible for all weaknesses.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="subMitigations">
+    <rdfs:range rdf:resource="#Mitigation"/>
+    <rdfs:label xml:lang="en-US">Submitigations</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more sub-mitigations</rdfs:comment>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="audience">
+    <rdfs:range rdf:resource="#Audience"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to the targeted audiences or groups for this view.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Audience</rdfs:label>
+    <rdfs:domain rdf:resource="#View"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="alternateTerms">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or more  alternate terms by which this weakness may be known and a description to explain the context in which the term may be relevant</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Alternate Terms</rdfs:label>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:range rdf:resource="#Term"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.Environments">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#Environment"/>
+    <rdfs:label xml:lang="en-US">Applicable Environments</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Environments which each represent an environment in which this weakness may exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relationships">
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:comment xml:lang="en-US">Specifies one or more associations between this structure, whether it is a Weakness, Category, or Compound_Element and another structure.</rdfs:comment>
+    <rdfs:range rdf:resource="#View"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:range rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:label xml:lang="en-US">Relationships</rdfs:label>
+    <rdfs:range rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="references">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or more sources from which more information and deeper insight can be obtained, such as a 	research paper or an excerpt from a publication</rdfs:comment>
+    <rdfs:range rdf:resource="#Reference"/>
+    <rdfs:label xml:lang="en-US">References</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="demonstrativeExamples">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#DemonstrativeExample"/>
+    <rdfs:label xml:lang="en-US">Demonstrative Examples</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Demonstrative Examples, each of which should contain an example illustrating the problem being described in this weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="weaknessOrdinality">
+    <rdfs:comment xml:lang="en-US">Specifies when this entry is primary - where the weakness exists independent of other weaknesses, or when this entry might be resultant - where the weakness is typically related to the presence of some other weaknesses. This should be filled out for all Weakness Base and 	Variant entries.</rdfs:comment>
+    <rdfs:range rdf:resource="#WeaknessOrdinality"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:label xml:lang="en-US">Weakness Ordinality</rdfs:label>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consequenceTechnicalImpact">
+    <rdfs:range rdf:resource="#TechnicalImpact"/>
+    <rdfs:label xml:lang="en-US">Technical Impact</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the technical impacts that can arise if an attacker attempts to exploit this weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Consequence"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.ArchitectureParadigms">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#ArchitectureParadigm"/>
+    <rdfs:label xml:lang="en-US">Applicable Architecture Paradigms</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Architectural Paradigms  represent an architecture on which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicableLanguages">
+    <rdfs:range rdf:resource="#ProgrammingLanguage"/>
+    <rdfs:label xml:lang="en-US">Applicable Languages</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Languages which each represent a language in which this mitigation may exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relatedAttackPatterns">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:label xml:lang="en-US">Related Attack Patterns</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies one or more references to CAPEC entries which will identify related attack patterns to this weakness. This should be filled out to the extent possible for most weaknesses.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="http://capec.mitre.org/capec#AttackPattern"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="nonPrimaryViews">
+    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <rdfs:comment xml:lang="en-US">Specifies the list of non-ChildOf Views to which this relationship pertains.</rdfs:comment>
+    <rdfs:range rdf:resource="#View"/>
+    <rdfs:label xml:lang="en-US">Relationship Views</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#chains">
+    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <rdfs:range rdf:resource="#CompoundElement"/>
+    <rdfs:comment xml:lang="en-US">Specifes a list of the individual Chains this relationship pertains to.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Chains</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="author">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Organization"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Person"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Party"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:label xml:lang="en-US">Author</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies references to one or more individuals that authored the submitted, contributed, or modified the Weakness, View, Category, or CompoundElement.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#consequenceNote">
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:label xml:lang="en-US">Consequence Note</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines additional commentary about this consequence.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Consequence"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="taxonomyMappings">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#TaxonomyMapping"/>
+    <rdfs:comment xml:lang="en-US">Defines one or more Taxonomy Mappings which provide a mapping from this entry to an entry in a different taxonomy.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:label xml:lang="en-US">Taxonomy Mappings</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="contentHistory">
+    <rdfs:range rdf:resource="#HistoryRecord"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or more Content History elements used to keep track of the author of the weakness entry and anyone who has made modifications to the content.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Content History</rdfs:label>
+    <rdfs:domain rdf:resource="#View"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="demoExampleRefs">
+    <rdfs:range rdf:resource="#Reference"/>
+    <rdfs:label xml:lang="en-US">References</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more References, each of which provide further reading and insight into this demonstrative example. This should be filled out when appropriate.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DemonstrativeExample"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.CommonPlatformReferences">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:label xml:lang="en-US">Common Platform References</rdfs:label>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:comment xml:lang="en-US">Defines references to the Common Platform Enumeration, CPE, which will identify common platforms on which this weakness may occur. It has one or more Common_Platform elements as children and each child will point to a single CPE entry which is associated with this weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.OperatingSystems">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#OperatingSystem"/>
+    <rdfs:label xml:lang="en-US">Applicable Operating Systems</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Operating System in which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="observedExamples">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Specifies one or more ObservedExample elements, each of which is a reference to a specific observed instance of this weakness in the real world; typically this will be a CVE reference.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Observed Examples</rdfs:label>
+    <rdfs:range rdf:resource="#ObservedExample"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#objective">
+    <rdfs:comment xml:lang="en-US">Defines a description the perspective from which this View is constructed.</rdfs:comment>
+    <rdfs:range rdf:resource="#ViewObjective"/>
+    <rdfs:label xml:lang="en-US">Objective</rdfs:label>
+    <rdfs:domain rdf:resource="#View"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="applicablePlatforms.Languages">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:label xml:lang="en-US">Applicable Programming Languages</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="#ProgrammingLanguage"/>
+    <rdfs:comment xml:lang="en-US">Specifies a contains one or more Language elements which each represent a language in which this weakness may exist.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="terminologyNotes">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:label xml:lang="en-US">Terminology Notes</rdfs:label>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Specifies zero or more notes that contain a discussion of terminology issues related to this weakness.   It is different from Alternate Terms, which is focused on discussion of specific terms that are commonly used. It should be filled out in any entry for which there is no established terminology, or if there are multiple uses of the same key term.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="referenceAuthor">
+    <rdfs:domain rdf:resource="#Reference"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to one or more individuals or organizations that authored the material</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Reference Author</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Organization"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Person"/>
+          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Party"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#extendedDescription">
+    <rdfs:label xml:lang="en-US">Extended Description</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Specifies a place for details important to the description of this entry  to be included that are not necessary to convery the fundamental concept behind the entry.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#StructuredText"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="primaryViews">
+    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <rdfs:comment xml:lang="en-US">Specifies the list of Views to which this relationship pertains, where the relationship represents the primary ChildOf relationship for this weakness entry.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Primary Parent/Child Views</rdfs:label>
+    <rdfs:range rdf:resource="#View"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="vulnerabilityReference">
+    <rdfs:domain rdf:resource="#ObservedExample"/>
+    <rdfs:comment xml:lang="en-US">Specifies a reference to a vulnerability entity, typically as a Common Vulnerabilty Enumeration (CVE) entry</rdfs:comment>
+    <rdfs:range rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
+    <rdfs:label xml:lang="en-US">Vulnerability Reference</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="modesOfIntroduction">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#IntroductionMode"/>
+    <rdfs:label xml:lang="en-US">Modes of Introduction</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the typical scenarios under which this weakness can be introduced into the software. It should be filled out as needed.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="blackBoxDefinitons">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#BlackBoxDefinition"/>
+    <rdfs:label xml:lang="en-US">Black Box Definitions</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Defines  one or more Black Box Definitions, each of which describes the weakness from an external perspective, 	meaning that the view includes no knowledge of how the software is processing data other than what can be inferred from observing the software's behavior.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="enablingExploitationFactors">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#ExploitationFactor"/>
+    <rdfs:label xml:lang="en-US">Enableing Factors for Exploitation</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Enabling Factor for Exploitation, each of which points out conditions or factors that could increase the likelihood of exploit for this weakness. This should be filled out for most weakness bases.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="maintenanceNotes">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or more maintenance notes associated with the View.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Maintenance Notes</rdfs:label>
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="methodEffectivenessNotes">
+    <rdfs:label xml:lang="en-US">Method Effectiveness Notes</rdfs:label>
+    <rdfs:domain rdf:resource="#DetectionMethod"/>
+    <rdfs:comment xml:lang="en-US">Defines a description of the strengths and shortcomings of this detection method. This should be filled out for some weakness classes and bases.</rdfs:comment>
+    <rdfs:range rdf:resource="#Note"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="whiteBoxDefinitions">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#WhiteBoxDefinition"/>
+    <rdfs:label xml:lang="en-US">White Box Definitions</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more White Box Definitions, each of which describes the weakness from a white box perspective, meaning that the view includes the knowledge of control flow, data flow, and all other inner workings of the software in which the weakness exists.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="theoreticalNotes">
+    <rdfs:comment xml:lang="en-US">Specifies one or more Theoretical Notes that each describe the weakness using vulnerability theory concepts. It should be filled out as needed, especially in cases where the application of 	vulnerability theory is not necessarily obvious for the weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:label xml:lang="en-US">Theoretical Notes</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:range rdf:resource="#Note"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relationshipNotes">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="#Note"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or more relationship notes associated with the View</rdfs:comment>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:label xml:lang="en-US">Relationship Notes</rdfs:label>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="weaknesses">
+    <rdfs:range rdf:resource="#Weakness"/>
+    <rdfs:comment xml:lang="en-US">Defines zero or more Weakness entities that represents an actual weakness entry in CWE, such as CWE-311 Failure to Encrypt Sensitive Data or CWE-326 Weak Encryption.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WeaknessCatalog"/>
+    <rdfs:label xml:lang="en-US">Weakness</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#views">
+    <rdfs:comment xml:lang="en-US">Defines  zero or more View elements.  Each View element represents a perspective with which one might look at the weaknesses in CWE. CWE-699 Development View and CWE-1000 Research View are two examples of Views.</rdfs:comment>
+    <rdfs:range rdf:resource="#View"/>
+    <rdfs:label xml:lang="en-US">Views</rdfs:label>
+    <rdfs:domain rdf:resource="#WeaknessCatalog"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="detectionMethods">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#DetectionMethod"/>
+    <rdfs:comment xml:lang="en-US">Defines a one or more 	Detection Method which identify methods that may be employed to detect this weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:label xml:lang="en-US">Detection Methods</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#authorOrganization">
+    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+    <rdfs:comment xml:lang="en-US">Specifies one or more references tothe organization which submitted, contributed, or modified the Weakness, View, Category, or CompoundElement</rdfs:comment>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:label xml:lang="en-US">Author Organization</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="potentialMitigations">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="#Mitigation"/>
+    <rdfs:label xml:lang="en-US">Potential Mitigations</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the potential mitigations associated with this weakness. It contains one or more mitigation subelements which each represent individual mitigations for this weakness. This should be included and completed to the extent possible for all weakness bases and variants.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="compoundElements">
+    <rdfs:range rdf:resource="#CompoundElement"/>
+    <rdfs:label xml:lang="en-US">CompoundElements</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines  zero or more Compound_Element elements. &#xD;
+Each Compound_Element represents a meaningful 	aggregation of several weaknesses, as in a chain like CWE-690: CWE-252 Unchecked Return Value can result in CWE-476 NULL Pointer Dereference or as in a composite like CWE-352 Cross-Site Request Forgery.</rdfs:comment>
+    <rdfs:domain rdf:resource="#WeaknessCatalog"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="#methodName">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#DetectionMethodVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#DetectionMethodVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Method Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a name for the particular weakness detection method. This should be filled out for some weakness classes and bases.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DetectionMethod"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#stakeholderDescription">
+    <rdfs:comment xml:lang="en-US">Specifies a description of what properties of this View this particular Stakeholder might find useful.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Description</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Audience"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#authorOrganizationName">
+    <rdfs:label xml:lang="en-US">Author Organization Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name of the organization which submitted, contributed, or modified the Weakness, View, Category, or CompoundElement</rdfs:comment>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#langName">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+    <rdfs:label xml:lang="en-US">Language Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines  the name of the  programming language in which this entry may occur.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#mappingFit">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Perspective</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Imprecise</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >CWE_More_Specific</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >CWE_More_Abstract</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Exact</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Mapping Fit</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines how close to the original taxonomy this node was mapped.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TaxonomyMapping"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceEdition">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Edition</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the edition of the material being 	referenced in the event that multiple editions of the material exist. This will usually only be useful for book references.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#likelihood">
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.-0</edt:rangeControlledVocabClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Likelihood@en-US}</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a rough estimate at the likelihood of exploitation of an exposed weakness. Many factors can impact this value which is why it should only be regarded as an approximation.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#TechnicalImpact"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="codeExampleLanguage">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Code Language</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the programming language being used in the following block of Code</rdfs:comment>
+    <rdfs:domain rdf:resource="#StructuredText"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#viewName">
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Specifies a descriptive name used to give the reader an idea of what perspective this view represents. &#xD;
+&#xD;
+All words in the name should be capitalized except for articles and prepositions unless they begin or end the name. Subsequent words in a hyphenated chain are also not capitalized.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="relevantProperties">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Predictability</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Uniqueness</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Equivalence</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Validty</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Trustability</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Mutability</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Accessibility</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Relevant Properties</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more Relevant Property.  Each Relevant Property element identifies a property that is required by the code or a resource in order to function as specified.  Correctly labeling all of the relevant properties can help to figure out 	what the root cause of a vulnerability might be.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#mitigationEffectiveness">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >High</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Moderate</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Incidental</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Limited</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Defense in Depth</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >None</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Mitigation Effectiveness</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines how effective the mitigation may be in preventing the weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#contributionMode">
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:label xml:lang="en-US">Contribution Mode</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines whether the contribution was part of feedback given to the CWE team or actual content that was donated.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Feedback</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Content</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#demoExampleId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Demonstration Example Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines  the identifier for the related Demonstrative Example. Only one Demonstrative Example ID can exist for each Demonstrative Example (ex: DX-1). However, Demonstrative Examples across CWE with the same ID should only vary in small details.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DemonstrativeExample"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="methodEffectiveness">
+    <rdfs:domain rdf:resource="#DetectionMethod"/>
+    <rdfs:label xml:lang="en-US">Method Effectiveness</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines how effective the detection method may be in detecting the associated weakness. This assumes the use of best-of-breed tools, analysts, and methods. There is limited consideration for financial costs, labor, or 	time.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >None/Rare</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Limited</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Opportunistic</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Moderate</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >High</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >SOAR High</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >SOAR Partial</rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#form">
+    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >CompoundElements</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >View</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Weakness</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Category</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Form</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the form of the weakness.&#xD;
+&#xD;
+A Compound Element represents a meaningful aggregation of several weaknesses, as in a chain like CWE-690: CWE-252 Unchecked Return Value can result in CWE-476 NULL Pointer Dereference or as in a composite like CWE-352 Cross-Site Request Forgery.  &#xD;
+&#xD;
+A Category represents a collection of weaknesses sharing a common attribute, such as CWE-310 Cryptographic Issues or CWE-355 User Interface Security Issues. The shared attribute may any number of things including, but not limited to, environment (J2EE, .NET), functional area (authentication, cryptography) and the relevant resource (credentials management, certificate issues).</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="consequenceScope">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceScopeVocab</edt:rangeControlledVocabSet>
+    <rdfs:label xml:lang="en-US">Consequence Scope</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines an individual consequence that may be associated with this weakness. Possible effects are detailed in 	Consequence Effect.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Consequence"/>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceScopeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceSection">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Section</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a means of identifying the exact location of the material inside of the publication source, such as the relevant pages of a research paper, the appropriate chapters from a book, etc. This is useful for both book references and internet references.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#authorName">
+    <rdfs:comment xml:lang="en-US">Specifies the names of one or more individuals that authored the submitted, contributed, or modified the Weakness, View, Category, or CompoundElement.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Author Name</rdfs:label>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referencePubDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:label xml:lang="en-US">Published Date</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines  the date when the reference was published YYYY.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#descriptionSummary">
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:label xml:lang="en-US">Description Summary</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Defines a minimalistic description which provides the information necessary to understand the primary focus of this entry.  The description text should be short and should limit itself to describing the key points that define this entry.  Further explanation can be included in the extended description element.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="previousEntryName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Previous Names</rdfs:label>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:comment xml:lang="en-US">Specifies the name by which this entry was previously known.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceDate">
+    <rdfs:label xml:lang="en-US">Date</rdfs:label>
+    <rdfs:domain rdf:resource="#Reference"/>
+    <rdfs:comment xml:lang="en-US">Defines the date when the reference was 	included in the entry. This provides the reader with a time line for when the material in the reference, usually the link, was valid. The date should be of the format YYYY-MM-DD.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#techName">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Database-Client</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Database-Server</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Web-Client</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Web-Server</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Technology Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a technology class in which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TechnologyClass"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#localReferenceId">
+    <rdfs:comment xml:lang="en-US">Specifies an identifier for the related Local	Reference. Only one Local Reference ID element can exist for each Reference element (ex: R.78.1). Text citing this reference should use the format [R.78.1] where "78" is the CWE identifier and "1" is the ordinal value of the reference (e.g., 1 being the first, 2 being the second).</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Local Reference Identifier</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referencePublisherName">
+    <rdfs:domain rdf:resource="#Reference"/>
+    <rdfs:comment xml:lang="en-US">Defines the publisher of the reference material, if one exists.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Publisher</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="functionalAreas">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:label xml:lang="en-US">Functional Areas</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Defines one or more descriptions of the functional area of the software in which the 	weakness is most likely to occur. For example,  CWE-178 Failure to Resolve Case Sensitivity is likely to occur in functional areas of software related to file processing and credentials.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#compoundElementStructure">
+    <rdfs:label xml:lang="en-US">Compound Element Structure</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Composite</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Chain</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:comment xml:lang="en-US">Specifies the structural nature of this compound element - that is, composed of other weaknesses concurrently, as in a composite, or consecutively, as in a chain.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#categoryName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Category Name</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:comment xml:lang="en-US">Specifies a descriptive name used to give the reader an idea of what the commonality is amongst the children of this category.  All words in the name should be capitalized except for articles and prepositions unless they begin or end the name.  Subsequent words in a hyphenated chain are also not capitalized.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#compoundElementName">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:comment xml:lang="en-US">Specifies a descriptive name used to give the reader an idea of the meaning behind the compound weakness structure. &#xD;
+&#xD;
+All words in the name should be capitalized except for articles and prepositions unless they begin or end the name. Subsequent words in a hyphenated chain are also not capitalized.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Compound Element Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#taxonomyName">
+    <rdfs:domain rdf:resource="#TaxonomyMapping"/>
+    <rdfs:label xml:lang="en-US">Taxonomy Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the taxonomy to which this weakness has a similar or equivalent entry.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >7 Pernicious Kingdoms</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >19 Deadly Sins</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Anonymous Tool Vendor (under NDA)</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Aslam</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Bishop</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >CLASP</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Landwehr</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >OWASP Top Ten 2004</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >OWASP Top Ten 2007</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >PLOVER</rdf:first>
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >Protection Analysis</rdf:first>
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >RISOS</rdf:first>
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >Weber, Karger, Paradkar</rdf:first>
+                                  <rdf:rest rdf:parseType="Resource">
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >WASC</rdf:first>
+                                    <rdf:rest rdf:parseType="Resource">
+                                      <rdf:first rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >CERT C Secure Coding</rdf:first>
+                                      <rdf:rest rdf:parseType="Resource">
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >CERT Java Secure Coding</rdf:first>
+                                        <rdf:rest rdf:parseType="Resource">
+                                          <rdf:first rdf:datatype=
+                                          "http://www.w3.org/2001/XMLSchema#string"
+                                          >CERT C++ Secure Coding</rdf:first>
+                                          <rdf:rest rdf:parseType="Resource">
+                                            <rdf:first rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >Software Fault Patterns</rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                          </rdf:rest>
+                                        </rdf:rest>
+                                      </rdf:rest>
+                                    </rdf:rest>
+                                  </rdf:rest>
+                                </rdf:rest>
+                              </rdf:rest>
+                            </rdf:rest>
+                          </rdf:rest>
+                        </rdf:rest>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="mitigationStrategy">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:rest rdf:parseType="Resource">
+                                    <rdf:rest rdf:parseType="Resource">
+                                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      <rdf:first rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >Threat Modeling</rdf:first>
+                                    </rdf:rest>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >Separation of Privilege</rdf:first>
+                                  </rdf:rest>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >Sandbox or Jail</rdf:first>
+                                </rdf:rest>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >Refactoring</rdf:first>
+                              </rdf:rest>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >Parameterization</rdf:first>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >Output Encoding</rdf:first>
+                          </rdf:rest>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >Limit Resource Consumption</rdf:first>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Libraries or Frameworks</rdf:first>
+                      </rdf:rest>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Language Selection</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Input Validation</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Identify and Reduce Attack Surface</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Firewall</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Environment Hardening</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Enforcement by Conversion</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Compilation or Build Hardening</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Mitigation Strategy</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a general strategy for protecting a system to which this mitigation contributes</rdfs:comment>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#submissionSource">
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:label xml:lang="en-US">Submission Source</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines how the initial information for this entry was obtained.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >External_Submission</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Internal_CWE_Team</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >NDA</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Externally_Mined</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#formattedIdentifier">
+    <rdfs:comment xml:lang="en-US">Specifies the Common Weakness Enumeration (CWE) identifier associated with the weakness.  The weakness identifier should follow the CWE identifier pattern of "CWE-nnnn" where 'nnnnn' specifies an numerically incrementing number.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:label xml:lang="en-US">Common Weakness Enumeration (CWE) identifier</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#View"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="referenceIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies  the identifier for the example being cited. For example, if a CVE is being cited it should be of the standard CVE identifier format, such as CVE-2005-1951 or CVE-1999-0046.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Reference Identifier</rdfs:label>
+    <rdfs:domain rdf:resource="#ObservedExample"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#dictionaryLink">
+    <rdfs:comment xml:lang="en-US">Specifies an external link to the weakness contained at the Common Weakness Enumeration (CWE) dictionary.  The link should be in the following form:  http://cwe.mitre.org/data/definitions/{weakness-id}.html, where {weakness-id) should be the integer Identifier of the specific weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:label xml:lang="en-US">Dictionary Link</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="blockNature">
+    <rdfs:comment xml:lang="en-US">Defines the nature of the content contained within the Block.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Block"/>
+    <rdfs:label xml:lang="en-US">Block Nature</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Good_Code</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Bad_Code</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Mitigation_Code</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Attack</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Result</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >List</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Numeric_List</rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#relationshipNature">
+    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >CanAlsoBe</rdf:first>
+                              </rdf:rest>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >CanFollow</rdf:first>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >CanProceed</rdf:first>
+                          </rdf:rest>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >StartsChain</rdf:first>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >StartsWith</rdf:first>
+                      </rdf:rest>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >RequiredBy</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Requires</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >PeerOf</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >ParentOf</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >ChildOf</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >MemberOf</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >HasMember</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:comment xml:lang="en-US">Specifies the nature of the relationship between this element and the target element, such as ChildOf, HasMember or Requires to name a few.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Relationship Nature</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#mappedNodeId">
+    <rdfs:comment xml:lang="en-US">Defines the ID of the entry to which this weakness is being mapped in taxonomy Taxonomy Name.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TaxonomyMapping"/>
+    <rdfs:label xml:lang="en-US">Mapped Node Identifier</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#introText">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Intro text</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the context and setting surrounding the example to add clarity for the reader.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DemonstrativeExample"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#langClass">
+    <rdfs:comment xml:lang="en-US">Specifies a description of a type of language in which this entry is likely to exist. The type may be specified by a common property, such as Languages with Automated Memory Management or Languages which support Format Strings, or it may describe a more general class of language such as All Interpreted Languages or Pseudo Code.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Language Class</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceLink">
+    <rdfs:domain rdf:resource="#Reference"/>
+    <rdfs:label xml:lang="en-US">Reference Link</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the URL for the material being 	referenced, if one exists. This should always be used for web references, and may optionally be used for book and other publication references.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#noteType">
+    <rdfs:domain rdf:resource="#Note"/>
+    <rdfs:label xml:lang="en-US">Note Type</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the type of Note.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Relationship</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Maintenance</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Other</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Terminology</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Theoretical</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Consequence</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Platform</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >MethodEffectivenessNote</rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referencePublication">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Publication</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the publication source of the reference material, if one exists.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#timeOfIntroduction">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#SDLCPhaseTypeVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#SDLCPhaseTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:comment xml:lang="en-US">Specifies the points of time in the software life cycle at which the weakness may be introduced. If there are multiple points of time at which the weakness may be introduced, then separate Introduction elements should be included for each.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Time of Introduction</rdfs:label>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="referenceAuthorName">
+    <rdfs:label xml:lang="en-US">Author Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the names of one or more an individuals that authored the material being referenced.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactType">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceTechnicalImpactVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceTechnicalImpactVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:comment xml:lang="en-US">Specifies the type of impact</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Impact Type</rdfs:label>
+    <rdfs:domain rdf:resource="#TechnicalImpact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="affectedResources">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >CPU</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >File/Directory</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Memory</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >System Process</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Affected Resources</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines one or more system resources affected by this 	entry.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#textTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Defines a bold-faced title for a subsequent block of text.</rdfs:comment>
+    <rdfs:domain rdf:resource="#StructuredText"/>
+    <rdfs:label xml:lang="en-US">Text Title</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#osClass">
+    <rdfs:comment xml:lang="en-US">Defines families or groups of operating systems in which this weakness is likely to exist. Do not fill this in if a specific Operating System was specified.</rdfs:comment>
+    <rdfs:domain rdf:resource="#OperatingSystem"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Operating System Class Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#environmentName">
+    <rdfs:comment xml:lang="en-US">Specifies the name of the Environment we are identifying.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Environment"/>
+    <rdfs:label xml:lang="en-US">Environment Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#exampleBody">
+    <rdfs:domain rdf:resource="#DemonstrativeExample"/>
+    <rdfs:label xml:lang="en-US">Example Body</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a description which should hold  the code and some explanatory information for the reader.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#entryDate">
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:comment xml:lang="en-US">Defines the date on which the content was authored, contributed, or modified in YYYY-MM-DD format.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:label xml:lang="en-US">Entry Date</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#weaknessName">
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies a name which identifies the entry. &#xD;
+&#xD;
+The name should focus on the weakness being described in the entry and should 	avoid focusing on the attack which exploits the weakness or the consequences of exploiting the weakness. All words in the entry name should be capitalized except for articles and prepositions unless they begin or end the name. Subsequent words in a hyphenated chain are also not capitalized.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#termName">
+    <rdfs:domain rdf:resource="#Term"/>
+    <rdfs:label xml:lang="en-US">Term</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Defines the actual term. Each term should follow the same 	conventions as the entry Name attribute.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modificationImportance">
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:label xml:lang="en-US">Modification Importance</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines how significant the modification is to the weakness with regard to the meaning and interpretation of the weakness.  If a modification has a value of Critical, then the meaning of the entry or how it might be interpreted has changed and requires attention from anyone previously dependent on the weakness.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Critical</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Noramal</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="viewFilter">
+    <rdfs:label xml:lang="en-US">View Filter</rdfs:label>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Defines an XSL query for identifying 	which elements are members of an implicit slice. This should only be present for implicit slices.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#termDescription">
+    <rdfs:domain rdf:resource="#Term"/>
+    <rdfs:comment xml:lang="en-US">Specifies a short description providing context to the term.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Term Description</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="methodDescription">
+    <rdfs:comment xml:lang="en-US">Defines some context of how this Detection Method can be applied to a specific weakness. This should be filled out for some 	weakness classes and bases.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DetectionMethod"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Method Description</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="mitigationPhase">
+    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#SDLCPhaseTypeVocab</edt:rangeControlledVocabSet>
+    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.daedafusion.com/default_vocabularies-1#SDLCPhaseTypeVocab-1.0</edt:rangeControlledVocabClass>
+    <rdfs:label xml:lang="en-US">Mitigation Phase</rdfs:label>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+    <rdfs:comment xml:lang="en-US">Defines  the development life cycle phase during which this particular mitigation may be applied.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#status">
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Specifies the status level for this weakness.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Incomplete</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Draft</rdf:first>
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Usable</rdf:first>
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Stable</rdf:first>
+                </rdf:rest>
+              </rdf:rest>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Deprecated</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Category"/>
+    <rdfs:label xml:lang="en-US">Status</rdfs:label>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="observationDescription">
+    <rdfs:label xml:lang="en-US">Description</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a product independent description of the example being cited. The description should present an unambiguous correlation between the example being described and the weakness which it is meant to exemplify. It should also be short and easy to understand.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#ObservedExample"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hardwareArchitectureClassDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Architecture Class Description</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines architectures in which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#HardwareArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#mitigationId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Mitigation Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the value for the related Mitigation entry identifier as a string. Only one Mitigation_ID element can exist for each Mitigation element (ex: MIT-1). However, Mitigations across CWE with the same ID should only vary in small details.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ordinalityDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Specifies context in which this entry is either Primary or Resultant, depending on the corresponding value for Ordinality.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Description</rdfs:label>
+    <rdfs:domain rdf:resource="#WeaknessOrdinality"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#modificationSource">
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:comment xml:lang="en-US">Defines whether this modification was created by a CWE team member or provided by an external party.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >External</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Internal</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Modification Source</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Reference Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the identifier for the related Reference  entry identifier as a string. Only one Reference_ID element can exist for each Reference element (ex: REF-1). However, References across CWE with the same ID should only vary in small details. Text citing this reference should use the local reference ID, as this ID is only for reference library related consistency checking and maintenance.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#abstraction">
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Class</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Base</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Variant</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Abstraction</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the abstraction level for this weakness.  The abstractions levels for Compound Elements and Weaknesses are the same. For example, if the Compound Element is a chain, and all elements of the chain are Class level, then the Compound Element Abstraction attribute is Class. &#xD;
+&#xD;
+Acceptable values are "Class", which is the most abstract type of Weakness such as CWE-362 Race Conditions, "Base" which is a more specific type of weakness that is still mostly independent of a specific resource or technology such as CWE-567 Unsynchronized Access to 	Shared Data, and "Variant" which is a weakness specific to a particular resource, technology or context.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#prevalence">
+    <rdfs:domain rdf:resource="#OperatingSystem"/>
+    <rdfs:label xml:lang="en-US">Prevalence</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Rarely</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Sometimes</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Often</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#ProgrammingLanguage"/>
+    <rdfs:domain rdf:resource="#ArchitectureParadigm"/>
+    <rdfs:domain rdf:resource="#TechnologyClass"/>
+    <rdfs:domain rdf:resource="#HardwareArchitecture"/>
+    <rdfs:domain rdf:resource="#Environment"/>
+    <rdfs:comment xml:lang="en-US">Defines the prevalence with which this weakness may occur within code.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="code">
+    <rdfs:domain rdf:resource="#StructuredText"/>
+    <rdfs:comment xml:lang="en-US">Defines a line of code.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Code</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#relativeId">
+    <rdfs:domain rdf:resource="#Mitigation"/>
+    <rdfs:label xml:lang="en-US">Relative ID</rdfs:label>
+    <rdfs:domain rdf:resource="#ObservedExample"/>
+    <rdfs:domain rdf:resource="#Consequence"/>
+    <rdfs:comment xml:lang="en-US">Specifies an identifier for the related entity.  Only one relative ID element can exist for each entity (ex: R.78.1). Text citing this reference should use the format [R.78.1] where "78" is the entity identifier and "1" is the ordinal value of the reference (e.g., 1 being the first, 2 being the second)</rdfs:comment>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:domain rdf:resource="#TaxonomyMapping"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DemonstrativeExample"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#impactDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Impact Description</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines a description of the technical impact</rdfs:comment>
+    <rdfs:domain rdf:resource="#TechnicalImpact"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="externalLink">
+    <rdfs:label xml:lang="en-US">Reference Link</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies a valid URL where more information regarding this example can be obtained.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#ObservedExample"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#consequenceId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Consequence Identifier</rdfs:label>
+    <rdfs:domain rdf:resource="#Consequence"/>
+    <rdfs:comment xml:lang="en-US">Specifies the value for the related Common Consequence entry identifier. However, Common Consequences across CWE with the same ID should only vary in small details.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="mitigationDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Mitigation Description</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the description of this individual mitigation.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Mitigation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#causalNature">
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Explicit</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Implicit</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Nature of Cause</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the nature of the underlying cause of the weakness. Is it an implicit underlying weakness or is it an issue of behavior on the part of the software developer? Appropriate values are either Implicit, occurring regardless of developer behavior, or Explicit, an explicit weakness resulting from behavior of the developer.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#referenceTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Title</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the title of the material being referenced. It is not required if the material does not have a title.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Reference"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#stakeholder">
+    <rdfs:comment xml:lang="en-US">Specifies what types of members of the CWE community might be interested in this view.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Stakeholder</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Audience"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#detectionMethodId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en-US">Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines an identifier for the related Detection Method. Only one Detection_Method_ID element can exist for each Detection Method element (ex: DM-1). However, Detection Methods across CWE with the same ID should only vary in small details.</rdfs:comment>
+    <rdfs:domain rdf:resource="#DetectionMethod"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="casualNature">
+    <rdfs:comment xml:lang="en-US">Specifies the nature of the underlying cause of the weakness. Is it an implicit underlying weakness or is it an issue of behavior on the part of the software developer? Appropriate values are 	either Implicit, occurring regardless of developer behavior, or Explicit, an explicit weakness resulting from behavior of the developer.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Casual Nature</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Implicit</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Explicit</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Weakness"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hardwareArchitectureName">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >PowerPC</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >SPARC</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >x86</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines  the name of the hardware architectures on which this weakness is likely to exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="#HardwareArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ordinality">
+    <rdfs:label xml:lang="en-US">Ordinality</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies whether this weakness exists independent of other weaknesses, 	Primary, or whether it is the result of the presence of some other weaknesses, Resultant.</rdfs:comment>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Primary</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Resultant</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#WeaknessOrdinality"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#text">
+    <rdfs:domain rdf:resource="#StructuredText"/>
+    <rdfs:comment xml:lang="en-US">Defines a paragraph of text.</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Text</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#mappedNodeName">
+    <rdfs:label xml:lang="en-US">Mapped Node Name</rdfs:label>
+    <rdfs:domain rdf:resource="#TaxonomyMapping"/>
+    <rdfs:comment xml:lang="en-US">Defines athe name of the entry to which this weakness is being mapped in taxonomy Taxonomy_Name.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="entryComment">
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+    <rdfs:label xml:lang="en-US">Comments</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines any comments regarding the content of this weakness entry, such as assumptions made, reasons for omitting 	elements, contact information, pending questions, etc.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="comment">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en-US">Defines a comment in code</rdfs:comment>
+    <rdfs:domain rdf:resource="#StructuredText"/>
+    <rdfs:label xml:lang="en-US">Comment</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#paradigmName">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >Concurrent Systems Operating on Shared Resources</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >SOA</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Mobile Application</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Web-based</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >n-Tier</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Client-Server</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Mainframe</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Paradigm Name</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the name of the architecture  paradigm.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ArchitectureParadigm"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#osName">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >NetBSD</rdf:first>
+                              </rdf:rest>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >FreeBSD</rdf:first>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >OpenBSD</rdf:first>
+                          </rdf:rest>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >MAC OS X</rdf:first>
+                        </rdf:rest>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >Ubuntu Linux</rdf:first>
+                      </rdf:rest>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >SUSE Linux</rdf:first>
+                    </rdf:rest>
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >Red Hat Linux</rdf:first>
+                  </rdf:rest>
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >Solaris</rdf:first>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >Windows 2000</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Windows XP</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Windows Vista</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Windows 7</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Name</rdfs:label>
+    <rdfs:domain rdf:resource="#OperatingSystem"/>
+    <rdfs:comment xml:lang="en-US">Defines the name of the operating systems in which this weakness is likely to exist.</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#structureType">
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:comment xml:lang="en-US">Specifies how this view is being constructed. &#xD;
+&#xD;
+Valid values are: Implicit Slice = a slice based on a filter criteria; Explicit Slice = a slice based on arbitrary membership, as defined by specific relationships between entries; Graph = a bounded graphical slice based on ChildOf relationships</rdfs:comment>
+    <rdfs:label xml:lang="en-US">Structure Type</rdfs:label>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Graph</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Explicit_Slice</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Implicit_Slice</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#id">
+    <edt:editorHiddenField rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</edt:editorHiddenField>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#View"/>
+    <rdfs:domain rdf:resource="#Weakness"/>
+    <rdfs:label xml:lang="en-US">Common Weakness Enumeration (CWE) Identifier</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Specifies the Common Weakness Enumeration (CWE) Identifier for this entry.   It will be static for the lifetime of the entry. In the event that this entry becomes deprecated, the ID will not be reused and a pointer will be left in this entry to the replacement.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CompoundElement"/>
+    <rdfs:domain rdf:resource="#Category"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#entryType">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >NameChange</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Modification</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Contribution</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Submission</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:label xml:lang="en-US">Entry Type</rdfs:label>
+    <rdfs:comment xml:lang="en-US">Defines the type of the Content History.</rdfs:comment>
+    <rdfs:domain rdf:resource="#HistoryRecord"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

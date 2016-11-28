@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/Thread">
@@ -67,8 +67,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${threadID}</edt:displayNameTemplate>
+    
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
@@ -99,8 +98,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${threadID})}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Thread</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -119,8 +117,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterize a generic process threads</rdfs:comment>
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
@@ -179,8 +176,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${threadID}</edt:displayNameTemplate>
+    
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
@@ -246,8 +242,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -305,13 +300,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${threadID})}</edt:iriTemplate>
+    
   </owl:Class>
   <owl:ObjectProperty rdf:about="#handle">
     <rdfs:label xml:lang="en-US">Handle</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
     <rdfs:domain rdf:resource="#WindowsThread"/>
@@ -319,8 +312,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#context">
     <rdfs:label xml:lang="en-US">Context</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#WindowsThread"/>
@@ -328,30 +320,25 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#threadID">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Thread ID</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Thread"/>
     <rdfs:comment xml:lang="en-US">Specifies the identifier of this thread.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#runningStatus">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ThreadRunningStatusVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:domain rdf:resource="#Thread"/>
     <rdfs:label xml:lang="en-US">Running Status</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the running state that the thread is in.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ThreadRunningStatusVocab-1.0</edt:rangeControlledVocabClass>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#startAddress">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Thread"/>
     <rdfs:label xml:lang="en-US">Start Address</rdfs:label>
@@ -359,8 +346,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#parameterAddress">
     <rdfs:label xml:lang="en-US">Parameter Address</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Thread"/>
     <rdfs:comment xml:lang="en-US">Specifies the address of the parameters passed to the start address.</rdfs:comment>
@@ -368,8 +354,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#stackSize">
     <rdfs:label xml:lang="en-US">Stack Size</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Thread"/>
     <rdfs:comment xml:lang="en-US">Specifies  the stack size of the thread. &#xD;
@@ -382,14 +367,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Thread"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the creation time of the thread.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#priority">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Priority</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Thread"/>
@@ -397,8 +380,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#securityAttributes">
     <rdfs:label xml:lang="en-US">Security Attributes</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsThread"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -406,8 +388,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#creationFlags">
     <rdfs:label xml:lang="en-US">Creation Flags</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsThread"/>
     <rdfs:comment xml:lang="en-US">Specifies the creation flags that a thread may be launched with. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx.</rdfs:comment>

@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:oa="http://www.w3.org/ns/oa#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:cnt="http://www.w3.org/2011/content#"
@@ -16,8 +16,7 @@
     <owl:imports rdf:resource="http://www.w3.org/2011/content"/>
   </owl:Ontology>
   <owl:Class rdf:ID="TextPositionSelector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -44,8 +43,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="RdfTripleSelector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >SELECT ?anno WHERE { ?anno oa:hasTarget ?spt . ?spt a oa:SpecificResource .
             ?spt oa:hasSelector ?data . ?data a oa:RdfTripleSelector . 
@@ -68,8 +66,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Moderation">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents an assignment of value or quality to the target resource(s)</rdfs:comment>
     <rdfs:label xml:lang="en-US">Moderation</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -78,8 +75,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Question">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents a question about the target resource(s)</rdfs:comment>
     <rdfs:label xml:lang="en-US">Question</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -103,8 +99,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="SpecificResource">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -138,8 +133,7 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
   <owl:Class rdf:ID="DataPositionSelector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -166,8 +160,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="TimeState">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -194,8 +187,7 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="HttpRequestState">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -222,8 +214,7 @@
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents a commentary about or review of the target resource(s).</rdfs:comment>
     <rdfs:label xml:lang="en-US">Comment</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Class rdf:about="#Body"/>
     </rdfs:subClassOf>
@@ -245,16 +236,14 @@
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Body">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Body</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
   <owl:Class rdf:ID="Change">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents a request for a modification or edit to the target resource.
 
 An instance of Change is MUST be used with the editing motivation.</rdfs:comment>
@@ -290,8 +279,7 @@ An instance of Change is MUST be used with the editing motivation.</rdfs:comment
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Link">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents a link (of unspecified semantics) between the body and target resources</rdfs:comment>
     <rdfs:label xml:lang="en-US">Link</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -307,8 +295,7 @@ An instance of Change is MUST be used with the editing motivation.</rdfs:comment
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="CssStyle">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">CSS style</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Characterizes a resource which describes styles for resources participating in the Annotation using CSS.</rdfs:comment>
@@ -317,16 +304,14 @@ An instance of Change is MUST be used with the editing motivation.</rdfs:comment
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Style">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characerizes a resource which describes the style in which the selection or resource should be rendered.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Style</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
   <owl:Class rdf:ID="Annotation">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -371,8 +356,7 @@ An annotation is considered to be a set of connected resources, typically includ
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Note">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents a description of the target resource(s), as opposed to a Comment about them.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Note</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -400,8 +384,7 @@ An annotation is considered to be a set of connected resources, typically includ
     <rdfs:label xml:lang="en-US">Motivation</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="Tag">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2011/content#ContentAsText"/>
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that contains a tag on the target resource(s).</rdfs:comment>
     <rdfs:label xml:lang="en-US">Tag</rdfs:label>
@@ -416,8 +399,7 @@ An annotation is considered to be a set of connected resources, typically includ
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Selector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a Selector which is a Specifier that describes how to determine the segment of interest from within the retrieved representation of the Source resource. The nature of the Selector will be dependent on the type of the representation for which the segment is conveyed. 
 
 For example the methods used to describe a section of an image will be very different to the methods used to discover the correct paragraph of text, or the correct slice of a dataset.</rdfs:comment>
@@ -426,8 +408,7 @@ For example the methods used to describe a section of an image will be very diff
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
   <owl:Class rdf:ID="TextQuoteSelector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -461,8 +442,7 @@ For example the methods used to describe a section of an image will be very diff
     <rdfs:subClassOf rdf:resource="#Selector"/>
   </owl:Class>
   <owl:Class rdf:ID="Reply">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents a reply to a previous statement, either an Annotation or another resource.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2011/content#ContentAsText"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -484,8 +464,7 @@ For example the methods used to describe a section of an image will be very diff
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="FragmentSelector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -501,24 +480,21 @@ For example the methods used to describe a section of an image will be very diff
     <rdfs:subClassOf rdf:resource="#Selector"/>
   </owl:Class>
   <owl:Class rdf:ID="SvgSelector">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Svg selector</rdfs:label>
     <rdfs:comment xml:lang="en-US">Characterizes a Selector which defines a shape using the SVG standard.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#Selector"/>
   </owl:Class>
   <owl:Class rdf:ID="Classification">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation that represents the assignment of a classification type, typically from a controlled vocabulary, to the target resource(s).</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Classification</rdfs:label>
     <rdfs:subClassOf rdf:resource="#Body"/>
   </owl:Class>
   <owl:Class rdf:ID="SemanticTag">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the body of an annotation when it is a semantic tagging resource; a URI that identifies a concept, rather than an embedded string, frequently a term from a controlled vocabulary</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Semantic Tag</rdfs:label>
@@ -534,8 +510,7 @@ For example the methods used to describe a section of an image will be very diff
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#State">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >annotation</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a resource which describes how to retrieve a representation of the Source resource that is appropriate for the Annotation.</rdfs:comment>
     <rdfs:label xml:lang="en-US">State</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>

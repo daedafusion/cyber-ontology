@@ -4,7 +4,7 @@
     xmlns:stixc="http://stix.mitre.org/stixCommon#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://stix.mitre.org/stixCommon">
   <owl:Ontology rdf:about="">
@@ -19,8 +19,7 @@
   <rdfs:Datatype rdf:ID="structuredText">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Structured Text</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies that the text description is formatted utilizing an encoding scheme.</rdfs:comment>
   </rdfs:Datatype>
@@ -51,8 +50,7 @@
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -162,8 +160,7 @@ The CostStatement class allows for the expression of a statement, a description 
   </owl:Class>
   <owl:Class rdf:ID="EncodedCDATA">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/encoded_data-${@hash(${encodedValue})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -196,12 +193,10 @@ The CostStatement class allows for the expression of a statement, a description 
     <rdfs:comment xml:lang="en-US">Characterizes data represented in an XML CDATA block. 
 
 Data in a CDATA block may either be represented as-is or, in cases where it may contain characters that are not valid in CDATA, it may be encoded in Base64 per RFC4648. Data encoded in Base64 must be denoted as such using the encoded attribute.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:Class>
   <owl:Class rdf:ID="IncidentRelationship">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -327,10 +322,8 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -410,8 +403,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${phaseName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -421,8 +413,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedaefusion.com/killchain_phase-${phaseId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -433,8 +424,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes an individual phase within a kill chain definition.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Kill Chain Phase</rdfs:label>
@@ -482,8 +472,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -538,8 +527,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validFromDateTime"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http:/www.daedafusion.com/${@hash(${description})}</edt:iriTemplate>
+    
     <rdfs:comment xml:lang="en-US">Characterizes details about the source of a given data for the given STIX context.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -633,8 +621,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -653,10 +640,8 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -755,8 +740,7 @@ The CIQIdentity class is an extension of the concept of STIX Identity found in t
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">STIXCIQIdentity</rdfs:label>
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
@@ -866,8 +850,7 @@ The PlanningAndOperationalSupportStatement class allows for the expression of a 
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -969,8 +952,7 @@ The PlanningAndOperationalSupportStatement class allows for the expression of a 
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validFromDateTime"/>
@@ -978,8 +960,7 @@ The PlanningAndOperationalSupportStatement class allows for the expression of a 
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1024,8 +1005,7 @@ The IndicatorRelationship class MUST only be used to represent the relationship'
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
   </owl:Class>
   <owl:Class rdf:about="#IncidentBase">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1040,8 +1020,7 @@ The IndicatorRelationship class MUST only be used to represent the relationship'
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1051,8 +1030,7 @@ The IndicatorRelationship class MUST only be used to represent the relationship'
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a based definition of information for an Incident. 
 
 The IncidentBase class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of the base class in the STIX Common ontology minimizes the inter-dependencies between STIX components.  The default and strongly RECOMMENDED subclass to extend the IncidentBase class is defined in the STIX Incident ontology</rdfs:comment>
@@ -1067,8 +1045,7 @@ The IncidentBase class is an abstract class, so it MUST be extended via a subcla
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1081,8 +1058,7 @@ The IncidentBase class is an abstract class, so it MUST be extended via a subcla
     <rdfs:label xml:lang="en-US">Campaign base</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a based definition of information for a Campaign. 
 
 The CampaignBase class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of the base class in the STIX Common ontology minimizes the inter-dependencies between STIX components.  The default and strongly RECOMMENDED subclass to extend the CampaignBase class is defined in the STIX Campaign ontology.</rdfs:comment>
@@ -1107,8 +1083,7 @@ The CampaignBase class is an abstract class, so it MUST be extended via a subcla
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a level of confidence held in some assertion.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Confidence</rdfs:label>
     <rdfs:subClassOf>
@@ -1120,8 +1095,7 @@ The CampaignBase class is an abstract class, so it MUST be extended via a subcla
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/confidence-${@hash(${confidence.timestamp}-${confidence.timestampPrecision}-${confidence.value})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1209,8 +1183,7 @@ The LikelyImpactStatement class allows for the expression of a statement, a desc
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1320,8 +1293,7 @@ The LikelyImpactStatement class allows for the expression of a statement, a desc
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#toolServicePack"/>
@@ -1401,8 +1373,7 @@ The LikelyImpactStatement class allows for the expression of a statement, a desc
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1498,8 +1469,7 @@ The LikelyImpactStatement class allows for the expression of a statement, a desc
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1521,8 +1491,7 @@ The LikelyImpactStatement class allows for the expression of a statement, a desc
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Action Entry</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a based definition for an action entry used to record actions taken.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="EfficacyStatement">
@@ -1574,8 +1543,7 @@ The EfficacyStatement class allows for the expression of a statement, a descript
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1653,8 +1621,7 @@ The EfficacyStatement class allows for the expression of a statement, a descript
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="KillChain">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1733,8 +1700,7 @@ The EfficacyStatement class allows for the expression of a statement, a descript
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1965,8 +1931,7 @@ The ThreatActorTypeStatement class allows for the expression of a statement, a d
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2002,8 +1967,7 @@ The ThreatActorTypeStatement class allows for the expression of a statement, a d
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validFromDateTime"/>
@@ -2043,8 +2007,7 @@ The CourseOfActionRelationship class MUST only be used to represent the relation
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2064,8 +2027,7 @@ The CourseOfActionRelationship class MUST only be used to represent the relation
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Class rdf:about="#RelationshipStatement"/>
     </rdfs:subClassOf>
@@ -2107,8 +2069,7 @@ The CourseOfActionRelationship class MUST only be used to represent the relation
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#ExploitTargetBase">
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -2119,8 +2080,7 @@ The CourseOfActionRelationship class MUST only be used to represent the relation
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Exploit Target Base</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
@@ -2232,8 +2192,7 @@ The ImpactStatement class allows for the expression of a statement, a descriptio
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2264,8 +2223,7 @@ The ImpactStatement class allows for the expression of a statement, a descriptio
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="JournalEntry">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2408,8 +2366,7 @@ The SophisticationStatement class allows for the expression of a statement, a de
         >1</owl:minCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2472,10 +2429,8 @@ The SophisticationStatement class allows for the expression of a statement, a de
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the expression of a statement with an associated value, description, source, confidence, and timestamp.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${statementValue}: ${description}</edt:displayNameTemplate>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Statement</rdfs:label>
     <rdfs:subClassOf>
@@ -2540,8 +2495,7 @@ The SophisticationStatement class allows for the expression of a statement, a de
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/statement-${@hash(${timestamp}-${timestampPrecision}-${statementValue})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2571,8 +2525,7 @@ The SophisticationStatement class allows for the expression of a statement, a de
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#RelationshipStatement">
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/ThreatActor#associatedCampaigns</edt:reifiedDomain>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -2591,10 +2544,8 @@ The SophisticationStatement class allows for the expression of a statement, a de
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/TTP#exploitTargets</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedTTP</edt:reifiedDomain>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2604,12 +2555,9 @@ The SophisticationStatement class allows for the expression of a statement, a de
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/Report#relatedReports</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedExploitTarget</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/Incident#leveragedTTPs</edt:reifiedDomain>
+    
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#time.receivedDateTime"/>
@@ -2627,8 +2575,7 @@ The SophisticationStatement class allows for the expression of a statement, a de
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedCampaign</edt:reifiedDomain>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2638,16 +2585,11 @@ The SophisticationStatement class allows for the expression of a statement, a de
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedObservable</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedCourseOfAction</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/ThreatActor#associatedActors</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/Incident#attributedThreatActors</edt:reifiedDomain>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/reified/${@hash(${subject}${predicate}${object})}</edt:iriTemplate>
+    
+    
+    
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2657,12 +2599,9 @@ The SophisticationStatement class allows for the expression of a statement, a de
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedThreatActor</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/Campaign#attribution</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedIdentity</edt:reifiedDomain>
+    
+    
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -2681,16 +2620,11 @@ The SophisticationStatement class allows for the expression of a statement, a de
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/ThreatActor#observedTTPs</edt:reifiedDomain>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedIncident</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedPackages</edt:reifiedDomain>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/Indicator#suggestedCOAs</edt:reifiedDomain>
+    
+    
+    
+    
+    
     <rdfs:label xml:lang="en-US">Relationship Statement</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -2715,8 +2649,7 @@ The SophisticationStatement class allows for the expression of a statement, a de
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/stixCommon#relatedIndicator</edt:reifiedDomain>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -2740,8 +2673,7 @@ The SophisticationStatement class allows for the expression of a statement, a de
 The definition of the base class in the STIX Common ontology minimizes the inter-dependencies between STIX components and helps to define a consistent structure for relationships that go beyond a simple statement of "construct A is related to construct B".  Instead, additional properties ofthe relationship can be specified such as the nature of the relationship and the level of confidence in the presence and accuracy of the asserted relationship.
 
 The RelationshipStatement class is designed to support its use in representing the relationship attributes as reified data or as a nary-relationship that can be associated with relationship between a subject STIX construct and another STIX construct through the use of the rdf:subject, rdf:predicate, and rdf:object properties.</rdfs:comment>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/Campaign#associatedCampaigns</edt:reifiedDomain>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2749,8 +2681,7 @@ The RelationshipStatement class is designed to support its use in representing t
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validToDateTime"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/ExploitTarget#potentialCOAs</edt:reifiedDomain>
+    
   </owl:Class>
   <owl:Class rdf:ID="IntendedEffectStatement">
     <rdfs:subClassOf>
@@ -2874,12 +2805,10 @@ The IntendedEffectStatement class allows for the expression of a statement, a de
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="#Statement"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:Class>
   <owl:Class rdf:ID="PackageRelationship">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2889,8 +2818,7 @@ The IntendedEffectStatement class allows for the expression of a statement, a de
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2992,8 +2920,7 @@ The IntendedEffectStatement class allows for the expression of a statement, a de
 The PackageRelationship class is designed to support its use in representing the relationship attributes as an nary-relationship that can be associated with relationship between a subject STIX construct and a STIX Package through the use of the rdf:subject, rdf:predicate, and rdf:object properties.  The PackageRelationship class inherits from the RelationshipStatement class but is extended with the relatedPackage property that references an instance of the PackageBase class or one of its subclasses.
 
 The PackageRelationship class MUST only be used to represent the relationship's attributes as an nary-relationship.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:Class>
   <owl:Class rdf:about="#PackageBase">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -3006,8 +2933,7 @@ The PackageRelationship class MUST only be used to represent the relationship's 
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3018,8 +2944,7 @@ The PackageRelationship class MUST only be used to represent the relationship's 
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:label xml:lang="en-US">Package base</rdfs:label>
     <rdfs:comment xml:lang="en-US">Characterizes a based definition of information for a Package. 
 
@@ -3054,8 +2979,7 @@ The PackageBase class is an abstract class, so it MUST be extended via a subclas
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Observable Relationship</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3082,8 +3006,7 @@ The PackageBase class is an abstract class, so it MUST be extended via a subclas
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -3103,8 +3026,7 @@ The PackageBase class is an abstract class, so it MUST be extended via a subclas
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="#RelationshipStatement"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3146,8 +3068,7 @@ The ObservableRelationship class MUST only be used to represent the relationship
   <owl:Class rdf:about="#IndicatorBase">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Indicator Base</rdfs:label>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3167,8 +3088,7 @@ The ObservableRelationship class MUST only be used to represent the relationship
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a based definition of information for an Indicator. 
 
 The IndicatorBase class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of the base class in the STIX Common ontology minimizes the inter-dependencies between STIX components.  The default and strongly RECOMMENDED subclass to extend the IndicatorBase class is defined in the STIX Indicator ontology.</rdfs:comment>
@@ -3202,8 +3122,7 @@ The IndicatorBase class is an abstract class, so it MUST be extended via a subcl
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3253,8 +3172,7 @@ The IndicatorBase class is an abstract class, so it MUST be extended via a subcl
 The TTPRelationship class is designed to support its use in representing the relationship attributes as an nary-relationship that can be associated with relationship between a subject STIX construct and a STIX TTP through the use of the rdf:subject, rdf:predicate, and rdf:object properties.  The TTPRelationship class inherits from the RelationshipStatement class but is extended with the relatedTTP property that references an instance of the TTPBase class or one of its subclasses.
 
 The TTPRelationship class MUST only be used to represent the relationship's attributes as an nary-relationship.</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -3280,8 +3198,7 @@ The TTPRelationship class MUST only be used to represent the relationship's attr
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="#RelationshipStatement"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3301,8 +3218,7 @@ The TTPRelationship class MUST only be used to represent the relationship's attr
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >false</edt:abstract>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">TTP Base</rdfs:label>
     <rdfs:subClassOf>
@@ -3314,24 +3230,20 @@ The TTPRelationship class MUST only be used to represent the relationship's attr
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:comment xml:lang="en-US">Characterizes a based definition of information for a TTP. 
 
 The TTPBase class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of the base class in the STIX Common ontology minimizes the inter-dependencies between STIX components.  The default and strongly RECOMMENDED subclass to extend the TTPBase class is defined in the STIX TTP ontology. {@en-US}</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#Activity">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes basic information about an activity a defender might use.
 
 The Activity class is an abstract class, so it MUST be extended via a subclass to express additional activity information.  STIX does not currently define a defaul subclass.  Note that an activity defined by the Activity class is fairly simple and includes only date/time information and a description.  By contrast, a Course of Action construct contains detailed information such as the stage in the cyber threat management lifecycle to which the course of action is relevant, the impact and cost of applying the course of action, and the efficacy of the course of action.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/activity-${@hash(${timestamp}-${timestampPrecision})}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${timestamp}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -3341,8 +3253,7 @@ The Activity class is an abstract class, so it MUST be extended via a subclass t
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel"/>
@@ -3401,10 +3312,8 @@ The Activity class is an abstract class, so it MUST be extended via a subclass t
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Report Base</rdfs:label>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Characterizes a based definition of information for a Report. 
 
@@ -3436,8 +3345,7 @@ The ReportBase class is an abstract class, so it MUST be extended via a subclass
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Identity Relationship</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3456,8 +3364,7 @@ The ReportBase class is an abstract class, so it MUST be extended via a subclass
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3467,8 +3374,7 @@ The ReportBase class is an abstract class, so it MUST be extended via a subclass
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3540,10 +3446,8 @@ The IdentityRelationship class MUST only be used to represent the relationship's
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Course of action base</rdfs:label>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3601,8 +3505,7 @@ The CourseOfActionBase class is an abstract class, so it MUST be extended via a 
 The ExploitTargetRelationship class is designed to support its use in representing the relationship attributes as an nary-relationship that can be associated with relationship between a subject STIX construct and a STIX Exploit Target through the use of the rdf:subject, rdf:predicate, and rdf:object properties.  The ExploitTargetRelationship class inherits from the RelationshipStatement class but is extended with the relatedExpoloitTarget property that references an instance of the ExploitTargetBase class or one of its subclasses.
 
 The ExploitTargetRelationship class MUST only be used to represent the relationship's attributes as an nary-relationship.</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3612,8 +3515,7 @@ The ExploitTargetRelationship class MUST only be used to represent the relations
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -3682,8 +3584,7 @@ The ExploitTargetRelationship class MUST only be used to represent the relations
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3744,10 +3645,8 @@ The ExploitTargetRelationship class MUST only be used to represent the relations
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3766,8 +3665,7 @@ The ExploitTargetRelationship class MUST only be used to represent the relations
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${relationshipType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf rdf:resource="#RelationshipStatement"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -3813,10 +3711,8 @@ The CampaignRelationship class MUST only be used to represent the relationship's
     <rdfs:label xml:lang="en-US">Campaign Relationship</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="#ThreatActorBase">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Threat Actor Base</rdfs:label>
     <rdfs:subClassOf>
@@ -3847,8 +3743,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="#CourseOfActionBase"/>
     <rdfs:label xml:lang="en-US">Course of Action</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#infoSource.identity">
     <rdfs:comment xml:lang="en-US">Specifies a reference to the identity of the source of the information</rdfs:comment>
@@ -3856,8 +3751,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#InformationSource"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -3874,12 +3768,10 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:domain rdf:resource="#Asset"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Structured Description</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="killChainPhases">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#KillChainPhase"/>
     <rdfs:label xml:lang="en-US">Kill Chain Phases</rdfs:label>
@@ -3889,8 +3781,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   <owl:ObjectProperty rdf:about="#relatedCampaign">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more related campaigns.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Related Campaign</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#CampaignBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#CampaignRelationship"/>
@@ -3899,14 +3790,12 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber observables</rdfs:comment>
     <rdfs:label xml:lang="en-US">Observables</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="tools">
     <rdfs:comment xml:lang="en-US">Specifies a reference to a description of the tools utilized for this instance.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Tools</rdfs:label>
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
@@ -3918,8 +3807,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="#PackageBase"/>
     <rdfs:label xml:lang="en-US">Related Package</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#PackageRelationship"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#confidence.source">
@@ -3927,8 +3815,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Statement"/>
     <rdfs:domain rdf:resource="#Confidence"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Confidence Source</rdfs:label>
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:range rdf:resource="#InformationSource"/>
@@ -3936,8 +3823,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   <owl:ObjectProperty rdf:ID="infoSource.contributingSources">
     <rdfs:comment xml:lang="en-US">Specifies a reference to a description of the individual contributing sources involved in this instance.</rdfs:comment>
     <rdfs:range rdf:resource="#InformationSource"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#InformationSource"/>
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -3947,8 +3833,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more related identities.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Related Identity</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -3966,16 +3851,14 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber threat TTPs</rdfs:comment>
     <rdfs:range rdf:resource="#TTPBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">TTPs</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedExploitTarget">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more related exploit targets.</rdfs:comment>
     <rdfs:range rdf:resource="#ExploitTargetBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Exploit Target</rdfs:label>
     <rdfs:domain rdf:resource="#ExploitTargetRelationship"/>
   </owl:ObjectProperty>
@@ -3986,8 +3869,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:domain rdf:resource="#Confidence"/>
     <rdfs:label xml:lang="en-US">Confidence Assertion Chain</rdfs:label>
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#Confidence"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#location">
@@ -3996,38 +3878,33 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Location</rdfs:label>
     <rdfs:domain rdf:resource="#Asset"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="exploitTargets">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber threat exploit targets</rdfs:comment>
     <rdfs:label xml:lang="en-US">Exploit Targets</rdfs:label>
     <rdfs:range rdf:resource="#ExploitTargetBase"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="threatActors">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber Threat Actors</rdfs:comment>
     <rdfs:label xml:lang="en-US">Threat Actors</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#ThreatActorBase"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="incidents">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber threat incidents</rdfs:comment>
     <rdfs:label xml:lang="en-US">Incidents</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#IncidentBase"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedIncident">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more related incidents.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Related Incident</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#IncidentBase"/>
     <rdfs:domain rdf:resource="#IncidentRelationship"/>
@@ -4037,8 +3914,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="#ThreatActorBase"/>
     <rdfs:label xml:lang="en-US">Related Threat Actor</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ThreatActorRelationship"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#author.Details">
@@ -4046,8 +3922,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:comment xml:lang="en-US">Specifies a reference to details about the author</rdfs:comment>
     <rdfs:domain rdf:resource="#JournalEntry"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -4060,8 +3935,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="identity">
     <rdfs:comment xml:lang="en-US">Specifies a reference to the identity of the entity.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Identity</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range>
@@ -4077,8 +3951,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   <owl:ObjectProperty rdf:ID="relatedObservables">
     <rdfs:comment xml:lang="en-US">Specifies a reference to the related observables.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Related Sbservables</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
   </owl:ObjectProperty>
@@ -4087,8 +3960,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:label xml:lang="en-US">Related Packages</rdfs:label>
     <rdfs:range rdf:resource="#PackageBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="contributors">
     <rdfs:comment xml:lang="en-US">Specifies a reference to contributing actors to an activity</rdfs:comment>
@@ -4096,23 +3968,20 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:domain rdf:resource="#ActionEntry"/>
     <rdfs:label xml:lang="en-US">Contributors</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="indicators">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber threat indicators</rdfs:comment>
     <rdfs:label xml:lang="en-US">Indicators</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#IndicatorBase"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="campaigns">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one more cyber threat Campaigns</rdfs:comment>
     <rdfs:range rdf:resource="#CampaignBase"/>
     <rdfs:label xml:lang="en-US">Campaigns</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedTTP">
@@ -4120,14 +3989,12 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="#TTPBase"/>
     <rdfs:label xml:lang="en-US">Related TTP</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#TTPRelationship"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#informationSource">
     <rdfs:comment xml:lang="en-US">Specifies a reference to the source of the information for this entity.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#InformationSource"/>
     <rdfs:domain rdf:resource="#Statement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -4138,23 +4005,20 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Related Observable</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies a reference to the related observable.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ObservableRelationship"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="coursesOfAction">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more cyber threat Courses of Action.</rdfs:comment>
     <rdfs:range rdf:resource="#CourseOfActionBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Courses of Action</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedIndicator">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more related indicators.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Related Indicator</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#IndicatorBase"/>
     <rdfs:domain rdf:resource="#IndicatorRelationship"/>
@@ -4164,25 +4028,20 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="#CourseOfActionBase"/>
     <rdfs:label xml:lang="en-US">Related Course of Action</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#CourseOfActionRelationship"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="confidence">
     <rdfs:comment xml:lang="en-US">Specifies a reference to the level of confidence held in the characterization of this entity.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#Confidence"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Confidence</rdfs:label>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#locationClass">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#LocationClassVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#LocationClassVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Location Class</rdfs:label>
@@ -4198,20 +4057,16 @@ By default, the Location Class Vocabulary is used to defined a restricted set of
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the organization or individual responsible for this kill chain definition.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#KillChain"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#impactValue">
     <rdfs:domain rdf:resource="#ImpactStatement"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the estimated impact. 
 
@@ -4223,12 +4078,9 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the statement within some vocabulary.
 
 Examples of statement levels include High, Medium, and Low (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4236,13 +4088,10 @@ Examples of statement levels include High, Medium, and Low (these specific value
 By default, the High Medium Low Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="infoSource.role">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#InformationSourceRoleVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#InformationSourceRoleVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:domain rdf:resource="#InformationSource"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Role</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -4255,8 +4104,7 @@ By default, the Information Source Role Vocabulary is used to defined a restrict
   <owl:DatatypeProperty rdf:about="#confidence.timestampPrecision">
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Confidence"/>
     <rdfs:domain rdf:resource="#Statement"/>
     <rdfs:label xml:lang="en-US">Confidence Timestamp Precision</rdfs:label>
@@ -4294,8 +4142,7 @@ By default, the Information Source Role Vocabulary is used to defined a restrict
   <owl:DatatypeProperty rdf:about="#relationshipType">
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Relationship Type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the type of the relationship between the two components.</rdfs:comment>
@@ -4303,18 +4150,15 @@ By default, the Information Source Role Vocabulary is used to defined a restrict
   <owl:DatatypeProperty rdf:about="#parentId">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the identifier for the parent object</rdfs:comment>
     <rdfs:label xml:lang="en-US">Parent ID</rdfs:label>
-    <edt:editorHiddenField rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:editorHiddenField>
+    
     <rdfs:domain rdf:resource="#Asset"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#id">
     <rdfs:domain rdf:resource="#IncidentBase"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ThreatActorBase"/>
     <rdfs:domain rdf:resource="#PackageBase"/>
     <rdfs:domain rdf:resource="#ExploitTargetBase"/>
@@ -4330,8 +4174,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:domain rdf:resource="#Statement"/>
     <rdfs:domain rdf:resource="#CourseOfActionBase"/>
     <rdfs:domain rdf:resource="#ReportBase"/>
-    <edt:autoGenerate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${@uuid()}</edt:autoGenerate>
+    
     <rdfs:domain rdf:resource="#Confidence"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#CampaignBase"/>
@@ -4346,14 +4189,12 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:label xml:lang="en-US">Short Description</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies a short, unstructured, text description</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ToolInformation"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#title">
     <rdfs:comment xml:lang="en-US">Specifies a simple title for the entity</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Title</rdfs:label>
@@ -4361,15 +4202,12 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#costValue">
     <rdfs:domain rdf:resource="#CostStatement"/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the estimated cost for applying this Course of Action. 
 
 Examples of cost levels include High, Medium, and Low (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4377,8 +4215,7 @@ Examples of cost levels include High, Medium, and Low (these specific values are
 By default, the High Medium Low Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="identityRole">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#CIQIdentity"/>
     <rdfs:label xml:lang="en-US">Role</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -4391,8 +4228,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#assetDescription">
@@ -4401,16 +4237,12 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
     <rdfs:domain rdf:resource="#Asset"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ownershipClass">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#OwnershipClassVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#OwnershipClassVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Ownership Class</rdfs:label>
@@ -4425,8 +4257,7 @@ By default, the Ownership Class Vocabulary is used to defined a restricted set o
     <rdfs:comment xml:lang="en-US">Specifies the precision of the associated timestamp value.
 
 If omitted, the default is "seconds", meaning the timestamp is precise to the full field value.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Timestamp Precision</rdfs:label>
     <rdfs:domain rdf:resource="#Statement"/>
@@ -4470,17 +4301,13 @@ If omitted, the default is "seconds", meaning the timestamp is precise to the fu
     <rdfs:domain rdf:resource="#Activity"/>
     <rdfs:domain rdf:resource="#KillChain"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#managementClass">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#ManagementClassVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#ManagementClassVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Management Class</rdfs:label>
@@ -4492,10 +4319,8 @@ Examples of management class include Internally-Managed, Co-Managed, and Unknown
 By default, the Management Class Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#phaseId">
-    <edt:autoGenerate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${@uuid()}</edt:autoGenerate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Phase Id</rdfs:label>
@@ -4504,15 +4329,12 @@ By default, the Management Class Vocabulary is used to defined a restricted set 
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#motivationValue">
     <rdfs:domain rdf:resource="#MotivationStatement"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#MotivationVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#MotivationVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the statement within some vocabulary.
 
 Examples of motivation include Ideological, Ego, Military, and Political (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4520,8 +4342,7 @@ Examples of motivation include Ideological, Ego, Military, and Political (these 
 By default, the Motivation Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#killChainName">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Kill Chain Name</rdfs:label>
@@ -4532,12 +4353,9 @@ By default, the Motivation Vocabulary is used to defined a restricted set of val
     <rdfs:domain rdf:resource="#LikelyImpactStatement"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
+    
     <rdfs:label xml:lang="en-US">Likely Impact</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the likely potential impact within the relevant context if this Indicator were to occur. 
 
@@ -4549,22 +4367,18 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:comment xml:lang="en-US">Specifies a brief description of the asset's role, mission, and importance within the organization.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Asset"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Business Function</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#efficacyValue">
     <rdfs:domain rdf:resource="#EfficacyStatement"/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the effectiveness.
 
 Examples of effectiveness levels include High, Medium, and Low (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4577,23 +4391,20 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:comment xml:lang="en-US">Specifies the time at which the activity was completed.</rdfs:comment>
     <rdfs:label xml:lang="en-US">End Time</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#confidence.timestamp">
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Statement"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Confidence"/>
     <rdfs:label xml:lang="en-US">Confidence Timestamp</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the time of this Confidence assertion.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="lastModifiedDateTime">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label xml:lang="en-US">Last Modified</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -4604,12 +4415,9 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:domain rdf:resource="#ThreatActorTypeStatement"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#ThreatActorTypeVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#ThreatActorTypeVocab</edt:rangeControlledVocabSet>
+    
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the type(s) of a threat actor. 
 
 Examples of threat actor type include Hacker, Hacktivist, and State Actor/Agency (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4618,14 +4426,11 @@ By default, the Threat Actor Type Vocabulary is used to defined a restricted set
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#intendedEffectVaue">
     <rdfs:domain rdf:resource="#IntendedEffectStatement"/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#IntendedEffectVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#IntendedEffectVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the intended effect.
 
@@ -4635,15 +4440,12 @@ By default, the Intended Effect Vocabulary is used to defined a restricted set o
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#planningAndOpSupportValue">
     <rdfs:domain rdf:resource="#PlanningAndOperationalSupportStatement"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#PlanningAndOperationalSupportVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#PlanningAndOperationalSupportVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:comment xml:lang="en-US">Specifies a value characterizing the suspected planning and operational support performed by this threat actor. 
 
 Examples of planning and operational support include Data Exploitation, Planning, and Skill Development / Recuritment (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4654,8 +4456,7 @@ By default, the Planning and Operational Support Vocabulary is used to defined a
     <rdfs:domain rdf:resource="#JournalEntry"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the name of the author</rdfs:comment>
     <rdfs:label xml:lang="en-US">Author</rdfs:label>
   </owl:DatatypeProperty>
@@ -4667,8 +4468,7 @@ By default, the Planning and Operational Support Vocabulary is used to defined a
     <rdfs:label xml:lang="en-US">Confidence Description</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies a description of the confidence value and how it was derived.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encoded">
     <rdfs:comment xml:lang="en-US">Specifies whether the content encoded in the element is encoded using Base64 per RFC4648.  
@@ -4676,14 +4476,12 @@ By default, the Planning and Operational Support Vocabulary is used to defined a
 If true, the data is encoded, else the data is not encoded.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Encoded</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:domain rdf:resource="#EncodedCDATA"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#phaseName">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Phase Name</rdfs:label>
@@ -4691,15 +4489,12 @@ If true, the data is encoded, else the data is not encoded.</rdfs:comment>
     <rdfs:domain rdf:resource="#KillChainPhase"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#assetType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#AssetTypeVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#AssetTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Type</rdfs:label>
     <rdfs:domain rdf:resource="#Asset"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the type of the asset.
 
@@ -4710,22 +4505,18 @@ By default, the Asset Type Vocabulary is used to defined a restricted set of val
   <owl:DatatypeProperty rdf:about="#time.startTimestamp">
     <rdfs:domain rdf:resource="#ActionEntry"/>
     <rdfs:label xml:lang="en-US">Start Time</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the time at which the activity was begun.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sophisticationValue">
     <rdfs:domain rdf:resource="#SophisticationStatement"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#ThreatActorSophisticationVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#ThreatActorSophisticationVocab</edt:rangeControlledVocabSet>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Specifies a value characterizing the sophistication of a Threat Actor .
@@ -4737,8 +4528,7 @@ By default, the Threat Actor Sophistication Vocabulary is used to defined a rest
   <owl:DatatypeProperty rdf:ID="references">
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:domain rdf:resource="#InformationSource"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">References</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies references to information source material for this instance.</rdfs:comment>
@@ -4746,12 +4536,9 @@ By default, the Threat Actor Sophistication Vocabulary is used to defined a rest
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#confidence.value">
     <rdfs:domain rdf:resource="#Confidence"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://stix.mitre.org/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
+    
     <rdfs:label xml:lang="en-US">Confidence Level</rdfs:label>
     <rdfs:domain rdf:resource="#Statement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -4764,8 +4551,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#externalReference">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:label xml:lang="en-US">External Reference</rdfs:label>
@@ -4773,8 +4559,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:domain rdf:resource="#KillChain"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberOfPhases">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Number of Phases</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -4782,8 +4567,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:domain rdf:resource="#KillChain"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#phaseDescription">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Phase Description</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies a brief description of the kill chain phase.</rdfs:comment>
@@ -4791,8 +4575,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:domain rdf:resource="#KillChainPhase"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#timestamp">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#TTPBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#ExploitTargetBase"/>
@@ -4813,16 +4596,14 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
   <owl:DatatypeProperty rdf:about="#encodedValue">
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Encoded Value</rdfs:label>
     <rdfs:domain rdf:resource="#EncodedCDATA"/>
     <rdfs:comment xml:lang="en-US">Specifies the data enoded as CDATA</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#relationshipScope">
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Relationship Scope</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies how multiple related items should be interpreted in this relationship. 
@@ -4849,8 +4630,7 @@ If "exclusive" is specified, then multiple relationships are being defined betwe
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <rdfs:label xml:lang="en-US">Ordinal Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >stix</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#KillChainPhase"/>
   </owl:DatatypeProperty>
 </rdf:RDF>

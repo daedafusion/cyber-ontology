@@ -5,7 +5,7 @@
     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://nvd.nist.gov/cvss">
   <owl:Ontology rdf:about="http://nvd.nist.gov/cvss">
@@ -27,8 +27,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >(${score}) - E:${exportability}/RL:${remediationLevel}/RC:${reportConfidence}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -66,8 +65,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -77,8 +75,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >nvd:/CVSS/Temporal/${generationDate}/${score}-E:${exportability}/RL:${remediationLevel}/RC:${reportConfidence}</edt:iriTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
@@ -102,8 +99,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">CVSS Temporal Metrics</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="EnvironmentalMetrics">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -113,8 +109,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >nvd:/CVSS/Environ/${generationDate}/${score}-CDP:${collateralDamangePotential}/TD:${targetDistribution}/CR:${confidentialityRequirement}/IR:${integrityRequirement}/AR:${availabilityRequirement}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -143,8 +138,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Defines the characteristics of a vulnerability that are relevant and unique to a particular user's environment.</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >(${score} - CDP:${collateralDamangePotential}/TD:${targetDistribution}/CR:${confidentialityRequirement}/IR:${integrityRequirement}/AR:${availabilityRequirement}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -204,8 +198,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >(${score}) - AV:${accessVector}/AC:${accessComplexity}/Au:${authenticationAttempts}/C:${confidentialityImpact}/I:${integrityImpact}/A:${availabilityImpact}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -281,8 +274,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -302,8 +294,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >nvd:/CVSS/Base/${generationDate}/${score}-AV:${accessVector}/AC:${accessComplexity}/Au:${authenticationAttempts}/C:${confidentialityImpact}/I:${integrityImpact}/A:${availabilityImpact}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -393,12 +384,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${iriPrefix}:/${cve-id}/score</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${vector} Base: ${baseMetrics.score} Environ: ${environmentalMetric.score} Temporal: {$temporalMetrics.score}</edt:displayNameTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -428,12 +416,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#CVSS">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${vector} Base: ${baseMetrics.score} Environ: ${environmentalMetric.score} Temporal: {$temporalMetrics.score}</edt:displayNameTemplate>
+    
     <rdfs:comment xml:lang="en-US">Defines Common Vulnerability Score System for a vulnerability</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -445,8 +431,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">CVSS</rdfs:label>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${iriPrefix}:/${cve-id}/score</edt:iriTemplate>
+    
   </owl:Class>
   <owl:ObjectProperty rdf:about="#termporalMetrics">
     <rdfs:range rdf:resource="#TemporalMetrics"/>
@@ -454,22 +439,19 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#CVSS"/>
     <rdfs:label xml:lang="en-US">Temporal Metrics Details</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#environmentalMetrics">
     <rdfs:domain rdf:resource="#CVSS"/>
     <rdfs:label xml:lang="en-US">Environmental Metrics Details</rdfs:label>
     <rdfs:range rdf:resource="#EnvironmentalMetrics"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies a reference to the details for environmental metrics</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#baseMetrics">
     <rdfs:domain rdf:resource="#CVSS"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#BaseMetrics"/>
     <rdfs:comment xml:lang="en-US">Specifies a reference to the details for the base metrics</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -501,8 +483,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:range>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#remediationLevel">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -534,14 +515,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#overallScore">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the overall score.</rdfs:comment>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:label xml:lang="en-US">Overall Score</rdfs:label>
@@ -568,8 +547,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:range>
     <rdfs:domain rdf:resource="#BaseMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#availabilityRequirement">
     <rdfs:comment xml:lang="en-US">Specifies the importance of the affected IT asset to a user's organization in terms of availability.</rdfs:comment>
@@ -597,8 +575,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:range>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#temporalScore">
     <rdfs:label xml:lang="en-US">Temporal Score</rdfs:label>
@@ -606,8 +583,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exploitSubscore">
     <rdfs:comment xml:lang="en-US">Specifies the base exploit sub-score asisgned to a vulnerability by a source</rdfs:comment>
@@ -615,8 +591,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Exploit Subscore</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#collateralDamagePotential">
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
@@ -652,8 +627,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the potential for losss of life or physical assets through damange or theft of peroperty of requirement.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Collateral Damange Potential (CDP)</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#accessVector">
     <rdfs:range>
@@ -677,8 +651,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies how the vulnerability is exploited</rdfs:comment>
     <rdfs:domain rdf:resource="#BaseMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#authenticationAttempts">
     <rdfs:label xml:lang="en-US">CVSS Authentication Attempts</rdfs:label>
@@ -702,8 +675,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the number of times an attacker must authenticate to a target in order to exploit a vulnerability</rdfs:comment>
     <rdfs:domain rdf:resource="#BaseMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#impactSubscore">
     <rdfs:comment xml:lang="en-US">Specifies the base impact sub-score assigned to a vulnerability by a source</rdfs:comment>
@@ -711,8 +683,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Impact Sub-score</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#targetDistribution">
     <rdfs:comment xml:lang="en-US">Specifies the proportion of vulnerability systems.  It is meant as an environment-specific indicator in order to approximate the precentage of systems that could be affected by the vulnerability.</rdfs:comment>
@@ -744,15 +715,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:range>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#vector">
     <rdfs:domain rdf:resource="#CVSS"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a compressed textual representation that reflects the values used to drive the CVSS score</rdfs:comment>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -765,8 +734,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#confidentialityRequirement">
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
@@ -794,8 +762,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#accessComplexity">
     <rdfs:label xml:lang="en-US">CVSS Access Complexity</rdfs:label>
@@ -819,8 +786,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#environmentalScore">
     <rdfs:label xml:lang="en-US">Environment Score</rdfs:label>
@@ -828,8 +794,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exploitability">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -861,8 +826,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Exportability (E)</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the current state of exploit techniques or code availability.  Public availability of easy-to-use exploit code increased the number of potential attackers by including those who are unskilled, thereby increasing the severity of the vulnerability.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#reportConfidence">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -890,8 +854,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#environmentalVector">
     <rdfs:label xml:lang="en-US">Environmental Metric Vector</rdfs:label>
@@ -899,8 +862,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#temporalVector">
     <rdfs:label xml:lang="en-US">Temporal Metrics Vector</rdfs:label>
@@ -908,8 +870,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#baseVector">
     <rdfs:label xml:lang="en-US">Base Metric Vector</rdfs:label>
@@ -917,8 +878,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#CVSSImpact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#confidentialityImpact">
     <rdfs:range>
@@ -942,8 +902,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the impact on confidentiality of a successfully exploited vulnerability</rdfs:comment>
     <rdfs:domain rdf:resource="#BaseMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#displayLabel">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -961,8 +920,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:label xml:lang="en-US">CVSS Score</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#temporalMultiplier">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -970,8 +928,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:comment xml:lang="en-US">Specifies the number between zero and one used in computations.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="source">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -981,8 +938,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:comment xml:lang="en-US">Specifies the source of the CVSS metric in the form of a URL</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#generationTime">
     <rdfs:domain rdf:resource="#TemporalMetrics"/>
@@ -992,8 +948,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
     <rdfs:label xml:lang="en-US">Generation Time</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#availabilityImpact">
     <rdfs:label xml:lang="en-US">CVSS Availability Impact</rdfs:label>
@@ -1017,8 +972,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the impact to availability of a successfully exploited vulnerability</rdfs:comment>
     <rdfs:domain rdf:resource="#BaseMetrics"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >vulnerability</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
 </rdf:RDF>
 

@@ -4,7 +4,7 @@
     xmlns:winFilemappingObj="http://cybox.mitre.org/objects/WindowsFilemapping#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/WindowsFilemapping">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsFilemapping">
@@ -31,10 +31,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${filemappingName}</edt:displayNameTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
@@ -93,8 +91,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${filemappingName})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -147,8 +144,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:ObjectProperty rdf:about="#handle">
     <rdfs:label xml:lang="en-US">Handle</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
     <rdfs:comment xml:lang="en-US">Specifies the Windows handle to the file mapping.</rdfs:comment>
@@ -156,8 +152,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#fileHandle">
     <rdfs:label xml:lang="en-US">File Handle</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
@@ -165,8 +160,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#actualSize">
     <rdfs:comment xml:lang="en-US">Specifies the actual size of the file mapping, in bytes.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Actual Size</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
@@ -174,8 +168,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#filemappingName">
     <rdfs:label xml:lang="en-US">Filemapping Name</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -183,8 +176,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#securityAttributes">
     <rdfs:comment xml:lang="en-US">Specifies the Windows security attributes for the file mapping.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -192,8 +184,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#maximumSize">
     <rdfs:comment xml:lang="en-US">Specifies the maximum allowed size for the file mapping, in bytes. This value is typically initialized upon creation of the file mapping.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
@@ -201,25 +192,19 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#pageProtectionValue">
     <rdfs:label xml:lang="en-US">Page Protection Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the page protection value (i.e. PAGE_) specified for the file mapping.</rdfs:comment>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#FilemapPageProtectValVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#FilemapPageProtectValVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="pageProtectionAttribute">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#FilemapPageProtectAttrVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#FilemapPageProtectAttrVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:label xml:lang="en-US">Page Protection Attribute</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsFilemapping"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>

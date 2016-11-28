@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:oval_def="http://oval.mitre.org/definitions#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://oval.mitre.org/definitions">
@@ -53,8 +53,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Reference</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
@@ -88,15 +87,13 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the specific system, application, subsystem, library, etc. for which a definition has been written. If a definition is not tied to a specific product, then this element should not be included. The absence of the platform or product information can be thought of as definition applying to all platforms or products. The inclusion of a particular platform or product does not mean the definition is physically checking for the existence of the platform or product. For the actual test to be performed, the correct test must still be included in the definition's criteria section. To increase the utility of this element, care should be taken when assigning and using strings for product names. The schema places no restrictions on the values that can be assigned, potentially leading to many different representations of the same value. For example, 'Internet Explorer' and 'IE' might be used to refer to the same product. The current convention is to fully spell out all terms, and avoid the use of abbreviations at all costs.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Affected System</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
   <owl:Class rdf:ID="ObjectComponent">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -168,8 +165,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -202,8 +198,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a restriction that is placed on expected values for an external variable. For example, a possible value may be restricted to a integer less than 10.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
@@ -254,16 +249,13 @@ This definition of OVAL Object serves as an abstract that is meant to be extende
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
+    
   </owl:Class>
   <owl:Class rdf:ID="ArithmeticFunction">
     <rdfs:label xml:lang="en-US">Arithmetic Function</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes an arithmetic function that takes two or more integer or float components and performs a basic mathematical function on them.  &#xD;
 &#xD;
 The result of this function is a single integer or float unless one of the components returns multiple values. In this case the specified arithmetic function would be performed multiple times and the end result would be an array of values for the local variable. For example assume a local_variable specifies the arithmetic function with an arithmeticOperation of "add" and has two sub-components under this function: the first component returns multiple values "1" and "2", and the second component returns multiple values "3" and "4" and "5". The LocalVariable element would be evaluated to have six values: 1+3, 1+4, 1+5, 2+3, 2+4, and 2+5.&#xD;
@@ -325,8 +317,7 @@ Note that if both an integer and float components are used then the result is a 
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes an extension of the the Variable class and defines a variable with some external source. The actual value(s) for the variable is not provided within the OVAL file, but rather it is retrieved during the evaluation of the OVAL Definition from an external source. &#xD;
 &#xD;
 An unbounded set of possible-value and possible-restriction can be specified that together specify the list of all possible values that an external source is allowed to supply for the external variable. In other words, the value assigned by an external source must match one of the possible-value or possible-restriction specified. Each possible-value element contains a single value that could be assigned to the given ExternalVariable while each possible-restriction element outlines a range of possible values. Note that it is not necessary to declare a variable's possible values, but the option is available if desired. If no possibles are specified, then the valid values are only bound to the specified datatype of the external variable.</rdfs:comment>
@@ -344,8 +335,7 @@ An unbounded set of possible-value and possible-restriction can be specified tha
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Possible Restriction</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a range of possible expected value of an external variable.&#xD;
 &#xD;
 Each PossibleRestriction contains an unbounded list of restrictions  that each specify a range that an actual value may fall in. For example, a restriction may specify that a value must be less than 10. When multiple restrictions are present, a valid possible value would have to meet every restriction. One can think of the possible-values and possible-restrictions as an OR'd list of possible values, and the restrictions as an AND'd list of value descriptions.</rdfs:comment>
@@ -392,8 +382,7 @@ Each PossibleRestriction contains an unbounded list of restrictions  that each s
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -451,8 +440,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -462,8 +450,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -502,8 +489,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -548,8 +534,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -574,8 +559,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
 The evaluation result for a test is determined by first evaluating the checkExistence attribute. If the result of evaluating the checkExistence attribute is true then the check attribute is evaluated. An interpreter may choose to always evaluate both the checkExistence and the check attributes, but once the checkExistence attribute evaluation has resulted in false the overall test result after evaluating the check attribute will not be affected.&#xD;
 &#xD;
 This definition of OVAL State serves as an abstract an abstract that is meant to be extended (via substitution groups) by the individual tests found in the component schemas. An OVAL Test is used to compare an object(s) against a defined state. An actual test element is not valid. The use of this abstract class simplifies the OVAL schema by allowing individual tests to inherit the optional notes child element, and the id and comment attributes.</rdfs:comment>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -627,8 +611,7 @@ This definition of OVAL State serves as an abstract an abstract that is meant to
     <rdfs:comment xml:lang="en-US">Characterizes an extension of the the Variable class and defines a variable with some local source. The actual value(s) for the variable is not provided in the OVAL Definition document but rather it is retrieved during the evaluation of the OVAL Definition. &#xD;
 &#xD;
 Each local variable is defined by either a single component or a complex function, meaning that a value can be as simple as a literal string or as complex as multiple registry keys concatenated together. Note that if an individual component is used and it returns multiple values, then there will be multiple values associated with the LocalVariable. For example, if an object_component is used and it references a file object that identifies a set of 5 files, then the LocalVariable would represent these 5 values.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -660,8 +643,7 @@ Each local variable is defined by either a single component or a complex functio
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Possible Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
@@ -675,8 +657,7 @@ Each local variable is defined by either a single component or a complex functio
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -764,8 +745,7 @@ When evaluating a particular state against an object, one should evaluate each i
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:abstract>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -775,8 +755,7 @@ When evaluating a particular state against an object, one should evaluate each i
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">OVAL State</rdfs:label>
   </owl:Class>
@@ -801,8 +780,7 @@ When evaluating a particular state against an object, one should evaluate each i
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Literal Component</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
@@ -827,8 +805,7 @@ When evaluating a particular state against an object, one should evaluate each i
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Criteria</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -857,16 +834,14 @@ When evaluating a particular state against an object, one should evaluate each i
     <rdfs:comment xml:lang="en-US">Specifies associated notes</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Notes</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Definition"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="lliteralComponent">
     <rdfs:comment xml:lang="en-US">Specifies a literal component</rdfs:comment>
     <rdfs:label xml:lang="en-US">lliteral component</rdfs:label>
     <rdfs:range rdf:resource="#LiteralComponent"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
@@ -877,15 +852,13 @@ When evaluating a particular state against an object, one should evaluate each i
 The whose main purpose is to provide hints for tools using OVAL Definitions. For instance, to help a reporting tool only use Windows definitions, or to preselect only Red Hat definitions to be evaluated. Note, the inclusion of a particular platform or product does not mean the definition is physically checking for the existence of the platform or product. For the actual test to be performed, the correct test must still be included in the definition's criteria section</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Affected</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Definition"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="variableReference">
     <rdfs:label xml:lang="en-US">variable reference</rdfs:label>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
@@ -894,16 +867,14 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:domain rdf:resource="#ObjectComponent"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Object"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a reference to an existing OVAL Object declaration. The referenced OVAL Object specifies a set of OVAL Items to collect. Note that an OVAL Object might identify 0, 1, or many OVAL Items on a system. If no items are found on the system then an error should be reported when determining the value. If 1 or more OVAL Items are found then each OVAL Item will be considered and the ObjectComponent may have one or more values.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="possibleValue">
     <rdfs:domain rdf:resource="#ExternalVariable"/>
     <rdfs:label xml:lang="en-US">possible value</rdfs:label>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
@@ -912,8 +883,7 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:domain rdf:resource="#Criteria"/>
     <rdfs:label xml:lang="en-US">criterion</rdfs:label>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
@@ -921,16 +891,14 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:domain rdf:resource="#ExtendedDefinition"/>
     <rdfs:label xml:lang="en-US">definition reference</rdfs:label>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="objectComponent">
     <rdfs:label xml:lang="en-US">object component</rdfs:label>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
@@ -939,16 +907,14 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:comment xml:lang="en-US">Specifies one more external references.</rdfs:comment>
     <rdfs:range rdf:resource="#Reference"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Definition"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="possibleRestriction">
     <rdfs:domain rdf:resource="#ExternalVariable"/>
     <rdfs:label xml:lang="en-US">possible restriction</rdfs:label>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
@@ -957,8 +923,7 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:domain rdf:resource="#Criteria"/>
     <rdfs:range rdf:resource="#ExtendedDefinition"/>
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Extended Definition</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#criteria">
@@ -967,8 +932,7 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">criteria</rdfs:label>
     <rdfs:domain rdf:resource="#Definition"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the set of criteria associated</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="localVariableValue">
@@ -985,23 +949,20 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
         </owl:unionOf>
       </owl:Class>
     </rdfs:range>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#LocalVariable"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#testReference">
     <rdfs:label xml:lang="en-US">Test Reference</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Criterion"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a reference to the actual test beign referenced.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#value">
     <rdfs:domain rdf:resource="#Restriction"/>
     <rdfs:domain rdf:resource="#LiteralComponent"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
     <rdfs:domain rdf:resource="#PossibleValue"/>
     <rdfs:label xml:lang="en-US">Value</rdfs:label>
@@ -1015,8 +976,7 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#PossibleValue"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a short description of what the value means or represents</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#referenceDefinitionId">
@@ -1034,15 +994,13 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#ExtendedDefinition"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the actual id of the OVAL Definition.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#deprecated">
     <rdfs:domain rdf:resource="#Test"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Object"/>
     <rdfs:domain rdf:resource="#Variable"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -1055,8 +1013,7 @@ The whose main purpose is to provide hints for tools using OVAL Definitions. For
     <rdfs:comment xml:lang="en-US">Specifies the name of the entity whose value will be retrieved from each OVAL Item collected by the referenced OVAL Object. &#xD;
 &#xD;
 For example, if the object_ref references a win-def:file_object, the item_field may specify the 'version' entity as the field to use as the value of the ObjectComponentType. Note that an OVAL Item may have 0, 1, or many entities whose name matches the specified itemField value. If an entity is not found with a name that matches the value of the itemField an error should be reported when determining the value of an ObjectComponent. If 1 or more matching entities are found in a single OVAL Item the value of the ObjectComponent is the list of the values from each of the matching entities.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ObjectComponent"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1091,8 +1048,7 @@ For example, if the object_ref references a win-def:file_object, the item_field 
     <rdfs:label xml:lang="en-US">Check</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Test"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies how many items in the set defined by the OVAL Object (ignoring items with a status of Does Not Exist) must satisfy the state requirements.  &#xD;
 &#xD;
 For example, should the test check that all matching files have a specified version or that at least one file has the specified version?  Note that if the test does not contain any references to OVAL States, then the check attribute has no meaning and can be ignored during evaluation.</rdfs:comment>
@@ -1102,8 +1058,7 @@ For example, should the test check that all matching files have a specified vers
     <rdfs:comment xml:lang="en-US">Specifies the platform(s) within the family that are affected.</rdfs:comment>
     <rdfs:domain rdf:resource="#AffectedSystem"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Platform</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#refId">
@@ -1111,16 +1066,14 @@ For example, should the test check that all matching files have a specified vers
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Reference"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the external id of the reference.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#negate">
     <rdfs:domain rdf:resource="#ExtendedDefinition"/>
     <rdfs:domain rdf:resource="#Criterion"/>
     <rdfs:comment xml:lang="en-US">Specifies that the result of the criteria as a whole should be negated during analysis. For example, consider a criteria that evaluates to TRUE if certain software is installed. By negating this test, it now evaluates to TRUE if the software is NOT installed.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Criteria"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -1131,8 +1084,7 @@ For example, should the test check that all matching files have a specified vers
     <rdfs:label xml:lang="en-US">Product</rdfs:label>
     <rdfs:domain rdf:resource="#AffectedSystem"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the product(s) within the family that are affected.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="recordField">
@@ -1140,8 +1092,7 @@ For example, should the test check that all matching files have a specified vers
 &#xD;
 The recordField allows the value of a specific field to be retrieved from an entity with a datatype of 'record'. If a field with a matching name attribute value is not found in the referenced OVAL Item entity an error should be reported when determining the value of the ObjectComponent.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Record Field</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#ObjectComponent"/>
@@ -1151,8 +1102,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     <rdfs:label xml:lang="en-US">Reference URL</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Reference"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies  the URL to the reference.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#class">
@@ -1184,8 +1134,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     <rdfs:label xml:lang="en-US">Class</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Definition"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the specific class to which the definition belongs. The class gives a hint to a user so they can know what the definition writer is trying to say.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#source">
@@ -1193,8 +1142,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Reference"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies where the reference is coming from. In other words, it identifies the reference repository being used.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#description">
@@ -1202,8 +1150,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Definition"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#applicabilityCheck">
@@ -1211,8 +1158,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     <rdfs:domain rdf:resource="#Criterion"/>
     <rdfs:label xml:lang="en-US">Applicability Check</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies that when true that the criteria is being used to determine whether the OVAL Definition applies to a given system.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Criteria"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -1271,8 +1217,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     <rdfs:label xml:lang="en-US">Datatype</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Variable"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of value being defined.  The set of values identified by a variable must comply with the specified datatype, otherwise an error should be reported.  For example, if the datatype of the variable is specified as boolean then the value(s) returned by the component / function should be "true", "false", "1", or "0".</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#referenceTestId">
@@ -1290,8 +1235,7 @@ The recordField allows the value of a specific field to be retrieved from an ent
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Criterion"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the actual Id of the OVAL Test.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="checkExistence">
@@ -1325,8 +1269,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:domain rdf:resource="#Test"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#family">
@@ -1370,8 +1313,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Family</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#operator">
@@ -1400,8 +1342,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
     </rdfs:range>
     <rdfs:label xml:lang="en-US">Operator</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the logical operator that binds the different statements inside a criteria together.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Criteria"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1419,8 +1360,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
         <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
       </rdfs:Datatype>
     </rdfs:range>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the actual Id of the OVAL Variable.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#title">
@@ -1428,8 +1368,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Definition"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Title</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#operation">
@@ -1493,8 +1432,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
         </owl:oneOf>
       </rdfs:Datatype>
     </rdfs:range>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Operation</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#version">
@@ -1504,8 +1442,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the current version of the entity. Versions are integers, starting at 1 and incrementing every time a definition is modified.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Definition Version</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Variable"/>
     <rdfs:domain rdf:resource="#State"/>
@@ -1525,8 +1462,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
     <rdfs:domain rdf:resource="#ObjectComponent"/>
     <rdfs:comment xml:lang="en-US">Specifies the acutaly id of the OVAL Object</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Reference Object-ID</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#comment">
@@ -1537,8 +1473,7 @@ For example, if a value of 'all_exist' is given, every item defined by the OVAL 
     <rdfs:domain rdf:resource="#Object"/>
     <rdfs:domain rdf:resource="#Variable"/>
     <rdfs:domain rdf:resource="#Criterion"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >oval</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Criteria"/>
     <rdfs:comment xml:lang="en-US">Specifies  a short description of the criteria</rdfs:comment>
     <rdfs:domain rdf:resource="#Test"/>

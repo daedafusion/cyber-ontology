@@ -4,7 +4,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/Disk">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Disk">
@@ -22,8 +22,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     >2.1.0-000</owl:versionInfo>
   </owl:Ontology>
   <owl:Class rdf:ID="Disk">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -95,12 +94,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Characterize disk drives.</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${id}</edt:iriTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="DiskPartition">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -165,8 +162,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="#DiskPartition"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Disk Partition List</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="spaceUnused">
@@ -174,16 +170,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the amount of space used on the partition, in bytes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Space Unused</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#createdDateTime">
     <rdfs:label xml:lang="en-US">Created Date &amp; Time</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the date/time the partition was created.</rdfs:comment>
     <rdfs:domain rdf:resource="#DiskPartition"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </owl:DatatypeProperty>
@@ -192,21 +186,17 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the total amount of space available on the partition, in bytes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Total Space</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#diskType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#DiskTypeVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#DiskTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of disk being characterized, e.g. removable.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Disk Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="spaceLeft">
@@ -214,8 +204,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Space Left</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#partitionId">
@@ -223,8 +212,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Partition Id</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#partitionOffset">
@@ -232,8 +220,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Partition Offset</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#mountPoint">
@@ -241,8 +228,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Mount Point</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="diskSize">
@@ -250,8 +236,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Disk Size</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#partitionLength">
@@ -259,21 +244,17 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Partition Length</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="partitionType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#PartitionTypeVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#PartitionTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of partition being characterized.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Partition Type</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="diskName">
@@ -281,8 +262,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Disk Name</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#deviceName">
@@ -290,8 +270,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Device Name</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#freeSpace">
@@ -299,8 +278,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Free Space</rdfs:label>
     <rdfs:domain rdf:resource="#Disk"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
   </owl:DatatypeProperty>
 </rdf:RDF>

@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:winRegistryObj="http://cybox.mitre.org/objects/WindowsRegistry#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/WindowsRegistry">
@@ -35,12 +35,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes a Windows registry hive.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Registry Hive</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${hiveName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -58,8 +56,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="WindowsRegistryKey">
     <rdfs:label xml:lang="en-US">Windows Registry Key</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${hiveName)\${key}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
@@ -116,8 +113,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -177,12 +173,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${hiveName}${key})}</edt:iriTemplate>
+    
   </owl:Class>
   <owl:Class rdf:about="#RegistryValue">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${valueName}=${valueDatatype}:${valueData}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -194,8 +188,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes  the values (with their name/data pairs) held within a registry key.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Registry Value</rdfs:label>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${valueName}${valueData})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -212,8 +205,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -228,8 +220,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:ObjectProperty rdf:ID="values">
     <rdfs:label xml:lang="en-US">Values</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:comment xml:lang="en-US">Specifies the values (with their name/data pairs) held within the registry key.</rdfs:comment>
@@ -237,8 +228,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="byteRuns">
     <rdfs:label xml:lang="en-US">Byte Runs</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#RegistryValue"/>
     <rdfs:comment xml:lang="en-US">Specifies a list of byte runs from the raw registry key entry.</rdfs:comment>
@@ -247,8 +237,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="handles">
     <rdfs:label xml:lang="en-US">Handles</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:comment xml:lang="en-US">Specifies a list of open Handles for this registry object.</rdfs:comment>
@@ -256,8 +245,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="subkeys">
     <rdfs:label xml:lang="en-US">Subkeys</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:comment xml:lang="en-US">Specifies the set of subkeys contained under the registry key.</rdfs:comment>
@@ -265,8 +253,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#creator">
     <rdfs:label xml:lang="en-US">Creator</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:comment xml:lang="en-US">Specifies the user who created the registry object.</rdfs:comment>
@@ -277,14 +264,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the keys contained under the registry hive</rdfs:comment>
     <rdfs:domain rdf:resource="#RegistryHive"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Keys</rdfs:label>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#key">
     <rdfs:label xml:lang="en-US">Key</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -292,8 +277,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberOfValues">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:label xml:lang="en-US">Number of Values</rdfs:label>
@@ -303,20 +287,16 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#WinRegistryHiveTypeVocab</edt:rangeControlledVocabSet>
+    
+    
     <rdfs:label xml:lang="en-US">Hive</rdfs:label>
     <rdfs:domain rdf:resource="#RegistryHive"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#WinRegistryHiveTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:comment xml:lang="en-US">Specifies the Windows registry hive to which the registry object belongs to.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#valueData">
     <rdfs:label xml:lang="en-US">Value Data</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#RegistryValue"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -324,8 +304,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#creatorUsername">
     <rdfs:label xml:lang="en-US">Creator Username</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -333,8 +312,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#valueName">
     <rdfs:label xml:lang="en-US">Value Name</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#RegistryValue"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -343,22 +321,18 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 For specifying the default value in a registry key, an empty string should be used.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#valueDatatype">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#WinRegistryDataTypesVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:label xml:lang="en-US">Value Datatype</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#RegistryValue"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the registry (REG_*) datatype used in the registry value.</rdfs:comment>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#WinRegistryDataTypesVocab-1.0</edt:rangeControlledVocabClass>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberOfSubkeys">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:label xml:lang="en-US">Number of Subkeys</rdfs:label>
@@ -369,8 +343,7 @@ For specifying the default value in a registry key, an empty string should be us
     <rdfs:domain rdf:resource="#WindowsRegistryKey"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Modified Time</rdfs:label>
   </owl:DatatypeProperty>
 </rdf:RDF>

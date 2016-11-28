@@ -4,7 +4,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/WindowsHandle">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsHandle">
@@ -50,10 +50,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
 -->
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${handleType}:${handleID} &lt;${handleName}&gt;</edt:displayNameTemplate>
+    
+    
 <!--    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -105,8 +103,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${handleType}${handleID})}</edt:iriTemplate>
+    
 -->	
 <!--    <rdfs:subClassOf>
       <owl:Restriction>
@@ -145,8 +142,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:Class>
   <owl:DatatypeProperty rdf:about="#accessMask">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsHandle"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -154,8 +150,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Access Mask</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#handleID">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Handle ID</rdfs:label>
     <rdfs:domain rdf:resource="#WindowsHandle"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -163,8 +158,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#objectAddress">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsHandle"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -172,21 +166,17 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Object Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#handleType">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the handle type, which is equivalent to the type of Windows object that the handle refers to.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#WindowsHandle"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#WinHandleTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:label xml:lang="en-US">Handle Type</rdfs:label>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#WinHandleTypeVocab</edt:rangeControlledVocabSet>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#pointerCount">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Pointer Count</rdfs:label>
     <rdfs:domain rdf:resource="#WindowsHandle"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -194,8 +184,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#handleName">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#WindowsHandle"/>
     <rdfs:isDefinedBy rdf:resource=""/>

@@ -4,7 +4,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://maec.mitre.org/maec_container">
   <owl:Ontology rdf:about="http://maec.mitre.org/maec_container">
@@ -47,8 +47,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Container ${containerId} [${timestamp}]</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -58,26 +57,22 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${containerId}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Container</rdfs:label>
     <rdfs:comment xml:lang="en-US">Characterizes a container of information about malware</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
   </owl:Class>
   <owl:ObjectProperty rdf:about="#packages">
     <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#Package"/>
     <rdfs:comment xml:lang="en-US">Specifies the list of Packages with the container</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Container"/>
     <rdfs:label xml:lang="en-US">Packages</rdfs:label>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#timestamp">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the time and data when the container was generated</rdfs:comment>
     <rdfs:domain rdf:resource="#Container"/>
     <rdfs:isDefinedBy rdf:resource=""/>

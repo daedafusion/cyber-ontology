@@ -4,7 +4,7 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:ioc="http://ioc.mandiant.com/IoC#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://ioc.mandiant.com/IoC">
   <owl:Ontology rdf:about="http://ioc.mandiant.com/IoC">
@@ -19,8 +19,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <owl:imports rdf:resource="http://www.daedafusion.com/editor_annotation"/>
   </owl:Ontology>
   <owl:Class rdf:ID="IocIndicator">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${operator}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -33,11 +32,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes a single indicator expression</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">IoC Indicator</rdfs:label>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/ioc_indicator-${id}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -67,8 +64,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a link to reference information.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Link</rdfs:label>
     <rdfs:subClassOf>
@@ -90,10 +86,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/link-${@hash(${relationship}-${value})}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationship} ${value}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -125,8 +119,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -190,8 +183,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -241,8 +233,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Indicator item</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -253,8 +244,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes an item of an indicator expression</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/indicator_item-${id}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -283,13 +273,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${context.document} ${content.type} ${condition} ${content.value}</edt:displayNameTemplate>
+    
   </owl:Class>
   <owl:ObjectProperty rdf:ID="iocIndicator">
     <rdfs:label xml:lang="en-US">IoC Indicator</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#IocIndicator"/>
     <rdfs:domain rdf:resource="#IocIndicator"/>
@@ -297,8 +285,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="links">
     <rdfs:comment xml:lang="en-US">Specifies a reference to one or more links that contain relationship information</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Links</rdfs:label>
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -306,8 +293,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="definition">
     <rdfs:comment xml:lang="en-US">Specifies a definition for the Indicator of Compromise</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Definition</rdfs:label>
@@ -315,8 +301,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="indicatorItem">
     <rdfs:comment xml:lang="en-US">Specifies one or more IoC Indicator expressions</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IocIndicator"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Indicator Item</rdfs:label>
@@ -324,16 +309,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#author.Details">
     <rdfs:label xml:lang="en-US">Author Details</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:comment xml:lang="en-US">Specifies a reference to details about the author.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="param">
     <rdfs:label xml:lang="en-US">Parameter</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Parameter"/>
     <rdfs:domain rdf:resource="#IocIndicator"/>
@@ -342,8 +325,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#author">
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Author</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -351,8 +333,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#shortDescription">
     <rdfs:label xml:lang="en-US">Short Description</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -360,8 +341,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#title">
     <rdfs:label xml:lang="en-US">Title</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Link"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -370,8 +350,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#value">
     <rdfs:comment xml:lang="en-US">Specifies the value</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Link"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -381,8 +360,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#context.search">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:label xml:lang="en-US">context.search</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -393,8 +371,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the date and time the Indicator of Compromise was authored.</rdfs:comment>
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Authored Date</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#id">
@@ -407,16 +384,14 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">ID</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IocIndicator"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#comment">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:label xml:lang="en-US">comment</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -427,15 +402,13 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the date and time of the last time this Indicator of Compromise was modified.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#name">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:label xml:lang="en-US">name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -443,8 +416,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#type">
     <rdfs:comment xml:lang="en-US">Specifies a type</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Link"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -454,15 +426,13 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the reference</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Link"/>
     <rdfs:label xml:lang="en-US">Reference</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="keywords">
     <rdfs:comment xml:lang="en-US">Specifies keywords associated with ther Indicator of Compromise</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:label xml:lang="en-US">keywords</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -470,8 +440,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="description">
     <rdfs:comment xml:lang="en-US">Specifies an unstructured text description</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IndicatorOfCompromise"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -480,8 +449,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   <owl:DatatypeProperty rdf:about="#content.type">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:label xml:lang="en-US">content.type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -490,8 +458,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   <owl:DatatypeProperty rdf:about="#content.value">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:label xml:lang="en-US">content.value</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -499,8 +466,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#context.document">
     <rdfs:comment xml:lang="en-US">Specifies the kind of item</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IndicatorItem"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -508,8 +474,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#operator">
     <rdfs:label xml:lang="en-US">Operator</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range>
       <rdfs:Datatype>
@@ -530,8 +495,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
   <owl:DatatypeProperty rdf:about="#context.type">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >ioc</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:label xml:lang="en-US">context.type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>

@@ -4,7 +4,7 @@
     xmlns:winTaskObj="http://cybox.mitre.org/objects/WindowsTask#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/WindowsTask">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsTask">
@@ -33,14 +33,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${title}: ${body}</edt:displayNameTemplate>
+    
     <rdfs:comment xml:lang="en-US">Characterizes IShowMessage actions.</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${body)}${title})}</edt:iriTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">IShowMessage Action</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -103,8 +100,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${taskName}: ${applicationName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -112,8 +108,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterize Windows task scheduler tasks. &#xD;
 &#xD;
 See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx.</rdfs:comment>
@@ -242,8 +237,7 @@ See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${$taskName}${applicationName})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -290,11 +284,9 @@ See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.
         >32</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${actionID} (${actionType})</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${actionID}${actionType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -313,13 +305,11 @@ See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
   </owl:Class>
   <owl:Class rdf:ID="IExecAction">
     <rdfs:comment xml:lang="en-US">Characterizes IExec actions.</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${execProgramPath}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -331,10 +321,8 @@ See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">IExec action</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${execProgramPath})}</edt:iriTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -366,13 +354,10 @@ See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${comClassID}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${comClassID})}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -399,10 +384,8 @@ See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.
     <rdfs:comment xml:lang="en-US">Characterizes task triggers.&#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx.</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Type: ${triggerType} Freq: ${triggerFrequency} ${triggerBegin}-${triggerEnd}</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${triggerType}${triggerFrequence}${$triggerBegin})}</edt:iriTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -450,8 +433,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -478,8 +460,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383264(v=vs.85).aspx.</rdfs:comment>
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Trigger List</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="actionList">
@@ -487,15 +468,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383264(v=vs.
     <rdfs:label xml:lang="en-US">Action List</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsTask"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a list of actions to be performed by the scheduled task.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="execProgramHash.details">
     <rdfs:label xml:lang="en-US">Exec Program Hash - Details</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies details about any hashes of the executable file launched by the action.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:domain rdf:resource="#IExecAction"/>
@@ -503,8 +482,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383264(v=vs.
   <owl:ObjectProperty rdf:about="#action">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#TaskAction"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">action</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the action(s) to be taken</rdfs:comment>
     <rdfs:range>
@@ -525,21 +503,17 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <rdfs:domain rdf:resource="#IShowMessageAction"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Title</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TriggerTypeVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TriggerTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the type of the task trigger.</rdfs:comment>
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Trigger Type</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#comment">
@@ -549,14 +523,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Comment</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerEndDateTime">
     <rdfs:label xml:lang="en-US">Trigger End</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
@@ -569,14 +541,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380590(v=vs.
     <rdfs:label xml:lang="en-US">Action ID</rdfs:label>
     <rdfs:domain rdf:resource="#TaskAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerBeginDateTime">
     <rdfs:label xml:lang="en-US">Trigger Begin</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
@@ -587,8 +557,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380590(v=vs.
     <rdfs:domain rdf:resource="#IExecAction"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the directory that contains either the executable file or the files that are used by the executable file launched by the action. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx.</rdfs:comment>
@@ -600,8 +569,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.85).aspx.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Command Line Parameters</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#applicationName">
@@ -609,14 +577,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.
     <rdfs:label xml:lang="en-US">Application Name</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsTask"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the application name associated with the task.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#execArguments">
     <rdfs:label xml:lang="en-US">Executable Arguments</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#IExecAction"/>
@@ -625,24 +591,20 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx..</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#taskStatus">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TaskStatusVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TaskStatusVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the current status of the scheduled task. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Task Status</rdfs:label>
     <rdfs:domain rdf:resource="#WindowsTask"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#mostRecentRunDateTime">
     <rdfs:label xml:lang="en-US">Most Recent Run Time</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:domain rdf:resource="#WindowsTask"/>
@@ -651,17 +613,14 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381254(v=vs.85).aspx.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#taskPriority">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.deadafusion.com/default_vocabularies-1#TaskPriorityVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.deadafusion.com/default_vocabularies-1#TaskPriorityVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies the priority of the scheduled task. This can either be a free-form string or one the values in the TaskPriorityEnum enumeration. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381876(v=vs.85).aspx.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Task Priority</rdfs:label>
     <rdfs:domain rdf:resource="#WindowsTask"/>
   </owl:DatatypeProperty>
@@ -672,8 +631,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Account Logon Type</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="execProgramHash.value">
@@ -681,23 +639,19 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#IExecAction"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed for the executable file launched by the action.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#actionType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TaskActionVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TaskActionVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of the action. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx.</rdfs:comment>
     <rdfs:domain rdf:resource="#TaskAction"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Action Type</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#creator">
@@ -707,8 +661,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.
     <rdfs:label xml:lang="en-US">Creator</rdfs:label>
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#body">
@@ -718,14 +671,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <rdfs:domain rdf:resource="#IShowMessageAction"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Body</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerEnabled">
     <rdfs:label xml:lang="en-US">Enabled</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -738,8 +689,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Trigger Max Run Time</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#workItemData">
@@ -749,8 +699,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381271(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#base64Binary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Work Item Data</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#accountName">
@@ -760,8 +709,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Account Name</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#maxRunTime">
@@ -771,8 +719,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Max Run Time</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#accountRunLevel">
@@ -780,14 +727,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the permission level of the account that the task will be run at.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#taskName">
     <rdfs:comment xml:lang="en-US">Specifies the name for the task.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Image Name</rdfs:label>
@@ -795,8 +740,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#nextRunDateTime">
     <rdfs:label xml:lang="en-US">Next Run Time</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:domain rdf:resource="#WindowsTask"/>
@@ -809,31 +753,26 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381257(v=vs.
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Trigger Delay</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#taskFlags">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:comment xml:lang="en-US">Specifies any flags that modify the behavior of the scheduled task. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx.</rdfs:comment>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TaskFlagVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TaskFlagVocab</edt:rangeControlledVocabSet>
+    
+    
     <rdfs:label xml:lang="en-US">Task Flags</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#execProgramPath">
     <rdfs:comment xml:lang="en-US">Specifies the path to the executable file launched by the action. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#IExecAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -841,8 +780,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#creationDateTime">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:label xml:lang="en-US">Creation Date</rdfs:label>
@@ -855,23 +793,19 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa382623(v=vs.
     <rdfs:comment xml:lang="en-US">Specifies the ID of the COM action. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.85).aspx.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#ICOMHandlerAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerFrequency">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TriggerFrequencyVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TriggerFrequencyVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies the frequency at which the trigger repeats.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Trigger Frequency</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerSessionChangeType">
@@ -881,8 +815,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.
     <rdfs:domain rdf:resource="#Trigger"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Trigger Session Change Type</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#workingDirectory">
@@ -892,8 +825,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381878(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Working Directory</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exitCode">
@@ -903,8 +835,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.
     <rdfs:domain rdf:resource="#WindowsTask"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Exit Code</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#comData">
@@ -912,8 +843,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.
     <rdfs:domain rdf:resource="#ICOMHandlerAction"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the data associated with the COM handler. &#xD;
 &#xD;
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.85).aspx..</rdfs:comment>

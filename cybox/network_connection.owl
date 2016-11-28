@@ -4,7 +4,7 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:netConnectObj="http://cybox.mitre.org/objects/NetworkConnection#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/NetworkConnection">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/NetworkConnection">
@@ -26,8 +26,7 @@ The ontology is based on the Cybox Network Connection object schema maintained b
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Ontology>
   <owl:Class rdf:ID="NetworkConnection">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${creationTime}</edt:displayNameTemplate>
+    
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
@@ -81,8 +80,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
@@ -125,8 +123,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes local or remote (i.e. Internet) network connections.</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/object-${@hash(${creationTime})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -180,8 +177,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:ObjectProperty rdf:about="#destinationSocketAddress">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Destination Socket Address</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the destination socket address, consisting of an IP Address and port number, used in the connection.</rdfs:comment>
     <rdfs:domain rdf:resource="#NetworkConnection"/>
@@ -192,14 +188,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#NetworkConnection"/>
     <rdfs:comment xml:lang="en-US">Specifies a single DNS query/answer pair initiated between source and destination IP addresses/ports.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Layer 7 Connection DNS Query</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#layer7Connection.httpSession">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#NetworkConnection"/>
     <rdfs:comment xml:lang="en-US">Specifies a single HTTP session initiated between source and destination IP addresses/ports, and includes 1-n HTTP Request/Response pairs.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Layer 7 Connection HTTP Session</rdfs:label>
@@ -207,8 +201,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#sourceSocketAddress">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Source Socket Address</rdfs:label>
     <rdfs:domain rdf:resource="#NetworkConnection"/>
     <rdfs:comment xml:lang="en-US">Specifies the source socket address, consisting of an IP Address and port number, used in the connection.</rdfs:comment>
@@ -216,8 +209,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#layer7Protocol">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Layer7 Protocol</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the particular application (layer 7 in the OSI model) layer protocol used in the connection.</rdfs:comment>
     <rdfs:domain rdf:resource="#NetworkConnection"/>
@@ -225,8 +217,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#layer4Protocol">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Layer 4 Protocol</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the particular transport (layer 4 in the OSI model) layer protocol used in the connection.</rdfs:comment>
     <rdfs:domain rdf:resource="#NetworkConnection"/>
@@ -237,41 +228,33 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the particular network (layer 3 in the OSI model) layer protocol used in the connection.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Layer 3 Protocols</rdfs:label>
     <rdfs:domain rdf:resource="#NetworkConnection"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#tlsUsed">
     <rdfs:domain rdf:resource="#NetworkConnection"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">TLS Used</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment xml:lang="en-US">Specifies whether or not Transport Layer Security (TLS) is used in the network connection.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sourceTCPState">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TCPStateVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#NetworkConnection"/>
     <rdfs:comment xml:lang="en-US">Specifies the current state of the TCP network connection at the source, if applicable.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Source TCP State</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TCPStateVocab-1.0</edt:rangeControlledVocabClass>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#destinationTCPState">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TCPStateVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Destination TCP State</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#TCPStateVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:domain rdf:resource="#NetworkConnection"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the current state of the TCP network connection at the destination, if applicable.</rdfs:comment>

@@ -4,7 +4,7 @@
     xmlns:capec="http://capec.mitre.org/capec#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://capec.mitre.org/capec">
   <owl:Ontology rdf:about="http://capec.mitre.org/capec">
@@ -15,8 +15,7 @@
     <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >v1.0.0-001</owl:versionInfo>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Common Attack Pattern Enumeration and Classification (CAPEC) Ontology</rdfs:label>
     <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
     <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Common Attack Pattern Enumeration and Classification (CAPEC) which provides a publicly available, community-developed list of common attack patterns along with a comprehensive schema and classification taxonomy. Attack patterns are descriptions of common methods for exploiting software systems. They derive from the concept of design patterns applied in a destructive rather than constructive context and are generated from in-depth analysis of specific real-world exploit examples.&#xD;
@@ -26,15 +25,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <rdfs:Datatype rdf:ID="structuredText">
     <rdfs:comment xml:lang="en-US">Specifies that the text description is formatted utilizing some encoding scheme.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Structured Text</rdfs:label>
   </rdfs:Datatype>
   <owl:Class rdf:ID="RelatedVulnerabilityStatement">
     <rdfs:label xml:lang="en-US">Related Vulnerability</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Related to ${vulnerabilityId}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -44,8 +41,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://capec.mitre.org/capec#relatedVulnerabilities</edt:reifiedDomain>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the relationship to a Vulnerability</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     <rdfs:subClassOf>
@@ -58,10 +54,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Relationship/RV.${vulnerabilityId}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -84,8 +78,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -95,10 +88,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.deadafusion.com/Technique/AttackStep/${relativeId}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:comment xml:lang="en-US">Characterizes a particular technique that may accomplish this attack step</rdfs:comment>
     <rdfs:label xml:lang="en-US">Attack Step Technique</rdfs:label>
@@ -108,11 +99,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Represents a Related Protocol</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://capec.mitre.org/capec#relatedProtocols</edt:reifiedDomain>
+    
   </owl:Class>
   <owl:Class rdf:ID="AttackPatternCatalog">
     <rdfs:subClassOf>
@@ -122,10 +111,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${catalogName} ${catalogVersion) - ${catalogVersion}</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/catalog-${catalogName}-${catalogDate}</edt:iriTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogVersion"/>
@@ -140,8 +127,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#id"/>
@@ -191,8 +177,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}: ${securityControlType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -202,10 +187,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/AttackStep/SecurityControl/${relativeId}</edt:iriTemplate>
+    
+    
   </owl:Class>
   <owl:Class rdf:ID="TargetedProtocol">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -218,8 +201,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -229,8 +211,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/TargetProtocol/${attackPattern}.${targetProtocolName}.${targetProtocolId}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Protocol</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -241,8 +222,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${targetProtocolName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -274,8 +254,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Characterizes a Protocol</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="FunctionalService">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${functionalServiceName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -287,8 +266,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Functional Service</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -299,8 +277,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes a Functional Service associated with an attack pattern</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/FuncService/FS.${functionalServiceName}.${functionalServiceId}</edt:iriTemplate>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:Class>
   <owl:Class rdf:ID="Outcome">
@@ -314,8 +291,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -335,12 +311,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Represents a possible Outcome for an attack step</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.deaedafusion.com/AttackStep/Outcome/${relativeId}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Outcome</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}: {$outcomeType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -362,10 +336,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/TechImpact/${impactType}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${impactType}</edt:displayNameTemplate>
+    
+    
     <rdfs:comment xml:lang="en-US">Characterizes a technical impact that can result from successful execution of this attack pattern</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Technical Impact</rdfs:label>
@@ -378,8 +350,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -392,8 +363,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="ProbingTechnique">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Technique/Probe/${relativeId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -404,8 +374,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the technique used to probe a target</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Probing Technique ${relativeId}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -425,8 +394,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Probing Technique</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -495,8 +463,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >CAPEC-${id}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -525,8 +492,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-Us">Attack Pattern</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -555,8 +521,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/CAPEC-${id}</edt:iriTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="Category">
     <rdfs:subClassOf>
@@ -579,8 +544,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes  a collection of attack patterns sharing a common attribute.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/CAPEC-${id}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -599,12 +563,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Category</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >CAPEC-${id}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -656,12 +618,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Attack Step</rdfs:label>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/AttackStep/${relativeId}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Step ${stepId}</edt:displayNameTemplate>
+    
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -673,10 +632,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="CommonAttackSurfaceDescription">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/AttackSurface/${relativeId}</edt:iriTemplate>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Relevant attack surface</rdfs:label>
     <rdfs:subClassOf>
@@ -707,8 +664,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a description of a Common Attack Surface</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="CompoundElement">
@@ -721,8 +677,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${formattedIdentifier}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -759,12 +714,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${formattedIdentifier}</edt:displayNameTemplate>
+    
     <rdfs:comment xml:lang="en-US">Characterizes a meaningful aggregation of several attack patterns, as in a chain.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -805,8 +758,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/AttackSurface/${relativeId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -819,8 +771,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="TargetAttackSurfaceDescription"/>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}</edt:displayNameTemplate>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -842,8 +793,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes a common Attack Surface</rdfs:comment>
     <rdfs:label xml:lang="en-US">Common Attack Surface</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -865,10 +815,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Audience</rdfs:label>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Audience/${stakeholder}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
+    
     <rdfs:comment xml:lang="en-US">Characterizes a reference to the target audience or group for this view.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
@@ -881,8 +829,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${stakeholder}</edt:displayNameTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="Reference">
     <rdfs:subClassOf>
@@ -930,8 +877,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion/Reference/${localReferenceId}</edt:iriTemplate>
+    
     <rdfs:comment xml:lang="en-US">Represents a Reference</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -951,8 +897,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -974,14 +919,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Reference</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${localReferenceId}</edt:displayNameTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="Term">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:comment xml:lang="en-US">Characterizes a term by which an attack pattern may be known and a description to explain the context in which the term may be relevant. This is not required for all entries and should only be included where appropriate.</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Term/${term}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Term</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -992,11 +935,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${term}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1028,13 +969,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/IndicatorWarning/${relativeId}</edt:iriTemplate>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Attack Indicator/Warning ${relativeId}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1056,8 +994,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="SusceptabiltyIndicator">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}: ${indicatorType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1077,12 +1014,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Indicator/AttackStep/${relativeId}</edt:iriTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes an indicator that the application may or may not be susceptible to the given attack step (not necessarily the pattern as a whole).</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1095,8 +1030,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Consequence">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1106,10 +1040,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Consequence/${relativeId}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${consequenceId}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1134,8 +1066,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Knowlege">
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${skillKnowledgeLevel}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1145,10 +1076,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.deadafusion.com/SkillKnowledge/${relativeId}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
+    
     <rdfs:comment xml:lang="en-US">Characterizes a skill or knowledge</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -1185,8 +1114,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     <rdfs:comment xml:lang="en-US">Characterizes the pattern-specific overrides applied to an Attack Step</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1197,8 +1125,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://capec.mitre.org/capec#attackSteps</edt:reifiedDomain>
+    
     <rdfs:label xml:lang="en-US">Attack step override statement</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1220,8 +1147,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="AttackPhase">
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/AttackPhase/${relativeId}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Attack Phase</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1242,8 +1168,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1262,15 +1187,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${phaseName}</edt:displayNameTemplate>
+    
     <rdfs:comment xml:lang="en-US">Represents a segment the attack steps into the various phases of attack. One of three phases "Explore," "Experiment," or "Exploit."  Each phase should appear at most once, and attack steps should be grouped by what kind of activities the attacker is carrying out. The exploration and experimentation phases may or may not occur during a particular attack, because the attacker may already know exactly how to exploit a system</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:Class>
   <owl:Class rdf:about="#TargetAttackSurfaceDescription">
     <rdfs:comment xml:lang="en-US">Characterizes an Attack Surface</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/AttackSurface/${relativeId}</edt:iriTemplate>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Attack Surface</rdfs:label>
     <rdfs:subClassOf>
@@ -1282,8 +1205,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1312,8 +1234,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:minCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1326,11 +1247,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="ExampleInstance">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Example Instance ${relativeId}</edt:displayNameTemplate>
+    
     <rdfs:comment xml:lang="en-US">Represents an individual example or exploit instance.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Example Instance</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1351,16 +1270,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/ExampleInstance/${relativeId}</edt:iriTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="Environment">
     <rdfs:comment xml:lang="en-US">Represents a kind of environment or context that is required. Used in Attack Steps, Indicators of Susceptibility, and Security Controls, etc.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/CAPEC-${environmentId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1380,8 +1296,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${environmentTitle}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1440,8 +1355,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Revision/${relativeId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1452,10 +1366,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relativeId}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1497,11 +1409,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/ProtocolCmdStruct/${commandStructureName}</edt:iriTemplate>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -1531,8 +1441,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${commandStructureName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1574,17 +1483,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes a list of the individual Views to which this relationship pertains.</rdfs:comment>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://capec.mitre.org/capec#relatedAttackPatterns</edt:reifiedDomain>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${relationshipSource.id}_${relationshipNature}_${relationshipTarget.id}</edt:iriTemplate>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://capec.mitre.org/capec#relationships</edt:reifiedDomain>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
+    
+    
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipNature}</edt:displayNameTemplate>
+    
     <rdfs:label xml:lang="en-US">Relationship</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="RelatedWeaknessStatement">
@@ -1608,14 +1512,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the relationship to the related weakness</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >CWE-${weaknessId} ${weaknessRelationshipType}</edt:displayNameTemplate>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://capec.mitre.org/capec#relatedWeaknesses</edt:reifiedDomain>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/RW.CWE-${weaknessId}_${weaknessRelationshipType}</edt:iriTemplate>
+    
+    
+    
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     <rdfs:label xml:lang="en-US">Related weakness</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -1632,8 +1532,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Represents a perspective with which one might look at the attack patterns in CAPEC</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/CAPEC-${id}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1643,10 +1542,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >CAPEC-${id}</edt:displayNameTemplate>
+    
+    
     <rdfs:label xml:lang="en-US">View</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -1689,10 +1586,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:Class rdf:ID="ObfuscationTechnique">
     <rdfs:comment xml:lang="en-US">Characterizes a technique used to obfuscate an attackers actions</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Obfuscation Technique ${relativeId}</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/Technique/Obfuscation/${relativeId}</edt:iriTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1739,8 +1634,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Obfuscation Technique</rdfs:label>
   </owl:Class>
   <owl:ObjectProperty rdf:ID="attackerKnowledgeRequired">
@@ -1910,8 +1804,7 @@ USAGE: This element is used to identify specific vulnerabilities by their 	indus
     <rdfs:domain rdf:resource="#AttackStepTechnique"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="primaryViews">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#View"/>
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:comment xml:lang="en-US">Specifies a list of the individual Views to which this relationship pertains</rdfs:comment>
@@ -2101,8 +1994,7 @@ USAGE: This element is used to identify specific vulnerabilities by their 	indus
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#payloadActivationImpact.observables">
     <rdfs:label xml:lang="en-US">Payload Activation Impact Observables</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
     <rdfs:domain rdf:resource="#AttackPattern"/>
@@ -2209,10 +2101,8 @@ Specific weaknesses (underlying issues that may cause vulnerabilities) reference
     <rdfs:domain rdf:resource="#TechnicalImpact"/>
     <rdfs:comment xml:lang="en-US">Specifies the technical impacts that can result from successful execution of this attack pattern</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceTechImpactVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceTechImpactVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#environmentDescription">
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
@@ -2230,16 +2120,13 @@ Specific weaknesses (underlying issues that may cause vulnerabilities) reference
     <rdfs:domain rdf:resource="#AttackPattern"/>
     <rdfs:comment xml:lang="en-US">Specifies the typical impact of this pattern on the availability characteristics of the targeted 	software and related data.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Availability Impact</rdfs:label>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#payloadActivationImpact.description">
     <rdfs:comment xml:lang="en-US">Specifies an explanatory description of the payload activation impact.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#AttackPattern"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Payload Activation Impact Description</rdfs:label>
@@ -2520,10 +2407,8 @@ All words in the name should be capitalized except for articles and prepositions
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Scope</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies an individual consequence that may result from this attack pattern.</rdfs:comment>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceScopeVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ConsequenceScopeVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#targetAttackSurfaceTypes">
     <rdfs:label xml:lang="en-US">Target Attack Surface Types</rdfs:label>
@@ -2584,8 +2469,7 @@ All words in the name should be capitalized except for articles and prepositions
     <rdfs:domain rdf:resource="#Reference"/>
     <rdfs:label xml:lang="en-US">local reference id</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#viewFilter">
     <rdfs:comment xml:lang="en-US">Specifies an XSL query for identifying 	which elements are members of an implicit slice. This should only be present for implicit slices</rdfs:comment>
@@ -2763,10 +2647,8 @@ All words in the name should be capitalized except for articles and prepositions
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="codeExampleLanguage">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab</edt:rangeControlledVocabSet>
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies the programming language being used in the following block of Code</rdfs:comment>
     <rdfs:label xml:lang="en-US">Code Example Language</rdfs:label>
   </owl:DatatypeProperty>
@@ -2890,13 +2772,11 @@ All words in the name should be capitalized except for articles and prepositions
         </owl:oneOf>
       </rdfs:Datatype>
     </rdfs:range>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:label xml:lang="en-US">Typical Severity</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies on a rough scale (Very Low, Low, Medium, High, Very high), what is the typical severity of impact to the targeted software if this attack occurs? The severity of a specific attack instance can vary greatly depending on the specific context of the target software under attack. This field is intended to capture an overall typical average value for this type of attack with the understanding that it will not be completely accurate for all attacks.</rdfs:comment>
     <rdfs:domain rdf:resource="#AttackPattern"/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#indicatorId">
     <rdfs:label xml:lang="en-US">Indicator Identifier</rdfs:label>
@@ -2936,10 +2816,8 @@ All words in the name should be capitalized except for articles and prepositions
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Languages</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies one or more languages in which this attack pattern is possible and relevant.  Languages characterizes the target using an enumerated list of languages utilized by the target.</rdfs:comment>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="authorOganizationName">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2980,19 +2858,15 @@ All words in the name should be capitalized except for articles and prepositions
     <rdfs:label xml:lang="en-US">Typical Likelihood of Exploit</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies on a rough scale (Very Low, Low Medium,  High, Very High), what is the overall likelihood of this type of attack typically succeeding considering the attack prerequisites, targeted weakness attack surface, skill required and resources required as well as available and likely implemented blocking solutions? The likelihood of exploit of a specific attack instance can vary greatly depending on the specific context of the target software under attack. This field is intended to capture an overall typical average value for this type of attack with the understanding that it will not be completely accurate for all attacks.</rdfs:comment>
     <rdfs:domain rdf:resource="#AttackPattern"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#impact.integrity">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:label xml:lang="en-US">Integrity Impact</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies  the typical impact of this pattern on the integrity characteristics of the targeted software and related data.</rdfs:comment>
     <rdfs:domain rdf:resource="#AttackPattern"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rfc">
@@ -3070,11 +2944,9 @@ All words in the name should be capitalized except for articles and prepositions
     <rdfs:domain rdf:resource="#Category"/>
     <rdfs:comment xml:lang="en-US">Specifies the mechanism of attack used by this pattern. This field can help define the applicable attack surface required for this attack.</rdfs:comment>
     <rdfs:domain rdf:resource="#AttackPattern"/>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#CodeLanguageVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:label xml:lang="en-US">Methods of Attack</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MethodsOfAttackVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="entryComment">
@@ -3147,8 +3019,7 @@ For example, a positive indicator of susceptibility to parameter tampering is th
   <owl:DatatypeProperty rdf:about="#term">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://capec.mitre.org/capec&gt;</rdfs:isDefinedBy>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >attackpattern</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Term"/>
     <rdfs:comment xml:lang="en-US">Specifies the actual term.  Each term should follow the same conventions as they entry Name attribute.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -3461,10 +3332,8 @@ USAGE: Usage defined in NIST SP 800-27A, "Engineering Principles for Information
     <rdfs:domain rdf:resource="#TechnicalImpact"/>
     <rdfs:label xml:lang="en-US">Impact Likelihood</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="activationZone">
     <rdfs:domain rdf:resource="#AttackPattern"/>
@@ -3689,10 +3558,8 @@ Valid values are: Implicit Slice = a slice based on a filter criteria; Explicit 
     <rdfs:domain rdf:resource="#AttackPattern"/>
     <rdfs:comment xml:lang="en-US">Specifies the typical impact of this pattern on the confidentiality characteristics of the targeted software and related data.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Confidentiality Impact</rdfs:label>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#HighMediumLowVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#commandType">

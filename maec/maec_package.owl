@@ -4,7 +4,7 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:maecPackage="http://maec.mitre.org/maec_package#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://maec.mitre.org/maec_package">
   <owl:Ontology rdf:about="http://maec.mitre.org/maec_package">
@@ -31,10 +31,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Malware Attribute Enumeration and Characterization (MAEC)  Package Ontology</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:ID="ClusteringMetadata">
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${clusteringAlgorithmName}${clusteringAlgorithmVersion}${clusteringAlgorithmParameter.distanceThreshold}${clusteringAlgorithmParameter.numberOfInterations}${clusterSize})}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${clusteringAlgorithmName} v${clusteringAlgorithmVersion} /D:${clusteringAlgorithmParameter.distanceThreshold} /I:${clusteringAlgorithmParameter.numberOfIterations}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -54,8 +52,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -151,11 +148,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#Exception">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Exception ${exceptionCode}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -200,13 +195,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${exceptionCode}${faultingAddress}${isFatal})}</edt:iriTemplate>
+    
     <rdfs:comment xml:lang="en-US">Characterizes details of exceptions that may be raised as a result of a malware instance executing on a system.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#GroupingRelationship">
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${groupingRelationshipType}${malwareFamilyName}${malwareToolkitName})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://maec.mitre.org/maec_common#id"/>
@@ -234,8 +227,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -246,8 +238,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the relationship that groups together the Malware Subjects in a Package.</rdfs:comment>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${groupingRelationshipType}:${malwareFamilyName} ${malwareToolkitName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -261,8 +252,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="HypervisorHostSystem">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the VM Hypervisor host system used in the malware analysis environment.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/System#System"/>
     <rdfs:label xml:lang="en-US">Hypervisor Host System</rdfs:label>
@@ -275,15 +265,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${hostname}</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/object-${@hash(${hostname}-${currentDate}-%{localTime})}</edt:iriTemplate>
+    
+    
   </owl:Class>
   <owl:Class rdf:ID="MalwareSubjectRelationshipStatement">
     <rdfs:label xml:lang="en-US">Malware subject relationship</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${relationshipType}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
@@ -310,8 +297,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
@@ -320,8 +306,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes the relationships between a Malware Subject and one or more other Malware Subjects.</rdfs:comment>
-    <edt:reifiedDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/maec_package#relationships</edt:reifiedDomain>
+    
   </owl:Class>
   <owl:Class rdf:about="#CapturedProtocol">
     <rdfs:subClassOf>
@@ -351,13 +336,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Protocol: ${protocol#protocolName} Port: ${port#portNumber} [${interactionLevel}]</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${protocol#protocolName}${port#portNumber})}</edt:iriTemplate>
+    
+    
     <rdfs:comment xml:lang="en-US">Characterizes details of a network protocol that may be captured or otherwise manipulated in the malware analysis environment.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -371,8 +353,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#MalwareConfigurationDetails">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@uuid()}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -392,8 +373,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -439,12 +419,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes details of malware configuration parameters and associated metadata.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Malware Configuration Details</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Configuration Details ${configurationDetailsId}</edt:displayNameTemplate>
+    
   </owl:Class>
   <owl:Class rdf:about="#ObfuscationAlgorithm">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -463,8 +441,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${hash(${algorithmName})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -475,8 +452,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Obfuscation Algorithm</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${algorithmName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -491,8 +467,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:Class rdf:about="#NetworkInfrastructure">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Network Infrastructure</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -503,8 +478,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:minCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Analysis Environment Network Infrastructure</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://maec.mitre.org/maec_common#id"/>
@@ -512,8 +486,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@uuid()}</edt:iriTemplate>
+    
     <rdfs:comment xml:lang="en-US">Characterizes details about the network infrastructure used in the malware analysis environment.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#MalwareSubject">
@@ -535,8 +508,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${malwareSubjectId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -569,8 +541,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -605,8 +576,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${malwareSubjectId} (${malwareLabel})</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -636,20 +606,15 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/System#System"/>
     <rdfs:comment xml:lang="en-US">Characterize any systems on which malware analysis is performed. It imports and extends version 2.0.1 of the CybOX System Object.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Analysis System</rdfs:label>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${hostname}</edt:displayNameTemplate>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/object-${@hash(analysis_system-${hostname}-${currentDate}-%{localTime})}</edt:iriTemplate>
+    
+    
   </owl:Class>
   <owl:Class rdf:about="#ClusterEdgeNodePair">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Index: ${similarityIndex} Distance: ${similarityDistance}</edt:displayNameTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://maec.mitre.org/maec_common#id"/>
@@ -677,8 +642,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/$(@hash(${nodeA#id}${nodeB#id}${similarityIndex}${similiarityDistance})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -711,8 +675,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -723,11 +686,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${parameterName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(parameterName})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://maec.mitre.org/maec_common#id"/>
@@ -843,8 +804,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -854,8 +814,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${analysisType} ${analysisMethod} [${startDate}-${completeDate}]</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -868,8 +827,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/analysis-$(@hash(${analysisType}${analysisMethod}${startDate}${completeDate}${lastUpdateDate}${ordinalPosition})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -923,10 +881,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#Package">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >Package ${packageId} [${timestamp}]</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -953,8 +909,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${packageId}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -970,8 +925,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:ObjectProperty rdf:about="#vmHypervisor">
     <rdfs:comment xml:lang="en-US">Specifies the name of the VM Hypervisor that hosts the operating system(s) on which the analysis was performed, if applicable, via a Common Platform Enumeration (CPE) identifier. See http://cpe.mitre.org for more information on CPE.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -987,8 +941,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:ID="analysts">
     <rdfs:comment xml:lang="en-US">Specifies the analyst(s) who performed the analysis.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Contributor"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:label xml:lang="en-US">Analysts</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -998,8 +951,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="#ClusterEdgeNodePair"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies a single edge and its connected nodes in the malware cluster, representing the similarity index between two Malware Subjects.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Clustering Composition</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#nodeB">
@@ -1007,8 +959,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="#MalwareSubject"/>
     <rdfs:comment xml:lang="en-US">Specifies a node connected to the edge via a reference to a Malware Subject that is part of a malware cluster.</rdfs:comment>
     <rdfs:domain rdf:resource="#ClusterEdgeNodePair"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Node B</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#configurationDetails">
@@ -1016,23 +967,20 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:comment xml:lang="en-US">Specifies details of the configuration specified for the Malware Subject, such as configuration parameters.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Configuration Details</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="analyses">
     <rdfs:label xml:lang="en-US">Analyses</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies any analyses (including their associated metadata such as tools used, etc.) that were performed on the Malware Subject.</rdfs:comment>
     <rdfs:range rdf:resource="#Analysis"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="dynamicAnalysisMetadata.raisedExceptions">
     <rdfs:comment xml:lang="en-US">Specifies one or more exceptions that were raised (or thrown) during the execution of the malware instance.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#Exception"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Raised Exceptions</rdfs:label>
@@ -1040,8 +988,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="tools">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Tools</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
     <rdfs:comment xml:lang="en-US">Specifies information about the tool(s) used in the analysis. If only a single Tool is specified, then this implies that this tool was responsible for all of the findings contained in the Analysis Bundle referenced by the analysis findings.</rdfs:comment>
@@ -1052,14 +999,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies details of the network infrastructure used in the analysis environment, such as any network protocols that are captured or manipulated.</rdfs:comment>
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:label xml:lang="en-US">Network Infrastructure</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="developmentEnvironment.debuggingFiles">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the properties of a debugging file associated with the malware instance, such as a PDB file.</rdfs:comment>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:label xml:lang="en-US">Development Environment Debugging file</rdfs:label>
@@ -1068,8 +1013,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:about="#port">
     <rdfs:domain rdf:resource="#CapturedProtocol"/>
     <rdfs:comment xml:lang="en-US">Specifies the port for this network protocol that is captured or manipulated by the analysis environment.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Port</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
@@ -1080,8 +1024,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 &#xD;
 A comment should be attributable to a specific analyst and should reflect particular insights of the author that are significant from an analysis standpoint.  The contents of comments are typically not contained in the Report.</rdfs:comment>
     <rdfs:range rdf:resource="http://maec.mitre.org/maec_common#Comment"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Comments</rdfs:label>
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:ObjectProperty>
@@ -1090,8 +1033,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Configuration URL</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies a URL at which the configuration parameters for the Malware Subject may be stored. More than one such URL may be specified by using multiple occurrences of this field.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareConfigurationDetails"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#nodeA">
@@ -1099,13 +1041,11 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Node A</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies a node connected to the edge via a reference to a Malware Subject that is part of a malware cluster.</rdfs:comment>
     <rdfs:domain rdf:resource="#ClusterEdgeNodePair"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="relatedMalwareSubjects">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a reference to a single Malware Subject that this relationship pertains to.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#MalwareSubject"/>
@@ -1116,8 +1056,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Analysis Findings</rdfs:label>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:domain rdf:resource="#Analysis"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies any Analysis Bundles pertaining to the Malware Subject, thus capturing any observed or discovered Behaviors, Actions, or Objects. These Bundles can either be abstract, or referenced as the result of an analysis that was performed on the malware.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
@@ -1126,8 +1065,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Relationships</rdfs:label>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:comment xml:lang="en-US">Specifies any relationships between the Malware Subject and other Malware Subjects.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="minorVariants">
@@ -1135,8 +1073,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies any minor variants of the malware instance object, such as the same file but with different filenames.</rdfs:comment>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="analysisFindings.actionEquivalences">
@@ -1144,8 +1081,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Analysis Findings - Action Equivalence</rdfs:label>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:comment xml:lang="en-US">Specifies any equivalences between Actions contained in one or more Bundles.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#malwareSubjects">
@@ -1153,15 +1089,13 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies a list of Malware Subjects that are associated with this package.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#MalwareSubject"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Malware Subjects</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="installedPrograms">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the programs installed on the OS that was used to perform the analysis. This can be useful for clarifying the nature of the analysis environment, for instance for determining whether an exploited piece of software was present, as well as for specifying any tools that may have been installed.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#AnalysisSystem"/>
     <rdfs:label xml:lang="en-US">Installed Programs</rdfs:label>
     <rdfs:range>
@@ -1176,8 +1110,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="developmentEnvironment.tools">
     <rdfs:range rdf:resource="http://maec.mitre.org/maec_common#ToolInformation"/>
     <rdfs:comment xml:lang="en-US">Specifies the properties of one or more tools used in the development of the malware instance. For the Type field in each Tool, the MAEC MalwareDevelopmentToolVocab (from the MAEC Default Vocabularies Schema) should be used as the default vocabulary.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:label xml:lang="en-US">development environmet.tools</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1187,8 +1120,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies the details of the algorithm used to encode or encrypt the malware configuration parameters, including the name of the algorithm and its key. More than one encryption or encoding algorithm may be specified by using multiple occurrences of this field.</rdfs:comment>
     <rdfs:range rdf:resource="#ObfuscationAlgorithm"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Obfuscation Algorithm Details</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="analysisEnvironment.hypervisorHostSystem">
@@ -1196,16 +1128,14 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Hypervisor Host System</rdfs:label>
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:range rdf:resource="#HypervisorHostSystem"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies  the (physical) host system used in the analysis on which the VM Hypervisor runs.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#storage.configurationFile">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/File#File"/>
     <rdfs:label xml:lang="en-US">Configuation File</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the properties of a configuration file, for cases where the Malware Subject stores its configuration parameters in a separate file.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#MalwareConfigurationDetails"/>
   </owl:ObjectProperty>
@@ -1214,14 +1144,12 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="#AnalysisSystem"/>
     <rdfs:comment xml:lang="en-US">Specifies the system(s) (real or virtual) on which the actual analysis was performed, including information about both the hardware and software, such as the properties of its BIOS, processor architecture, and operating system.</rdfs:comment>
     <rdfs:domain rdf:resource="#Analysis"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="analysisFindings.objectEquivalences">
     <rdfs:label xml:lang="en-US">Analysis Finddings Object Equivalences</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:comment xml:lang="en-US">Specifies  any equivalences between Objects contained in one or more Bundles.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
@@ -1230,8 +1158,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:about="#capturedProtocols">
     <rdfs:range rdf:resource="#CapturedProtocol"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a list of network protocols, along with the particular level of interaction, that the malware analysis environment captures or interacts with in some fashion.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Captured Protocols</rdfs:label>
     <rdfs:domain rdf:resource="#NetworkInfrastructure"/>
@@ -1239,8 +1166,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:about="#protocol">
     <rdfs:label xml:lang="en-US">Protocol</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the protocol captured or manipulated by the analysis enviornment.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#CapturedProtocol"/>
@@ -1250,8 +1176,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies any metadata regarding the algorithm and/or methods used for cluster the Malware Subjects in this Package.</rdfs:comment>
     <rdfs:range rdf:resource="#ClusteringMetadata"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Clustering Metadata</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="configurationParameters">
@@ -1259,14 +1184,12 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies one or more configuration parameter that may be defined for the Malware Subject.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Configuration Parameters</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareConfigurationDetails"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="compatiblePlatforms">
     <rdfs:comment xml:lang="en-US">Specifies one or more platforms that the Malware Subject is compatible with (i.e. can execute on).</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareSubject"/>
     <rdfs:label xml:lang="en-US">Compatible Platform</rdfs:label>
     <rdfs:range>
@@ -1284,8 +1207,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the particular relationships that serve to group the Malware Subjects encompassed in this Package. This is solely for cases where more than one Malware Subject is contained within the Package.</rdfs:comment>
     <rdfs:label xml:lang="en-US">grouping relationships</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#GroupingRelationship"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#clusteringAlgorithmParameter.distanceThreshold">
@@ -1293,8 +1215,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Clustering Algorithm - Distance Threshold</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the minimum distance threshold for the cluster, or the minimum distance between nodes in order for them to belong to the same cluster.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clusterComposition.scoreType">
@@ -1302,38 +1223,32 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Cluster Composition - Score Type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the type of score used to define the composition of this malware cluster, for clustering algorithms that may capture different types of scores</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#groupingRelationshipType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#GroupingRelationshipTypeVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#GroupingRelationship"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of relationship that groups the Malware Subjects in the Package.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Group Relationship Type</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#GroupingRelationshipTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#obfuscation.isEncoded">
     <rdfs:domain rdf:resource="#MalwareConfigurationDetails"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment xml:lang="en-US">Specifies whether the obfuscation is encoded</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Obfuscation is Encoded</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#schemaVersion">
     <rdfs:domain rdf:resource="#Package"/>
     <rdfs:comment xml:lang="en-US">Specifies the version of the schema associated with the Package</rdfs:comment>
     <rdfs:label xml:lang="en-US">Schema Version</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1342,8 +1257,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label xml:lang="en-US">Obfuscation using Encryption</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies whether the obfuscation is using encryption.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#summary">
@@ -1357,8 +1271,7 @@ A comment should be attributable to a specific analyst and should reflect partic
         </owl:unionOf>
       </owl:Class>
     </rdfs:range>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Summary</rdfs:label>
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:DatatypeProperty>
@@ -1367,16 +1280,14 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies the similarity index  between the two Malware Subjects being referenced (indicating how similar they are), as a decimal value. This value should be equivalent to 1 minus the similarity distance value (if included).</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:label xml:lang="en-US">Similarity Index</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ClusterEdgeNodePair"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dynamicAnalysisMetadata.commandLine">
     <rdfs:label xml:lang="en-US">Command Line</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the command line used to launch the subject binary.</rdfs:comment>
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:DatatypeProperty>
@@ -1385,20 +1296,16 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Similarity Distance</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the similarity distance between the two Malware Subjects being referenced (indicating how dissimilar they are), as a decimal value. This value should be equivalent to 1 minus the similarity index value (if included).</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ClusterEdgeNodePair"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#analysisType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#AnalysisTypeVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#AnalysisTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the type of malware analysis being performed.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Analysis Type</rdfs:label>
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:DatatypeProperty>
@@ -1406,8 +1313,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies the textual report regarding the analysis performed on the malware. The Report should correspond to the human-readable prose document that captures key aspects and outcomes of the analysis.</rdfs:comment>
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:label xml:lang="en-US">Report</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1421,45 +1327,37 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:DatatypeProperty rdf:about="#isFatal">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies whether the exception is fatal; that is, whether it caused the malware instance to terminate.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:domain rdf:resource="#Exception"/>
     <rdfs:label xml:lang="en-US">Is Fatal</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#parameterName">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#MalwareConfigurationParameterVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#MalwareConfigurationParameterVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:label xml:lang="en-US">Parameter Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the name of the malware configuration parameter.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Parameter"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#interactionLevel">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ProtoInteractionLevelVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:domain rdf:resource="#CapturedProtocol"/>
     <rdfs:comment xml:lang="en-US">Specifies the relative level of interaction that the analysis environment has with the specified network protocol.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Interaction Level</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ProtoInteractionLevelVocab-1.0</edt:rangeControlledVocabClass>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#storage.malwareBinarySectionName">
     <rdfs:domain rdf:resource="#MalwareConfigurationDetails"/>
     <rdfs:label xml:lang="en-US">Malware Binary  - Section Name</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the name of the PE section in the malware binary thta contains the malware configuration parameters, for PE file malware binaries.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#timestamp">
@@ -1467,8 +1365,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Timestamp</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the date and time that the Package was created.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clusteringAlgorithmName">
@@ -1476,42 +1373,34 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Clustering Algorithm Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the name of the clustering algorithm used to cluster the malware.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="malwareLabel">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#MalwareLabelVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:domain rdf:resource="#MalwareSubject"/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#MalwareLabelVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:comment xml:lang="en-US">Specifies a single commonly accepted label to describe the Malware Subject, e.g. "worm". The default vocabulary for this field is the MalwareLabelVocab-1.0 from the MAEC Default Vocabularies schema. More than one label may be specified through the use of multiple instances of this field.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Malware Label</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#completeDateTime">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the date/time the analysis was completed.</rdfs:comment>
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label xml:lang="en-US">Completion Date</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#analysisMethod">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#AnalysisMethodVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#AnalysisMethodVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:label xml:lang="en-US">Analysis Method</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the type of malware analysis being performed.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1520,16 +1409,14 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Malware Family Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the name of the malware family referred to by the 'same_malware_family' relationship type.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dynamicAnalysisMetadata.exitCode">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label xml:lang="en-US">Exit Code</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the exit code with which the subject binary exited.</rdfs:comment>
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:DatatypeProperty>
@@ -1538,45 +1425,38 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:comment xml:lang="en-US">Specifies the offset to the start of the malware configuration parameters in the malware binary.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareConfigurationDetails"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dynamicAnalysisMetadata.analysisDuration">
     <rdfs:label xml:lang="en-US">Analysis Duration</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <rdfs:comment xml:lang="en-US">Specifies the duration of the overall dynamic analysis process, in seconds.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#description">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the textual description of the exception.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Exception"/>
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#relationshipType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#MalwareSubjectRelationshipTypeVocab</edt:rangeControlledVocabSet>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://maec.mitre.org/default_vocabularies-1#MalwareSubjectRelationshipTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:label xml:lang="en-US">Relationship Type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the type of relationship being captured.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#MalwareSubjectRelationshipStatement"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#startDateTime">
     <rdfs:domain rdf:resource="#Analysis"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Start Date</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:comment xml:lang="en-US">Specifies the date/time the analysis was started.</rdfs:comment>
@@ -1587,14 +1467,12 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label xml:lang="en-US">Malware Binary - Section Offset</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the offset in the PE section in the malware binary that contains the malware configuration parameters to the start of the parameters themselves, for PE file malware binaries.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#faultingAddress">
     <rdfs:comment xml:lang="en-US">Specifies the memory address where the exception occurred.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:domain rdf:resource="#Exception"/>
     <rdfs:label xml:lang="en-US">Faulting Address</rdfs:label>
@@ -1605,8 +1483,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies  the value of the malware configuration parameter.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Parameter Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Parameter"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clusteringAlgorithmVersion">
@@ -1614,8 +1491,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the version of the algorithm used to cluster the malware.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ClusteringMetadata"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clusterSize">
@@ -1623,8 +1499,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Cluster Size</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the size of the malware cluster.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#lastUpdateDateTime">
@@ -1632,8 +1507,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Last Update</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:comment xml:lang="en-US">Specifies the date/time the analysis was last updated.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Analysis"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clusteringAlgorithmParameter.numberOfIterations">
@@ -1641,8 +1515,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies the number of times that the algorithm was executed in order to produce the cluster.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Clustering Algorithm - Number of Iterations</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#algorithmName">
@@ -1650,8 +1523,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the name of the encoding or encryption algorithm used to obfuscate the malware configuration parameters.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clusterDescription">
@@ -1659,15 +1531,13 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies a textual description of the malware cluster, such as information about its composition, etc.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exceptionCode">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies the particular code that identifies the type of exception that occurred.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Exception Code</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Exception"/>
@@ -1677,8 +1547,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:label xml:lang="en-US">Malware Toolkit Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the name of the malware toolkit referred to by the 'same_malware_toolkit' relationship type.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#algorithmKey">
@@ -1686,8 +1555,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:comment xml:lang="en-US">Specifies the hexadecimal key used to decrypt the configuration parameters.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Key</rdfs:label>
     <rdfs:domain rdf:resource="#ObfuscationAlgorithm"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="analysisFindings.externalReference">
@@ -1695,8 +1563,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:label xml:lang="en-US">External Findings Reference</rdfs:label>
     <rdfs:domain rdf:resource="#MalwareSubject"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies a single externally located MAEC Bundle (such as a file or URL) via a URI, representing some set of results from analysis of the Malware Subject.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ordinalPosition">
@@ -1706,8 +1573,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:domain rdf:resource="#Analysis"/>
     <rdfs:domain rdf:resource="#ObfuscationAlgorithm"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonPositiveInteger"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >maec</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#ClusterEdgeNodePair"/>
   </owl:DatatypeProperty>
   <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.volume">

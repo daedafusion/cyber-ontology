@@ -4,7 +4,7 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:artifactObj="http://cybox.mitre.org/objects/Artifact#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/Artifact">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Artifact">
@@ -24,10 +24,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:Class rdf:ID="PackageCompression">
     <rdfs:label xml:lang="en-US">Package Compression</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${compressionMechanism}</edt:displayNameTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >artifactObj</edt:namespacePrefix>
+    
+    
     <rdfs:comment xml:lang="en-US">Characterizes the compression packaging details for an artifact</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -48,8 +46,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${compressionMechanism})}</edt:iriTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="PackageEncryption">
     <rdfs:subClassOf>
@@ -80,8 +77,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${encryptionMechanism}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -91,13 +87,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${encryptionMechanism})}</edt:iriTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Package Encryption</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >artifactObj</edt:namespacePrefix>
+    
   </owl:Class>
   <owl:Class rdf:ID="Artifact">
     <rdfs:subClassOf>
@@ -237,8 +231,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${id}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -293,8 +286,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Charadcterizes the content of a Raw Artifact.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
@@ -341,8 +333,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:label xml:lang="en-US">Package Encoding</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >artifactObj</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Characterizes the encoding packaging details for an artifact</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
@@ -351,8 +342,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 &#xD;
 If one or more PackageCompression references are specified, the isCompressed field MUST be set to True.</rdfs:comment>
     <rdfs:range rdf:resource="#PackageCompression"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >artifactObj</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Packaging Compression</rdfs:label>
@@ -364,8 +354,7 @@ If one or more PackageEncryption references are specified, the isEncrypted field
     <rdfs:label xml:lang="en-US">Packaging Encryption</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Artifact"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >artifactObj</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#PackageEncryption"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="packaging.encoding">
@@ -373,23 +362,20 @@ If one or more PackageEncryption references are specified, the isEncrypted field
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Packaging Encoding</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >artifactObj</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="#PackageEncoding"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#encodingCustomCharacterSetRef">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment xml:lang="en-US">Specifies a reference to a specification of the custom character set used to encode the Raw Artifact.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Packaging Encoding Custom Character Set Reference</rdfs:label>
     <rdfs:domain rdf:resource="#PackageEncoding"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#suspectedMalicious">
     <rdfs:comment xml:lang="en-US">Specifies whether the content of the Raw Artifact is believed to be malicious.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -401,13 +387,11 @@ If one or more PackageEncryption references are specified, the isEncrypted field
     <rdfs:label xml:lang="en-US">Packaging Encoding Character Set</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#PackageEncoding"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contentType">
     <rdfs:comment xml:lang="en-US">Specifies the Internet Media Type of the artifact contained in this Defined Object.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -417,8 +401,7 @@ If one or more PackageEncryption references are specified, the isEncrypted field
     <rdfs:comment xml:lang="en-US">Specifies whether the Raw Artifact content is compressed.&#xD;
 &#xD;
 If set to True, at least one reference to a PackageCompression should be supplied.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -428,8 +411,7 @@ If set to True, at least one reference to a PackageCompression should be supplie
     <rdfs:comment xml:lang="en-US">Specifies whether the Raw_Artifact content is protected/encrypted. &#xD;
 &#xD;
 If set to True, at least one reference to a PackageEncryption should be supplied.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -437,8 +419,7 @@ If set to True, at least one reference to a PackageEncryption should be supplied
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rawArtifact.value">
     <rdfs:label xml:lang="en-US">Raw Artifact Value</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -449,30 +430,25 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:label xml:lang="en-US">Packaging Encoding Algorithm</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#PackageEncoding"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the encoding algorithm utilized to encode the Raw Artifact.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#artifactType">
     <rdfs:comment xml:lang="en-US">Specifies the general type of the artifact contained in this Defined Object.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Artifact Type</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ArtifactTypeVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ArtifactTypeVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rawArtifact.reference">
     <rdfs:comment xml:lang="en-US">Specifies a reference to an external instance of the raw content of a cyber artifact (rather than simply analysis of that artifact).</rdfs:comment>
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Raw Artifact Reference</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encryptionKey">
@@ -480,8 +456,7 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#PackageEncryption"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the password for unprotecting/decrypting the Raw_Artifact content.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#compressionMechanism">
@@ -489,14 +464,12 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#PackageCompression"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Packaging Compression Mechanism</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encryptionMechanism">
     <rdfs:comment xml:lang="en-US">Specifies the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#PackageEncryption"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -505,32 +478,27 @@ If set to True, at least one reference to a PackageEncryption should be supplied
   <owl:DatatypeProperty rdf:about="#encryptionMechanismRef">
     <rdfs:comment xml:lang="en-US">Specifies a reference to a description of the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
     <rdfs:label xml:lang="en-US">Packaging Encryption Mechanism Reference</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#PackageEncryption"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rawArtifact.byteOrder">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#EndiannessVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:label xml:lang="en-US">Raw Artifact Byte Order</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies the endianness of the unpacked (e.g., unencrypted, base64-decoded, decompressed, etc.) Raw Artifact data.</rdfs:comment>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#EndiannessVocab</edt:rangeControlledVocabSet>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#compressionMechanismRef">
     <rdfs:comment xml:lang="en-US">Specifies a reference to a description of the compression algorithm utilized to protect the content.</rdfs:comment>
     <rdfs:domain rdf:resource="#PackageCompression"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Packaging Compression Mechanism Reference</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encryptionKeyRef">
@@ -538,14 +506,12 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:domain rdf:resource="#PackageEncryption"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Packaging Encryption Key Reference</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contentTypeVersion">
     <rdfs:comment xml:lang="en-US">Specifies the content type version of the artifact contained in this Defined Object.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Artifact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>

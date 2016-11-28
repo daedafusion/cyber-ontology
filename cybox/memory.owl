@@ -4,7 +4,7 @@
     xmlns:memoryObj="http://cybox.mitre.org/objects/Memory#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cybox.mitre.org/objects/Memory">
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Memory">
@@ -41,8 +41,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${name}${regionStartAddress}${regionEndAddress}${memoryPageRegionType})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -75,10 +74,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${memoryPageRegionType} ${name}: ${regionStartAddress}-${regionEndAddress}</edt:displayNameTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Windows Memory Page Region</rdfs:label>
     <rdfs:subClassOf>
@@ -273,8 +270,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${name}${regionStartAddress}${regionEndAddress})}</edt:iriTemplate>
+    
 <!--    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -325,8 +321,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -345,8 +340,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${name}: ${regionStartAddress}-${regionEndAddress}</edt:displayNameTemplate>
+    
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -376,39 +370,33 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies details about any hashes of the particular memory object.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#isMapped">
     <rdfs:comment xml:lang="en-US">Specifies whether or not the particular memory object has been assigned a byte-for-byte correlation with some portion of a file or file-like resource.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:domain rdf:resource="#Memory"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Is Mapped</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#blockType">
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryBlockTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment xml:lang="en-US">Specifies the block type of a particular memory object.</rdfs:comment>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Block Type</rdfs:label>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryBlockTypeVocab</edt:rangeControlledVocabSet>
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#regionSize">
     <rdfs:comment xml:lang="en-US">Specifies the size of the particular memory region, in bytes.</rdfs:comment>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Region Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#memoryPageRegionType">
@@ -416,21 +404,17 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#WindowsMemoryPageRegion"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of pages in the memory page region.</rdfs:comment>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageTypeVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageTypeVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#regionStartAddress">
     <rdfs:comment xml:lang="en-US">Specifies the starting address of the particular memory region.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Region Start Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#name">
@@ -438,14 +422,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Name</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#allocationBaseAddress">
     <rdfs:comment xml:lang="en-US">Specifies the base address of the memory page region when the region was first allocated.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsMemoryPageRegion"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Allocation Base Address</rdfs:label>
@@ -456,8 +438,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Memory"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US">Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed from the particular memory object.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#regionEndAddress">
@@ -465,74 +446,61 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the ending address of the particular memory region.</rdfs:comment>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Region End Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#isInjected">
     <rdfs:comment xml:lang="en-US">Specifies whether or not the particular memory object has had data/code injected into it by another process.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:label xml:lang="en-US">Is Injected</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#protect">
     <rdfs:comment xml:lang="en-US">Specifies the access protection of the memory pages in the region.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsMemoryPageRegion"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Protect</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageProtectionVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageProtectionVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#allocationProtect">
     <rdfs:comment xml:lang="en-US">Specifies the memory protection option for the memory page region when the region was initially allocated.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsMemoryPageRegion"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Allocation Protect</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageProtectionVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageProtectionVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#memorySource">
     <rdfs:comment xml:lang="en-US">Specifies the name of the source file or segment that produced the bytes that make the particular memory object.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Memory Source</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#memoryPageState">
     <rdfs:comment xml:lang="en-US">Specifies the state of the memory pages in the region.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#WindowsMemoryPageRegion"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label xml:lang="en-US">Memory Page State</rdfs:label>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageStateVocab-1.0</edt:rangeControlledVocabClass>
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#MemoryPageStateVocab</edt:rangeControlledVocabSet>
+    
+    
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#isVolatile">
     <rdfs:comment xml:lang="en-US">Specifies whether or not the particular memory object is volatile.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Is Volatile</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#isProtected">
@@ -540,8 +508,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:domain rdf:resource="#Memory"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Is Protected</rdfs:label>
   </owl:DatatypeProperty>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.strings">

@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:arpCacheObj="http://cybox.mitre.org/objects/ARPCache#"
   xml:base="http://cybox.mitre.org/objects/ARPCache">
@@ -24,10 +24,8 @@ The ontology is based on the CybOX ARP Cache object schema maintained by The MIT
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Ontology>
   <owl:Class rdf:ID="ARPCache">
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${id}</edt:iriTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -104,8 +102,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -131,16 +128,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#ARPCacheEntry"/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#NetworkInterface"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Network Interface</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#physicalAddress">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#MACAddress"/>
     <rdfs:comment xml:lang="en-US">Specifies the physical (e.g. MAC-48) address that is mapped to the IP address in the ARP cache entry.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Physical Address</rdfs:label>
     <rdfs:domain rdf:resource="#ARPCacheEntry"/>
   </owl:ObjectProperty>
@@ -149,8 +144,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies one or more  address resolution protocol (ARP) cache entries.</rdfs:comment>
     <rdfs:domain rdf:resource="#ARPCache"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">ARP Cache Entries</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#ipAddress">
@@ -165,21 +159,17 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment xml:lang="en-US">Specifies the IP address that is mapped to the physical address in the ARP cache entry.</rdfs:comment>
     <rdfs:domain rdf:resource="#ARPCacheEntry"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">IP Address</rdfs:label>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#arpCacheEntryType">
-    <edt:rangeControlledVocabSet rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ARPCacheEntryTypeVocab</edt:rangeControlledVocabSet>
-    <edt:rangeControlledVocabClass rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/default_vocabularies-1#ARPCacheEntryTypeVocab-1.0</edt:rangeControlledVocabClass>
+    
+    
     <rdfs:comment xml:lang="en-US">Specifies the type of ARP cache entry, which typically refers to the way the entry was added to the cache.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#ARPCacheEntry"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cybox</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">ARP Cache Entry Type</rdfs:label>
   </owl:DatatypeProperty>
 </rdf:RDF>

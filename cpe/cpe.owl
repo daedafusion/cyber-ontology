@@ -4,7 +4,7 @@
     xmlns:cpe="http://cpe.mitre.org/cpe#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:edt="http://www.daedafusion.com/editor_annotation#"
+    
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://cpe.mitre.org/cpe">
   <owl:Ontology rdf:about="http://cpe.mitre.org/cpe">
@@ -25,8 +25,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Ontology>
   <owl:Class rdf:ID="ChangeDescription">
     <rdfs:comment xml:lang="en-US">Specifies a description of any changes made to the identifier name or associated metadata.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Change Description</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf>
@@ -48,8 +47,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cpe://Change/${changeDate}/${changeType}/@hash(${comment})</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -59,8 +57,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${changeDate} ${changeType} : ${comment}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -129,8 +126,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-us">Specifies the label to be used in a human display</rdfs:comment>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${cpeName})}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -186,8 +182,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -197,8 +192,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${cpeName}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -267,10 +261,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="FactRef"/>
     </rdfs:subClassOf>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${identifier}${checkSystem})}</edt:iriTemplate>
+    
+    
     <rdfs:comment xml:lang="en-US">Characterizes a a check that always evaluates to a TRUE, FALSE, or ERROR</rdfs:comment>
     <rdfs:label xml:lang="en-US">Check fact ref</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -292,8 +284,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${identifier}</edt:displayNameTemplate>
+    
   </owl:Class>
   <owl:Class rdf:ID="PlatformCatalog">
     <rdfs:subClassOf>
@@ -304,13 +295,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment xml:lang="en-US">Characterizes a catalog of Platform names represented as CPE names.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/catalog-${catalogName}-${catalogDate}</edt:iriTemplate>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${catalogName} ${catalogVersion} - ${catalogDate}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogDate"/>
@@ -372,8 +360,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="DeprecationInfo">
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cpe://Deprecation/${deprecationDate)-${deprecationType}</edt:iriTemplate>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -403,24 +390,19 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${deprecationDate} ${deprecationType}</edt:displayNameTemplate>
+    
     <rdfs:comment xml:lang="en-US">Specifies the deprecation information for a specific deprecation of a given identifier name.  If a name is deprecated multiple times, there would be a separate instance of the deprecation element for each deprecation.</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:Class>
   <owl:Class rdf:ID="ReferenceInfo">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${@hash(${title}${externalLink})}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Reference</rdfs:label>
     <rdfs:comment xml:lang="en-US">Specifies reference information associated with a CPE</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${title}</edt:displayNameTemplate>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -452,13 +434,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${platformIdentifier}</edt:iriTemplate>
+    
     <rdfs:label xml:lang="en-US">Platform</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${title}</edt:displayNameTemplate>
+    
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -480,8 +459,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:displayNameTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >${logicalOperator}</edt:displayNameTemplate>
+    
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:comment xml:lang="en-US">Defines a logical test of a platform.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -494,10 +472,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <edt:iriTemplate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >http://www.daedafusion.com/${logicalOperator}</edt:iriTemplate>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -512,8 +488,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:Class rdf:about="#FactRef">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en-US">Fact ref</rdfs:label>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >cpe</edt:namespacePrefix>
+    
     <rdfs:comment xml:lang="en-US"></rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:Class>
@@ -651,8 +626,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#testIdentifer">
     <rdfs:comment xml:lang="en-US">Specifies a unique identifier for a logical test</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label xml:lang="en-US">Test Identifer</rdfs:label>
     <rdfs:domain rdf:resource="#LogicalTest"/>
@@ -730,8 +704,7 @@ logicalTest elements. The permitted operators are “AND” and “OR”.</rdfs:
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#id">
     <rdfs:domain rdf:resource="#DeprecationInfo"/>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:domain rdf:resource="#Platform"/>
     <rdfs:domain rdf:resource="#FactRef"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -740,8 +713,7 @@ logicalTest elements. The permitted operators are “AND” and “OR”.</rdfs:
     <rdfs:domain rdf:resource="#ChangeDescription"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#ReferenceInfo"/>
-    <edt:editorHiddenField rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</edt:editorHiddenField>
+    
     <rdfs:domain rdf:resource="#CPE"/>
     <rdfs:domain rdf:resource="#LogicalTest"/>
   </owl:DatatypeProperty>
@@ -841,8 +813,7 @@ logicalTest elements. The permitted operators are “AND” and “OR”.</rdfs:
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#description">
     <rdfs:comment xml:lang="en-US">Specifies a description of an entity</rdfs:comment>
-    <edt:namespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >platform</edt:namespacePrefix>
+    
     <rdfs:label xml:lang="en-US">Description</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>

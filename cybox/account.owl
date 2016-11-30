@@ -427,8 +427,15 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 -->	
   </owl:Class>
   <owl:Class rdf:ID="WindowsGroup">
-    
-    
+    <rdfs:comment >Characterizes a Windows Group of users and other groups</rdfs:comment>
+    <rdfs:label >Windows Group</rdfs:label>    
+    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Group"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Group">
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -437,17 +444,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
           <owl:DatatypeProperty rdf:ID="groupName"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes a Windows Group of users and other groups</rdfs:comment>
-    <rdfs:label >Windows Group</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Group"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#Group">
-    <rdfs:subClassOf>
+    </rdfs:subClassOf>    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
@@ -462,6 +459,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Characterizes a group that a user account belongs to.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
   </owl:Class>
+  
   <owl:Class rdf:ID="UnixUserAccount">
 <!--    <rdfs:subClassOf>
       <owl:Restriction>
@@ -962,20 +960,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#Privilege"/>
   </owl:Class>
   <owl:Class rdf:ID="UnixGroup">
-    
-    
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#groupID"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Unix group</rdfs:label>
-    
+    <rdfs:label >Unix group</rdfs:label>   
     <rdfs:comment >Characterizes a Unix Group</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#Group"/>
   </owl:Class>

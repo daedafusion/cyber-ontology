@@ -25,13 +25,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <owl:imports rdf:resource="http://nvd.nist.gov/cvss"/>
     <owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
   </owl:Ontology>
+<!-- 
   <rdfs:Datatype rdf:ID="structuredText">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies that the text description is formatted utilizing some encoding scheme.</rdfs:comment>
     <rdfs:label >Structured Text</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
+    <rdfs:isDefinedBy rdf:resource=""/>    
   </rdfs:Datatype>
+-->
   <owl:Class rdf:ID="Vulnerability">
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -539,7 +540,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#extendedDescription">
     <rdfs:comment >Specifies an unstructured text description</rdfs:comment>
-    <rdfs:range rdf:resource="#structuredText"/>
+	<!-- Ryan: This is a redundant datatypeProperty  "structuredText" is used in capec.owl -->
+    <!-- <rdfs:range rdf:resource="#structuredText"/> -->
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#Vulnerability"/>

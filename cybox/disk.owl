@@ -10,8 +10,8 @@
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Disk">
     <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
     
-    <rdfs:label xml:lang="en-US">Cyber Observable eXpression (CybOX) Disk Ontology</rdfs:label>
-    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation of an Disk for the  Cyber Observable eXpression (CybOX).  &#xD;
+    <rdfs:label >Cyber Observable eXpression (CybOX) Disk Ontology</rdfs:label>
+    <rdfs:comment >This ontology provides a vocabulary and representation of an Disk for the  Cyber Observable eXpression (CybOX).  &#xD;
 &#xD;
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
 &#xD;
@@ -53,7 +53,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-    <rdfs:label xml:lang="en-US">Disk</rdfs:label>
+    <rdfs:label >Disk</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -93,7 +93,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment xml:lang="en-US">Characterize disk drives.</rdfs:comment>
+    <rdfs:comment >Characterize disk drives.</rdfs:comment>
     
   </owl:Class>
   <owl:Class rdf:ID="DiskPartition">
@@ -126,8 +126,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterize partitions of disk drives.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Disk Partition</rdfs:label>
+    <rdfs:comment >Characterize partitions of disk drives.</rdfs:comment>
+    <rdfs:label >Disk Partition</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -158,24 +158,24 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:ObjectProperty rdf:ID="diskPartitionList">
-    <rdfs:comment xml:lang="en-US">Specifies the partitions that reside on the disk.</rdfs:comment>
+    <rdfs:comment >Specifies the partitions that reside on the disk.</rdfs:comment>
     <rdfs:range rdf:resource="#DiskPartition"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Disk Partition List</rdfs:label>
+    <rdfs:label >Disk Partition List</rdfs:label>
     
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:ID="spaceUnused">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <rdfs:comment xml:lang="en-US">Specifies the amount of space used on the partition, in bytes.</rdfs:comment>
+    <rdfs:comment >Specifies the amount of space used on the partition, in bytes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Space Unused</rdfs:label>
+    <rdfs:label >Space Unused</rdfs:label>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#createdDateTime">
-    <rdfs:label xml:lang="en-US">Created Date &amp; Time</rdfs:label>
-    <rdfs:comment xml:lang="en-US">Specifies the date/time the partition was created.</rdfs:comment>
+    <rdfs:label >Created Date &amp; Time</rdfs:label>
+    <rdfs:comment >Specifies the date/time the partition was created.</rdfs:comment>
     <rdfs:domain rdf:resource="#DiskPartition"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -183,65 +183,65 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="totalSpace">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <rdfs:comment xml:lang="en-US">Specifies the total amount of space available on the partition, in bytes.</rdfs:comment>
+    <rdfs:comment >Specifies the total amount of space available on the partition, in bytes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Total Space</rdfs:label>
+    <rdfs:label >Total Space</rdfs:label>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#diskType">
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the type of disk being characterized, e.g. removable.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Disk Type</rdfs:label>
+    <rdfs:comment >Specifies the type of disk being characterized, e.g. removable.</rdfs:comment>
+    <rdfs:label >Disk Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="spaceLeft">
-    <rdfs:comment xml:lang="en-US">Specifies the amount of space left on the partition, in bytes.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Space Left</rdfs:label>
+    <rdfs:comment >Specifies the amount of space left on the partition, in bytes.</rdfs:comment>
+    <rdfs:label >Space Left</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#partitionId">
-    <rdfs:comment xml:lang="en-US">Specifies the numerical identifier of the partition.</rdfs:comment>
+    <rdfs:comment >Specifies the numerical identifier of the partition.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Partition Id</rdfs:label>
+    <rdfs:label >Partition Id</rdfs:label>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#partitionOffset">
-    <rdfs:comment xml:lang="en-US">Specifies the starting offset of the partition, in bytes.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Partition Offset</rdfs:label>
+    <rdfs:comment >Specifies the starting offset of the partition, in bytes.</rdfs:comment>
+    <rdfs:label >Partition Offset</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#mountPoint">
-    <rdfs:comment xml:lang="en-US">Specifies the mount point of the partition.</rdfs:comment>
+    <rdfs:comment >Specifies the mount point of the partition.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Mount Point</rdfs:label>
+    <rdfs:label >Mount Point</rdfs:label>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="diskSize">
-    <rdfs:comment xml:lang="en-US">Specifies the size of the disk, in bytes.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Disk Size</rdfs:label>
+    <rdfs:comment >Specifies the size of the disk, in bytes.</rdfs:comment>
+    <rdfs:label >Disk Size</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#partitionLength">
-    <rdfs:comment xml:lang="en-US">Specifies the length of the partition, in bytes.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Partition Length</rdfs:label>
+    <rdfs:comment >Specifies the length of the partition, in bytes.</rdfs:comment>
+    <rdfs:label >Partition Length</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -251,31 +251,31 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
-    <rdfs:comment xml:lang="en-US">Specifies the type of partition being characterized.</rdfs:comment>
+    <rdfs:comment >Specifies the type of partition being characterized.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Partition Type</rdfs:label>
+    <rdfs:label >Partition Type</rdfs:label>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="diskName">
-    <rdfs:comment xml:lang="en-US">Specifies the name of the disk.</rdfs:comment>
+    <rdfs:comment >Specifies the name of the disk.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Disk Name</rdfs:label>
+    <rdfs:label >Disk Name</rdfs:label>
     
     <rdfs:domain rdf:resource="#Disk"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#deviceName">
-    <rdfs:comment xml:lang="en-US">Specifies the name of the device on which the partition resides.</rdfs:comment>
+    <rdfs:comment >Specifies the name of the device on which the partition resides.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Device Name</rdfs:label>
+    <rdfs:label >Device Name</rdfs:label>
     
     <rdfs:domain rdf:resource="#DiskPartition"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#freeSpace">
-    <rdfs:comment xml:lang="en-US">Specifies the amount of free space on the disk, in bytes.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Free Space</rdfs:label>
+    <rdfs:comment >Specifies the amount of free space on the disk, in bytes.</rdfs:comment>
+    <rdfs:label >Free Space</rdfs:label>
     <rdfs:domain rdf:resource="#Disk"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     

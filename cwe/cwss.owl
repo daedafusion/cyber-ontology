@@ -11,10 +11,10 @@
     
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >1.0.0-001</owl:versionInfo>
-    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Common Weakness Scoring System (CWSS) which provides an open framework for communicating the characteristics and impacts of IT weaknesses.  CWSS consists of three metric groups: Base, Attack Surface, and Environmental. &#xD;
+    <rdfs:comment >This ontology provides a vocabulary and representation for the Common Weakness Scoring System (CWSS) which provides an open framework for communicating the characteristics and impacts of IT weaknesses.  CWSS consists of three metric groups: Base, Attack Surface, and Environmental. &#xD;
 &#xD;
 Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Common Weakness Scoring System (CWSS) Ontology</rdfs:label>
+    <rdfs:label >Common Weakness Scoring System (CWSS) Ontology</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:ID="BaseFindingMetric">
     <rdfs:subClassOf>
@@ -26,7 +26,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en-US">Base Metric</rdfs:label>
+    <rdfs:label >Base Metric</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -55,7 +55,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterizes a metric that  captures the inherent risk of the weakness, confidence in the accuracy of the finding, and strength of control.</rdfs:comment>
+    <rdfs:comment >Characterizes a metric that  captures the inherent risk of the weakness, confidence in the accuracy of the finding, and strength of control.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -107,7 +107,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Characterizes a metric that captures the barriers that an attacker must overcome in order to exploit the weakness</rdfs:comment>
+    <rdfs:comment >Characterizes a metric that captures the barriers that an attacker must overcome in order to exploit the weakness</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -154,7 +154,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en-US">Attack Surface Metric</rdfs:label>
+    <rdfs:label >Attack Surface Metric</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -213,7 +213,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterizes a metric that captures characteristics of the weakness that are specific to a particular environment or operational context.</rdfs:comment>
+    <rdfs:comment >Characterizes a metric that captures characteristics of the weakness that are specific to a particular environment or operational context.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -233,7 +233,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en-US">Environmental Metric</rdfs:label>
+    <rdfs:label >Environmental Metric</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="CWSS">
     <rdfs:subClassOf>
@@ -245,8 +245,8 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterizes the Common Weakness Score System</rdfs:comment>
-    <rdfs:label xml:lang="en-US">CWSS</rdfs:label>
+    <rdfs:comment >Characterizes the Common Weakness Score System</rdfs:comment>
+    <rdfs:label >CWSS</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -290,23 +290,23 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:about="#baseFindingMetric">
     <rdfs:range rdf:resource="#BaseFindingMetric"/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the details for the base metrics</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the details for the base metrics</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:label xml:lang="en-US">Base Metric</rdfs:label>
+    <rdfs:label >Base Metric</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#attackSurfaceMetric">
-    <rdfs:label xml:lang="en-US">Attack Surface Metric</rdfs:label>
+    <rdfs:label >Attack Surface Metric</rdfs:label>
     <rdfs:domain rdf:resource="#CWSS"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#AttackSurfaceMetric"/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the details for the attack surface metrics</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the details for the attack surface metrics</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#environmentalMetric">
-    <rdfs:label xml:lang="en-US">Environmental Metric</rdfs:label>
+    <rdfs:label >Environmental Metric</rdfs:label>
     <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the details for the environmental metrics</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the details for the environmental metrics</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="#EnvironmentalMetric"/>
@@ -318,24 +318,24 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Technical Impact</rdfs:label>
-    <rdfs:comment xml:lang="en-US">Specifies the potential result that can be producedby the weakness, assuming that the wekaness can be successfullly reached and exploited.</rdfs:comment>
+    <rdfs:label >Technical Impact</rdfs:label>
+    <rdfs:comment >Specifies the potential result that can be producedby the weakness, assuming that the wekaness can be successfullly reached and exploited.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#externalControlEffectivness">
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the capabilities of controls or mitigations outside of the software that may render the weakness more difficult for an attacker to read and/or trigger.</rdfs:comment>
+    <rdfs:comment >Specifies the capabilities of controls or mitigations outside of the software that may render the weakness more difficult for an attacker to read and/or trigger.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:label xml:lang="en-US">External Control Effectivness</rdfs:label>
+    <rdfs:label >External Control Effectivness</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#likelihoodOfDiscovery">
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the likelihood that an attacker can discover the weakness</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Likelihood of Discovery</rdfs:label>
+    <rdfs:comment >Specifies the likelihood that an attacker can discover the weakness</rdfs:comment>
+    <rdfs:label >Likelihood of Discovery</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -345,29 +345,29 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment xml:lang="en-US">Specifies the numeric score</rdfs:comment>
+    <rdfs:comment >Specifies the numeric score</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CWSS"/>
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Score</rdfs:label>
+    <rdfs:label >Score</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#requiredPrivilegeLayer">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the operational layer to which the attacker must have privileges in order to attempt to attack the weakness</rdfs:comment>
+    <rdfs:comment >Specifies the operational layer to which the attacker must have privileges in order to attempt to attack the weakness</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Required Privilege Layer</rdfs:label>
+    <rdfs:label >Required Privilege Layer</rdfs:label>
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#acquiredPrivilege">
-    <rdfs:label xml:lang="en-US">Acquired Privilege</rdfs:label>
+    <rdfs:label >Acquired Privilege</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment xml:lang="en-US">Specifies the types of privileges that are obtained by an attacker who can successfully exploit the weakness.</rdfs:comment>
+    <rdfs:comment >Specifies the types of privileges that are obtained by an attacker who can successfully exploit the weakness.</rdfs:comment>
     
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -376,20 +376,20 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     
-    <rdfs:comment xml:lang="en-US">Specifies whether the weakness is present in all deployable instances of the software, or if it is limited to a subset of platforms and/or configurations.</rdfs:comment>
+    <rdfs:comment >Specifies whether the weakness is present in all deployable instances of the software, or if it is limited to a subset of platforms and/or configurations.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Deployment Scope</rdfs:label>
+    <rdfs:label >Deployment Scope</rdfs:label>
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#internalControlEffectiveness">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
-    <rdfs:label xml:lang="en-US">Internal Control Effectiveness</rdfs:label>
+    <rdfs:label >Internal Control Effectiveness</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment xml:lang="en-US">Specifies the ability of the control to render the weakness unable to be xploited by an attacker.&#xD;
+    <rdfs:comment >Specifies the ability of the control to render the weakness unable to be xploited by an attacker.&#xD;
 &#xD;
 For example, an input validation routine that restricts input lenght to 15 characters might be moderately effective against XSS attacks by reducing the size of the XSS exploit that can be implemented.&#xD;
 &#xD;
@@ -402,47 +402,47 @@ Analyze each internal control that exists and choose the value with the highest 
     
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en-US">Specifies the potential impact to the business or mission if the weakness can be successfullly exploited.</rdfs:comment>
+    <rdfs:comment >Specifies the potential impact to the business or mission if the weakness can be successfullly exploited.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Business Impact</rdfs:label>
+    <rdfs:label >Business Impact</rdfs:label>
     <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#findingConfidence">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
-    <rdfs:label xml:lang="en-US">Finding Confidence</rdfs:label>
+    <rdfs:label >Finding Confidence</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment xml:lang="en-US">Specifies the confidence that the reported issue is a weakness and can be triggered or utilized by an attacker.</rdfs:comment>
+    <rdfs:comment >Specifies the confidence that the reported issue is a weakness and can be triggered or utilized by an attacker.</rdfs:comment>
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#requiredPrivilege">
     
     
-    <rdfs:label xml:lang="en-US">Required Privilege</rdfs:label>
+    <rdfs:label >Required Privilege</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-    <rdfs:comment xml:lang="en-US">Specifies the type of privileges that an attacker must already have inorder to reach the code/functionality that contains the weakness.</rdfs:comment>
+    <rdfs:comment >Specifies the type of privileges that an attacker must already have inorder to reach the code/functionality that contains the weakness.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#levelOfInteraction">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the actions that are required by the human victim(s) to enable a successful attack to take place.</rdfs:comment>
+    <rdfs:comment >Specifies the actions that are required by the human victim(s) to enable a successful attack to take place.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Level of Interaction</rdfs:label>
+    <rdfs:label >Level of Interaction</rdfs:label>
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#prevalence">
     
     
-    <rdfs:comment xml:lang="en-US">Specifies how frequently this type of weakness appears in software.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Prevalence</rdfs:label>
+    <rdfs:comment >Specifies how frequently this type of weakness appears in software.</rdfs:comment>
+    <rdfs:label >Prevalence</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -452,17 +452,17 @@ Analyze each internal control that exists and choose the value with the highest 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the likelihood that, if the weakness is discovered, an attacker with the required privileges/authentication/access would be able successfully exploit it.</rdfs:comment>
+    <rdfs:comment >Specifies the likelihood that, if the weakness is discovered, an attacker with the required privileges/authentication/access would be able successfully exploit it.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Likelihood of Exploit</rdfs:label>
+    <rdfs:label >Likelihood of Exploit</rdfs:label>
     <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#authenticationStrength">
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the strength of the authentication routine that protects the code/functionality that contains the weakness.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Authentication Strength</rdfs:label>
+    <rdfs:comment >Specifies the strength of the authentication routine that protects the code/functionality that contains the weakness.</rdfs:comment>
+    <rdfs:label >Authentication Strength</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -472,9 +472,9 @@ Analyze each internal control that exists and choose the value with the highest 
     
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment xml:lang="en-US">Specifies the operational layer to which the attack gains privilges by successfully exploiting the weakness.</rdfs:comment>
+    <rdfs:comment >Specifies the operational layer to which the attack gains privilges by successfully exploiting the weakness.</rdfs:comment>
     <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:label xml:lang="en-US">Acquired Privlege Level</rdfs:label>
+    <rdfs:label >Acquired Privlege Level</rdfs:label>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -482,19 +482,19 @@ Analyze each internal control that exists and choose the value with the highest 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     
-    <rdfs:comment xml:lang="en-US">Specifies the channel thorugh which an attacker must communicate to reach the code or functionality that contains the weakness.&#xD;
+    <rdfs:comment >Specifies the channel thorugh which an attacker must communicate to reach the code or functionality that contains the weakness.&#xD;
 &#xD;
 Note: These values are very similar to the ones used in CVSS except CWSS disinguishes between physical access and local (shell/account) access.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-    <rdfs:label xml:lang="en-US">Access Vector</rdfs:label>
+    <rdfs:label >Access Vector</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#vectorMnemonic">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:comment xml:lang="en-US">Specifies the vector mnemonic that represents the values of metric</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Vector Mnemonic</rdfs:label>
+    <rdfs:comment >Specifies the vector mnemonic that represents the values of metric</rdfs:comment>
+    <rdfs:label >Vector Mnemonic</rdfs:label>
     
     <rdfs:domain rdf:resource="#BaseFindingMetric"/>
     <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>

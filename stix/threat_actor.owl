@@ -8,7 +8,7 @@
     xmlns:ta="http://stix.mitre.org/ThreatActor#"
   xml:base="http://stix.mitre.org/ThreatActor">
   <owl:Ontology rdf:about="http://stix.mitre.org/ThreatActor">
-    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Threat Actor.  The Threat Actor ontology provides a characterization of a single STIX Threat Actor.
+    <rdfs:comment >This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Threat Actor.  The Threat Actor ontology provides a characterization of a single STIX Threat Actor.
 
 A STIX Threat Actor conveys information that characterizes or identifies (or both) an adversary. The characterization consists of information like the sophistication of the threat actor, its motivations and desired effects, and historically observed behavior. In the STIX relationship model, threat actors also include information such as observed TTPs, historic (or current) campaigns, and other threat actors that appear associated with this actor.</rdfs:comment>
     <owl:versionIRI rdf:resource="http://stix.mitre.org/ThreatActor/1.2"/>
@@ -17,7 +17,7 @@ A STIX Threat Actor conveys information that characterizes or identifies (or bot
     <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >1.2.0-000</owl:versionInfo>
-    <rdfs:label xml:lang="en-US">STIX Threat Actor Ontology</rdfs:label>
+    <rdfs:label >STIX Threat Actor Ontology</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:ID="ThreatActor">
     <rdfs:subClassOf>
@@ -31,7 +31,7 @@ A STIX Threat Actor conveys information that characterizes or identifies (or bot
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterizes a single STIX Threat Actor.
+    <rdfs:comment >Characterizes a single STIX Threat Actor.
 
 A STIX Threat Actor characterizes a cyber threat actor including their identity, sophistication, presumed intent, historically observed behavior (TTPs), and campaigns or other threat actors they are believed to be associated with.
 
@@ -116,7 +116,7 @@ ThreatActors are characterizations of malicious actors (or adversaries) represen
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en-US">Threat Actor</rdfs:label>
+    <rdfs:label >Threat Actor</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -142,63 +142,63 @@ ThreatActors are characterizations of malicious actors (or adversaries) represen
     
   </owl:Class>
   <owl:ObjectProperty rdf:ID="associatedActors">
-    <rdfs:label xml:lang="en-US">Associated Actors</rdfs:label>
+    <rdfs:label >Associated Actors</rdfs:label>
     <rdfs:domain rdf:resource="#ThreatActor"/>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to one or more Threat Actors asserted to be related with this Threat Actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to one or more Threat Actors asserted to be related with this Threat Actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#confidence">
-    <rdfs:label xml:lang="en-US">Confidence</rdfs:label>
+    <rdfs:label >Confidence</rdfs:label>
     <rdfs:domain rdf:resource="#ThreatActor"/>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Confidence"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to a characterization of the level of confidence held in the characterization of this Threat Actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to a characterization of the level of confidence held in the characterization of this Threat Actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="observedTTPs">
-    <rdfs:comment xml:lang="en-US">Specifies the TTPs that this Threat Actor has been observed to leverage.</rdfs:comment>
+    <rdfs:comment >Specifies the TTPs that this Threat Actor has been observed to leverage.</rdfs:comment>
     <rdfs:domain rdf:resource="#ThreatActor"/>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:label xml:lang="en-US">Observed TTPs</rdfs:label>
+    <rdfs:label >Observed TTPs</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intendedEffect">
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
-    <rdfs:label xml:lang="en-US">Intended Effect</rdfs:label>
+    <rdfs:label >Intended Effect</rdfs:label>
     <rdfs:domain rdf:resource="#ThreatActor"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the suspected intended effect for this Threat Actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the suspected intended effect for this Threat Actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="sophistication">
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#SophisticationStatement"/>
     <rdfs:domain rdf:resource="#ThreatActor"/>
-    <rdfs:label xml:lang="en-US">Sophistication</rdfs:label>
+    <rdfs:label >Sophistication</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to a charactization of the sophistication of this Threat Actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to a charactization of the sophistication of this Threat Actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="motivation">
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#MotivationStatement"/>
     <rdfs:domain rdf:resource="#ThreatActor"/>
-    <rdfs:label xml:lang="en-US">Motivation</rdfs:label>
+    <rdfs:label >Motivation</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment xml:lang="en-US">Specifies a reference to a characterization of the motivations of this threat actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to a characterization of the motivations of this threat actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="planningAndOperationalSupport">
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#PlanningAndOperationalSupportStatement"/>
     <rdfs:domain rdf:resource="#ThreatActor"/>
-    <rdfs:label xml:lang="en-US">Planning and Operational Support</rdfs:label>
+    <rdfs:label >Planning and Operational Support</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the suspected planning and operational support performed by this threat actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the suspected planning and operational support performed by this threat actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#identity">
-    <rdfs:label xml:lang="en-US">Identity</rdfs:label>
+    <rdfs:label >Identity</rdfs:label>
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -212,23 +212,23 @@ ThreatActors are characterizations of malicious actors (or adversaries) represen
     <rdfs:domain rdf:resource="#ThreatActor"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the identity of this Threat Actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the identity of this Threat Actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="type">
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorTypeStatement"/>
-    <rdfs:label xml:lang="en-US">Type of Threat Actor</rdfs:label>
+    <rdfs:label >Type of Threat Actor</rdfs:label>
     <rdfs:domain rdf:resource="#ThreatActor"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the type(s) of this threat actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the type(s) of this threat actor.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="associatedCampaigns">
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CampaignBase"/>
-    <rdfs:label xml:lang="en-US">Associated Campaigns</rdfs:label>
+    <rdfs:label >Associated Campaigns</rdfs:label>
     <rdfs:domain rdf:resource="#ThreatActor"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:comment xml:lang="en-US">Specifies a reference to one or more Campaigns attributed to this Threat Actor.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to one or more Campaigns attributed to this Threat Actor.</rdfs:comment>
   </owl:ObjectProperty>
   <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
     <rdfs:domain rdf:resource="#ThreatActor"/>

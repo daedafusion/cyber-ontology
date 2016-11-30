@@ -8,7 +8,7 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://stix.mitre.org/CourseOfAction">
   <owl:Ontology rdf:about="http://stix.mitre.org/CourseOfAction">
-    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Course of Action.  The Course of Action ontology provides a characterization of a single STIX Course of Action.
+    <rdfs:comment >This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Course of Action.  The Course of Action ontology provides a characterization of a single STIX Course of Action.
 
 A STIX Course of Action component is used to convey information about courses of action that may be taken either in response to an attack or as a preventative measure prior to an attack. They are used to express both courses of action that might be taken (are possible options are are suggested) in the course of an incident to respond to something that has occurred or to mitigate the effect of an exploit target (vulnerability or misconfiguration) apriori.
 
@@ -24,7 +24,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     >1.2.0-000</owl:versionInfo>
     
     <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
-    <rdfs:label xml:lang="en-US">STIX Course of Action Ontology</rdfs:label>
+    <rdfs:label >STIX Course of Action Ontology</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:ID="GenericStructuredCOA">
     
@@ -51,7 +51,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterizes information for an alternative actionable structured representation to support the generic inclusion of any course of action content.</rdfs:comment>
+    <rdfs:comment >Characterizes information for an alternative actionable structured representation to support the generic inclusion of any course of action content.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -65,7 +65,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en-US">Generic Structured COA</rdfs:label>
+    <rdfs:label >Generic Structured COA</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -91,10 +91,10 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#StructuredCOA">
     
-    <rdfs:comment xml:lang="en-US">Characterizes information for an alternative actionable structured representation for the Course Of Action potentially for automated consumption and implementation.
+    <rdfs:comment >Characterizes information for an alternative actionable structured representation for the Course Of Action potentially for automated consumption and implementation.
 
 The StructuredCOA class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of this base class allows for extensions that are expressed in a proprietary or externally defined structured courses of action.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Structured COA</rdfs:label>
+    <rdfs:label >Structured COA</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -116,7 +116,7 @@ The StructuredCOA class is an abstract class, so it MUST be extended via a subcl
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment xml:lang="en-US">Characterizes a Course of Action to be taken in regards to one of more cyber threats. 
+    <rdfs:comment >Characterizes a Course of Action to be taken in regards to one of more cyber threats. 
 
 Courses Of Action are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc.</rdfs:comment>
     
@@ -249,7 +249,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:label xml:lang="en-US">Course of Action</rdfs:label>
+    <rdfs:label >Course of Action</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -270,71 +270,71 @@ Courses Of Action are specific measures to be taken to address threat whether th
     
   </owl:Class>
   <owl:ObjectProperty rdf:about="#cost">
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the estimated cost for applying this Course of Action.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the estimated cost for applying this Course of Action.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Cost</rdfs:label>
+    <rdfs:label >Cost</rdfs:label>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CostStatement"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#parameterObservables">
-    <rdfs:comment xml:lang="en-US">Specifies a reference to technical parameters to this Course of Action. 
+    <rdfs:comment >Specifies a reference to technical parameters to this Course of Action. 
 
 The intention is that the combination of the Course of Action Type and the Parameter Observables could be used to define automated courses of action.</rdfs:comment>
     
-    <rdfs:label xml:lang="en-US">Parameter Observables</rdfs:label>
+    <rdfs:label >Parameter Observables</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#efficacy">
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the effectiveness of this Course of Action in achieving its targeted Objective.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the effectiveness of this Course of Action in achieving its targeted Objective.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Efficacy</rdfs:label>
+    <rdfs:label >Efficacy</rdfs:label>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#EfficacyStatement"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#structuredCOA">
-    <rdfs:comment xml:lang="en-US">Specifies a reference to an actionable structured representation for the Course  of Action potentially for automated consumption and implementation.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to an actionable structured representation for the Course  of Action potentially for automated consumption and implementation.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Structured COA</rdfs:label>
+    <rdfs:label >Structured COA</rdfs:label>
     <rdfs:range rdf:resource="#StructuredCOA"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#impact">
-    <rdfs:comment xml:lang="en-US">Specifies a reference the estimated impact of applying this Course of Action.</rdfs:comment>
+    <rdfs:comment >Specifies a reference the estimated impact of applying this Course of Action.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#CourseOfAction"/>
-    <rdfs:label xml:lang="en-US">Impact</rdfs:label>
+    <rdfs:label >Impact</rdfs:label>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ImpactStatement"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#objective.applicablityConfidence">
-    <rdfs:comment xml:lang="en-US">Specifies a reference to the level of confidence held in the applicability of this suggested COA for its targeted Objective.</rdfs:comment>
+    <rdfs:comment >Specifies a reference to the level of confidence held in the applicability of this suggested COA for its targeted Objective.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label xml:lang="en-US">Objective Applicablity Confidence</rdfs:label>
+    <rdfs:label >Objective Applicablity Confidence</rdfs:label>
     <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Confidence"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#genericStructuredCOAType">
     <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
     
-    <rdfs:label xml:lang="en-US">Type of Generic Structured COA</rdfs:label>
+    <rdfs:label >Type of Generic Structured COA</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en-US">Specifies the type of Generic Structured COA.</rdfs:comment>
+    <rdfs:comment >Specifies the type of Generic Structured COA.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#type">
-    <rdfs:comment xml:lang="en-US">Specifies the type of this Course of Action. 
+    <rdfs:comment >Specifies the type of this Course of Action. 
 
 Examples of types of courses of action include diplomatic, hardening, or eradication (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
 
 By default, the Course of Action Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
     
-    <rdfs:label xml:lang="en-US">Type</rdfs:label>
+    <rdfs:label >Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#CourseOfAction"/>
@@ -342,7 +342,7 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#stage">
-    <rdfs:comment xml:lang="en-US">Specifies what stage in the cyber threat management lifecycle this CourseOfAction is relevant to (e.g. Remedy or Response). 
+    <rdfs:comment >Specifies what stage in the cyber threat management lifecycle this CourseOfAction is relevant to (e.g. Remedy or Response). 
 
 Examples of COA stages include remedy and response (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
 
@@ -351,45 +351,45 @@ By default, the COA Stage Vocabulary is used to defined a restricted set of valu
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en-US">Stage</rdfs:label>
+    <rdfs:label >Stage</rdfs:label>
     
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#specification.cdataValue">
-    <rdfs:comment xml:lang="en-US">Specifies any test mechnism specification in its native format within a string field. 
+    <rdfs:comment >Specifies any test mechnism specification in its native format within a string field. 
 
 The specification should be within a CDATA construct within the string field.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
     
-    <rdfs:label xml:lang="en-US">Specification</rdfs:label>
+    <rdfs:label >Specification</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="objective.shortDescription">
-    <rdfs:comment xml:lang="en-US">Specifies a short, unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
+    <rdfs:comment >Specifies a short, unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en-US">Objective Short Description</rdfs:label>
+    <rdfs:label >Objective Short Description</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="objective.description">
-    <rdfs:comment xml:lang="en-US">Specifies an unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
+    <rdfs:comment >Specifies an unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#CourseOfAction"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en-US">Objective Description</rdfs:label>
+    <rdfs:label >Objective Description</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#specification.cdataEncoded">
-    <rdfs:comment xml:lang="en-US">Specifies whether the content encoded in the element is encoded using Base64 per RFC4648.  
+    <rdfs:comment >Specifies whether the content encoded in the element is encoded using Base64 per RFC4648.  
 
 If true, the data is encoded, else the data is not encoded.</rdfs:comment>
     
     <rdfs:domain rdf:resource="#GenericStructuredCOA"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label xml:lang="en-US">Specification CDATA Encoded</rdfs:label>
+    <rdfs:label >Specification CDATA Encoded</rdfs:label>
   </owl:DatatypeProperty>
   <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedCourseOfAction">
     <rdfs:domain rdf:resource="#CourseOfAction"/>

@@ -10,14 +10,14 @@
   <owl:Ontology rdf:about="http://cybox.mitre.org/objects/SMSMessage">
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >2.1.0-000</owl:versionInfo>
-    <rdfs:comment xml:lang="en-US">This ontology provides a vocabulary and representation of a SMS Message for the  Cyber Observable eXpression (CybOX).  &#xD;
+    <rdfs:comment >This ontology provides a vocabulary and representation of a SMS Message for the  Cyber Observable eXpression (CybOX).  &#xD;
 &#xD;
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
 &#xD;
 The ontology is based on the CybOX SMS Message object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
 &#xD;
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label xml:lang="en-US">Cyber Observable eXpression (CybOX) SMS Message Ontology</rdfs:label>
+    <rdfs:label >Cyber Observable eXpression (CybOX) SMS Message Ontology</rdfs:label>
     
     <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
   </owl:Ontology>
@@ -86,9 +86,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     
-    <rdfs:comment xml:lang="en-US">Characterize Short Message Service (SMS) messages.</rdfs:comment>
+    <rdfs:comment >Characterize Short Message Service (SMS) messages.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:label xml:lang="en-US">SMS Message</rdfs:label>
+    <rdfs:label >SMS Message</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -128,84 +128,84 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
   </owl:Class>
   <owl:DatatypeProperty rdf:about="#bitsPerCharacter">
-    <rdfs:label xml:lang="en-US">Bits per Character</rdfs:label>
+    <rdfs:label >Bits per Character</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
-    <rdfs:comment xml:lang="en-US">Specifies the number of bits used to express each character in the SMS message.</rdfs:comment>
+    <rdfs:comment >Specifies the number of bits used to express each character in the SMS message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#senderPhoneNumber">
-    <rdfs:label xml:lang="en-US">Sender Phone Number</rdfs:label>
+    <rdfs:label >Sender Phone Number</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en-US">Specifies the phone number of the sender of the SMS message.</rdfs:comment>
+    <rdfs:comment >Specifies the phone number of the sender of the SMS message.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#recipientPhoneNumber">
-    <rdfs:label xml:lang="en-US">Recipient Phone Number</rdfs:label>
+    <rdfs:label >Recipient Phone Number</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en-US">Specifies the phone number of the recipient of the SMS message.</rdfs:comment>
+    <rdfs:comment >Specifies the phone number of the recipient of the SMS message.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#messageSentDateTime">
-    <rdfs:label xml:lang="en-US">Message Sent</rdfs:label>
+    <rdfs:label >Message Sent</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     
-    <rdfs:comment xml:lang="en-US">Specifies the date/time at which the SMS message was sent.</rdfs:comment>
+    <rdfs:comment >Specifies the date/time at which the SMS message was sent.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#messageLength">
-    <rdfs:label xml:lang="en-US">Message Length</rdfs:label>
+    <rdfs:label >Message Length</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
-    <rdfs:comment xml:lang="en-US">Specifies the length of the SMS message, in characters.</rdfs:comment>
+    <rdfs:comment >Specifies the length of the SMS message, in characters.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#messageEncoding">
-    <rdfs:label xml:lang="en-US">Message Encoding</rdfs:label>
+    <rdfs:label >Message Encoding</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="en-US">Specifies the name of the character encoding (sometimes referred to as the Alphabet) used in the SMS message.</rdfs:comment>
+    <rdfs:comment >Specifies the name of the character encoding (sometimes referred to as the Alphabet) used in the SMS message.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#messageBody">
-    <rdfs:comment xml:lang="en-US">Specifies the body of the SMS message.</rdfs:comment>
+    <rdfs:comment >Specifies the body of the SMS message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:label xml:lang="en-US">Message Body</rdfs:label>
+    <rdfs:label >Message Body</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#messageSize">
-    <rdfs:label xml:lang="en-US">Message Size</rdfs:label>
+    <rdfs:label >Message Size</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:comment xml:lang="en-US">Specifies the size of the SMS message, in bytes.</rdfs:comment>
+    <rdfs:comment >Specifies the size of the SMS message, in bytes.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#isPremium">
-    <rdfs:label xml:lang="en-US">Is Premium</rdfs:label>
+    <rdfs:label >Is Premium</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment xml:lang="en-US">Specifies whether the SMS message is a premium (i.e. fee-collecting) message.</rdfs:comment>
+    <rdfs:comment >Specifies whether the SMS message is a premium (i.e. fee-collecting) message.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#userDataHeader">
-    <rdfs:label xml:lang="en-US">User Data Header</rdfs:label>
+    <rdfs:label >User Data Header</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:domain rdf:resource="#SMSMessage"/>
-    <rdfs:comment xml:lang="en-US">Specifies the user data header included at the start of the SMS message, as a hexadecimal string.</rdfs:comment>
+    <rdfs:comment >Specifies the user data header included at the start of the SMS message, as a hexadecimal string.</rdfs:comment>
   </owl:DatatypeProperty>
 </rdf:RDF>
 

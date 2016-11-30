@@ -55,7 +55,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Reference</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="AffectedSystem">
     <rdfs:subClassOf>
@@ -89,12 +89,12 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Affected System</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="ObjectComponent">
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -126,7 +126,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Object Component</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="Criterion">
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -200,7 +200,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     
     <rdfs:comment >Characterizes a restriction that is placed on expected values for an external variable. For example, a possible value may be restricted to a integer less than 10.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="Object">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -215,7 +215,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:label >OVAL Object</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -261,7 +261,7 @@ This definition of OVAL Object serves as an abstract that is meant to be extende
 The result of this function is a single integer or float unless one of the components returns multiple values. In this case the specified arithmetic function would be performed multiple times and the end result would be an array of values for the local variable. For example assume a local_variable specifies the arithmetic function with an arithmeticOperation of "add" and has two sub-components under this function: the first component returns multiple values "1" and "2", and the second component returns multiple values "3" and "4" and "5". The LocalVariable element would be evaluated to have six values: 1+3, 1+4, 1+5, 2+3, 2+4, and 2+5.&#xD;
 &#xD;
 Note that if both an integer and float components are used then the result is a float.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="ExternalVariable">
     <rdfs:subClassOf>
@@ -339,10 +339,10 @@ An unbounded set of possible-value and possible-restriction can be specified tha
     <rdfs:comment >Characterizes a range of possible expected value of an external variable.&#xD;
 &#xD;
 Each PossibleRestriction contains an unbounded list of restrictions  that each specify a range that an actual value may fall in. For example, a restriction may specify that a value must be less than 10. When multiple restrictions are present, a valid possible value would have to meet every restriction. One can think of the possible-values and possible-restrictions as an OR'd list of possible values, and the restrictions as an AND'd list of value descriptions.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="Definition">
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -428,7 +428,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:label >Variable</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -499,7 +499,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -512,7 +512,7 @@ Note that the 'record' datatype is not permitted on variables.</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="Test">
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:label >OVAL Test</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -645,7 +645,7 @@ Each local variable is defined by either a single component or a complex functio
     <rdfs:label >Possible Value</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="ConstantVariable">
     <rdfs:subClassOf>
@@ -756,7 +756,7 @@ When evaluating a particular state against an object, one should evaluate each i
       </owl:Restriction>
     </rdfs:subClassOf>
     
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:label >OVAL State</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="LiteralComponent">
@@ -782,10 +782,10 @@ When evaluating a particular state against an object, one should evaluate each i
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Literal Component</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
   </owl:Class>
   <owl:Class rdf:ID="Criteria">
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"

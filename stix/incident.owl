@@ -47,7 +47,7 @@ In the STIX relationship model, incidents can be related to the threat actors in
     </rdfs:subClassOf>
     <rdfs:comment >Characterizes an abstract type enabling the definition through extension of incident impact assessment models external to STIX.</rdfs:comment>
     
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
@@ -66,10 +66,10 @@ In the STIX relationship model, incidents can be related to the threat actors in
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
   </owl:Class>
   <owl:Class rdf:about="#COAStatement">
-    <rdfs:subClassOf>
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -79,8 +79,8 @@ In the STIX relationship model, incidents can be related to the threat actors in
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -88,20 +88,20 @@ In the STIX relationship model, incidents can be related to the threat actors in
           <owl:ObjectProperty rdf:ID="courseOfAction"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf>  
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/> 
+<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     
     
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -111,7 +111,7 @@ In the STIX relationship model, incidents can be related to the threat actors in
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:comment >Characterizes the attributes associated with a relationship between a subject STIX construct and STIX Course Of Action construct.
 
 The COAStatement helps to define a consistent structure for relationships that go beyond a simple statement of "construct A is related to Course of Action B".  Instead, additional properties ofthe relationship can be specified such as the nature of the relationship and the level of confidence in the presence and accuracy of the asserted relationship.
@@ -131,14 +131,14 @@ The COAStatement class is designed to support its use in representing the relati
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#ExternalIdentifier">
-    <rdfs:subClassOf>
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf>-->
+    <rdfs:subClassOf> 
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:ID="externalId"/>
@@ -162,7 +162,7 @@ The COAStatement class is designed to support its use in representing the relati
     <rdfs:comment >Characterizes an identifier of an incident in a remote system</rdfs:comment>
     
     
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
@@ -176,10 +176,10 @@ The COAStatement class is designed to support its use in representing the relati
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
+    <rdfs:isDefinedBy rdf:resource=""/> -->
   </owl:Class>
   <owl:Class rdf:ID="COAActionEntry">
-    <rdfs:subClassOf>
+      <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -187,30 +187,30 @@ The COAStatement class is designed to support its use in representing the relati
           <owl:ObjectProperty rdf:about="#courseOfAction"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> 
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#time.startTimestamp"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:subClassOf> 
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#time.endTimestamp"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+      </owl:Restriction> 
+    </rdfs:subClassOf>-->
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes a record of the actions taken during the handling of an incident.</rdfs:comment>
-    <rdfs:label >COA Action Entry</rdfs:label>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:comment >Characterizes a record of the actions taken during the handling of an incident.</rdfs:comment>
+    <rdfs:label >COA Action Entry</rdfs:label> -->
     
     <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#ActionEntry"/>
   </owl:Class>
@@ -246,13 +246,13 @@ The COAStatement class is designed to support its use in representing the relati
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#parentId"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:label >Affected Property</rdfs:label>
     <rdfs:comment >Characterizes aspects of how security properties of an asset, such as Availability, Confidentiality, etc. were affected in a cyber incident.</rdfs:comment>
     <rdfs:subClassOf>
@@ -293,81 +293,81 @@ The COAStatement class is designed to support its use in representing the relati
   </owl:Class>
   <owl:Class rdf:ID="AffectedAsset">
     
-    <rdfs:subClassOf>
+ <!--    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#parentId"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes various aspects of an asset negatively impacted in a cyber incident</rdfs:comment>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:comment >Characterizes various aspects of an asset negatively impacted in a cyber incident</rdfs:comment> -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#locationClass"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#structuredDescription"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     
     <rdfs:label >Affected Asset</rdfs:label>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#businessFunction"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#assetType"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#assetDescription"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#managementClass"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#location"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#ownershipClass"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -380,7 +380,6 @@ The COAStatement class is designed to support its use in representing the relati
     <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#Asset"/>
   </owl:Class>
   <owl:Class rdf:ID="Incident">
-    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -435,7 +434,7 @@ The COAStatement class is designed to support its use in representing the relati
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
@@ -445,7 +444,7 @@ The COAStatement class is designed to support its use in representing the relati
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> 
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -456,13 +455,13 @@ The COAStatement class is designed to support its use in representing the relati
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:comment >Characterizes a single cyber threat Incident.
 
 Incidents are discrete instances of Indicators affecting an organization along with information discovered or decided during an incident response investigation. They consist of data such as time-related information, parties involved, assets affected, impact assessment, related Indicators, related Observables, leveraged TTP, attributed Threat Actors, intended effects, nature of compromise, response Course of Action requested, response Course of Action taken, confidence in characterization, handling guidance, source of the Incident information, log of actions taken, etc.</rdfs:comment>
@@ -547,7 +546,6 @@ Incidents are discrete instances of Indicators affecting an organization along w
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -566,7 +564,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
@@ -576,7 +574,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -604,7 +602,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
@@ -614,7 +612,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -635,7 +633,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:label >Incident</rdfs:label>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -645,15 +643,15 @@ Incidents are discrete instances of Indicators affecting an organization along w
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+  <!--   <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#timestamp"/>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+  <!--   <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#confidence">
@@ -663,7 +661,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -701,7 +699,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
@@ -711,7 +709,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -730,7 +728,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#informationSource">
@@ -740,7 +738,7 @@ Incidents are discrete instances of Indicators affecting an organization along w
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf>  -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"

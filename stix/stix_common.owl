@@ -32,13 +32,13 @@
         >1</owl:maxCardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel">
-            <rdfs:domain>
+<!--             <rdfs:domain>
               <owl:Class rdf:ID="Statement"/>
-            </rdfs:domain>
-            <rdfs:domain>
+            </rdfs:domain> -->
+<!--             <rdfs:domain>
               <owl:Class rdf:ID="Activity"/>
             </rdfs:domain>
-          </rdf:Description>
+ -->          </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
@@ -222,7 +222,7 @@ Data in a CDATA block may either be represented as-is or, in cases where it may 
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
-            <rdfs:domain>
+<!--             <rdfs:domain>
               <owl:Class rdf:ID="CourseOfActionBase"/>
             </rdfs:domain>
             <rdfs:domain>
@@ -254,7 +254,7 @@ Data in a CDATA block may either be represented as-is or, in cases where it may 
             </rdfs:domain>
             <rdfs:domain>
               <owl:Class rdf:ID="ExploitTargetBase"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -332,7 +332,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
         >1</owl:maxCardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime">
-            <rdfs:domain>
+<!--             <rdfs:domain>
               <owl:Class rdf:about="#IncidentBase"/>
             </rdfs:domain>
             <rdfs:domain>
@@ -364,7 +364,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
             </rdfs:domain>
             <rdfs:domain>
               <owl:Class rdf:about="#IndicatorBase"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
@@ -382,12 +382,12 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
-            <rdfs:domain>
+<!--             <rdfs:domain>
               <owl:Class rdf:about="#InformationSource"/>
             </rdfs:domain>
             <rdfs:domain>
               <owl:Class rdf:about="#RelationshipStatement"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -452,10 +452,10 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#time.receivedDateTime">
-            <rdfs:domain rdf:resource="#InformationSource"/>
+<!--             <rdfs:domain rdf:resource="#InformationSource"/>
             <rdfs:domain>
               <owl:Class rdf:about="#RelationshipStatement"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -466,7 +466,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#time.endDateTime">
-            <rdfs:domain rdf:resource="#InformationSource"/>
+            <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -488,7 +488,7 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#time.startDateTime">
-            <rdfs:domain rdf:resource="#InformationSource"/>
+            <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -535,10 +535,10 @@ The IncidentRelationship class MUST only be used to represent the relationship's
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#time.producedDateTime">
-            <rdfs:domain rdf:resource="#InformationSource"/>
+<!--             <rdfs:domain rdf:resource="#InformationSource"/>
             <rdfs:domain>
               <owl:Class rdf:about="#RelationshipStatement"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -3750,9 +3750,9 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   <owl:ObjectProperty rdf:about="#infoSource.identity">
     <rdfs:comment >Specifies a reference to the identity of the source of the information</rdfs:comment>
     <rdfs:label >Information Source Identity</rdfs:label>
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#InformationSource"/>
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
     
     <rdfs:range>
       <owl:Class>
@@ -3767,7 +3767,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   <owl:ObjectProperty rdf:about="#structuredDescription">
     <rdfs:comment >Specifies a reference to a structured description.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Structured Description</rdfs:label>
     
@@ -3778,7 +3778,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="#KillChainPhase"/>
     <rdfs:label >Kill Chain Phases</rdfs:label>
     <rdfs:comment >Specifies references to each of the phases of the kill chain.</rdfs:comment>
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedCampaign">
     <rdfs:comment >Specifies a reference to one or more related campaigns.</rdfs:comment>
@@ -3786,7 +3786,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     
     <rdfs:range rdf:resource="#CampaignBase"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#CampaignRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#CampaignRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="observables">
     <rdfs:comment >Specifies a reference to one or more cyber observables</rdfs:comment>
@@ -3800,8 +3800,8 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Tools</rdfs:label>
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
-    <rdfs:domain rdf:resource="#InformationSource"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedPackage">
@@ -3810,24 +3810,24 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:label >Related Package</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#PackageRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#PackageRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#confidence.source">
     <rdfs:comment >Specifies a reference to the source of this confidence assertion.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Statement"/>
-    <rdfs:domain rdf:resource="#Confidence"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
     
     <rdfs:label >Confidence Source</rdfs:label>
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     <rdfs:range rdf:resource="#InformationSource"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="infoSource.contributingSources">
     <rdfs:comment >Specifies a reference to a description of the individual contributing sources involved in this instance.</rdfs:comment>
     <rdfs:range rdf:resource="#InformationSource"/>
     
-    <rdfs:domain rdf:resource="#InformationSource"/>
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Contributing Sources</rdfs:label>
   </owl:ObjectProperty>
@@ -3846,8 +3846,8 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
         </owl:unionOf>
       </owl:Class>
     </rdfs:range>
-    <rdfs:domain rdf:resource="#CIQIdentity"/>
-    <rdfs:domain rdf:resource="#IdentityRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#CIQIdentity"/> -->
+    <!-- <rdfs:domain rdf:resource="#IdentityRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="TTPs">
     <rdfs:comment >Specifies a reference to one or more cyber threat TTPs</rdfs:comment>
@@ -3862,15 +3862,15 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Exploit Target</rdfs:label>
-    <rdfs:domain rdf:resource="#ExploitTargetRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#ExploitTargetRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#confidence.assertionChain">
     <rdfs:comment >Specifies a reference to a set of related confidence levels in this assertion along with who made them, when they were made and how they were made.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Statement"/>
-    <rdfs:domain rdf:resource="#Confidence"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
     <rdfs:label >Confidence Assertion Chain</rdfs:label>
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     
     <rdfs:range rdf:resource="#Confidence"/>
   </owl:ObjectProperty>
@@ -3879,7 +3879,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Location</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="exploitTargets">
@@ -3909,7 +3909,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#IncidentBase"/>
-    <rdfs:domain rdf:resource="#IncidentRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#IncidentRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedThreatActor">
     <rdfs:comment >Specifies a reference to one or more related threat actors.</rdfs:comment>
@@ -3917,12 +3917,12 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:label >Related Threat Actor</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#ThreatActorRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#ThreatActorRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#author.Details">
     <rdfs:label >Author Details</rdfs:label>
     <rdfs:comment >Specifies a reference to details about the author</rdfs:comment>
-    <rdfs:domain rdf:resource="#JournalEntry"/>
+    <!-- <rdfs:domain rdf:resource="#JournalEntry"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range>
@@ -3967,7 +3967,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
   <owl:ObjectProperty rdf:ID="contributors">
     <rdfs:comment >Specifies a reference to contributing actors to an activity</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Contributor"/>
-    <rdfs:domain rdf:resource="#ActionEntry"/>
+    <!-- <rdfs:domain rdf:resource="#ActionEntry"/> -->
     <rdfs:label >Contributors</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -3992,13 +3992,13 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:label >Related TTP</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#TTPRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#TTPRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#informationSource">
     <rdfs:comment >Specifies a reference to the source of the information for this entity.</rdfs:comment>
     
     <rdfs:range rdf:resource="#InformationSource"/>
-    <rdfs:domain rdf:resource="#Statement"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Information Source</rdfs:label>
   </owl:ObjectProperty>
@@ -4008,7 +4008,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:label >Related Observable</rdfs:label>
     <rdfs:comment >Specifies a reference to the related observable.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#ObservableRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#ObservableRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="coursesOfAction">
     <rdfs:comment >Specifies a reference to one or more cyber threat Courses of Action.</rdfs:comment>
@@ -4023,7 +4023,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#IndicatorBase"/>
-    <rdfs:domain rdf:resource="#IndicatorRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#IndicatorRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#relatedCourseOfAction">
     <rdfs:comment >Specifies a reference to one or more related Courses of Action.</rdfs:comment>
@@ -4031,7 +4031,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:label >Related Course of Action</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#CourseOfActionRelationship"/>
+    <!-- <rdfs:domain rdf:resource="#CourseOfActionRelationship"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="confidence">
     <rdfs:comment >Specifies a reference to the level of confidence held in the characterization of this entity.</rdfs:comment>
@@ -4047,7 +4047,7 @@ The ThreatActorBase class is an abstract class, so it MUST be extended via a sub
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Location Class</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     <rdfs:comment >Specifies a high-level characterization of where this asset is physically located (e.g. Internal location, External location, Co-located, Mobile). 
 
 Examples of location class include Internally-Located, Co-Located, and Mobile (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4060,10 +4060,10 @@ By default, the Location Class Vocabulary is used to defined a restricted set of
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the organization or individual responsible for this kill chain definition.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#impactValue">
-    <rdfs:domain rdf:resource="#ImpactStatement"/>
+    <!-- <rdfs:domain rdf:resource="#ImpactStatement"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
     
@@ -4092,7 +4092,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
   <owl:DatatypeProperty rdf:ID="infoSource.role">
     
     
-    <rdfs:domain rdf:resource="#InformationSource"/>
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Role</rdfs:label>
@@ -4107,8 +4107,8 @@ By default, the Information Source Role Vocabulary is used to defined a restrict
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#Confidence"/>
-    <rdfs:domain rdf:resource="#Statement"/>
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
     <rdfs:label >Confidence Timestamp Precision</rdfs:label>
     <rdfs:comment >Specifies the precision of the associated timestamp value. If omitted, the default is "second", meaning the timestamp is precise to the full field value.</rdfs:comment>
     <rdfs:range>
@@ -4142,7 +4142,7 @@ By default, the Information Source Role Vocabulary is used to defined a restrict
     </rdfs:range>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#relationshipType">
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Relationship Type</rdfs:label>
@@ -4156,35 +4156,35 @@ By default, the Information Source Role Vocabulary is used to defined a restrict
     <rdfs:comment >Specifies the identifier for the parent object</rdfs:comment>
     <rdfs:label >Parent ID</rdfs:label>
     
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#id">
-    <rdfs:domain rdf:resource="#IncidentBase"/>
+    <!-- <rdfs:domain rdf:resource="#IncidentBase"/> -->
     
-    <rdfs:domain rdf:resource="#ThreatActorBase"/>
-    <rdfs:domain rdf:resource="#PackageBase"/>
-    <rdfs:domain rdf:resource="#ExploitTargetBase"/>
-    <rdfs:domain rdf:resource="#InformationSource"/>
-    <rdfs:domain rdf:resource="#TTPBase"/>
-    <rdfs:domain rdf:resource="#EncodedCDATA"/>
+    <!-- <rdfs:domain rdf:resource="#ThreatActorBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#PackageBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#ExploitTargetBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
+    <!-- <rdfs:domain rdf:resource="#TTPBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#EncodedCDATA"/> -->
     <rdfs:comment >Specifies the unique identifier associated with this entity instance.&#xD;
 &#xD;
 The format of the identifier MUST be in the format of [construct-type]-[UUID], where [construct-type] should be associated with the entity's construct and [UUID] SHOULD correspond to a universally unique identifier.</rdfs:comment>
-    <rdfs:domain rdf:resource="#IndicatorBase"/>
-    <rdfs:domain rdf:resource="#ActionEntry"/>
+    <!-- <rdfs:domain rdf:resource="#IndicatorBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#ActionEntry"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Statement"/>
-    <rdfs:domain rdf:resource="#CourseOfActionBase"/>
-    <rdfs:domain rdf:resource="#ReportBase"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
+    <!-- <rdfs:domain rdf:resource="#CourseOfActionBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#ReportBase"/> -->
     
-    <rdfs:domain rdf:resource="#Confidence"/>
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#CampaignBase"/>
-    <rdfs:domain rdf:resource="#Activity"/>
-    <rdfs:domain rdf:resource="#JournalEntry"/>
+    <!-- <rdfs:domain rdf:resource="#CampaignBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#Activity"/> -->
+    <!-- <rdfs:domain rdf:resource="#JournalEntry"/> -->
     <rdfs:label >Identifier</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#shortDescription">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -4192,7 +4192,7 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies a short, unstructured, text description</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#title">
     <rdfs:comment >Specifies a simple title for the entity</rdfs:comment>
@@ -4200,10 +4200,10 @@ The format of the identifier MUST be in the format of [construct-type]-[UUID], w
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Title</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#costValue">
-    <rdfs:domain rdf:resource="#CostStatement"/>
+    <!-- <rdfs:domain rdf:resource="#CostStatement"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
@@ -4218,27 +4218,27 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="identityRole">
     
-    <rdfs:domain rdf:resource="#CIQIdentity"/>
+    <!-- <rdfs:domain rdf:resource="#CIQIdentity"/> -->
     <rdfs:label >Role</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies a relevant role played by this entity.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#infoSource.description">
-    <rdfs:domain rdf:resource="#InformationSource"/>
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
     <rdfs:comment >Specifies a description of the information source.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Description</rdfs:label>
     
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#assetDescription">
     <rdfs:comment >Specifies an unstructured, text description of the asset.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Description</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ownershipClass">
@@ -4248,7 +4248,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Ownership Class</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     <rdfs:comment >Specifies a high-level characterization of who owns (or controls) this asset (e.g. Internally-owned, Employee-owned, Partner-owned, Customer-owned).
 
 Examples of ownership class include Internally-Owned, Partner-Owned, and Customer-Owned (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4262,7 +4262,7 @@ If omitted, the default is "seconds", meaning the timestamp is precise to the fu
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Timestamp Precision</rdfs:label>
-    <rdfs:domain rdf:resource="#Statement"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
     <rdfs:range>
       <rdfs:Datatype>
         <owl:oneOf rdf:parseType="Resource">
@@ -4292,16 +4292,16 @@ If omitted, the default is "seconds", meaning the timestamp is precise to the fu
         </owl:oneOf>
       </rdfs:Datatype>
     </rdfs:range>
-    <rdfs:domain rdf:resource="#JournalEntry"/>
-    <rdfs:domain rdf:resource="#Activity"/>
+    <!-- <rdfs:domain rdf:resource="#JournalEntry"/> -->
+    <!-- <rdfs:domain rdf:resource="#Activity"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#description">
-    <rdfs:domain rdf:resource="#JournalEntry"/>
+    <!-- <rdfs:domain rdf:resource="#JournalEntry"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Statement"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
     <rdfs:comment >Specifies an unstructured text description</rdfs:comment>
-    <rdfs:domain rdf:resource="#Activity"/>
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#Activity"/> -->
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     <rdfs:label >Description</rdfs:label>
@@ -4313,7 +4313,7 @@ If omitted, the default is "seconds", meaning the timestamp is precise to the fu
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Management Class</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     <rdfs:comment >Specifies a high-level characterization of who is responsible for the day-to-day management and administration of this asset (e.g. Managed Internally, Managed by External Party, Co-managed). 
 
 Examples of management class include Internally-Managed, Co-Managed, and Unknown (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
@@ -4327,10 +4327,10 @@ By default, the Management Class Vocabulary is used to defined a restricted set 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Phase Id</rdfs:label>
     <rdfs:comment >Specifies a globally unique identifier for this kill chain phase.</rdfs:comment>
-    <rdfs:domain rdf:resource="#KillChainPhase"/>
+    <!-- <rdfs:domain rdf:resource="#KillChainPhase"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#motivationValue">
-    <rdfs:domain rdf:resource="#MotivationStatement"/>
+    <!-- <rdfs:domain rdf:resource="#MotivationStatement"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
@@ -4349,10 +4349,10 @@ By default, the Motivation Vocabulary is used to defined a restricted set of val
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Kill Chain Name</rdfs:label>
     <rdfs:comment >Specifies a descriptive name for this kill chain definition.</rdfs:comment>
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#likelyImpactValue">
-    <rdfs:domain rdf:resource="#LikelyImpactStatement"/>
+    <!-- <rdfs:domain rdf:resource="#LikelyImpactStatement"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -4368,13 +4368,13 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
   <owl:DatatypeProperty rdf:about="#businessFunction">
     <rdfs:comment >Specifies a brief description of the asset's role, mission, and importance within the organization.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Business Function</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#efficacyValue">
-    <rdfs:domain rdf:resource="#EfficacyStatement"/>
+    <!-- <rdfs:domain rdf:resource="#EfficacyStatement"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
@@ -4388,7 +4388,7 @@ Examples of effectiveness levels include High, Medium, and Low (these specific v
 By default, the High Medium Low Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#time.endTimestamp">
-    <rdfs:domain rdf:resource="#ActionEntry"/>
+    <!-- <rdfs:domain rdf:resource="#ActionEntry"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:comment >Specifies the time at which the activity was completed.</rdfs:comment>
     <rdfs:label >End Time</rdfs:label>
@@ -4398,9 +4398,9 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
   <owl:DatatypeProperty rdf:about="#confidence.timestamp">
     <rdfs:domain rdf:resource="#RelationshipStatement"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Statement"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
     
-    <rdfs:domain rdf:resource="#Confidence"/>
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
     <rdfs:label >Confidence Timestamp</rdfs:label>
     <rdfs:comment >Specifies the time of this Confidence assertion.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
@@ -4414,7 +4414,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#threatActorTypeValue">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ThreatActorTypeStatement"/>
+    <!-- <rdfs:domain rdf:resource="#ThreatActorTypeStatement"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
     
@@ -4427,7 +4427,7 @@ Examples of threat actor type include Hacker, Hacktivist, and State Actor/Agency
 By default, the Threat Actor Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#intendedEffectVaue">
-    <rdfs:domain rdf:resource="#IntendedEffectStatement"/>
+    <!-- <rdfs:domain rdf:resource="#IntendedEffectStatement"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
@@ -4441,7 +4441,7 @@ Examples of intended effect levels include Destruction, Financial Loss, and Unin
 By default, the Intended Effect Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#planningAndOpSupportValue">
-    <rdfs:domain rdf:resource="#PlanningAndOperationalSupportStatement"/>
+    <!-- <rdfs:domain rdf:resource="#PlanningAndOperationalSupportStatement"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
@@ -4455,7 +4455,7 @@ Examples of planning and operational support include Data Exploitation, Planning
 By default, the Planning and Operational Support Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#author">
-    <rdfs:domain rdf:resource="#JournalEntry"/>
+    <!-- <rdfs:domain rdf:resource="#JournalEntry"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -4463,10 +4463,10 @@ By default, the Planning and Operational Support Vocabulary is used to defined a
     <rdfs:label >Author</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#confidence.description">
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Statement"/>
-    <rdfs:domain rdf:resource="#Confidence"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
     <rdfs:label >Confidence Description</rdfs:label>
     <rdfs:comment >Specifies a description of the confidence value and how it was derived.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -4480,7 +4480,7 @@ If true, the data is encoded, else the data is not encoded.</rdfs:comment>
     <rdfs:label >Encoded</rdfs:label>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:resource="#EncodedCDATA"/>
+    <!-- <rdfs:domain rdf:resource="#EncodedCDATA"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#phaseName">
     
@@ -4488,14 +4488,14 @@ If true, the data is encoded, else the data is not encoded.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Phase Name</rdfs:label>
     <rdfs:comment >Specifies the descriptive name of the relevant kill chain phase.</rdfs:comment>
-    <rdfs:domain rdf:resource="#KillChainPhase"/>
+    <!-- <rdfs:domain rdf:resource="#KillChainPhase"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#assetType">
     
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Type</rdfs:label>
-    <rdfs:domain rdf:resource="#Asset"/>
+    <!-- <rdfs:domain rdf:resource="#Asset"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the type of the asset.
@@ -4505,7 +4505,7 @@ Examples of types of assets include directory, firewall, PBX, and cashier (these
 By default, the Asset Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#time.startTimestamp">
-    <rdfs:domain rdf:resource="#ActionEntry"/>
+    <!-- <rdfs:domain rdf:resource="#ActionEntry"/> -->
     <rdfs:label >Start Time</rdfs:label>
     
     <rdfs:comment >Specifies the time at which the activity was begun.</rdfs:comment>
@@ -4513,7 +4513,7 @@ By default, the Asset Type Vocabulary is used to defined a restricted set of val
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sophisticationValue">
-    <rdfs:domain rdf:resource="#SophisticationStatement"/>
+    <!-- <rdfs:domain rdf:resource="#SophisticationStatement"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Value</rdfs:label>
@@ -4528,8 +4528,8 @@ Examples of theat actor sophistication include Expert, Practitioner, and Novice 
 By default, the Threat Actor Sophistication Vocabulary is used to defined a restricted set of values.@en-US}</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="references">
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
-    <rdfs:domain rdf:resource="#InformationSource"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
+    <!-- <rdfs:domain rdf:resource="#InformationSource"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >References</rdfs:label>
@@ -4537,19 +4537,19 @@ By default, the Threat Actor Sophistication Vocabulary is used to defined a rest
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#confidence.value">
-    <rdfs:domain rdf:resource="#Confidence"/>
+    <!-- <rdfs:domain rdf:resource="#Confidence"/> -->
     
     
     
     <rdfs:label >Confidence Level</rdfs:label>
-    <rdfs:domain rdf:resource="#Statement"/>
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the level of confidence held in this direct assertion. 
 
 Examples of confidence levels include High, Medium, and Low (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
 
 By default, the High Medium Low Vocabulary is used to defined a restricted set of values.</rdfs:comment>
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#externalReference">
@@ -4558,7 +4558,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:label >External Reference</rdfs:label>
     <rdfs:comment >Specifies a resource reference for this kill chain definition.</rdfs:comment>
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberOfPhases">
     
@@ -4566,7 +4566,7 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:label >Number of Phases</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:comment >Specifies the number of phases in the kill chain.</rdfs:comment>
-    <rdfs:domain rdf:resource="#KillChain"/>
+    <!-- <rdfs:domain rdf:resource="#KillChain"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#phaseDescription">
     
@@ -4574,37 +4574,37 @@ By default, the High Medium Low Vocabulary is used to defined a restricted set o
     <rdfs:label >Phase Description</rdfs:label>
     <rdfs:comment >Specifies a brief description of the kill chain phase.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#KillChainPhase"/>
+    <!-- <rdfs:domain rdf:resource="#KillChainPhase"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#timestamp">
     
-    <rdfs:domain rdf:resource="#TTPBase"/>
+    <!-- <rdfs:domain rdf:resource="#TTPBase"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ExploitTargetBase"/>
-    <rdfs:domain rdf:resource="#IndicatorBase"/>
-    <rdfs:domain rdf:resource="#CampaignBase"/>
+    <!-- <rdfs:domain rdf:resource="#ExploitTargetBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#IndicatorBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#CampaignBase"/> -->
     <rdfs:label >Timestamp</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:comment >Specifies a timestamp for the definition of a specific version of an entity.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ReportBase"/>
-    <rdfs:domain rdf:resource="#ThreatActorBase"/>
-    <rdfs:domain rdf:resource="#PackageBase"/>
-    <rdfs:domain rdf:resource="#JournalEntry"/>
-    <rdfs:domain rdf:resource="#Statement"/>
-    <rdfs:domain rdf:resource="#Activity"/>
-    <rdfs:domain rdf:resource="#CourseOfActionBase"/>
-    <rdfs:domain rdf:resource="#IncidentBase"/>
+    <!-- <rdfs:domain rdf:resource="#ReportBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#ThreatActorBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#PackageBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#JournalEntry"/> -->
+    <!-- <rdfs:domain rdf:resource="#Statement"/> -->
+    <!-- <rdfs:domain rdf:resource="#Activity"/> -->
+    <!-- <rdfs:domain rdf:resource="#CourseOfActionBase"/> -->
+    <!-- <rdfs:domain rdf:resource="#IncidentBase"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encodedValue">
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Encoded Value</rdfs:label>
-    <rdfs:domain rdf:resource="#EncodedCDATA"/>
+    <!-- <rdfs:domain rdf:resource="#EncodedCDATA"/> -->
     <rdfs:comment >Specifies the data enoded as CDATA</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#relationshipScope">
-    <rdfs:domain rdf:resource="#RelationshipStatement"/>
+    <!-- <rdfs:domain rdf:resource="#RelationshipStatement"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Relationship Scope</rdfs:label>
@@ -4633,7 +4633,7 @@ If "exclusive" is specified, then multiple relationships are being defined betwe
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <rdfs:label >Ordinal Value</rdfs:label>
     
-    <rdfs:domain rdf:resource="#KillChainPhase"/>
+    <!-- <rdfs:domain rdf:resource="#KillChainPhase"/> -->
   </owl:DatatypeProperty>
 </rdf:RDF>
 

@@ -1443,18 +1443,18 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="#Dependency"/>
     <rdfs:label >Dependencies</rdfs:label>
     <rdfs:comment >Specifies information describing the relevant dependencies for this tool.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="metadata">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Metadata"/>
     <rdfs:comment >Specifies other relevant metadata including tool-specific fields.</rdfs:comment>
     <rdfs:label >Metadata</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#processInstance">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies the process instance in which the mechanism of cyber observation executed. 
 
 Instance should be of type ProcessObj:ProcessObjectType.</rdfs:comment>
@@ -1471,10 +1471,10 @@ Instance should be of type ProcessObj:ProcessObjectType.</rdfs:comment>
   <owl:ObjectProperty rdf:about="#system">
     <rdfs:comment >Specifies information describing the system on which the tool was executed.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ExecutionEnvironment"/>
+    <!-- <rdfs:domain rdf:resource="#ExecutionEnvironment"/> -->
     <rdfs:label >System</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#System"/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="digitalSignatures">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1487,14 +1487,14 @@ Instance should be of type ProcessObj:ProcessObjectType.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Tool Specific Data</rdfs:label>
     <rdfs:comment >Specifies a flexible mechanism for enabling tool-specific data to be included.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="processInstance.customProperties">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Property"/>
     <rdfs:comment >Specifies a set of custom Object Properties that may not be defined in existing Properties schemas.</rdfs:comment>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:label >Process Instance Custom Properties</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="extractedFeature.codeSnippets">
@@ -1507,7 +1507,7 @@ Instances should be of type codeObj:Code</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#platform">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a formal, standardized specification of the platform for this cyber observation source.</rdfs:comment>
     <rdfs:label >Platform</rdfs:label>
     <rdfs:range>
@@ -1524,19 +1524,19 @@ Instances should be of type codeObj:Code</rdfs:comment>
     <rdfs:label >Tool References</rdfs:label>
     <rdfs:range rdf:resource="#ToolReference"/>
     <rdfs:comment >Specifies references to instances or additional information for this tool.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#toolConfiguration">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#ToolConfiguration"/>
     <rdfs:comment >Specifies information describing the configuration and usage of the tool.</rdfs:comment>
     <rdfs:label >Configuration</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="identifier">
     <rdfs:comment >Specifies a pre-defined name for the given platform using some naming scheme. For example, one could provide a CPE (Common Platform Enumeration) name using the CPE naming format.</rdfs:comment>
     <rdfs:label >Identifier</rdfs:label>
-    <rdfs:domain rdf:resource="#PlatformSpecification"/>
+    <!-- <rdfs:domain rdf:resource="#PlatformSpecification"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="#PlatformIdentifier"/>
@@ -1545,13 +1545,13 @@ Instances should be of type codeObj:Code</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
     <rdfs:comment >Specifies detailed information describing the location at which the contributory activity occured.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:label >Location Details</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#compiler.platformSpecification">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Platform Specification</rdfs:label>
-    <rdfs:domain rdf:resource="#Compiler"/>
+    <!-- <rdfs:domain rdf:resource="#Compiler"/> -->
     <rdfs:comment >Specifies this compiler instance.</rdfs:comment>
     <rdfs:range>
       <owl:Class>
@@ -1565,20 +1565,20 @@ Instances should be of type codeObj:Code</rdfs:comment>
   <owl:ObjectProperty rdf:about="#blockHash.segments">
     <rdfs:range rdf:resource="#HashSegment"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#FuzzyHashStructure"/>
+    <!-- <rdfs:domain rdf:resource="#FuzzyHashStructure"/> -->
     <rdfs:comment >Specifies a single segment identified and utilized within this fuzzy hash calculation.</rdfs:comment>
     <rdfs:label >Segments</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="buildInfo.compilers">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Build Compilers</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies the compilers utilized during this build of this application.</rdfs:comment>
     <rdfs:range rdf:resource="#Compiler"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#observationLocation">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a relevant physical location for the observation measurement of the associated Observable.</rdfs:comment>
     <rdfs:label >Observation Location</rdfs:label>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
@@ -1586,7 +1586,7 @@ Instances should be of type codeObj:Code</rdfs:comment>
   <owl:ObjectProperty rdf:ID="internationalizationSettings">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >International Settings</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies information describing relevant internationalization setting for this tool.</rdfs:comment>
     <rdfs:range rdf:resource="#InternalString"/>
   </owl:ObjectProperty>
@@ -1594,11 +1594,11 @@ Instances should be of type codeObj:Code</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
     <rdfs:comment >Specifies details about the contributor's organization.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:label >Organization Details</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#buildInfo.buildUtilityPlatformSpecification">
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1620,14 +1620,14 @@ Instances should be of type codeObj:Code</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="tools">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a description of a set of automated tools.</rdfs:comment>
     <rdfs:label >Tools</rdfs:label>
     <rdfs:range rdf:resource="#ToolInformation"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="contributors">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a description of the individual contributors involved in this cyber observation source.</rdfs:comment>
     <rdfs:label >Contributors</rdfs:label>
     <rdfs:range rdf:resource="#Contributor"/>
@@ -1636,7 +1636,7 @@ Instances should be of type codeObj:Code</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Metadata"/>
     <rdfs:comment >Specifies subdatum structures for this metadata field.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Metadata"/>
+    <!-- <rdfs:domain rdf:resource="#Metadata"/> -->
     <rdfs:label >SubDatum</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="environmentVariables">
@@ -1648,7 +1648,7 @@ Instances should be of type codeObj:Code</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="toolHash.details">
     <rdfs:comment >Specifies details about hash values computed on the tool file content in order to verify its integrity.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Hash"/>
     <rdfs:label >Tool Hash Details</rdfs:label>
@@ -1658,11 +1658,11 @@ Instances should be of type codeObj:Code</rdfs:comment>
     <rdfs:range rdf:resource="#ExecutionEnvironment"/>
     <rdfs:comment >Specifies information describing the execution environment of the tool.</rdfs:comment>
     <rdfs:label >Execution Environment</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="configurationSettings">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies the configuration settings of this tool instance.</rdfs:comment>
     <rdfs:label >Configuration Settings</rdfs:label>
     <rdfs:range rdf:resource="#ConfigurationSetting"/>
@@ -1673,7 +1673,7 @@ Instances should be of type codeObj:Code</rdfs:comment>
 
 userAccount should be an instance of type UserAccountObj:UserAccountObjectType.</rdfs:comment>
     <rdfs:label >User Account</rdfs:label>
-    <rdfs:domain rdf:resource="#ExecutionEnvironment"/>
+    <!-- <rdfs:domain rdf:resource="#ExecutionEnvironment"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Account#UserAccount"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="errors">
@@ -1681,16 +1681,16 @@ userAccount should be an instance of type UserAccountObj:UserAccountObjectType.<
     <rdfs:range rdf:resource="#Error"/>
     <rdfs:comment >Specifies any errors generated during the run of the tool.</rdfs:comment>
     <rdfs:label >Errors</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hash.details">
     <rdfs:comment >Specifies details about any computed hash values for this the data.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Hashes</rdfs:label>
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
     <rdfs:range rdf:resource="#Hash"/>
     
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#locationAddress">
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
@@ -1698,32 +1698,32 @@ userAccount should be an instance of type UserAccountObj:UserAccountObjectType.<
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment ></rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Location"/>
+    <!-- <rdfs:domain rdf:resource="#Location"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="buildInfo.configurationSettings">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#ConfigurationSetting"/>
     <rdfs:label >Build Configuration Settings</rdfs:label>
     <rdfs:comment >Specifies the configuration settings for this build of this application instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#vendor">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
     <rdfs:comment >Specifies information identifying the vendor organization for this tool.</rdfs:comment>
     <rdfs:label >Vendor</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="fuzzyHashStructure">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#FuzzyHashStructure"/>
-    <rdfs:domain rdf:resource="#Hash"/>
+    <!-- <rdfs:domain rdf:resource="#Hash"/> -->
     <rdfs:comment >Specifies the key internal components of a fuzzy hash calculation with a given block size.</rdfs:comment>
     <rdfs:label >Suzzy Hash Structure</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#individualDetails">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies details about the individual contributor.</rdfs:comment>
     <rdfs:label >Individual Details</rdfs:label>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
@@ -1733,11 +1733,11 @@ userAccount should be an instance of type UserAccountObj:UserAccountObjectType.<
     <rdfs:range rdf:resource="#Library"/>
     <rdfs:label >Build Libraries</rdfs:label>
     <rdfs:comment >Specifies the libraries incorporated into the build of the tool.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#observableLocation">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a relevant physical location for the associated Observable.</rdfs:comment>
     <rdfs:label >Observable Location</rdfs:label>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
@@ -1745,7 +1745,7 @@ userAccount should be an instance of type UserAccountObj:UserAccountObjectType.<
   <owl:DatatypeProperty rdf:about="#envVarValue">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Value</rdfs:label>
-    <rdfs:domain rdf:resource="#EnvironmentVariable"/>
+    <!-- <rdfs:domain rdf:resource="#EnvironmentVariable"/> -->
     <rdfs:comment >Specifies the value of the environment variable</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -1754,7 +1754,7 @@ userAccount should be an instance of type UserAccountObj:UserAccountObjectType.<
 
 In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
     <rdfs:label >Received Time</rdfs:label>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1762,13 +1762,13 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:label >Signature Exists</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DigitalSignature"/>
+    <!-- <rdfs:domain rdf:resource="#DigitalSignature"/> -->
     <rdfs:comment >Specifies whether the digital signature exists.</rdfs:comment>
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#triggerPoint">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HashSegment"/>
+    <!-- <rdfs:domain rdf:resource="#HashSegment"/> -->
     <rdfs:comment >Specifies the offset within the hashed object of the trigger point for this segment.</rdfs:comment>
     <rdfs:label >Trigger Point</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
@@ -1776,7 +1776,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   <owl:DatatypeProperty rdf:about="#buildInfo.configurationSettingDescription">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies a description of the configuration settings for this build of this application instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:label >Build Configuration Description</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1785,27 +1785,27 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:label >Build Identifier</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies an externally defined unique identifier of this build of this application instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#byteOrder">
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     <rdfs:comment >Specifies the endianness of the unpacked (e.g., decoded, unencrypted, etc.) data stored within the DataSegment.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
     <rdfs:label >Byte Order</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#time.endDateTime">
-    <rdfs:domain rdf:resource="#ExecutionEnvironment"/>
+    <!-- <rdfs:domain rdf:resource="#ExecutionEnvironment"/> -->
     <rdfs:comment >Specifies the ending time for this construct. 
 
 In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >End Time</rdfs:label>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="extractedFeature.imports">
@@ -1820,11 +1820,11 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:label >Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the name of the library</rdfs:comment>
-    <rdfs:domain rdf:resource="#Library"/>
+    <!-- <rdfs:domain rdf:resource="#Library"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#vendorName">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
     <rdfs:comment >Specifies the name of the vendor that created the tool</rdfs:comment>
     <rdfs:label >Vendor Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1840,16 +1840,16 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#offset">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label >Offset</rdfs:label>
     <rdfs:comment >Specifies where to start searching for the specified data segment in an object, in bytes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#stringLanguage">
     
     <rdfs:label >Language</rdfs:label>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the language the string is written in, e.g. English.&#xD;
@@ -1858,7 +1858,7 @@ For consistency, we strongly recommend using the ISO 639-2 language code, if ava
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="contributorPhone">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies  a telephone number of this contributor.</rdfs:comment>
     <rdfs:label >Phone Number</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1868,23 +1868,23 @@ For consistency, we strongly recommend using the ISO 639-2 language code, if ava
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Location</rdfs:label>
     <rdfs:comment >Specifies information describing the location at which the contributory activity occured.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#blockHash.segmentCount">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label >block hash.segment count</rdfs:label>
-    <rdfs:domain rdf:resource="#FuzzyHashStructure"/>
+    <!-- <rdfs:domain rdf:resource="#FuzzyHashStructure"/> -->
     <rdfs:comment >Specifies the number of segments identified and utilized within this fuzzy hash calculation.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#time.startDateTime">
-    <rdfs:domain rdf:resource="#ExecutionEnvironment"/>
+    <!-- <rdfs:domain rdf:resource="#ExecutionEnvironment"/> -->
     <rdfs:comment >Specifies the starting time for this construct. 
 
 In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Start Time</rdfs:label>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#hashType">
@@ -1892,7 +1892,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:comment >Specifies the type of hash used in the Simple_Hash_Value or Fuzzy_Hash_Value elements, using a standardized controlled vocabulary.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Hash"/>
+    <!-- <rdfs:domain rdf:resource="#Hash"/> -->
     <rdfs:label >Hash Type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
@@ -1902,7 +1902,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Property Name</rdfs:label>
     <rdfs:comment >Specifies a name for this property.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Property"/>
+    <!-- <rdfs:domain rdf:resource="#Property"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="securityID">
     
@@ -1931,14 +1931,14 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
       </rdfs:Datatype>
     </rdfs:range>
     <rdfs:comment >Specifies the high-level class of this cyber observation source.</rdfs:comment>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:label >Source Class</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#commandLine">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the command line string used to run the tool.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ExecutionEnvironment"/>
+    <!-- <rdfs:domain rdf:resource="#ExecutionEnvironment"/> -->
     <rdfs:label >Command Line</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="securityIDType">
@@ -1952,7 +1952,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#blockSize">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#FuzzyHashStructure"/>
+    <!-- <rdfs:domain rdf:resource="#FuzzyHashStructure"/> -->
     <rdfs:comment >Specifies the calculated block size for this fuzzy hash calculation.</rdfs:comment>
     <rdfs:label >Block Size</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -1965,7 +1965,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
 This field is provided for forensic analysis purposes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="extractedFeature.functions">
     
@@ -1982,11 +1982,11 @@ This field is relevant only for byte runs of tiles in forensic analysis.</rdfs:c
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >File System Offset</rdfs:label>
     
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#errorType">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Error"/>
+    <!-- <rdfs:domain rdf:resource="#Error"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the type for this tool run error.</rdfs:comment>
     <rdfs:label >Error Type</rdfs:label>
@@ -1996,14 +1996,14 @@ This field is relevant only for byte runs of tiles in forensic analysis.</rdfs:c
     <rdfs:label >Encoding</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the encoding method used for the string extracted from the CybOX object, via a standardized controlled vocabulary.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sourceType">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies the broad type of this cyber observation source.</rdfs:comment>
     <rdfs:label >Source Type</rdfs:label>
     <rdfs:range>
@@ -2025,31 +2025,31 @@ This field is relevant only for byte runs of tiles in forensic analysis.</rdfs:c
     </rdfs:range>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#id">
-    <rdfs:domain rdf:resource="#EnvironmentVariable"/>
-    <rdfs:domain rdf:resource="#Hash"/>
+    <!-- <rdfs:domain rdf:resource="#EnvironmentVariable"/> -->
+    <!-- <rdfs:domain rdf:resource="#Hash"/> -->
     <rdfs:comment >Specifies the unique identifier associated with this entity instance.&#xD;
 &#xD;
 An identifier MUST take the format [ns-prefix]:[construct-type]-[UUID], where [ns-prefix] should be the namespace prefix owned/controlled by the producer of the content&#xD;
 &#xD;
 The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID], there the [ns-prefix] SHOULD be a namespace prefix bound to a namespace owned/controlled by the producer of the content, and [UUID] SHOULD correspond to a globally unique identifier.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PlatformIdentifier"/>
-    <rdfs:domain rdf:resource="#ByteRun"/>
-    <rdfs:domain rdf:resource="#PlatformSpecification"/>
-    <rdfs:domain rdf:resource="#FuzzyHashStructure"/>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#PlatformIdentifier"/> -->
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
+    <!-- <rdfs:domain rdf:resource="#PlatformSpecification"/> -->
+    <!-- <rdfs:domain rdf:resource="#FuzzyHashStructure"/> -->
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Location"/>
-    <rdfs:domain rdf:resource="#HashSegment"/>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#Location"/> -->
+    <!-- <rdfs:domain rdf:resource="#HashSegment"/> -->
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
     
     <rdfs:label >Id</rdfs:label>
-    <rdfs:domain rdf:resource="#DigitalSignature"/>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DigitalSignature"/> -->
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contributorOrganization">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies the organization name of this contributor.</rdfs:comment>
     <rdfs:label >Organization Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2058,13 +2058,13 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:label >Byterun Length</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
     
     <rdfs:comment >Specifies the lenght of the byte run</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sourceDescription">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a generalized but structured description of this cyber observation source.</rdfs:comment>
     <rdfs:label >Source Description</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2072,7 +2072,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
   <owl:DatatypeProperty rdf:about="#dependencyDescription">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Description</rdfs:label>
-    <rdfs:domain rdf:resource="#Dependency"/>
+    <!-- <rdfs:domain rdf:resource="#Dependency"/> -->
     <rdfs:comment >Specifies a description of this dependency instance.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2080,7 +2080,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the English translation of the string, if it is not written in English.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
     <rdfs:label >English Translation</rdfs:label>
     
   </owl:DatatypeProperty>
@@ -2089,12 +2089,12 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies a description of the digitial signature</rdfs:comment>
-    <rdfs:domain rdf:resource="#DigitalSignature"/>
+    <!-- <rdfs:domain rdf:resource="#DigitalSignature"/> -->
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="hash.value">
-    <rdfs:domain rdf:resource="#ExtractedString"/>
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the value and type of a hash in the format hash-type:hash-value</rdfs:comment>
     
@@ -2103,7 +2103,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="errorInstances">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Error"/>
+    <!-- <rdfs:domain rdf:resource="#Error"/> -->
     <rdfs:comment >Specifies the actual error output for each instance of this type of error.</rdfs:comment>
     <rdfs:label >Error Instances</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2111,7 +2111,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
   <owl:DatatypeProperty rdf:about="#settingName">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Setting Name</rdfs:label>
-    <rdfs:domain rdf:resource="#ConfigurationSetting"/>
+    <!-- <rdfs:domain rdf:resource="#ConfigurationSetting"/> -->
     <rdfs:comment >Specifies the name of the configuration item referenced by this configuration setting instance.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2119,7 +2119,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:label >Certificate Subject</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DigitalSignature"/>
+    <!-- <rdfs:domain rdf:resource="#DigitalSignature"/> -->
     <rdfs:comment >Specifies the certificate subject of the digital signature.</rdfs:comment>
     
   </owl:DatatypeProperty>
@@ -2127,19 +2127,19 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the actual value of the string extracted from the CybOX object, if it is capable of being represented in the encoding scheme used in the document (most commonly UTF-8).</rdfs:comment>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
     <rdfs:label >String Value</rdfs:label>
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sightingCount">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies how many different identical instances of a given Observable may have been seen/sighted by the observation source.</rdfs:comment>
     <rdfs:label >Sighting Count</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contributorRole">
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies the role played by this contributor.</rdfs:comment>
     <rdfs:label >Role</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2149,11 +2149,11 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Name</rdfs:label>
     <rdfs:comment >Specifies the name of the environment variable.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EnvironmentVariable"/>
+    <!-- <rdfs:domain rdf:resource="#EnvironmentVariable"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#referenceType">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ToolReference"/>
+    <!-- <rdfs:domain rdf:resource="#ToolReference"/> -->
     <rdfs:comment >Specifies the nature of the referenced material (documentation, source, executable, etc.).</rdfs:comment>
     <rdfs:label >Reference Type</rdfs:label>
     <rdfs:range>
@@ -2186,7 +2186,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:label >Location Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Location"/>
+    <!-- <rdfs:domain rdf:resource="#Location"/> -->
     
     <rdfs:comment >Specifies a location through a simple name.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -2195,7 +2195,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Version</rdfs:label>
     <rdfs:comment >Specifies the version of the library.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Library"/>
+    <!-- <rdfs:domain rdf:resource="#Library"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#stringLength">
     
@@ -2203,44 +2203,44 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >length</rdfs:label>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#externalReference">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ToolReference"/>
+    <!-- <rdfs:domain rdf:resource="#ToolReference"/> -->
     <rdfs:comment >Specifies the hyperlink to the reference</rdfs:comment>
     <rdfs:label >External Reference</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:domain rdf:resource="#PlatformIdentifier"/>
+    <!-- <rdfs:domain rdf:resource="#PlatformIdentifier"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#content">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Content</rdfs:label>
     <rdfs:comment >Specifies the actual content of this internal string instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#InternalString"/>
+    <!-- <rdfs:domain rdf:resource="#InternalString"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#toolType">
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Tool Type</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies the type of information source leveraged for this cyber observation source.</rdfs:comment>
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.outputLog">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Build Output Log</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies a capture of the output log of the build process.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contributionEndDate">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Contribution End Date</rdfs:label>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies the end date for this contributor's involvement.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
   </owl:DatatypeProperty>
@@ -2249,7 +2249,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Value</rdfs:label>
-    <rdfs:domain rdf:resource="#Parameter"/>
+    <!-- <rdfs:domain rdf:resource="#Parameter"/> -->
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#informationSourceType">
@@ -2257,7 +2257,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Information Source Type</rdfs:label>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies the type of information source leveraged for this cyber observation source,  through a standardized controlled vocabulary.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
@@ -2266,14 +2266,14 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Segment Hash</rdfs:label>
     <rdfs:comment >Specifies a calculated hash value for this segment.</rdfs:comment>
-    <rdfs:domain rdf:resource="#HashSegment"/>
+    <!-- <rdfs:domain rdf:resource="#HashSegment"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#certificateIssuer">
     <rdfs:label >Certificate Issuer</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DigitalSignature"/>
+    <!-- <rdfs:domain rdf:resource="#DigitalSignature"/> -->
     <rdfs:comment >Specifies the certificate issuer of the digital signature.</rdfs:comment>
     
   </owl:DatatypeProperty>
@@ -2282,12 +2282,12 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:label >Key</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the actual key of this internal string instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#InternalString"/>
+    <!-- <rdfs:domain rdf:resource="#InternalString"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="usageContextAssumptions">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Usage Context Assumptions</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies descriptions of the various relevant usage context assumptions for this tool.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2296,14 +2296,14 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Version</rdfs:label>
     <rdfs:comment >Specifies the version of the compiler.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Compiler"/>
+    <!-- <rdfs:domain rdf:resource="#Compiler"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#searchWithin">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label >Search Within</rdfs:label>
     <rdfs:comment >Specifies that at most N bytes are between data segments in related objects.</rdfs:comment>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="parentId">
     <rdfs:label >Parent ID</rdfs:label>
@@ -2313,7 +2313,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:comment >Specifies the identifier for the parent object</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#propertyValue">
-    <rdfs:domain rdf:resource="#Property"/>
+    <!-- <rdfs:domain rdf:resource="#Property"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Property Value</rdfs:label>
     <rdfs:comment >Specifies the value of the property</rdfs:comment>
@@ -2324,7 +2324,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Type</rdfs:label>
     <rdfs:comment >Specifies the type of name of a single metadata field.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Metadata"/>
+    <!-- <rdfs:domain rdf:resource="#Metadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#hashValue">
     <rdfs:range>
@@ -2336,13 +2336,13 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
       </owl:Class>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Hash"/>
+    <!-- <rdfs:domain rdf:resource="#Hash"/> -->
     <rdfs:comment >Specifies the output of basic or fuzzy cryptograhic hash functions outputting a single hash value as a string or hexbinary.</rdfs:comment>
     <rdfs:label >Hash Value</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#offsetAddress">
     <rdfs:label >Offset Address</rdfs:label>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
     <rdfs:comment >Specifies the location or offset of the specified string in the CybOX objects.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -2353,11 +2353,11 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the name of the tool.</rdfs:comment>
     <rdfs:label >Name</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sourceName">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:comment >Specifies a relevant name to this Discovery Method.</rdfs:comment>
     <rdfs:label >Source Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2367,7 +2367,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies an appropriate version descriptor of this tool.</rdfs:comment>
     <rdfs:label >Version</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dataFormat">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -2394,18 +2394,18 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     </rdfs:range>
     <rdfs:label >Data Format</rdfs:label>
     <rdfs:comment >Specifies the type of data contained in the Data_Segment element.</rdfs:comment>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#segmentHash.fuzzyHashValue">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Segment Fuzzy Hash Value</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HashSegment"/>
+    <!-- <rdfs:domain rdf:resource="#HashSegment"/> -->
     <rdfs:comment >Specifies a single result value of a cryptograhic fuzzy hash function outputting a single complex string based hash value. (e.g. SSDEEP's Block1hash:Block2hash format).</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contributorName">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies the name of this contributor.</rdfs:comment>
     <rdfs:label >Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2413,14 +2413,14 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
   <owl:DatatypeProperty rdf:about="#blockHash.fuzzyHashValue">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#FuzzyHashStructure"/>
+    <!-- <rdfs:domain rdf:resource="#FuzzyHashStructure"/> -->
     <rdfs:label >Block Hash Value Fuzzy Hash Value</rdfs:label>
     <rdfs:comment >Specifies a fuzzy hash calculation result value for this Block specified a single result value of a cryptograhic fuzzy hash function outputting a single complex string based hash value. (e.g. SSDEEP's Block1hash:Block2hash format).</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="toolHash.value">
     <rdfs:comment >Specifies the values, in the format of 'hash-type:hash-value', for any hash computed on the tool file content in order to verify its integrity</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Tool Hash Value</rdfs:label>
@@ -2428,7 +2428,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
   <owl:DatatypeProperty rdf:about="#compilerName">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Name</rdfs:label>
-    <rdfs:domain rdf:resource="#Compiler"/>
+    <!-- <rdfs:domain rdf:resource="#Compiler"/> -->
     <rdfs:comment >Specifies the name of the compiler.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2457,12 +2457,12 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     </rdfs:range>
     <rdfs:comment >Specifies the name of the compensation model used for the tool.</rdfs:comment>
     <rdfs:label >Compensation Model</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.buildScript">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the actual build script for this build of this application instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:label >Build Script</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -2471,7 +2471,7 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:label >Build Project Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the project name of this build of this application instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dataSizeUnits">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -2494,32 +2494,32 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     </rdfs:range>
     <rdfs:label >Data Size Units</rdfs:label>
     <rdfs:comment >Specifies data size units associated with the dataSize property.</rdfs:comment>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dependencyType">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Type</rdfs:label>
     <rdfs:comment >Specifies the type of this dependency instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Dependency"/>
+    <!-- <rdfs:domain rdf:resource="#Dependency"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="errorCount">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:comment >Specifies the count of instances for this error in the tool run.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Error"/>
+    <!-- <rdfs:domain rdf:resource="#Error"/> -->
     <rdfs:label >Error Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#blockHash.simpleHashValue">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies a fuzzy hash calculation result value for this Block. Specifies a single result value of a basic cryptograhic hash function outputting a single hexbinary hash value.</rdfs:comment>
-    <rdfs:domain rdf:resource="#FuzzyHashStructure"/>
+    <!-- <rdfs:domain rdf:resource="#FuzzyHashStructure"/> -->
     <rdfs:label >Block Hash Value</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#settingDescription">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ConfigurationSetting"/>
+    <!-- <rdfs:domain rdf:resource="#ConfigurationSetting"/> -->
     <rdfs:comment >Specifies a description of the configuration item referenced in this configuration setting instance.</rdfs:comment>
     <rdfs:label >Description</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2529,20 +2529,20 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <rdfs:comment >Specifies the naming system from which the indicated name was drawn.</rdfs:comment>
     <rdfs:label >Platform Identifier Naming System</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PlatformIdentifier"/>
+    <!-- <rdfs:domain rdf:resource="#PlatformIdentifier"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contributionStartDate">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Contribution Start Date</rdfs:label>
     <rdfs:comment >Specifies the start date for this contributor's involvement.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rawSegmentContent">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
     <rdfs:comment >Specifies the raw content of this segment of the hashed object.</rdfs:comment>
-    <rdfs:domain rdf:resource="#HashSegment"/>
+    <!-- <rdfs:domain rdf:resource="#HashSegment"/> -->
     <rdfs:label >Raw Segment Content</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.compilationDate">
@@ -2552,11 +2552,11 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
 
 In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#settingType">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ConfigurationSetting"/>
+    <!-- <rdfs:domain rdf:resource="#ConfigurationSetting"/> -->
     <rdfs:comment >Specifies the type of the configuration item referenced in this configuration setting instance.</rdfs:comment>
     <rdfs:label >Type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2566,11 +2566,11 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies an appropriate service pack descriptor for this tool.</rdfs:comment>
     <rdfs:label >Service Pack</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#signatureVerified">
     <rdfs:label >Signature Verified</rdfs:label>
-    <rdfs:domain rdf:resource="#DigitalSignature"/>
+    <!-- <rdfs:domain rdf:resource="#DigitalSignature"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     
@@ -2579,7 +2579,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   <owl:DatatypeProperty rdf:about="#dataSegment">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Data Segment</rdfs:label>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
     <rdfs:comment >Specifies the actual segment of data being characterized.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2588,11 +2588,11 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Name</rdfs:label>
-    <rdfs:domain rdf:resource="#Parameter"/>
+    <!-- <rdfs:domain rdf:resource="#Parameter"/> -->
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#platformIdentifier">
-    <rdfs:domain rdf:resource="#PlatformIdentifier"/>
+    <!-- <rdfs:domain rdf:resource="#PlatformIdentifier"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies a pre-defined name for the given platform using some naming scheme.  For example, one coupld provide a CPE (Common Platform Enumeration) name using the CPE naming format.</rdfs:comment>
     <rdfs:label >platform identifier</rdfs:label>
@@ -2600,13 +2600,13 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#settingValue">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ConfigurationSetting"/>
+    <!-- <rdfs:domain rdf:resource="#ConfigurationSetting"/> -->
     <rdfs:comment >Specifies he value of this configuration setting instance.</rdfs:comment>
     <rdfs:label >Value</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#platformDescription">
-    <rdfs:domain rdf:resource="#PlatformSpecification"/>
+    <!-- <rdfs:domain rdf:resource="#PlatformSpecification"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Description</rdfs:label>
     <rdfs:comment >Specifies description of the indicated platform.</rdfs:comment>
@@ -2614,7 +2614,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contributorEmail">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Contributor"/>
+    <!-- <rdfs:domain rdf:resource="#Contributor"/> -->
     <rdfs:comment >Specifies the email of this contributor.</rdfs:comment>
     <rdfs:label >Email</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -2624,14 +2624,14 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:label >Ordinal Position</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:domain rdf:resource="#Parameter"/>
+    <!-- <rdfs:domain rdf:resource="#Parameter"/> -->
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#byteStringValue">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Byte String Value</rdfs:label>
     <rdfs:comment >Specifies the raw, byte-string representation of the string extracted from the CybOX object, in hexadecimal format.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ExtractedString"/>
+    <!-- <rdfs:domain rdf:resource="#ExtractedString"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     
   </owl:DatatypeProperty>
@@ -2640,17 +2640,17 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:comment >Specifies a generalized but structured descriptive information for this tool.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Tool Description</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolInformation"/>
+    <!-- <rdfs:domain rdf:resource="#ToolInformation"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#searchDistance">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label >Search Distance</rdfs:label>
     <rdfs:comment >Specifies how far into an object should be ignored, in bytes, before starting to search for the specified data segment relative to the end of the previous data segment.</rdfs:comment>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.buildUtilityName">
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies the informally defined name of the utility used to build this application instance.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Build Utility Name</rdfs:label>
@@ -2659,7 +2659,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   <owl:DatatypeProperty rdf:about="#propertyDescription">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Property Description</rdfs:label>
-    <rdfs:domain rdf:resource="#Property"/>
+    <!-- <rdfs:domain rdf:resource="#Property"/> -->
     <rdfs:comment >Specifies a description of what this property represents.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2673,21 +2673,21 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
   <owl:DatatypeProperty rdf:about="#dataSize">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:domain rdf:resource="#DataSegment"/>
+    <!-- <rdfs:domain rdf:resource="#DataSegment"/> -->
     <rdfs:comment >Specifies the size of the data segment.</rdfs:comment>
     <rdfs:label >Data Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#metadataValue">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Value</rdfs:label>
-    <rdfs:domain rdf:resource="#Metadata"/>
+    <!-- <rdfs:domain rdf:resource="#Metadata"/> -->
     <rdfs:comment >Specifies the value of name of a single metadata field.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.version">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >build Version</rdfs:label>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
     <rdfs:comment >Specifies the build utility used to build this application.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
@@ -2697,7 +2697,7 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
 In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Produced Time</rdfs:label>
-    <rdfs:domain rdf:resource="#MeasureSource"/>
+    <!-- <rdfs:domain rdf:resource="#MeasureSource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.label">
@@ -2705,13 +2705,13 @@ In order to avoid ambiguity, it is strongly suggest that all timestamps in this 
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Build Label</rdfs:label>
     <rdfs:comment >Specifies any relevant label for this build of this application instance.</rdfs:comment>
-    <rdfs:domain rdf:resource="#ToolConfiguration"/>
+    <!-- <rdfs:domain rdf:resource="#ToolConfiguration"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#byteRunData">
     <rdfs:label >Byterun Data</rdfs:label>
     <rdfs:comment >Specifies a raw dump of the byte run data, typically enclosed within an XML CDATA section.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ByteRun"/>
+    <!-- <rdfs:domain rdf:resource="#ByteRun"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
   </owl:DatatypeProperty>

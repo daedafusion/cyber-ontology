@@ -25,7 +25,8 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
       <owl:Class rdf:ID="TestMechanism"/>
     </rdfs:subClassOf>
     <rdfs:label >YARA Test Mechanism</rdfs:label>
-    <rdfs:subClassOf>
+<!-- CS: StixCommonID is defined in TestMechanism -->
+  <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#id">
@@ -46,9 +47,9 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS: description is defined in TestMechanism -->
+  <!--   <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
@@ -66,9 +67,10 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+<!-- CS: efficacy is defined in TestMechanism -->  
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="efficacy"/>
@@ -76,7 +78,7 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -86,7 +88,8 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS: producer is defined in TestMechanism -->   
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="producer"/>
@@ -94,7 +97,7 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -161,7 +164,7 @@ An Indicator sighting report may capture a variety of information associated wit
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#timestampPrecision">
-            <rdfs:domain rdf:resource="#Sighting"/>
+			<rdfs:domain rdf:resource="#Sighting"/> 
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -180,28 +183,29 @@ An Indicator sighting report may capture a variety of information associated wit
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+<!-- CS: StixCommonID is defined in TestMechanism -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:label >Snort Test Mechanism</rdfs:label>
     <rdfs:comment >Characterizes an instantial extension test mechanism to provide support for the specification using Snort rules.</rdfs:comment>
-    
-    <rdfs:subClassOf>
+<!-- CS: description is defined in TestMechanism --> 
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#description"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Class rdf:about="#TestMechanism"/>
     </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
+<!-- CS: efficacy is defined in TestMechanism -->  
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#efficacy"/>
@@ -209,9 +213,9 @@ An Indicator sighting report may capture a variety of information associated wit
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS: producer is defined in TestMechanism --> 
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#producer"/>
@@ -219,7 +223,7 @@ An Indicator sighting report may capture a variety of information associated wit
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -283,7 +287,8 @@ An Indicator sighting report may capture a variety of information associated wit
     
   </owl:Class>
   <owl:Class rdf:ID="OVALTestMechanism">
-    <rdfs:subClassOf>
+<!-- CS: efficacy is defined in TestMechanism -->  
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#efficacy"/>
@@ -291,14 +296,15 @@ An Indicator sighting report may capture a variety of information associated wit
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS: description is defined in TestMechanism -->  
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#description"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -330,13 +336,14 @@ An Indicator sighting report may capture a variety of information associated wit
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS: stixcommonid is defined in TestMechanism -->  
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -359,7 +366,8 @@ An Indicator sighting report may capture a variety of information associated wit
         >1</owl:minCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS: producer is defined in TestMechanism -->  
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#producer"/>
@@ -367,7 +375,7 @@ An Indicator sighting report may capture a variety of information associated wit
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -423,13 +431,14 @@ An Indicator sighting report may capture a variety of information associated wit
 A STIX Indicator characterizes a cyber threat indicator by capturing an asserted relationship between a pattern identifying certain observable conditions and a particular TTP likely in play if those observable conditions are seen, as well as contextual information about how and when it should be acted on and how it relates to other Indicators, Campaigns, and TTPs.
 
 Indicators convey specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related TTP context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc.</rdfs:comment>
-    <rdfs:subClassOf>
+<!-- CS: timestamp is defined in IndicatorBase (stixcommon) -->  
+   <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#timestamp"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -470,14 +479,14 @@ Indicators convey specific Observable patterns combined with contextual informat
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS: id is defined in IncidentBase (stixcommon) -->  
+	<!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -551,7 +560,8 @@ Indicators convey specific Observable patterns combined with contextual informat
     <rdfs:subClassOf>
       <owl:Class rdf:about="#TestMechanism"/>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined is superclass TestMechanism  -->
+	<!--    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#efficacy"/>
@@ -559,7 +569,7 @@ Indicators convey specific Observable patterns combined with contextual informat
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf>  -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -571,22 +581,25 @@ Indicators convey specific Observable patterns combined with contextual informat
     </rdfs:subClassOf>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined is superclass TestMechanism  -->	
+<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#description"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120116 defined is superclass TestMechanism  -->	
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:comment >Characterizes an instantial extension test mechanism to support a generic test mechanism through the use of a raw data section.</rdfs:comment>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined is superclass TestMechanism  -->	
+  <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#producer"/>
@@ -594,7 +607,7 @@ Indicators convey specific Observable patterns combined with contextual informat
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -631,7 +644,8 @@ Indicators convey specific Observable patterns combined with contextual informat
     
   </owl:Class>
   <owl:Class rdf:ID="OpenIOCTestMechanism">
-    <rdfs:subClassOf>
+ <!-- CS 120116 defined is superclass TestMechanism  -->
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#efficacy"/>
@@ -639,15 +653,15 @@ Indicators convey specific Observable patterns combined with contextual informat
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120116 defined is superclass TestMechanism  -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#description"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -670,14 +684,14 @@ Indicators convey specific Observable patterns combined with contextual informat
       <owl:Class rdf:about="#TestMechanism"/>
     </rdfs:subClassOf>
     <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:subClassOf>
+<!-- CS 120116 defined is superclass TestMechanism  -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -689,8 +703,8 @@ Indicators convey specific Observable patterns combined with contextual informat
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
+<!-- CS 120116 defined is superclass TestMechanism  -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:about="#producer"/>
@@ -698,32 +712,30 @@ Indicators convey specific Observable patterns combined with contextual informat
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:label >OpenIOC Test Mechanism</rdfs:label>
     <rdfs:comment >Characterizes an instantial extension test mechanism to provide support for the specification using an OpenIOC test.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="#TestMechanism">
-    
-    
     <rdfs:label >Test Mechanism</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#producer"/>
+          <owl:ObjectProperty rdf:ID="producer"/>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+   <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    <rdfs:subClassOf> 
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#description"/>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -733,7 +745,7 @@ Indicators convey specific Observable patterns combined with contextual informat
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#efficacy"/>
+          <owl:ObjectProperty rdf:ID="efficacy"/>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>

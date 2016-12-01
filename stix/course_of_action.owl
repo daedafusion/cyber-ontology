@@ -99,9 +99,10 @@ The StructuredCOA class is an abstract class, so it MUST be extended via a subcl
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <!-- Chey: Added this subclass element; to be a structuredCOA, this must also be a COA -->
-	<rdfs:subClassOf>
+	<!-- Update: This is incorrect per the STIX documentation provided -->
+	<!-- <rdfs:subClassOf>
       <owl:Class rdf:about="#CourseOfAction"/>
-    </rdfs:subClassOf>   
+    </rdfs:subClassOf>    -->
   <!--   <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
@@ -135,8 +136,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf> 
-   <!-- causes error and is in superclass courseofactionbase;removed -->
-   <!--  <rdfs:subClassOf>
+    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
@@ -146,7 +146,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf> -->
+    </rdfs:subClassOf> 
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -250,14 +250,12 @@ Courses Of Action are specific measures to be taken to address threat whether th
   <!-- The below 2 axioms are not mentioned in the superclass CourseofActionBase; But causes 2 errors in DL -->
   <rdfs:subClassOf>
     <owl:Restriction>
-<!-- 		 Removing cardinality caused an additional error 
- --> 	
+<!-- 		 Removing cardinality caused an additional error --> 	
  <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality> 
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
-<!--          removing the domain alone changes nothing 
- -->		 
+<!--          removing the domain alone changes nothing -->		 
  <rdfs:domain rdf:resource="#CourseOfAction"/> 
           </rdf:Description>
         </owl:onProperty>

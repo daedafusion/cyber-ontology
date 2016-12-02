@@ -1490,7 +1490,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validFromDateTime"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#status"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1923,7 +1923,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Defines a Fax as a communication media</rdfs:comment>
     <rdfs:label >Fax</rdfs:label>
     <rdfs:subClassOf rdf:resource="#ContactNumber"/>
-    <rdfs:subClassOf>
+<!-- CS 120116 Nothing changes when this block is commented out- superclass = IdentificationDocument -->
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#communicationMediaType"/>
@@ -3584,8 +3585,9 @@ Party should be used in place of Person or Organization if it is unclear which i
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Defines a cellphone as a communication media type</rdfs:comment>
     <rdfs:label >Cellphone</rdfs:label>
-    <rdfs:subClassOf rdf:resource="#ContactNumber"/>
-    <rdfs:subClassOf>
+	 <rdfs:subClassOf rdf:resource="#ContactNumber"/>
+<!-- CS 120116 Nothing changes when this block is commented out- superclass = IdentificationDocument -->
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#communicationMediaType"/>
@@ -3593,15 +3595,17 @@ Party should be used in place of Person or Organization if it is unclear which i
         <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
         >Cellphone</owl:hasValue>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf>  
   </owl:Class>
   <owl:Class rdf:ID="Telephone">
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf rdf:resource="#ContactNumber"/>
+	
     <rdfs:comment >Specifies a Telephone as a communciation media</rdfs:comment>
     <rdfs:label >Telephone</rdfs:label>
-    <rdfs:subClassOf>
+<!-- CS 120116 Nothing changes when this block is commented out- superclass = IdentificationDocument -->
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#communicationMediaType"/>

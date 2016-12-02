@@ -36,7 +36,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <!-- causes error but not in superclass courseofactionbase or StructuredCOA or COA-->
+<!-- causes error but not in superclass courseofactionbase or StructuredCOA or COA-->
 	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -53,7 +53,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf> 
     <rdfs:comment >Characterizes information for an alternative actionable structured representation to support the generic inclusion of any course of action content.</rdfs:comment>
  <!-- Chey: stixCommon#id has already been defined in the superclass of this subclass:  -->
- <!--   <rdfs:subClassOf>
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#id">
@@ -98,11 +98,12 @@ The StructuredCOA class is an abstract class, so it MUST be extended via a subcl
     <rdfs:label >Structured COA</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- Chey: Added this subclass element; to be a structuredCOA, this must also be a COA -->
-	<rdfs:subClassOf>
+<!-- Chey: Added this subclass element; to be a structuredCOA, this must also be a COA -->
+<!-- Update: This is incorrect per the STIX documentation provided -->
+	<!-- <rdfs:subClassOf>
       <owl:Class rdf:about="#CourseOfAction"/>
-    </rdfs:subClassOf>   
-  <!--   <rdfs:subClassOf>
+    </rdfs:subClassOf>    -->
+	<!--   <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -123,7 +124,7 @@ The StructuredCOA class is an abstract class, so it MUST be extended via a subcl
     <rdfs:comment >Characterizes a Course of Action to be taken in regards to one of more cyber threats. 
 
 Courses Of Action are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc.</rdfs:comment>
-    <!-- causes error but not in superclass courseofactionbase -->
+<!-- causes error but not in superclass courseofactionbase -->
      <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -135,8 +136,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf> 
-   <!-- causes error and is in superclass courseofactionbase;removed -->
-   <!--  <rdfs:subClassOf>
+    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
@@ -146,7 +146,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf> -->
+    </rdfs:subClassOf> 
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -156,7 +156,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <!-- This subclass axiom also causes an error in DL  -->
+<!-- causes error but not in superclass courseofactionbase -->
 	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -177,8 +177,8 @@ Courses Of Action are specific measures to be taken to address threat whether th
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-   <!-- This axiom causes an error in DL -->
-   <rdfs:subClassOf>
+<!-- causes error but not in superclass courseofactionbase -->
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -189,7 +189,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf> 
-    <!-- causes error but not in superclass courseofactionbase -->
+<!-- causes error but not in superclass courseofactionbase -->
 	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
@@ -197,8 +197,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-<!-- Chey: Removed this element; StructuredCOA is a subclass of COA. -->
-	<!--    <rdfs:subClassOf>
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:ObjectProperty rdf:ID="structuredCOA"/>
@@ -235,7 +234,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-     <!-- casuses errors -->
+     <!-- causes error but not in superclass courseofactionbase -->
 	 <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -247,16 +246,16 @@ Courses Of Action are specific measures to be taken to address threat whether th
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf> 
-  <!-- The below 2 axioms are not mentioned in the superclass CourseofActionBase; But causes 2 errors in DL -->
-  <rdfs:subClassOf>
+<!-- The below 2 axioms are not mentioned in the superclass CourseofActionBase; But causes 2 errors in DL -->
+	<rdfs:subClassOf>
     <owl:Restriction>
-		 Removing cardinality caused an additional error 
- 	  <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+<!-- 		 Removing cardinality caused an additional error --> 	
+ <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:minCardinality> 
         <owl:onProperty>
           <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
-         removing the domain alone changes nothing 
-		 <rdfs:domain rdf:resource="#CourseOfAction"/> 
+<!--          removing the domain alone changes nothing -->		 
+ <rdfs:domain rdf:resource="#CourseOfAction"/> 
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction> 

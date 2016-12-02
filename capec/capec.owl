@@ -44,7 +44,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     <rdfs:comment >Characterizes the relationship to a Vulnerability</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-    <rdfs:subClassOf>
+    
+	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -104,37 +105,38 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
   </owl:Class>
   <owl:Class rdf:ID="AttackPatternCatalog">
-    <rdfs:subClassOf>
+<!-- CS 120116 defined in superclass Catalog (Scap) -->
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogName"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120116 defined in superclass Catalog (Scap) -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogVersion"/>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120116 defined in superclass Catalog (Scap) -->
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#description"/>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120116 defined in superclass Catalog (Scap) -->
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#id"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -143,13 +145,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined in superclass Catalog (Scap) -->
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#catalogDate"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:label >Attack Pattern Catalog</rdfs:label>
     <rdfs:comment >Characterizes a catalog of Attack Patterns</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
@@ -1058,7 +1061,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:ID="AttackStepOverrideStatement">
     <rdfs:subClassOf rdf:resource="#AttackStep"/>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined in superclass attackstep --> 
+<!-- 	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#stepDescription"/>
@@ -1066,12 +1070,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     <rdfs:comment >Characterizes the pattern-specific overrides applied to an Attack Step</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined in superclass attackstep --> 
+<!-- 	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#stepId"/>
@@ -1079,10 +1084,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     
     <rdfs:label >Attack step override statement</rdfs:label>
-    <rdfs:subClassOf>
+<!-- CS 120116 defined in superclass attackstep --> 
+<!-- 	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#relativeId"/>
@@ -1090,8 +1096,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120116 defined in superclass attackstep --> 
+<!-- 	<rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#title"/>
@@ -1099,7 +1106,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
   </owl:Class>
   <owl:Class rdf:ID="AttackPhase">
     

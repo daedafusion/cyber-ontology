@@ -174,7 +174,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#searchWithin">
-<!--             <rdfs:domain>
+	<!--             <rdfs:domain>
               <owl:Class rdf:ID="DataReadEffect"/>
             </rdfs:domain>
             <rdfs:domain rdf:resource="#DataReceivedEffect"/>
@@ -298,7 +298,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:ID="effectType"/>
@@ -306,7 +307,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -357,7 +358,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:comment >Characterizing the effects of actions upon objects where the some state of the object is changed.</rdfs:comment>
     <rdfs:label >State Change Effect</rdfs:label>
-    <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass DefinedEffect -->   
+  <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -365,7 +367,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -396,32 +398,33 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-    
-    <rdfs:comment >Characterizes the nature of the relationship between an action and its related actions.</rdfs:comment>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+   <!--  <rdfs:comment >Characterizes the nature of the relationship between an action and its related actions.</rdfs:comment>
+     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
+    </rdfs:subClassOf> -->
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+   <!--  <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf> -->
+    </rdfs:subClassOf>  -->
     
     <rdfs:label >Action Relationship Statement</rdfs:label>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+    <!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf> -->
+    </rdfs:subClassOf> --> 
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -431,7 +434,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
           <owl:DatatypeProperty rdf:about="#description"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> 
     
   </owl:Class>
   <owl:Class rdf:about="#DefinedEffect">
@@ -628,7 +631,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#DefinedEffect"/>
     <rdfs:comment >Characterizes the effects of actions upon objects where some specific property is read from an object, such as the current running state of a process.</rdfs:comment>
     <rdfs:label >Property Read Effect</rdfs:label>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass DefinedEffect -->
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -663,7 +667,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:Class rdf:ID="PropertiesEnumeratedEffect">
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass DefinedEffect -->
+	<!-- <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -671,7 +676,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf>
+    </rdfs:subClassOf> -->
     <rdfs:comment >Characterize the effects of actions upon objects where some properties of the object are enumerated, such as the startup parameters for a process.</rdfs:comment>
     <rdfs:label >Properties Enumerated Effect</rdfs:label>
     <rdfs:subClassOf rdf:resource="#DefinedEffect"/>
@@ -682,7 +687,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#DefinedEffect"/>
     <rdfs:label >Values enumerated effect</rdfs:label>
     <rdfs:comment >Characterize the effects of actions upon objects where some values of the object are enumerated, such as the values of a registry key.</rdfs:comment>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -702,15 +708,17 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-<!--     
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-    <rdfs:subClassOf>
+
+   
+<rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
-    </rdfs:subClassOf> -->
+    </rdfs:subClassOf>  -->
     
     <rdfs:subClassOf>
       <owl:Restriction>
@@ -722,7 +730,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:comment >Characterizes the nature of the relationship between an Object  with this Object.</rdfs:comment>
-    
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>
@@ -763,7 +771,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#byteOrder"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -826,7 +835,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#DefinedEffect"/>
     <rdfs:comment >Characterize the effects of actions upon objects where some control code, or other control-oriented communication signal, is sent to the object. For example, an action may send a control code to change the running state of a process.</rdfs:comment>
     <rdfs:label >Send Control Code Effect</rdfs:label>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass DefinedEffect -->
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -900,7 +910,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#dataSizeUnits"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    
+<!-- CS 120216 Defined in Superclass DefinedEffect -->
 <!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -967,7 +977,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:subClassOf>
     <rdfs:label >Data Written Effect</rdfs:label>
     <rdfs:subClassOf rdf:resource="#DefinedEffect"/>
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#effectType"/>
@@ -1117,7 +1128,8 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
   </owl:Class>
   <owl:Class rdf:ID="AssociationStatement">
-<!--     <rdfs:subClassOf>
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
+	<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#object"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -1138,7 +1150,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Restriction>
     </rdfs:subClassOf>
     
-    
+<!-- CS 120216 Defined in Superclass rdfSyntaxStatement -->
  <!--    <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"/>

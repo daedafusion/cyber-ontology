@@ -343,7 +343,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 If one or more PackageCompression references are specified, the isCompressed field MUST be set to True.</rdfs:comment>
     <rdfs:range rdf:resource="#PackageCompression"/>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Packaging Compression</rdfs:label>
   </owl:ObjectProperty>
@@ -353,13 +353,13 @@ If one or more PackageCompression references are specified, the isCompressed fie
 If one or more PackageEncryption references are specified, the isEncrypted field MUST be set to True.</rdfs:comment>
     <rdfs:label >Packaging Encryption</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     
     <rdfs:range rdf:resource="#PackageEncryption"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="packaging.encoding">
     <rdfs:comment >Specifies any encoding packaging details for an artifact.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Packaging Encoding</rdfs:label>
     
@@ -371,12 +371,12 @@ If one or more PackageEncryption references are specified, the isEncrypted field
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Packaging Encoding Custom Character Set Reference</rdfs:label>
-    <rdfs:domain rdf:resource="#PackageEncoding"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncoding"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#suspectedMalicious">
     <rdfs:comment >Specifies whether the content of the Raw Artifact is believed to be malicious.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >Suspected Malicious</rdfs:label>
@@ -386,13 +386,13 @@ If one or more PackageEncryption references are specified, the isEncrypted field
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Packaging Encoding Character Set</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PackageEncoding"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncoding"/> -->
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contentType">
     <rdfs:comment >Specifies the Internet Media Type of the artifact contained in this Defined Object.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Content Type</rdfs:label>
@@ -402,7 +402,7 @@ If one or more PackageEncryption references are specified, the isEncrypted field
 &#xD;
 If set to True, at least one reference to a PackageCompression should be supplied.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >Packaging Is Compressed</rdfs:label>
@@ -412,7 +412,7 @@ If set to True, at least one reference to a PackageCompression should be supplie
 &#xD;
 If set to True, at least one reference to a PackageEncryption should be supplied.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >Packaging Is Encrypted</rdfs:label>
@@ -421,7 +421,7 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:label >Raw Artifact Value</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the raw content of a cyber artifact (rather than simply analysis of that artifact). It is conveyed within a string-based field and should be further enclosed in a CDATA section within the string-based field.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -429,14 +429,14 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Packaging Encoding Algorithm</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PackageEncoding"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncoding"/> -->
     
     <rdfs:comment >Specifies the encoding algorithm utilized to encode the Raw Artifact.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#artifactType">
     <rdfs:comment >Specifies the general type of the artifact contained in this Defined Object.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Artifact Type</rdfs:label>
@@ -445,7 +445,7 @@ If set to True, at least one reference to a PackageEncryption should be supplied
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rawArtifact.reference">
     <rdfs:comment >Specifies a reference to an external instance of the raw content of a cyber artifact (rather than simply analysis of that artifact).</rdfs:comment>
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -455,14 +455,14 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     <rdfs:label >Packaging Encryption Key</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PackageEncryption"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncryption"/> -->
     
     <rdfs:comment >Specifies the password for unprotecting/decrypting the Raw_Artifact content.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#compressionMechanism">
     <rdfs:comment >Specifies the compression algorithm utilized to protect the content.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PackageCompression"/>
+    <!-- <rdfs:domain rdf:resource="#PackageCompression"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Packaging Compression Mechanism</rdfs:label>
@@ -470,7 +470,7 @@ If set to True, at least one reference to a PackageEncryption should be supplied
   <owl:DatatypeProperty rdf:about="#encryptionMechanism">
     <rdfs:comment >Specifies the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PackageEncryption"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncryption"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Packaging Encrytion Mechanism</rdfs:label>
@@ -481,21 +481,21 @@ If set to True, at least one reference to a PackageEncryption should be supplied
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PackageEncryption"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncryption"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#rawArtifact.byteOrder">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:label >Raw Artifact Byte Order</rdfs:label>
     <rdfs:comment >Specifies the endianness of the unpacked (e.g., unencrypted, base64-decoded, decompressed, etc.) Raw Artifact data.</rdfs:comment>
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#compressionMechanismRef">
     <rdfs:comment >Specifies a reference to a description of the compression algorithm utilized to protect the content.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PackageCompression"/>
+    <!-- <rdfs:domain rdf:resource="#PackageCompression"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -503,7 +503,7 @@ If set to True, at least one reference to a PackageEncryption should be supplied
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encryptionKeyRef">
     <rdfs:comment >Specifies a reference to a remote specification of the password for unlocking/decrypting the Raw Artifact content.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PackageEncryption"/>
+    <!-- <rdfs:domain rdf:resource="#PackageEncryption"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -512,16 +512,16 @@ If set to True, at least one reference to a PackageEncryption should be supplied
   <owl:DatatypeProperty rdf:about="#contentTypeVersion">
     <rdfs:comment >Specifies the content type version of the artifact contained in this Defined Object.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Content Type Version</rdfs:label>
   </owl:DatatypeProperty>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#hash.value">
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#hash.details">
-    <rdfs:domain rdf:resource="#Artifact"/>
+    <!-- <rdfs:domain rdf:resource="#Artifact"/> -->
   </rdf:Description>
 </rdf:RDF>
 

@@ -936,7 +936,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       </owl:Class>
     </rdfs:range>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Request X-Forwarded-For field, which is typically used to identify the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer.</rdfs:comment>
     <rdfs:label >X-Forwarded-For</rdfs:label>
@@ -946,14 +946,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies one or more HTTP Request/Response pair.</rdfs:comment>
     
     <rdfs:label >HTTP Request-Responses</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPSession"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPSession"/> -->
     <rdfs:range rdf:resource="#HTTPRequestResponse"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#host.domainName">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Host Domain Name</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Hostname#Hostname"/>
     <rdfs:comment >Specifies the HTTP Request Host header field, which the domain name of the server</rdfs:comment>
   </owl:ObjectProperty>
@@ -961,7 +961,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >HTTP Request-Header Parsed</rdfs:label>
     <rdfs:range rdf:resource="#HTTPRequestHeaderFields"/>
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
     
     <rdfs:comment >Specifies the HTTP request header as a set of parsed HTTP header fields.</rdfs:comment>
   </owl:ObjectProperty>
@@ -969,7 +969,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="#HTTPResponseHeaderFields"/>
     <rdfs:label >HTTP Response-Header Parsed</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     
     <rdfs:comment >Specifies the HTTP response header as a set of parsed HTTP header fields.</rdfs:comment>
   </owl:ObjectProperty>
@@ -977,7 +977,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
     <rdfs:label >Referer</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request Range Referer field, which defines the address of the previous web page from which a link to the currently requested page was followed.</rdfs:comment>
   </owl:ObjectProperty>
@@ -985,7 +985,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >X-Wap-Profile</rdfs:label>
     <rdfs:comment >Specifies the non-standard HTTP Request X-Wap-Profile field, which is typically used to link to an XML file on the Internet with a full description and details about the device currently connecting.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
   </owl:ObjectProperty>
@@ -993,7 +993,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >HTTP Provisional Server Response</rdfs:label>
     <rdfs:range rdf:resource="#HTTPServerResponse"/>
-    <rdfs:domain rdf:resource="#HTTPRequestResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestResponse"/> -->
     
     <rdfs:comment >Specifies an HTTP provisional server response that was sent before the regular HTTP response (captured in the HTTP_Server_Response field).</rdfs:comment>
   </owl:ObjectProperty>
@@ -1001,14 +1001,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:label >From</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request From header field, which defines the email address of the user making the request.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#location">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Location header field, which defines the location used in redirection, or when a new resource has been created.</rdfs:comment>
     <rdfs:label >Location</rdfs:label>
@@ -1017,13 +1017,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >HTTP Server Response</rdfs:label>
     <rdfs:range rdf:resource="#HTTPServerResponse"/>
-    <rdfs:domain rdf:resource="#HTTPRequestResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestResponse"/> -->
     
     <rdfs:comment >Specifies the HTTP server response portion of a single HTTP request/response pair.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#httpClientRequest">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestResponse"/> -->
     <rdfs:label >HTTP Client Request</rdfs:label>
     <rdfs:range rdf:resource="#HTTPClientRequest"/>
     
@@ -1032,7 +1032,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:about="#host.port">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Host Port</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
     
     <rdfs:comment >Specifies the HTTP Request Host header field with the TCP port number on which the server is listening.</rdfs:comment>
@@ -1040,7 +1040,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#proxyAuthorization">
     <rdfs:comment >Specifies the HTTP Request Proxy-Authorization header field, which defines the authorization credentials for connecting to a proxy.</rdfs:comment>
     <rdfs:label >Proxy-Authorization</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
@@ -1051,22 +1051,22 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Range</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#pragma">
     <rdfs:comment >Specifies the HTTP Request or Response Pragma header field, which defines any implementation-specific values that may have various anywhere along the request-response chain.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Pragma</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#httpRequestLine.version">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >HTTP Request-Line Version</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
     
     <rdfs:comment >Specifies the HTTP version portion of the HTTP request line.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1074,7 +1074,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Content-Range</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Content-Range header field, which defines where in a full body message the partial message belongs.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1084,10 +1084,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the HTTP Request Accept-Language header field, which defines the acceptable languages for response.</rdfs:comment>
     <rdfs:label >Accept-Language</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#proxyAuthenticate">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >proxy authenticate</rdfs:label>
@@ -1120,28 +1120,28 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     </rdfs:range>
     <rdfs:label >HTTP Request-Line Method</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#xUACompatible">
     <rdfs:label >X-UA-Compatible</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Response X-UA-Compatible field, which is used to recommend the preferred rendering engine to use to display the content.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#httpStatusLine.version">
     <rdfs:comment >Specifies the HTTP version portion of the HTTP status line.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >HTTP Status-Line Version</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#httpMessageBody.body">
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the data contained in the HTTP message body.</rdfs:comment>
     
@@ -1151,7 +1151,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >WWW-Authenticate</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response WWW-Authenticate field, which defines the authentication scheme that should be used to access the requested entity.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1161,13 +1161,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the HTTP Request Authorization header field, which defines the authentication credentials for use in HTTP authentication.</rdfs:comment>
     <rdfs:label >Authorization</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#xRequestedWith">
     <rdfs:label >X-Requested-With</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Request X-Requested-With field, which is typically used to identify Ajax requests.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1175,7 +1175,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >X-ATT-DeviceId</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Request X-ATT-DeviceId field, which is typically used to identify the make, model, and firmware of AT&amp;amp;T devices.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1183,7 +1183,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Set-Cookie</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Set-Cookie field, which defines an HTTP cookie.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1193,20 +1193,20 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the HTTP Request Accept header field, which defines the Content-Types that are acceptable.</rdfs:comment>
     <rdfs:label >Accept</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ifNoneMatch">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >If-None-Match</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request If-Modified-Since header field, which allows the action to be performed only if the client supplied entity does not match the same entity on the server.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ifMatch">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request If-Match header field, which allows the action to be performed if the client supplied entity matches the same entity on the server.</rdfs:comment>
     
     <rdfs:label >If-Match</rdfs:label>
@@ -1215,7 +1215,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >X-Powered-By</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Response X-Powered-By field, which specifies the technology supporting the web application running on the server.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1225,31 +1225,31 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the HTTP request header as a raw, unparsed string.</rdfs:comment>
     <rdfs:label >HTTTP Request-Header Raw</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#xContentTypeOptions">
     <rdfs:label >X-Content-Type-Options</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Response X-Content-Type-Options field, which supports the 'nosniff' parameter to prevent the MIME-sniffing of a response away from the declared content type.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#cacheControl">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Cache-Control header field, which defines the directives that MUST be obeyed by all caching mechanisms along the request/response chain or the HTTP Response Cache-Control header field, which tells all caching mechanisms from server to client whether they may cache this object.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Cache-Control</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contentMD5">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Content-MD5 header field, which defines a Base64 encoded binary MD5 sum of the content of the request body. When specified in the HTTP Response Content-MD5 header field, it defines the base64-encoded binary MD5 sum of the content of the response.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Content-MD5</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1257,14 +1257,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >DNT (Do Not Track)</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Request DNT field, which is typically used to request that a web application disable their tracking of a user.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#expiresDateTime">
     <rdfs:comment >Specifies the HTTP Response Expires header field, which defines the date/time after which the response is considered stale.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Expires</rdfs:label>
@@ -1273,7 +1273,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Content-Language</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Content-Language header field, which defines the language the content is in.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1281,7 +1281,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >P3P</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response P3P header field, which sets P3P policy to be used by the browser.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1289,24 +1289,24 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:label >HTTP Status-Line Status Code</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     
     <rdfs:comment >Specifies the HTTP status code portion of the HTTP status line.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#httpMessageBody.length">
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the length of the HTTP message body, in bytes.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:label >HTTP Message-Body Length</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#retryAfter">
     <rdfs:label >Retry-After</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Retry-After header field, which defines the period, in seconds, after which the client should try again if an entity is temporarily unavailable.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1314,7 +1314,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label >Max-Forwards</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request Max-Forwards header field, which defines the maximum number of times the message can be forwarded through proxies or gateways.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1322,7 +1322,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Strick-Transport-Security</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP response Strict-Transport-Security field, which defines the HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1330,7 +1330,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Content-Encoding</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Content-Encoding header field, which defines the type of encoding used on the data.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1338,31 +1338,31 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >TE (Transfer Encodings)</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request TE field, which defines the transfer encodings the user agent is willing to accept.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#acceptEncoding">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Accept-Encoding header field, which defines the acceptable encodings.</rdfs:comment>
     
     <rdfs:label >Accept-encoding</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#warning">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request and Response Warning field, which defines any general warnings about possible problems with the entity body.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:label >Warning</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#cookie">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Cookie header field, which defines the HTTP cookie previously sent by the server.</rdfs:comment>
     
     <rdfs:label >Cookie</rdfs:label>
@@ -1371,7 +1371,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >User-Agent</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request User-Agent field, which defines the user agent string of the user agent.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1380,22 +1380,22 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:label >Content-Length</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#vary">
     <rdfs:label >Vary</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Vary field, which informs downstream proxies on how to match future request headers to decide whether the cached response can be used rather than requested a fresh one from the origin server.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ifModifiedSinceDateTime">
     <rdfs:comment >Specifies the HTTP Request If-Modified-Since header field, which allows a 304 Not Modified response to be returned if content is unchanged since the input date/time.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:label >If-Modified since</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1404,18 +1404,18 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >ETag</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response ETag header field, which defines an identifier for a specific version of a resource, often a message digest.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dateTime">
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Date</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the HTTP Request Date header field, which defines the date and time that the message was sent. When specifies in the HTTP Request Date header field, it defines the date and time that the message was sent.</rdfs:comment>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="acceptDatetime">
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1423,12 +1423,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the HTTP Request Accept-Datetime header field, which defines the acceptable version time.</rdfs:comment>
     <rdfs:label >Accept-Datetime</rdfs:label>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ifUnmodifiedSinceDateTime">
     <rdfs:comment >Specifies the HTTP Request If-Unmodified-Since header field, which allows a response to be sent only if the entity has not been modified since a specific date/time.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:label >If-Unmodified-Since</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1437,7 +1437,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >X-Forwarded-Proto</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Response X-Forwarded-Proto field, which identifies the originating protocol of an HTTP request.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1445,12 +1445,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >HTTP Response-Header Raw</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     
     <rdfs:comment >Specifies the HTTP response header as a raw, unparsed string.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sessionId">
-    <rdfs:domain rdf:resource="#HTTPSession"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPSession"/> -->
     
     <rdfs:label >Session ID</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1461,7 +1461,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >If-Range</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request If-Range header field, which allows the client to request the part(s) of the entity that they are missing, or otherwise the new entity.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1469,7 +1469,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the ordinal positioning of the HTTP request/response pair in the context of the HTTP session.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:domain rdf:resource="#HTTPRequestResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestResponse"/> -->
     
     <rdfs:label >Ordinal Position</rdfs:label>
   </owl:DatatypeProperty>
@@ -1477,14 +1477,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Refresh</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Refresh header field, which specifies a given interval, in seconds, after which the current page should be refreshed.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#accessControlAllowOrigin">
     <rdfs:comment >Specifies the HTTP Response Access-Control-Allow-Origin header field, which defines which web sites can participate in cross-origin resource sharing.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Access-Control-Allow-Origin</rdfs:label>
@@ -1493,7 +1493,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Server</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Server field, which defines a name for the responding server.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1501,16 +1501,16 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Accept-Ranges</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Accept-Ranges header field, which defines the partial content range types this server supports.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#via">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Via field, which defines any proxies through which the request was sent. When specified in the HTTP Response, the Via field informs the client of proxies through which the response was sent.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:label >Via</rdfs:label>
   </owl:DatatypeProperty>
@@ -1518,7 +1518,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Link</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Link header field, which defines a typed relationship with another resource, where the relation type is defined by RFC 5988.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1526,7 +1526,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >X-Frame-Options</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Response X-Frame-Options field, which is used as a form of clickjacking protection, supporting no rendering within a frame and no rendering if origin mismatch.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1534,16 +1534,16 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >HTTP Status-Line Reason Phrase</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPServerResponse"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPServerResponse"/> -->
     
     <rdfs:comment >Specifies the HTTP reason phrase portion of the HTTP status line.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contentType">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Content-Type header field, which defines a the MIME type of the body of the request (used with POST and PUT requests).  When specified inpecifies the HTTP Response Content-Type header field, it defines the MIME type of the content.</rdfs:comment>
     <rdfs:label >Content-Type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
@@ -1551,7 +1551,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Expect</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Request Expect header field, which defines the particular server behaviors that are required by the client.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1559,14 +1559,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >HTTP Request-Line Value</rdfs:label>
-    <rdfs:domain rdf:resource="#HTTPClientRequest"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPClientRequest"/> -->
     
     <rdfs:comment >Specifies the value (typically a resource path) portion of the HTTP request line.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#lastModifiedDateTime">
     <rdfs:comment >Specifies the HTTP Response Last-Modified header field, which defines the date/time for the requested object, in RFC 2822 format.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Last-Modified</rdfs:label>
@@ -1575,7 +1575,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Trailer</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Trailer field, which indicates that the given set of header fields is present in the trailer of a message encoded with chunked transfer-coding.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1583,7 +1583,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Content-Disposition</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Content-Disposition header field, which provides a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1591,23 +1591,23 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Transfer-Encoding</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Transfer-Encoding field, which defines the form of encoding used to safely transfer the entity to the user.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#acceptCharset">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Accept-Charset header field, which defines the character sets that are acceptable.</rdfs:comment>
     
     <rdfs:label >Accept-Charset</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#connection">
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPRequestHeaderFields"/> -->
     <rdfs:comment >Specifies the HTTP Request Connection header field, which defines the type of connection that the user-agent would prefer.</rdfs:comment>
     
     <rdfs:label >Connection</rdfs:label>
@@ -1616,7 +1616,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Age</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the HTTP Response Authorization header field, which defines the age the object has been in a proxy cache, in seconds.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1624,7 +1624,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >X-XSS-Protection</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/>
+    <!-- <rdfs:domain rdf:resource="#HTTPResponseHeaderFields"/> -->
     
     <rdfs:comment >Specifies the non-standard HTTP Response X-XSS-Protection field, which is used as a cross-site scripting (XSS) filter.</rdfs:comment>
   </owl:DatatypeProperty>

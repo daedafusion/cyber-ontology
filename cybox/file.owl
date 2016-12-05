@@ -874,12 +874,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#id">
-            <rdfs:domain>
+<!--             <rdfs:domain>
               <owl:Class rdf:ID="Packer"/>
             </rdfs:domain>
             <rdfs:domain>
               <owl:Class rdf:ID="EntryPointSignature"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
@@ -1630,7 +1630,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#hash.details">
-            <rdfs:domain>
+<!--             <rdfs:domain>
               <owl:Class rdf:ID="PDFXrefTable"/>
             </rdfs:domain>
             <rdfs:domain>
@@ -1639,7 +1639,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
             <rdfs:domain rdf:resource="#WindowsStream"/>
             <rdfs:domain>
               <owl:Class rdf:ID="PDFTrailer"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -2132,7 +2132,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
+<!--     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -2315,7 +2315,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#securityIDType">
-            <rdfs:domain>
+             <rdfs:domain>
               <owl:Class rdf:about="#WindowsFile"/>
             </rdfs:domain>
           </rdf:Description>
@@ -5890,7 +5890,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:Class>
   <owl:ObjectProperty rdf:ID="dataHash.details">
     <rdfs:comment >Specifies details about any hash values computed using the data contained in the specified PE binary section as input.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -5899,13 +5899,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   <owl:ObjectProperty rdf:ID="pdfTrailers">
     <rdfs:range rdf:resource="#PDFTrailer"/>
     <rdfs:comment >Specifies references to the trailers included in the PDF file, used for capturing offsets to the cross-reference table and important objects.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFFile"/>
+    <!-- <rdfs:domain rdf:resource="#PDFFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Trailers</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="fileHeader.hashDetails">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
@@ -5917,13 +5917,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:range rdf:resource="#PDFIndirectObject"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:label >Root</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#importFile">
     <rdfs:comment >Specifies a reference to the import file</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PEImport"/>
+    <!-- <rdfs:domain rdf:resource="#PEImport"/> -->
     <rdfs:label >import file</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range>
@@ -5939,13 +5939,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="#EntryPointSignature"/>
     <rdfs:label >Detected Entrypoint Signatures</rdfs:label>
     <rdfs:comment >Specifies the entrypoint signatures that were detected for the packer.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="peHeadersHash.details">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -5956,13 +5956,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="#PDFXrefTableSubsection"/>
     <rdfs:label >Subsections</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFXrefTable"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefTable"/> -->
     
     <rdfs:comment >Specifies the subsections contained in the cross-reference table.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="headerHash.details">
     <rdfs:label >Header Hash Details</rdfs:label>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -5970,14 +5970,14 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="packers">
     
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     <rdfs:comment >Specifies any packers that the file may be packed with. The term 'packer' here refers to packers, as well as things like archivers and installers.</rdfs:comment>
     <rdfs:range rdf:resource="#Packer"/>
     <rdfs:label >Packer List</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="dosHeader.hashDetails">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     
     <rdfs:label >DOS Headers Hashes</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -5988,13 +5988,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="#PDFXrefEntry"/>
     <rdfs:label >Cross-Reference Entries</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFXrefTableSubsection"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefTableSubsection"/> -->
     
     <rdfs:comment >Specifies the cross-reference entries contained in this cross-reference subsection.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#digitalSignature">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:comment >Specifies the information about the digital signature used to sign the PE binary.</rdfs:comment>
     <rdfs:label >Digital Signature</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#DigitalSignature"/>
@@ -6003,7 +6003,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   <owl:ObjectProperty rdf:ID="importedFunctions">
     <rdfs:range rdf:resource="#PEImportedFunction"/>
     <rdfs:comment >Specifies any functions imported from a particular library.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEImport"/>
+    <!-- <rdfs:domain rdf:resource="#PEImport"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Imported Functions</rdfs:label>
@@ -6011,14 +6011,14 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   <owl:ObjectProperty rdf:about="#headers">
     <rdfs:range rdf:resource="#PEHeaders"/>
     <rdfs:comment >Specifies fields for characterizing aspects the various types of PE headers.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Headers</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="sections">
     <rdfs:comment >Specifies references to the PE Sections of the binary.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:range rdf:resource="#PESection"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6028,12 +6028,12 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:label >Permissions</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies that particular permissions that a file may have.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:range rdf:resource="#FilePermission"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hashDetails">
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6042,7 +6042,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="resources">
     <rdfs:comment >Specifies references to the PE Resources of the binary.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:range rdf:resource="#PEResource"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6050,7 +6050,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="rawStreamHashDetails">
     <rdfs:comment >Specifies any hashes of the raw, undecoded stream.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFStream"/>
+    <!-- <rdfs:domain rdf:resource="#PDFStream"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6058,14 +6058,14 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="pdfIndirectObjects">
     <rdfs:comment >Specifies references to the indirect objects included in the PDF file, representing the contents of a document.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFFile"/>
+    <!-- <rdfs:domain rdf:resource="#PDFFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Indirect Objects</rdfs:label>
     <rdfs:range rdf:resource="#PDFIndirectObject"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="archivedFile">
-    <rdfs:domain rdf:resource="#ArchiveFile"/>
+    <!-- <rdfs:domain rdf:resource="#ArchiveFile"/> -->
     
     <rdfs:label >Archived File</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6074,7 +6074,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="decodedStreamHashDetails">
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
-    <rdfs:domain rdf:resource="#PDFStream"/>
+    <!-- <rdfs:domain rdf:resource="#PDFStream"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Decoded Stream Hashes</rdfs:label>
@@ -6084,7 +6084,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="#PDFMetadata"/>
     <rdfs:comment >Specifies some useful metadata associated with the PDF file.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFFile"/>
+    <!-- <rdfs:domain rdf:resource="#PDFFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >PDF Metadata</rdfs:label>
   </owl:ObjectProperty>
@@ -6093,7 +6093,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#WindowsStream"/>
-    <rdfs:domain rdf:resource="#WindowsFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFile"/> -->
     <rdfs:comment >Characterize NTFS alternate data streams.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#optionalHeader.dataDirectory">
@@ -6102,18 +6102,18 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:comment >Specifies the data directories in the remainder in the optional header. This field will be repeated for each data directory.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="exportedFunctions">
     <rdfs:range rdf:resource="#PEExportedFunction"/>
     <rdfs:label >Exported Functions</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEExports"/>
+    <!-- <rdfs:domain rdf:resource="#PEExports"/> -->
     
     <rdfs:comment >Specifies a list of the exported functions in this section.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="optionalHeader.hashDetails">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
     
@@ -6124,7 +6124,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="#DeviceObjectStruct"/>
     <rdfs:label >Device Objects</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the device objects that were created by the driver.</rdfs:comment>
   </owl:ObjectProperty>
@@ -6132,12 +6132,12 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:comment >Specifies any hash values computed using the specified PE binary resource as input.</rdfs:comment>
     <rdfs:label >Resource Hash Details</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#streamContents">
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     
     <rdfs:label >Stream Contents</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6149,20 +6149,20 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Encryption Dictionary Reference</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:comment >Specifies the PDF document's encryption dictionary as an indirect reference.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#fileAttributes">
     <rdfs:label >File Attributes</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:comment >Specifies the particular special attributes set for the file.</rdfs:comment>
     <rdfs:range rdf:resource="#FileAttribute"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="imports">
     <rdfs:comment >Specifies the PE Import Table of the binary.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:range rdf:resource="#PEImport"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6173,13 +6173,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:range rdf:resource="#PDFIndirectObject"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:label >Information Dictionary Reference</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#exports">
     <rdfs:range rdf:resource="#PEExports"/>
     <rdfs:comment >Specifies a reference to the PE Export Table of the PE Binary</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Exports</rdfs:label>
@@ -6190,7 +6190,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Cross Reference Tables</rdfs:label>
     
-    <rdfs:domain rdf:resource="#PDFFile"/>
+    <!-- <rdfs:domain rdf:resource="#PDFFile"/> -->
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="#imageIsCompressed">
     <rdfs:comment >Specifies whether the image in the image file is compressed.</rdfs:comment>
@@ -6198,13 +6198,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Compressed Image</rdfs:label>
     
-    <rdfs:domain rdf:resource="#ImageFile"/>
+    <!-- <rdfs:domain rdf:resource="#ImageFile"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#readOnly">
     <rdfs:label >Read-Only</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a file is read only, as denoted by the constant value, 0x1. Applications can read the file, but cannot write to it or delete it. This attribute is not honored on directories. For more information as to why, see http://go.microsoft.com/FWLink/?LinkId=125896.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6212,14 +6212,14 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:label >Decoded Stream</rdfs:label>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:domain rdf:resource="#PDFStream"/>
+    <!-- <rdfs:domain rdf:resource="#PDFStream"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the decoded stream (i.e., after undoing the specified filters in the correct order) as a hex string.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#offset">
     <rdfs:comment >Specifies the offset of the trailer from the beginning of the file, in bytes.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Offset</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
@@ -6229,7 +6229,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-    <rdfs:domain rdf:resource="#PDFFile"/>
+    <!-- <rdfs:domain rdf:resource="#PDFFile"/> -->
     <rdfs:comment >Specifies the decimal version number portion of the string from the PDF Header that specifies the version of the PDF specification to which the PDF file conforms, e.g. '1.4'.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#packerType">
@@ -6238,20 +6238,20 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the type of packer being characterized.</rdfs:comment>
     <rdfs:label >Type</rdfs:label>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#buildInfo.compilerName">
     <rdfs:comment >Specifies the name of the compiler used to compile the binary.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Compiler Name</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_cblp">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >DOS Header e_cblp</rdfs:label>
     <rdfs:comment >Specifies the number of bytes actually used in the last page, with the special case of a full page being represented by a value of zero (since the last page is never empty). For example, assuming a page size of 512 bytes, this value would be 0x0000 for a 1024 byte file, and 0x0001 for a 1025 byte file (since it only contains one valid byte).</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6259,7 +6259,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.reserved2">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies reserved words for the program (known in winnt.h as e_res[10]), usually set to zero by the linker. In this case, just use a single reserved1 set to zero; if not zero create ten reserved1 with the correct value.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6267,7 +6267,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:label >DOS Header Reserved2</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#loadConfigTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Load Configuration Table.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6275,7 +6275,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:label >Load Configuration Table Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.imageBase">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the preferred address of the first byte of image when loaded into memory; must be a multiple of 64 K.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6284,7 +6284,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#asciiHexDecodeCount.nonObfuscated">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/ASCIIHexDecode' keyword in the PDF file.</rdfs:comment>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -6294,7 +6294,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:label >First Object Number</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFXrefTableSubsection"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefTableSubsection"/> -->
     
     <rdfs:comment >Specifies the object number of the first object for which there is a corresponding entry in this cross-reference subsection.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6303,7 +6303,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the trademarks and registered trademarks that apply to the file. This should include the full text of all notices, legal symbols, trademark numbers, and so on.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ID">
@@ -6311,12 +6311,12 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:label >File Identifier</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_READ">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ READ</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -6324,7 +6324,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_CREATE_MAILSLOT">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ CREATE MAILSLOT</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -6334,12 +6334,12 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >oexec</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
     
     <rdfs:comment >Specifies whether or not all other users can execute the file.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#lastCrossRefOffset">
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the byte offset, relative to the beginning of the file, of the last cross-reference table contained in the file.</rdfs:comment>
@@ -6348,7 +6348,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_SET_VOLUME_INFORMATION">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ SET VOLUME INFORMATION</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -6358,7 +6358,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:label >Masqueraded</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies whether the file is masqueraded as another type of file; e.g., a PDF file that has had its extension changed to TXT to masquerade itself as a text file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -6366,7 +6366,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
   <owl:DatatypeProperty rdf:about="#rawStream">
     <rdfs:comment >Specifie the raw, undecoded stream (i.e., everything between the 'stream' and 'endstream' keywords), as a hex string.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFStream"/>
+    <!-- <rdfs:domain rdf:resource="#PDFStream"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Raw Stream</rdfs:label>
@@ -6377,13 +6377,13 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:label >document information.keywords</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.name">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Section Name</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     
     <rdfs:comment >Specifies the name of the PE binary section.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6392,14 +6392,14 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/ObjStm' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/ObjStm' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#drive">
     <rdfs:label >Drive</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFile"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the drive letter of the drive that the file resides on.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6408,7 +6408,7 @@ A PE Section consists of a header and data. The PESectionType contains propertie
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the text that indicates how this version of the file differs from the standard version - for example, "Private build for TESTER1 solving mouse problems on M250 and M250E computers". &#xD;
 &#xD;
 This string should be present only if VS_FF_SPECIALBUILD is specified in the fileflags parameter of the root block.</rdfs:comment>
@@ -6417,12 +6417,12 @@ This string should be present only if VS_FF_SPECIALBUILD is specified in the fil
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >sgid</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
     
     <rdfs:comment >Specifies whether or not the file may be executed with the privileges of the file's group owner.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_ovro">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the overlay number, which is normally set to 0x0000, because few programs actually have overlays. It changes only in files containing programs that use overlays. See http://www.tavi.co.uk/phobos/exeformat.html#overlaynote for more information about overlays.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6435,10 +6435,10 @@ This string should be present only if VS_FF_SPECIALBUILD is specified in the fil
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Producer Application Name</rdfs:label>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.reserved1">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies reserved words for the program (known in winnt.h as e_res[4]), usually set to zero by the linker. In this case, just use a single reserved1 set to zero; if not zero create four reserved1 with the correct value.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6451,13 +6451,13 @@ This string should be present only if VS_FF_SPECIALBUILD is specified in the fil
     <rdfs:comment >Specifies the complete path to the file, including the device path.&#xD;
 &#xD;
 It should contain the contents that would otherwise be in the devicePath, filePath, and fileName fields, and can be used in case the producer is unable or does not wish to separate the devicePath, filePath, and fileName fields.  The fullPath field MUST NOT conflict with the devicePath,  filePath and fileName fields.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.win32VersionValue">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Reserved; must be 0.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6468,12 +6468,12 @@ It should contain the contents that would otherwise be in the devicePath, filePa
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ FLUSH BUFFERS</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the FLUSH_BUFFERS function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clrRuntimeHeader.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the Common Language Runtime (CLR) Runtime header.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6481,7 +6481,7 @@ It should contain the contents that would otherwise be in the devicePath, filePa
     <rdfs:label >Common Language Runtime (CLR) Runtime Header Virtual Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#globalPtr.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the Global Pointer Register.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6492,15 +6492,15 @@ It should contain the contents that would otherwise be in the devicePath, filePa
     <rdfs:label >Size in Bytes</rdfs:label>
     <rdfs:comment >Specifies the size of the file, in bytes.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
-    <rdfs:domain rdf:resource="#WindowsStream"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsStream"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#nonStreamContents">
     <rdfs:comment >Specifies the raw contents of the PDF indirect object excluding any stream data (i.e. everything after the 'obj' keyword and before the 'endobj' keyword up to but not including anything between the 'stream' and 'endstream' keywords) as a string enclosed in an XML CDATA section.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Non-stream Contents</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -6508,31 +6508,31 @@ It should contain the contents that would otherwise be in the devicePath, filePa
   <owl:DatatypeProperty rdf:about="#comments">
     <rdfs:comment >Specifies any additional information that should be displayed for diagnostic purposes.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Comments</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#entropy.min">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <rdfs:label >Entropy Min</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:comment >Specifies the smallest possible value for the entropy computation.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#lzwDecodeCount.obfuscated">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/LZWDecode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/LZWDecode' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#attachedDeviceObject">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Attached Device Object</rdfs:label>
     
@@ -6544,13 +6544,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >Decryption Key</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the key used to decrypt the file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#delayImportDescriptor.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Delay Import Descriptor data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6558,13 +6558,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >Delay Import Descriptor Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#entropy.max">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the largest possible value for the entropy computation (e.g., this would be 8 if the entropy computations is based on bits of information).</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Entropy Max</rdfs:label>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#jbig2DecodeCount.nonObfuscated">
     <rdfs:label >'/JBIG2Decode' Non-obfuscated Count</rdfs:label>
@@ -6572,13 +6572,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/JBIG2Decode' keyword in the PDF file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#driverObjectAddress">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Driver Object Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the address to the driver's driver object, which contains the storage for the entry point to many of the driver's standard routines. 
 
@@ -6588,7 +6588,7 @@ See also: http://msdn.mic</rdfs:comment>
     <rdfs:label >Attached-To Device Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     
     <rdfs:comment >Specifies the name of another device object that this one was attached to.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6597,11 +6597,11 @@ See also: http://msdn.mic</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/Launch' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/Launch' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_cs">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >DOS Header e_cs</rdfs:label>
     <rdfs:comment >Specifies the pre-relocated initial CS value, relative to the start of the load module, that should be placed in the CS register in order to transfer control to the program. At load time, this value is relocated by adding the address of the start segment of the program to it, and the resulting value is placed in the CS register when control is transferred.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6613,7 +6613,7 @@ See also: http://msdn.mic</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifes the number of obfuscated occurrences of the '/RichMedia' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/RichMedia' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#companyName">
@@ -6621,14 +6621,14 @@ See also: http://msdn.mic</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the company that produced the file - for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#compressionComment">
     <rdfs:label >Compression Comment</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the comment string associated with the compressed file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -6637,7 +6637,7 @@ See also: http://msdn.mic</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ INTERNAL DEVICE CONTROL</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a  count of the number of times the INTERNAL_DEVICE_CONTROL function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6645,7 +6645,7 @@ See also: http://msdn.mic</rdfs:comment>
     <rdfs:label >Sparse File</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a sparse file, as denoted by the constant value, 0x200.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6655,12 +6655,12 @@ See also: http://msdn.mic</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Entrypoint Signature Type</rdfs:label>
     <rdfs:comment >Specifies the type of entry point detected (e.g., packer, compiled file).</rdfs:comment>
-    <rdfs:domain rdf:resource="#EntryPointSignature"/>
+    <!-- <rdfs:domain rdf:resource="#EntryPointSignature"/> -->
     
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#certificateTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Certificate Table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6669,7 +6669,7 @@ See also: http://msdn.mic</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.pointerToLinenumbers">
     <rdfs:comment >Specifies the beginning of line-number entries for the section. Should be 0.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6679,7 +6679,7 @@ See also: http://msdn.mic</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ CLEANUP</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies  a count of the number of times the CLEANUP function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6688,13 +6688,13 @@ See also: http://msdn.mic</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the original name of the file, not including a path. &#xD;
 &#xD;
 This information enables an application to determine whether a file has been renamed by a user. The format of the name depends on the file system for which the file was created.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberOfTrailers">
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:comment >Specifies the number of trailers contained in the file.</rdfs:comment>
@@ -6707,18 +6707,18 @@ This information enables an application to determine whether a file has been ren
     <rdfs:comment >Specifies  a name object indicating whether the document has been modified to included trapping information.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#productName">
     <rdfs:label >Product Name</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the name of the product with which the file is distributed. This string is required.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_csum">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >DOS Header e_csum</rdfs:label>
     <rdfs:comment >Specifies the checksum of the contents of the executable file. It is used to ensure the integrity of the data within the file. For full details on how this checksum is calculated, see http://www.tavi.co.uk/phobos/exeformat.html#checksum.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6730,29 +6730,29 @@ This information enables an application to determine whether a file has been ren
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/Launch' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/Launch' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#flateDecodeCount.obfuscated">
     <rdfs:label >'/FlateDecode' Obfuscated Count</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specified the number of obfuscated occurrences of the '/FlateDecode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#entropy.value">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <rdfs:comment >Specifies the computed entropy value.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Entropy Value</rdfs:label>
     
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="resourceHash.value">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:label >Resource Hash Value</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6761,13 +6761,13 @@ This information enables an application to determine whether a file has been ren
   <owl:DatatypeProperty rdf:about="#resourceName">
     <rdfs:comment >Specifies the name of the resource used by the PE binary.</rdfs:comment>
     <rdfs:label >Resource Name</rdfs:label>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#pdfObjectId.number">
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     <rdfs:comment >Specifies the number portion of the indirect object ID.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     
@@ -6778,12 +6778,12 @@ This information enables an application to determine whether a file has been ren
     <rdfs:label >Normal</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a file that has no other attributes set, and is only valid when this attribute is used alone, as denoted by the constant value, 0x80.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.minorLinkerVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the linker minor version number.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Optional Header Minor Linker Version</rdfs:label>
@@ -6792,7 +6792,7 @@ This information enables an application to determine whether a file has been ren
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#reserved.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Reserved Size</rdfs:label>
     <rdfs:comment >Reserved; must be 0</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6804,14 +6804,14 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:label >pdf metadata.obj stm count obfuscated</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/ObjStm' keyword in the PDF filewith some form of obfuscation, such as with hexcodes.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#generationNumber">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:label >Generation Number</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFXrefEntry"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefEntry"/> -->
     
     <rdfs:comment >Specifies the 5-digit generation number to be used when an object with the same object number is created.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6819,7 +6819,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ PNP</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the PNP function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6828,19 +6828,19 @@ This information enables an application to determine whether a file has been ren
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the version number of the file - for example, "3.10" or "5.00.RC2".</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberOfNames">
     <rdfs:comment >Specifies the number of names in the export data section's name table.</rdfs:comment>
     <rdfs:label >Number of Names</rdfs:label>
-    <rdfs:domain rdf:resource="#PEExports"/>
+    <!-- <rdfs:domain rdf:resource="#PEExports"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.majorOSVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the major version number of the required operating system.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6848,7 +6848,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:label >Optional Header Major OSV ersion</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="baseRelocationTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Base Relocation Table Virtual Address</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6856,7 +6856,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:comment >Specifies the relative virtual address (RVA) of the base relocation table data directory.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#filenameCreatedTime">
-    <rdfs:domain rdf:resource="#WindowsFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFile"/> -->
     
     <rdfs:label >Filename Created Time</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6867,14 +6867,14 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ CLOSE</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the CLOSE function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.virtualAddress">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:comment >Specifies the relative virtual address (RVA) of the PE binary section.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Section Virtual Address</rdfs:label>
@@ -6885,12 +6885,12 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >PE Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     
     <rdfs:comment >Specifies the particular type of the PE binary, e.g. Executable.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.minorImageVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the minor version number of the image.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6901,7 +6901,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ SYSTEM CONTROL</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the SYSTEM_CONTROL function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -6909,13 +6909,13 @@ This information enables an application to determine whether a file has been ren
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Number of Cross-Reference Tables</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of cross-reference tables contained in the file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_SET_INFORMATION">
     <rdfs:comment >Specifies a count of the number of times the SET_INFORMATION function code was processed by the driver.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ SET INFORMATION</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -6927,12 +6927,12 @@ This information enables an application to determine whether a file has been ren
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/XFA' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/XFA' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#bound">
     <rdfs:comment >Specifies the precomputed address if the imported function is bound.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEImportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEImportedFunction"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -6942,12 +6942,12 @@ This information enables an application to determine whether a file has been ren
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >gwrite</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
     
     <rdfs:comment >Specifies whether or not the group owner of the file can write to it.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfCode">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the code (text) section. If there are multiple sections, size is the sum of the sizes if each.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6958,7 +6958,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:label >File Format</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the particular file format of the file, most typically specified by a tool such as the UNIX file command.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -6966,7 +6966,7 @@ This information enables an application to determine whether a file has been ren
   <owl:DatatypeProperty rdf:about="#compressed">
     <rdfs:label >Compressed</rdfs:label>
     
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:comment >Specifies a file or directory that is compressed, as denoted by the constant value, 0x800. For a file, all of the data in the file is compressed. For a directory, compression is the default for newly created files and subdirectories.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6975,13 +6975,13 @@ This information enables an application to determine whether a file has been ren
     <rdfs:label >Packed</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies whether the file is packed or not.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfStackReserve">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the stack to reserve.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -6990,7 +6990,7 @@ This information enables an application to determine whether a file has been ren
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.sizeOfRawData">
     <rdfs:label >Section Size of Raw Data</rdfs:label>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     
@@ -6999,14 +6999,14 @@ This information enables an application to determine whether a file has been ren
   <owl:DatatypeProperty rdf:about="#productVersion">
     <rdfs:comment >Specifies the version of the product with which the file is distributed - for example, "3.10" or "5.00.RC2".</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Product Version</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#jsCount.obfuscated">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/JS' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -7016,7 +7016,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ FILE SYSTEM CONTROL</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the FILE_SYSTEM_CONTROL function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -7033,7 +7033,7 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Hint</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEImportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEImportedFunction"/> -->
     
     <rdfs:comment >Specifies the index into the export table of the library that the function is found in.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -7043,13 +7043,13 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Encryption Algorithm</rdfs:label>
     <rdfs:comment >Specifies the algorithm used to encrypt the file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_WRITE">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ WRITE</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -7058,7 +7058,7 @@ This information enables an application to determine whether a file has been ren
   <owl:DatatypeProperty rdf:about="#pdfObjectType">
     <rdfs:comment >Specifies the basic type of the PDF indirect object.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >PDF Indirect Object Type</rdfs:label>
     <rdfs:range>
@@ -7100,7 +7100,7 @@ This information enables an application to determine whether a file has been ren
     </rdfs:range>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exceptionTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the exception table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7112,11 +7112,11 @@ This information enables an application to determine whether a file has been ren
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies  the internal name of the file, if one exists - for example, a module name if the file is a dynamic-link library.   If the file has no internal name, this string should be the original filename, without extension.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#resourceTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Resource Table Virtual Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
@@ -7128,14 +7128,14 @@ This information enables an application to determine whether a file has been ren
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:label >pdf metadata.ascii hex decode count obfuscated</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/ASCIIHexDecode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#driverStartIO">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Driver StartIO Routine Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the entry point for the driver's StartIO routine. 
 
@@ -7145,13 +7145,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Fully-Qualified File Path</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies whether the path is fully qualified.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="decodedStreamHashValues">
-    <rdfs:domain rdf:resource="#PDFStream"/>
+    <!-- <rdfs:domain rdf:resource="#PDFStream"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7164,18 +7164,18 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the name of the application that created the original document, for cases where the original document was then converted to PDF.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#attachedToDeviceObject">
     <rdfs:label >Attached-To Device Object</rdfs:label>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     
     <rdfs:comment >Specifies a pointer to another device object that this one was attached to.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.timestamp">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the time when the file was created (the low 32 bits of the number of seconds since epoch).</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7186,7 +7186,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >File Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the base name of the file (including an extension, if present).</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -7195,7 +7195,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Name</rdfs:label>
     <rdfs:comment >Specifies the name of the packer.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -7206,10 +7206,10 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Document Subject</rdfs:label>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exportTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Export Table Virtual Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the relative virtual address (RVA) of the data structure of the export table data directory.</rdfs:comment>
@@ -7218,7 +7218,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#aaCount.nonObfuscated">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
     <rdfs:label >'/AA' Non-obfuscated Count</rdfs:label>
@@ -7231,18 +7231,18 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >gread</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#deviceName">
     <rdfs:label >Device Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     
     <rdfs:comment >Specifies the name of the device object.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.fileAlignment">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the factor (in bytes) that is used to align the raw data of sections in the image file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7253,7 +7253,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ SET QUOTA</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the SET_QUOTA function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -7261,14 +7261,14 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >Number of Indirect Objects</rdfs:label>
     <rdfs:comment >Specifies the number of indirect PDF objects contained in the file.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="hashValue">
     <rdfs:comment >Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed for the PDF indirect object.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Hash Value</rdfs:label>
@@ -7276,7 +7276,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   <owl:DatatypeProperty rdf:ID="symbolicLinks">
     <rdfs:label >Symbolic Links</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -7284,7 +7284,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.numberOfLinenumbers">
     <rdfs:comment >Specifies the number of line number entries for the section. Should be 0.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7296,11 +7296,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/ASCII85Decode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#resourceData">
     <rdfs:comment >Specifies  the actual data contained in the resource, most commonly as a base64-encoded string encapsulated in a CDATA () section.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7310,12 +7310,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Temporary</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a file being used for temporary storage, as denoted by the constant value, 0x100.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exceptionTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the exception table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7327,11 +7327,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/JS' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/JS' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.checksum">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the checksum of the PE file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7339,7 +7339,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Optional Header Checksum</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#architecture.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Reserved; Must be 0</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7347,7 +7347,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Architecture Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#importFileName">
-    <rdfs:domain rdf:resource="#PEImport"/>
+    <!-- <rdfs:domain rdf:resource="#PEImport"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >import file name</rdfs:label>
     <rdfs:comment ></rdfs:comment>
@@ -7359,7 +7359,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ QUERY SECURITY</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the QUERY_SECURITY function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -7367,7 +7367,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >uexec</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
     
     <rdfs:comment >Specifies whether or not the owner of the file can execute it.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -7376,7 +7376,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/OpenAction' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/OpenAction' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#gexec">
@@ -7385,7 +7385,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >gexec</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#pdfOptimized">
     <rdfs:label >PDF Optimized</rdfs:label>
@@ -7393,19 +7393,19 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:comment >Specifies whether the PDF file has been optimized.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#lastModifiedDateTime">
     <rdfs:comment >Specifies the date/time the file was last modified.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
     <rdfs:label >Last Modified Time</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#delayImportDescriptor.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in byte, the Delay Import Descriptor data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7413,7 +7413,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Delay Import Descriptor Virtual Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfInitializedData">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the initialized data section. If there are multiple sections, size is the sum of the sizes if each.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7424,7 +7424,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >File Owner Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the name of the user that owns the file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -7435,12 +7435,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/Encrypt' keyword in the PDF file with some form of obfuscation, such as with hexcodes.
 
 The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/Encrypt' Obfuscated Count</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.machine">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the type of target machine.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7448,7 +7448,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >File Header Machine</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#clrRuntimeHeader.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Common Language Runtine (CLR) Runtime Header data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7457,7 +7457,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#resourceSize">
     <rdfs:comment >Specifies the size of the resource, in bytes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7469,11 +7469,11 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
-    <rdfs:domain rdf:resource="#PDFXrefTableSubsection"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefTableSubsection"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_CREATE_NAMED_PIPE">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ CREATE NAMED PIPE</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -7481,14 +7481,14 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#byteOffset">
     <rdfs:comment >Specifies the 10-digit number, padded with leading zeros if necessary, that specifies the number of bytes from the beginning of the file to the beginning of the object.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFXrefEntry"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefEntry"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Byte Offset</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#archiveComment">
-    <rdfs:domain rdf:resource="#ArchiveFile"/>
+    <!-- <rdfs:domain rdf:resource="#ArchiveFile"/> -->
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7497,14 +7497,14 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_POWER">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ POWER</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:comment >Specifies a count of the number of times the POWER function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#importAddressTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Import Address Table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7513,7 +7513,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ccittFaxDecodeCount.nonObfuscated">
     <rdfs:label >'/CCITTFaxDecode' Non-obfuscated Count</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -7523,7 +7523,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >Version</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the version of the packer.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -7532,12 +7532,12 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Attached-To Driver Object</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     
     <rdfs:comment >Specifies a pointer to the driver to which this device object was attached.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_oeminfo">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the OEM information for a specific value of e_oeminfo.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7545,7 +7545,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >DOS Header e_oeminfo</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.numberOfSections">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the number of sections in the file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7553,7 +7553,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >File Header Number of Sections</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.pointerToSymbolTable">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >File Header Pointer to Symbol Table</rdfs:label>
     <rdfs:comment >Specifies the file offset of the COFF symbol table (should be 0).</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7561,7 +7561,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.numberOfRvaAndSizes">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the number of data-directory entries in the remainder of the optional header.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7569,7 +7569,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >Optional Header Number of Rva and Sizes</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fullControl">
-    <rdfs:domain rdf:resource="#WindowsFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFilePermission"/> -->
     
     <rdfs:label >Full Control</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7577,7 +7577,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:comment >Specifies whether reading, writing, changing and deleting of the file is permitted.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#tlsTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Secifies the relative virtual address (RVA) of the Thread Local Storage (TLS) Table.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7585,7 +7585,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >Thread Local Storage (TLS) Table Virtual Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sectionAlignment">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the alignment (in bytes) of sections when they are loaded into memory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7596,12 +7596,12 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >Offline</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies that the data of a file is not available immediately, as denoted by the constant value, 0x1000. This attribute indicates that the file data is physically moved to offline storage. This attribute is used by Remote Storage, which is the hierarchical storage management software. Applications should not arbitrarily change this attribute.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.addressOfEntryPoint">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the address of the entry point relative to the image base when the executable is loaded into memory. When there is no entry point (e.g., optional for DLLs), the value should be 0.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7609,7 +7609,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:label >Optional Header Address of Entry Point</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="fileHeader.hashValues">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7617,7 +7617,7 @@ The use of the '/Encrypt' keyword indicates that the PDF uses encryption.</rdfs:
     <rdfs:comment >Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed for the Optional Header.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_cp">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >DOS Header e_cp</rdfs:label>
     <rdfs:comment >Specifies the number of pages required to hold the file. &#xD;
 &#xD;
@@ -7627,7 +7627,7 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#noScrubData">
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7638,7 +7638,7 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     <rdfs:label >Signature</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the matching signature detected for the packer, if applicable.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -7646,13 +7646,13 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
   <owl:DatatypeProperty rdf:about="#ordinal">
     <rdfs:comment >Specifies the ordinal value (index) of the function exported by the PE binary.</rdfs:comment>
     <rdfs:label >Ordinal</rdfs:label>
-    <rdfs:domain rdf:resource="#PEExportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEExportedFunction"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.subsystem">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the subsystem (e.g., GUI, device driver) that is required to run this image.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7663,13 +7663,13 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
     
-    <rdfs:domain rdf:resource="#EntryPointSignature"/>
+    <!-- <rdfs:domain rdf:resource="#EntryPointSignature"/> -->
     <rdfs:comment >Specifies the signature name.</rdfs:comment>
     <rdfs:label >Entrypoint Signature Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="optionalHeader.hashValue">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     
     <rdfs:label >Optional Header - Hash Value</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7681,7 +7681,7 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the copyright notices that apply to the file. This should include the full text of all notices, legal symbols, copyright dates, and so on.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dctDecodeCount.nonObfuscated">
@@ -7689,20 +7689,20 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/DCTDecode' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/DCTDecode' Non-Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#attachedToDriverName">
     <rdfs:label >Attached-To Driver Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     
     <rdfs:comment >Specifies the name of the driver to which this device object was attached.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#xrefEntryType">
     <rdfs:comment >Specifies the type of the cross-reference entry.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFXrefEntry"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefEntry"/> -->
     <rdfs:range>
       <rdfs:Datatype>
         <owl:oneOf rdf:parseType="Resource">
@@ -7721,7 +7721,7 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     <rdfs:label >Cross-Reference Entry Type</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#peChecksum.fileAPI">
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
     
     <rdfs:label >PE File API Checksum</rdfs:label>
@@ -7731,14 +7731,14 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
   <owl:DatatypeProperty rdf:about="#buildInfo.linkerName">
     <rdfs:comment >Specifies the name of the linker used to link the PE binary.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Linker Name</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#peChecksum.computedAPI">
     <rdfs:label >PE Computed API Checksum</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
     
@@ -7746,14 +7746,14 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_QUERY_VOLUME_INFORMATION">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ QUERY VOLUME INFORMATION</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:comment >Specifies a count of the number of times the QUERY_VOLUME_INFORMATION function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#initiallyVisible">
-    <rdfs:domain rdf:resource="#PEImport"/>
+    <!-- <rdfs:domain rdf:resource="#PEImport"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >initially visible</rdfs:label>
     <rdfs:comment ></rdfs:comment>
@@ -7765,7 +7765,7 @@ For example, if the file contains 1024 bytes, and we assume the file has pages o
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Driver Unload Routine Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the entry point for the driver's unload routine. 
 
@@ -7773,14 +7773,14 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#flateDecodeCount.nonObfuscated">
     <rdfs:label >'/FlateDecode' Non-obfuscated Count</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/FlateDecode' keyword in the PDF file.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#archiveVersion">
-    <rdfs:domain rdf:resource="#ArchiveFile"/>
+    <!-- <rdfs:domain rdf:resource="#ArchiveFile"/> -->
     
     <rdfs:label >Archive Version</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7790,7 +7790,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   <owl:DatatypeProperty rdf:about="#buildInfo.linkerVersion">
     <rdfs:comment >Specifies the version of the linker used to link the PE binary.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Linker Version</rdfs:label>
@@ -7799,7 +7799,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ DIRECTORY CONTROL</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the DIRECTORY_CONTROL function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -7807,12 +7807,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Documentation Author Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     
     <rdfs:comment >Specifies the name of the person who created the PDF document.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_magic">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the magic number, specifically the Windows OS signature value, which can either take on MZ for DOS (which is, for all intensive purposes, MOST Windows executables), NE for OS2, LE for OS2 LE, or PE00 for NT.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7823,12 +7823,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ LOCK CONTROL</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the LOCK_CONROL function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#reserved.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Reserved; must be 0</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7841,21 +7841,21 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:comment >Specifies the extension of the name of the file.  &#xD;
 &#xD;
 The fileExtension field must not conflict with the ending of the fileName field. The fileExtension field should not begin with a "." character, but may contain a "." character in the case of a compound file extension, such as "tar.gz".</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#subLanguage">
     <rdfs:comment >Specifies the name of the sub language (SUBLANG) defined for the resource, if applicable.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Sub-language</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#write">
-    <rdfs:domain rdf:resource="#WindowsFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFilePermission"/> -->
     
     <rdfs:label >Write</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7867,20 +7867,20 @@ The fileExtension field must not conflict with the ending of the fileName field.
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:label >Prev</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#imageBase">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Image Base</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the preferred address of the first byte of the driver's image when it is loaded into memory.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.characteristics">
     <rdfs:comment >Specifies any flags defined for the specified PE binary section.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7892,10 +7892,10 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/RunLengthDecode' keyword in the PDF file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfHeaders">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the combined size of the MS DOS header, PE header, and section headers rounded up to a multiple of FileAlignment.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7912,7 +7912,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
   <owl:DatatypeProperty rdf:about="#importOrdinal">
     <rdfs:comment >Specifies the ordinal value (index) of the function in the library that is found in.</rdfs:comment>
     <rdfs:label >Import Ordinal</rdfs:label>
-    <rdfs:domain rdf:resource="#PEImportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEImportedFunction"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -7923,18 +7923,18 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:comment >Specifies the total size of the PE binary section when loaded into memory. It is valid only for executables and should be 0 for object files.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#notContentIndexed">
     <rdfs:label >Not Content Indexed</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies that a file is not to be indexed by the content indexing service, as denoted by the constant value, 0x2000.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.sizeOfOptionalHeader">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the optional header. Should be 0 for object files and non-zero for executables.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7942,7 +7942,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:label >File Header Size of Optional Header</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.loaderFlags">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Reserved; must be 0.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7951,7 +7951,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#jbig2DecodeCount.obfuscated">
     <rdfs:label >'/JBIG2Decode' Obfuscated Count</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/JBIG2Decode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -7960,13 +7960,13 @@ The fileExtension field must not conflict with the ending of the fileName field.
   <owl:DatatypeProperty rdf:about="#buildInfo.compilerVersion">
     <rdfs:comment >Specifies the version of the compiler used to compile the binary.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Compiler Version</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfHeapCommit">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the local heap space to commit.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7974,7 +7974,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:label >Optional Header Size of Heap Commit</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.minorOSVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the minor version number of the required operating system.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -7982,7 +7982,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:label >Optional Header Minor OS Version</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#resourceTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Resource Table Size</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -7992,7 +7992,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
   <owl:DatatypeProperty rdf:about="#iNode">
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >iNode</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFile"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFile"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:comment >Specifies the inode, or index node, value of the file.</rdfs:comment>
@@ -8001,13 +8001,13 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:label >Device Path</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the path to the physical device where the file system containing the file resides.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#readAndExecute">
-    <rdfs:domain rdf:resource="#WindowsFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFilePermission"/> -->
     
     <rdfs:label >Read and Execute</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8015,7 +8015,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:comment >Specifies whether viewing and accessing of the file's contents as well as executing of the file is permitted.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#docInfo.creationDate">
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     
     <rdfs:label >Creation Date</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8024,7 +8024,7 @@ The fileExtension field must not conflict with the ending of the fileName field.
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="IRP_MJ_QUERY_INFORMATION">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ QUERY INFORMATION</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -8034,14 +8034,14 @@ The fileExtension field must not conflict with the ending of the fileName field.
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Driver Init</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the entry point for the driver's DriverEntry routine. 
 
 See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs.85).aspx.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="dosHeader.e_cparhdr">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the executable header in terms of paragraphs (16 byte chunks). It indicates the offset of the program's compiled/assembled and linked image (the load module) within the executable file. The size of the load module can be deduced by subtracting this value (converted to bytes) from the overall file size derived from combining the e_cp (number of file pages) and e_cblp (number of bytes in last page) values. The header always spans an even number of paragraphs.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8049,7 +8049,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >DOS Header e_cparhdr</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.baseOfData">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >Optional Header Base of Data</rdfs:label>
     <rdfs:comment >Specifies the address that is relative to the image base of the beginning-of-data section when it is loaded into memory.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8057,11 +8057,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#entryPoint">
-    <rdfs:domain rdf:resource="#PEExportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEExportedFunction"/> -->
     <rdfs:comment >Specifies the entry point address, if applicable.</rdfs:comment>
     <rdfs:label >Entry Point</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -8072,10 +8072,10 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >oread</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#boundImport.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the Bound Import data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8083,7 +8083,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Bound Import Virtual Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="peHeadersHash.value">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     
     <rdfs:label >PEHeaders Hash Value</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8094,12 +8094,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Image Size</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the size of the driver's image, in bytes.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_lfanew">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the file address of the of the new exe header. In particular, it is a 4-byte offset into the file where the PE file header is located. It is necessary to use this offset to locate the PE header in the file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8112,10 +8112,10 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Import Virtual Address</rdfs:label>
-    <rdfs:domain rdf:resource="#PEImport"/>
+    <!-- <rdfs:domain rdf:resource="#PEImport"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.minorSubsystemVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the minor version number of the subsystem.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8123,7 +8123,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Optional Header Minor Subsystem Version</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_sp">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the initial SP value, which is the absolute value that must be loaded into the SP register before the program is given control. Since the actual stack segment is determined by the loader, and this is merely a value within that segment, it does not need to be relocated.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8136,11 +8136,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >run length decode.obfuscated</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#objectNumber">
     <rdfs:comment >Specifies the 10-digit object number of the next free object.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFXrefEntry"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefEntry"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Object Number</rdfs:label>
     
@@ -8149,7 +8149,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   <owl:DatatypeProperty rdf:about="#fileDescription">
     <rdfs:comment >Specifies  the file description to be presented to users. This string may be displayed in a list box when the user is choosing files to install - for example, "Keyboard Driver for AT-Style Keyboards".</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >File Description</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -8165,13 +8165,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >PE Module Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEExports"/>
+    <!-- <rdfs:domain rdf:resource="#PEExports"/> -->
     
     <rdfs:comment >Specifies the actual name of the PE module, as used by the PE loader when it is imported by another executable.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#epJumpCode.opCodes">
     <rdfs:comment >Specifies the hex value of the bytes located at the jump location for a relative jump identified in the PE(Portable Executable) entry point up to 10 bytes or the end of the RVA(Relative Virtual Address) section.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Packer"/>
+    <!-- <rdfs:domain rdf:resource="#Packer"/> -->
     <rdfs:label >ep jump code.op codes</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
@@ -8183,19 +8183,19 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     <rdfs:comment >Specifies the offset of the PDF indirect object from the beginning of the file, in bytes.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_SET_SECURITY">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ SET SECURITY</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:comment >Specifies a count of the number of times the SET_SECURITY function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfImage">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size (in bytes) of the image, including all headers, as the image is loaded in memory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8203,7 +8203,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Optional Header Size of Image</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_oemid">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the identifier for the OEM for e_oeminfo.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8211,7 +8211,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >DOS Header e_oemid</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfUninitializedData">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the uninitialized (bss) data section. If there are multiple sections, size is the sum of the sizes if each.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8221,13 +8221,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
   <owl:DatatypeProperty rdf:about="#exportsTimestamp">
     <rdfs:comment >Specifies the date and time the export data was created.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:resource="#PEExports"/>
+    <!-- <rdfs:domain rdf:resource="#PEExports"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Exports Timestamp</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#globalPtr.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Global Pointer Register</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8235,7 +8235,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Global Pointer Register Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#debug.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the debug data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8248,7 +8248,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Resource Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     
     <rdfs:comment >Specifies the type of data referred to by this resource.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8256,7 +8256,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
     
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     <rdfs:comment >Specifies the date/time the file was last accessed.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Last Accessed Time</rdfs:label>
@@ -8265,20 +8265,20 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >owrite</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
     
     <rdfs:comment >Specifies whether or not all other users can write to the file.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_DEVICE_CONTROL">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ DEVICE CONTROL</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:comment >Specifies a count of the number of times the DEVICE_CONTROL function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#debug.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of  the debug data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8286,7 +8286,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
     <rdfs:label >Debug Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfHeapReserve">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >Optional Header Size of Heap Reserve</rdfs:label>
     <rdfs:comment >Specifies the size of the local heap space to reserve.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8298,7 +8298,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff544174(v=vs
 &#xD;
 Note that for many popular image formats, such as JPEG, the compression algorithm is inherent to the file format and so does need to be captured here as long as the format itself is identified in the Image File Format field.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#ImageFile"/>
+    <!-- <rdfs:domain rdf:resource="#ImageFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Compression Algorithm</rdfs:label>
@@ -8307,7 +8307,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:label >Magic Number</rdfs:label>
     <rdfs:comment >Specifies the particular magic number (typically a hexadecimal constant used to identify a file format) corresponding to the file, if applicable.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -8318,7 +8318,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Unix File Type</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#UnixFile"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFile"/> -->
     
     <rdfs:comment >Specifies file type.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8327,7 +8327,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/JavaScript' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/JavaScript' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#javascriptCount.nonObfuscated">
@@ -8335,7 +8335,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/JavaScript' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/JavaScript' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#xrefOffset">
@@ -8344,10 +8344,10 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Cross-Reference Table Offset</rdfs:label>
     
-    <rdfs:domain rdf:resource="#PDFXrefTable"/>
+    <!-- <rdfs:domain rdf:resource="#PDFXrefTable"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_crlc">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the number of relocation items, i.e. the number of entries that exist in the relocation pointer table. If there are no relocation entries, this value is zero.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8355,7 +8355,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:label >DOS header e_crlc</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#importTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Import Table Virtual Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
@@ -8366,12 +8366,12 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:label >Virtual</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a reserved system value, as denoted by the constant value, 0x10000.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#certificateTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the ertificate table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8382,12 +8382,12 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:label >Driver Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies the name of the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.characteristics">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the flags that indicate the file's characteristics.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8398,7 +8398,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >uread</rdfs:label>
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
     
     <rdfs:comment >Specifies whether or not the owner of the file can read its contents.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8406,14 +8406,14 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:label >Modify</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFilePermission"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies whether reading and writing or deletion of the file is permitted.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#numberofFunctions">
     <rdfs:comment >Specifies the total number of functions that are exported by the PE file.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEExports"/>
+    <!-- <rdfs:domain rdf:resource="#PEExports"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
     
     <rdfs:label >Number of Functions</rdfs:label>
@@ -8424,10 +8424,10 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encrypted">
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     
     <rdfs:label >Encrypted</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8439,14 +8439,14 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/XFA' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/XFA' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#pdfObjectId.generation">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:label >Object ID Generation</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFIndirectObject"/>
+    <!-- <rdfs:domain rdf:resource="#PDFIndirectObject"/> -->
     
     <rdfs:comment >Specifies the generation number portion of the indirect object ID.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8454,7 +8454,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ QUERY EA</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the QUERY_EA function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8463,7 +8463,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:label >pdf metadata.page count non obfuscated</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/Page' keyword in the PDF file, which provides an indication of the number of pages in the PDF document.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#filePath">
@@ -8472,7 +8472,7 @@ Note that for many popular image formats, such as JPEG, the compression algorith
     <rdfs:comment >Specifies the relative or fully-qualified path to the file, not including the path to the device where the file system containing the file resides. &#xD;
 &#xD;
 Whether the path is relative or fully-qualified can be specified via the 'fully_qualified' attribute of this field.  The File_Path field should contain only the path of the directory containing the file, and should end with a terminating path separator("\" or "/").</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
@@ -8481,12 +8481,12 @@ Whether the path is relative or fully-qualified can be specified via the 'fully_
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ DEVICE CHANGE</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the DEVICE_CHANGE function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#read">
-    <rdfs:domain rdf:resource="#WindowsFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFilePermission"/> -->
     
     <rdfs:label >Read</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8498,21 +8498,21 @@ Whether the path is relative or fully-qualified can be specified via the 'fully_
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/LZWDecode' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/LZWDecode' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#attachedDeviceName">
     <rdfs:label >Attached Device Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     
     <rdfs:comment >Specifies the name of another device object that was attached to this one. 
 
 See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs.85).aspx.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#docInfo.modificationDate">
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >PDF Modification Date</rdfs:label>
@@ -8524,11 +8524,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/DCTDecode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/DCTDecode' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_minalloc">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the minimum number of extra paragraphs needed to be allocated to begin execution. This is IN ADDITION to the memory required to hold the load module. This value normally represents the total size of any uninitialised data and/or stack segments that are linked at the end of a program. This space is not directly included in the load module, since there are no particular initializing values and it would simply waste disk space.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8539,14 +8539,14 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >Directory</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a directory, as denoted by the constant value, 0x10.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#filenameAccessTime">
     <rdfs:comment >Specifies the date/time the filename of the Windows file was last accessed.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#WindowsFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Filename Access Time</rdfs:label>
@@ -8556,20 +8556,20 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/RichMedia' keyword in the PDF file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/RichMedia' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#peChecksum.fileRaw">
     <rdfs:comment >Specifies the checksum found in the PE file (in the Optional Header).</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >PE File Raw Checksum</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.numberOfRelocations">
     <rdfs:comment >Specifies the number of relocations defined for the specified PE binary section.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -8578,13 +8578,13 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
   <owl:DatatypeProperty rdf:about="#integrityStream">
     <rdfs:comment >Specifies the directory or user data stream is configured with integrity (only supported on ReFS volumes), as denoted by the constant value, 0x8000. It is not included in an ordinary directory listing. The integrity setting persists with the file if it's renamed. If a file is copied the destination file will have integrity set if either the source file or destination directory have integrity set. NOTE: This flag is supported ONLY for Windows Server 8 Beta and later</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >Integrity Stream</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.magic">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >Optional Header Magic</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -8592,7 +8592,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_maxalloc">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the maximum number of extra paragraphs needed to be allocated by the program before it begins execution. This indicates ADDITIONAL memory over and above that required by the load module and the value specified by MINALLOC. If the request cannot be satisfied, the program is allocated as much memory as is available.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8600,7 +8600,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >DOS Header e_maxalloc</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#loadConfigTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the Load Configuration Table</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8613,20 +8613,20 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/Encrypt' keyword in the PDF file, which indicates that the PDF uses encryption.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#archiveFormat">
     
     <rdfs:comment >Specifies the format of the archive file.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#ArchiveFile"/>
+    <!-- <rdfs:domain rdf:resource="#ArchiveFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Archive Format</rdfs:label>
     
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="dosHeader.hashValue">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     
     <rdfs:label >DOS Header Hash Value</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8634,7 +8634,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:comment >Specifies the values, in the format of 'hash-type':'hash-value' for any hash computed using the specified PE binary MS-DOS header as input.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_ss">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the initial SS value, which is the paragraph address of the stack segment relative to the start of the load module. At load time, this value is relocated by adding the address of the start segment of the program to it, and the resulting value is placed in the SS register before the program is started. In DOS, the start segment of the program is the first segment boundary in memory after the PSP.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8642,7 +8642,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >DOS Header e_ss</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.majorLinkerVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Optional Header Major Linker Version</rdfs:label>
@@ -8654,11 +8654,11 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:label >Size</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#fileHeader.numberOfSymbols">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the number of entries in the symbol table. Should be 0.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8666,7 +8666,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >File Header Number of Symbols</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.majorSubsystemVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the major version number of the subsystem.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8674,7 +8674,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >Optional Header Major Subsystem Version</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.dllCharacteristics">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies flags that characterize the PE file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8682,7 +8682,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >Optional Header DLL Characteristics</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#delayLoad">
-    <rdfs:domain rdf:resource="#PEImport"/>
+    <!-- <rdfs:domain rdf:resource="#PEImport"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >delay load</rdfs:label>
     <rdfs:comment ></rdfs:comment>
@@ -8696,12 +8696,12 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >suid</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#aaCount.obfuscated">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/AA' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >'/AA' Obfuscated Count</rdfs:label>
     
@@ -8710,7 +8710,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     <rdfs:label >System</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a file or directory that the operating system uses a part of, or uses exclusively, as denoted by the constant value, 0x4.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8719,7 +8719,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/CCITTFaxDecode' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/CCITTFaxDecode' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#privateBuild">
@@ -8727,7 +8727,7 @@ See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff543147(v=vs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the information about a private version of the file - for example, "Built by TESTER1 on \TESTBED". &#xD;
 &#xD;
 This string should be present only if VS_FF_PRIVATEBUILD is specified in the fileflags parameter of the root block.</rdfs:comment>
@@ -8736,13 +8736,13 @@ This string should be present only if VS_FF_PRIVATEBUILD is specified in the fil
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:label >Device Object</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#DeviceObjectStruct"/>
+    <!-- <rdfs:domain rdf:resource="#DeviceObjectStruct"/> -->
     
     <rdfs:comment >Specifies a pointer to the driver object for the caller.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_CREATE">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ CREATE</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -8752,13 +8752,13 @@ This string should be present only if VS_FF_PRIVATEBUILD is specified in the fil
     <rdfs:label >File Count</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ArchiveFile"/>
+    <!-- <rdfs:domain rdf:resource="#ArchiveFile"/> -->
     <rdfs:comment >Specifies the number of files contained within the archive.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#peakEntropy">
     <rdfs:label >Peak Entropy</rdfs:label>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     <rdfs:comment >Specifies the calculated peak entropy of the file.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
     
@@ -8766,7 +8766,7 @@ This string should be present only if VS_FF_PRIVATEBUILD is specified in the fil
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.majorImageVersion">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the major version number of the image.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8777,7 +8777,7 @@ This string should be present only if VS_FF_PRIVATEBUILD is specified in the fil
     <rdfs:label >Data Hash Value</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     
     <rdfs:comment >Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed using the data contained in the specified PE binary section as input.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8787,10 +8787,10 @@ This string should be present only if VS_FF_PRIVATEBUILD is specified in the fil
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Group Owner</rdfs:label>
     
-    <rdfs:domain rdf:resource="#UnixFile"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFile"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#filenameModifiedTime">
-    <rdfs:domain rdf:resource="#WindowsFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFile"/> -->
     
     <rdfs:label >Filename Modified Time</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8804,19 +8804,19 @@ This string should be present only if VS_FF_PRIVATEBUILD is specified in the fil
     <rdfs:comment >Specifies the number of occurrences of the '/Page' keyword in the PDF file with some form of obfuscation, such as with hexcodes.
 
 The '/Page' keyword provides an indication of the number of pages in the PDF document.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/Page' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#ascii85DecodeCount.nonObfuscated">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     
     <rdfs:comment >Specifies the number of non-obfuscated occurrences of the '/ASCII85Decode' keyword in the PDF.</rdfs:comment>
     <rdfs:label >'/ASCII85Decode' Non-obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#importTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Import Table Size</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -8825,7 +8825,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#sectionHeader.pointerToRawData">
     <rdfs:comment >Specifies the file offset of the beginning of the PE binary section.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -8834,14 +8834,14 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
   <owl:DatatypeProperty rdf:about="#pdfEncypted">
     <rdfs:comment >Specifies whether the PDF file is encrypted.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:label >PDF Encypted</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_SHUTDOWN">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ SHUTDOWN</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
@@ -8851,12 +8851,12 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >IRP MJ QUERY QUOTA</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     
     <rdfs:comment >Specifies a count of the number of times the QUERY_QUOTA function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#boundImport.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Bound Import data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8865,18 +8865,18 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#IRP_MJ_SET_EA">
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsDriver"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsDriver"/> -->
     <rdfs:label >IRP MJ SET EA</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
     
     <rdfs:comment >Specifies a count of the number of times the SET_EA function code was processed by the driver.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#functionName">
-    <rdfs:domain rdf:resource="#PEImportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEImportedFunction"/> -->
     <rdfs:label >Function Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEExportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEExportedFunction"/> -->
     
     <rdfs:comment >Specifies the name of the function from the specified library.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -8885,7 +8885,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     
     <rdfs:comment >Specifies the number of obfuscated occurrences of the '/OpenAction' keyword in the PDF file with some form of obfuscation, such as with hexcodes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:label >'/OpenAction' Obfuscated Count</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#bitsPerPixel">
@@ -8894,10 +8894,10 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Bits per Pixel</rdfs:label>
     
-    <rdfs:domain rdf:resource="#ImageFile"/>
+    <!-- <rdfs:domain rdf:resource="#ImageFile"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_lfarlc">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the file address of the relocation table, or more specifically, the offset from the start of the file to the relocation pointer table. This value must be used to locate the relocation pointer table (rather than assuming a fixed location) because variable-length information pertaining to program overlays can occur before this table, causing its position to vary. A value of 0x40 in this field generally indicates a different kind of executable file, not a DOS 'MZ' type.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8906,7 +8906,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#language">
     <rdfs:label >Language</rdfs:label>
-    <rdfs:domain rdf:resource="#PEResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
@@ -8918,10 +8918,10 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >uwrite</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
-    <rdfs:domain rdf:resource="#UnixFilePermission"/>
+    <!-- <rdfs:domain rdf:resource="#UnixFilePermission"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#exportTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:label >Export Table Size</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -8932,7 +8932,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the method used to compress the file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:label >Compression Method</rdfs:label>
   </owl:DatatypeProperty>
@@ -8941,14 +8941,14 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:comment >Specifies a file or directory that has an associated reparse point, or a file that is a symbolic link, as denoted by the constant value, 0x400.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#createdDateTime">
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
     
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     <rdfs:comment >Specifies the date/time the file was created.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Created Time</rdfs:label>
@@ -8956,13 +8956,13 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
   <owl:DatatypeProperty rdf:about="#extraneousBytes">
     <rdfs:comment >Specifies the number of extraneous bytes contained in the PE binary.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:domain rdf:resource="#WindowsExecutableFile"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsExecutableFile"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Extraneous Bytes</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#archive">
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     
     <rdfs:label >Archive</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8970,7 +8970,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:comment >Specifies a file or directory that is an archive file or directory, as denoted by the constant value, 0x20. Applications typically use this attribute to mark files for backup or removal.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#dosHeader.e_ip">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >DOS Header e_ip</rdfs:label>
     <rdfs:comment >Specifies the initial IP value, which is the absolute value that should be loaded into the IP register in order to transfer control to the program. Since the actual code segment is determined by the loader, and this is merely a value within that segment, it does not need to be relocated.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8981,13 +8981,13 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >Header Hash Value</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PESection"/>
+    <!-- <rdfs:domain rdf:resource="#PESection"/> -->
     
     <rdfs:comment >Specifies the values, in the format of 'hash-type':'hash-value', for any hash computed using the header of the specified PE binary section as input.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#docInfo.title">
     <rdfs:label >Document Title</rdfs:label>
-    <rdfs:domain rdf:resource="#PDFMetadata"/>
+    <!-- <rdfs:domain rdf:resource="#PDFMetadata"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -8995,15 +8995,15 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#virtualAddress">
     <rdfs:comment >Specifies the relative virtual address (RVA) of the entity within  PE binary library.</rdfs:comment>
-    <rdfs:domain rdf:resource="#PEResource"/>
-    <rdfs:domain rdf:resource="#PEImportedFunction"/>
+    <!-- <rdfs:domain rdf:resource="#PEResource"/> -->
+    <!-- <rdfs:domain rdf:resource="#PEImportedFunction"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Virtual Address</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#peSignature">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:label >PE Header Signature</rdfs:label>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
@@ -9011,7 +9011,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:comment >Specifes the Signature field specifies the 4-bytes sugnature that identifies the file as a PE file.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#baseRelocationTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >specifies the size of the data structure, in bytes, of the base relocation table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -9022,7 +9022,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >Deleted</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a file or directory that is marked as deleted.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -9032,13 +9032,13 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Image Height</rdfs:label>
     
-    <rdfs:domain rdf:resource="#ImageFile"/>
+    <!-- <rdfs:domain rdf:resource="#ImageFile"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#imageWidth">
     <rdfs:label >Image Width</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#ImageFile"/>
+    <!-- <rdfs:domain rdf:resource="#ImageFile"/> -->
     
     <rdfs:comment >Specifies the width of the image in the image file, in pixels.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -9049,10 +9049,10 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:comment ></rdfs:comment>
     <rdfs:label >stream name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsStream"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsStream"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.sizeOfStackCommit">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the size of the stack to commit.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -9067,10 +9067,10 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Image File Format</rdfs:label>
     
-    <rdfs:domain rdf:resource="#ImageFile"/>
+    <!-- <rdfs:domain rdf:resource="#ImageFile"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#tlsTable.size">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the size of the data structure, in bytes, of the Thread Local Storage (TLS) Table</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -9082,11 +9082,11 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#PEVersionResource"/>
+    <!-- <rdfs:domain rdf:resource="#PEVersionResource"/> -->
     <rdfs:comment >Specifies the localization language identifier specified in the version-information resource.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#architecture.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Reserved; must be 0</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -9097,7 +9097,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >Device</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a reserved system value, as denoted by the constant value, 0x40.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -9105,7 +9105,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >Hidden</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsFileAttribute"/>
+    <!-- <rdfs:domain rdf:resource="#WindowsFileAttribute"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdfs:comment >Specifies a file or directory is hidden, as denoted by the constant value, 0x2. It is not included in an ordinary directory listing.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -9113,20 +9113,20 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
     <rdfs:label >Number of Addresses</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#PEExports"/>
+    <!-- <rdfs:domain rdf:resource="#PEExports"/> -->
     
     <rdfs:comment >Specifies the number of addresses in the export data section's address table.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#encrypt.rawContents">
     <rdfs:comment >Specifies the PDF document's encryption dictionary as embedded set of key/value pairs.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#PDFTrailer"/>
+    <!-- <rdfs:domain rdf:resource="#PDFTrailer"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >Encryption Dictionary Key/Value Pairs</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#optionalHeader.baseOfCode">
-    <rdfs:domain rdf:resource="#PEHeaders"/>
+    <!-- <rdfs:domain rdf:resource="#PEHeaders"/> -->
     <rdfs:comment >Specifies the address that is relative to the image base of the beginning-of-code section when it is loaded into memory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -9134,7 +9134,7 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >Optional Header Base of Code</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#importAddressTable.virtualAddress">
-    <rdfs:domain rdf:resource="#PEDataDirectory"/>
+    <!-- <rdfs:domain rdf:resource="#PEDataDirectory"/> -->
     <rdfs:comment >Specifies the relative virtual address (RVA) of the Import Address Table data directory.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -9145,36 +9145,36 @@ The '/Page' keyword provides an indication of the number of pages in the PDF doc
     <rdfs:label >Compression Version</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the version of the compression method used to compress the file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
     
     <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >&lt;http://cybox.mitre.org/objects/File&gt;</rdfs:isDefinedBy>
   </owl:DatatypeProperty>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#codeSnippets">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Code#Code"/>
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#byteRuns">
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#hash.value">
-    <rdfs:domain rdf:resource="#File"/>
-    <rdfs:domain rdf:resource="#WindowsStream"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
+    <!-- <rdfs:domain rdf:resource="#WindowsStream"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#digitalSignatures">
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.functions">
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.codeSnippets">
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.imports">
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
   <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.strings">
-    <rdfs:domain rdf:resource="#File"/>
+    <!-- <rdfs:domain rdf:resource="#File"/> -->
   </rdf:Description>
 </rdf:RDF>
 

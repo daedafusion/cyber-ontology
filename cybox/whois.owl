@@ -106,7 +106,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#id">
-            <rdfs:domain rdf:resource="#Contact"/>
+            <!-- <rdfs:domain rdf:resource="#Contact"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -347,7 +347,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#regionalInternetRegistry">
-            <rdfs:domain rdf:resource="#Whois"/>
+            <!-- <rdfs:domain rdf:resource="#Whois"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -502,7 +502,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:Class>
   <owl:ObjectProperty rdf:ID="whoisContacts">
     <rdfs:label >Whois Contacts</rdfs:label>
-    <rdfs:domain rdf:resource="#Registrar"/>
+    <!-- <rdfs:domain rdf:resource="#Registrar"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="#Contact"/>
     
@@ -510,7 +510,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="nameservers">
     <rdfs:comment >Specifies a list of nameserver entries for a Whois entry.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -518,7 +518,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#serverName">
     <rdfs:comment >Specifies the corresponding server name for this whois entry. This usually corresponds to a nameserver lookup.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -526,7 +526,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#ipAddress">
     <rdfs:comment >Specifies the corresponding ip address for this whois entry. The usually corresponds to a nameserver lookup.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -541,7 +541,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#emailAddress">
     <rdfs:comment >Specifies the email address of the contact.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -551,13 +551,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="#Registrar"/>
     <rdfs:label >Registrar Info</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     
     <rdfs:comment >Specifies registrar info that would be returned from a registrar lookup.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="contacts">
     <rdfs:comment >Specifies ontact info that would be returned from a contact lookup.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:range rdf:resource="#Contact"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -565,7 +565,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#referalURL">
     <rdfs:comment >Specifies the corresponding referral URL for registrar.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Registrar"/>
+    <!-- <rdfs:domain rdf:resource="#Registrar"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -574,14 +574,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:ID="registrants">
     <rdfs:range rdf:resource="#Registrant"/>
     <rdfs:comment >Specifies the registrant information associated with a domain lookup.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Registrants</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#domainName">
     <rdfs:comment >Specifies the corresponding domain name for this whois entry.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
     <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Domain_Name"/>
     
@@ -591,7 +591,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
     <rdfs:label >Whois Server</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Registrar"/>
+    <!-- <rdfs:domain rdf:resource="#Registrar"/> -->
     
     <rdfs:comment >Specifies the corresponding whois server for this registrar.</rdfs:comment>
   </owl:ObjectProperty>
@@ -599,12 +599,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
     <rdfs:label >Address</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     
     <rdfs:comment >Specifies the address of the contact.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#organization.details">
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -614,7 +614,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#faxNumber">
     <rdfs:comment >Specifies the fax number of the contact.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Contact Fax Number</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -623,13 +623,13 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:label >Name</rdfs:label>
     <rdfs:comment >Specifies the name of the contact</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#creationDate">
     <rdfs:comment >Specifies the date in which the registered domain was created.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:label >Creation Date</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -637,7 +637,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contactID">
     <rdfs:comment >Specifies an ID for the contact. This can be presented as Contact ID, Billing ID, Admin ID, Tech ID, etc.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -649,11 +649,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Domain ID</rdfs:label>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#updateDate">
     <rdfs:label >Last Updated</rdfs:label>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:comment >Specifies the date in which the registered domain information was last updated.</rdfs:comment>
@@ -663,7 +663,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     
     <rdfs:comment >Specifies a list of statuses for a given Whois entry.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -672,14 +672,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#sponsoringRegistrarName">
     <rdfs:comment >Specifies the name of the sponsoring registrar for the domain.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     
     <rdfs:label >Sponsoring Registrar Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#expirationDate">
     <rdfs:comment >Specifies the date in which the registered domain will expire.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:label >Expiration Date</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -688,7 +688,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#organization.name">
     <rdfs:comment >Specifies name of the organization this contact works for or is assoicated with.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Organization Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -698,12 +698,12 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:comment >Specifies the phone number of the contact.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#registrantID">
     <rdfs:comment >Specifies the registrant id for a given registrant.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Registrant"/>
+    <!-- <rdfs:domain rdf:resource="#Registrant"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -714,14 +714,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the DNSSEC field associated with a Whois entry. Acceptable values are: "Signed" or "Unsigned".</rdfs:comment>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >DNSSEC</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#registrarID">
     <rdfs:comment >Specifies the Registrar ID field of a Whois entry.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Registrar"/>
+    <!-- <rdfs:domain rdf:resource="#Registrar"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -732,14 +732,14 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:comment >Specifies any remarks associated with this Whois entry.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#contactType">
     
     
     <rdfs:comment >Specifies what type of contact this is.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Contact"/>
+    <!-- <rdfs:domain rdf:resource="#Contact"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -747,7 +747,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#registrarGUID">
     <rdfs:comment >Specifies the Registrar GUID field of a Whois entry.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Registrar"/>
+    <!-- <rdfs:domain rdf:resource="#Registrar"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -756,7 +756,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#lookupDateTime">
     <rdfs:comment >Specifies the date and time that the Whois record was queried.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#Whois"/>
+    <!-- <rdfs:domain rdf:resource="#Whois"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:label >Lookup Date</rdfs:label>

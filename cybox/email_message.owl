@@ -69,7 +69,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#id">
-            <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+            <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
@@ -98,7 +98,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#parentId">
-            <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+            <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
@@ -310,7 +310,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:ID="header.to">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:comment >Specifies the email addresses of the recipients of the email message.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >To</rdfs:label>
@@ -321,7 +321,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label >Received Lines</rdfs:label>
     
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="header.sender">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
@@ -329,11 +329,11 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the email address of the sender who is acting on behalf of the author listed in the From: field.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="header.cc">
     <rdfs:label >Carbon Copied (cc)</rdfs:label>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -341,7 +341,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="links">
     <rdfs:comment >Specifies any URL links contained within the email message.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#Link"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -350,7 +350,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:ID="header.bcc">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:comment >Specifies the email addresses of any recipients that were included in the blind carbon copy header of the email message.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Blind Carbon Copied (bcc)</rdfs:label>
@@ -359,7 +359,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies the originating IP Address of the email sender, in terms of their connection to the mail server used to send the email message.&#xD;
 &#xD;
 This field is non-standard.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:range>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -375,7 +375,7 @@ This field is non-standard.</rdfs:comment>
   <owl:ObjectProperty rdf:about="#header.replyTo">
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:comment >Specifies the email address that should be used when replying to the email message.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Reply To</rdfs:label>
@@ -383,14 +383,14 @@ This field is non-standard.</rdfs:comment>
   <owl:ObjectProperty rdf:ID="attachments">
     <rdfs:comment >Specifies any files that were attached to the email message.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/File#File"/>
     
     <rdfs:label >Attachments</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#header.from">
     <rdfs:comment >Specifies the email address of the sender of the email message.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
     <rdfs:isDefinedBy rdf:resource=""/>
     
@@ -399,7 +399,7 @@ This field is non-standard.</rdfs:comment>
   <owl:DatatypeProperty rdf:about="#header.xMailer">
     <rdfs:comment >Specifies the software used to send the email message. This field is non-standard.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >X-Mailer</rdfs:label>
@@ -409,7 +409,7 @@ This field is non-standard.</rdfs:comment>
     <rdfs:comment >Specifies the numerical priority of the email message. &#xD;
 &#xD;
 This is a non-standard field, but typically a value of '1' is considered the highest priority, '3' is normal, and '5' is the lowest priority.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >X-Priority</rdfs:label>
@@ -418,7 +418,7 @@ This is a non-standard field, but typically a value of '1' is considered the hig
     <rdfs:label >Via</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     
     <rdfs:comment >Specifies  the 'via' portion of the Received line, if applicable.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -436,20 +436,20 @@ This is a non-standard field, but typically a value of '1' is considered the hig
     
     <rdfs:comment >Specifies the message ID of the message that this email is a reply to.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#header.subject">
     <rdfs:label >Subject</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     
     <rdfs:comment >Specifies the subject (a brief summary of the message topic) of the email message.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#header.messageID">
     <rdfs:comment >Specifies the automatically generated ID of the email message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Message ID</rdfs:label>
@@ -458,7 +458,7 @@ This is a non-standard field, but typically a value of '1' is considered the hig
     <rdfs:label >For</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     
     <rdfs:comment >Specifies the 'for' portion of the Received line, if applicable.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -467,7 +467,7 @@ This is a non-standard field, but typically a value of '1' is considered the hig
 &#xD;
 Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs.org/rfcs/rfc2076.html).</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Precedence</rdfs:label>
@@ -475,7 +475,7 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
   <owl:DatatypeProperty rdf:about="#emailServer">
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the relevant email server.</rdfs:comment>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Email Server</rdfs:label>
@@ -486,19 +486,19 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
     
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#header.userAgent">
     <rdfs:comment >Specifies the identity of the email user agent software that may have been used to send the email message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >User Agent</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#header.boundary">
     <rdfs:label >Boundary</rdfs:label>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     
@@ -508,14 +508,14 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
     <rdfs:label >With</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     
     <rdfs:comment >Specifies the 'with' portion of the Received line, if applicable.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="rawHeader">
     <rdfs:comment >Specifies the complete (raw) headers of the email message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Raw Header</rdfs:label>
@@ -523,7 +523,7 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
   <owl:DatatypeProperty rdf:about="#from">
     <rdfs:comment >Specifies the 'from' portion of the Received line, if applicable.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >From</rdfs:label>
@@ -532,14 +532,14 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
     <rdfs:label >Timestamp</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     
     <rdfs:comment >Specifies the timestamp portion of the Received line, if applicable.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="#header.errorsTo">
     <rdfs:comment >Specifies the entry in the (deprecated) errors_to header of the email message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Errors To</rdfs:label>
@@ -547,7 +547,7 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
   <owl:DatatypeProperty rdf:about="#rawBody">
     <rdfs:comment >Specifies the complete (raw) body of the email message.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:label >Raw Body</rdfs:label>
@@ -556,7 +556,7 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label >ID</rdfs:label>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     
     <rdfs:comment >Specifies the 'id' portion of the Received line, if applicable.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -564,7 +564,7 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
     <rdfs:label >By</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailReceivedLine"/>
+    <!-- <rdfs:domain rdf:resource="#EmailReceivedLine"/> -->
     
     <rdfs:comment >Specifies  the 'by' portion of the Received line, if applicable.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -572,7 +572,7 @@ Use of this field is typically discouraged, as per IETF RFC2076 (http://www.faqs
     <rdfs:label >Content Type</rdfs:label>
     
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EmailMessage"/>
+    <!-- <rdfs:domain rdf:resource="#EmailMessage"/> -->
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:comment >Specifies the internet media, or MIME, type of the email message content.</rdfs:comment>
   </owl:DatatypeProperty>

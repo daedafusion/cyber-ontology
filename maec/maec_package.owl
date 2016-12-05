@@ -500,9 +500,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.commonality">
+<!--           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.commonality">
             <rdfs:domain rdf:resource="#MalwareSubject"/>
-          </rdf:Description>
+          </rdf:Description> -->
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -525,7 +525,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:cardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://maec.mitre.org/maec_common#malwareInstanceObject">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
@@ -534,7 +534,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.startDate">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -546,7 +546,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.endDate">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -558,7 +558,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.importance">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -569,7 +569,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.firstSeen">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -581,7 +581,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
       <owl:Restriction>
         <owl:onProperty>
           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.origin">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -595,7 +595,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         >1</owl:maxCardinality>
         <owl:onProperty>
           <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.location">
-            <rdfs:domain rdf:resource="#MalwareSubject"/>
+            <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
           </rdf:Description>
         </owl:onProperty>
       </owl:Restriction>
@@ -965,7 +965,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
   <owl:ObjectProperty rdf:about="#configurationDetails">
     <rdfs:range rdf:resource="#MalwareConfigurationDetails"/>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:comment >Specifies details of the configuration specified for the Malware Subject, such as configuration parameters.</rdfs:comment>
     
     <rdfs:label >Configuration Details</rdfs:label>
@@ -975,7 +975,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:comment >Specifies any analyses (including their associated metadata such as tools used, etc.) that were performed on the Malware Subject.</rdfs:comment>
     <rdfs:range rdf:resource="#Analysis"/>
     
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="dynamicAnalysisMetadata.raisedExceptions">
@@ -1006,7 +1006,7 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
     
     <rdfs:comment >Specifies the properties of a debugging file associated with the malware instance, such as a PDB file.</rdfs:comment>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:label >Development Environment Debugging file</rdfs:label>
     <rdfs:range rdf:resource="http://cybox.mitre.org/objects/File#File"/>
   </owl:ObjectProperty>
@@ -1054,7 +1054,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="analysisFindings.analysisBundles">
     <rdfs:range rdf:resource="http://maec.mitre.org/maec_bundle#AnalysisBundle"/>
     <rdfs:label >Analysis Findings</rdfs:label>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:domain rdf:resource="#Analysis"/>
     
     <rdfs:comment >Specifies any Analysis Bundles pertaining to the Malware Subject, thus capturing any observed or discovered Behaviors, Actions, or Objects. These Bundles can either be abstract, or referenced as the result of an analysis that was performed on the malware.</rdfs:comment>
@@ -1063,7 +1063,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="relationships">
     <rdfs:range rdf:resource="#MalwareSubject"/>
     <rdfs:label >Relationships</rdfs:label>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:comment >Specifies any relationships between the Malware Subject and other Malware Subjects.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1071,7 +1071,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="minorVariants">
     <rdfs:label >Minor Variants</rdfs:label>
     <rdfs:comment >Specifies any minor variants of the malware instance object, such as the same file but with different filenames.</rdfs:comment>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1079,7 +1079,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="analysisFindings.actionEquivalences">
     <rdfs:range rdf:resource="http://maec.mitre.org/maec_common#ActionEquivalence"/>
     <rdfs:label >Analysis Findings - Action Equivalence</rdfs:label>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:comment >Specifies any equivalences between Actions contained in one or more Bundles.</rdfs:comment>
     
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1111,7 +1111,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:range rdf:resource="http://maec.mitre.org/maec_common#ToolInformation"/>
     <rdfs:comment >Specifies the properties of one or more tools used in the development of the malware instance. For the Type field in each Tool, the MAEC MalwareDevelopmentToolVocab (from the MAEC Default Vocabularies Schema) should be used as the default vocabulary.</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:label >development environmet.tools</rdfs:label>
     <rdfs:isDefinedBy rdf:resource=""/>
   </owl:ObjectProperty>
@@ -1150,7 +1150,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="analysisFindings.objectEquivalences">
     <rdfs:label >Analysis Finddings Object Equivalences</rdfs:label>
     
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:comment >Specifies  any equivalences between Objects contained in one or more Bundles.</rdfs:comment>
     <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1190,7 +1190,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   <owl:ObjectProperty rdf:ID="compatiblePlatforms">
     <rdfs:comment >Specifies one or more platforms that the Malware Subject is compatible with (i.e. can execute on).</rdfs:comment>
     
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     <rdfs:label >Compatible Platform</rdfs:label>
     <rdfs:range>
       <owl:Class>
@@ -1378,7 +1378,7 @@ A comment should be attributable to a specific analyst and should reflect partic
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="malwareLabel">
     
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     
     <rdfs:comment >Specifies a single commonly accepted label to describe the Malware Subject, e.g. "worm". The default vocabulary for this field is the MalwareLabelVocab-1.0 from the MAEC Default Vocabularies schema. More than one label may be specified through the use of multiple instances of this field.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
@@ -1562,7 +1562,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:label >External Findings Reference</rdfs:label>
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
     
     <rdfs:comment >Specifies a single externally located MAEC Bundle (such as a file or URL) via a URI, representing some set of results from analysis of the Malware Subject.</rdfs:comment>
   </owl:DatatypeProperty>
@@ -1577,7 +1577,7 @@ A comment should be attributable to a specific analyst and should reflect partic
     <rdfs:domain rdf:resource="#ClusterEdgeNodePair"/>
   </owl:DatatypeProperty>
   <rdf:Description rdf:about="http://xml/metadatasharing#fieldData.volume">
-    <rdfs:domain rdf:resource="#MalwareSubject"/>
+    <!-- <rdfs:domain rdf:resource="#MalwareSubject"/> -->
   </rdf:Description>
 </rdf:RDF>
 

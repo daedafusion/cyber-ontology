@@ -1,116 +1,140 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:xcl="http://www.oasis-open.org/ciq_currency#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://www.oasis-open.org/ciq_currency">
-  <owl:Ontology rdf:about="http://www.oasis-open.org/ciq_currency">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >1.0.0-000</owl:versionInfo>
-    <owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
-    <rdfs:comment >This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) eXtensible Currency Language.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://www.oasis-open.org/ciq_currency#"
+     xml:base="http://www.oasis-open.org/ciq_currency"
+     xmlns:xcl="http://www.oasis-open.org/ciq_currency#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.oasis-open.org/ciq_currency">
+        <owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
+        <rdfs:label>OASIS Customer Information Quality (CIQ) eXtensible Currency Language (xCL) Ontology</rdfs:label>
+        <rdfs:comment>This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) eXtensible Currency Language.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label >OASIS Customer Information Quality (CIQ) eXtensible Currency Language (xCL) Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-000</owl:versionInfo>
+    </owl:Ontology>
     
-  </owl:Ontology>
-  <owl:Class rdf:ID="Currency">
-    <rdfs:label >Currency</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isoCurrencyCode"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes currency</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="currencyName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#id">
-            <!-- <rdfs:domain rdf:resource="#Currency"/> -->
-          </rdf:Description>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isoNumericCurrencyCode"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://www.oasis-open.org/ciq_currency#currencyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_currency#currencyName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the currency</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+        <rdfs:label>Currency Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="currencySymbol"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:DatatypeProperty rdf:about="#isoNumericCurrencyCode">
-    <!-- <rdfs:domain rdf:resource="#Currency"/> -->
+
+
+    <!-- http://www.oasis-open.org/ciq_currency#currencySymbol -->
+
+    <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_currency#currencySymbol">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the symbol associated with the curency</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+        <rdfs:label>currency symbol</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >iso numeric currency code</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:comment >Specifies the three-digit numerica code per ISO 4217.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#currencyName">
-    <rdfs:label >Currency Name</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the name of the currency</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#Currency"/> -->
+
+
+    <!-- http://www.oasis-open.org/ciq_currency#currencySymbolCodes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_currency#currencySymbolCodes">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the currency symbol as a sequence of one or more comma-separated unicode hex values</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+        <rdfs:label>Currency Symbol Codes</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="currencySymbolCodes">
-    <rdfs:label >Currency Symbol Codes</rdfs:label>
+
+
+    <!-- http://www.oasis-open.org/ciq_currency#isoCurrencyCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_currency#isoCurrencyCode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the 3-character currency code per ISO 4217</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+        <rdfs:label>ISO 4217 Currency Code</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#Currency"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the currency symbol as a sequence of one or more comma-separated unicode hex values</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isoCurrencyCode">
-    <rdfs:label >ISO 4217 Currency Code</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#Currency"/> -->
+
+
+    <!-- http://www.oasis-open.org/ciq_currency#isoNumericCurrencyCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_currency#isoNumericCurrencyCode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the three-digit numerica code per ISO 4217.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+        <rdfs:label>iso numeric currency code</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the 3-character currency code per ISO 4217</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#currencySymbol">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the symbol associated with the curency</rdfs:comment>
-    <rdfs:label >currency symbol</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#Currency"/> -->
-  </owl:DatatypeProperty>
+
+
+    <!-- http://www.oasis-open.org/ciq_currency#Currency -->
+
+    <owl:Class rdf:about="http://www.oasis-open.org/ciq_currency#Currency">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#id"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_currency#currencyName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_currency#isoCurrencyCode"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_currency#isoNumericCurrencyCode"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_currency#currencySymbol"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes currency</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+        <rdfs:label>Currency</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

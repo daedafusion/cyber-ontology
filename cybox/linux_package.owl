@@ -1,239 +1,237 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:linuxPkgObj="http://cybox.mitre.org/objects/LinuxPackage#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/LinuxPackage">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/LinuxPackage">
-    <rdfs:label >Cyber Observable eXpression (CybOX) Linux Package Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation of an Linux Package for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the Cybox Linux Package object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/LinuxPackage#"
+     xml:base="http://cybox.mitre.org/objects/LinuxPackage"
+     xmlns:linuxPkgObj="http://cybox.mitre.org/objects/LinuxPackage#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/LinuxPackage">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Linux Package Ontology</rdfs:label>
+        <rdfs:comment>This ontology provides a vocabulary and representation of an Linux Package for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the Cybox Linux Package object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
+    </owl:Ontology>
     
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    <owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="LinuxPackage">
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="category"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#vendor.details -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#vendor.details">
+        <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+        <rdfs:comment>Specifies a reference to the vendor that holds the software copyright of the package.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Vendor Details</rdfs:label>
+    </owl:ObjectProperty>
     
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="vendor.details"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Linux Package</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="version"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="packageName"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="epoch"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterize Linux packages.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="vendorName"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="architecture"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="release"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="evr"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#vendor.details">
-    <rdfs:label >Vendor Details</rdfs:label>
-    <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-    <rdfs:comment >Specifies a reference to the vendor that holds the software copyright of the package.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#epoch">
-    <rdfs:comment >Specifies the epoch number of the package.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#architecture -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#architecture">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the architecture for which the package was built.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Architecture</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Epoch</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#evr">
-    <rdfs:label >EVR</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#category -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#category">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the categories under which a package may be displayed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Category</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the epoch, version, and release fields of the package as a single version string.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#release">
-    <rdfs:label >Release</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#epoch -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#epoch">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the epoch number of the package.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Epoch</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the release number of the package build.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#vendorName">
-    <rdfs:label >Vendor Name</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#evr -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#evr">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the epoch, version, and release fields of the package as a single version string.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>EVR</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the vendor that holds the software copyright of the package.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#architecture">
-    <rdfs:comment >Specifies the architecture for which the package was built.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#packageName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#packageName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the package.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Architecture</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#release -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#release">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the release number of the package build.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Release</rdfs:label>
+    </owl:DatatypeProperty>
     
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#vendorName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#vendorName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the vendor that holds the software copyright of the package.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Vendor Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#category">
-    <rdfs:label >Category</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#version -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/LinuxPackage#version">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the version number of the package build.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Version</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the categories under which a package may be displayed.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#version">
-    <rdfs:label >Version</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the version number of the package build.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#packageName">
-    <rdfs:comment >Specifies the name of the package.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <!-- <rdfs:domain rdf:resource="#LinuxPackage"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Name</rdfs:label>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/LinuxPackage#LinuxPackage -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/LinuxPackage#LinuxPackage">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#vendor.details"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#packageName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#architecture"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#category"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#epoch"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#evr"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#release"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#vendorName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/LinuxPackage#version"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize Linux packages.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/LinuxPackage"/>
+        <rdfs:label>Linux Package</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oasis-open.org/ciq_xpil#Organization -->
+
+    <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Organization"/>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

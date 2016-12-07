@@ -1,482 +1,474 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:x509CertObj="http://cybox.mitre.org/objects/X509Certificate#"
-  xml:base="http://cybox.mitre.org/objects/X509Certificate">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/X509Certificate">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-    <rdfs:comment >This ontology provides a vocabulary and representation of an X509 Certificate for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the CybOX X509 Certificate object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/X509Certificate#"
+     xml:base="http://cybox.mitre.org/objects/X509Certificate"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:x509CertObj="http://cybox.mitre.org/objects/X509Certificate#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/X509Certificate">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of an X509 Certificate for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX X509 Certificate object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label >Cyber Observable eXpression (CybOX) X509 Certificate Ontology</rdfs:label>
+        <rdfs:label>Cyber Observable eXpression (CybOX) X509 Certificate Ontology</rdfs:label>
+    </owl:Ontology>
     
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="X509Certificate">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="certificateSignature.algorithm"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterize X.509 certificates.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="subject"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="validity.notBeforeDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="validity.notAfterDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="serialNumber"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#certificateSignature.algorithm"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="version"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction> -->
-<!--     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-  <!--   <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#id">
-            <rdfs:domain>
-              <owl:Class rdf:ID="X509Extension"/>
-            </rdfs:domain>
-          </rdf:Description>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="subjectPublicKey.algorithm"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#nonStandardExtensions -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#nonStandardExtensions">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:comment>Specifies the non-standard X509 extensions that may be specified in the certificate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Non-standard Extensions</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >X509Certificate</rdfs:label> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="certificateSignature.value"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="standardExtensions"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#standardExtensions -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#standardExtensions">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:comment>Specifies the  standard X509 V3 extensions that may be specified in the certificate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Standard Extensions</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="nonStandardExtensions"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="issuer"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="subjectPublicKey.rsaPublicKeyModulus"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="subjectPublicKey.rsaPublicKeyExponent"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="rawCertificate"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#X509Extension">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="value"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:isDefinedBy rdf:resource=""/> -->
-  <!--   <rdfs:label >X509Extension</rdfs:label> -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isCritical"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="notBeforeDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#certificateSignature.algorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#certificateSignature.algorithm">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the algorithm identifier for the algorithm used by the Certificate Authority to compute the signature.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Certificate Signature Algorithm</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="extensionName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#certificateSignature.value -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#certificateSignature.value">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a digital signature computed upon this X.509 certificate using the specified certificate signature algorithm.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Certificate Signature Value</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isDeprecated"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes a extension to an X509 Certificate</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="identifier"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="notAfterDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#extensionName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#extensionName">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the human-friendly name of the X509 Extension</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Extension Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#nonStandardExtensions">
-    <rdfs:label >Non-standard Extensions</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#identifier">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the IANA Object Identifier for the extension</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Identifier</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:comment >Specifies the non-standard X509 extensions that may be specified in the certificate.</rdfs:comment>
-    <rdfs:range rdf:resource="#X509Extension"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#standardExtensions">
-    <rdfs:label >Standard Extensions</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#isCritical -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#isCritical">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether the extension is considered critical</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>is critical</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:comment >Specifies the  standard X509 V3 extensions that may be specified in the certificate.</rdfs:comment>
-    <rdfs:range rdf:resource="#X509Extension"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#subjectPublicKey.rsaPublicKeyExponent">
-    <rdfs:comment >Specifies the exponent portion of a public key.</rdfs:comment>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#isDeprecated -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#isDeprecated">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies that use of the extension has been deprecated.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>is deprecated</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Subject Public Key RSA Key Exponent</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isDeprecated">
-    <rdfs:domain rdf:resource="#X509Extension"/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#issuer -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#issuer">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the  issuer is the Certificate Authority who issued the X.509 certificate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Issuer</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >is deprecated</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies that use of the extension has been deprecated.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#certificateSignature.value">
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#notAfterDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#notAfterDateTime">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date and time after which the extension should  not be honored when specifying a period of validity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Not After</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:comment >Specifies a digital signature computed upon this X.509 certificate using the specified certificate signature algorithm.</rdfs:comment>
-    <rdfs:label >Certificate Signature Value</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#extensionName">
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#notBeforeDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#notBeforeDateTime">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date and time as which the extension should be honored when specifying a period of validity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Not Before</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#rawCertificate -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#rawCertificate">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the raw content of an X.509 certificate as Based64 encoded DER certificate including the -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- lines.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Raw Certificate</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#serialNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#serialNumber">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a unique identifier for each X.509 certificate issued by a specific Certificate Authority.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Serial Number</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the human-friendly name of the X509 Extension</rdfs:comment>
-    <rdfs:domain rdf:resource="#X509Extension"/>
-    <rdfs:label >Extension Name</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#certificateSignature.algorithm">
-    <rdfs:comment >Specifies the algorithm identifier for the algorithm used by the Certificate Authority to compute the signature.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#signatureAlgorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#signatureAlgorithm">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the algorithm used to sign the X.509 certificate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Signature Algorithm</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Certificate Signature Algorithm</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#notAfterDateTime">
-    <rdfs:domain rdf:resource="#X509Extension"/>
-    <rdfs:comment >Specifies the date and time after which the extension should  not be honored when specifying a period of validity.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#subject -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#subject">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the entity associated with the public key stored in the subject public key field of the X.509 certificate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Subject</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Not After</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#version">
-    <rdfs:comment >Specifies the version of the encoded certificate.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.algorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.algorithm">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the algorithm with which to encrypt data being sent to the subject.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Subject Public Key Algorithm</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Version</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#rawCertificate">
-    <rdfs:comment >Specifies the raw content of an X.509 certificate as Based64 encoded DER certificate including the -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- lines.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.rsaPublicKeyExponent -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.rsaPublicKeyExponent">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the exponent portion of a public key.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Subject Public Key RSA Key Exponent</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Raw Certificate</rdfs:label>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#identifier">
-    <rdfs:domain rdf:resource="#X509Extension"/>
-    <rdfs:comment >Specifies the IANA Object Identifier for the extension</rdfs:comment>
-    <rdfs:label >Identifier</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.rsaPublicKeyModulus -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.rsaPublicKeyModulus">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the modulus portion of a public key.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Subject Public Key RSA Key Modulus</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#notBeforeDateTime">
-    <rdfs:comment >Specifies the date and time as which the extension should be honored when specifying a period of validity.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label >Not Before</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#validity.notAfterDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#validity.notAfterDateTime">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies  the date on which the certificate validity period ends.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Not Valid After</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#X509Extension"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#validity.notAfterDateTime">
-    <rdfs:comment >Specifies  the date on which the certificate validity period ends.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#validity.notBeforeDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#validity.notBeforeDateTime">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date on which the certificate validity period begins.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Not Valid Before</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Not Valid After</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="signatureAlgorithm">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#value -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#value">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Extension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the raw value of the extension</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Raw Value</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the algorithm used to sign the X.509 certificate.</rdfs:comment>
-    <rdfs:label >Signature Algorithm</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#serialNumber">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Serial Number</rdfs:label>
-    <rdfs:comment >Specifies a unique identifier for each X.509 certificate issued by a specific Certificate Authority.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#version -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/X509Certificate#version">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/X509Certificate#X509Certificate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the version of the encoded certificate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+        <rdfs:label>Version</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#validity.notBeforeDateTime">
-    <rdfs:label >Not Valid Before</rdfs:label>
-    <rdfs:comment >Specifies the date on which the certificate validity period begins.</rdfs:comment>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#value">
-    <rdfs:comment >Specifies the raw value of the extension</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Raw Value</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <rdfs:domain rdf:resource="#X509Extension"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#subjectPublicKey.algorithm">
-    <rdfs:label >Subject Public Key Algorithm</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#X509Certificate -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/X509Certificate#X509Certificate">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#nonStandardExtensions"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#standardExtensions"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#serialNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#subject"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#version"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#certificateSignature.algorithm"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#certificateSignature.value"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#issuer"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#rawCertificate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.algorithm"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.rsaPublicKeyExponent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#subjectPublicKey.rsaPublicKeyModulus"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#validity.notAfterDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#validity.notBeforeDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize X.509 certificates.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/X509Certificate"/>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:comment >Specifies the algorithm with which to encrypt data being sent to the subject.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#subject">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    <rdfs:label >Subject</rdfs:label>
-    <rdfs:comment >Specifies the entity associated with the public key stored in the subject public key field of the X.509 certificate.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#subjectPublicKey.rsaPublicKeyModulus">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Subject Public Key RSA Key Modulus</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    
-    <rdfs:comment >Specifies the modulus portion of a public key.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#issuer">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#X509Certificate"/>
-    
-    <rdfs:comment >Specifies the  issuer is the Certificate Authority who issued the X.509 certificate.</rdfs:comment>
-    <rdfs:label >Issuer</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isCritical">
-    <rdfs:comment >Specifies whether the extension is considered critical</rdfs:comment>
-    
-    <rdfs:domain rdf:resource="#X509Extension"/>
-    <rdfs:label >is critical</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/X509Certificate#X509Extension -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/X509Certificate#X509Extension">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#extensionName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#identifier"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#isCritical"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#isDeprecated"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#notAfterDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#notBeforeDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/X509Certificate#value"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a extension to an X509 Certificate</rdfs:comment>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

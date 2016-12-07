@@ -1,1083 +1,823 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:netRouteObj="http://cybox.mitre.org/objects/NetworkRoute#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/NetworkRoute">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/NetworkRoute">
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-    <rdfs:comment >This ontology provides a vocabulary and representation of an Network Route for the  Cyber Observable eXpression (CybOX).  &#xD;
+	xmlns="http://cybox.mitre.org/objects/NetworkRoute#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:netRouteObj="http://cybox.mitre.org/objects/NetworkRoute#">
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
+	<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+	<owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+	<owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+	<rdfs:label>Cyber Observable eXpression (CybOX) Network Route Ontology</rdfs:label>
+	<rdfs:comment>This ontology provides a vocabulary and representation of an Network Route for the  Cyber Observable eXpression (CybOX).  &#xD;
 &#xD;
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
 &#xD;
 The ontology is based on the CybOX Network Route and Network Route Entry object schemas maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
 &#xD;
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label >Cyber Observable eXpression (CybOX) Network Route Ontology</rdfs:label>
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="NetworkRoute"> -
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Network Route</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isPublish"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="routeAge"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isImmortal"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isIPv6"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="preferredLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="validLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:comment >Characterize a specific network route..</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isLoopback"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isAutoConfigureAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:ID="UnixNetworkRouteEntry"> -
-    <!-- CS 120216 Defined in superclass NetworkRouteEntry -->
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="gatewayAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isImmortal"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#routeAge"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="routeType"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="metric"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="NetworkRouteEntry"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="mss"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Unix Network Route Entry</rdfs:label>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="origin"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="networkInterface"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isLoopback"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="netmask"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isAutoConfigureAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#validLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="destinationAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isPublish"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="refCount"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isIPv6"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="routingProtocol"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#preferredLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes a Unix Network Route Entry</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="flags"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="window"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="use"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#NetworkRouteEntry"> -
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isImmortal"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isIPv6"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#networkInterface"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#validLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#routingProtocol"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterize generic system network routing table entries.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isPublish"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="networkInterface.name"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#routeAge"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isLoopback"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#metric"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#netmask"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#preferredLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#origin"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#gatewayAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isAutoConfigureAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#routeType"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Network Route Entry</rdfs:label>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#destinationAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="WindowsNetworkRouteEntry">
-    <!-- CS 120216 Defined in superclass NetworkRouteEntr;; Much of this was commented out when I came to thsi file-->
-  <!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#gatewayAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#netmask"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#routingProtocol"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#origin"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#metric"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="nlRouteOrigin"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isAutoConfigureAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#routeType"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf rdf:resource="#NetworkRouteEntry"/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#preferredLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Windows Network Route Entry</rdfs:label>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#destinationAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#networkInterface"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isPublish"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isLoopback"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isIPv6"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="nlRouteProtocol"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes a Windows Network Route Entry</rdfs:comment>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#routeAge"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#validLifetime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isImmortal"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:ObjectProperty rdf:ID="networkRouteEntries">
-    <rdfs:comment >Specifies a set of network route segment entries.</rdfs:comment>
-    
-    <rdfs:range rdf:resource="#NetworkRouteEntry"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:label >Network Route Entries</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#routingProtocol">
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol"/>
-    <rdfs:comment >Specifies the name of the routing protocol that the route was added with.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:label >Routing Protocol</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#networkInterface">
-    <rdfs:comment >Specifies the network interface to which all packets for the route will be sent.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:label >Network Interface</rdfs:label>
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#NetworkInterface"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#destinationAddress">
-    <rdfs:label >Destination Address</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:comment >Specifies the destination IP address of the network route.</rdfs:comment>
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#origin">
-    <rdfs:comment >Specifies the origin address of the network route.</rdfs:comment>
-    
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Origin</rdfs:label>
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#netmask">
-    <rdfs:label >Netmask</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:comment >Specifies the netmask for the destination network.</rdfs:comment>
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Netmask"/>
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Netmask"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#gatewayAddress">
-    <rdfs:label >Gateway Address</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:comment >Specifies the IP address of the gateway through which all packets using this route will be gatewayed.</rdfs:comment>
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#routeType">
-    
-    <rdfs:label >Route Type</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the type of network route being characterized.</rdfs:comment>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isImmortal">
-    <rdfs:label >Is Immortal</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies if the route is immortal.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#nlRouteOrigin">
-    
-    <rdfs:label >NL_ROUTE_ORIGIN</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsNetworkRouteEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies a network route origination point, as detailed in the NL_ROUTE_ORIGIN enumeration in the MIB_IPFORWARD_ROW2 structure. &#xD;
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Datatypes -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+<rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#duration">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Object Properties -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#destinationAddress -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#destinationAddress">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:nodeID="genid1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:unionOf rdf:nodeID="genid3"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid3">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv4Address"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid3">
+	<rdf:rest rdf:nodeID="genid2"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid2">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv6Address"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid2">
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#destinationAddress">
+	<rdfs:comment>Specifies the destination IP address of the network route.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Destination Address</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#gatewayAddress -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#gatewayAddress">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:nodeID="genid4"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid4">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:unionOf rdf:nodeID="genid6"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid6">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv4Address"/>
+	<rdf:rest rdf:nodeID="genid5"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid5">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv6Address"/>
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#gatewayAddress">
+	<rdfs:comment>Specifies the IP address of the gateway through which all packets using this route will be gatewayed.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Gateway Address</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#netmask -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#netmask">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:nodeID="genid7"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid7">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:unionOf rdf:nodeID="genid9"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid9">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv4Netmask"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Netmask">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid9">
+	<rdf:rest rdf:nodeID="genid8"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid8">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv6Netmask"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Netmask">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid8">
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#netmask">
+	<rdfs:comment>Specifies the netmask for the destination network.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Netmask</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#networkInterface -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#networkInterface">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#NetworkInterface"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/System#NetworkInterface">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#networkInterface">
+	<rdfs:comment>Specifies the network interface to which all packets for the route will be sent.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Network Interface</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#networkRouteEntries -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#networkRouteEntries">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry"/>
+	<rdfs:comment>Specifies a set of network route segment entries.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Network Route Entries</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#origin -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#origin">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:nodeID="genid10"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid10">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<owl:unionOf rdf:nodeID="genid12"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid12">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv4Address"/>
+	<rdf:rest rdf:nodeID="genid11"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid11">
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+	<rdf:first rdf:resource="http://cybox.mitre.org/objects/Address#IPv6Address"/>
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#origin">
+	<rdfs:comment>Specifies the origin address of the network route.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Origin</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#routingProtocol -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#routingProtocol">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#routingProtocol">
+	<rdfs:comment>Specifies the name of the routing protocol that the route was added with.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Routing Protocol</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Data properties -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#flags -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#flags">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	<rdfs:comment>Specifies any flags used for the network route, such as G (use gateway).</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Flags</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#isAutoConfigureAddress -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#isAutoConfigureAddress">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	<rdfs:comment>Specifies if the IP address is autoconfigured.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Is Auto-configure Address</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#isIPv6 -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#isIPv6">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	<rdfs:comment>Specifies whether or not the route uses IPv6 addresses.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Is IP V6</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#isImmortal -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#isImmortal">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	<rdfs:comment>Specifies if the route is immortal.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Is Immortal</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#isLoopback -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#isLoopback">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	<rdfs:comment>Specifies if the route is a loopback route (the gateway is on the local host).</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Is Loopback</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#isPublish -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#isPublish">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+	<rdfs:comment>Specifies if the route is published.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Is Publish</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#metric -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#metric">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+	<rdfs:comment>Specifies the distance to the target, in terms of hops.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Metric</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#mss -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#mss">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+	<rdfs:comment>Specifies the maximum segment size (MSS) for TCP connections over this network route, in bytes.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Max Segment Size (MSS)</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#networkInterface.name -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#networkInterface.name">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	<rdfs:comment>Specifies the name of the network interface to which all packets for the route will be sent.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Network Interface Name</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#nlRouteOrigin -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#nlRouteOrigin">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	<rdfs:comment>Specifies a network route origination point, as detailed in the NL_ROUTE_ORIGIN enumeration in the MIB_IPFORWARD_ROW2 structure. &#xD;
 &#xD;
 For more information, see http://msdn.microsoft.com/en-us/library/windows/desktop/aa814494(v=vs.85).aspx for the MIB_IPFORWARD</rdfs:comment>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#flags">
-    <rdfs:label >Flags</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#UnixNetworkRouteEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies any flags used for the network route, such as G (use gateway).</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#window">
-    <rdfs:label >Window</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <!-- <rdfs:domain rdf:resource="#UnixNetworkRouteEntry"/> -->
-    <rdfs:comment >Specifies the default window size for TCP connections over this network route, in bytes.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isIPv6">
-    <rdfs:comment >Specifies whether or not the route uses IPv6 addresses.</rdfs:comment>
-    
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Is IP V6</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isLoopback">
-    <rdfs:label >Is Loopback</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies if the route is a loopback route (the gateway is on the local host).</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#nlRouteProtocol">
-    
-    
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsNetworkRouteEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the routing protocol specified for the network route, as detailed in the NL_ROUTE_PROTOCOL enumeration.</rdfs:comment>
-    <rdfs:label >NL_ROUTE_PROTOCOL</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#preferredLifetime">
-    <rdfs:label >Preferred Lifetime</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:comment >Specify the preferred time, in seconds, that the IP route entry is valid. A value of 0xffffffff is considered to be infinite.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#metric">
-    <rdfs:label >Metric</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:comment >Specifies the distance to the target, in terms of hops.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#validLifetime">
-    <rdfs:label >Valid Lifetime</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:comment >Specify the maximum time, in seconds, that the IP route entry is valid. A value of 0xffffffff is considered to be infinite.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isPublish">
-    <rdfs:label >Is Publish</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies if the route is published.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#routeAge">
-    <rdfs:label >Route Age</rdfs:label>
-    
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Specifies the number of seconds since the route was added or modified in the network routing table.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#refCount">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <rdfs:label >References</rdfs:label>
-    <!-- <rdfs:domain rdf:resource="#UnixNetworkRouteEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:comment >Specifies the number of references to this network route.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#mss">
-    <rdfs:label >Max Segment Size (MSS)</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <!-- <rdfs:domain rdf:resource="#UnixNetworkRouteEntry"/> -->
-    <rdfs:comment >Specifies the maximum segment size (MSS) for TCP connections over this network route, in bytes.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#networkInterface.name">
-    <rdfs:comment >Specifies the name of the network interface to which all packets for the route will be sent.</rdfs:comment>
-    <rdfs:label >Network Interface Name</rdfs:label>
-    
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isAutoConfigureAddress">
-    <rdfs:label >Is Auto-configure Address</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#NetworkRoute"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies if the IP address is autoconfigured.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#NetworkRouteEntry"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#use">
-    <rdfs:label >Use</rdfs:label>
-    
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <!-- <rdfs:domain rdf:resource="#UnixNetworkRouteEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Specifies the number of lookups that were performed for this network route.</rdfs:comment>
-  </owl:DatatypeProperty>
-</rdf:RDF>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>NL_ROUTE_ORIGIN</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#nlRouteProtocol -->
 
-<!-- Created with TopBraid -->
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#nlRouteProtocol">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	<rdfs:comment>Specifies the routing protocol specified for the network route, as detailed in the NL_ROUTE_PROTOCOL enumeration.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>NL_ROUTE_PROTOCOL</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#preferredLifetime -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#preferredLifetime">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+	<rdfs:comment>Specify the preferred time, in seconds, that the IP route entry is valid. A value of 0xffffffff is considered to be infinite.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Preferred Lifetime</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#refCount -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#refCount">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+	<rdfs:comment>Specifies the number of references to this network route.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>References</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#routeAge -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#routeAge">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+	<rdfs:comment>Specifies the number of seconds since the route was added or modified in the network routing table.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Route Age</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#routeType -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#routeType">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	<rdfs:comment>Specifies the type of network route being characterized.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Route Type</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#use -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#use">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+	<rdfs:comment>Specifies the number of lookups that were performed for this network route.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Use</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#validLifetime -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#validLifetime">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+	<rdfs:comment>Specify the maximum time, in seconds, that the IP route entry is valid. A value of 0xffffffff is considered to be infinite.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Valid Lifetime</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#window -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#window">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+	<rdfs:comment>Specifies the default window size for TCP connections over this network route, in bytes.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Window</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Classes -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://cybox.mitre.org/cybox_core#Object -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/cybox_core#Object">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/Address#IPv4Address -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/Address#IPv4Netmask -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/Address#IPv6Address -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/Address#IPv6Netmask -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol -->
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+	<rdfs:subClassOf rdf:nodeID="genid13"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid13">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isAutoConfigureAddress"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid14"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid14">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isIPv6"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid15"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid15">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isImmortal"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid16"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid16">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isLoopback"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid17"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid17">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isPublish"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid18"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid18">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#preferredLifetime"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid19"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid19">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#routeAge"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:subClassOf rdf:nodeID="genid20"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid20">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#validLifetime"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRoute">
+	<rdfs:comment>Characterize a specific network route..</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Network Route</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+	<rdfs:subClassOf rdf:nodeID="genid21"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid21">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#destinationAddress"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid22"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid22">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#gatewayAddress"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid23"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid23">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#netmask"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid24"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid24">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#networkInterface"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid25"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid25">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#origin"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid26"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid26">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#routingProtocol"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid27"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid27">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isAutoConfigureAddress"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid28"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid28">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isIPv6"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid29"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid29">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isImmortal"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid30"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid30">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isLoopback"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid31"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid31">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#isPublish"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid32"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid32">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#metric"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid33"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid33">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#networkInterface.name"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid34"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid34">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#preferredLifetime"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid35"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid35">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#routeAge"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid36"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid36">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#routeType"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid37"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid37">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#validLifetime"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry">
+	<rdfs:comment>Characterize generic system network routing table entries.</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Network Route Entry</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry"/>
+	<rdfs:subClassOf rdf:nodeID="genid38"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid38">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#flags"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid39"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid39">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#mss"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid40"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid40">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#refCount"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid41"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid41">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#use"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid42"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid42">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#window"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#UnixNetworkRouteEntry">
+	<rdfs:comment>Characterizes a Unix Network Route Entry</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Unix Network Route Entry</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/NetworkRoute#WindowsNetworkRouteEntry -->
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#WindowsNetworkRouteEntry">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#NetworkRouteEntry"/>
+	<rdfs:subClassOf rdf:nodeID="genid43"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid43">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#nlRouteOrigin"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#WindowsNetworkRouteEntry">
+	<rdfs:subClassOf rdf:nodeID="genid44"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="genid44">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkRoute#nlRouteProtocol"/>
+	<owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://cybox.mitre.org/objects/NetworkRoute#WindowsNetworkRouteEntry">
+	<rdfs:comment>Characterizes a Windows Network Route Entry</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkRoute"/>
+	<rdfs:label>Windows Network Route Entry</rdfs:label>
+</rdf:Description>
+<!--  -->
+<!-- http://cybox.mitre.org/objects/System#NetworkInterface -->
+<!--  -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
+</rdf:RDF>

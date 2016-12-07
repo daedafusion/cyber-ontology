@@ -1,429 +1,293 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:pipeObj="http://cybox.mitre.org/objects/Pipe#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/Pipe">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Pipe">
-    <rdfs:label >Cyber Observable eXpression (CybOX) Pipe Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a Pipe for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the Cybox Pipe, Unix_Pipe, and Windows_Pipe object schemas maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/Pipe#"
+     xml:base="http://cybox.mitre.org/objects/Pipe"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:pipeObj="http://cybox.mitre.org/objects/Pipe#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Pipe">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Pipe Ontology</rdfs:label>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a Pipe for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the Cybox Pipe, Unix_Pipe, and Windows_Pipe object schemas maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
+    </owl:Ontology>
     
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="UnixPipe">
-    <!-- CS 120216 Defined in superclass Pipe & object -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="pipeName"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#handle -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Pipe#handle">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+        <rdfs:comment>Specifies the open Windows handle to the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Handle</rdfs:label>
+    </owl:ObjectProperty>
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Pipe"/>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="named"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="permissionMode"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Unix Pipe</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Characterizes a Unix Pipe</rdfs:comment>
-  </owl:Class>
-  <owl:Class rdf:about="#Pipe">
-    <!-- CS 120216 Defined in superclass object -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Pipe</rdfs:label>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#pipeName"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#named"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#defaultTimeout -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#defaultTimeout">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the default time-out value for the pipe, in milliseconds.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Default Timeout</rdfs:label>
+    </owl:DatatypeProperty>
     
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#inBufferSize -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#inBufferSize">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the number of bytes to reserve for the input buffer of the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>In Buffer Size</rdfs:label>
+    </owl:DatatypeProperty>
     
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#maxInstances -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#maxInstances">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the maximum number of instances that can be created for this pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Max Instance</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:comment >Characterize generic system pipes.</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:Class>
-  <owl:Class rdf:ID="WindowsPipe">
-    <!-- CS 120216 Defined in superclass pipe and object -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#named -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#named">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether the pipe is named.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Named</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf rdf:resource="#Pipe"/>
-    <rdfs:comment >Characterizes a Windows Pipe</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="pipeMode"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Windows Pipe</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="inBufferSize"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="defaultTimeout"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="securityAttributes"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="openMode"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="handle"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#pipeName"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#named"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="outBufferSize"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#openMode -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#openMode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the open mode used for the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Open Mode</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="maxInstances"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#outBufferSize -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#outBufferSize">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the number of bytes to reserve for the output buffer of the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Out Buffer Size</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#handle">
-    <rdfs:label >Handle</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#permissionMode -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#permissionMode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the Unix permission mode for the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Permission Mode</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:comment >Specifies the open Windows handle to the pipe.</rdfs:comment>
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#openMode">
-    <rdfs:label >Open Mode</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#pipeMode -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#pipeMode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the mode used for the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Pipe Mode</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:comment >Specifies the open mode used for the pipe.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#named">
-    <rdfs:label >Named</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#pipeName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#pipeName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the pipe, if applicable.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Pipe Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#Pipe"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies whether the pipe is named.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#pipeName">
-    <rdfs:label >Pipe Name</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#securityAttributes -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Pipe#securityAttributes">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the Windows security attributes for the pipe.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Security Attributes</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#Pipe"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the name of the pipe, if applicable.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#defaultTimeout">
-    <rdfs:label >Default Timeout</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:comment >Specifies the default time-out value for the pipe, in milliseconds.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#permissionMode">
-    <rdfs:label >Permission Mode</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#UnixPipe"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the Unix permission mode for the pipe.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#pipeMode">
-    <rdfs:label >Pipe Mode</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#Pipe -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Pipe#Pipe">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#named"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#pipeName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize generic system pipes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Pipe</rdfs:label>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:comment >Specifies the mode used for the pipe.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#maxInstances">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:comment >Specifies the maximum number of instances that can be created for this pipe.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#UnixPipe -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Pipe#UnixPipe">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Pipe#Pipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#permissionMode"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a Unix Pipe</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Unix Pipe</rdfs:label>
+    </owl:Class>
     
-    <rdfs:label >Max Instance</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#inBufferSize">
-    <rdfs:label >In Buffer Size</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Pipe#WindowsPipe -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Pipe#WindowsPipe">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Pipe#Pipe"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#handle"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#defaultTimeout"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#inBufferSize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#maxInstances"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#openMode"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#outBufferSize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#pipeMode"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Pipe#securityAttributes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a Windows Pipe</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Pipe"/>
+        <rdfs:label>Windows Pipe</rdfs:label>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:comment >Specifies the number of bytes to reserve for the input buffer of the pipe.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#outBufferSize">
-    <rdfs:label >Out Buffer Size</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:comment >Specifies the number of bytes to reserve for the output buffer of the pipe.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#securityAttributes">
-    <rdfs:label >Security Attributes</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#WindowsPipe"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the Windows security attributes for the pipe.</rdfs:comment>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

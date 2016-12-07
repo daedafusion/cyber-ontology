@@ -1,170 +1,174 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:winMailslotObj="http://cybox.mitre.org/objects/WindowsMailslot#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/WindowsMailslot">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsMailslot">
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    
-    <rdfs:label >Cyber Observable eXpression (CybOX) Windows Mailslot Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a Windows Mailslot for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the CybOX Windows Mailslot object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/WindowsMailslot#"
+     xml:base="http://cybox.mitre.org/objects/WindowsMailslot"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:winMailslotObj="http://cybox.mitre.org/objects/WindowsMailslot#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsMailslot">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Windows Mailslot Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a Windows Mailslot for the  Cyber Observable eXpression (CybOX).  
+
+CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows Mailslot object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-  </owl:Ontology>
-  <owl:Class rdf:ID="WindowsMailslot">
+    </owl:Ontology>
     
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="securityAttributes"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="maxMessageSize"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Windows Mailslot</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsMailslot#handle -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsMailslot#handle">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot"/>
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+        <rdfs:comment>Specifies the open Windows handle to the mailslot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot"/>
+        <rdfs:label>Handle</rdfs:label>
+    </owl:ObjectProperty>
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Characterize Windows mailslot objects.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="handle"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="mailslotName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="readTimeout"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#handle">
-    <rdfs:comment >Specifies the open Windows handle to the mailslot.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsMailslot"/>
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:label >Handle</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#readTimeout">
-    <rdfs:comment >Specifies the amount of time, in milliseconds, a read operation can wait for a message to be written to the mailslot before a time-out occurs.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsMailslot"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsMailslot#mailslotName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsMailslot#mailslotName">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the mailslot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot"/>
+        <rdfs:label>Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Read Timeout</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#securityAttributes">
-    <rdfs:comment >Specifies the Windows security attributes for the mailslot.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsMailslot"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsMailslot#maxMessageSize -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsMailslot#maxMessageSize">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the maximum message size for the mailslot, in bytes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot"/>
+        <rdfs:label>Max Message Size</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Security Attributes</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#mailslotName">
-    <rdfs:comment >Specifies the name of the mailslot.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsMailslot"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsMailslot#readTimeout -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsMailslot#readTimeout">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the amount of time, in milliseconds, a read operation can wait for a message to be written to the mailslot before a time-out occurs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot"/>
+        <rdfs:label>Read Timeout</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Name</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#maxMessageSize">
-    <rdfs:comment >Specifies the maximum message size for the mailslot, in bytes.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsMailslot"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsMailslot#securityAttributes -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsMailslot#securityAttributes">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the Windows security attributes for the mailslot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot"/>
+        <rdfs:label>Security Attributes</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Max Message Size</rdfs:label>
-  </owl:DatatypeProperty>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
+    
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+    
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/WindowsMailslot#WindowsMailslot">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#handle"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#mailslotName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#maxMessageSize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#readTimeout"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot#securityAttributes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize Windows mailslot objects.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsMailslot"/>
+        <rdfs:label>Windows Mailslot</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

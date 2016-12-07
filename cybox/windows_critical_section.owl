@@ -1,118 +1,95 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:winCriticalSectionObj="http://cybox.mitre.org/objects/WindowsCriticalSection#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/WindowsCriticalSection">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection">
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    
-    <rdfs:label >Cyber Observable eXpression (CybOX) Windows Critical Section Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a Windows Critical Section for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the CybOX Windows Critical Section object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/WindowsCriticalSection#"
+     xml:base="http://cybox.mitre.org/objects/WindowsCriticalSection"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:winCriticalSectionObj="http://cybox.mitre.org/objects/WindowsCriticalSection#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a Windows Critical Section for the  Cyber Observable eXpression (CybOX).  
+
+CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows Critical Section object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-  </owl:Ontology>
-  <owl:Class rdf:ID="WindowsCriticalSection">
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+        <rdfs:label>Cyber Observable eXpression (CybOX) Windows Critical Section Ontology</rdfs:label>
+    </owl:Ontology>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="spinCount"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="address"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Windows Critical Section</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes a Windows Critical Section</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsCriticalSection#address -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection#address">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection#WindowsCriticalSection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the address of the code that crated the critical section object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
+        <rdfs:label>Address</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:Class>
-  <owl:DatatypeProperty rdf:about="#address">
-    <rdfs:comment >Specifies the address of the code that crated the critical section object.</rdfs:comment>
-    <rdfs:label >Address</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsCriticalSection"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsCriticalSection#spinCount -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection#spinCount">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection#WindowsCriticalSection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the spin count value for the critical section object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
+        <rdfs:label>Spin Count</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#spinCount">
-    <rdfs:label >Spin Count</rdfs:label>
-    <rdfs:domain rdf:resource="#WindowsCriticalSection"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:comment >Specifies the spin count value for the critical section object.</rdfs:comment>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsCriticalSection#WindowsCriticalSection -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection#WindowsCriticalSection">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection#address"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection#spinCount"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a Windows Critical Section</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
+        <rdfs:label>Windows Critical Section</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

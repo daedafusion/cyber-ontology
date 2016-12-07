@@ -1,681 +1,375 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:volumeObj="http://cybox.mitre.org/objects/Volume#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/Volume">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Volume">
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    
-    <rdfs:label >Cyber Observable eXpression (CybOX) Volume Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a Volume for the  Cyber Observable eXpression (CybOX).  
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/Volume#"
+     xml:base="http://cybox.mitre.org/objects/Volume"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:volumeObj="http://cybox.mitre.org/objects/Volume#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Volume">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Volume Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a Volume for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox Volume object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-  </owl:Ontology>
-  <owl:Class rdf:ID="WindowsVolume">
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isMounted"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="devicePath"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="actualAvailableAllocationUnits"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="creationDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Volume"/>
-    </rdfs:subClassOf>
+    </owl:Ontology>
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="volumeName"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="fileSystemType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#actualAvailableAllocationUnits -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#actualAvailableAllocationUnits">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+        <rdfs:comment>Specifies the number of allocation units, or clusters, available on the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Actual Available Allocation Units</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="driveLetter"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="serialNumber"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="bytesPerSector"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="sectorsPerAllocationUnit"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="totalAllocationUnits"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >4</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="volumeAttributes"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="fileSystemFlags"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="driveType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterize Windows disk volumes.</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Windows Volume</rdfs:label>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:ID="UnixVolume">
-<!-- CS 120516 defined in superclass volume -->
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#actualAvailableAllocationUnits"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Unix Volume</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="mountPoint"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#bytesPerSector -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#bytesPerSector">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment>Specifies the number of bytes allocated for each sector of the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Bytes per Sector</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#bytesPerSector"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Volume"/>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#devicePath"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#creationDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#creationDateTime">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date/time that the volume was created.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Creation Time</rdfs:label>
+    </owl:DatatypeProperty>
     
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#devicePath -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#devicePath">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the full path to the volume, including the device on which it resides.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Device Path</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#creationDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#volumeName"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterize Unix disk volumes.</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#fileSystemFlags"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="options"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#totalAllocationUnits"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isMounted"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#fileSystemType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#sectorsPerAllocationUnit"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#serialNumber"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:about="#Volume">
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#actualAvailableAllocationUnits"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#driveLetter -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#driveLetter">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#WindowsVolume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the drive letter of this windows volume object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Drive Letter</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#fileSystemType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#driveType -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#driveType">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#WindowsVolume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the drive type of this windows volume object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Drive Type</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#volumeName"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#totalAllocationUnits"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#devicePath"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#sectorsPerAllocationUnit"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#bytesPerSector"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >20</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#fileSystemFlags"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#fileSystemFlags -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#fileSystemFlags">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the particular flags set for the volume by the file system which is used on the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>File System Flags</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isMounted"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#serialNumber"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#creationDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Volume</rdfs:label>
-    <rdfs:comment >Characterize generic drive volumes.</rdfs:comment>
-  </owl:Class>
-  <owl:DatatypeProperty rdf:about="#volumeAttributes">
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#fileSystemType -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#fileSystemType">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the file system which is used on the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>File System Type</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the attributes of this windows volume object.</rdfs:comment>
-    <rdfs:domain rdf:resource="#WindowsVolume"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#isMounted -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#isMounted">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether the volume is mounted.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Is Mounted</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#mountPoint -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#mountPoint">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#UnixVolume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the specific mounting point for the Unix volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Mount Point</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Volume Attributes</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#sectorsPerAllocationUnit">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <rdfs:label >Sectors per Allocation Unit</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#options -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#options">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#UnixVolume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies any options used when mounting the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Options</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the number of disk sectors used for each allocation unit on the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isMounted">
-    <rdfs:label >Is Mounted</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#sectorsPerAllocationUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#sectorsPerAllocationUnit">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment>Specifies the number of disk sectors used for each allocation unit on the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Sectors per Allocation Unit</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies whether the volume is mounted.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#fileSystemType">
-    <rdfs:label >File System Type</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#serialNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#serialNumber">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the serial number of the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Serial Number</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the name of the file system which is used on the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#volumeName">
-    <rdfs:label >Volume Name</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#totalAllocationUnits -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#totalAllocationUnits">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
+        <rdfs:comment>Specifies the total number of allocation units available on the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Total Allocation Units</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the name of the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#driveLetter">
-    <rdfs:label >Drive Letter</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsVolume"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#volumeAttributes -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#volumeAttributes">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#WindowsVolume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the attributes of this windows volume object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Volume Attributes</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the drive letter of this windows volume object.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#totalAllocationUnits">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <rdfs:label >Total Allocation Units</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#volumeName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#volumeName">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the volume.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Volume Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the total number of allocation units available on the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#options">
-    <rdfs:label >Options</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#UnixVolume"/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:comment >Specifies any options used when mounting the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#actualAvailableAllocationUnits">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Specifies the number of allocation units, or clusters, available on the volume.</rdfs:comment>
-    <rdfs:domain rdf:resource="#Volume"/>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <rdfs:label >Actual Available Allocation Units</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#driveType">
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#UnixVolume -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Volume#UnixVolume">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#mountPoint"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#options"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize Unix disk volumes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Unix Volume</rdfs:label>
+    </owl:Class>
     
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#Volume -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Volume#Volume">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#volumeName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#actualAvailableAllocationUnits"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#bytesPerSector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#creationDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#devicePath"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#fileSystemFlags"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#fileSystemType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#isMounted"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#sectorsPerAllocationUnit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#serialNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#totalAllocationUnits"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize generic drive volumes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+        <rdfs:label>Volume</rdfs:label>
+    </owl:Class>
     
-    <rdfs:label >Drive Type</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsVolume"/>
-    
-    <rdfs:comment >Specifies the drive type of this windows volume object.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#mountPoint">
-    <rdfs:label >Mount Point</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#UnixVolume"/>
-    
-    <rdfs:comment >Specifies the specific mounting point for the Unix volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#fileSystemFlags">
-    
-    
-    <rdfs:label >File System Flags</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
-    
-    <rdfs:comment >Specifies the particular flags set for the volume by the file system which is used on the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#devicePath">
-    <rdfs:label >Device Path</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
-    
-    <rdfs:comment >Specifies the full path to the volume, including the device on which it resides.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#bytesPerSector">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-    <rdfs:label >Bytes per Sector</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
-    
-    <rdfs:comment >Specifies the number of bytes allocated for each sector of the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#creationDateTime">
-    <rdfs:comment >Specifies the date/time that the volume was created.</rdfs:comment>
-    
-    <rdfs:domain rdf:resource="#Volume"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label >Creation Time</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#serialNumber">
-    <rdfs:label >Serial Number</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Volume"/>
-    
-    <rdfs:comment >Specifies the serial number of the volume.</rdfs:comment>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/Volume#WindowsVolume -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Volume#WindowsVolume">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#driveLetter"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#driveType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#volumeAttributes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize Windows disk volumes.</rdfs:comment>
+        <rdfs:label>Windows Volume</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

@@ -1,399 +1,291 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/Thread">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Thread">
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
-    
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a Thread for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the Cybox Windows Thread object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/Thread#"
+     xml:base="http://cybox.mitre.org/objects/Thread"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:threadObj="http://cybox.mitre.org/objects/Thread#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Thread">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Thr3ad Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a Thread for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the Cybox Windows Thread object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label >Cyber Observable eXpression (CybOX) Thr3ad Ontology</rdfs:label>
-  </owl:Ontology>
-  <owl:Class rdf:ID="Thread">
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="creationDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="priority"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="stackSize"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="parameterAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+    </owl:Ontology>
     
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="threadID"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:label >Thread</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="runningStatus"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#handle -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Thread#handle">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+        <rdfs:comment>Specifies the handle of a specific thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms682453(v=vs.85).aspx.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Handle</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:comment >Characterize a generic process threads</rdfs:comment>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="startAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:ID="WindowsThread">
-    <rdfs:comment >Characterizes Windows process threads. &#xD;
-&#xD;
-See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.85).aspx.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="handle"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf rdf:resource="#Thread"/>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#startAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="context"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#parameterAddress"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#creationDateTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Windows thread</rdfs:label>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#threadID"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#stackSize"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#context -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#context">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the thread context structure, which contains processor-specific register data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Context</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="creationFlags"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#runningStatus"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="securityAttributes"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#priority"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#creationDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#creationDateTime">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the creation time of the thread.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Creation Time</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#handle">
-    <rdfs:label >Handle</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#creationFlags -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#creationFlags">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the creation flags that a thread may be launched with. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Creation Flags</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
-    <rdfs:domain rdf:resource="#WindowsThread"/>
-    <rdfs:comment >Specifies the handle of a specific thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms682453(v=vs.85).aspx.</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#context">
-    <rdfs:label >Context</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#parameterAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#parameterAddress">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the address of the parameters passed to the start address.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Parameter Address</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#WindowsThread"/>
-    <rdfs:comment >Specifies the thread context structure, which contains processor-specific register data.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#threadID">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#priority -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#priority">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment>Specifies the priority of the thread.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Priority</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Thread ID</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Thread"/>
-    <rdfs:comment >Specifies the identifier of this thread.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#runningStatus">
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#runningStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#runningStatus">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the running state that the thread is in.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Running Status</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#Thread"/>
-    <rdfs:label >Running Status</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#securityAttributes -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#securityAttributes">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the security attributes for the thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa379560(v=vs.85).aspx.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Security Attributes</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Specifies the running state that the thread is in.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#startAddress">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Thread"/>
-    <rdfs:label >Start Address</rdfs:label>
-    <rdfs:comment >Specifies the start address of this thread, representing the memory address where this thread should start.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#parameterAddress">
-    <rdfs:label >Parameter Address</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Thread"/>
-    <rdfs:comment >Specifies the address of the parameters passed to the start address.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#stackSize">
-    <rdfs:label >Stack Size</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Thread"/>
-    <rdfs:comment >Specifies  the stack size of the thread. &#xD;
-&#xD;
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#stackSize -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#stackSize">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies  the stack size of the thread. 
+
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.85).aspx.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#creationDateTime">
-    <rdfs:label >Creation Time</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Thread"/>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Stack Size</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the creation time of the thread.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#priority">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#startAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#startAddress">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the start address of this thread, representing the memory address where this thread should start.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Start Address</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Priority</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Thread"/>
-    <rdfs:comment >Specifies the priority of the thread.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#securityAttributes">
-    <rdfs:label >Security Attributes</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#threadID -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#threadID">
+        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Specifies the identifier of this thread.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Thread ID</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsThread"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the security attributes for the thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa379560(v=vs.85).aspx.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#creationFlags">
-    <rdfs:label >Creation Flags</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#WindowsThread"/>
-    <rdfs:comment >Specifies the creation flags that a thread may be launched with. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
+    
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#Thread -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Thread#Thread">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#threadID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#parameterAddress"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#priority"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#runningStatus"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#stackSize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#startAddress"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize a generic process threads</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Thread</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://cybox.mitre.org/objects/Thread#WindowsThread -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Thread#WindowsThread">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#handle"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#context"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#creationFlags"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#securityAttributes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes Windows process threads. 
+
+See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.85).aspx.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+        <rdfs:label>Windows thread</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

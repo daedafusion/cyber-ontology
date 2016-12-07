@@ -1,212 +1,236 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:smsMsgObj="http://cybox.mitre.org/objects/SMSMessage#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/SMSMessage">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/SMSMessage">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a SMS Message for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
-The ontology is based on the CybOX SMS Message object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/SMSMessage#"
+     xml:base="http://cybox.mitre.org/objects/SMSMessage"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:smsMsgObj="http://cybox.mitre.org/objects/SMSMessage#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/SMSMessage">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <rdfs:label>Cyber Observable eXpression (CybOX) SMS Message Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a SMS Message for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX SMS Message object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label >Cyber Observable eXpression (CybOX) SMS Message Ontology</rdfs:label>
+    </owl:Ontology>
     
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="SMSMessage">
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="messageBody"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="messageLength"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="userDataHeader"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="messageSentDateTime"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="bitsPerCharacter"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="senderPhoneNumber"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#bitsPerCharacter -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#bitsPerCharacter">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment>Specifies the number of bits used to express each character in the SMS message.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Bits per Character</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Characterize Short Message Service (SMS) messages.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:label >SMS Message</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isPremium"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="messageEncoding"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="recipientPhoneNumber"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="messageSize"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#isPremium -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#isPremium">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether the SMS message is a premium (i.e. fee-collecting) message.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Is Premium</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:DatatypeProperty rdf:about="#bitsPerCharacter">
-    <rdfs:label >Bits per Character</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#messageBody -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#messageBody">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the body of the SMS message.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Message Body</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:comment >Specifies the number of bits used to express each character in the SMS message.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#senderPhoneNumber">
-    <rdfs:label >Sender Phone Number</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#messageEncoding -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#messageEncoding">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the character encoding (sometimes referred to as the Alphabet) used in the SMS message.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Message Encoding</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the phone number of the sender of the SMS message.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#recipientPhoneNumber">
-    <rdfs:label >Recipient Phone Number</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#messageLength -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#messageLength">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the length of the SMS message, in characters.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Message Length</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the phone number of the recipient of the SMS message.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#messageSentDateTime">
-    <rdfs:label >Message Sent</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#messageSentDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#messageSentDateTime">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date/time at which the SMS message was sent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Message Sent</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the date/time at which the SMS message was sent.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#messageLength">
-    <rdfs:label >Message Length</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#messageSize -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#messageSize">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the size of the SMS message, in bytes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Message Size</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:comment >Specifies the length of the SMS message, in characters.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#messageEncoding">
-    <rdfs:label >Message Encoding</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#recipientPhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#recipientPhoneNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the phone number of the recipient of the SMS message.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Recipient Phone Number</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the name of the character encoding (sometimes referred to as the Alphabet) used in the SMS message.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#messageBody">
-    <rdfs:comment >Specifies the body of the SMS message.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#senderPhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#senderPhoneNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the phone number of the sender of the SMS message.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>Sender Phone Number</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Message Body</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#messageSize">
-    <rdfs:label >Message Size</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#userDataHeader -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/SMSMessage#userDataHeader">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the user data header included at the start of the SMS message, as a hexadecimal string.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>User Data Header</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:comment >Specifies the size of the SMS message, in bytes.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isPremium">
-    <rdfs:label >Is Premium</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:comment >Specifies whether the SMS message is a premium (i.e. fee-collecting) message.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#userDataHeader">
-    <rdfs:label >User Data Header</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <!-- <rdfs:domain rdf:resource="#SMSMessage"/> -->
-    <rdfs:comment >Specifies the user data header included at the start of the SMS message, as a hexadecimal string.</rdfs:comment>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/SMSMessage#SMSMessage -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/SMSMessage#SMSMessage">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#messageSentDateTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#senderPhoneNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#bitsPerCharacter"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#isPremium"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#messageBody"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#messageEncoding"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#messageLength"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#messageSize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#recipientPhoneNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/SMSMessage#userDataHeader"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize Short Message Service (SMS) messages.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/SMSMessage"/>
+        <rdfs:label>SMS Message</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

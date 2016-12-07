@@ -1,122 +1,251 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:report="http://stix.mitre.org/Report#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+<rdf:RDF xmlns="http://stix.mitre.org/Report#"
+     xml:base="http://stix.mitre.org/Report"
+     xmlns:stixCommon="http://stix.mitre.org/stixCommon#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:report="http://stix.mitre.org/Report#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Data_Marking="http://data-marking.mitre.org/Data_Marking#">
+    <owl:Ontology rdf:about="http://stix.mitre.org/Report">
+        <owl:versionIRI rdf:resource="http://stix.mitre.org/Report/1.2"/>
+        <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+        <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
+        <rdfs:label>STIX Report Ontology</rdfs:label>
+        <rdfs:comment>This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Report.  The Report ontology provides a characterization of the context to a given grouping of STIX content.</rdfs:comment>
+    </owl:Ontology>
     
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://stix.mitre.org/Report">
-  <owl:Ontology rdf:about="http://stix.mitre.org/Report">
-    <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
-    <rdfs:label >STIX Report Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Report.  The Report ontology provides a characterization of the context to a given grouping of STIX content.</rdfs:comment>
-    <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    <owl:versionIRI rdf:resource="http://stix.mitre.org/Report/1.2"/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >1.2.0-000</owl:versionInfo>
-  </owl:Ontology>
-  <owl:Class rdf:ID="Report">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#informationSource">
-            <rdfs:domain rdf:resource="#Report"/>
-          </rdf:Description>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!-- CS 120116 Defined in superclass ReportBase -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#timestamp"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#ReportBase"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Characterizes a contextual wrapper for a given group of STIX content.</rdfs:comment>
-    <rdfs:label >Report</rdfs:label>
-<!-- CS 120116 Defined in superclass ReportBase -->
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
-            <rdfs:domain rdf:resource="#Report"/>
-          </rdf:Description>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:ObjectProperty rdf:ID="relatedReports">
-    <rdfs:comment >Specifies a reference to one or more related Reports</rdfs:comment>
-    <rdfs:label >Related Reports</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ReportBase"/>
+
+
+    <!-- http://data-marking.mitre.org/Data_Marking#handling -->
+
+    <owl:AnnotationProperty rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
     
-    <rdfs:domain rdf:resource="#Report"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:ID="reportIntent">
-    <rdfs:comment >Specifies the intended purpose(s) or use(s) of this report. 
+
+
+    <!-- http://stix.mitre.org/stixCommon#TTPs -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#TTPs">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#campaigns -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#campaigns">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#coursesOfAction -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#coursesOfAction">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#description -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#description">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#exploitTargets -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#exploitTargets">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#incidents -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#incidents">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#indicators -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#indicators">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#informationSource -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#informationSource">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#observables -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#observables">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#shortDescription -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#threatActors -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#threatActors">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#title -->
+
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#title">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#cardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#cardinality"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#maxCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#maxCardinality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://stix.mitre.org/Report#relatedReports -->
+
+    <owl:ObjectProperty rdf:about="http://stix.mitre.org/Report#relatedReports">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ReportBase"/>
+        <rdfs:comment>Specifies a reference to one or more related Reports</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Report"/>
+        <rdfs:label>Related Reports</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://stix.mitre.org/Report#reportIntent -->
+
+    <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Report#reportIntent">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Report#Report"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the intended purpose(s) or use(s) of this report. 
 
 Examples of report intent include Threat Report, Indicators, PBX, and Campaign Characterization (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
 
 By default, the Report Intent Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Report"/>
+        <rdfs:label>Intent</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Intent</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#Report"/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
+
+
+    <!-- http://org.semanticweb.owlapi/error#Error1 -->
+
+    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
     
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#threatActors">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#incidents">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#observables">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#indicators">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#campaigns">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#TTPs">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#coursesOfAction">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#exploitTargets">
-    <rdfs:domain rdf:resource="#Report"/>
-  </rdf:Description>
+
+
+    <!-- http://org.semanticweb.owlapi/error#Error2 -->
+
+    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error2"/>
+    
+
+
+    <!-- http://stix.mitre.org/Report#Report -->
+
+    <owl:Class rdf:about="http://stix.mitre.org/Report#Report">
+        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
+        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error2"/>
+        <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#ReportBase"/>
+        <rdfs:comment>Characterizes a contextual wrapper for a given group of STIX content.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Report"/>
+        <rdfs:label>Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#ReportBase -->
+
+    <owl:Class rdf:about="http://stix.mitre.org/stixCommon#ReportBase"/>
+    <rdf:Description>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    </rdf:Description>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

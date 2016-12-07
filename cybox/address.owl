@@ -1,1022 +1,257 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:addressObj="http://cybox.mitre.org/objects/Address#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/Address">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Address">
-    <rdfs:label >Cyber Observable eXpression (CybOX) Address Ontology</rdfs:label>
-    <rdfs:comment >This ontology provides a vocabulary and representation of an Address for the  Cyber Observable eXpression (CybOX).  
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/Address#"
+     xml:base="http://cybox.mitre.org/objects/Address"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:addressObj="http://cybox.mitre.org/objects/Address#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Address">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of an Address for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox Address object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Address Ontology</rdfs:label>
+    </owl:Ontology>
     
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="IPv4Netmask">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="Address"/>
-    </rdfs:subClassOf>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:label >IPv4Netmask</rdfs:label>
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="addressValue"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isSpoofed"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="vlanNum"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:comment >Characterizes an IP v4 Netmask</rdfs:comment>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isSource"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="addressCategory"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >ipv4-net-mask</owl:hasValue>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isDestination"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
--->    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="vlanName"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-  </owl:Class>
-  <owl:Class rdf:ID="MACAddress">
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->	
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Address"/>
-    </rdfs:subClassOf>
-   <!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanNum"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes a Media Access Control (MAC) Address</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >mac</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isDestination"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSource"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
+
+
+    <!-- http://cybox.mitre.org/objects/Address#addressCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#addressCategory">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the address category that is being defined.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Category</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >MACAddress</rdfs:label>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSpoofed"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass address  -->
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressValue"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-  </owl:Class>
-  <owl:Class rdf:ID="EmailAddress">
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >e-mail</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isDestination"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Email address</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSpoofed"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass object  -->   
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressValue"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Address#addressValue -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#addressValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the actual value of the address.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Address Value</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Address"/>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSource"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes an electronic mail (e-mail) address</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanNum"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-  </owl:Class>
-  <owl:Class rdf:ID="IPv4Address">
-<!-- CS 120216 Defined in superclass address  -->	
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanNum"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Address#isDestination -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#isDestination">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies if this is a &quot;Destination&quot; address.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Is Destination</rdfs:label>
+    </owl:DatatypeProperty>
     
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Address"/>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSource"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:label >IPAddress</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#isSource -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#isSource">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies if this is a &quot;Source&quot; address.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Is Source</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressValue"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >ipv4-addr</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSpoofed"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes an IP V4 Address</rdfs:comment>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isDestination"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:ID="IPv6Netmask">
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressValue"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Address#isSpoofed -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#isSpoofed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether the address is spoofed, i.e. forged to conceal its identity or true source.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Is Spoofed</rdfs:label>
+    </owl:DatatypeProperty>
     
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
--->    <rdfs:comment >Characterizes an IP v6 Network Mask</rdfs:comment>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isDestination"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanName"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Address"/>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass address  -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanNum"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSource"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >ipv6-net-mask</owl:hasValue>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >IP v6 Net Mask</rdfs:label>
-	<!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSpoofed"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:ID="IPv6Address">
-    <rdfs:label >IPV6Address</rdfs:label>
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass address  -->	
-	<!--  <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressValue"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass address  -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >ipv6-addr</owl:hasValue>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#Address"/>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass address  -->    
-	<!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanNum"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isDestination"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:comment >Characterizes an IP V6 Address</rdfs:comment>
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSpoofed"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!-- CS 120216 Defined in superclass address  -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSource"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <!-- <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:Class>
-  <owl:Class rdf:about="#Address">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressCategory"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressValue"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:label >Address</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#vlanName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#vlanName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the Virtual LAN to which the address belongs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>VLAN Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanNum"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vlanName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Characterizes cyber addresses.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSource"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isSpoofed"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-<!-- CS 120216 Defined in superclass object  -->
-	<!--    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>-->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#isDestination"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#vlanNum -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#vlanNum">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the number of the Virtual LAN to which the address belongs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>VLAN Number</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:DatatypeProperty rdf:about="#vlanNum">
-    <rdfs:comment >Specifies the number of the Virtual LAN to which the address belongs.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:label >VLAN Number</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#vlanName">
-    <rdfs:comment >Specifies the name of the Virtual LAN to which the address belongs.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:label >VLAN Name</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#addressValue">
-    <rdfs:comment >Specifies the actual value of the address.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:label >Address Value</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#Address -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#Address">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#addressCategory"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#addressValue"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#isDestination"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#isSource"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#isSpoofed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#vlanName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#vlanNum"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes cyber addresses.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Address</rdfs:label>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isDestination">
-    <rdfs:label >Is Destination</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:comment >Specifies if this is a "Destination" address.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#EmailAddress -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#EmailAddress">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
+        <rdfs:comment>Characterizes an electronic mail (e-mail) address</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>Email address</rdfs:label>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#addressCategory">
+
+
+    <!-- http://cybox.mitre.org/objects/Address#IPv4Address -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
+        <rdfs:comment>Characterizes an IP V4 Address</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>IPAddress</rdfs:label>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#IPv4Netmask -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv4Netmask">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#vlanName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an IP v4 Netmask</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>IPv4Netmask</rdfs:label>
+    </owl:Class>
     
-    <rdfs:label >Category</rdfs:label>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:comment >Specifies the address category that is being defined.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#IPv6Address -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
+        <rdfs:comment>Characterizes an IP V6 Address</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>IPV6Address</rdfs:label>
+    </owl:Class>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isSource">
-    <rdfs:label >Is Source</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:comment >Specifies if this is a "Source" address.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#IPv6Netmask -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv6Netmask">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
+        <rdfs:comment>Characterizes an IP v6 Network Mask</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>IP v6 Net Mask</rdfs:label>
+    </owl:Class>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isSpoofed">
-    <rdfs:comment >Specifies whether the address is spoofed, i.e. forged to conceal its identity or true source.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <!-- <rdfs:domain rdf:resource="#Address"/> -->
-    <rdfs:label >Is Spoofed</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/objects/Address#MACAddress -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#MACAddress">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
+        <rdfs:comment>Characterizes a Media Access Control (MAC) Address</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <rdfs:label>MACAddress</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

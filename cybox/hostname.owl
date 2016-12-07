@@ -1,124 +1,109 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:hostnameObj="http://cybox.mitre.org/objects/Hostname#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/Hostname">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Hostname">
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-    <rdfs:label >Cyber Observable eXpression (CybOX) Hostname Ontology</rdfs:label>
-    
-    <rdfs:comment >This ontology provides a vocabulary and representation of a Hostname for the  Cyber Observable eXpression (CybOX).  &#xD;
-&#xD;
-CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.&#xD;
-&#xD;
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/Hostname#"
+     xml:base="http://cybox.mitre.org/objects/Hostname"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:hostnameObj="http://cybox.mitre.org/objects/Hostname#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Hostname">
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <rdfs:label>Cyber Observable eXpression (CybOX) Hostname Ontology</rdfs:label>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a Hostname for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >1.0.0-000</owl:versionInfo>
-  </owl:Ontology>
-  <owl:Class rdf:ID="Hostname">
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:label >Hostname</rdfs:label>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="isDomainName"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-000</owl:versionInfo>
+    </owl:Ontology>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterizes a particular network hostname.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="hostname"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
+
+
+    <!-- http://cybox.mitre.org/objects/Hostname#hostname -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Hostname#hostname">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the actual value of the Hostname.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Hostname"/>
+        <rdfs:label>Hostname</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:DatatypeProperty rdf:about="#hostname">
+
+
+    <!-- http://cybox.mitre.org/objects/Hostname#isDomainName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Hostname#isDomainName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies if this is also a valid domain name.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Hostname"/>
+        <rdfs:label>Is Also Domain Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Hostname</rdfs:label>
-    <rdfs:comment >Specifies the actual value of the Hostname.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#Hostname"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="namingSystem">
+
+
+    <!-- http://cybox.mitre.org/objects/Hostname#namingSystem -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Hostname#namingSystem">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a relevant Naming System for the Hostname (e.g. DNS, NIS, NetBIOS).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Hostname"/>
+        <rdfs:label>Naming System</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies a relevant Naming System for the Hostname (e.g. DNS, NIS, NetBIOS).</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#Hostname"/> -->
-    <rdfs:label >Naming System</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#isDomainName">
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#Hostname"/> -->
-    <rdfs:comment >Specifies if this is also a valid domain name.</rdfs:comment>
-    <rdfs:label >Is Also Domain Name</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
+    
+
+
+    <!-- http://cybox.mitre.org/objects/Hostname#Hostname -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Hostname#Hostname">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Hostname#hostname"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Hostname#isDomainName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a particular network hostname.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Hostname"/>
+        <rdfs:label>Hostname</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

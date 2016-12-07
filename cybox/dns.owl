@@ -1,694 +1,618 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:dnsObj="http://cybox.mitre.org/objects/DNS#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://cybox.mitre.org/objects/DNS">
-  <owl:Ontology rdf:about="http://cybox.mitre.org/objects/DNS">
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Domain_Name"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
-    <owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
-    <rdfs:comment >This ontology provides a vocabulary and representation of a DNS Query for the  Cyber Observable eXpression (CybOX).  
+<rdf:RDF xmlns="http://cybox.mitre.org/objects/DNS#"
+     xml:base="http://cybox.mitre.org/objects/DNS"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dnsObj="http://cybox.mitre.org/objects/DNS#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/DNS">
+        <owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/objects/Domain_Name"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+        <owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation of a DNS Query for the  Cyber Observable eXpression (CybOX).  
 
 CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the CybOX DNS Query object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.1.0-000</owl:versionInfo>
-    <rdfs:label >Cyber Observable eXpression (CybOX) DNS Query Ontology</rdfs:label>
+        <rdfs:label>Cyber Observable eXpression (CybOX) DNS Query Ontology</rdfs:label>
+    </owl:Ontology>
     
-    <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-  </owl:Ontology>
-  <owl:Class rdf:ID="DNSCacheEntry">
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="flags"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="queriedDateTime"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="recordName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="entryType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="ttl"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#ttl"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="cacheEntryTTL"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="recordDataLength"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >DNSCache Entry</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="addressClass"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="recordType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="ipAddress"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="domainName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="recordData"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anySimpleType -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
     
-    <rdfs:comment >Characterize a single entry in a system's DNS cache.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="description"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="DNSQuery">
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="transactionId"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#additonRecords -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#additonRecords">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/DNS#DNSRecord"/>
+        <rdfs:comment>Specifies any Additional resource records that were returned for the DNS query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Addition Records</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:label >DNS Query</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="successful"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#answerResourceRecords -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#answerResourceRecords">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/DNS#DNSRecord"/>
+        <rdfs:comment>Specifies any Answers resource records that were returned for the DNS query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Answer Resource Records</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:comment >Characterize a single DNS query and its components.</rdfs:comment>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="serviceUsed"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="DNSCache">
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#authorityResourceRecords -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#authorityResourceRecords">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/DNS#DNSRecord"/>
+        <rdfs:comment>Specifies any Authority resource records that were returned for the DNS query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Authority Resource Records</rdfs:label>
+    </owl:ObjectProperty>
     
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#description -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#description">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
-    <rdfs:comment >Characterize entries in a system's DNS cache.</rdfs:comment>
-    <rdfs:label >DNSCache</rdfs:label>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-  </owl:Class>
-  <owl:Class rdf:ID="DNSRecord">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#recordName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#definedEffect"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:comment >Characterize an individual DNS record.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#dnsCacheEntries -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#dnsCacheEntries">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/DNS#DNSCacheEntry"/>
+        <rdfs:comment>Specifies one or more domain name system entries in the system&apos;s DNS cache.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>DNS Cache Entries</rdfs:label>
+    </owl:ObjectProperty>
     
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#physicalLocation"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#state"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#recordData"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#domainName"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#queriedDateTime"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#hasChanged"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#ipAddress"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cyboxCommon#id"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#entryType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#addressClass"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#recordType"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#domainName -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#domainName">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
+        <rdfs:comment>Specifies the name of the domain to which the DNS cache entry points.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Domain Name</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#flags"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#ipAddress -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#ipAddress">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
+                    <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>Specifies the IP address to which the domain name in the DNS cache entry resolves to.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>IP Address</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#description"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#description"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#ttl"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-<!--     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="http://cybox.mitre.org/cybox_core#discoveryMethod"/>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf> -->
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#recordDataLength"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >DNSRecord</rdfs:label>
-  </owl:Class>
-  <owl:ObjectProperty rdf:ID="answerResourceRecords">
-    <rdfs:range rdf:resource="#DNSRecord"/>
-    <rdfs:comment >Specifies any Answers resource records that were returned for the DNS query.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Answer Resource Records</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#question.name -->
+
+    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/DNS#question.name">
+        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
+        <rdfs:comment>Specifies the domain name being queried.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Question Name</rdfs:label>
+    </owl:ObjectProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="authorityResourceRecords">
-    <rdfs:comment >Specifies any Authority resource records that were returned for the DNS query.</rdfs:comment>
-    <rdfs:label >Authority Resource Records</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:range rdf:resource="#DNSRecord"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="additonRecords">
-    <rdfs:range rdf:resource="#DNSRecord"/>
-    <rdfs:comment >Specifies any Additional resource records that were returned for the DNS query.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Addition Records</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#addressClass -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#addressClass">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the address class (e.g. IN, TXT, ANY, etc.) for the DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Address Class</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="question.name">
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-    <rdfs:comment >Specifies the domain name being queried.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#cacheEntryTTL -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#cacheEntryTTL">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment>Specifies the time-to-live value for the DNS cache entry, or in other words the number of seconds before the entry expires.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Cache Entry TTL</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Question Name</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#domainName">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
-    <rdfs:comment >Specifies the name of the domain to which the DNS cache entry points.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Domain Name</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#description -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#description"/>
     
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="dnsCacheEntries">
-    <rdfs:comment >Specifies one or more domain name system entries in the system's DNS cache.</rdfs:comment>
-    <rdfs:range rdf:resource="#DNSCacheEntry"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >DNS Cache Entries</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#entryType -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#entryType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the resource record type (e.g. SOA or A) for the DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Entry Type</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSCache"/> -->
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#ipAddress">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
-          <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-    <rdfs:comment >Specifies the IP address to which the domain name in the DNS cache entry resolves to.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >IP Address</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#flags -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#flags">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the relevant flags for the DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Flags</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:ID="question.type">
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#queriedDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#queriedDateTime">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date and time at which this DNS record was returned from a query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Queried Date</rdfs:label>
+    </owl:DatatypeProperty>
     
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#queryDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#queryDateTime">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the date and time that the DNS query was run.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Date/Time Query Ran</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Question Type</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#question.class -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#question.class">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the class of resource records being requested.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Question Class</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-    <rdfs:comment >Specifies the type of DNS query performed, in terms of the requested DNS record type.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#recordName">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the name for the DNS record.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Record Name</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#question.type -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#question.type">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of DNS query performed, in terms of the requested DNS record type.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Question Type</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#transactionId">
-    <rdfs:label >Transaction ID</rdfs:label>
-    <rdfs:comment >Specifies the Transaction ID value of the DNS query message header.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#recordData -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#recordData">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
+        <rdfs:comment>Specifies expression of the raw record data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Record Data</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#recordType">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:label >Record Type</rdfs:label>
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#recordDataLength -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#recordDataLength">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the length of raw data to be captured in the Record Data field.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Data Length</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the type of the DNS record.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#recordDataLength">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:label >Data Length</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#recordName -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#recordName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name for the DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Record Name</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:comment >Specifies the length of raw data to be captured in the Record Data field.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#description">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range>
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:range>
-    <rdfs:comment >Specifies a structured text description of this DNS_Entry.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Description</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#recordType -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#recordType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of the DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Record Type</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#flags">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-    <rdfs:comment >Specifies the relevant flags for the DNS record.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#serviceUsed -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#serviceUsed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the service used to run the DNS Query.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Service Used</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Flags</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#queriedDateTime">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#successful -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#successful">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether or not the DNS Query was successful.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Successful</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Queried Date</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment >Specifies the date and time at which this DNS record was returned from a query.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#serviceUsed">
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#transactionId -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#transactionId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment>Specifies the Transaction ID value of the DNS query message header.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Transaction ID</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the service used to run the DNS Query.</rdfs:comment>
-    <rdfs:label >Service Used</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#recordData">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:comment >Specifies expression of the raw record data.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#ttl -->
+
+    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/DNS#ttl">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:comment>Specifies the time-to-live for the DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Time to Live (TTL)</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >Record Data</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="question.class">
-    <rdfs:comment >Specifies the class of resource records being requested.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Question Class</rdfs:label>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#ttl">
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <rdfs:comment >Specifies the time-to-live for the DNS record.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Time to Live (TTL)</rdfs:label>
+
+
+    <!-- http://cybox.mitre.org/cybox_core#Object -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
     
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#addressClass">
+
+
+    <!-- http://cybox.mitre.org/objects/Address#IPv4Address -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
     
-    <rdfs:comment >Specifies the address class (e.g. IN, TXT, ANY, etc.) for the DNS record.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label >Address Class</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
+
+
+    <!-- http://cybox.mitre.org/objects/Address#IPv6Address -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
     
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#DNSCache -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/DNS#DNSCache">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:comment>Characterize entries in a system&apos;s DNS cache.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>DNSCache</rdfs:label>
+    </owl:Class>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#entryType">
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#DNSCacheEntry -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/DNS#DNSCacheEntry">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#description"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#domainName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#ipAddress"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#addressClass"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#cacheEntryTTL"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#entryType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#flags"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#queriedDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordData"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordDataLength"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#ttl"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize a single entry in a system&apos;s DNS cache.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>DNSCache Entry</rdfs:label>
+    </owl:Class>
     
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#DNSQuery -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/DNS#DNSQuery">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#serviceUsed"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#successful"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#transactionId"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize a single DNS query and its components.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>DNS Query</rdfs:label>
+    </owl:Class>
     
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+
+
+    <!-- http://cybox.mitre.org/objects/DNS#DNSRecord -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/DNS#DNSRecord">
+        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#description"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#domainName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#ipAddress"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#addressClass"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#entryType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#flags"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#queriedDateTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordData"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordDataLength"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordName"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#recordType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/DNS#ttl"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterize an individual DNS record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>DNSRecord</rdfs:label>
+    </owl:Class>
     
-    <rdfs:comment >Specifies the resource record type (e.g. SOA or A) for the DNS record.</rdfs:comment>
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Entry Type</rdfs:label>
-    <!-- <rdfs:domain rdf:resource="#DNSRecord"/> -->
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#cacheEntryTTL">
-    <rdfs:label >Cache Entry TTL</rdfs:label>
-    <!-- <rdfs:domain rdf:resource="#DNSCacheEntry"/> -->
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-    <rdfs:comment >Specifies the time-to-live value for the DNS cache entry, or in other words the number of seconds before the entry expires.</rdfs:comment>
+
+
+    <!-- http://cybox.mitre.org/objects/Domain_Name#DomainName -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="queryDateTime">
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anyURI -->
+
+    <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment >Specifies the date and time that the DNS query was run.</rdfs:comment>
-    <rdfs:label >Date/Time Query Ran</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#successful">
-    <rdfs:label >Successful</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <!-- <rdfs:domain rdf:resource="#DNSQuery"/> -->
-    
-    <rdfs:comment >Specifies whether or not the DNS Query was successful.</rdfs:comment>
-  </owl:DatatypeProperty>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://cybox.mitre.org/objects/DNS#description">
+        <rdfs:comment>Specifies a structured text description of this DNS_Entry.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+        <rdfs:label>Description</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

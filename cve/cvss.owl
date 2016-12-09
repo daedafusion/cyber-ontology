@@ -1,968 +1,1127 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:cvss="http://nvd.nist.gov/cvss#"
-    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://nvd.nist.gov/cvss">
-  <owl:Ontology rdf:about="http://nvd.nist.gov/cvss">
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >2.0.0-001</owl:versionInfo>
-    <rdfs:comment >This ontology provides a vocabulary and representation for the Common Vulnerability Scoring System (CVSS) v2 which provides an open framework for communicating the characteristics and impacts of IT vulnerabilities.  CVSS consists of three groups: Base, Temporal, and Environmental. &#xD;
-&#xD;
+<rdf:RDF xmlns="http://nvd.nist.gov/cvss#"
+     xml:base="http://nvd.nist.gov/cvss"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:cvss="http://nvd.nist.gov/cvss#">
+    <owl:Ontology rdf:about="http://nvd.nist.gov/cvss">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.0.0-001</owl:versionInfo>
+        <rdfs:comment>This ontology provides a vocabulary and representation for the Common Vulnerability Scoring System (CVSS) v2 which provides an open framework for communicating the characteristics and impacts of IT vulnerabilities.  CVSS consists of three groups: Base, Temporal, and Environmental. 
+
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+        <rdfs:label>Common Vulnerability Scoring System (CVSS) Ontology</rdfs:label>
+    </owl:Ontology>
     
-    <rdfs:label >Common Vulnerability Scoring System (CVSS) Ontology</rdfs:label>
-  </owl:Ontology>
-  <owl:Class rdf:ID="TemporalMetrics">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="temporalMultiplier"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="exploitability"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="generationTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Defines the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="score"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="vector"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#baseMetrics -->
+
+    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cvss#baseMetrics">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSS"/>
+        <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:comment>Specifies a reference to the details for the base metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Based Metrics Details</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="displayLabel"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#environmentalMetrics -->
+
+    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cvss#environmentalMetrics">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSS"/>
+        <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:comment>Specifies a reference to the details for environmental metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Environmental Metrics Details</rdfs:label>
+    </owl:ObjectProperty>
     
+
+
+    <!-- http://nvd.nist.gov/cvss#termporalMetrics -->
+
+    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cvss#termporalMetrics">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSS"/>
+        <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:comment>Specifies a reference to the details for the Temporal Metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Temporal Metrics Details</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="reportConfidence"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="remediationLevel"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >CVSS Temporal Metrics</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="EnvironmentalMetrics">
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#score"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#accessComplexity -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#accessComplexity">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDIUM</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the complexity of the attack required to exploit the vulnerability once an attacker has gained access to the target system</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Access Complexity</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="confidentialityRequirement"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="targetDistribution"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="availabilityRequirement"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Defines the characteristics of a vulnerability that are relevant and unique to a particular user's environment.</rdfs:comment>
+
+
+    <!-- http://nvd.nist.gov/cvss#accessVector -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#accessVector">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADJACENT NETWORK</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOCAL</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NETWORK</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies how the vulnerability is exploited</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Access Vector</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="integrityRequirement"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="collateralDamagePotential"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#authenticationAttempts -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#authenticationAttempts">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MULTIPLE_INSTANCE</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NONE</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SINGLE_INSTANCE</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the number of times an attacker must authenticate to a target in order to exploit a vulnerability</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Authentication Attempts</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:label >CVSS Environmental Metrics</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#generationTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vector"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#displayLabel"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="BaseMetrics">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="impactSubscore"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#availabilityImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#availabilityImpact">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COMPLETE</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NONE</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PARTIAL</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the impact to availability of a successfully exploited vulnerability</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Availability Impact</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#displayLabel"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="exploitSubscore"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vector"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="confidentialityImpact"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="accessComplexity"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="availabilityImpact"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#availabilityRequirement -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#availabilityRequirement">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDIUM</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the importance of the affected IT asset to a user&apos;s organization in terms of availability.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Availability Requirement (AR)</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Defines the intrinsic and fundamental characteristics of a vulnerability that are constant with time and across user environments</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#generationTime"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >CVSS Base Metrics</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#score"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#baseScore -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#baseScore">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies a score, between 0 and 10, that represents the intrinsic and fundamental characteristics of a vulnerability that are consistent over time and user environments.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Base Metric Score</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="integrityImpact"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="accessVector"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cvss#baseVector -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#baseVector">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Base Metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Base Metric Vector</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="authenticationAttempts"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <!-- CS 120216subclass if CVSS- there is no 'vector' class defined in this; no errors -->
-  <owl:Class rdf:ID="CVSSImpact">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="CVSS"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="overallScore"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="baseMetrics"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="baseScore"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="baseVector"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="temporalVector"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Defines Common Vulnerability Score System for a vulnerability.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="environmentalMetrics"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="environmentalVector"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >CVSS Impact</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="environmentalScore"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="termporalMetrics"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="temporalScore"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="#CVSS">
+
+
+    <!-- http://nvd.nist.gov/cvss#collateralDamagePotential -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#collateralDamagePotential">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW_MEDIUM</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDIUM_HIGH</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NONE</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the potential for losss of life or physical assets through damange or theft of peroperty of requirement.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Collateral Damange Potential (CDP)</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#confidentialityImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#confidentialityImpact">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COMPLETE</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NONE</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PARTIAL</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the impact on confidentiality of a successfully exploited vulnerability</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Confidentiality Impact</rdfs:label>
+    </owl:DatatypeProperty>
     
+
+
+    <!-- http://nvd.nist.gov/cvss#confidentialityRequirement -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#confidentialityRequirement">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDIUM</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the importance of the affected IT asset to a user&apos;s organization in terms of confidentiality.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Confidentiality Requirement (CR)</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Defines Common Vulnerability Score System for a vulnerability</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vector"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >CVSS</rdfs:label>
+
+
+    <!-- http://nvd.nist.gov/cvss#displayLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#displayLabel">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the text to be used as the label  in a human display</rdfs:comment>
+        <rdfs:label>Display Label</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#termporalMetrics">
-    <rdfs:range rdf:resource="#TemporalMetrics"/>
-    <rdfs:comment >Specifies a reference to the details for the Temporal Metrics</rdfs:comment>
-    <rdfs:domain rdf:resource="#CVSS"/>
-    <rdfs:label >Temporal Metrics Details</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#environmentalScore -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#environmentalScore">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Environment Score</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#environmentalMetrics">
-    <rdfs:domain rdf:resource="#CVSS"/>
-    <rdfs:label >Environmental Metrics Details</rdfs:label>
-    <rdfs:range rdf:resource="#EnvironmentalMetrics"/>
+
+
+    <!-- http://nvd.nist.gov/cvss#environmentalVector -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#environmentalVector">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Environmental Metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Environmental Metric Vector</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Specifies a reference to the details for environmental metrics</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#baseMetrics">
-    <rdfs:domain rdf:resource="#CVSS"/>
+
+
+    <!-- http://nvd.nist.gov/cvss#exploitSubscore -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#exploitSubscore">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies the base exploit sub-score asisgned to a vulnerability by a source</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Exploit Subscore</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:range rdf:resource="#BaseMetrics"/>
-    <rdfs:comment >Specifies a reference to the details for the base metrics</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Based Metrics Details</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#integrityRequirement">
-    <rdfs:comment >Specifies the importance of the affected IT asset to a user's organization in terms of integrity.</rdfs:comment>
-    <rdfs:label >Integrity Requirement (IR)</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >LOW</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >MEDIUM</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >HIGH</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >NOT_DEFINED</rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#exploitability -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#exploitability">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FUNCTIONAL</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PROOF_OF_CONCEPT</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNPROVEN</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the current state of exploit techniques or code availability.  Public availability of easy-to-use exploit code increased the number of potential attackers by including those who are unskilled, thereby increasing the severity of the vulnerability.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Exportability (E)</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#remediationLevel">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:comment >Specifies the remediation level of a vulnerability.</rdfs:comment>
-    <rdfs:label >Remediation Level (RL)</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >OFFICIAL_FIX</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >TEMPORARY_FIX</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >WORKAROUND</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >UNAVAILABLE</rdf:first>
-                <rdf:rest rdf:parseType="Resource">
-                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                  >NOT_DEFINED</rdf:first>
-                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                </rdf:rest>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#generationTime -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#generationTime">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies the time and date when the CVSS base metrics were determined</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Generation Time</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#overallScore">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#impactSubscore -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#impactSubscore">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies the base impact sub-score assigned to a vulnerability by a source</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Impact Sub-score</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies the overall score.</rdfs:comment>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:label >Overall Score</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#integrityImpact">
-    <rdfs:comment >Specifies the impact to integrity of a successfully exploited vulnerability</rdfs:comment>
-    <rdfs:label >CVSS Integrity Impact</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >COMPLETE</rdf:first>
-            </rdf:rest>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >PARTIAL</rdf:first>
-          </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >NONE</rdf:first>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#integrityImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#integrityImpact">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COMPLETE</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NONE</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PARTIAL</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the impact to integrity of a successfully exploited vulnerability</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Integrity Impact</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#availabilityRequirement">
-    <rdfs:comment >Specifies the importance of the affected IT asset to a user's organization in terms of availability.</rdfs:comment>
-    <rdfs:label >Availability Requirement (AR)</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >LOW</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >MEDIUM</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >HIGH</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >NOT_DEFINED</rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#integrityRequirement -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#integrityRequirement">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDIUM</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the importance of the affected IT asset to a user&apos;s organization in terms of integrity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Integrity Requirement (IR)</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#temporalScore">
-    <rdfs:label >Temporal Score</rdfs:label>
-    <rdfs:comment >Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that are relevant and unique to a particular user's environments.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#overallScore -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#overallScore">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies the overall score.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Overall Score</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#exploitSubscore">
-    <rdfs:comment >Specifies the base exploit sub-score asisgned to a vulnerability by a source</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:label >Exploit Subscore</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#remediationLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#remediationLevel">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OFFICIAL_FIX</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TEMPORARY_FIX</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNAVAILABLE</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WORKAROUND</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the remediation level of a vulnerability.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Remediation Level (RL)</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#collateralDamagePotential">
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >NONE</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >LOW</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >LOW_MEDIUM</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >MEDIUM_HIGH</rdf:first>
-                <rdf:rest rdf:parseType="Resource">
-                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                  >HIGH</rdf:first>
-                  <rdf:rest rdf:parseType="Resource">
-                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                    >NOT_DEFINED</rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </rdf:rest>
-                </rdf:rest>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:comment >Specifies the potential for losss of life or physical assets through damange or theft of peroperty of requirement.</rdfs:comment>
-    <rdfs:label >Collateral Damange Potential (CDP)</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#reportConfidence -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#reportConfidence">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CONFIRMED</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNCONFIRMED</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNCORROBORATED</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Report Confidence  (RC)</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#accessVector">
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >NETWORK</rdf:first>
-            </rdf:rest>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >ADJACENT NETWORK</rdf:first>
-          </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >LOCAL</rdf:first>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:label >CVSS Access Vector</rdfs:label>
-    <rdfs:comment >Specifies how the vulnerability is exploited</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#score -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#score">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies the CVSS Score</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Score</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#authenticationAttempts">
-    <rdfs:label >CVSS Authentication Attempts</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >NONE</rdf:first>
-            </rdf:rest>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >SINGLE_INSTANCE</rdf:first>
-          </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >MULTIPLE_INSTANCE</rdf:first>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:comment >Specifies the number of times an attacker must authenticate to a target in order to exploit a vulnerability</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#source -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#source">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Specifies the source of the CVSS metric in the form of a URL</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Source</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#impactSubscore">
-    <rdfs:comment >Specifies the base impact sub-score assigned to a vulnerability by a source</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:label >Impact Sub-score</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#targetDistribution -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#targetDistribution">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIGH</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOW</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MEDIUM</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NONE</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NOT_DEFINED</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Specifies the proportion of vulnerability systems.  It is meant as an environment-specific indicator in order to approximate the precentage of systems that could be affected by the vulnerability.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Target Distribution (TD)</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#targetDistribution">
-    <rdfs:comment >Specifies the proportion of vulnerability systems.  It is meant as an environment-specific indicator in order to approximate the precentage of systems that could be affected by the vulnerability.</rdfs:comment>
-    <rdfs:label >Target Distribution (TD)</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >NONE</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >LOW</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >MEDIUM</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >HIGH</rdf:first>
-                <rdf:rest rdf:parseType="Resource">
-                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                  >NOT_DEFINED</rdf:first>
-                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                </rdf:rest>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#temporalMultiplier -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#temporalMultiplier">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies the number between zero and one used in computations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Temporal Multiplier</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#vector">
-    <rdfs:domain rdf:resource="#CVSS"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#temporalScore -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#temporalScore">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that are relevant and unique to a particular user&apos;s environments.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Temporal Score</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:comment >Specifies a compressed textual representation that reflects the values used to drive the CVSS score</rdfs:comment>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:label >CVSS v2 Vector</rdfs:label>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#baseScore">
-    <rdfs:comment >Specifies a score, between 0 and 10, that represents the intrinsic and fundamental characteristics of a vulnerability that are consistent over time and user environments.</rdfs:comment>
-    <rdfs:label >Base Metric Score</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#temporalVector -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#temporalVector">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Temporal Metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>Temporal Metrics Vector</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#confidentialityRequirement">
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:comment >Specifies the importance of the affected IT asset to a user's organization in terms of confidentiality.</rdfs:comment>
-    <rdfs:label >Confidentiality Requirement (CR)</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >LOW</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >MEDIUM</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >HIGH</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >NOT_DEFINED</rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#vector -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#vector">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#CVSS"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS v2 Vector</rdfs:label>
+    </owl:DatatypeProperty>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#accessComplexity">
-    <rdfs:label >CVSS Access Complexity</rdfs:label>
-    <rdfs:comment >Specifies the complexity of the attack required to exploit the vulnerability once an attacker has gained access to the target system</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >HIGH</rdf:first>
-            </rdf:rest>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >MEDIUM</rdf:first>
-          </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >LOW</rdf:first>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#environmentalScore">
-    <rdfs:label >Environment Score</rdfs:label>
-    <rdfs:comment >Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#BaseMetrics -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cvss#BaseMetrics">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#displayLabel"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#accessComplexity"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#accessVector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#authenticationAttempts"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#availabilityImpact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#confidentialityImpact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#exploitSubscore"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#generationTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#impactSubscore"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#integrityImpact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the intrinsic and fundamental characteristics of a vulnerability that are constant with time and across user environments</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Base Metrics</rdfs:label>
+    </owl:Class>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#exploitability">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >UNPROVEN</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >PROOF_OF_CONCEPT</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >FUNCTIONAL</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >HIGH</rdf:first>
-                <rdf:rest rdf:parseType="Resource">
-                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                  >NOT_DEFINED</rdf:first>
-                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                </rdf:rest>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:label >Exportability (E)</rdfs:label>
-    <rdfs:comment >Specifies the current state of exploit techniques or code availability.  Public availability of easy-to-use exploit code increased the number of potential attackers by including those who are unskilled, thereby increasing the severity of the vulnerability.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#CVSS -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cvss#CVSS">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines Common Vulnerability Score System for a vulnerability</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS</rdfs:label>
+    </owl:Class>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#reportConfidence">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:comment ></rdfs:comment>
-    <rdfs:label >Report Confidence  (RC)</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >UNCONFIRMED</rdf:first>
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >UNCORROBORATED</rdf:first>
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >CONFIRMED</rdf:first>
-              <rdf:rest rdf:parseType="Resource">
-                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >NOT_DEFINED</rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </rdf:rest>
-            </rdf:rest>
-          </rdf:rest>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#CVSSImpact -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cvss#CVSSImpact">
+        <rdfs:subClassOf rdf:resource="http://nvd.nist.gov/cvss#CVSS"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#baseMetrics"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#environmentalMetrics"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#termporalMetrics"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#baseScore"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#baseVector"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#environmentalScore"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#environmentalVector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#overallScore"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#temporalScore"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#temporalVector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines Common Vulnerability Score System for a vulnerability.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Impact</rdfs:label>
+    </owl:Class>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#environmentalVector">
-    <rdfs:label >Environmental Metric Vector</rdfs:label>
-    <rdfs:comment >Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Environmental Metrics</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cvss#EnvironmentalMetrics -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cvss#EnvironmentalMetrics">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#displayLabel"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#availabilityRequirement"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#collateralDamagePotential"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#confidentialityRequirement"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#generationTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#integrityRequirement"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#targetDistribution"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the characteristics of a vulnerability that are relevant and unique to a particular user&apos;s environment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Environmental Metrics</rdfs:label>
+    </owl:Class>
     
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#temporalVector">
-    <rdfs:label >Temporal Metrics Vector</rdfs:label>
-    <rdfs:comment >Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Temporal Metrics</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#baseVector">
-    <rdfs:label >Base Metric Vector</rdfs:label>
-    <rdfs:comment >Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Base Metrics</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#CVSSImpact"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#confidentialityImpact">
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >COMPLETE</rdf:first>
-            </rdf:rest>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >PARTIAL</rdf:first>
-          </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >NONE</rdf:first>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:label >CVSS Confidentiality Impact</rdfs:label>
-    <rdfs:comment >Specifies the impact on confidentiality of a successfully exploited vulnerability</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#displayLabel">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the text to be used as the label  in a human display</rdfs:comment>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:label >Display Label</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#score">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:comment >Specifies the CVSS Score</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:label >CVSS Score</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#temporalMultiplier">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:label >Temporal Multiplier</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:comment >Specifies the number between zero and one used in computations.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:ID="source">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:label >CVSS Source</rdfs:label>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:comment >Specifies the source of the CVSS metric in the form of a URL</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#generationTime">
-    <rdfs:domain rdf:resource="#TemporalMetrics"/>
-    <rdfs:comment >Specifies the time and date when the CVSS base metrics were determined</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetrics"/>
-    <rdfs:label >Generation Time</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#availabilityImpact">
-    <rdfs:label >CVSS Availability Impact</rdfs:label>
-    <rdfs:range>
-      <rdfs:Datatype>
-        <owl:oneOf rdf:parseType="Resource">
-          <rdf:rest rdf:parseType="Resource">
-            <rdf:rest rdf:parseType="Resource">
-              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-              >COMPLETE</rdf:first>
-            </rdf:rest>
-            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >PARTIAL</rdf:first>
-          </rdf:rest>
-          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >NONE</rdf:first>
-        </owl:oneOf>
-      </rdfs:Datatype>
-    </rdfs:range>
-    <rdfs:comment >Specifies the impact to availability of a successfully exploited vulnerability</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseMetrics"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-  </owl:DatatypeProperty>
+
+
+    <!-- http://nvd.nist.gov/cvss#TemporalMetrics -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cvss#TemporalMetrics">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#displayLabel"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#exploitability"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#generationTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#remediationLevel"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#reportConfidence"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#temporalMultiplier"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Defines the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+        <rdfs:label>CVSS Temporal Metrics</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

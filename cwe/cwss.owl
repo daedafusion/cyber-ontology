@@ -1,506 +1,523 @@
 <?xml version="1.0"?>
-<rdf:RDF
-    xmlns:cwss="http://nvd.nist.gov/cwss#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xml:base="http://nvd.nist.gov/cwss">
-  <owl:Ontology rdf:about="http://nvd.nist.gov/cwss">
-    
-    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >1.0.0-001</owl:versionInfo>
-    <rdfs:comment >This ontology provides a vocabulary and representation for the Common Weakness Scoring System (CWSS) which provides an open framework for communicating the characteristics and impacts of IT weaknesses.  CWSS consists of three metric groups: Base, Attack Surface, and Environmental. &#xD;
-&#xD;
+<rdf:RDF xmlns="http://nvd.nist.gov/cwss#"
+     xml:base="http://nvd.nist.gov/cwss"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cwss="http://nvd.nist.gov/cwss#">
+    <owl:Ontology rdf:about="http://nvd.nist.gov/cwss">
+        <rdfs:label>Common Weakness Scoring System (CWSS) Ontology</rdfs:label>
+        <rdfs:comment>This ontology provides a vocabulary and representation for the Common Weakness Scoring System (CWSS) which provides an open framework for communicating the characteristics and impacts of IT weaknesses.  CWSS consists of three metric groups: Base, Attack Surface, and Environmental. 
+
 Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    <rdfs:label >Common Weakness Scoring System (CWSS) Ontology</rdfs:label>
-  </owl:Ontology>
-  <owl:Class rdf:ID="BaseFindingMetric">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="score"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Base Metric</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="findingConfidence"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="acquiredPrivilege"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="technicalImpact"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes a metric that  captures the inherent risk of the weakness, confidence in the accuracy of the finding, and strength of control.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="acquiredPrivlegeLevel"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="internalControlEffectiveness"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-001</owl:versionInfo>
+    </owl:Ontology>
     
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="vectorMnemonic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="AttackSurfaceMetric">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#score"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="requiredPrivilegeLayer"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cwss#attackSurfaceMetric -->
+
+    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cwss#attackSurfaceMetric">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
+        <rdfs:range rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:comment>Specifies a reference to the details for the attack surface metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Attack Surface Metric</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:comment >Characterizes a metric that captures the barriers that an attacker must overcome in order to exploit the weakness</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="levelOfInteraction"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="deploymentScope"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- http://nvd.nist.gov/cwss#baseFindingMetric -->
+
+    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cwss#baseFindingMetric">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
+        <rdfs:range rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:comment>Specifies a reference to the details for the base metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Base Metric</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="requiredPrivilege"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vectorMnemonic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="authenticationStrength"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Attack Surface Metric</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="accessVector"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="EnvironmentalMetric">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="likelihoodOfExploit"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:isDefinedBy rdf:resource=""/>
+
+
+    <!-- http://nvd.nist.gov/cwss#environmentalMetric -->
+
+    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cwss#environmentalMetric">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
+        <rdfs:range rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:comment>Specifies a reference to the details for the environmental metrics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Environmental Metric</rdfs:label>
+    </owl:ObjectProperty>
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="businessImpact"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="prevalence"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="externalControlEffectivness"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vectorMnemonic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes a metric that captures characteristics of the weakness that are specific to a particular environment or operational context.</rdfs:comment>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#score"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="likelihoodOfDiscovery"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label >Environmental Metric</rdfs:label>
-  </owl:Class>
-  <owl:Class rdf:ID="CWSS">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#vectorMnemonic"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:comment >Characterizes the Common Weakness Score System</rdfs:comment>
-    <rdfs:label >CWSS</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="environmentalMetric"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="baseFindingMetric"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="attackSurfaceMetric"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#score"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="#baseFindingMetric">
-    <rdfs:range rdf:resource="#BaseFindingMetric"/>
-    
-    <rdfs:comment >Specifies a reference to the details for the base metrics</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:label >Base Metric</rdfs:label>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#attackSurfaceMetric">
-    <rdfs:label >Attack Surface Metric</rdfs:label>
-    <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="#AttackSurfaceMetric"/>
-    
-    <rdfs:comment >Specifies a reference to the details for the attack surface metrics</rdfs:comment>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#environmentalMetric">
-    <rdfs:label >Environmental Metric</rdfs:label>
-    <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:comment >Specifies a reference to the details for the environmental metrics</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:range rdf:resource="#EnvironmentalMetric"/>
-  </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="#technicalImpact">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Technical Impact</rdfs:label>
-    <rdfs:comment >Specifies the potential result that can be producedby the weakness, assuming that the wekaness can be successfullly reached and exploited.</rdfs:comment>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#externalControlEffectivness">
-    
-    
-    <rdfs:comment >Specifies the capabilities of controls or mitigations outside of the software that may render the weakness more difficult for an attacker to read and/or trigger.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    
-    <rdfs:label >External Control Effectivness</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#likelihoodOfDiscovery">
-    
-    
-    <rdfs:comment >Specifies the likelihood that an attacker can discover the weakness</rdfs:comment>
-    <rdfs:label >Likelihood of Discovery</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#score">
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment >Specifies the numeric score</rdfs:comment>
-    
-    <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Score</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#requiredPrivilegeLayer">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    
-    <rdfs:comment >Specifies the operational layer to which the attacker must have privileges in order to attempt to attack the weakness</rdfs:comment>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Required Privilege Layer</rdfs:label>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#acquiredPrivilege">
-    <rdfs:label >Acquired Privilege</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment >Specifies the types of privileges that are obtained by an attacker who can successfully exploit the weakness.</rdfs:comment>
-    
-    
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#deploymentScope">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    
-    <rdfs:comment >Specifies whether the weakness is present in all deployable instances of the software, or if it is limited to a subset of platforms and/or configurations.</rdfs:comment>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Deployment Scope</rdfs:label>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#internalControlEffectiveness">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    <rdfs:label >Internal Control Effectiveness</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment >Specifies the ability of the control to render the weakness unable to be xploited by an attacker.&#xD;
-&#xD;
-For example, an input validation routine that restricts input lenght to 15 characters might be moderately effective against XSS attacks by reducing the size of the XSS exploit that can be implemented.&#xD;
-&#xD;
-When there are multiple internal controls, or multiple code paths that can reach the same weakness, the follow guidance applies:&#xD;
-&#xD;
-Analyze each internal control that exists and choose the value with the highest weight (i.e., the weakest conrol).</rdfs:comment>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#businessImpact">
-    
-    
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment >Specifies the potential impact to the business or mission if the weakness can be successfullly exploited.</rdfs:comment>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Business Impact</rdfs:label>
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#findingConfidence">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    <rdfs:label >Finding Confidence</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:comment >Specifies the confidence that the reported issue is a weakness and can be triggered or utilized by an attacker.</rdfs:comment>
-    
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#requiredPrivilege">
-    
-    
-    <rdfs:label >Required Privilege</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-    <rdfs:comment >Specifies the type of privileges that an attacker must already have inorder to reach the code/functionality that contains the weakness.</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#levelOfInteraction">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    
-    <rdfs:comment >Specifies the actions that are required by the human victim(s) to enable a successful attack to take place.</rdfs:comment>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Level of Interaction</rdfs:label>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#prevalence">
-    
-    
-    <rdfs:comment >Specifies how frequently this type of weakness appears in software.</rdfs:comment>
-    <rdfs:label >Prevalence</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#likelihoodOfExploit">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    
-    <rdfs:comment >Specifies the likelihood that, if the weakness is discovered, an attacker with the required privileges/authentication/access would be able successfully exploit it.</rdfs:comment>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label >Likelihood of Exploit</rdfs:label>
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#authenticationStrength">
-    
-    
-    <rdfs:comment >Specifies the strength of the authentication routine that protects the code/functionality that contains the weakness.</rdfs:comment>
-    <rdfs:label >Authentication Strength</rdfs:label>
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#acquiredPrivlegeLevel">
-    
-    
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:comment >Specifies the operational layer to which the attack gains privilges by successfully exploiting the weakness.</rdfs:comment>
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:label >Acquired Privlege Level</rdfs:label>
-    
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#accessVector">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    
-    
-    <rdfs:comment >Specifies the channel thorugh which an attacker must communicate to reach the code or functionality that contains the weakness.&#xD;
-&#xD;
+
+
+    <!-- http://nvd.nist.gov/cwss#accessVector -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#accessVector">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the channel thorugh which an attacker must communicate to reach the code or functionality that contains the weakness.
+
 Note: These values are very similar to the ones used in CVSS except CWSS disinguishes between physical access and local (shell/account) access.</rdfs:comment>
-    <rdfs:isDefinedBy rdf:resource=""/>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Access Vector</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-    <rdfs:label >Access Vector</rdfs:label>
-  </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="#vectorMnemonic">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#CWSS"/>
-    <rdfs:comment >Specifies the vector mnemonic that represents the values of metric</rdfs:comment>
-    <rdfs:label >Vector Mnemonic</rdfs:label>
+
+
+    <!-- http://nvd.nist.gov/cwss#acquiredPrivilege -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#acquiredPrivilege">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the types of privileges that are obtained by an attacker who can successfully exploit the weakness.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Acquired Privilege</rdfs:label>
+    </owl:DatatypeProperty>
     
-    <rdfs:domain rdf:resource="#BaseFindingMetric"/>
-    <rdfs:domain rdf:resource="#AttackSurfaceMetric"/>
-    <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:domain rdf:resource="#EnvironmentalMetric"/>
-  </owl:DatatypeProperty>
+
+
+    <!-- http://nvd.nist.gov/cwss#acquiredPrivlegeLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#acquiredPrivlegeLevel">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the operational layer to which the attack gains privilges by successfully exploiting the weakness.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Acquired Privlege Level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#authenticationStrength -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#authenticationStrength">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the strength of the authentication routine that protects the code/functionality that contains the weakness.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Authentication Strength</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#businessImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#businessImpact">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the potential impact to the business or mission if the weakness can be successfullly exploited.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Business Impact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#deploymentScope -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#deploymentScope">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies whether the weakness is present in all deployable instances of the software, or if it is limited to a subset of platforms and/or configurations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Deployment Scope</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#externalControlEffectivness -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#externalControlEffectivness">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the capabilities of controls or mitigations outside of the software that may render the weakness more difficult for an attacker to read and/or trigger.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>External Control Effectivness</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#findingConfidence -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#findingConfidence">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the confidence that the reported issue is a weakness and can be triggered or utilized by an attacker.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Finding Confidence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#internalControlEffectiveness -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#internalControlEffectiveness">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the ability of the control to render the weakness unable to be xploited by an attacker.
+
+For example, an input validation routine that restricts input lenght to 15 characters might be moderately effective against XSS attacks by reducing the size of the XSS exploit that can be implemented.
+
+When there are multiple internal controls, or multiple code paths that can reach the same weakness, the follow guidance applies:
+
+Analyze each internal control that exists and choose the value with the highest weight (i.e., the weakest conrol).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Internal Control Effectiveness</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#levelOfInteraction -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#levelOfInteraction">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the actions that are required by the human victim(s) to enable a successful attack to take place.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Level of Interaction</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#likelihoodOfDiscovery -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#likelihoodOfDiscovery">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the likelihood that an attacker can discover the weakness</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Likelihood of Discovery</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#likelihoodOfExploit -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#likelihoodOfExploit">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the likelihood that, if the weakness is discovered, an attacker with the required privileges/authentication/access would be able successfully exploit it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Likelihood of Exploit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#prevalence -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#prevalence">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies how frequently this type of weakness appears in software.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Prevalence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#requiredPrivilege -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#requiredPrivilege">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of privileges that an attacker must already have inorder to reach the code/functionality that contains the weakness.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Required Privilege</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#requiredPrivilegeLayer -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#requiredPrivilegeLayer">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the operational layer to which the attacker must have privileges in order to attempt to attack the weakness</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Required Privilege Layer</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#score -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#score">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Specifies the numeric score</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#technicalImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#technicalImpact">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the potential result that can be producedby the weakness, assuming that the wekaness can be successfullly reached and exploited.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Technical Impact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#vectorMnemonic -->
+
+    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#vectorMnemonic">
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
+        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the vector mnemonic that represents the values of metric</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Vector Mnemonic</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#AttackSurfaceMetric -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cwss#AttackSurfaceMetric">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#vectorMnemonic"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#accessVector"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#authenticationStrength"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#deploymentScope"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#levelOfInteraction"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#requiredPrivilege"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#requiredPrivilegeLayer"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a metric that captures the barriers that an attacker must overcome in order to exploit the weakness</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Attack Surface Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#BaseFindingMetric -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cwss#BaseFindingMetric">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#technicalImpact"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#vectorMnemonic"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#acquiredPrivilege"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#acquiredPrivlegeLevel"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#findingConfidence"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#internalControlEffectiveness"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a metric that  captures the inherent risk of the weakness, confidence in the accuracy of the finding, and strength of control.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Base Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#CWSS -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cwss#CWSS">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#attackSurfaceMetric"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#baseFindingMetric"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#environmentalMetric"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#vectorMnemonic"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes the Common Weakness Score System</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>CWSS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://nvd.nist.gov/cwss#EnvironmentalMetric -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cwss#EnvironmentalMetric">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#score"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#vectorMnemonic"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#businessImpact"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#externalControlEffectivness"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#likelihoodOfDiscovery"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#likelihoodOfExploit"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://nvd.nist.gov/cwss#prevalence"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a metric that captures characteristics of the weakness that are specific to a particular environment or operational context.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
+        <rdfs:label>Environmental Metric</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
-<!-- Created with TopBraid -->
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

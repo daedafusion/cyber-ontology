@@ -455,12 +455,6 @@ For example, if Authentication Type is set to &quot;Password&quot;, this would b
     
 
 
-    <!-- http://cybox.mitre.org/cybox_core#Object -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
-    
-
-
     <!-- http://cybox.mitre.org/objects/Account#Account -->
 
     <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#Account">
@@ -596,21 +590,10 @@ For example, if Authentication Type is set to &quot;Password&quot;, this would b
 
     <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#UnixUserAccount">
         <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#UserAccount"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#authentication.structuredAuthenticationMechanism"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+       
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#groupID"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#lockedOut"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -789,9 +772,6 @@ For example, if Authentication Type is set to &quot;Password&quot;, this would b
     
 
 
-    <!-- http://cybox.mitre.org/objects/Port#Port -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Port#Port"/>
 </rdf:RDF>
 
 

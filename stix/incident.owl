@@ -871,6 +871,11 @@ By default, the Availability Loss Type Vocabulary is used to defined a restricte
     
 
 
+    <!-- http://stix.mitre.org/stixCommon#description -->
+
+    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
+    </rdf:Description>
     
 
 
@@ -878,9 +883,33 @@ By default, the Availability Loss Type Vocabulary is used to defined a restricte
 
     <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#parentId">
         <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#ExternalIdentifier"/>
     </rdf:Description>
     
 
+
+    <!-- http://stix.mitre.org/stixCommon#shortDescription -->
+
+    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#title -->
+
+    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.oasis-open.org/ciq_common#status -->
+
+    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
+        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
+    </rdf:Description>
+    
 
 
     <!-- http://www.oasis-open.org/ciq_common#validFromDateTime -->
@@ -1058,7 +1087,7 @@ The COAStatement class is designed to support its use in representing the relati
 
 
     <!-- http://stix.mitre.org/Incident#Incident -->
-<!-- There are 4 errors in this section -->
+
     <owl:Class rdf:about="http://stix.mitre.org/Incident#Incident">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
         <rdfs:subClassOf>
@@ -1090,7 +1119,7 @@ The COAStatement class is designed to support its use in representing the relati
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#discoveryMethod"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
-        </rdfs:subClassOf> 
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#impactDirect.assetLosses"/>
@@ -1126,7 +1155,7 @@ The COAStatement class is designed to support its use in representing the relati
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#impactIndirect.legalAndRegulatoryCosts"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
-        </rdfs:subClassOf> 
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#impactIndirect.lossOfCompetitiveAdvantage"/>
@@ -1186,7 +1215,7 @@ The COAStatement class is designed to support its use in representing the relati
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#timeSequence.containmentAchievedDateTime"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
-        </rdfs:subClassOf> 
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#timeSequence.firstDataExfiltrationDateTime"/>
@@ -1216,7 +1245,7 @@ The COAStatement class is designed to support its use in representing the relati
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#timeSequence.incidentOpenedDateTime"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
-        </rdfs:subClassOf> 
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Incident#timeSequence.incidentReportedDateTime"/>
@@ -1257,7 +1286,7 @@ The COAStatement class is designed to support its use in representing the relati
 
 Incidents are discrete instances of Indicators affecting an organization along with information discovered or decided during an incident response investigation. They consist of data such as time-related information, parties involved, assets affected, impact assessment, related Indicators, related Observables, leveraged TTP, attributed Threat Actors, intended effects, nature of compromise, response Course of Action requested, response Course of Action taken, confidence in characterization, handling guidance, source of the Incident information, log of actions taken, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
-        <rdfs:label>Incident</rdfs:label> 
+        <rdfs:label>Incident</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

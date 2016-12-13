@@ -38,10 +38,10 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
     <!-- http://www.oasis-open.org/ciq_xnl#otherName -->
 
-    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_xnl#otherName">
+<!--     <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_xnl#otherName">
         <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
     </owl:AnnotationProperty>
-    
+ -->    
 
 
     <!-- 
@@ -3357,6 +3357,12 @@ If the party is a person, then the type of relationship with the person such as 
 
     <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Cellphone">
         <rdfs:subClassOf rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_xpil#communicationMediaType"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cellphone</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Defines a cellphone as a communication media type</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
         <rdfs:label>Cellphone</rdfs:label>
@@ -3707,6 +3713,12 @@ If the party is a person, then the type of relationship with the person such as 
 
     <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Fax">
         <rdfs:subClassOf rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_xpil#communicationMediaType"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fax</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Defines a Fax as a communication media</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
         <rdfs:label>Fax</rdfs:label>
@@ -4489,6 +4501,12 @@ If the party is a person, then the type of relationship with the person such as 
 
     <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Pager">
         <rdfs:subClassOf rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_xpil#communicationMediaType"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pager</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Specifies the Pager as a communication media</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
         <rdfs:label>Pager</rdfs:label>

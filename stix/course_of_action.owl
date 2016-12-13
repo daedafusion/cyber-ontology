@@ -277,7 +277,7 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
     
 
 
-	<!-- http://stix.mitre.org/stixCommon#shortDescription -->
+    <!-- http://stix.mitre.org/stixCommon#shortDescription -->
 
     <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
         <rdfs:domain rdf:resource="http://stix.mitre.org/CourseOfAction#CourseOfAction"/>
@@ -290,6 +290,8 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
     <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
         <rdfs:domain rdf:resource="http://stix.mitre.org/CourseOfAction#CourseOfAction"/>
     </rdf:Description>
+    
+
 
     <!-- http://www.oasis-open.org/ciq_common#status -->
 
@@ -323,14 +325,20 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
 
+
+    <!-- http://stix.mitre.org/shortDescription -->
+
+    <owl:Class rdf:about="http://stix.mitre.org/shortDescription"/>
     
 
 
     <!-- http://stix.mitre.org/CourseOfAction#CourseOfAction -->
 
     <owl:Class rdf:about="http://stix.mitre.org/CourseOfAction#CourseOfAction">
-         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+        <rdfs:subClassOf rdf:resource="http://stix.mitre.org/shortDescription"/>
+        <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/CourseOfAction#cost"/>
@@ -367,6 +375,12 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+       <!--  <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#informationSource"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf> -->
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/CourseOfAction#stage"/>
@@ -379,6 +393,18 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+       <!--  <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#title"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#timestamp"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf> -->
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#status"/>
@@ -401,7 +427,7 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
 
 Courses Of Action are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/CourseOfAction"/>
-        <rdfs:label>Course of Action</rdfs:label> 
+        <rdfs:label>Course of Action</rdfs:label>
     </owl:Class>
     
 
@@ -438,13 +464,15 @@ Courses Of Action are specific measures to be taken to address threat whether th
     <!-- http://stix.mitre.org/CourseOfAction#StructuredCOA -->
 
     <owl:Class rdf:about="http://stix.mitre.org/CourseOfAction#StructuredCOA">
-         <rdfs:comment>Characterizes information for an alternative actionable structured representation for the Course Of Action potentially for automated consumption and implementation.
+        <rdfs:comment>Characterizes information for an alternative actionable structured representation for the Course Of Action potentially for automated consumption and implementation.
 
 The StructuredCOA class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of this base class allows for extensions that are expressed in a proprietary or externally defined structured courses of action.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/CourseOfAction"/>
-        <rdfs:label>Structured COA</rdfs:label> 
+        <rdfs:label>Structured COA</rdfs:label>
     </owl:Class>
-   
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
 </rdf:RDF>
 
 

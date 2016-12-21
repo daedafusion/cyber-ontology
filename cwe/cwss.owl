@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://nvd.nist.gov/cwss#"
      xml:base="http://nvd.nist.gov/cwss"
+     xmlns:cwe="http://cwe.mitre.org/cwe#"
+     xmlns:cve="http://nvd.nist.gov/cve#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	 xmlns:cwe="http://cwe.mitre.org/cwe#"
-	 xmlns:cvss="http://nvd.nist.gov/cvss#"
-	 xmlns:cve="http://nvd.nist.gov/cve#"
-     xmlns:cwss="http://nvd.nist.gov/cwss#">
+     xmlns:cwss="http://nvd.nist.gov/cwss#"
+     xmlns:cvss="http://nvd.nist.gov/cvss#">
     <owl:Ontology rdf:about="http://nvd.nist.gov/cwss">
         <rdfs:label>Common Weakness Scoring System (CWSS) Ontology</rdfs:label>
         <rdfs:comment>This ontology provides a vocabulary and representation for the Common Weakness Scoring System (CWSS) which provides an open framework for communicating the characteristics and impacts of IT weaknesses.  CWSS consists of three metric groups: Base, Attack Surface, and Environmental. 
@@ -34,7 +34,6 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cwss#attackSurfaceMetric -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cwss#attackSurfaceMetric">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:comment>Specifies a reference to the details for the attack surface metrics</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -46,7 +45,6 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cwss#baseFindingMetric -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cwss#baseFindingMetric">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
         <rdfs:comment>Specifies a reference to the details for the base metrics</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -58,7 +56,6 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cwss#environmentalMetric -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cwss#environmentalMetric">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:comment>Specifies a reference to the details for the environmental metrics</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -81,7 +78,6 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cwss#accessVector -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#accessVector">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the channel thorugh which an attacker must communicate to reach the code or functionality that contains the weakness.
 
@@ -95,7 +91,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#acquiredPrivilege -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#acquiredPrivilege">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the types of privileges that are obtained by an attacker who can successfully exploit the weakness.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -107,7 +102,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#acquiredPrivlegeLevel -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#acquiredPrivlegeLevel">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the operational layer to which the attack gains privilges by successfully exploiting the weakness.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -119,7 +113,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#authenticationStrength -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#authenticationStrength">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the strength of the authentication routine that protects the code/functionality that contains the weakness.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -131,7 +124,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#businessImpact -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#businessImpact">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the potential impact to the business or mission if the weakness can be successfullly exploited.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -143,7 +135,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#deploymentScope -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#deploymentScope">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies whether the weakness is present in all deployable instances of the software, or if it is limited to a subset of platforms and/or configurations.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -155,7 +146,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#externalControlEffectivness -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#externalControlEffectivness">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the capabilities of controls or mitigations outside of the software that may render the weakness more difficult for an attacker to read and/or trigger.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -167,7 +157,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#findingConfidence -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#findingConfidence">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the confidence that the reported issue is a weakness and can be triggered or utilized by an attacker.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -179,7 +168,6 @@ Note: These values are very similar to the ones used in CVSS except CWSS disingu
     <!-- http://nvd.nist.gov/cwss#internalControlEffectiveness -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#internalControlEffectiveness">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the ability of the control to render the weakness unable to be xploited by an attacker.
 
@@ -197,7 +185,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#levelOfInteraction -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#levelOfInteraction">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the actions that are required by the human victim(s) to enable a successful attack to take place.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -209,7 +196,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#likelihoodOfDiscovery -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#likelihoodOfDiscovery">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the likelihood that an attacker can discover the weakness</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -221,7 +207,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#likelihoodOfExploit -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#likelihoodOfExploit">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the likelihood that, if the weakness is discovered, an attacker with the required privileges/authentication/access would be able successfully exploit it.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -233,7 +218,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#prevalence -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#prevalence">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies how frequently this type of weakness appears in software.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -245,7 +229,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#requiredPrivilege -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#requiredPrivilege">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of privileges that an attacker must already have inorder to reach the code/functionality that contains the weakness.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -257,7 +240,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#requiredPrivilegeLayer -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#requiredPrivilegeLayer">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the operational layer to which the attacker must have privileges in order to attempt to attack the weakness</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -269,10 +251,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#score -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#score">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the numeric score</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -284,7 +262,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#technicalImpact -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#technicalImpact">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the potential result that can be producedby the weakness, assuming that the wekaness can be successfullly reached and exploited.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>
@@ -296,10 +273,6 @@ Analyze each internal control that exists and choose the value with the highest 
     <!-- http://nvd.nist.gov/cwss#vectorMnemonic -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cwss#vectorMnemonic">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#AttackSurfaceMetric"/>
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#BaseFindingMetric"/>
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#CWSS"/>
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cwss#EnvironmentalMetric"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vector mnemonic that represents the values of metric</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cwss"/>

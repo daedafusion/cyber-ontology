@@ -4,10 +4,10 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	 xmlns:cyboxCommon="http://cybox.mitre.org/cyboxCommon#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:winRegistryObj="http://cybox.mitre.org/objects/WindowsRegistry#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cyboxCommon="http://cybox.mitre.org/cyboxCommon#">
     <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsRegistry">
         <owl:imports rdf:resource="http://cybox.mitre.org/objects/Account"/>
         <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
@@ -39,8 +39,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#byteRuns -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#byteRuns">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryValue"/>
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ByteRun"/>
         <rdfs:comment>Specifies a list of byte runs from the raw registry key entry.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -52,7 +50,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#creator -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#creator">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Account#WindowsUserAccount"/>
         <rdfs:comment>Specifies the user who created the registry object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -64,7 +61,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#handles -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#handles">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
         <rdfs:comment>Specifies a list of open Handles for this registry object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -76,7 +72,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#keys -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#keys">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryHive"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:comment>Specifies the keys contained under the registry hive</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -88,7 +83,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#subkeys -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#subkeys">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:comment>Specifies the set of subkeys contained under the registry key.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -100,7 +94,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#values -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#values">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryValue"/>
         <rdfs:comment>Specifies the values (with their name/data pairs) held within the registry key.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -123,7 +116,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#creatorUsername -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#creatorUsername">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the user who created the registry object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -135,8 +127,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#hiveName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#hiveName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryHive"/>
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the Windows registry hive to which the registry object belongs to.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -148,7 +138,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#key -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#key">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the full key to the Windows registry object, not including the hive.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -160,7 +149,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#modifiedDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#modifiedDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the last date/time that the registry object was modified.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -172,7 +160,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#numberOfSubkeys -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#numberOfSubkeys">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:comment>Specifies the number of subkeys contained under the registry key.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -184,7 +171,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#numberOfValues -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#numberOfValues">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#WindowsRegistryKey"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:comment>Specifies the number of values found in the registry key.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -196,7 +182,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#valueData -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#valueData">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryValue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the data contained in the registry value.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -208,7 +193,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#valueDatatype -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#valueDatatype">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryValue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the registry (REG_*) datatype used in the registry value.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry"/>
@@ -220,7 +204,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsRegistry#valueName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsRegistry#valueName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsRegistry#RegistryValue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the registry value.
 

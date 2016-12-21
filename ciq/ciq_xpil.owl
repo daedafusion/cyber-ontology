@@ -2,9 +2,9 @@
 <rdf:RDF xmlns="http://www.oasis-open.org/ciq_xpil#"
      xml:base="http://www.oasis-open.org/ciq_xpil"
      xmlns:xal="http://www.oasis-open.org/ciq_xal#"
-     xmlns:ciq_xpil="http://www.oasis-open.org/ciq_xpil#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ciq_xpil="http://www.oasis-open.org/ciq_xpil#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xnl="http://www.oasis-open.org/ciq_xnl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -23,25 +23,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-001</owl:versionInfo>
     </owl:Ontology>
     
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_xnl#otherName -->
-
-<!--     <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_xnl#otherName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
-    </owl:AnnotationProperty>
- -->    
 
 
     <!-- 
@@ -111,7 +92,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#birthInfo.birthPlaceDetails -->
 
     <owl:ObjectProperty rdf:about="http://www.oasis-open.org/ciq_xpil#birthInfo.birthPlaceDetails">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
         <rdfs:comment>Specifies the full location details about the place of birth of a person.  The location may be required to get the exact geo-coordinates for astrology purposes.</rdfs:comment>
         <rdfs:label>Birth Place Details</rdfs:label>
@@ -132,7 +112,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#countriesOfResidence -->
 
     <owl:ObjectProperty rdf:about="http://www.oasis-open.org/ciq_xpil#countriesOfResidence">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Country"/>
         <rdfs:comment>Specifies one or more citizenships or residencies of a person</rdfs:comment>
         <rdfs:label>Countries of Residence</rdfs:label>
@@ -520,232 +499,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
 
 
-    <!-- http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Allergy"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#DescriptionTextLine"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Disability"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Event"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Favorite"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Habit"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#HeatlhCondition"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Hobby"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Identifier"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Preference"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
-                    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#dataQuality.validFromDateTime -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.validFromDateTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Allergy"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#DescriptionTextLine"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Disability"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Event"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Favorite"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Habit"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#HeatlhCondition"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Hobby"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Identifier"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Preference"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
-                    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#dataQuality.validToDateTime -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#dataQuality.validToDateTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Allergy"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#DescriptionTextLine"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Disability"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Event"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Favorite"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Habit"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#HeatlhCondition"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Hobby"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Identifier"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Preference"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Hobby"/>
-                    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#id -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#id">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#HeatlhCondition"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#parentId -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#parentId">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Allergy"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Disability"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Favorite"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Habit"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#HeatlhCondition"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Hobby"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Preference"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#status -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Identifier"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#textLine -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#textLine">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#DescriptionTextLine"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#textLineOrdinality -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#textLineOrdinality">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#DescriptionTextLine"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#validFromDateTime -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#validToDateTime -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
-    </rdf:Description>
-    
-
-
     <!-- http://www.oasis-open.org/ciq_xpil#accessCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#accessCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the access/security code of the document</rdfs:comment>
         <rdfs:label>Access Code</rdfs:label>
@@ -756,7 +512,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#accountBranch -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#accountBranch">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the branch associated with the account</rdfs:comment>
         <rdfs:label>Branch</rdfs:label>
@@ -767,7 +522,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#accountID -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#accountID">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the unique name, number, or mixed account identifier (e.g, bank account number).</rdfs:comment>
         <rdfs:label>Account ID</rdfs:label>
@@ -778,7 +532,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#accountName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#accountName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the account</rdfs:comment>
         <rdfs:label>Account Name</rdfs:label>
@@ -789,7 +542,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#accountNameType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#accountNameType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies commonly recognised names, such as IRD number (for NZ), SSN (for US), ABN (for AU), etc.)</rdfs:comment>
         <rdfs:label>Account Name Type</rdfs:label>
@@ -800,7 +552,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#accountType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#accountType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of account</rdfs:comment>
         <rdfs:label>Account Type</rdfs:label>
@@ -811,7 +562,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#allergyName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#allergyName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Allergy"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies an allergy (e.g., allergic to pencillin, milk products)</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -822,7 +572,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#areaCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#areaCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>Specifies the coded to dial an area within a country</rdfs:comment>
         <rdfs:label>Area Code</rdfs:label>
@@ -833,7 +582,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#award -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#award">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the awarfe or distinction that was awarded to the graduate (e.g, honors)</rdfs:comment>
         <rdfs:label>Award</rdfs:label>
@@ -844,8 +592,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#birthInfo.birthDatePrecision -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#birthInfo.birthDatePrecision">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
         <rdfs:comment>Specifies the duration of the uncertainity period as a range where the value of the birth date and time  is in the middle of the range.  The time interval is in the format PnYnMnDTnHnMnS where P is period (required), nY is the number of years, nM is the number of months, nD is the number of days, T is the start of a time section (required if hours, minutes, or seconds are to be specified), nH is the number of hours, nM is the number of minutes, nS is the number of seconds.
 
@@ -860,8 +606,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#birthInfo.birthDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#birthInfo.birthDateTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the birth date and time to the known precision.  Usually, it is only the date that is know.  Leave time as 00:00:00 if not known</rdfs:comment>
         <rdfs:label>Birth Date and Time</rdfs:label>
@@ -872,8 +616,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#birthInfo.birthPlace -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#birthInfo.birthPlace">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a free-form text description of the birth place (e.g., country name, region, etc.)</rdfs:comment>
         <rdfs:label>Birth Place</rdfs:label>
@@ -884,8 +626,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#birthInfo.birthSign -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#birthInfo.birthSign">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the sign under which a person was born.  Specific to some cultures</rdfs:comment>
         <rdfs:label>Birth Sign</rdfs:label>
@@ -896,8 +636,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#birthInfo.birthStar -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#birthInfo.birthStar">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the birth star under which a person was born.  Commonly used in some oriental cultures</rdfs:comment>
         <rdfs:label>Birth Star</rdfs:label>
@@ -908,7 +646,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#bodyMarkDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#bodyMarkDescription">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the free-form text description of the body mark</rdfs:comment>
         <rdfs:label>Description</rdfs:label>
@@ -919,7 +656,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#bodyPart -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#bodyPart">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a part of a person&apos;s body where the mark is located</rdfs:comment>
         <rdfs:label>Body Part</rdfs:label>
@@ -930,7 +666,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#cause -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#cause">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Disability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a free-form description of the cause of the disability (e.g., birth defect, accident, etc.)</rdfs:comment>
         <rdfs:label>Cause</rdfs:label>
@@ -941,7 +676,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#communicationMediaType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#communicationMediaType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -986,7 +720,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#completionDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#completionDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a description of the date when the qualification was completed to the best know percision.</rdfs:comment>
         <rdfs:label>Completion Date</rdfs:label>
@@ -997,7 +730,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#contactHours -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#contactHours">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies free-form text expression of contact hours</rdfs:comment>
         <rdfs:label>Contact Hours</rdfs:label>
@@ -1008,7 +740,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#contactNumberUsage -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#contactNumberUsage">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the nature of the contact number (e.g., business, personal, free call, toll call, after hours)</rdfs:comment>
         <rdfs:label>Usage</rdfs:label>
@@ -1019,7 +750,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#costCenter -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#costCenter">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the commonly used identifier for accounting purposes</rdfs:comment>
         <rdfs:label>Cost Center</rdfs:label>
@@ -1030,7 +760,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#countryCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#countryCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>Specifies a code to dial to a country. (e.g., 1 for US, 44 for UK)</rdfs:comment>
         <rdfs:label>Country Code</rdfs:label>
@@ -1041,7 +770,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#courseDuration -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#courseDuration">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the duration of the course (e.g., 4 years, 1 month, etc.)</rdfs:comment>
         <rdfs:label>Course Duration</rdfs:label>
@@ -1052,7 +780,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#description -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#description">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a free text description of the party</rdfs:comment>
         <rdfs:label>Description</rdfs:label>
@@ -1063,7 +790,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#disabilityDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#disabilityDescription">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Disability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a description of the disability</rdfs:comment>
         <rdfs:label>Description</rdfs:label>
@@ -1074,7 +800,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#documentCategory -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#documentCategory">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the category of the document such as Don Type in License, Gold Card, Silver Card, Platinum Card, etc.</rdfs:comment>
         <rdfs:label>Category</rdfs:label>
@@ -1085,7 +810,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#documentID -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#documentID">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the number of the document, which can be alphanumeric</rdfs:comment>
         <rdfs:label>Document ID</rdfs:label>
@@ -1096,7 +820,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#electronicAddressLabel -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#electronicAddressLabel">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the label associated with an electronic address.  An electronic address identifier is usually stored (and probably exchanged) in conjunction with a label which is typically displayed and the URL/electronic address identifier just links that label.</rdfs:comment>
         <rdfs:label>Label</rdfs:label>
@@ -1107,7 +830,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#electronicAddressType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#electronicAddressType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1194,7 +916,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#electronicAddressUsage -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#electronicAddressUsage">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the usage of the electronic address (e.g, business, personal)</rdfs:comment>
         <rdfs:label>Usage</rdfs:label>
@@ -1205,7 +926,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#electronicAddressValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#electronicAddressValue">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ElectronicAddress"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the electronic address</rdfs:comment>
         <rdfs:label>Electronic Address Value</rdfs:label>
@@ -1216,7 +936,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#employmentType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#employmentType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of employment (e.g., full-time, part-time, temporary, contract, etc)</rdfs:comment>
         <rdfs:label>Employment Type</rdfs:label>
@@ -1227,7 +946,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#entryByDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#entryByDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date by which the person must enter</rdfs:comment>
         <rdfs:label>Entry By Date</rdfs:label>
@@ -1238,7 +956,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#eventDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#eventDateTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the exact date of the event.  For example, deceased date, company closed date, birth date of spouse, etc.</rdfs:comment>
         <rdfs:label>Event Date</rdfs:label>
@@ -1249,7 +966,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#eventName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#eventName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a short description of the event</rdfs:comment>
         <rdfs:label>Event Name</rdfs:label>
@@ -1260,7 +976,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#eventType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#eventType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of event (e.g., Anniversary.  If &quot;Anniversary&quot; is the type, then the text for the Event could be &quot;20th wedding anniversary&quot;).</rdfs:comment>
         <rdfs:label>Event Type</rdfs:label>
@@ -1271,7 +986,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#extension -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#extension">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies an extension to the number that is usually handled by some PBX</rdfs:comment>
         <rdfs:label>Extension</rdfs:label>
@@ -1282,7 +996,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#favoriteType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#favoriteType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Favorite"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type or category of the favorite</rdfs:comment>
         <rdfs:label>Type</rdfs:label>
@@ -1293,7 +1006,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#favoriteValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#favoriteValue">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Favorite"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name or decription of the favorite for a person</rdfs:comment>
         <rdfs:label>Description of favorite</rdfs:label>
@@ -1304,7 +1016,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#featureDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#featureDescription">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the description of the feature</rdfs:comment>
         <rdfs:label>Feature Value</rdfs:label>
@@ -1315,7 +1026,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#featureType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#featureType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1378,7 +1088,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#featureUnit -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#featureUnit">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the unit of measurement (e.g,.inches, feet, cm, meters, days, months, years, kgs, pounds, etc.)</rdfs:comment>
         <rdfs:label>Measurement Unit</rdfs:label>
@@ -1389,7 +1098,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#grade -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#grade">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the grade (average, percentage) achieved with the qualification</rdfs:comment>
         <rdfs:label>Grade</rdfs:label>
@@ -1400,7 +1108,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#groupName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#groupName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a name of a larger group that recognises this document or supports it.</rdfs:comment>
         <rdfs:label>Group Name</rdfs:label>
@@ -1411,7 +1118,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#habitType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#habitType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Habit"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type or category of the habit (e.g, sports, food, reading, etc.)  As an example, if &quot;Hot Drinks&quot; is the type, then the name of the habit could be &quot;Strong Black Coffee&quot;.</rdfs:comment>
         <rdfs:label>Type</rdfs:label>
@@ -1422,7 +1128,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#habitValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#habitValue">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Habit"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name or description of a person&apos;s habit</rdfs:comment>
         <rdfs:label>Description of habit</rdfs:label>
@@ -1433,7 +1138,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#healthConditionDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#healthConditionDescription">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#HeatlhCondition"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the condition of health in terms of medical (e.g., healthy, diabetic, high blood pressure, high cholestrol, etc.)</rdfs:comment>
         <rdfs:label>Health Condition</rdfs:label>
@@ -1444,7 +1148,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#hobbyType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#hobbyType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Hobby"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type or categorry of the hobby (e.g., sports, traveling)</rdfs:comment>
         <rdfs:label>Hobby Type</rdfs:label>
@@ -1455,7 +1158,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#hobbyValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#hobbyValue">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Hobby"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the hobby</rdfs:comment>
         <rdfs:label>Description of Hobby</rdfs:label>
@@ -1466,7 +1168,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#identiferType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#identiferType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Identifier"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1505,7 +1206,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#identificationDocumentName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#identificationDocumentName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a description of the identification document or part of it.  (e.g., VISA, MASTERCARD for credit cards)</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -1516,7 +1216,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#identificationDocumentType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#identificationDocumentType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1585,7 +1284,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#identifierName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#identifierName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Identifier"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the identifier</rdfs:comment>
         <rdfs:label>Identifier Name</rdfs:label>
@@ -1596,7 +1294,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#imageLink -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#imageLink">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Specifies a URL to an image associated with the party</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
@@ -1608,7 +1305,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#internationalNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#internationalNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a full international number is one line.  May include international access numbers.</rdfs:comment>
         <rdfs:label>International Number</rdfs:label>
@@ -1619,7 +1315,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#issuePlace -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#issuePlace">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Sspecifies the place of issue of the document (e.g., Sydney, Australia)</rdfs:comment>
         <rdfs:label>Issue Place</rdfs:label>
@@ -1630,7 +1325,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#languageName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#languageName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the language name</rdfs:comment>
         <rdfs:label>Language Name</rdfs:label>
@@ -1641,7 +1335,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#languagePreference -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#languagePreference">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1680,7 +1373,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#languageType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#languageType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the relationship of the person with the language (e.g., mother tongue, by birth, etc.)</rdfs:comment>
         <rdfs:label>Relationship to Language</rdfs:label>
@@ -1691,7 +1383,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#localNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#localNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the local number as would be used by other witin the same dialing area</rdfs:comment>
         <rdfs:label>Local Number</rdfs:label>
@@ -1702,7 +1393,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#locationOnBodyPart -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#locationOnBodyPart">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#BodyMarks"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the location on the body parts where the marks are found</rdfs:comment>
         <rdfs:label>Part Location</rdfs:label>
@@ -1713,7 +1403,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#majorSubject -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#majorSubject">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the major subject of the qualification</rdfs:comment>
         <rdfs:label>Major Subject</rdfs:label>
@@ -1724,7 +1413,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipCategory -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipCategory">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the category of the membershp such as Gold, Silver, Platinum, etc.</rdfs:comment>
         <rdfs:label>Category</rdfs:label>
@@ -1735,7 +1423,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipGroupName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipGroupName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a larger group or alliance name the membership provides access to.</rdfs:comment>
         <rdfs:label>Access to Group</rdfs:label>
@@ -1746,7 +1433,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the descriptive name of the membership or part of it</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -1757,7 +1443,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the membership identifier (e.g., membership number or some other type of ID)</rdfs:comment>
         <rdfs:label>Membership Number</rdfs:label>
@@ -1768,7 +1453,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipPrivilege -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipPrivilege">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a privilege that the member can enjoy as part of the membership (e.g., access to free events).</rdfs:comment>
         <rdfs:label>Privilege</rdfs:label>
@@ -1779,7 +1463,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipRestriction -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipRestriction">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a restriction that the membership imposes on the member (e.g., do not smoke).</rdfs:comment>
         <rdfs:label>Restriction</rdfs:label>
@@ -1790,7 +1473,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipRole -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipRole">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a role in membership for a person (e.g., secretary, President, treasurer)</rdfs:comment>
         <rdfs:label>Role</rdfs:label>
@@ -1801,7 +1483,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#membershipType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#membershipType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Membership"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of a membership (e.g., IEEE, Rifles Club)</rdfs:comment>
         <rdfs:label>Type</rdfs:label>
@@ -1812,7 +1493,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#minorSubject -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#minorSubject">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of a minor subject of the qualification</rdfs:comment>
         <rdfs:label>Minor Subjhect</rdfs:label>
@@ -1823,7 +1503,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#nameOnDocument -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#nameOnDocument">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the party name as on the document if different from the main one</rdfs:comment>
         <rdfs:label>Name on Document</rdfs:label>
@@ -1834,7 +1513,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#nationalNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#nationalNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies an area code with local number in one line.  May include national access numbers.</rdfs:comment>
         <rdfs:label>National Number</rdfs:label>
@@ -1845,7 +1523,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#nationalityType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#nationalityType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#NationalityStatement"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1878,7 +1555,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#occupationRole -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#occupationRole">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the actual role that person carries out</rdfs:comment>
         <rdfs:label>Role</rdfs:label>
@@ -1889,8 +1565,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.category -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.category">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1959,8 +1633,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.industryCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.industryCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the industry code or classification of an organization</rdfs:comment>
         <rdfs:label>Industry Code</rdfs:label>
@@ -1971,8 +1643,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.industryCodeType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.industryCodeType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of code used for the industry code</rdfs:comment>
         <rdfs:label>Industry Code Type</rdfs:label>
@@ -1983,8 +1653,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.industryType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.industryType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of industry of an organization (.e,g IT, Manufacturing, etc.)</rdfs:comment>
         <rdfs:label>Industry Type</rdfs:label>
@@ -1995,8 +1663,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.nature -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.nature">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the nature of the organization (e.g, Public limited, Commercial, Charty, Non-Commercial, etc.)</rdfs:comment>
         <rdfs:label>Organization Nature</rdfs:label>
@@ -2007,8 +1673,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.numberOfEmployees -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.numberOfEmployees">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Specifies the size of the organization in terms of the number of employees</rdfs:comment>
         <rdfs:label>Number of Employees</rdfs:label>
@@ -2019,8 +1683,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.operatingHoursEndTime -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.operatingHoursEndTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
         <rdfs:comment>Specifies the hour at which an organization ends operations (e.g, 5:00pm)</rdfs:comment>
         <rdfs:label>Operating End Time</rdfs:label>
@@ -2031,8 +1693,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.operatingHoursStartTime -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.operatingHoursStartTime">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
         <rdfs:comment>Specifies the hour at which an organization starts operations (e.g, 9:00am)</rdfs:comment>
         <rdfs:label>Operating Start Time</rdfs:label>
@@ -2043,8 +1703,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#organizationInfo.type -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#organizationInfo.type">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of an organization (e.g., Company, Trust, Bank, Society, Club, etc.)</rdfs:comment>
         <rdfs:label>Organization Type</rdfs:label>
@@ -2055,7 +1713,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#ownership -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#ownership">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Account"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of ownership for the account (e.g., Joint, Individual, corporate, etc.)</rdfs:comment>
         <rdfs:label>Ownership</rdfs:label>
@@ -2066,8 +1723,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#partyType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#partyType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2100,8 +1755,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personInfo.categoryType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personInfo.categoryType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of category the person belongs (e.g., customer, employee, friend, prospect, etc.)</rdfs:comment>
         <rdfs:label>Person Category Type</rdfs:label>
@@ -2112,8 +1765,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personInfo.ethnicity -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personInfo.ethnicity">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the ethnicity of a person (e.g, Asian, Chinese, African, etc.)</rdfs:comment>
         <rdfs:label>Ethnicity</rdfs:label>
@@ -2124,8 +1775,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personInfo.gender -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personInfo.gender">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the gender of a person</rdfs:comment>
         <rdfs:label>Gender</rdfs:label>
@@ -2136,8 +1785,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personInfo.maritalStatus -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personInfo.maritalStatus">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the marital status of a person (e.g., married, separated, divorced, separated, etc.)</rdfs:comment>
         <rdfs:label>Marital Status</rdfs:label>
@@ -2148,8 +1795,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personInfo.physicalStatus -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personInfo.physicalStatus">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the status of the person (e.g., living, deceased, retired).  Specify the date of the status, such as death or retired as an Event</rdfs:comment>
         <rdfs:label>Physical Status</rdfs:label>
@@ -2160,8 +1805,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personInfo.religion -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personInfo.religion">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the religion of a person</rdfs:comment>
         <rdfs:label>Religion</rdfs:label>
@@ -2172,8 +1815,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#personlInfo.age -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#personlInfo.age">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Specifies the the age of the person</rdfs:comment>
         <rdfs:label>Age</rdfs:label>
@@ -2184,8 +1825,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#physicalInfo.bloodGroup -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#physicalInfo.bloodGroup">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Party"/>
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2248,7 +1887,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#physicalInfoDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#physicalInfoDescription">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a description of the physical observation</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
@@ -2260,7 +1898,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#physicalInfoType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#physicalInfoType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#FreeFormPhysicalInfo"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the category or type of the physical information</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
@@ -2272,7 +1909,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#pin -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#pin">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a personal access number (e.g., special access code)</rdfs:comment>
         <rdfs:label>Pin</rdfs:label>
@@ -2283,7 +1919,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#positionTitle -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#positionTitle">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the actual title of the position</rdfs:comment>
         <rdfs:label>Title of Position</rdfs:label>
@@ -2294,7 +1929,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#preferenceType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#preferenceType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Preference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of preference (e.g., seating position)</rdfs:comment>
         <rdfs:label>Type</rdfs:label>
@@ -2305,7 +1939,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#preferenceValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#preferenceValue">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Preference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the descriptive name of the preference</rdfs:comment>
         <rdfs:label>Description of preference</rdfs:label>
@@ -2316,7 +1949,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#privilege -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#privilege">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a privilege the holder of the doucment was granted. (e.g., security access level)</rdfs:comment>
         <rdfs:label>Privilege</rdfs:label>
@@ -2327,7 +1959,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#qualificationName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#qualificationName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the free-form text name of the qualification</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -2338,7 +1969,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#qualificationRestriction -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#qualificationRestriction">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies any restrictions imposed on the graduate (e.g., not valid before completion of 2 year practical work under supervision)</rdfs:comment>
         <rdfs:label>Restriction</rdfs:label>
@@ -2349,7 +1979,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#rank -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#rank">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a rank in some ranking system (e.g., private, major, supintendant, Justic, etc.).  This is different from role</rdfs:comment>
         <rdfs:label>Rank</rdfs:label>
@@ -2360,7 +1989,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#readingSkill -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#readingSkill">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2417,7 +2045,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#registration -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#registration">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies details of any professional registration if required for practicing (e.g., for pharmacists, electricans, medical professionals)</rdfs:comment>
         <rdfs:label>Registration</rdfs:label>
@@ -2438,7 +2065,6 @@ P5Y2M10D = 5 years, 2 months, 10 days, and 15 hours</rdfs:comment>
     <!-- http://www.oasis-open.org/ciq_xpil#relationshipType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#relationshipType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of relationship.
 
@@ -2451,7 +2077,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#relationshipValidFromDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#relationshipValidFromDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date when the relationship began</rdfs:comment>
         <rdfs:label>Valid From</rdfs:label>
@@ -2462,7 +2087,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#relationshipValidToDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#relationshipValidToDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#RelationshipStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date when the relationship ended</rdfs:comment>
         <rdfs:label>Valid To</rdfs:label>
@@ -2473,7 +2097,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#reportsTo -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#reportsTo">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name, role, or position who the peson reports to</rdfs:comment>
         <rdfs:label>Reports To</rdfs:label>
@@ -2484,7 +2107,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#residencyType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#residencyType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ResidencyStatement"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2517,7 +2139,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#restriction -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#restriction">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a restriction imposed on the holder of the document. (e.g., learners license)</rdfs:comment>
         <rdfs:label>Restriction</rdfs:label>
@@ -2528,7 +2149,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenueAfterTax -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenueAfterTax">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the income/revenue is after tax.</rdfs:comment>
         <rdfs:label>After Tax</rdfs:label>
@@ -2539,7 +2159,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenueAmount -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenueAmount">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the amount of revenue</rdfs:comment>
         <rdfs:label>Revenue Amount</rdfs:label>
@@ -2550,7 +2169,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenueCurrencyCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenueCurrencyCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the three-letter currency code per ISO-4217</rdfs:comment>
         <rdfs:label>Currency Code</rdfs:label>
@@ -2561,7 +2179,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenuePeriodFromDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenuePeriodFromDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the beginning of the reporting period, inclusively</rdfs:comment>
         <rdfs:label>Reporting Period Beginning</rdfs:label>
@@ -2572,7 +2189,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenuePeriodToDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenuePeriodToDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the ending of the reporting period, inclusively</rdfs:comment>
         <rdfs:label>Reporting Period End</rdfs:label>
@@ -2583,7 +2199,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenuePrecision -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenuePrecision">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the precision range where the value of the element is in the middle of the range</rdfs:comment>
         <rdfs:label>Precision</rdfs:label>
@@ -2594,7 +2209,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenueSource -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenueSource">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the source from where the revenue/income comes from (e.g., business stream, activity, etc.)</rdfs:comment>
         <rdfs:label>Source</rdfs:label>
@@ -2605,7 +2219,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#revenueType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#revenueType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Revenue"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of the revenue/income.  Examples are Total Earnings, Profit, Loss, Turnover</rdfs:comment>
         <rdfs:label>Type</rdfs:label>
@@ -2616,7 +2229,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#selfEmployed -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#selfEmployed">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Occupation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies if the party was self-employed during this occupation</rdfs:comment>
         <rdfs:label>Self-Employed</rdfs:label>
@@ -2627,7 +2239,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#separator -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#separator">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#ContactNumber"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies any text that is not part of the phone number, but has some informational content.  (e.g., Ext.)</rdfs:comment>
         <rdfs:label>Separator</rdfs:label>
@@ -2638,7 +2249,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#speakingSkill -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#speakingSkill">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2695,7 +2305,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#stockInvestedDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#stockInvestedDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date of investment in the stock</rdfs:comment>
         <rdfs:label>Investment Date</rdfs:label>
@@ -2706,7 +2315,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#stockListedDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#stockListedDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date the stock was listed on the exchange</rdfs:comment>
         <rdfs:label>Listing Date</rdfs:label>
@@ -2717,7 +2325,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#stockMarketName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#stockMarketName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the stock exchange or other market (e.g., NYSE, NZW)</rdfs:comment>
         <rdfs:label>Market Name</rdfs:label>
@@ -2728,7 +2335,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#stockShareQuantity -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#stockShareQuantity">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>Specifies the quantity of stock shares</rdfs:comment>
         <rdfs:label>Quantity of Shares</rdfs:label>
@@ -2739,7 +2345,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#stockSymbol -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#stockSymbol">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Stock"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the stock market symbol as listed on the exchange (e.g., MOT for Motorola Inc.)</rdfs:comment>
         <rdfs:label>Symbol</rdfs:label>
@@ -2750,7 +2355,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#understandingSkill -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#understandingSkill">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2807,7 +2411,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleBodyNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleBodyNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the body number of the vehicle</rdfs:comment>
         <rdfs:label>Body Number</rdfs:label>
@@ -2818,7 +2421,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleBodyType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleBodyType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of body (e.g., Sedan, Ute, Station Wagon, 2 door)</rdfs:comment>
         <rdfs:label>Body Type</rdfs:label>
@@ -2829,7 +2431,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleChassisNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleChassisNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s chassis number</rdfs:comment>
         <rdfs:label>Chassis Number</rdfs:label>
@@ -2840,7 +2441,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleColor -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleColor">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the color of the vehicle</rdfs:comment>
         <rdfs:label>Color</rdfs:label>
@@ -2851,7 +2451,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleEngineNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleEngineNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s engine number</rdfs:comment>
         <rdfs:label>Engine Number</rdfs:label>
@@ -2862,7 +2461,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleLicensePlateNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleLicensePlateNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s license plate number</rdfs:comment>
         <rdfs:label>License Plate Number</rdfs:label>
@@ -2873,7 +2471,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleLicensePlateType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleLicensePlateType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s license plate type (e.g., standard, premier, diplomat, etc)</rdfs:comment>
         <rdfs:label>License Plate Type</rdfs:label>
@@ -2884,7 +2481,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleMake -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleMake">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s make (e.g., Ford, Toyota)</rdfs:comment>
         <rdfs:label>Make</rdfs:label>
@@ -2895,7 +2491,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleManufactureDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleManufactureDate">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s date of manufacture, which could be a full date or a year</rdfs:comment>
         <rdfs:label>Manufacture Date</rdfs:label>
@@ -2906,7 +2501,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleModel -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleModel">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the vehicle&apos;s model (e.g., Pajero, Falcon, Volt).  If it includes make, then do not put the make as a separate element.</rdfs:comment>
         <rdfs:label>Model</rdfs:label>
@@ -2917,7 +2511,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the make and model of the vehicle</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -2928,7 +2521,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#vehicleType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#vehicleType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Vehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of the vehicle (e.g., Motorbike, Truck, Car, Bicycle, 4WD, Jeep, etc.)</rdfs:comment>
         <rdfs:label>Vehicle Type</rdfs:label>
@@ -2939,7 +2531,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#verificationCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#verificationCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#IdentificationDocument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a verification/secure code as used in credit cards</rdfs:comment>
         <rdfs:label>Verification Code</rdfs:label>
@@ -2950,7 +2541,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaCode">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a Visa&apos;s code number (e.g, B1, E3, H-1, Class X1)</rdfs:comment>
         <rdfs:label>Code</rdfs:label>
@@ -2961,7 +2551,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaEntryType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaEntryType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the entry type (e.g., Single Entry, Multiple Entry, Double Entry, etc)</rdfs:comment>
         <rdfs:label>Entry Type</rdfs:label>
@@ -2972,7 +2561,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaIssuePlace -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaIssuePlace">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the place where the visa was issued (e.g., country name and office name, or country name and city).  For example US Embassy, Prague, Australia, Sydney.</rdfs:comment>
         <rdfs:label>Place Issued</rdfs:label>
@@ -2983,7 +2571,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaMaximumStay -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaMaximumStay">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the length of maximum stay (e.g., 1 week, 2 months, etc.)</rdfs:comment>
         <rdfs:label>Maximum Stay</rdfs:label>
@@ -2994,7 +2581,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaName -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaName">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a fully-described visa identification which includes visa&apos;s code and number</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -3005,7 +2591,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaNumber">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the visa&apos;s number</rdfs:comment>
         <rdfs:label>Number</rdfs:label>
@@ -3016,7 +2601,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaPrivilege -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaPrivilege">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies any privileges granted to the visa holder (e.g, depature fee waived, etc)</rdfs:comment>
         <rdfs:label>Privilege</rdfs:label>
@@ -3027,7 +2611,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaRestriction -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaRestriction">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies any restrictions imposed on the visa holder (e.g., not for employment, cannot work for more than 20 hours)</rdfs:comment>
         <rdfs:label>Restriction</rdfs:label>
@@ -3038,7 +2621,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaSpecialCondition -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaSpecialCondition">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies any special conditions imposed on the visit holder (e.g., not allowed to work for more than 10 hours a week)</rdfs:comment>
         <rdfs:label>Special Conditions</rdfs:label>
@@ -3049,7 +2631,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#visaType -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#visaType">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Visa"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of visa. e.g. Tourist, Visitor, Student</rdfs:comment>
         <rdfs:label>Type</rdfs:label>
@@ -3060,7 +2641,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#wayOfStudy -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#wayOfStudy">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Qualification"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a way of study (e.g., full time, part time, evening classes, extramural, etc.)</rdfs:comment>
         <rdfs:label>Way of Study</rdfs:label>
@@ -3071,7 +2651,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#website -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#website">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#PartyBase"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Specifies the URL of the organization&apos;s main webstie</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
@@ -3083,7 +2662,6 @@ If the party is a person, then the type of relationship with the person such as 
     <!-- http://www.oasis-open.org/ciq_xpil#writingSkill -->
 
     <owl:DatatypeProperty rdf:about="http://www.oasis-open.org/ciq_xpil#writingSkill">
-        <rdfs:domain rdf:resource="http://www.oasis-open.org/ciq_xpil#Language"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -3148,7 +2726,10 @@ If the party is a person, then the type of relationship with the person such as 
     
 
 
-   
+    <!-- http://www.oasis-open.org/ciq_xnl#Subdivison -->
+
+    <owl:Class rdf:about="http://www.oasis-open.org/ciq_xnl#Subdivison"/>
+    
 
 
     <!-- http://www.oasis-open.org/ciq_xpil#AccessCard -->
@@ -5438,6 +5019,11 @@ Party should be used in place of Person or Organization if it is unclear which i
         <rdfs:label>VISA</rdfs:label>
     </owl:Class>
     
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
 </rdf:RDF>
 
 

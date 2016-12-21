@@ -57,18 +57,9 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     
 
 
-    <!-- http://data-marking.mitre.org/Data_Marking#handling -->
-
-    <rdf:Description rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
-    </rdf:Description>
-    
-
-
     <!-- http://stix.mitre.org/Campaign#activity -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#activity">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Activity"/>
         <rdfs:comment>Specifies actions taken in regards to this ThreatActor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
@@ -80,7 +71,6 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     <!-- http://stix.mitre.org/Campaign#associatedCampaigns -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#associatedCampaigns">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CampaignBase"/>
         <rdfs:comment>Specifies other cyber threat Campaigns asserted to be associated with this cyber threat Campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
@@ -92,7 +82,6 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     <!-- http://stix.mitre.org/Campaign#attribution -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#attribution">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
         <rdfs:comment>Specifies assertions of attibuted Threat Actors for this cyber threat Campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
@@ -104,7 +93,6 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     <!-- http://stix.mitre.org/Campaign#intendedEffect -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#intendedEffect">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
         <rdfs:comment>Specifies the intended effect of this cyber threat Campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
@@ -113,35 +101,10 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     
 
 
-    <!-- http://stix.mitre.org/stixCommon#relatedIncident -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedIncident">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#relatedIndicator -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedIndicator">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
-    </rdf:Description>
-    
-
-
     <!-- http://stix.mitre.org/stixCommon#relatedPackages -->
 
     <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#PackageBase"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#relatedTTP -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedTTP">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
     </rdf:Description>
     
 
@@ -160,7 +123,6 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     <!-- http://stix.mitre.org/Campaign#campaignNames -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Campaign#campaignNames">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies one or more names used to identify this Campaign. 
 
@@ -174,7 +136,6 @@ Campaign names may be either internal or external names assigned to a campaign.<
     <!-- http://stix.mitre.org/Campaign#status -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Campaign#status">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the status of this Campaign.
 
@@ -184,14 +145,6 @@ By default, the Campaign Status Vocabulary is used to defined a restricted set o
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
         <rdfs:label>Status</rdfs:label>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#description -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Campaign#Campaign"/>
-    </rdf:Description>
     
 
 

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://stix.mitre.org/stixCommon#"
      xml:base="http://stix.mitre.org/stixCommon"
+     xmlns:stixCommon="http://stix.mitre.org/stixCommon#"
+     xmlns:ciq_xal="http://www.oasis-open.org/ciq_xal#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ciq_xpil="http://www.oasis-open.org/ciq_xpil#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:ciq_xnl="http://www.oasis-open.org/ciq_xnl#"
-	 xmlns:ciq_xpil="http://www.oasis-open.org/ciq_xpil#"
-	 xmlns:ciq_xal="http://www.oasis-open.org/ciq_xal#"
-     xmlns:stixCommon="http://stix.mitre.org/stixCommon#"
      xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -23,7 +23,6 @@
     </owl:Ontology>
     
 
-	
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -516,7 +515,6 @@ By default, the Asset Type Vocabulary is used to defined a restricted set of val
     <!-- http://stix.mitre.org/stixCommon#confidence.timestamp -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/stixCommon#confidence.timestamp">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#RelationshipStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the time of this Confidence assertion.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stixCommon"/>
@@ -528,7 +526,6 @@ By default, the Asset Type Vocabulary is used to defined a restricted set of val
     <!-- http://stix.mitre.org/stixCommon#confidence.timestampPrecision -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/stixCommon#confidence.timestampPrecision">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#RelationshipStatement"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1152,9 +1149,7 @@ If omitted, the default is &quot;seconds&quot;, meaning the timestamp is precise
      -->
 
     
-	<owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
-        <rdfs:label>Statement</rdfs:label>
-    </owl:Class>
+
 
     <!-- http://stix.mitre.org/stixCommon#ActionEntry -->
 
@@ -3770,6 +3765,14 @@ The ThreatActorTypeStatement class allows for the expression of a statement, a d
         <rdfs:comment>Characterizes information about a hardware or software tool.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stixCommon"/>
         <rdfs:label>Tool Information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement">
+        <rdfs:label>Statement</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

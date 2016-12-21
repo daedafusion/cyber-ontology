@@ -37,18 +37,9 @@ In the STIX relationship model, incidents can be related to the threat actors in
     
 
 
-    <!-- http://data-marking.mitre.org/Data_Marking#handling -->
-
-    <rdf:Description rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
     <!-- http://stix.mitre.org/Incident#affectedAssets -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#affectedAssets">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/Incident#AffectedAsset"/>
         <rdfs:comment>Specifies a reference to the particular assets affected during the Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -60,7 +51,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#attributedThreatActors -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#attributedThreatActors">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
         <rdfs:comment>Specifies a reference to Threat Actors asserted to be attributed for this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -72,7 +62,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#contact -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#contact">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
         <rdfs:comment>Specifies a reference to organizations or personnel involved in this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -84,7 +73,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#contributors -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#contributors">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#COAStatement"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Contributor"/>
         <rdfs:comment>Specifies a reference to contributing actors for the Course of Action taken.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -96,7 +84,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#coordinator -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#coordinator">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
         <rdfs:comment>Specifes a reference to information about the assigned coordinator for this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -108,8 +95,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#courseOfAction -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#courseOfAction">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#COAActionEntry"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#COAStatement"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
         <rdfs:comment>Specifies a reference to the actual Course of Action.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -121,7 +106,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#externalIdReferences -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#externalIdReferences">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/Incident#ExternalIdentifier"/>
         <rdfs:comment>Specifies zero or more references to an ID of an incident in a remote system</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -133,7 +117,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#externalImpactAssessmentModel -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#externalImpactAssessmentModel">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/Incident#ImpactAssessmentModel"/>
         <rdfs:comment>Specifies a reference to impact assessment details utilizing impact assessment characterization models defined externally.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -145,7 +128,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#history -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#history">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -164,7 +146,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#intendedEffect -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#intendedEffect">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
         <rdfs:comment>Specifies a reference to the suspected intended effect of this incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -176,7 +157,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#leveragedTTPs -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#leveragedTTPs">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
         <rdfs:comment>Specifies a reference to TTPs asserted to be related to this cyber threat Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -188,7 +168,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#natureOfSecurityEffect -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#natureOfSecurityEffect">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedAsset"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:comment>Specifies a reference to how the security properties of the Asset were affected.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -200,7 +179,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#reporter -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#reporter">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
         <rdfs:comment>Specifies a reference to information about the reporting source of this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -212,7 +190,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#requestedCOAs -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#requestedCOAs">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
         <rdfs:comment>Specifies a reference to a requested Course of Action for this Incident as specified by the producer for the consumer of the Incident Report.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -224,7 +201,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#responder -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#responder">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
         <rdfs:comment>Specifies a reference to information about the assigned responder for this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -236,7 +212,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#takenCOAs -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#takenCOAs">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
         <rdfs:comment>Specifies a reference to a Course of Action taken for this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -248,7 +223,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#victim -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Incident#victim">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -266,54 +240,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     
 
 
-    <!-- http://stix.mitre.org/stixCommon#confidence -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#confidence">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#informationSource -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#informationSource">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#relatedIncident -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedIncident">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#relatedIndicator -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedIndicator">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#relatedObservable -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedObservable">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#relatedPackages -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -328,7 +254,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
     <!-- http://stix.mitre.org/Incident#categories -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#categories">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing the categories for this incident. 
 
@@ -344,7 +269,6 @@ By default, the Incident Category Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#countAffected -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#countAffected">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedAsset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Specifies the number of assets of this type affected.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -356,7 +280,6 @@ By default, the Incident Category Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#dataEncrypted -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#dataEncrypted">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifes whether any of the non-public data compromised or exposed was encrypted.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -368,7 +291,6 @@ By default, the Incident Category Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#descriptionOfEffect -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#descriptionOfEffect">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies  a brief prose description of how the security property was affected.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -380,7 +302,6 @@ By default, the Incident Category Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#discoveryMethod -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#discoveryMethod">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing how the incident was discovered. 
 
@@ -396,7 +317,6 @@ By default, the Discovery Method Vocabulary is used to defined a restricted set 
     <!-- http://stix.mitre.org/Incident#durationOfAvailabilityLoss -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#durationOfAvailabilityLoss">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing the approximate length of time availability was affected (e.g. Permanent, Seconds, Minutes, Hours, Days). 
 
@@ -412,7 +332,6 @@ By default, the Loss Duration Low Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#externalId -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#externalId">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#ExternalIdentifier"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a reference to an ID of an incident in a remote system.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -424,7 +343,6 @@ By default, the Loss Duration Low Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#externalSource -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#externalSource">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#ExternalIdentifier"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the source of the External ID.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -436,7 +354,6 @@ By default, the Loss Duration Low Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#impactDirect.assetLosses -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactDirect.assetLosses">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing (at a high-level) the level of asset-related losses that occured in the Incident, including lost or damaged assets, stolen funds, cash outlays, etc.
 
@@ -452,7 +369,6 @@ By default, the Impact Rating Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#impactDirect.businessMissionDisruption -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactDirect.businessMissionDisruption">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing (at a high-level) the level of business or mission disruption impact that occured in the Incident including unproductive man-hours, lost revenue from system downtime, etc. 
 
@@ -468,7 +384,6 @@ By default, the Impact Rating Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#impactDirect.responseAndRecoveryCosts -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactDirect.responseAndRecoveryCosts">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing (at a high level) the level of response and recovery related costs that occured in the Incident including cost of response, investigation, remediation, restoration, etc. {@en-US}
 
@@ -484,7 +399,6 @@ By default, the Impact Rating Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#impactEffects -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactEffects">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing the possible effects of an incident.
 
@@ -500,7 +414,6 @@ By default, the Incident Effect Vocabulary is used to defined a restricted set o
     <!-- http://stix.mitre.org/Incident#impactIndirect.brandAndMarketDamage -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactIndirect.brandAndMarketDamage">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing (at a high level) the level of impact based on brand or market damage that occured in the Incident including lost customers or partners, decrease in market value or share, advertising, rebranding, etc. 
 
@@ -516,7 +429,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#impactIndirect.increasedOperatingCosts -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactIndirect.increasedOperatingCosts">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies value characterizing (at a high level) the level of impact based on increased operating costs that occured in the Incident including cost of additional audits, new hires or training, mandatory action, higher insurance, etc.
 
@@ -532,7 +444,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#impactIndirect.legalAndRegulatoryCosts -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactIndirect.legalAndRegulatoryCosts">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing (at a high level) the level of impact based on legal and regulatory costs that occured in the Incident including legal fees, lawsuits, customer damages, contract violations, etc. 
 
@@ -548,7 +459,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#impactIndirect.lossOfCompetitiveAdvantage -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactIndirect.lossOfCompetitiveAdvantage">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing (at a high level) the level of impact based on loss of competitive advantage that occured in the Incident including loss/damage/exposure of IP, corporate wisdom, ability to compete, key personnel, etc. 
 
@@ -564,7 +474,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#impactQualification -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactQualification">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing the subjective level of impact of the Incident. 
 
@@ -580,7 +489,6 @@ By default, the Impact Qualification Vocabulary is used to defined a restricted 
     <!-- http://stix.mitre.org/Incident#impactTotalLossEstimation.actualAmount -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactTotalLossEstimation.actualAmount">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the actual level of total estimated financial loss for the Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -592,7 +500,6 @@ By default, the Impact Qualification Vocabulary is used to defined a restricted 
     <!-- http://stix.mitre.org/Incident#impactTotalLossEstimation.actualCurrency -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactTotalLossEstimation.actualCurrency">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the ISO 4217 currency code if other than USD for the actual total loss estimation.
 
@@ -608,7 +515,6 @@ By default, the ISO 4217 Currency Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#impactTotalLossEstimation.initialReportAmount -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactTotalLossEstimation.initialReportAmount">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the initially reported level of total estimated financial loss for the Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -620,7 +526,6 @@ By default, the ISO 4217 Currency Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#impactTotalLossEstimation.initialReportCurrency -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#impactTotalLossEstimation.initialReportCurrency">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the ISO 4217 currency code if other than USD for the initial report total loss estimation.
 
@@ -636,7 +541,6 @@ By default, the ISO 4217 Currency Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#incidentSpecification -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#incidentSpecification">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Specifies a URL referencing the location for the Incident specification.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -648,7 +552,6 @@ By default, the ISO 4217 Currency Vocabulary is used to defined a restricted set
     <!-- http://stix.mitre.org/Incident#incidentStatus -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#incidentStatus">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing the current status (sometimes called &quot;state&quot; or &quot;disposition&quot;) of the incident.
 
@@ -664,7 +567,6 @@ By default, the Incident Status Vocabulary is used to defined a restricted set o
     <!-- http://stix.mitre.org/Incident#modelName -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#modelName">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#ImpactAssessmentModel"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the externally defined impact assessment model.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -676,7 +578,6 @@ By default, the Incident Status Vocabulary is used to defined a restricted set o
     <!-- http://stix.mitre.org/Incident#modelReference -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#modelReference">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#ImpactAssessmentModel"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Specifies a URL reference for the externally defined impact assessment model.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -688,7 +589,6 @@ By default, the Incident Status Vocabulary is used to defined a restricted set o
     <!-- http://stix.mitre.org/Incident#nonPublicDataCompromised -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#nonPublicDataCompromised">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing whether non-public data was compromised or exposed. 
 
@@ -704,7 +604,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#priorityLevel -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#priorityLevel">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#COAStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Specifies a suggested level of priority to be applied to this requested COA.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -716,7 +615,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#securityCompromise -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#securityCompromise">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing knowledge of whether the Incident involved a compromise of security properties.
 
@@ -732,7 +630,6 @@ By default, the Security Compromise Vocabulary is used to defined a restricted s
     <!-- http://stix.mitre.org/Incident#securityProperty -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#securityProperty">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characerizing the  security property that was affected by the incident. 
 
@@ -750,7 +647,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.containmentAchievedDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.containmentAchievedDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the first time at which the incident is contained (e.g., the “bleeding is stopped”).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -762,7 +658,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.firstDataExfiltrationDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.firstDataExfiltrationDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the first time at which non-public data was taken from the victim environment</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -774,7 +669,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.firstMaliciousActionDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.firstMaliciousActionDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the time that the first malicious action related to this Incident occured.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -786,7 +680,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.incidentClosedDatetime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.incidentClosedDatetime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the time at which the Incident was officially closed.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -798,7 +691,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.incidentDiscoveryDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.incidentDiscoveryDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the first time at which the organization learned the incident had occurred.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -810,7 +702,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.incidentOpenedDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.incidentOpenedDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the time at which the Incident was officially opened.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -822,7 +713,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.incidentReportedDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.incidentReportedDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the time at which the Incident was reported.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -834,7 +724,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.initialCompromiseDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.initialCompromiseDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Sspecifies the time that the initial compromise occured for this Incident.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -846,7 +735,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#timeSequence.restorationAchievedDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#timeSequence.restorationAchievedDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the first time at which the incident&apos;s assets are restored (e.g., fully functional)”.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
@@ -858,7 +746,6 @@ By default, the Loss Property Vocabulary is used to defined a restricted set of 
     <!-- http://stix.mitre.org/Incident#typeOfAvailabilityLoss -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Incident#typeOfAvailabilityLoss">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a value characterizing the type of loss to availability that occurred as part of an incident.
 
@@ -868,63 +755,6 @@ By default, the Availability Loss Type Vocabulary is used to defined a restricte
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Incident"/>
         <rdfs:label>Type of Availability Loss</rdfs:label>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#description -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#description">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#parentId -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#parentId">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#AffectedProperty"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#ExternalIdentifier"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#shortDescription -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://stix.mitre.org/stixCommon#title -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#title">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/Incident#Incident"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#status -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#status">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#validFromDateTime -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.oasis-open.org/ciq_common#validToDateTime -->
-
-    <rdf:Description rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
-    </rdf:Description>
     
 
 

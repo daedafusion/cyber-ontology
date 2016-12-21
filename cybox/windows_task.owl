@@ -54,7 +54,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsTask#action -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#action">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#TaskAction"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -75,7 +74,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsTask#actionList -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#actionList">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsTask#TaskAction"/>
         <rdfs:comment>Specifies a list of actions to be performed by the scheduled task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -87,7 +85,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsTask#execProgramHash.details -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#execProgramHash.details">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IExecAction"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Hash"/>
         <rdfs:comment>Specifies details about any hashes of the executable file launched by the action.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -99,7 +96,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerList -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerList">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:comment>Specifies a set of triggers used by the scheduled task. 
 
@@ -124,7 +120,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383264(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#accountLogonType -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#accountLogonType">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the security logon method required to run the tasks associated with the account. 
 
@@ -138,7 +133,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#accountName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#accountName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the account used to run the scheduled task. 
 
@@ -152,7 +146,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#accountRunLevel -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#accountRunLevel">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the permission level of the account that the task will be run at.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -164,7 +157,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#actionID -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#actionID">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#TaskAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the user-defined identifier for the action. This identifier is used by the Task Scheduler for logging purposes. 
 
@@ -178,7 +170,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380590(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#actionType -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#actionType">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#TaskAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of the action. 
 
@@ -192,7 +183,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#applicationName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#applicationName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the application name associated with the task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -204,7 +194,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#body -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#body">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IShowMessageAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the message text that is displayed in the body of the message box by the action. 
 
@@ -218,7 +207,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#comClassID -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#comClassID">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#ICOMHandlerAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the ID of the COM action. 
 
@@ -232,7 +220,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#comData -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#comData">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#ICOMHandlerAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the data associated with the COM handler. 
 
@@ -246,7 +233,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380613(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#commandLineParameters -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#commandLineParameters">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the command line parameters used to launch the scheduled task. 
 
@@ -260,7 +246,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#comment -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#comment">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a comment for the scheduled task. 
 
@@ -274,7 +259,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#creationDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#creationDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time that the task was registered. 
 
@@ -288,7 +272,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa382623(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#creator -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#creator">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the creator of the scheduled task. 
 
@@ -302,7 +285,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#execArguments -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#execArguments">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IExecAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>pecifies the arguments associated with the command-line operation launched by the action. 
 
@@ -316,7 +298,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#execProgramHash.value -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#execProgramHash.value">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IExecAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the values, in the format of &apos;hash-type&apos;:&apos;hash-value&apos;, for any hash computed for the executable file launched by the action.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -328,7 +309,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#execProgramPath -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#execProgramPath">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IExecAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the path to the executable file launched by the action. 
 
@@ -342,7 +322,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#execWorkingDirectory -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#execWorkingDirectory">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IExecAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the directory that contains either the executable file or the files that are used by the executable file launched by the action. 
 
@@ -356,7 +335,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#exitCode -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#exitCode">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
         <rdfs:comment>Specifies the last exit code of the scheduled task. 
 
@@ -370,7 +348,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#maxRunTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#maxRunTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
         <rdfs:comment>Specifies the maximum run time of the scheduled task before terminating, in milliseconds. 
 
@@ -384,7 +361,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#mostRecentRunDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#mostRecentRunDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the most recent run date/time of this scheduled task. 
 
@@ -398,7 +374,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381254(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#nextRunDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#nextRunDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the next run date/time of the scheduled task. 
 
@@ -412,7 +387,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381257(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#taskFlags -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#taskFlags">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies any flags that modify the behavior of the scheduled task. 
 
@@ -426,7 +400,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#taskName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#taskName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name for the task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -438,7 +411,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#taskPriority -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#taskPriority">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the priority of the scheduled task. This can either be a free-form string or one the values in the TaskPriorityEnum enumeration. 
 
@@ -452,7 +424,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381876(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#taskStatus -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#taskStatus">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the current status of the scheduled task. 
 
@@ -466,7 +437,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#title -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#title">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#IShowMessageAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the title of the message box shown by the action. 
 
@@ -480,7 +450,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerBeginDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerBeginDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date/time that the trigger is activated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -492,7 +461,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerDelay -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerDelay">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
         <rdfs:comment>Specifies the delay that takes place between when the task is registered and when the task is started.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -504,7 +472,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerEnabled -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerEnabled">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the trigger is enabled.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -516,7 +483,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerEndDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerEndDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date/time that the trigger is deactivated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -528,7 +494,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerFrequency -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerFrequency">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the frequency at which the trigger repeats.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -540,7 +505,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerMaxRunTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerMaxRunTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
         <rdfs:comment>Specifies the maximum amount of time that the task launched by the trigger is allowed to run. 
 
@@ -554,7 +518,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerSessionChangeType -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerSessionChangeType">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of Terminal Server session change that would trigger a task launch. 
 
@@ -568,7 +531,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#triggerType -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#triggerType">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#Trigger"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of the task trigger.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsTask"/>
@@ -580,7 +542,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#workItemData -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#workItemData">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#base64Binary"/>
         <rdfs:comment>Specifies application defined data associated with the scheduled task. 
 
@@ -594,7 +555,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381271(v=vs.
     <!-- http://cybox.mitre.org/objects/WindowsTask#workingDirectory -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsTask#workingDirectory">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsTask#WindowsTask"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the working directory for the scheduled task. 
 

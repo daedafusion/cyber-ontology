@@ -5,15 +5,15 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cpe="http://cpe.mitre.org/cpe#"
      xmlns:scap_core="http://scap.nist.gov/scap_core#"
-	 xmlns:cpe="http://cpe.mitre.org/cpe#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://scap.nist.gov/scap_core">
         <rdfs:label>Security Content Automation Protocol (SCAP) Core  Ontology</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-001</owl:versionInfo>
         <rdfs:comment>This ontology provides a vocabulary and representation for the Security Content Automation Protocol (SCAP) core data types.  The SCAP is a method for using specific standards to enable automated compliance evaluation, vulnerability management, measurement, and policy compliance evaluation.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-001</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -49,7 +49,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#generator -->
 
     <owl:ObjectProperty rdf:about="http://scap.nist.gov/scap_core#generator">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
         <rdfs:comment>Specifies information about the tool used to generate the catalog</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
         <rdfs:label>Generator</rdfs:label>
@@ -71,7 +70,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#catalogDate -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#catalogDate">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment>Specifies the date the catalog was created or last updated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -83,7 +81,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#catalogName -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#catalogName">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the catalog</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -95,7 +92,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#catalogVersion -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#catalogVersion">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the version of the catalog</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -107,7 +103,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#checkIdentifier -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#checkIdentifier">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies an identifier of a test written in the check system language.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -119,7 +114,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#checkSystem -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#checkSystem">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment></rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -131,7 +125,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#description -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#description">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a brief description of the catalog contents</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -143,8 +136,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#externalLink -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#externalLink">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Specifies a URI to an external file or resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
@@ -156,7 +147,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://scap.nist.gov/scap_core#id -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#id">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the unique identifier associated with this entity instance.
 
@@ -172,7 +162,6 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[identi
     <!-- http://scap.nist.gov/scap_core#name -->
 
     <owl:DatatypeProperty rdf:about="http://scap.nist.gov/scap_core#name">
-        <rdfs:domain rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a piece of human-readable text that provides a meaningful name.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>

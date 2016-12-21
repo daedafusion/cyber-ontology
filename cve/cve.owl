@@ -40,25 +40,19 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
     <!-- http://scap.nist.gov/scap_core#externalLink -->
 
-    <owl:AnnotationProperty rdf:about="http://scap.nist.gov/scap_core#externalLink">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://scap.nist.gov/scap_core#externalLink"/>
     
 
 
     <!-- http://scap.nist.gov/scap_core#name -->
 
-    <owl:AnnotationProperty rdf:about="http://scap.nist.gov/scap_core#name">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://scap.nist.gov/scap_core#name"/>
     
 
 
     <!-- http://scap.nist.gov/scap_core#notes -->
 
-    <owl:AnnotationProperty rdf:about="http://scap.nist.gov/scap_core#notes">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://scap.nist.gov/scap_core#notes"/>
     
 
 
@@ -88,7 +82,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#applicableCheck -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#applicableCheck">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
         <rdfs:comment>Specifies the check/test (either OVAL or other) that this particular fix action addresses.  Example, when applying this fix will change the vlue of this test result.</rdfs:comment>
         <rdfs:label>Applicable Check</rdfs:label>
@@ -99,7 +92,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#applicableConfiguration -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#applicableConfiguration">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#Platform"/>
         <rdfs:comment>Specifies a reference to an applicable configuration.</rdfs:comment>
         <rdfs:label>Applicable Configuration</rdfs:label>
@@ -110,7 +102,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#assessmentCheck -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#assessmentCheck">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
         <rdfs:comment>Specifies zero or more assessment checks used to perform an assesstment of the vulnerability</rdfs:comment>
         <rdfs:label>Assessment Check</rdfs:label>
@@ -121,7 +112,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#attackScenario -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#attackScenario">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
         <rdfs:comment>Specifies a reference to a description of the attack scenario</rdfs:comment>
         <rdfs:label>Attack Scenario</rdfs:label>
@@ -132,7 +122,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#configurationRemediation -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#configurationRemediation">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
         <rdfs:comment>Specifies a reference to configuration information that describes how to address the attack mechanism.</rdfs:comment>
         <rdfs:label>Configuration Remediation</rdfs:label>
@@ -143,7 +132,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#defintion -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#defintion">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#ToolConfiguration"/>
         <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
         <rdfs:comment>Specifies the definition for the tool configuration information.</rdfs:comment>
         <rdfs:label>Definition</rdfs:label>
@@ -154,7 +142,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#deprecatedBy -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#deprecatedBy">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
         <rdfs:comment>Specifies the identifier for zero or more software packages that have deprciated the vulnerable software package.  The identifier is expresses as a Common Platform Enumeration (CPE) name.</rdfs:comment>
         <rdfs:label>Deprecated By</rdfs:label>
@@ -165,7 +152,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#fixAction -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#fixAction">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:comment>Specifies zero or more actions that can be taken to &quot;fix&quot; or address the vulnerability.</rdfs:comment>
         <rdfs:label>Fix Action</rdfs:label>
@@ -176,7 +162,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#fixActionToolConfiguration -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#fixActionToolConfiguration">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#ToolConfiguration"/>
         <rdfs:comment>Specifies the configuration information for a tool used in the fix action.</rdfs:comment>
         <rdfs:label>Tool Configuration</rdfs:label>
@@ -197,7 +182,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#nextFixAction -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#nextFixAction">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:comment>Specifies the next fix action in the chain.  This typically specifies a dependency fix action.</rdfs:comment>
         <rdfs:label>Next Fix Action</rdfs:label>
@@ -208,7 +192,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#patch -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#patch">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://scap.nist.gov/patch#Patch"/>
         <rdfs:comment>Specifies a patch that addresses the vulnerability</rdfs:comment>
         <rdfs:label>Patch</rdfs:label>
@@ -219,7 +202,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#references -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#references">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
         <rdfs:comment>Specifies references associated with the vulnerability</rdfs:comment>
         <rdfs:label>Vulnerability Reference</rdfs:label>
@@ -230,7 +212,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#relatedWeakness -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#relatedWeakness">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://cwe.mitre.org/cwe#Weakness"/>
         <rdfs:comment>Associated Common Weakness (CWE)</rdfs:comment>
         <rdfs:label>Common Weakness Enumeration (CWE) Identifier</rdfs:label>
@@ -241,7 +222,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#scanner -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#scanner">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#ToolConfiguration"/>
         <rdfs:comment>Specifies a scanner and required configuration that is capable of detecting the referenced vulnerability.  May also be an OVAL defintion.</rdfs:comment>
         <rdfs:label>Scanner</rdfs:label>
@@ -252,7 +232,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#softwareUpdate -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#softwareUpdate">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
         <rdfs:comment>Specifies the identifier for zero or more software update packages.  The software update identifier is expresses as a Common Platform Enumeration (CPE) name.</rdfs:comment>
         <rdfs:label>Software Update</rdfs:label>
@@ -263,7 +242,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#technicalDescription -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#technicalDescription">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
         <rdfs:comment>Specifies a refernce to a technical description of the vulnerability.</rdfs:comment>
         <rdfs:label>Technical Description</rdfs:label>
@@ -274,7 +252,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#toolName -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#toolName">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#ToolConfiguration"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
         <rdfs:comment></rdfs:comment>
         <rdfs:label>Tool Name</rdfs:label>
@@ -285,7 +262,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#vulnerabilities -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#vulnerabilities">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityCatalog"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:comment>Specifies one or more vulnerabilities, represented by their CVE identifier, in the Vulnerability Catalog</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cve"/>
@@ -297,7 +273,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#vulnerabilityImpactScore -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#vulnerabilityImpactScore">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#CVSSImpact"/>
         <rdfs:comment>Specifies a reference to the Vulnerability Impact score</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cve"/>
@@ -309,7 +284,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#vulnerableConfigurations -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#vulnerableConfigurations">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#Platform"/>
         <rdfs:comment>Specifies the configuration in which the vulnerability exists.</rdfs:comment>
         <rdfs:label>Vulnerable Configurations</rdfs:label>
@@ -320,7 +294,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#vulnerableProducts -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cve#vulnerableProducts">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
         <rdfs:comment>Specifies the products associated with this vulnerability</rdfs:comment>
         <rdfs:label>Vulnerable Products</rdfs:label>
@@ -342,7 +315,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#deprecated -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#deprecated">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies that the related entity has been deprecated.</rdfs:comment>
         <rdfs:label>Deprecated</rdfs:label>
@@ -353,7 +325,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#description -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#description">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a short description of the vulnerability.</rdfs:comment>
         <rdfs:label>Description</rdfs:label>
@@ -375,7 +346,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#disclosureDate -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#disclosureDate">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time the vulnerability was disclosed.</rdfs:comment>
         <rdfs:label>Disclosure Date</rdfs:label>
@@ -386,7 +356,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#discoveryDate -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#discoveryDate">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time the vulnerability was discovered.</rdfs:comment>
         <rdfs:label>Discovery Date</rdfs:label>
@@ -397,7 +366,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#effectiveness -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#effectiveness">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -424,7 +392,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#exploitLocation.Dialup -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#exploitLocation.Dialup">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies that the attack mechanism requires dial-up access.</rdfs:comment>
         <rdfs:label>Associated Exploit Location: Dialup</rdfs:label>
@@ -435,7 +402,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#exploitLocation.PhysicalAccess -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#exploitLocation.PhysicalAccess">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies that the attack mechanism requires physical access.</rdfs:comment>
         <rdfs:label>Associated Exploit Location: Physical Access</rdfs:label>
@@ -446,7 +412,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#exploitLocation.Unknown -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#exploitLocation.Unknown">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies that that the location requirements of the attack mechanism is unknown.</rdfs:comment>
         <rdfs:label>Associated Exploit Location: Unknown</rdfs:label>
@@ -457,7 +422,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#exploitLocation.VoluntarilyInteract -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#exploitLocation.VoluntarilyInteract">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies that the victim must voluntarily interact with the attack mechanism.</rdfs:comment>
         <rdfs:label>Associated Exploit Location: Voluntarily Interact</rdfs:label>
@@ -468,7 +432,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#exploitPublicationDate -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#exploitPublicationDate">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time when the exploit was first published.</rdfs:comment>
         <rdfs:label>Exploit Publication Date</rdfs:label>
@@ -479,7 +442,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#extendedDescription -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#extendedDescription">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies an unstructured text description</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cve"/>
@@ -491,7 +453,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/cve#externalIdentifier -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#externalIdentifier">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the external identifier associated with the vulnerability, such as the Common Vulnerability Enumeration (CVE) and Open-Source Vulnerability (OSVDB). 
 
@@ -504,7 +465,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#fixActionDescription -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#fixActionDescription">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -549,7 +509,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#fixActionId -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#fixActionId">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a unique identifier associated to be associated with the fix action</rdfs:comment>
         <rdfs:label>Fix Action Id</rdfs:label>
@@ -560,7 +519,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#fixActionSource -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#fixActionSource">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Specifies the source of the fix item.</rdfs:comment>
         <rdfs:label>Source</rdfs:label>
@@ -571,7 +529,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#fixActionType -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#fixActionType">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#FixAction"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -598,7 +555,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#isKnown -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#isKnown">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether or not the vulnerability is known (i.e., not a 0-day) at the time of characterization.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cve"/>
@@ -610,7 +566,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#isPubliclyAcknowledged -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#isPubliclyAcknowledged">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether or not the vulnerability is publicly acknowledged by the vendor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cve"/>
@@ -622,7 +577,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#lastModifiedDate -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#lastModifiedDate">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time vulnerability information was modified.</rdfs:comment>
         <rdfs:label>Last Modified</rdfs:label>
@@ -633,7 +587,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#publishedDate -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#publishedDate">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time the Vulnerability information was published</rdfs:comment>
         <rdfs:label>Published Date</rdfs:label>
@@ -644,7 +597,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#referenceName -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#referenceName">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a piece of human-readable text that provides a meaningful name for the reference</rdfs:comment>
         <rdfs:label>Name</rdfs:label>
@@ -655,7 +607,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#referenceSource -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#referenceSource">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the source of the vulnerability reference</rdfs:comment>
         <rdfs:label>Reference Source Name</rdfs:label>
@@ -666,7 +617,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#referenceType -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#referenceType">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#VulnerabilityReference"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -723,7 +673,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#securityProtection -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#securityProtection">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -756,7 +705,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#status -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#status">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -802,7 +750,6 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     <!-- http://nvd.nist.gov/cve#title -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cve#title">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a simple title for the entity</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cve"/>
@@ -821,6 +768,23 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
 
     
 
+
+    <!-- http://cpe.mitre.org/cpe#CPE -->
+
+    <owl:Class rdf:about="http://cpe.mitre.org/cpe#CPE"/>
+    
+
+
+    <!-- http://cpe.mitre.org/cpe#Platform -->
+
+    <owl:Class rdf:about="http://cpe.mitre.org/cpe#Platform"/>
+    
+
+
+    <!-- http://cwe.mitre.org/cwe#Weakness -->
+
+    <owl:Class rdf:about="http://cwe.mitre.org/cwe#Weakness"/>
+    
 
 
     <!-- http://nvd.nist.gov/cve#FixAction -->
@@ -1036,6 +1000,33 @@ Common Vulnerability Enumeration (CVE) identifier associated with the vulnerabil
     
 
 
+    <!-- http://nvd.nist.gov/cvss#CVSSImpact -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cvss#CVSSImpact"/>
+    
+
+
+    <!-- http://scap.nist.gov/patch#Patch -->
+
+    <owl:Class rdf:about="http://scap.nist.gov/patch#Patch"/>
+    
+
+
+    <!-- http://scap.nist.gov/scap_core#Catalog -->
+
+    <owl:Class rdf:about="http://scap.nist.gov/scap_core#Catalog"/>
+    
+
+
+    <!-- http://scap.nist.gov/scap_core#CheckReference -->
+
+    <owl:Class rdf:about="http://scap.nist.gov/scap_core#CheckReference"/>
+    
+
+
+    <!-- http://scap.nist.gov/scap_core#Reference -->
+
+    <owl:Class rdf:about="http://scap.nist.gov/scap_core#Reference"/>
 </rdf:RDF>
 
 

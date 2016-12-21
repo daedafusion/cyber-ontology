@@ -9,6 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://xml/metadatasharing">
         <rdfs:label>Malware Metadata Exchange Format (MMDEF) Metadata Sharing Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
         <rdfs:comment>This ontology provides a vocabulary and representation for the  Metadata Sharing  component of the Malware Metadata Exchange Format (MMDEF) common  types.  
 
 The Metadata Sharing ontology provides a set of data types for representing prevalence information associated with malicous software.
@@ -16,7 +17,6 @@ The Metadata Sharing ontology provides a set of data types for representing prev
 The ontology is based on the Malware Metadata Exchange Format schemas maintained by the IEEE Standards Assocation copyright 2011-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -158,8 +158,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://xml/metadatasharing#id -->
 
     <owl:DatatypeProperty rdf:about="http://xml/metadatasharing#id">
-        <rdfs:domain rdf:resource="http://xml/metadatasharing#Location"/>
-        <rdfs:domain rdf:resource="http://xml/metadatasharing#Volume"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the unique identifier associated with this entity instance.
 
@@ -175,7 +173,6 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <!-- http://xml/metadatasharing#locationType -->
 
     <owl:DatatypeProperty rdf:about="http://xml/metadatasharing#locationType">
-        <rdfs:domain rdf:resource="http://xml/metadatasharing#Location"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of the location</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xml/metadatasharing"/>
@@ -187,7 +184,6 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <!-- http://xml/metadatasharing#locationValue -->
 
     <owl:DatatypeProperty rdf:about="http://xml/metadatasharing#locationValue">
-        <rdfs:domain rdf:resource="http://xml/metadatasharing#Location"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the location value</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xml/metadatasharing"/>
@@ -199,7 +195,6 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <!-- http://xml/metadatasharing#volumeUnits -->
 
     <owl:DatatypeProperty rdf:about="http://xml/metadatasharing#volumeUnits">
-        <rdfs:domain rdf:resource="http://xml/metadatasharing#Volume"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the associated units in which the volume is stated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xml/metadatasharing"/>
@@ -211,7 +206,6 @@ The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID],
     <!-- http://xml/metadatasharing#volumeValue -->
 
     <owl:DatatypeProperty rdf:about="http://xml/metadatasharing#volumeValue">
-        <rdfs:domain rdf:resource="http://xml/metadatasharing#Volume"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment></rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://maec.mitre.org/maec_bundle&gt;</rdfs:isDefinedBy>

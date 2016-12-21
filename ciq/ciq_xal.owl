@@ -44,13 +44,16 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
     
 
-	<!-- http://purl.org/dc/elements/1.1/description -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2001/XMLSchema#base64Binary"/>
 
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#base64Binary -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2001/XMLSchema#base64Binary"/>
     
 
 
@@ -72,7 +75,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <rdfs:comment>The WGS84 altitude of a SpatialThing (decimal meters 
 above the local reference ellipsoid).</rdfs:comment>
         <rdfs:label>altitude</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
     </owl:AnnotationProperty>
     
 
@@ -82,7 +84,6 @@ above the local reference ellipsoid).</rdfs:comment>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
         <rdfs:comment>The WGS84 latitude of a SpatialThing (decimal degrees).</rdfs:comment>
         <rdfs:label>latitude</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
     </owl:AnnotationProperty>
     
 
@@ -91,6 +92,7 @@ above the local reference ellipsoid).</rdfs:comment>
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/based_near"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
     </owl:AnnotationProperty>
     
 
@@ -100,7 +102,6 @@ above the local reference ellipsoid).</rdfs:comment>
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
         <rdfs:comment>The WGS84 longitude of a SpatialThing (decimal degrees).</rdfs:comment>
         <rdfs:label>longitude</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
     </owl:AnnotationProperty>
     
 
@@ -370,9 +371,7 @@ above the local reference ellipsoid).</rdfs:comment>
 
     <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
-        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
     
 
 
@@ -1852,8 +1851,6 @@ When range is specified, the beginning of the range should be specified as the v
     
 
 
-   
-
     <!-- http://www.oasis-open.org/ciq_xal#Address -->
 
     <owl:Class rdf:about="http://www.oasis-open.org/ciq_xal#Address">
@@ -2099,7 +2096,7 @@ When range is specified, the beginning of the range should be specified as the v
     <!-- http://www.oasis-open.org/ciq_xal#Continent -->
 
     <owl:Class rdf:about="http://www.oasis-open.org/ciq_xal#Continent">
-		<rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_xal#continentName"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
@@ -2974,7 +2971,6 @@ When range is specified, the beginning of the range should be specified as the v
     
 
 
-   
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //

@@ -6,7 +6,12 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cyboxCommon="http://cybox.mitre.org/cyboxCommon#"
+     xmlns:cybox_core="http://cybox.mitre.org/cybox_core#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:maec_common="http://maec.mitre.org/maec_common#">
     <owl:Ontology rdf:about="http://maec.mitre.org/maec_package">
         <owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
@@ -45,76 +50,49 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
     <!-- http://maec.mitre.org/maec_common#id -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#id">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#CapturedProtocol"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Exception"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#GroupingRelationship"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareSubject"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#NetworkInfrastructure"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ObfuscationAlgorithm"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Package"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Parameter"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#id"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.internetLocation -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.internetLocation">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.internetLocation"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.obtainMethod -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.obtainMethod">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.obtainMethod"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.organization -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.organization">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.organization"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.organizationName -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.organizationName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.organizationName"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.person -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.person">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.person"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.personName -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.personName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.personName"/>
     
 
 
     <!-- http://maec.mitre.org/maec_common#source.reference -->
 
-    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.reference">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://maec.mitre.org/maec_common#source.reference"/>
     
 
 
@@ -161,7 +139,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#analysisEnvironment.analysisSystems -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#analysisEnvironment.analysisSystems">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#AnalysisSystem"/>
         <rdfs:comment>Specifies the system(s) (real or virtual) on which the actual analysis was performed, including information about both the hardware and software, such as the properties of its BIOS, processor architecture, and operating system.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -173,7 +150,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#analysisEnvironment.hypervisorHostSystem -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#analysisEnvironment.hypervisorHostSystem">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#HypervisorHostSystem"/>
         <rdfs:comment>Specifies  the (physical) host system used in the analysis on which the VM Hypervisor runs.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -185,7 +161,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#analysisEnvironment.networkInfrastructure -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#analysisEnvironment.networkInfrastructure">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#NetworkInfrastructure"/>
         <rdfs:comment>Specifies details of the network infrastructure used in the analysis environment, such as any network protocols that are captured or manipulated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -208,7 +183,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#analysisFindings.analysisBundles -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#analysisFindings.analysisBundles">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_bundle#AnalysisBundle"/>
         <rdfs:comment>Specifies any Analysis Bundles pertaining to the Malware Subject, thus capturing any observed or discovered Behaviors, Actions, or Objects. These Bundles can either be abstract, or referenced as the result of an analysis that was performed on the malware.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -231,7 +205,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#analysts -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#analysts">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Contributor"/>
         <rdfs:comment>Specifies the analyst(s) who performed the analysis.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -243,7 +216,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#capturedProtocols -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#capturedProtocols">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#NetworkInfrastructure"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#CapturedProtocol"/>
         <rdfs:comment>Specifies a list of network protocols, along with the particular level of interaction, that the malware analysis environment captures or interacts with in some fashion.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -255,7 +227,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#clusterComposition.edgeNodePair -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#clusterComposition.edgeNodePair">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
         <rdfs:comment>Specifies a single edge and its connected nodes in the malware cluster, representing the similarity index between two Malware Subjects.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -267,7 +238,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#clusteringMetadata -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#clusteringMetadata">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#GroupingRelationship"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:comment>Specifies any metadata regarding the algorithm and/or methods used for cluster the Malware Subjects in this Package.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -279,7 +249,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://maec.mitre.org/maec_package#comments -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#comments">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_common#Comment"/>
         <rdfs:comment>Specifies any comments regarding the analysis that was performed. 
 
@@ -322,7 +291,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#configurationParameters -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#configurationParameters">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#Parameter"/>
         <rdfs:comment>Specifies one or more configuration parameter that may be defined for the Malware Subject.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -356,7 +324,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.raisedExceptions -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.raisedExceptions">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#Exception"/>
         <rdfs:comment>Specifies one or more exceptions that were raised (or thrown) during the execution of the malware instance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -368,7 +335,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#groupingRelationships -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#groupingRelationships">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Package"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#GroupingRelationship"/>
         <rdfs:comment>Specifies the particular relationships that serve to group the Malware Subjects encompassed in this Package. This is solely for cases where more than one Malware Subject is contained within the Package.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -380,7 +346,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#installedPrograms -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#installedPrograms">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#AnalysisSystem"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -399,7 +364,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#malwareSubjects -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#malwareSubjects">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Package"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#MalwareSubject"/>
         <rdfs:comment>Specifies a list of Malware Subjects that are associated with this package.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -422,7 +386,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#nodeA -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#nodeA">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#MalwareSubject"/>
         <rdfs:comment>Specifies a node connected to the edge via a reference to a Malware Subject that is part of a malware cluster.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -434,7 +397,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#nodeB -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#nodeB">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#MalwareSubject"/>
         <rdfs:comment>Specifies a node connected to the edge via a reference to a Malware Subject that is part of a malware cluster.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -446,7 +408,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#obfuscation.algorithmDetails -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#obfuscation.algorithmDetails">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#ObfuscationAlgorithm"/>
         <rdfs:comment>Specifies the details of the algorithm used to encode or encrypt the malware configuration parameters, including the name of the algorithm and its key. More than one encryption or encoding algorithm may be specified by using multiple occurrences of this field.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -458,7 +419,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#port -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#port">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#CapturedProtocol"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
         <rdfs:comment>Specifies the port for this network protocol that is captured or manipulated by the analysis environment.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -470,7 +430,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#protocol -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#protocol">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#CapturedProtocol"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol"/>
         <rdfs:comment>Specifies the protocol captured or manipulated by the analysis enviornment.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -504,7 +463,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#report -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#report">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -520,7 +478,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#storage.configurationFile -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#storage.configurationFile">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/File#File"/>
         <rdfs:comment>Specifies the properties of a configuration file, for cases where the Malware Subject stores its configuration parameters in a separate file.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -532,7 +489,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#storgage.configurationURL -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#storgage.configurationURL">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
         <rdfs:comment>Specifies a URL at which the configuration parameters for the Malware Subject may be stored. More than one such URL may be specified by using multiple occurrences of this field.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -544,7 +500,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#summary -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#summary">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -560,7 +515,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#tools -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#tools">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
         <rdfs:comment>Specifies information about the tool(s) used in the analysis. If only a single Tool is specified, then this implies that this tool was responsible for all of the findings contained in the Analysis Bundle referenced by the analysis findings.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -572,7 +526,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#vmHypervisor -->
 
     <owl:ObjectProperty rdf:about="http://maec.mitre.org/maec_package#vmHypervisor">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#HypervisorHostSystem"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -602,7 +555,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#algorithmKey -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#algorithmKey">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ObfuscationAlgorithm"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the hexadecimal key used to decrypt the configuration parameters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -614,7 +566,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#algorithmName -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#algorithmName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ObfuscationAlgorithm"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the encoding or encryption algorithm used to obfuscate the malware configuration parameters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -637,7 +588,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#analysisMethod -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#analysisMethod">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of malware analysis being performed.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -649,7 +599,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#analysisType -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#analysisType">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of malware analysis being performed.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -661,7 +610,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusterComposition.scoreType -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusterComposition.scoreType">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of score used to define the composition of this malware cluster, for clustering algorithms that may capture different types of scores</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -673,7 +621,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusterDescription -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusterDescription">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a textual description of the malware cluster, such as information about its composition, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -685,7 +632,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusterSize -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusterSize">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>Specifies the size of the malware cluster.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -697,7 +643,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusteringAlgorithmName -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusteringAlgorithmName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the clustering algorithm used to cluster the malware.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -709,7 +654,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusteringAlgorithmParameter.distanceThreshold -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusteringAlgorithmParameter.distanceThreshold">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the minimum distance threshold for the cluster, or the minimum distance between nodes in order for them to belong to the same cluster.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -721,7 +665,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusteringAlgorithmParameter.numberOfIterations -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusteringAlgorithmParameter.numberOfIterations">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment>Specifies the number of times that the algorithm was executed in order to produce the cluster.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -733,7 +676,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#clusteringAlgorithmVersion -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#clusteringAlgorithmVersion">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusteringMetadata"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the version of the algorithm used to cluster the malware.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -745,7 +687,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#completeDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#completeDateTime">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date/time the analysis was completed.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -757,7 +698,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#description -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#description">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Exception"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the textual description of the exception.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -769,7 +709,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.analysisDuration -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.analysisDuration">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Specifies the duration of the overall dynamic analysis process, in seconds.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -781,7 +720,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.commandLine -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.commandLine">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the command line used to launch the subject binary.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -793,7 +731,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.exitCode -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#dynamicAnalysisMetadata.exitCode">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Specifies the exit code with which the subject binary exited.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -805,7 +742,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#exceptionCode -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#exceptionCode">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Exception"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the particular code that identifies the type of exception that occurred.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -817,7 +753,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#faultingAddress -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#faultingAddress">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Exception"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the memory address where the exception occurred.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -829,7 +764,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#groupingRelationshipType -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#groupingRelationshipType">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#GroupingRelationship"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of relationship that groups the Malware Subjects in the Package.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -841,7 +775,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#interactionLevel -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#interactionLevel">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#CapturedProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the relative level of interaction that the analysis environment has with the specified network protocol.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -853,7 +786,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#isFatal -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#isFatal">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Exception"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the exception is fatal; that is, whether it caused the malware instance to terminate.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -865,7 +797,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#lastUpdateDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#lastUpdateDateTime">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date/time the analysis was last updated.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -877,7 +808,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#malwareFamilyName -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#malwareFamilyName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#GroupingRelationship"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the malware family referred to by the &apos;same_malware_family&apos; relationship type.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -900,7 +830,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#malwareToolkitName -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#malwareToolkitName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#GroupingRelationship"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the malware toolkit referred to by the &apos;same_malware_toolkit&apos; relationship type.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -912,7 +841,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#obfuscation.isEncoded -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#obfuscation.isEncoded">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the obfuscation is encoded</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -924,7 +852,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#obfuscation.isEncrypted -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#obfuscation.isEncrypted">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the obfuscation is using encryption.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -936,9 +863,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#ordinalPosition -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#ordinalPosition">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ObfuscationAlgorithm"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonPositiveInteger"/>
         <rdfs:comment>Specifies the ordinal position with regards to the parent .</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -950,7 +874,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#parameterName -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#parameterName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the malware configuration parameter.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -962,7 +885,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#parameterValue -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#parameterValue">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies  the value of the malware configuration parameter.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -974,7 +896,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#relationshipType -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#relationshipType">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareSubjectRelationshipStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of relationship being captured.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -992,7 +913,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#schemaVersion -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#schemaVersion">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Package"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the version of the schema associated with the Package</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1004,7 +924,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#similarityDistance -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#similarityDistance">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the similarity distance between the two Malware Subjects being referenced (indicating how dissimilar they are), as a decimal value. This value should be equivalent to 1 minus the similarity index value (if included).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1016,7 +935,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#similarityIndex -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#similarityIndex">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#ClusterEdgeNodePair"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment>Specifies the similarity index  between the two Malware Subjects being referenced (indicating how similar they are), as a decimal value. This value should be equivalent to 1 minus the similarity distance value (if included).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1028,7 +946,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#startDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#startDateTime">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Analysis"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date/time the analysis was started.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1040,7 +957,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#storage.malwareBinaryFileOffset -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#storage.malwareBinaryFileOffset">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the offset to the start of the malware configuration parameters in the malware binary.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1052,7 +968,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#storage.malwareBinarySectionName -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#storage.malwareBinarySectionName">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the PE section in the malware binary thta contains the malware configuration parameters, for PE file malware binaries.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1064,7 +979,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#storage.malwareBinarySectionOffset -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#storage.malwareBinarySectionOffset">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#MalwareConfigurationDetails"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the offset in the PE section in the malware binary that contains the malware configuration parameters to the start of the parameters themselves, for PE file malware binaries.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1082,7 +996,6 @@ A comment should be attributable to a specific analyst and should reflect partic
     <!-- http://maec.mitre.org/maec_package#timestamp -->
 
     <owl:DatatypeProperty rdf:about="http://maec.mitre.org/maec_package#timestamp">
-        <rdfs:domain rdf:resource="http://maec.mitre.org/maec_package#Package"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date and time that the Package was created.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
@@ -1102,7 +1015,12 @@ A comment should be attributable to a specific analyst and should reflect partic
     
 
 
+    <!-- http://cybox.mitre.org/objects/File#File -->
+
+    <owl:Class rdf:about="http://cybox.mitre.org/objects/File#File"/>
     
+
+
     <!-- http://maec.mitre.org/maec_package#Analysis -->
 
     <owl:Class rdf:about="http://maec.mitre.org/maec_package#Analysis">
@@ -1553,7 +1471,6 @@ A comment should be attributable to a specific analyst and should reflect partic
         <rdfs:label>Parameter</rdfs:label>
     </owl:Class>
     
-    
 
 
     <!-- 
@@ -1566,8 +1483,8 @@ A comment should be attributable to a specific analyst and should reflect partic
 
     <rdf:Description rdf:about="http://maec.mitre.org/maec_package#report">
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>
-        <rdfs:comment>Specifies the textual report regarding the analysis performed on the malware. The Report should correspond to the human-readable prose document that captures key aspects and outcomes of the analysis.</rdfs:comment>
         <rdfs:label>Report</rdfs:label>
+        <rdfs:comment>Specifies the textual report regarding the analysis performed on the malware. The Report should correspond to the human-readable prose document that captures key aspects and outcomes of the analysis.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://maec.mitre.org/maec_package#summary">
         <rdfs:isDefinedBy rdf:resource="http://maec.mitre.org/maec_package"/>

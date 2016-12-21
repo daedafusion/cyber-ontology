@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://stix.mitre.org/TTP#"
      xml:base="http://stix.mitre.org/TTP"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cyboxCommon="http://cybox.mitre.org/cyboxCommon#"
+     xmlns:maec_common="http://maec.mitre.org/maec_common#"
      xmlns:stixCommon="http://stix.mitre.org/stixCommon#"
      xmlns:ttp="http://stix.mitre.org/TTP#"
      xmlns:ciq_common="http://www.oasis-open.org/ciq_common#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:data_marking="http://data-marking.mitre.org/Data_Marking#">
+     xmlns:data_marking="http://data-marking.mitre.org/Data_Marking#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:cybox_core="http://cybox.mitre.org/cybox_core#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://stix.mitre.org/TTP">
         <owl:versionIRI rdf:resource="http://stix.mitre.org/TTP/1.2"/>
         <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
@@ -38,112 +44,73 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
 
     <!-- http://data-marking.mitre.org/Data_Marking#handling -->
 
-    <owl:AnnotationProperty rdf:about="http://data-marking.mitre.org/Data_Marking#handling">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://data-marking.mitre.org/Data_Marking#handling"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#confidence -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#confidence">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#confidence"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#description -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#description">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#AttackPattern"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Exploit"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#description"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#id -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#id">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#AttackPattern"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Exploit"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#id"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#informationSource -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#informationSource">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#informationSource"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#relatedPackages -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#relatedPackages"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#relatedTTP -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#relatedTTP">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#relatedTTP"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#shortDescription -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#shortDescription">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#AttackPattern"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Exploit"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#shortDescription"/>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#title -->
 
-    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#title">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#AttackPattern"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Exploit"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://stix.mitre.org/stixCommon#title"/>
     
 
 
     <!-- http://www.oasis-open.org/ciq_common#status -->
 
-    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_common#status">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_common#status"/>
     
 
 
     <!-- http://www.oasis-open.org/ciq_common#validFromDateTime -->
 
-    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_common#validFromDateTime"/>
     
 
 
     <!-- http://www.oasis-open.org/ciq_common#validToDateTime -->
 
-    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://www.oasis-open.org/ciq_common#validToDateTime"/>
     
 
 
@@ -179,7 +146,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#behavior.attackPatterns -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#behavior.attackPatterns">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -198,7 +164,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#behavior.exploits -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#behavior.exploits">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/TTP#Exploit"/>
         <rdfs:comment>Specifies a reference to a set of one or more exploits that an adversary may leverage.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -210,7 +175,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#behavior.malware -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#behavior.malware">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
         <rdfs:comment>Specifies one or more instances of malware that the attacker leverages to execute this TTP.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -222,7 +186,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#capecReference -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#capecReference">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#AttackPattern"/>
         <rdfs:range rdf:resource="http://capec.mitre.org/capec#AttackPattern"/>
         <rdfs:comment>Specifies a reference to a particular entry within the Common Attack Pattern Enumeration and Classification (CAPEC) registry.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -234,7 +197,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#exploitTargets -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#exploitTargets">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ExploitTargetBase"/>
         <rdfs:comment>Specifies a reference to a set of one or more Exploit Targets potentially targeted by the TTP.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -246,7 +208,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#intendedEffect -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#intendedEffect">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
         <rdfs:comment>Specifies the suspected intended effect for this TTP.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -258,7 +219,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#killChainPhases -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#killChainPhases">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChainPhase"/>
         <rdfs:comment>Specifies a reference to a set of one or more kill chain phases (from one or more kill chains defined elsewhere) for which the TTP is asserted to be representative.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -270,7 +230,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#killChains -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#killChains">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChain"/>
         <rdfs:comment>Specifies a reference to a set of one or more specific kill chain definitions.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -282,7 +241,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#maecPackage -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#maecPackage">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
         <rdfs:range rdf:resource="http://maec.mitre.org/maec_package#Package"/>
         <rdfs:comment>Specifies a reference to the structured characterization of malware instances using the MAEC Package data model.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -294,7 +252,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#observableCharacterization -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#observableCharacterization">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
         <rdfs:comment>Specifies a reference to the adversarial infrastructure through specification of a structured cyber Observables pattern.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -306,7 +263,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#resources.infrastructure -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#resources.infrastructure">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
         <rdfs:comment>Specifies a reference to resources the adversary may leverage.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -318,7 +274,6 @@ TTP is a military term that means &quot;tactics, techniques, and procedures&quot
     <!-- http://stix.mitre.org/TTP#resources.personas -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#resources.personas">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -341,7 +296,6 @@ Different personas are often used as a method of masquerade.</rdfs:comment>
     <!-- http://stix.mitre.org/TTP#resources.tools -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#resources.tools">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ToolInformation"/>
         <rdfs:comment>Specifies the tools that the adversary uses to execute this TTP.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -353,7 +307,6 @@ Different personas are often used as a method of masquerade.</rdfs:comment>
     <!-- http://stix.mitre.org/TTP#victimTargeting.identity -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#victimTargeting.identity">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -374,7 +327,6 @@ Different personas are often used as a method of masquerade.</rdfs:comment>
     <!-- http://stix.mitre.org/TTP#victimTargeting.targetedTechnicalDetails -->
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/TTP#victimTargeting.targetedTechnicalDetails">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
         <rdfs:comment>Specifies a reference to details of specific technologies targeted by the adversary. 
 
@@ -399,7 +351,6 @@ It is implemented through specification of a structured cyber Observables patter
     <!-- http://stix.mitre.org/TTP#capecID -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/TTP#capecID">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#AttackPattern"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies an identifier to a particular entry within the Common Attack Pattern Enumeration and Classification (CAPEC)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -411,7 +362,6 @@ It is implemented through specification of a structured cyber Observables patter
     <!-- http://stix.mitre.org/TTP#infrastructureType -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/TTP#infrastructureType">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#Infrastructure"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of attacker infrastructure being described. 
 
@@ -427,7 +377,6 @@ By default, the Attack Infrastructure Type Vocabulary is used to defined a restr
     <!-- http://stix.mitre.org/TTP#malwareInstanceName -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/TTP#malwareInstanceName">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a name associated with this MalwareInstance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
@@ -439,7 +388,6 @@ By default, the Attack Infrastructure Type Vocabulary is used to defined a restr
     <!-- http://stix.mitre.org/TTP#malwareInstanceType -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/TTP#malwareInstanceType">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#MalwareInstance"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of malware. 
 
@@ -455,7 +403,6 @@ By default, the Malware Type Vocabulary is used to defined a restricted set of v
     <!-- http://stix.mitre.org/TTP#vicitimTargeting.targetedSystems -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/TTP#vicitimTargeting.targetedSystems">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the type of system that is targeted. 
 
@@ -471,7 +418,6 @@ By default, the System Type Vocabulary is used to defined a restricted set of va
     <!-- http://stix.mitre.org/TTP#victimTargeting.targetedInformation -->
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/TTP#victimTargeting.targetedInformation">
-        <rdfs:domain rdf:resource="http://stix.mitre.org/TTP#TTP"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a type of information that is targeted.
 
@@ -493,6 +439,13 @@ By default, the Information Type Vocabulary is used to defined a restricted set 
      -->
 
     
+
+
+    <!-- http://capec.mitre.org/capec#AttackPattern -->
+
+    <owl:Class rdf:about="http://capec.mitre.org/capec#AttackPattern"/>
+    
+
 
     <!-- http://stix.mitre.org/TTP#AttackPattern -->
 
@@ -570,9 +523,6 @@ The TTP class captures information that includes the victims targeted, the attac
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
         <rdfs:label>TTP</rdfs:label>
     </owl:Class>
-    
-
-
 </rdf:RDF>
 
 

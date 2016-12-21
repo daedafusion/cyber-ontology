@@ -52,7 +52,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#contributor -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/statement#contributor">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -72,7 +71,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#organization -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/statement#organization">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
         <rdfs:comment>Specifies a referene to the organization</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -84,7 +82,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#statements -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/statement#statements">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatementCatalog"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:comment>Specifies one or more vendor vulnerability statements</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -96,7 +93,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#vulnerability -->
 
     <owl:ObjectProperty rdf:about="http://nvd.nist.gov/statement#vulnerability">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://nvd.nist.gov/cve#Vulnerability"/>
         <rdfs:comment>Speceifies a reference to the assoicated vulnerability</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -119,7 +115,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#contributorName -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/statement#contributorName">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the contributor</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -131,7 +126,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#description -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/statement#description">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a short description</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -143,7 +137,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#lastModifiedDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/statement#lastModifiedDateTime">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the date/time the statement was last modified.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -155,7 +148,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#organizationName -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/statement#organizationName">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the organization</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -167,7 +159,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://nvd.nist.gov/statement#vulnerabiltyName -->
 
     <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/statement#vulnerabiltyName">
-        <rdfs:domain rdf:resource="http://nvd.nist.gov/statement#VendorStatement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the identifier associated with the vulnerability</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
@@ -187,7 +178,9 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
 
 
-   
+    <!-- http://nvd.nist.gov/cve#Vulnerability -->
+
+    <owl:Class rdf:about="http://nvd.nist.gov/cve#Vulnerability"/>
     
 
 
@@ -257,9 +250,30 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/statement"/>
         <rdfs:label>Vendor Statement Catalog</rdfs:label>
     </owl:Class>
+    
 
-   
-   
+
+    <!-- http://scap.nist.gov/scap_core#Catalog -->
+
+    <owl:Class rdf:about="http://scap.nist.gov/scap_core#Catalog"/>
+    
+
+
+    <!-- http://www.oasis-open.org/ciq_xpil#Organization -->
+
+    <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Organization"/>
+    
+
+
+    <!-- http://www.oasis-open.org/ciq_xpil#Party -->
+
+    <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Party"/>
+    
+
+
+    <!-- http://www.oasis-open.org/ciq_xpil#Person -->
+
+    <owl:Class rdf:about="http://www.oasis-open.org/ciq_xpil#Person"/>
 </rdf:RDF>
 
 

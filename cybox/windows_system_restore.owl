@@ -10,7 +10,6 @@
     <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore">
         <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
         <rdfs:label>Cyber Observable eXpression (CybOX) Windows System Restore Ontology</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
         <rdfs:comment>This ontology provides a vocabulary and representation of an Windows System Restore for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
@@ -18,6 +17,7 @@ CybOX  provides a common mechansim (structure and content) to convey the full ra
 The ontology is based on the CybOX Windows System Restore object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -36,7 +36,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#aclChangeSID -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#aclChangeSID">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the SID associated with a restore point change log event. This usually appears when the event flag includes &quot;ACL Info&quot;.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -48,7 +47,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#aclChangeUsername -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#aclChangeUsername">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies  username associated with a restore point change log event. It usually appears when the event flag includes &quot;ACL Info&quot;.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -60,7 +58,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#backupFilename -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#backupFilename">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the backup file name associated with a particular restore point change log event.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -72,7 +69,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#changeEvent -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#changeEvent">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the change event associated with this restore point object (ex: &quot;System Checkpoint&quot;, &quot;Software Installation&quot;, etc.).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -84,7 +80,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogEntryFlags -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogEntryFlags">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the  flags associated with a restore point change log entry (ex: &quot;ACL Info, &quot;Short Name&quot;, etc.).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -96,7 +91,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogEntrySequenceNumber -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogEntrySequenceNumber">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
         <rdfs:comment>Specifies the change log sequence number associated with this restore point object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -108,7 +102,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogEntryType -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogEntryType">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the changelog entry type associated with this restore point object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -120,7 +113,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogFilename -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#changeLogFilename">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the changelog file associated with the restore point.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -132,7 +124,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#createdDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#createdDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the creation date/time of the system restore point.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -144,7 +135,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#fileAttributes -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#fileAttributes">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the attributes of the file associated with this restore point object (ex: &quot;Directory&quot;).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -156,7 +146,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#newFilename -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#newFilename">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the new filename of the file associated with this restore point object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -168,7 +157,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#originalFilename -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#originalFilename">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the  original filename associated with this restore point change log event.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -180,7 +168,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#originalShortFilename -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#originalShortFilename">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the original Short filename (SFN) of the file associated with this restore point object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -192,7 +179,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#processName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#processName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the process name associated with this restore point object.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -204,7 +190,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#registryHiveList -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#registryHiveList">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the registry hives associated with this restore point.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -216,7 +201,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#restorePointFullPath -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#restorePointFullPath">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the full path to the restore point.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -228,7 +212,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#restorePointName -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#restorePointName">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name associated with this restore point.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
@@ -240,7 +223,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsSystemRestore#restorePointType -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore#restorePointType">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore#WindowsSystemRestorePoint"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the  type of restore point. (ex: &quot;Checkpoint&quot;).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>

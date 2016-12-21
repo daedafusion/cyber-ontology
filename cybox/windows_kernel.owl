@@ -36,7 +36,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsKernel#idtEntries -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#idtEntries">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#WindowsKernel"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#IDTEntry"/>
         <rdfs:comment>Specifies an entry in the he Windows Interrupt Descriptor Table (IDT).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -48,7 +47,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/WindowsKernel#ssdtEntries -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#ssdtEntries">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#WindowsKernel"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#SSDTEntry"/>
         <rdfs:comment>Specifies an entry in the Windows System Service Descriptor Table (SSDT). 
 
@@ -73,7 +71,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#argumentTableBase -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#argumentTableBase">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#SSDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies a pointer to an array of bytes, which indicate the number of bytes used by the function&apos;s arguments.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -85,7 +82,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#hooked -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#hooked">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#SSDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the SSDT entry is hooked.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -97,7 +93,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#numberOfServices -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#numberOfServices">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#SSDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment>Specifies the number of entries in the System Service Dispatch Table</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -109,7 +104,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#offsetHigh -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#offsetHigh">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#IDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the higher part of the interrupt function&apos;s offset address bits 16-31 in 32-bit, bits 32-63 in 64-bit).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -121,7 +115,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#offsetLow -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#offsetLow">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#IDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the lower part of the interrupt function&apos;s offset address (bits 0-15).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -133,7 +126,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#offsetMiddle -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#offsetMiddle">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#IDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies in 64-bit architectures, middle part of the interrupt function&apos;s offset address (bits 16-31).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -145,7 +137,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#selector -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#selector">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#IDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifes a 16-bit value that points to a code segment selector in the Global Descriptot Table.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -157,7 +148,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#serviceCounterTableBase -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#serviceCounterTableBase">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#SSDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies a pointer to an array of usage counters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -169,7 +159,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#serviceTableBase -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#serviceTableBase">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#SSDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies a pointer to the system service dispatch table, an array of function addresses which is indexed by the system call number.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
@@ -181,7 +170,6 @@ The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescrip
     <!-- http://cybox.mitre.org/objects/WindowsKernel#typeAttr -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsKernel#typeAttr">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/WindowsKernel#IDTEntry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies A byte that encodes the gate type and interrupt attributes (e.g., the Descriptor Privilege Level) of the Interrupt Descriptor Table.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>

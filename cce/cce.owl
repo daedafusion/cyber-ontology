@@ -2,19 +2,19 @@
 <rdf:RDF xmlns="http://cce.mitre.org/cce#"
      xml:base="http://cce.mitre.org/cce"
      xmlns:cce="http://cce.mitre.org/cce#"
-	 xmlns:cpe="http://cpe.mitre.org/cpe#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cpe="http://cpe.mitre.org/cpe#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://cce.mitre.org/cce">
         <owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
         <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0-001</owl:versionInfo>
         <rdfs:comment>This ontology provides a vocabulary and representation for the Common Configuration Enumeration (CCE) which provides unique identifiers to system configuration issues in order to facility fast and accurate correlation of configuration data across multiple information sources and tools.  This ontology is compatible with the version 5 format of the Common Configuration Enumeration XML schema.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0-001</owl:versionInfo>
         <rdfs:label>Common Configuration Enumeration (CCE) Ontology</rdfs:label>
     </owl:Ontology>
     
@@ -68,7 +68,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#configurationIssues -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#configurationIssues">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#ConfigurationIssueCatalog"/>
         <rdfs:range rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:comment>Specifies the CCE Name entries contained within the Configuration Issue Catalog.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
@@ -80,7 +79,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#creator -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#creator">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:comment>Specifies the creator of the resource document</rdfs:comment>
         <rdfs:label>Creator</rdfs:label>
     </owl:ObjectProperty>
@@ -90,7 +88,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#platform -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#platform">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
         <rdfs:comment>Specifies the platform associated with this configuration control</rdfs:comment>
         <rdfs:label>Platform</rdfs:label>
@@ -101,7 +98,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#publisher -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#publisher">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:comment>Specifies the publisher of the resource, typically an organization</rdfs:comment>
         <rdfs:label>Publisher</rdfs:label>
     </owl:ObjectProperty>
@@ -111,7 +107,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#references -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#references">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://cce.mitre.org/cce#CceReference"/>
         <rdfs:comment>Specifies a set of references from published configuration guidance documents such as the NSA Security Guides, the Center for Internet Security Benchmarks, and the DISA STIGs. Authoritative vendor documentation such as Microsoft’s Security Compliance Manager represents acceptable reference material as well.</rdfs:comment>
         <rdfs:label>Resource References</rdfs:label>
@@ -122,7 +117,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#resource -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#resource">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceReference"/>
         <rdfs:range rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:comment>Specifies the Resource assoicated with the reference</rdfs:comment>
         <rdfs:label>Resource</rdfs:label>
@@ -133,7 +127,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#resources -->
 
     <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#resources">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#ConfigurationIssueCatalog"/>
         <rdfs:range rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:comment>Specifies the Configuration Issue Resources contained within the Configuration Issue Catalog.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
@@ -156,7 +149,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#cceId -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#cceId">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies pseudorandom identifier tag assigned to the CCE entry</rdfs:comment>
         <rdfs:label>CCE Identifier</rdfs:label>
@@ -167,7 +159,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#cceResourceId -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#cceResourceId">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the identifier for the Common Configuration Enumeration resource</rdfs:comment>
         <rdfs:label>Resource Identifier</rdfs:label>
@@ -178,7 +169,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#creatorName -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#creatorName">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the creator(s) of the resource document</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
@@ -190,7 +180,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#deprecated -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#deprecated">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Specifies whether the CCE entry is depreciated</rdfs:comment>
         <rdfs:label>Deprecated</rdfs:label>
@@ -201,7 +190,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#description -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#description">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a humanly understandable description of the configuration control. This description describes the control and allows an analyst to quickly and accurately recognize an entry.</rdfs:comment>
         <rdfs:label>Description</rdfs:label>
@@ -212,7 +200,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#format -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#format">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the format of the resource</rdfs:comment>
         <rdfs:label>Format</rdfs:label>
@@ -223,7 +210,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#issuedDate -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#issuedDate">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment>Specifies the date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
         <rdfs:label>Issued</rdfs:label>
@@ -234,8 +220,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#lastModifiedDate -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#lastModifiedDate">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment>Specifies the date the configuration control was last modified</rdfs:comment>
         <rdfs:label>Last Modified</rdfs:label>
@@ -246,7 +230,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#notes -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#notes">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a note associated with the resource</rdfs:comment>
         <rdfs:label>Notes</rdfs:label>
@@ -257,7 +240,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#parameters -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#parameters">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies parameters that would need to be specified in order to implement a CCE on a system.</rdfs:comment>
         <rdfs:label>Parameters</rdfs:label>
@@ -268,7 +250,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#publisherName -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#publisherName">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the name of the publisher of the resource, typically an organization</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
@@ -280,7 +261,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#resourceId -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#resourceId">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the identifier of the resource</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
@@ -292,7 +272,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#section -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#section">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceReference"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies a specific section contained within the resource referenced that is applicable to this configuration control</rdfs:comment>
         <rdfs:label>Section</rdfs:label>
@@ -303,7 +282,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#technicalMechanism -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#technicalMechanism">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CCE"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies for any given configuration issue there may be one or more ways to implement the desired result.</rdfs:comment>
         <rdfs:label>Technical Mechanisms</rdfs:label>
@@ -314,7 +292,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#title -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#title">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the title of the resource document</rdfs:comment>
         <rdfs:label>Title</rdfs:label>
@@ -325,7 +302,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cce.mitre.org/cce#version -->
 
     <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#version">
-        <rdfs:domain rdf:resource="http://cce.mitre.org/cce#CceResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the version of the resource</rdfs:comment>
         <rdfs:label>Version</rdfs:label>
@@ -493,7 +469,15 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
 
 
-   
+    <!-- http://cpe.mitre.org/cpe#CPE -->
+
+    <owl:Class rdf:about="http://cpe.mitre.org/cpe#CPE"/>
+    
+
+
+    <!-- http://scap.nist.gov/scap_core#Catalog -->
+
+    <owl:Class rdf:about="http://scap.nist.gov/scap_core#Catalog"/>
 </rdf:RDF>
 
 

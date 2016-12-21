@@ -5,8 +5,11 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:threadObj="http://cybox.mitre.org/objects/Thread#">
+     xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Thread">
         <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
         <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
@@ -37,7 +40,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#handle -->
 
     <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Thread#handle">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
         <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
         <rdfs:comment>Specifies the handle of a specific thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms682453(v=vs.85).aspx.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -60,7 +62,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#context -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#context">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the thread context structure, which contains processor-specific register data.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -72,7 +73,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#creationDateTime -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#creationDateTime">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>Specifies the creation time of the thread.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -84,7 +84,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#creationFlags -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#creationFlags">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the creation flags that a thread may be launched with. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -96,7 +95,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#parameterAddress -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#parameterAddress">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the address of the parameters passed to the start address.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -108,7 +106,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#priority -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#priority">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:comment>Specifies the priority of the thread.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -120,7 +117,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#runningStatus -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#runningStatus">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the running state that the thread is in.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -132,7 +128,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#securityAttributes -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#securityAttributes">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#WindowsThread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Specifies the security attributes for the thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa379560(v=vs.85).aspx.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -144,7 +139,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     <!-- http://cybox.mitre.org/objects/Thread#stackSize -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#stackSize">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment>Specifies  the stack size of the thread. 
 
@@ -158,7 +152,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.
     <!-- http://cybox.mitre.org/objects/Thread#startAddress -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#startAddress">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:comment>Specifies the start address of this thread, representing the memory address where this thread should start.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
@@ -170,7 +163,6 @@ See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.
     <!-- http://cybox.mitre.org/objects/Thread#threadID -->
 
     <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#threadID">
-        <rdfs:domain rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <rdfs:comment>Specifies the identifier of this thread.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>

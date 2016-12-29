@@ -891,29 +891,6 @@ Since Behaviors are not always successful, and may not be fully observed, this i
      -->
 
     
-
-
-    <!-- http://cwe.mitre.org/cwe#Category -->
-
-    <owl:Class rdf:about="http://cwe.mitre.org/cwe#Category"/>
-    
-
-
-    <!-- http://cwe.mitre.org/cwe#CompoundElement -->
-
-    <owl:Class rdf:about="http://cwe.mitre.org/cwe#CompoundElement"/>
-    
-
-
-    <!-- http://cwe.mitre.org/cwe#View -->
-
-    <owl:Class rdf:about="http://cwe.mitre.org/cwe#View"/>
-    
-
-
-    <!-- http://cwe.mitre.org/cwe#Weakness -->
-
-    <owl:Class rdf:about="http://cwe.mitre.org/cwe#Weakness"/>
     
 
 
@@ -924,19 +901,19 @@ Since Behaviors are not always successful, and may not be fully observed, this i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#classificationName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#definitionVersion"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#engineVersion"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes information on AV scanner classifications for the malware instance object captured in the Bundle or Package.</rdfs:comment>
@@ -963,13 +940,13 @@ Since Behaviors are not always successful, and may not be fully observed, this i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#contentType"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#timestamp"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes analysis data (from any arbitrary set of analyses) for a single malware instance in terms of its Behaviors, Actions, Objects, etc.).</rdfs:comment>
@@ -985,37 +962,37 @@ Since Behaviors are not always successful, and may not be fully observed, this i
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#purpose.exploitTargetedVulnerability"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorOrdinalPosition"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorStatus"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorDescription"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorDuration"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorOrdinalPosition"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorStatus"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#purpose.description"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes malicious behaviors found or observed in malware. 
@@ -1034,7 +1011,7 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#purpose"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a collection of behaviors.</rdfs:comment>
@@ -1051,7 +1028,7 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorRelationshipType"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Specifies  any relationships between a Behavior and other Behaviors.</rdfs:comment>
@@ -1068,7 +1045,7 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behavioralOrdering"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes an Action field that can be used as part of a Behavior.</rdfs:comment>
@@ -1095,25 +1072,25 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#composition"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#malwareEntity"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#candidateDescription"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#numericImportance"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes the particular components that may signify the presence of the malware instance on a host system or network.</rdfs:comment>
@@ -1140,19 +1117,19 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#behaviorReference"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#objectReference"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#operator"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes the composition of a Candidate Indicator, via references to any corresponding MAEC entities contained in the Bundle.</rdfs:comment>
@@ -1167,14 +1144,14 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
     <owl:Class rdf:about="http://maec.mitre.org/maec_bundle#Capability">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityDescription"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes details of a Capability that may be implemented in the malware instance, along with its child Strategic and Tactical Objectives.</rdfs:comment>
@@ -1189,14 +1166,14 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
     <owl:Class rdf:about="http://maec.mitre.org/maec_bundle#CapabilityObjective">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#strategicObjectiveName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#objectiveDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#objectiveDescription"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#strategicObjectiveName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes details of a Capability&apos;s Strategic or Tactical Objective.</rdfs:comment>
@@ -1213,7 +1190,7 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityObjectiveRelationshipType"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes  a relationship between a Strategic or Tactical Objective and one or more other Strategic or Tactical Objectives.</rdfs:comment>
@@ -1229,13 +1206,13 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityPropertyName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityPropertyValue"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes  a single property of a Capability or Capability Objective.</rdfs:comment>
@@ -1248,11 +1225,11 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
     <!-- http://maec.mitre.org/maec_bundle#CapabilityRelationshipStatement -->
 
     <owl:Class rdf:about="http://maec.mitre.org/maec_bundle#CapabilityRelationshipStatement">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+        <rdfs:subClassOf rdf:resource="http://maec.mitre.org/maec_bundle#CapabilityObjectiveRelationshipStatement"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#capabilityRelationshipType"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a relationship between a Capability and one or more other Capabilities.</rdfs:comment>
@@ -1267,20 +1244,20 @@ Behaviors can be thought of as representing the purpose behind groups of Malware
     <owl:Class rdf:about="http://maec.mitre.org/maec_bundle#MalwareEntity">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#malwareEntityDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#malwareEntityName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#malwareEntityType"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#malwareEntityDescription"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a Malware Entity that an indicator or signature is written against, whether it is a particular malware instance, family, etc.</rdfs:comment>
@@ -1310,13 +1287,13 @@ For instance, it can be used to group all of the Objects that are associated wit
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#parentAction"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#processOrdinalPosition"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a single process, or node, in the process tree.</rdfs:comment>
@@ -1344,7 +1321,7 @@ For instance, it can be used to group all of the Objects that are associated wit
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://maec.mitre.org/maec_bundle#tacticalObjectiveName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes details of a Capability&apos;s Tactical Objective.</rdfs:comment>
@@ -1354,9 +1331,39 @@ For instance, it can be used to group all of the Objects that are associated wit
     
 
 
+    <!-- http://maec.mitre.org/maec_common#ActionEquivalence -->
+
+    <owl:Class rdf:about="http://maec.mitre.org/maec_common#ActionEquivalence"/>
+    
+
+
+    <!-- http://maec.mitre.org/maec_common#BaseCollection -->
+
+    <owl:Class rdf:about="http://maec.mitre.org/maec_common#BaseCollection"/>
+    
+
+
+    <!-- http://maec.mitre.org/maec_common#MalwareAction -->
+
+    <owl:Class rdf:about="http://maec.mitre.org/maec_common#MalwareAction"/>
+    
+
+
+    <!-- http://maec.mitre.org/maec_common#ToolInformation -->
+
+    <owl:Class rdf:about="http://maec.mitre.org/maec_common#ToolInformation"/>
+    
+
+
     <!-- http://nvd.nist.gov/cve#Vulnerability -->
 
     <owl:Class rdf:about="http://nvd.nist.gov/cve#Vulnerability"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
 </rdf:RDF>
 
 

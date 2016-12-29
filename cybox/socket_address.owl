@@ -88,36 +88,6 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
 
 
-    <!-- http://cybox.mitre.org/cybox_core#Object -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/cybox_core#Object"/>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#IPv4Address -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#IPv6Address -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Hostname#Hostname -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Hostname#Hostname"/>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Port#Port -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Port#Port"/>
-    
-
-
     <!-- http://cybox.mitre.org/objects/Socket_Address#SocketAddress -->
 
     <owl:Class rdf:about="http://cybox.mitre.org/objects/Socket_Address#SocketAddress">
@@ -125,19 +95,19 @@ Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Socket_Address#hostname"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Socket_Address#ipAddress"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Socket_Address#port"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes an identifier for a network host (IP address or Hostname) and port number pair.</rdfs:comment>

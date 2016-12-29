@@ -46,6 +46,12 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#maxCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#maxCardinality"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -103,9 +109,9 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
 
     <!-- http://stix.mitre.org/stixCommon#relatedPackages -->
 
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
+    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#PackageBase"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -166,19 +172,7 @@ By default, the Campaign Status Vocabulary is used to defined a restricted set o
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/Campaign#status"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validFromDateTime"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#validToDateTime"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a single cyber threat Campaign. 
@@ -190,16 +184,6 @@ Campaigns are instances of ThreatActors pursuing an intent, as observed through 
     
 
 
-    <!-- http://stix.mitre.org/stixCommon#CampaignBase -->
-
-    <rdf:Description rdf:about="http://stix.mitre.org/stixCommon#CampaignBase">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#status"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </rdf:Description>
 </rdf:RDF>
 
 

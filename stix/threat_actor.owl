@@ -251,14 +251,14 @@ A STIX Threat Actor conveys information that characterizes or identifies (or bot
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/ThreatActor#identity"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://stix.mitre.org/ThreatActor#confidence"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/ThreatActor#confidence"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="http://stix.mitre.org/ThreatActor#identity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a single STIX Threat Actor.
@@ -269,6 +269,8 @@ ThreatActors are characterizations of malicious actors (or adversaries) represen
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/ThreatActor"/>
         <rdfs:label>Threat Actor</rdfs:label>
     </owl:Class>
+    
+
 </rdf:RDF>
 
 

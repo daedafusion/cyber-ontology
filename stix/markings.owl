@@ -219,26 +219,26 @@ The format of the identifier MUST be in the format of &quot;marking_spec-[UUID]&
     <owl:Class rdf:about="http://data-marking.mitre.org/Data_Marking#Marking">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#markingData"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#informationSource"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#informationSource"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#markingData"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#controlledStructure"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#markingId"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a structure for marking information to be applied to portions of STIX content</rdfs:comment>
@@ -254,19 +254,19 @@ The format of the identifier MUST be in the format of &quot;marking_spec-[UUID]&
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#markingStructureId"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#modelName"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#modelRef"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes the marking information to be applied to STIX content.
@@ -287,7 +287,7 @@ The MarkingStructure class is an abstract class, so it MUST be extended via a su
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#statement"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a simple marking used to allow users to make a text statement to mark the content.
@@ -306,7 +306,7 @@ An example of a simple marking is to apply simple copyright information, for exa
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#color"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a data marking scheme that follows the Traffic Light Protocol (TLP) designation.
@@ -333,7 +333,7 @@ WHITE: Sources use when information carries minimal or no foreseeable risk of mi
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data-marking.mitre.org/Data_Marking#termsOfUse"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a marking used to make a text statement to specify the Terms of Use of the marked content.
@@ -342,6 +342,12 @@ For example, the Terms of Use marking can be used to communicate a simple statem
         <rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
         <rdfs:label>Terms of Use Marking</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://stix.mitre.org/stixCommon#InformationSource -->
+
+    <owl:Class rdf:about="http://stix.mitre.org/stixCommon#InformationSource"/>
 </rdf:RDF>
 
 

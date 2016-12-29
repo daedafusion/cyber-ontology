@@ -440,10 +440,6 @@ By default, the Information Type Vocabulary is used to defined a restricted set 
 
     
 
-
-    <!-- http://capec.mitre.org/capec#AttackPattern -->
-
-    <owl:Class rdf:about="http://capec.mitre.org/capec#AttackPattern"/>
     
 
 
@@ -453,7 +449,7 @@ By default, the Information Type Vocabulary is used to defined a restricted set 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/TTP#capecID"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes an individual attack pattern through the capture of information such as a textual description and a Common Attack Pattern Enumeration and Classification (CAPEC) reference.</rdfs:comment>
@@ -479,7 +475,7 @@ By default, the Information Type Vocabulary is used to defined a restricted set 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/TTP#infrastructureType"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes adversarial infrastructure that an adversary may leverage.</rdfs:comment>
@@ -508,13 +504,13 @@ A malware instance may characterize anything from a specific malware sample to a
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/TTP#resources.infrastructure"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/TTP#victimTargeting.targetedTechnicalDetails"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes adversarial mode of operations (often referred to as the adversary’s “Tactics, Techniques, and Procedures”). 
@@ -523,6 +519,9 @@ The TTP class captures information that includes the victims targeted, the attac
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
         <rdfs:label>TTP</rdfs:label>
     </owl:Class>
+    
+
+
 </rdf:RDF>
 
 

@@ -1,41 +1,41 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://stix.mitre.org/stix_core#"
      xml:base="http://stix.mitre.org/stix_core"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:deviceObj="http://cybox.mitre.org/objects/Device#"
+     xmlns:systemObj="http://cybox.mitre.org/objects/System#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:stix="http://stix.mitre.org/stix_core#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:ciq_xpil="http://www.oasis-open.org/ciq_xpil#"
+     xmlns:winHandleObj="http://cybox.mitre.org/objects/WindowsHandle#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ciq_xnl="http://www.oasis-open.org/ciq_xnl#"
-	 xmlns:ciq_xpil="http://www.oasis-open.org/ciq_xpil#"
-	 xmlns:ciq_curr="http://www.oasis-open.org/ciq_currency#"
-	 xmlns:fileObj="http://cybox.mitre.org/objects/File#"
-	 xmlns:ciq_xal="http://www.oasis-open.org/ciq_xal#"
-	 xmlns:dnsObj="http://cybox.mitre.org/objects/DNS#"
-	 xmlns:systemObj="http://cybox.mitre.org/objects/System#"
-	 xmlns:patch="http://scap.nist.gov/patch#"
-	 xmlns:codeObj="http://cybox.mitre.org/objects/Code#"
-	 xmlns:processObj="http://cybox.mitre.org/objects/Process#"
-	 xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
-	 xmlns:netConnectObj="http://cybox.mitre.org/objects/NetworkConnection#"
-	 xmlns:deviceObj="http://cybox.mitre.org/objects/Device#"
-	 xmlns:productObj="http://cybox.mitre.org/objects/Product#"
-	 xmlns:winHandleObj="http://cybox.mitre.org/objects/WindowsHandle#"
-	 xmlns:memoryObj="http://cybox.mitre.org/objects/Memory#"
-	 xmlns:hostnameObj="http://cybox.mitre.org/objects/Hostname#"
-	 xmlns:accountObj="http://cybox.mitre.org/objects/Account#"
-	 xmlns:addressObj="http://cybox.mitre.org/objects/Address#"
-	 xmlns:portObj="http://cybox.mitre.org/objects/Port#"
-	 xmlns:libraryObj="http://cybox.mitre.org/objects/Library#"
-	  xmlns:uriObj="http://cybox.mitre.org/objects/URI#"
-	  xmlns:sockAddrObj="http://cybox.mitre.org/objects/Socket_Address#"
-	 xmlns:domainNameObj="http://cybox.mitre.org/objects/Domain_Name#"
-	 xmlns:netProtocolObj="http://cybox.mitre.org/objects/NetworkProtocol#"
-	 xmlns:x509CertObj="http://cybox.mitre.org/objects/X509Certificate#"
-	 xmlns:httpSessionObj="http://cybox.mitre.org/objects/HTTP_Session#"
-     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:httpSessionObj="http://cybox.mitre.org/objects/HTTP_Session#"
+     xmlns:netProtocolObj="http://cybox.mitre.org/objects/NetworkProtocol#"
+     xmlns:addressObj="http://cybox.mitre.org/objects/Address#"
+     xmlns:patch="http://scap.nist.gov/patch#"
+     xmlns:fileObj="http://cybox.mitre.org/objects/File#"
+     xmlns:portObj="http://cybox.mitre.org/objects/Port#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:accountObj="http://cybox.mitre.org/objects/Account#"
+     xmlns:ciq_xnl="http://www.oasis-open.org/ciq_xnl#"
+     xmlns:ciq_curr="http://www.oasis-open.org/ciq_currency#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:sockAddrObj="http://cybox.mitre.org/objects/Socket_Address#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:memoryObj="http://cybox.mitre.org/objects/Memory#"
+     xmlns:domainNameObj="http://cybox.mitre.org/objects/Domain_Name#"
+     xmlns:processObj="http://cybox.mitre.org/objects/Process#"
+     xmlns:dnsObj="http://cybox.mitre.org/objects/DNS#"
+     xmlns:stix="http://stix.mitre.org/stix_core#"
+     xmlns:codeObj="http://cybox.mitre.org/objects/Code#"
+     xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
+     xmlns:hostnameObj="http://cybox.mitre.org/objects/Hostname#"
+     xmlns:netConnectObj="http://cybox.mitre.org/objects/NetworkConnection#"
+     xmlns:ciq_xal="http://www.oasis-open.org/ciq_xal#"
+     xmlns:productObj="http://cybox.mitre.org/objects/Product#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:uriObj="http://cybox.mitre.org/objects/URI#"
+     xmlns:libraryObj="http://cybox.mitre.org/objects/Library#"
+     xmlns:x509CertObj="http://cybox.mitre.org/objects/X509Certificate#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://stix.mitre.org/stix_core">
         <owl:versionIRI rdf:resource="http://stix.mitre.org/stix_core/1.2"/>
@@ -47,6 +47,35 @@
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
         <rdfs:comment>This ontology specifies the STIX Package, which corresponds to the primary structure for bundling of information characterizes in Structured Threat Information eXpression (STIX). A STIX Package is used to bundle the various objects of the other eight top-level STIX components.</rdfs:comment>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#cardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#cardinality"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#maxCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#maxCardinality"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#minCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minCardinality"/>
     
 
 
@@ -229,6 +258,7 @@ If not specified, a value of &quot;exclusive&quot; is used as the default.</rdfs
      -->
 
     
+    
 
 
     <!-- http://stix.mitre.org/stix_core#Package -->
@@ -237,56 +267,21 @@ If not specified, a value of &quot;exclusive&quot; is used as the default.</rdfs
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#PackageBase"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#informationSource"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/stix_core#observables"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#shortDescription"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/stixCommon#title"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://stix.mitre.org/stix_core#packageIntent"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.reliabilityLevel"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.validFromDateTime"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.oasis-open.org/ciq_common#dataQuality.validToDateTime"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Characterizes a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
         <rdfs:label>Package</rdfs:label>
     </owl:Class>
+    
 </rdf:RDF>
 
 

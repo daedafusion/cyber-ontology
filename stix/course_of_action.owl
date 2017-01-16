@@ -1,15 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://stix.mitre.org/CourseOfAction#"
      xml:base="http://stix.mitre.org/CourseOfAction"
-     xmlns:coa="http://stix.mitre.org/CourseOfAction#"
+     xmlns:core="tag:champtc:core#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://stix.mitre.org/CourseOfAction">
         <owl:versionIRI rdf:resource="http://stix.mitre.org/CourseOfAction/1.2"/>
         <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
@@ -30,6 +27,23 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- tag:champtc:core#appIconId -->
+
+
+    <owl:AnnotationProperty rdf:about="tag:champtc:core#appIconId"/>
+    
 
 
     <!-- 
@@ -40,10 +54,12 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/CourseOfAction#cost -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/CourseOfAction#cost">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CostStatement"/>
@@ -56,6 +72,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
     <!-- http://stix.mitre.org/CourseOfAction#efficacy -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/CourseOfAction#efficacy">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#EfficacyStatement"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the effectiveness of this Course of Action in achieving its targeted Objective.</rdfs:comment>
@@ -66,6 +83,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
 
     <!-- http://stix.mitre.org/CourseOfAction#impact -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/CourseOfAction#impact">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ImpactStatement"/>
@@ -78,6 +96,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
     <!-- http://stix.mitre.org/CourseOfAction#objective.applicablityConfidence -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/CourseOfAction#objective.applicablityConfidence">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Confidence"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the level of confidence held in the applicability of this suggested COA for its targeted Objective.</rdfs:comment>
@@ -88,6 +107,7 @@ Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
 
 
     <!-- http://stix.mitre.org/CourseOfAction#parameterObservables -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/CourseOfAction#parameterObservables">
         <rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
@@ -101,6 +121,7 @@ The intention is that the combination of the Course of Action Type and the Param
 
 
     <!-- http://stix.mitre.org/CourseOfAction#structuredCOA -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/CourseOfAction#structuredCOA">
         <rdfs:range rdf:resource="http://stix.mitre.org/CourseOfAction#StructuredCOA"/>
@@ -119,10 +140,12 @@ The intention is that the combination of the Course of Action Type and the Param
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/CourseOfAction#genericStructuredCOAType -->
+
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#genericStructuredCOAType">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -135,6 +158,7 @@ The intention is that the combination of the Course of Action Type and the Param
 
     <!-- http://stix.mitre.org/CourseOfAction#objective.description -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#objective.description">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies an unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
@@ -146,6 +170,7 @@ The intention is that the combination of the Course of Action Type and the Param
 
     <!-- http://stix.mitre.org/CourseOfAction#objective.shortDescription -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#objective.shortDescription">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a short, unstructured, text description of the objective of this CourseOfAction.</rdfs:comment>
@@ -156,6 +181,7 @@ The intention is that the combination of the Course of Action Type and the Param
 
 
     <!-- http://stix.mitre.org/CourseOfAction#specification.cdataEncoded -->
+
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#specification.cdataEncoded">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -170,6 +196,7 @@ If true, the data is encoded, else the data is not encoded.</rdfs:comment>
 
     <!-- http://stix.mitre.org/CourseOfAction#specification.cdataValue -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#specification.cdataValue">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies any test mechnism specification in its native format within a string field. 
@@ -182,6 +209,7 @@ The specification should be within a CDATA construct within the string field.</r
 
 
     <!-- http://stix.mitre.org/CourseOfAction#stage -->
+
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#stage">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -198,6 +226,7 @@ By default, the COA Stage Vocabulary is used to defined a restricted set of valu
 
     <!-- http://stix.mitre.org/CourseOfAction#type -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/CourseOfAction#type">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the type of this Course of Action. 
@@ -213,6 +242,7 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
 
     <!-- http://stix.mitre.org/stixCommon#shortDescription -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/stixCommon#shortDescription"/>
     
 
@@ -226,7 +256,11 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
      -->
 
 
+    
+
+
     <!-- http://stix.mitre.org/CourseOfAction#CourseOfAction -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/CourseOfAction#CourseOfAction">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
@@ -283,11 +317,13 @@ By default, the Course of Action Type Vocabulary is used to defined a restricted
 Courses Of Action are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/CourseOfAction"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course of Action</rdfs:label>
+        <core:appIconId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dl:com.champtc.champ.ui.core.stix.courseOfAction</core:appIconId>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/CourseOfAction#GenericStructuredCOA -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/CourseOfAction#GenericStructuredCOA">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/CourseOfAction#StructuredCOA"/>
@@ -318,6 +354,7 @@ Courses Of Action are specific measures to be taken to address threat whether th
 
     <!-- http://stix.mitre.org/CourseOfAction#StructuredCOA -->
 
+
     <owl:Class rdf:about="http://stix.mitre.org/CourseOfAction#StructuredCOA">
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes information for an alternative actionable structured representation for the Course Of Action potentially for automated consumption and implementation.
 
@@ -325,12 +362,10 @@ The StructuredCOA class is an abstract class, so it MUST be extended via a subcl
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/CourseOfAction"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structured COA</rdfs:label>
     </owl:Class>
-    
-
-
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
+
 

@@ -1,29 +1,43 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://stix.mitre.org/Campaign#"
      xml:base="http://stix.mitre.org/Campaign"
+     xmlns:core="tag:champtc:core#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:campaign="http://stix.mitre.org/Campaign#"
-     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://stix.mitre.org/Campaign">
         <owl:versionIRI rdf:resource="http://stix.mitre.org/Campaign/1.2"/>
         <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
         <owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
         <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STIX Campaign Ontology</rdfs:label>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Campaign.  The STIX Campaign ontology provides a characterization of a single cyber threat Campaign.
 
 A STIX Campaign represents a set of TTPs, incidents, or threat actors that together express a common intent or desired effect. For example, an adversary using a particular set of TTPs (malware and tools) to target an industry sector with a specific intent may constitute a campaign.  In the STIX data model, campaigns represent both that intent itself and, perhaps more importantly, act as a meta-construct to relate the associated TTPs, incidents, and threat actors that are part of that campaign together.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
-        <rdfs:label>STIX Campaign Ontology</rdfs:label>
     </owl:Ontology>
     
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- tag:champtc:core#appIconId -->
+
+
+    <owl:AnnotationProperty rdf:about="tag:champtc:core#appIconId"/>
+    
 
 
     <!-- 
@@ -34,54 +48,60 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/Campaign#activity -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#activity">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Activity"/>
-        <rdfs:comment>Specifies actions taken in regards to this ThreatActor.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies actions taken in regards to this ThreatActor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Activity</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Campaign#associatedCampaigns -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#associatedCampaigns">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CampaignBase"/>
-        <rdfs:comment>Specifies other cyber threat Campaigns asserted to be associated with this cyber threat Campaign.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies other cyber threat Campaigns asserted to be associated with this cyber threat Campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Associated Campaigns</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associated Campaigns</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Campaign#attribution -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#attribution">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
-        <rdfs:comment>Specifies assertions of attibuted Threat Actors for this cyber threat Campaign.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies assertions of attibuted Threat Actors for this cyber threat Campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Attribution</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribution</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Campaign#intendedEffect -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Campaign#intendedEffect">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
-        <rdfs:comment>Specifies the intended effect of this cyber threat Campaign.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the intended effect of this cyber threat Campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Intended Effect</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intended Effect</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/stixCommon#relatedPackages -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/stixCommon#relatedPackages">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#PackageBase"/>
@@ -97,33 +117,36 @@ A STIX Campaign represents a set of TTPs, incidents, or threat actors that toget
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/Campaign#campaignNames -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Campaign#campaignNames">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies one or more names used to identify this Campaign. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies one or more names used to identify this Campaign. 
 
 Campaign names may be either internal or external names assigned to a campaign.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Campaign Names</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Campaign Names</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Campaign#status -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Campaign#status">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the status of this Campaign.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the status of this Campaign.
 
 Examples of potential statuses include ongoing, historical, and future (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
 
 By default, the Campaign Status Vocabulary is used to defined a restricted set of values.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Status</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -136,10 +159,12 @@ By default, the Campaign Status Vocabulary is used to defined a restricted set o
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/Campaign#Campaign -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Campaign#Campaign">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#CampaignBase"/>
@@ -149,18 +174,17 @@ By default, the Campaign Status Vocabulary is used to defined a restricted set o
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a single cyber threat Campaign. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes a single cyber threat Campaign. 
 
 Campaigns are instances of ThreatActors pursuing an intent, as observed through sets of Incidents and/or TTP, potentially across organizations. In a structured sense, Campaigns may consist of the suspected intended effect of the adversary, the related TTP leveraged within the Campaign, the related Incidents believed to be part of the Campaign, attribution to the ThreatActors believed responsible for the Campaign, other Campaigns believed related to the Campaign, confidence in the assertion of aggregated intent and characterization of the Campaign, activity taken in response to the Campaign, source of the Campaign information, handling guidance, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Campaign"/>
-        <rdfs:label>Campaign</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Campaign</rdfs:label>
+        <core:appIconId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dl:com.champtc.champ.ui.core.stix.campaign</core:appIconId>
     </owl:Class>
-    
-
-
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
+
 

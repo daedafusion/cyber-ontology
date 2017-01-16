@@ -1,18 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://stix.mitre.org/Indicator#"
      xml:base="http://stix.mitre.org/Indicator"
-     xmlns:indicator="http://stix.mitre.org/Indicator#"
-     xmlns:stixCommon="http://stix.mitre.org/stixCommon#"
-     xmlns:ciq_common="http://www.oasis-open.org/ciq_common#"
+     xmlns:core="tag:champtc:core#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:data_marking="http://data-marking.mitre.org/Data_Marking#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://stix.mitre.org/Indicator">
         <owl:versionIRI rdf:resource="http://stix.mitre.org/Indicator/1.2"/>
         <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
@@ -20,13 +14,12 @@
         <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
         <owl:imports rdf:resource="http://ioc.mandiant.com/IoC"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
-        <rdfs:label>STIX Indicator Ontology</rdfs:label>
-        <rdfs:comment>This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Indicator.  The STIX Indicator ontology provides a characterization of a single STIX Indicator.
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STIX Indicator Ontology</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Indicator.  The STIX Indicator ontology provides a characterization of a single STIX Indicator.
 
 A STIX Indicator conveys specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related TTP context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc. Recognizing limitations in current standardized approaches of representation, STIX leverages community knowledge and best practices to define a new Indicator structure for representing Indicator information.</rdfs:comment>
     </owl:Ontology>
     
-
 
 
     <!-- 
@@ -37,104 +30,114 @@ A STIX Indicator conveys specific Observable patterns combined with contextual i
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/Indicator#efficacy -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#efficacy">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#EfficacyStatement"/>
-        <rdfs:comment>Specifies an assertion of likely effectiveness of this TestMechanism to detect the targeted cyber Observables. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies an assertion of likely effectiveness of this TestMechanism to detect the targeted cyber Observables. 
 
 The field includes a description of the asserted efficacy of this TestMechanism and a confidence held in the asserted efficacy of this TestMechanism to detect the targeted cyber Observables.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Efficacy</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Efficacy</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#eventFilter -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#eventFilter">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#EncodedCDATA"/>
-        <rdfs:comment>Specifies a reference to a Snort event filter line in its native format.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to a Snort event filter line in its native format.
 
 The specification should be within a CDATA construct.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Event Filter</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event Filter</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#eventSuppression -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#eventSuppression">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#EncodedCDATA"/>
-        <rdfs:comment>Specifies a reference to a Snort event suppression line in its native format. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to a Snort event suppression line in its native format. 
 
 The specification should be within a CDATA construct.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Event Suppression</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event Suppression</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#indicatedTTP -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#indicatedTTP">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
-        <rdfs:comment>Specifies a reference to the relevant TTP indicated by this Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the relevant TTP indicated by this Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicated TTP</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicated TTP</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#indicator -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#indicator">
         <rdfs:range rdf:resource="http://stix.mitre.org/Indicator#Indicator"/>
-        <rdfs:comment>Specifies a reference to one cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#iocIndicator -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#iocIndicator">
         <rdfs:range rdf:resource="http://ioc.mandiant.com/IoC#IndicatorOfCompromise"/>
-        <rdfs:comment>Specifies a reference to the OpenIOC Indicator of Compromise</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the OpenIOC Indicator of Compromise</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OpenIOC Indicator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpenIOC Indicator</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#killchainPhases -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#killchainPhases">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChainPhase"/>
-        <rdfs:comment>Specifies a reference to a relevant kill chain phases relevant to the Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to a relevant kill chain phases relevant to the Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Kill Chain Phases</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kill Chain Phases</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#likelyImpact -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#likelyImpact">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#LikelyImpactStatement"/>
-        <rdfs:comment>Specifies a reference to a characterization of the likely potential impact within the relevant context if this Indicator were to occur.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to a characterization of the likely potential impact within the relevant context if this Indicator were to occur.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Likely Impact</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Likely Impact</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#observation -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#observation">
         <rdfs:range>
@@ -145,186 +148,198 @@ The specification should be within a CDATA construct.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:comment>Specifies a relevant cyber observable or a multi-part composite Indicator for this Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a relevant cyber observable or a multi-part composite Indicator for this Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Observation</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observation</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitions -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitions">
-        <rdfs:comment>Specifies a reference to one or more OVAL Definitions.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more OVAL Definitions.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitionsGenerator -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitionsGenerator">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ToolInformation"/>
-        <rdfs:comment>Specifies a reference to information about when the OVAL Definition file was compiled and under what version.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to information about when the OVAL Definition file was compiled and under what version.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions Generator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions Generator</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitionsObjects -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitionsObjects">
-        <rdfs:comment>Specifies a reference to one or more OVAL Definition objects.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more OVAL Definition objects.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions Objects</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions Objects</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitionsStates -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitionsStates">
-        <rdfs:comment>Specifies a reference to one or more OVAL Definition States</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more OVAL Definition States</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions States</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions States</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitionsTests -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitionsTests">
-        <rdfs:comment>Specifies a reference to one or more OVAL Definition Tests</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more OVAL Definition Tests</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions Test</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions Test</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitionsVariables -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitionsVariables">
-        <rdfs:comment>Specifies a reference to one or more OVAL Definition Varaibles</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more OVAL Definition Varaibles</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions Variables</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions Variables</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalVariables -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalVariables">
-        <rdfs:comment>Specifies a reference to a valid OVAL Variables document.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to a valid OVAL Variables document.
 
 This SHOULD only be used to supply external variable values needed by this OVAL Test Mechanism&apos;s OVAL Definitions.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Variables</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Variables</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalVariablesGenerator -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#ovalVariablesGenerator">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ToolInformation"/>
-        <rdfs:comment>Specifies a reference to information about when the variables file was compiled and under what version.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to information about when the variables file was compiled and under what version.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Variables Generator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Variables Generator</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#producer -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#producer">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
-        <rdfs:comment>Specifies a reference to the source of this entry.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the source of this entry.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Producer</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Producer</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-
     <!-- http://stix.mitre.org/Indicator#sightingConfidence -->
+
 
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#sightingConfidence">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#Confidence"/>
-        <rdfs:comment>Specifies a reference to a confidence assertion in the accuracy of this sighting.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to a confidence assertion in the accuracy of this sighting.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Sighting Confidence</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sighting Confidence</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#sightingSource -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#sightingSource">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
-        <rdfs:comment>Specifies a reference to the source of the sighting</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the source of the sighting</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Sighting Source</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sighting Source</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#sightings -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#sightings">
         <rdfs:range rdf:resource="http://stix.mitre.org/Indicator#Sighting"/>
-        <rdfs:comment>Specifies a reference to one or more sighting reports for this Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more sighting reports for this Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Sightings</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sightings</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#suggestedCOAs -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#suggestedCOAs">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
-        <rdfs:comment>Specifies a reference to suggested Courses of Action relevant for this cyber threat Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to suggested Courses of Action relevant for this cyber threat Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Suggested COAs</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suggested COAs</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#testMechanisms -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#testMechanisms">
         <rdfs:range rdf:resource="http://stix.mitre.org/Indicator#TestMechanism"/>
-        <rdfs:comment>Specifies a reference to one or more Test Mechanisms effective at identifying the cyber Observables specified in this cyber threat Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to one or more Test Mechanisms effective at identifying the cyber Observables specified in this cyber threat Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Test Mechanisms</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Mechanisms</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#tool -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#tool">
         <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ToolInformation"/>
-        <rdfs:comment>Specifies a reference to the Common Platform Enumeration (CPE) Name for the product</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the Common Platform Enumeration (CPE) Name for the product</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Snort Tool</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Snort Tool</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#validTimePosition -->
 
+
     <owl:ObjectProperty rdf:about="http://stix.mitre.org/Indicator#validTimePosition">
         <rdfs:range rdf:resource="http://stix.mitre.org/Indicator#ValidTime"/>
-        <rdfs:comment>Specifies a reference to the time window for which this indicator is valid.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference to the time window for which this indicator is valid.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>valid time position</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">valid time position</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
     
 
 
@@ -336,108 +351,118 @@ This SHOULD only be used to supply external variable values needed by this OVAL 
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/Indicator#alternativeIdentifiers -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#alternativeIdentifiers">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies an alternative identifier (or alias) for the cyber threat Indicator.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies an alternative identifier (or alias) for the cyber threat Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Alternative Identifiers</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternative Identifiers</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#indicatorID -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#indicatorID">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the identifier for the OpenIOC Indicator of Compromise</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the identifier for the OpenIOC Indicator of Compromise</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OpenIOC Indicator ID</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpenIOC Indicator ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#indicatorPattern -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#indicatorPattern">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the indicator&apos;s observables are for an observable instance or an observable pattern.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies whether the indicator&apos;s observables are for an observable instance or an observable pattern.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicator Pattern</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator Pattern</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#indicatorType -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#indicatorType">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type or types for this Indicator. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the type or types for this Indicator. 
 
 Examples of types of indicators include malicious e-mail, URL watchlist, and malware artifacts (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
 
 By default, the Indicator Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicator Type</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator Type</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#operator -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#operator">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the logical composition operator for this composite cyber threat Indicator.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the logical composition operator for this composite cyber threat Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Operator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Operator</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalDefinitionsTimestamp -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#ovalDefinitionsTimestamp">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies when the particular OVAL document was compiled.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies when the particular OVAL document was compiled.
 
 Note that the timestamp element does not specify when a definition (or set of definitions) was created or modified but rather when the actual document that contains the definition was created. For example, the document might have pulled a bunch of existing OVAL Definitions together, each of the definitions having been created at some point in the past. The timestamp in this case would be when the combined document was created</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Definitions Timestamp</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Definitions Timestamp</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ovalVariablesTimestamp -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#ovalVariablesTimestamp">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies when the particular OVAL document was compiled.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies when the particular OVAL document was compiled.
 
 Note that the timestamp element does not specify when a varaible (or set of variables) was created or modified but rather when the actual document that contains the definition was created. For example, the document might have pulled a bunch of existing OVAL Variables together, each of the variables having been created at some point in the past. The timestamp in this case would be when the combined document was created</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Variables Timestamp</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Variables Timestamp</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#productName -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#productName">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the Snort-compatible tool that the rules were written against.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the name of the Snort-compatible tool that the rules were written against.
 
 If the tool has a CPE name, use of that name is suggested, otherwise a simple name like &quot;Snort&quot;, &quot;Suricata&quot;, or &quot;Sourcefire&quot; could be used.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Product Name</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Product Name</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#rateFilter -->
+
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#rateFilter"/>
     
@@ -445,38 +470,42 @@ If the tool has a CPE name, use of that name is suggested, otherwise a simple na
 
     <!-- http://stix.mitre.org/Indicator#reference -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#reference">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a formal reference to the sighting source.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a formal reference to the sighting source.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Source Reference</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Source Reference</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#referenceLocation -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#referenceLocation">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a reference URL for the location of the Generic Test Mechanism.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies a reference URL for the location of the Generic Test Mechanism.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Reference Location</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reference Location</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#sightingsCount -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#sightingsCount">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the total number of times this Indicator was reported as sighted.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the total number of times this Indicator was reported as sighted.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Sightings Count</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sightings Count</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#snortRule -->
+
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#snortRule"/>
     
@@ -484,55 +513,61 @@ If the tool has a CPE name, use of that name is suggested, otherwise a simple na
 
     <!-- http://stix.mitre.org/Indicator#specification -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#specification"/>
     
 
 
     <!-- http://stix.mitre.org/Indicator#testMechanismType -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#testMechanismType">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of Generic Test Mechanism.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the type of Generic Test Mechanism.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Type</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#validTime.endDateTime -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#validTime.endDateTime">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the ending of the time window for which this Indicator is valid. If not present, the valid time position of the indicator does not have an upper bound (i.e., temporal window is only bounded by the start-time).</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the ending of the time window for which this Indicator is valid. If not present, the valid time position of the indicator does not have an upper bound (i.e., temporal window is only bounded by the start-time).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicator Validity End</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator Validity End</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#validTime.startDateTime -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#validTime.startDateTime">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the beginning of the time window for which this Indicator is valid.  If not present, the valid time position of the indicator does not have a lower bound (i.e., temporal window is only bounded by the end-time).</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the beginning of the time window for which this Indicator is valid.  If not present, the valid time position of the indicator does not have a lower bound (i.e., temporal window is only bounded by the end-time).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicator Validity Start</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator Validity Start</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#version -->
 
+
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#version">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the version of format or format-compatible tool that the rules were written against.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the version of format or format-compatible tool that the rules were written against.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Version</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Version</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
     <!-- http://stix.mitre.org/Indicator#yaraRule -->
+
 
     <owl:DatatypeProperty rdf:about="http://stix.mitre.org/Indicator#yaraRule"/>
     
@@ -546,10 +581,12 @@ If the tool has a CPE name, use of that name is suggested, otherwise a simple na
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://stix.mitre.org/Indicator#CompositeIndicator -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#CompositeIndicator">
         <rdfs:subClassOf>
@@ -558,14 +595,15 @@ If the tool has a CPE name, use of that name is suggested, otherwise a simple na
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a composite Indicator expression through the specification of a single operator (the operator of the expression) and zero or more Indicators (the operands of the expression).</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes a composite Indicator expression through the specification of a single operator (the operator of the expression) and zero or more Indicators (the operands of the expression).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Composite Indicator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Composite Indicator</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#GenericTestMechanism -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#GenericTestMechanism">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/Indicator#TestMechanism"/>
@@ -587,14 +625,15 @@ If the tool has a CPE name, use of that name is suggested, otherwise a simple na
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an instantial extension test mechanism to support a generic test mechanism through the use of a raw data section.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes an instantial extension test mechanism to support a generic test mechanism through the use of a raw data section.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Generic Test Mechanism</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Generic Test Mechanism</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#Indicator -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#Indicator">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#IndicatorBase"/>
@@ -634,18 +673,20 @@ If the tool has a CPE name, use of that name is suggested, otherwise a simple na
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a single STIX Indicator.
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes a single STIX Indicator.
 
 A STIX Indicator characterizes a cyber threat indicator by capturing an asserted relationship between a pattern identifying certain observable conditions and a particular TTP likely in play if those observable conditions are seen, as well as contextual information about how and when it should be acted on and how it relates to other Indicators, Campaigns, and TTPs.
 
 Indicators convey specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related TTP context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Indicator</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicator</rdfs:label>
+        <core:appIconId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dl:com.champtc.champ.ui.core.stix.indicator</core:appIconId>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#OVALTestMechanism -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#OVALTestMechanism">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/Indicator#TestMechanism"/>
@@ -685,14 +726,15 @@ Indicators convey specific Observable patterns combined with contextual informat
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an instantial extension test mechanism to provide support for the specification using OVAL Definitions.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes an instantial extension test mechanism to provide support for the specification using OVAL Definitions.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OVAL Test Mechanism</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OVAL Test Mechanism</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#OpenIOCTestMechanism -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#OpenIOCTestMechanism">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/Indicator#TestMechanism"/>
@@ -708,14 +750,15 @@ Indicators convey specific Observable patterns combined with contextual informat
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an instantial extension test mechanism to provide support for the specification using an OpenIOC test.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes an instantial extension test mechanism to provide support for the specification using an OpenIOC test.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>OpenIOC Test Mechanism</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OpenIOC Test Mechanism</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#Sighting -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#Sighting">
         <rdfs:subClassOf>
@@ -730,16 +773,18 @@ Indicators convey specific Observable patterns combined with contextual informat
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a single sighting report of an indicator. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes a single sighting report of an indicator. 
 
 An Indicator sighting report may capture a variety of information associated with an observable instance that matches the Indicator’s observable pattern including the time the sighting occurred, a textual description of the sighting, the set of Observables (instances) related to the sighting, the source of the sighting information (e.g., tool or an analyst name), and the level of confidence that the sighting information actually represents a sighting of that particular Indicator.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Sighting</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sighting</rdfs:label>
+        <core:appIconId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dl:com.champtc.champ.ui.core.stix.sighting</core:appIconId>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#SnortTestMechanism -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#SnortTestMechanism">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/Indicator#TestMechanism"/>
@@ -761,14 +806,15 @@ An Indicator sighting report may capture a variety of information associated wit
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an instantial extension test mechanism to provide support for the specification using Snort rules.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes an instantial extension test mechanism to provide support for the specification using Snort rules.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Snort Test Mechanism</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Snort Test Mechanism</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#TestMechanism -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#TestMechanism">
         <rdfs:subClassOf>
@@ -783,18 +829,19 @@ An Indicator sighting report may capture a variety of information associated wit
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an alternative (non-CybOX) test mechanism effective at identifying the cyber Observables specified in this cyber threat Indicator. 
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes an alternative (non-CybOX) test mechanism effective at identifying the cyber Observables specified in this cyber threat Indicator. 
 
 The TestMechanism class is an abstract class, so it MUST be extended via a subclass to enable the expression of any structured or unstructured test mechanism.
 
 Test mechanisms may be different for different use cases. For example, one consumer may routinely rely on Snort signatures while another uses Yara rules and OVAL definitions. Individual test mechanisms are intended to test for the same conditions as the Observable (CybOX) patterns; however, STIX does not enforce equivalency.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Test Mechanism</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Mechanism</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#ValidTime -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#ValidTime">
         <rdfs:subClassOf>
@@ -809,14 +856,15 @@ Test mechanisms may be different for different use cases. For example, one consu
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a temporal window during which the Indicator is able to accurately detect the TTP.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes a temporal window during which the Indicator is able to accurately detect the TTP.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>Valid Time Position</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Valid Time Position</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://stix.mitre.org/Indicator#YaraTestMechanism -->
+
 
     <owl:Class rdf:about="http://stix.mitre.org/Indicator#YaraTestMechanism">
         <rdfs:subClassOf rdf:resource="http://stix.mitre.org/Indicator#TestMechanism"/>
@@ -832,17 +880,14 @@ Test mechanisms may be different for different use cases. For example, one consu
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an instantial extension test mechanism to provide support for the specification using YARA rules.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterizes an instantial extension test mechanism to provide support for the specification using YARA rules.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Indicator"/>
-        <rdfs:label>YARA Test Mechanism</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YARA Test Mechanism</rdfs:label>
     </owl:Class>
-    
-
-
-
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
+
 

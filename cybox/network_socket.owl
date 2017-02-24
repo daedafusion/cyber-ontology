@@ -1,586 +1,428 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/NetworkSocket#"
-     xml:base="http://cybox.mitre.org/objects/NetworkSocket"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:netSocketObj="http://cybox.mitre.org/objects/NetworkSocket#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/NetworkSocket">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/Socket_Address"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Network Socket for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY netSocketObj "http://cybox.mitre.org/objects/NetworkSocket#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/NetworkSocket#"
+	xmlns:netSocketObj="http://cybox.mitre.org/objects/NetworkSocket#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/NetworkSocket">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Network Socket Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Network Socket for the  Cyber Observable eXpression (CybOX).  
 
 CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the CybOX Network Socket object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Network Socket Ontology</rdfs:label>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#localAddress -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#localAddress">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Socket_Address#SocketAddress"/>
-        <rdfs:comment>Specifies the IP address and port for the socket on the local machine.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Local Address</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#remoteAddress -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#remoteAddress">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Socket_Address#SocketAddress"/>
-        <rdfs:comment>Specifies the IP address and port for the socket on the remote machine.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Remote Address</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#addressFamily -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#addressFamily">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the address family (AF_*) that the socket is configured for.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Address Family</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#domainFamily -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#domainFamily">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the communication domain (PF_*) of the socket.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Domain Family</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#isBlocking -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#isBlocking">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether or not the socket is in blocking mode.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Is Blocking</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#isListening -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#isListening">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether or not the socket is in listening mode.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Is Listening</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_IF -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_IF">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the interface over which outgoing multicast datagrams should be sent (AF_INET / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>IP_MULTICAST_IF Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_IF2 -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_IF2">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the interface over which outgoing multicast datagrams should be sent (AF_INET6 / SOCK_DGRAM or SOCK_RAW) .</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>IP_MULTICAST_IF2 Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_LOOP -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_LOOP">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies that the sending host receives a copy of an outgoing multicast datagram (AF_INET / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>IP_MULTICAST_LOOP Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.IP_TOS -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.IP_TOS">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies Type of Service (TOS) and Precedence in the IP header (AF_INET).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>IP_TOS Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_BROADCAST -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_BROADCAST">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifes to enable the socket for issuing messages to a broadcast address (AF_INET / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO BROADCAST Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_CONDITIONAL_ACCEPT -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_CONDITIONAL_ACCEPT">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies to allow an application to decide whether or not to accept an incoming connection on a listening socket (Windows only).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_CONDITIONAL_ACCEPT Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_DEBUG -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_DEBUG">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies if low-level debugging is active.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_DEBUG Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_DONTLINGER -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_DONTLINGER">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Complement of SO_LINGER.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_DONTLINGER Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_DONTROUTE -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_DONTROUTE">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies to bypass normal routing mechanisms (AF_INET or AF_INET6 ).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_DONTROUTE Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_GROUP_PRORITY -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_GROUP_PRORITY">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the relative priority for the socket in its group (Windows only).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_GROUP_PRORITY Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_KEEPALIVE -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_KEEPALIVE">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies to keep the connection up by sending periodic transmissions (AF_INET or AF_INET6 / SOCK_STREAM).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_KEEPALIVE Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_LINGER -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_LINGER">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies if the system attempts delivery of or discards any buffered data when a close() is issued.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_LINGER Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_OOBINLINE -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_OOBINLINE">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether out-of-band data is received inline with normal data (AF_INET or AF_INET6).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_OOBINLINE Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_RCVBUF -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_RCVBUF">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the size of the receive buffer.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_RCVBUF Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_RCVTIMEO -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_RCVTIMEO">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the receive timeout value.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_RCVTIMEO Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_REUSEADDR -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_REUSEADDR">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies if the local socket address can be reused (AF_INET or AF_INET6 / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_REUSEADDR Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_SNDBUF -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_SNDBUF">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies size of the send buffer.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_SNDBUF Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_SNDTIMEO -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_SNDTIMEO">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the send timeout value.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_SNDTIMEO Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_TIMEOUT -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_TIMEOUT">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the socket timeout.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_TIMEOUT Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.SO_UPDATE_ACCEPT_CONTEXT -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.SO_UPDATE_ACCEPT_CONTEXT">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies to update the properties of the socket which are inherited from the listening socket (Windows only).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>SO_UPDATE_ACCEPT_CONTEXT Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#options.TCP_NODELAY -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#options.TCP_NODELAY">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies TCP will send data immediately instead of using the Nagle delay algorithm (AF_INET or AF_INET6 / SOCK_STREAM), when set.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>TCP_NODELAY Option</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#protocolType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#protocolType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of IP layer protocol used by the socket.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Protocol Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#socketDescriptor -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#socketDescriptor">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <rdfs:comment>Specifies the socket file descriptor value associated with the socket. Negative values are not allowed.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Socket Descriptor</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#socketType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkSocket#socketType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of socket being characterized.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Socket Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkSocket#NetworkSocket -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/NetworkSocket#NetworkSocket">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#localAddress"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#remoteAddress"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#addressFamily"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#domainFamily"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#isBlocking"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#isListening"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_IF"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_IF2"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.IP_MULTICAST_LOOP"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.IP_TOS"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_BROADCAST"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_CONDITIONAL_ACCEPT"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_DEBUG"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_DONTLINGER"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_DONTROUTE"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_GROUP_PRORITY"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_KEEPALIVE"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_LINGER"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_OOBINLINE"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_RCVBUF"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_RCVTIMEO"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_REUSEADDR"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_SNDBUF"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_SNDTIMEO"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_TIMEOUT"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.SO_UPDATE_ACCEPT_CONTEXT"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#options.TCP_NODELAY"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#protocolType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#socketDescriptor"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkSocket#socketType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize network sockets.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
-        <rdfs:label>Network Socket</rdfs:label>
-    </owl:Class>
-    
-
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Socket_Address"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&netSocketObj;NetworkSocket">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;addressFamily"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;domainFamily"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;isBlocking"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;isListening"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;localAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.IP_MULTICAST_IF"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.IP_MULTICAST_IF2"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.IP_MULTICAST_LOOP"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.IP_TOS"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_BROADCAST"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_CONDITIONAL_ACCEPT"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_DEBUG"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_DONTLINGER"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_DONTROUTE"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_GROUP_PRORITY"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_KEEPALIVE"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_LINGER"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_OOBINLINE"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_RCVBUF"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_RCVTIMEO"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_REUSEADDR"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_SNDBUF"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_SNDTIMEO"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_TIMEOUT"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.SO_UPDATE_ACCEPT_CONTEXT"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;options.TCP_NODELAY"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;protocolType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;remoteAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;socketDescriptor"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netSocketObj;socketType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Network Socket</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize network sockets.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;addressFamily">
+		<rdfs:label>Address Family</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address family (AF_*) that the socket is configured for.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;domainFamily">
+		<rdfs:label>Domain Family</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the communication domain (PF_*) of the socket.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;isBlocking">
+		<rdfs:label>Is Blocking</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether or not the socket is in blocking mode.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;isListening">
+		<rdfs:label>Is Listening</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether or not the socket is in listening mode.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&netSocketObj;localAddress">
+		<rdfs:label>Local Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the IP address and port for the socket on the local machine.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Socket_Address#SocketAddress"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.IP_MULTICAST_IF">
+		<rdfs:label>IP_MULTICAST_IF Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the interface over which outgoing multicast datagrams should be sent (AF_INET / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.IP_MULTICAST_IF2">
+		<rdfs:label>IP_MULTICAST_IF2 Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the interface over which outgoing multicast datagrams should be sent (AF_INET6 / SOCK_DGRAM or SOCK_RAW) .</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.IP_MULTICAST_LOOP">
+		<rdfs:label>IP_MULTICAST_LOOP Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the sending host receives a copy of an outgoing multicast datagram (AF_INET / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.IP_TOS">
+		<rdfs:label>IP_TOS Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies Type of Service (TOS) and Precedence in the IP header (AF_INET).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_BROADCAST">
+		<rdfs:label>SO BROADCAST Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes to enable the socket for issuing messages to a broadcast address (AF_INET / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_CONDITIONAL_ACCEPT">
+		<rdfs:label>SO_CONDITIONAL_ACCEPT Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies to allow an application to decide whether or not to accept an incoming connection on a listening socket (Windows only).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_DEBUG">
+		<rdfs:label>SO_DEBUG Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies if low-level debugging is active.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_DONTLINGER">
+		<rdfs:label>SO_DONTLINGER Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Complement of SO_LINGER.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_DONTROUTE">
+		<rdfs:label>SO_DONTROUTE Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies to bypass normal routing mechanisms (AF_INET or AF_INET6 ).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_GROUP_PRORITY">
+		<rdfs:label>SO_GROUP_PRORITY Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the relative priority for the socket in its group (Windows only).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_KEEPALIVE">
+		<rdfs:label>SO_KEEPALIVE Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies to keep the connection up by sending periodic transmissions (AF_INET or AF_INET6 / SOCK_STREAM).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_LINGER">
+		<rdfs:label>SO_LINGER Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies if the system attempts delivery of or discards any buffered data when a close() is issued.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_OOBINLINE">
+		<rdfs:label>SO_OOBINLINE Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether out-of-band data is received inline with normal data (AF_INET or AF_INET6).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_RCVBUF">
+		<rdfs:label>SO_RCVBUF Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the size of the receive buffer.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_RCVTIMEO">
+		<rdfs:label>SO_RCVTIMEO Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the receive timeout value.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_REUSEADDR">
+		<rdfs:label>SO_REUSEADDR Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies if the local socket address can be reused (AF_INET or AF_INET6 / SOCK_DGRAM or SOCK_RAW).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_SNDBUF">
+		<rdfs:label>SO_SNDBUF Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies size of the send buffer.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_SNDTIMEO">
+		<rdfs:label>SO_SNDTIMEO Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the send timeout value.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_TIMEOUT">
+		<rdfs:label>SO_TIMEOUT Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the socket timeout.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.SO_UPDATE_ACCEPT_CONTEXT">
+		<rdfs:label>SO_UPDATE_ACCEPT_CONTEXT Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies to update the properties of the socket which are inherited from the listening socket (Windows only).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;options.TCP_NODELAY">
+		<rdfs:label>TCP_NODELAY Option</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies TCP will send data immediately instead of using the Nagle delay algorithm (AF_INET or AF_INET6 / SOCK_STREAM), when set.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;protocolType">
+		<rdfs:label>Protocol Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of IP layer protocol used by the socket.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&netSocketObj;remoteAddress">
+		<rdfs:label>Remote Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the IP address and port for the socket on the remote machine.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Socket_Address#SocketAddress"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;socketDescriptor">
+		<rdfs:label>Socket Descriptor</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the socket file descriptor value associated with the socket. Negative values are not allowed.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netSocketObj;socketType">
+		<rdfs:label>Socket Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of socket being characterized.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkSocket"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

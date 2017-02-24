@@ -1,272 +1,190 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/Thread#"
-     xml:base="http://cybox.mitre.org/objects/Thread"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Thread">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Thr3ad Ontology</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Thread for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY threadObj "http://cybox.mitre.org/objects/Thread#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Thread#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:threadObj="http://cybox.mitre.org/objects/Thread#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Thread">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Thr3ad Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Thread for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox Windows Thread object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#handle -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Thread#handle">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
-        <rdfs:comment>Specifies the handle of a specific thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms682453(v=vs.85).aspx.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Handle</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#context -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#context">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the thread context structure, which contains processor-specific register data.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Context</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#creationDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#creationDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the creation time of the thread.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Creation Time</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#creationFlags -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#creationFlags">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-        <rdfs:comment>Specifies the creation flags that a thread may be launched with. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Creation Flags</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#parameterAddress -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#parameterAddress">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-        <rdfs:comment>Specifies the address of the parameters passed to the start address.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Parameter Address</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#priority -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#priority">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the priority of the thread.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Priority</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#runningStatus -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#runningStatus">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the running state that the thread is in.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Running Status</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#securityAttributes -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#securityAttributes">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the security attributes for the thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa379560(v=vs.85).aspx.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Security Attributes</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#stackSize -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#stackSize">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <rdfs:comment>Specifies  the stack size of the thread. 
-
-See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.85).aspx.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Stack Size</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#startAddress -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#startAddress">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-        <rdfs:comment>Specifies the start address of this thread, representing the memory address where this thread should start.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Start Address</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#threadID -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Thread#threadID">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <rdfs:comment>Specifies the identifier of this thread.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Thread ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#Thread -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Thread#Thread">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#parameterAddress"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#priority"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#runningStatus"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#stackSize"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#startAddress"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#threadID"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize a generic process threads</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Thread</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Thread#WindowsThread -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Thread#WindowsThread">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Thread#Thread"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#handle"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#context"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#creationFlags"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Thread#securityAttributes"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes Windows process threads. 
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&threadObj;Thread">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;parameterAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;priority"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;runningStatus"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;stackSize"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;startAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;threadID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Thread</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a generic process threads</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&threadObj;WindowsThread">
+		<rdfs:subClassOf rdf:resource="&threadObj;Thread"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;context"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;creationFlags"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;handle"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&threadObj;securityAttributes"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows thread</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes Windows process threads. 
 
 See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684852(v=vs.85).aspx.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
-        <rdfs:label>Windows thread</rdfs:label>
-    </owl:Class>
-    
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;context">
+		<rdfs:label>Context</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the thread context structure, which contains processor-specific register data.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;creationDateTime">
+		<rdfs:label>Creation Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the creation time of the thread.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;creationFlags">
+		<rdfs:label>Creation Flags</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the creation flags that a thread may be launched with. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms684863(v=vs.85).aspx.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&threadObj;handle">
+		<rdfs:label>Handle</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the handle of a specific thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms682453(v=vs.85).aspx.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;parameterAddress">
+		<rdfs:label>Parameter Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address of the parameters passed to the start address.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;priority">
+		<rdfs:label>Priority</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the priority of the thread.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;runningStatus">
+		<rdfs:label>Running Status</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the running state that the thread is in.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;securityAttributes">
+		<rdfs:label>Security Attributes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the security attributes for the thread. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa379560(v=vs.85).aspx.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;stackSize">
+		<rdfs:label>Stack Size</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies  the stack size of the thread. 
+
+See also: http://msdn.microsoft.com/en-us/library/windows/desktop/ms686774(v=vs.85).aspx.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;startAddress">
+		<rdfs:label>Start Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the start address of this thread, representing the memory address where this thread should start.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&threadObj;threadID">
+		<rdfs:label>Thread ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identifier of this thread.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Thread"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

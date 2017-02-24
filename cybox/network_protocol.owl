@@ -1,385 +1,265 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/NetworkProtocol#"
-     xml:base="http://cybox.mitre.org/objects/NetworkProtocol"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:netProtocolObj="http://cybox.mitre.org/objects/NetworkProtocol#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/NetworkProtocol">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Protocol Ontology</rdfs:label>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Protocol for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY netProtocolObj "http://cybox.mitre.org/objects/NetworkProtocol#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/NetworkProtocol#"
+	xmlns:netProtocolObj="http://cybox.mitre.org/objects/NetworkProtocol#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/NetworkProtocol">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Protocol Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Protocol for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-000</owl:versionInfo>
-    </owl:Ontology>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&netProtocolObj;NetworkProtocol">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;encryption"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;moniker"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;osiLayer"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;protocolName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Network Protocol</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes information about a Network Protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&netProtocolObj;NetworkProtocolField">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;fieldDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;fieldName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;flagDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;operationCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Network Protocol Field</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a specific field contained in the associated network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/NetworkProtocol&gt;</rdfs:isDefinedBy>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&netProtocolObj;ProtocolCommandStructure">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;commandDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;commandGroupLabel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;commandStructureId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;commandStructureName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&netProtocolObj;commandType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Command Structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the command structure of a network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/NetworkProtocol&gt;</rdfs:isDefinedBy>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;commandDescription">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a desription of the command structure</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;commandGroupLabel">
+		<rdfs:label>Group Label</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a group label associted with the command structure</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&netProtocolObj;commandStructure">
+		<rdfs:label>Command Structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&netProtocolObj;ProtocolCommandStructure"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;commandStructureId">
+		<rdfs:label>Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a unique identifier for the command structure</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;commandStructureName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the command structure</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;commandType">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the command structure for the associated network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;encryption">
+		<rdfs:label>Encryption Used</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the network protocol is encrypted.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;encryptionType">
+		<rdfs:label>Encryption Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of encryption utilized by the network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;fieldDescription">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the field in the associated network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;fieldName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the field in the associated network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;flagDescription">
+		<rdfs:label>Flag Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the flag field</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;flagValue">
+		<rdfs:label>Flag Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more values for the flag field</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;moniker">
+		<rdfs:label>Moniker</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a moniker or informal name/alias by which the protocol is known</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;operationCode">
+		<rdfs:label>Operation Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;osiLayer">
+		<rdfs:label>OSI Layer</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the layer in the OSI stake that the network protocol operates at.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;protocolData">
+		<rdfs:label>Protocol Data</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies additional data about the field in the assoicated network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;protocolName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the formal name of the network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&netProtocolObj;protocolStructure">
+		<rdfs:label>Protocol Structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the structure of the network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&netProtocolObj;NetworkProtocolField"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&netProtocolObj;relatedProtocols">
+		<rdfs:label>Related Protocols</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies related network protocols, typically other network protocols that underly the network protocol.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&netProtocolObj;NetworkProtocol"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&netProtocolObj;rfc">
+		<rdfs:label>RFC</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more Request for Comment (RFC) identifiers associated with the network protocol</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#commandStructure -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#commandStructure">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#ProtocolCommandStructure"/>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Command Structure</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#protocolStructure -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#protocolStructure">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocolField"/>
-        <rdfs:comment>Specifies the structure of the network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Protocol Structure</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#relatedProtocols -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#relatedProtocols">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol"/>
-        <rdfs:comment>Specifies related network protocols, typically other network protocols that underly the network protocol.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Related Protocols</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#commandDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#commandDescription">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a desription of the command structure</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#commandGroupLabel -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#commandGroupLabel">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a group label associted with the command structure</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Group Label</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#commandStructureId -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#commandStructureId">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a unique identifier for the command structure</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Id</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#commandStructureName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#commandStructureName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the command structure</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#commandType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#commandType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of the command structure for the associated network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#encryption -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#encryption">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the network protocol is encrypted.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Encryption Used</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#encryptionType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#encryptionType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of encryption utilized by the network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Encryption Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#fieldDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#fieldDescription">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a description of the field in the associated network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#fieldName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#fieldName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the field in the associated network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#flagDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#flagDescription">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a description of the flag field</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Flag Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#flagValue -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#flagValue">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies one or more values for the flag field</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Flag Value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#moniker -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#moniker">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a moniker or informal name/alias by which the protocol is known</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Moniker</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#operationCode -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#operationCode">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Operation Code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#osiLayer -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#osiLayer">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the layer in the OSI stake that the network protocol operates at.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>OSI Layer</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#protocolData -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#protocolData">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies additional data about the field in the assoicated network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Protocol Data</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#protocolName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#protocolName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the formal name of the network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#rfc -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#rfc">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies one or more Request for Comment (RFC) identifiers associated with the network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>RFC</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
- 
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocol">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#encryption"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#moniker"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#osiLayer"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#protocolName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes information about a Network Protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <rdfs:label>Network Protocol</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocolField -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#NetworkProtocolField">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#fieldDescription"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#fieldName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#flagDescription"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#operationCode"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a specific field contained in the associated network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://cybox.mitre.org/objects/NetworkProtocol&gt;</rdfs:isDefinedBy>
-        <rdfs:label>Network Protocol Field</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/NetworkProtocol#ProtocolCommandStructure -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/NetworkProtocol#ProtocolCommandStructure">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#commandDescription"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#commandGroupLabel"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#commandStructureId"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#commandStructureName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol#commandType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the command structure of a network protocol</rdfs:comment>
-        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://cybox.mitre.org/objects/NetworkProtocol&gt;</rdfs:isDefinedBy>
-        <rdfs:label>Command Structure</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

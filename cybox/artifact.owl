@@ -1,497 +1,366 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/Artifact#"
-     xml:base="http://cybox.mitre.org/objects/Artifact"
-     xmlns:artifactObj="http://cybox.mitre.org/objects/Artifact#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Artifact">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Artifact Ontology</rdfs:label>
-        <rdfs:comment>This ontology provides a vocabulary and representation of an Artifact for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY artifactObj "http://cybox.mitre.org/objects/Artifact#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Artifact#"
+	xmlns:artifactObj="http://cybox.mitre.org/objects/Artifact#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Artifact">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Artifact Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an Artifact for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox Artifact object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#packaging.compression -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Artifact#packaging.compression">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Artifact#PackageCompression"/>
-        <rdfs:comment>Specifies any compression packaging details for an artifact.
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&artifactObj;Artifact">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;artifactType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;compressionMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;compressionMechanismRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;contentType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;contentTypeVersion"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encodingAlgorithm"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encodingCharacterSet"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encodingCustomCharacterSetRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionKey"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionKeyRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;packaging.isCompressed"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;packaging.isEncrypted"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;rawArtifact.byteOrder"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;rawArtifact.reference"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;rawArtifact.value"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;suspectedMalicious"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Artifact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Charadcterizes the content of a Raw Artifact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&artifactObj;PackageCompression">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;compressionMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;compressionMechanismRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Package Compression</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the compression packaging details for an artifact</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&artifactObj;PackageEncoding">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encodingAlgorithm"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encodingCharacterSet"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encodingCustomCharacterSetRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Package Encoding</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the encoding packaging details for an artifact</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&artifactObj;PackageEncryption">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionKey"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionKeyRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&artifactObj;encryptionMechanismRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Package Encryption</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the encryption packaging details for an artifact</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;artifactType">
+		<rdfs:label>Artifact Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the general type of the artifact contained in this Defined Object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;compressionMechanism">
+		<rdfs:label>Packaging Compression Mechanism</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the compression algorithm utilized to protect the content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;compressionMechanismRef">
+		<rdfs:label>Packaging Compression Mechanism Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a description of the compression algorithm utilized to protect the content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;contentType">
+		<rdfs:label>Content Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Internet Media Type of the artifact contained in this Defined Object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;contentTypeVersion">
+		<rdfs:label>Content Type Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the content type version of the artifact contained in this Defined Object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encodingAlgorithm">
+		<rdfs:label>Packaging Encoding Algorithm</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the encoding algorithm utilized to encode the Raw Artifact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encodingCharacterSet">
+		<rdfs:label>Packaging Encoding Character Set</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the character set utilized in the content encoding.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encodingCustomCharacterSetRef">
+		<rdfs:label>Packaging Encoding Custom Character Set Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a specification of the custom character set used to encode the Raw Artifact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encryptionKey">
+		<rdfs:label>Packaging Encryption Key</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the password for unprotecting/decrypting the Raw_Artifact content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encryptionKeyRef">
+		<rdfs:label>Packaging Encryption Key Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a remote specification of the password for unlocking/decrypting the Raw Artifact content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encryptionMechanism">
+		<rdfs:label>Packaging Encrytion Mechanism</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;encryptionMechanismRef">
+		<rdfs:label>Packaging Encryption Mechanism Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a description of the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&artifactObj;packaging.compression">
+		<rdfs:label>Packaging Compression</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any compression packaging details for an artifact.
 
 If one or more PackageCompression references are specified, the isCompressed field MUST be set to True.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Compression</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#packaging.encoding -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Artifact#packaging.encoding">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Artifact#PackageEncoding"/>
-        <rdfs:comment>Specifies any encoding packaging details for an artifact.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encoding</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#packaging.encryption -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Artifact#packaging.encryption">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Artifact#PackageEncryption"/>
-        <rdfs:comment>Specifies any encryption packaging details for an artifact.
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&artifactObj;PackageCompression"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&artifactObj;packaging.encoding">
+		<rdfs:label>Packaging Encoding</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any encoding packaging details for an artifact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&artifactObj;PackageEncoding"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&artifactObj;packaging.encryption">
+		<rdfs:label>Packaging Encryption</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any encryption packaging details for an artifact.
 
 If one or more PackageEncryption references are specified, the isEncrypted field MUST be set to True.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encryption</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#artifactType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#artifactType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the general type of the artifact contained in this Defined Object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Artifact Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#compressionMechanism -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#compressionMechanism">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the compression algorithm utilized to protect the content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Compression Mechanism</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#compressionMechanismRef -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#compressionMechanismRef">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a reference to a description of the compression algorithm utilized to protect the content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Compression Mechanism Reference</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#contentType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#contentType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the Internet Media Type of the artifact contained in this Defined Object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Content Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#contentTypeVersion -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#contentTypeVersion">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the content type version of the artifact contained in this Defined Object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Content Type Version</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encodingAlgorithm -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encodingAlgorithm">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the encoding algorithm utilized to encode the Raw Artifact.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encoding Algorithm</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encodingCharacterSet -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encodingCharacterSet">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the character set utilized in the content encoding.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encoding Character Set</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encodingCustomCharacterSetRef -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encodingCustomCharacterSetRef">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a reference to a specification of the custom character set used to encode the Raw Artifact.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encoding Custom Character Set Reference</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encryptionKey -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encryptionKey">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the password for unprotecting/decrypting the Raw_Artifact content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encryption Key</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encryptionKeyRef -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encryptionKeyRef">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a reference to a remote specification of the password for unlocking/decrypting the Raw Artifact content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encryption Key Reference</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encryptionMechanism -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encryptionMechanism">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encrytion Mechanism</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#encryptionMechanismRef -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#encryptionMechanismRef">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a reference to a description of the protection/encryption algorithm utilized to protect the content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Encryption Mechanism Reference</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#packaging.isCompressed -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#packaging.isCompressed">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the Raw Artifact content is compressed.
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&artifactObj;PackageEncryption"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;packaging.isCompressed">
+		<rdfs:label>Packaging Is Compressed</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the Raw Artifact content is compressed.
 
 If set to True, at least one reference to a PackageCompression should be supplied.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Is Compressed</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#packaging.isEncrypted -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#packaging.isEncrypted">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the Raw_Artifact content is protected/encrypted. 
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;packaging.isEncrypted">
+		<rdfs:label>Packaging Is Encrypted</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the Raw_Artifact content is protected/encrypted. 
 
 If set to True, at least one reference to a PackageEncryption should be supplied.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Packaging Is Encrypted</rdfs:label>
-    </owl:DatatypeProperty>
-    
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;rawArtifact.byteOrder">
+		<rdfs:label>Raw Artifact Byte Order</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the endianness of the unpacked (e.g., unencrypted, base64-decoded, decompressed, etc.) Raw Artifact data.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;rawArtifact.reference">
+		<rdfs:label>Raw Artifact Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to an external instance of the raw content of a cyber artifact (rather than simply analysis of that artifact).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;rawArtifact.value">
+		<rdfs:label>Raw Artifact Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the raw content of a cyber artifact (rather than simply analysis of that artifact). It is conveyed within a string-based field and should be further enclosed in a CDATA section within the string-based field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&artifactObj;suspectedMalicious">
+		<rdfs:label>Suspected Malicious</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the content of the Raw Artifact is believed to be malicious.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- http://cybox.mitre.org/objects/Artifact#rawArtifact.byteOrder -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#rawArtifact.byteOrder">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the endianness of the unpacked (e.g., unencrypted, base64-decoded, decompressed, etc.) Raw Artifact data.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Raw Artifact Byte Order</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#rawArtifact.reference -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#rawArtifact.reference">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a reference to an external instance of the raw content of a cyber artifact (rather than simply analysis of that artifact).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Raw Artifact Reference</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#rawArtifact.value -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#rawArtifact.value">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the raw content of a cyber artifact (rather than simply analysis of that artifact). It is conveyed within a string-based field and should be further enclosed in a CDATA section within the string-based field.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Raw Artifact Value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#suspectedMalicious -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Artifact#suspectedMalicious">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the content of the Raw Artifact is believed to be malicious.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Suspected Malicious</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#Artifact -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Artifact#Artifact">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#artifactType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#compressionMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#compressionMechanismRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#contentType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#contentTypeVersion"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encodingAlgorithm"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encodingCharacterSet"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encodingCustomCharacterSetRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionKey"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionKeyRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#packaging.isCompressed"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#packaging.isEncrypted"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#rawArtifact.byteOrder"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#rawArtifact.reference"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#rawArtifact.value"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#suspectedMalicious"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Charadcterizes the content of a Raw Artifact.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Artifact</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#PackageCompression -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Artifact#PackageCompression">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#compressionMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#compressionMechanismRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the compression packaging details for an artifact</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Package Compression</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#PackageEncoding -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Artifact#PackageEncoding">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encodingAlgorithm"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encodingCharacterSet"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encodingCustomCharacterSetRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the encoding packaging details for an artifact</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Package Encoding</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Artifact#PackageEncryption -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Artifact#PackageEncryption">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionKey"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionKeyRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Artifact#encryptionMechanismRef"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the encryption packaging details for an artifact</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Artifact"/>
-        <rdfs:label>Package Encryption</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

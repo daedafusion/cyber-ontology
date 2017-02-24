@@ -1,698 +1,521 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://nvd.nist.gov/cvss#"
-     xml:base="http://nvd.nist.gov/cvss"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-     xmlns:cvss="http://nvd.nist.gov/cvss#">
-    <owl:Ontology rdf:about="http://nvd.nist.gov/cvss">
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.0.0-001</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation for the Common Vulnerability Scoring System (CVSS) v2 which provides an open framework for communicating the characteristics and impacts of IT vulnerabilities.  CVSS consists of three groups: Base, Temporal, and Environmental. 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY cvss "http://nvd.nist.gov/cvss#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY vs "http://www.w3.org/2003/06/sw-vocab-status/ns#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://nvd.nist.gov/cvss#"
+	xmlns:cvss="http://nvd.nist.gov/cvss#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://nvd.nist.gov/cvss">
+		<rdfs:label>Common Vulnerability Scoring System (CVSS) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the Common Vulnerability Scoring System (CVSS) v2 which provides an open framework for communicating the characteristics and impacts of IT vulnerabilities.  CVSS consists of three groups: Base, Temporal, and Environmental. 
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Common Vulnerability Scoring System (CVSS) Ontology</rdfs:label>
-    </owl:Ontology>
-    
+		<owl:versionInfo rdf:datatype="&xsd;string">2.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&cvss;BaseMetrics">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;accessComplexity"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;accessVector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;authenticationAttempts"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;availabilityImpact"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;confidentialityImpact"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;displayLabel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;exploitSubscore"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;generationTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;impactSubscore"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;integrityImpact"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;score"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;vector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CVSS Base Metrics</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines the intrinsic and fundamental characteristics of a vulnerability that are constant with time and across user environments</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cvss;CVSS">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;vector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CVSS</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines Common Vulnerability Score System for a vulnerability</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cvss;CVSSImpact">
+		<rdfs:subClassOf rdf:resource="&cvss;CVSS"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;baseMetrics"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;baseScore"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;baseVector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;environmentalMetrics"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;environmentalScore"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;environmentalVector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;overallScore"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;temporalScore"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;temporalVector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;termporalMetrics"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CVSS Impact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines Common Vulnerability Score System for a vulnerability.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cvss;EnvironmentalMetrics">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;availabilityRequirement"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;collateralDamagePotential"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;confidentialityRequirement"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;displayLabel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;generationTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;integrityRequirement"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;score"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;targetDistribution"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;vector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CVSS Environmental Metrics</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines the characteristics of a vulnerability that are relevant and unique to a particular user&apos;s environment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cvss;TemporalMetrics">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;displayLabel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;exploitability"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;generationTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;remediationLevel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;reportConfidence"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;score"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;temporalMultiplier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cvss;vector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CVSS Temporal Metrics</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;accessComplexity">
+		<rdfs:label>CVSS Access Complexity</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the complexity of the attack required to exploit the vulnerability once an attacker has gained access to the target system</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;accessVector">
+		<rdfs:label>CVSS Access Vector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how the vulnerability is exploited</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;authenticationAttempts">
+		<rdfs:label>CVSS Authentication Attempts</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of times an attacker must authenticate to a target in order to exploit a vulnerability</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;availabilityImpact">
+		<rdfs:label>CVSS Availability Impact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the impact to availability of a successfully exploited vulnerability</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;availabilityRequirement">
+		<rdfs:label>Availability Requirement (AR)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the importance of the affected IT asset to a user&apos;s organization in terms of availability.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cvss;baseMetrics">
+		<rdfs:label>Based Metrics Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the details for the base metrics</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&cvss;BaseMetrics"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;baseScore">
+		<rdfs:label>Base Metric Score</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a score, between 0 and 10, that represents the intrinsic and fundamental characteristics of a vulnerability that are consistent over time and user environments.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;baseVector">
+		<rdfs:label>Base Metric Vector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Base Metrics</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;collateralDamagePotential">
+		<rdfs:label>Collateral Damange Potential (CDP)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the potential for losss of life or physical assets through damange or theft of peroperty of requirement.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;confidentialityImpact">
+		<rdfs:label>CVSS Confidentiality Impact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the impact on confidentiality of a successfully exploited vulnerability</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;confidentialityRequirement">
+		<rdfs:label>Confidentiality Requirement (CR)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the importance of the affected IT asset to a user&apos;s organization in terms of confidentiality.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;displayLabel">
+		<rdfs:label>Display Label</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the text to be used as the label  in a human display</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cvss;environmentalMetrics">
+		<rdfs:label>Environmental Metrics Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the details for environmental metrics</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&cvss;EnvironmentalMetrics"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;environmentalScore">
+		<rdfs:label>Environment Score</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;environmentalVector">
+		<rdfs:label>Environmental Metric Vector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Environmental Metrics</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;exploitSubscore">
+		<rdfs:label>Exploit Subscore</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the base exploit sub-score asisgned to a vulnerability by a source</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;exploitability">
+		<rdfs:label>Exportability (E)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the current state of exploit techniques or code availability.  Public availability of easy-to-use exploit code increased the number of potential attackers by including those who are unskilled, thereby increasing the severity of the vulnerability.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;generationTime">
+		<rdfs:label>Generation Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the time and date when the CVSS base metrics were determined</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;impactSubscore">
+		<rdfs:label>Impact Sub-score</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the base impact sub-score assigned to a vulnerability by a source</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;integrityImpact">
+		<rdfs:label>CVSS Integrity Impact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the impact to integrity of a successfully exploited vulnerability</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;integrityRequirement">
+		<rdfs:label>Integrity Requirement (IR)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the importance of the affected IT asset to a user&apos;s organization in terms of integrity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;overallScore">
+		<rdfs:label>Overall Score</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the overall score.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;remediationLevel">
+		<rdfs:label>Remediation Level (RL)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the remediation level of a vulnerability.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;reportConfidence">
+		<rdfs:label>Report Confidence  (RC)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;score">
+		<rdfs:label>CVSS Score</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the CVSS Score</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;source">
+		<rdfs:label>CVSS Source</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the source of the CVSS metric in the form of a URL</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;targetDistribution">
+		<rdfs:label>Target Distribution (TD)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the proportion of vulnerability systems.  It is meant as an environment-specific indicator in order to approximate the precentage of systems that could be affected by the vulnerability.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;temporalMultiplier">
+		<rdfs:label>Temporal Multiplier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number between zero and one used in computations.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;temporalScore">
+		<rdfs:label>Temporal Score</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that are relevant and unique to a particular user&apos;s environments.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;decimal"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;temporalVector">
+		<rdfs:label>Temporal Metrics Vector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Temporal Metrics</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cvss;termporalMetrics">
+		<rdfs:label>Temporal Metrics Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the details for the Temporal Metrics</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&cvss;TemporalMetrics"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cvss;vector">
+		<rdfs:label>CVSS v2 Vector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a compressed textual representation that reflects the values used to drive the CVSS score</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#baseMetrics -->
-
-    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cvss#baseMetrics">
-        <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#BaseMetrics"/>
-        <rdfs:comment>Specifies a reference to the details for the base metrics</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Based Metrics Details</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#environmentalMetrics -->
-
-    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cvss#environmentalMetrics">
-        <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#EnvironmentalMetrics"/>
-        <rdfs:comment>Specifies a reference to the details for environmental metrics</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Environmental Metrics Details</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#termporalMetrics -->
-
-    <owl:ObjectProperty rdf:about="http://nvd.nist.gov/cvss#termporalMetrics">
-        <rdfs:range rdf:resource="http://nvd.nist.gov/cvss#TemporalMetrics"/>
-        <rdfs:comment>Specifies a reference to the details for the Temporal Metrics</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Temporal Metrics Details</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#accessComplexity -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#accessComplexity">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the complexity of the attack required to exploit the vulnerability once an attacker has gained access to the target system</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Access Complexity</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#accessVector -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#accessVector">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies how the vulnerability is exploited</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Access Vector</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#authenticationAttempts -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#authenticationAttempts">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the number of times an attacker must authenticate to a target in order to exploit a vulnerability</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Authentication Attempts</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#availabilityImpact -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#availabilityImpact">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the impact to availability of a successfully exploited vulnerability</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Availability Impact</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#availabilityRequirement -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#availabilityRequirement">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the importance of the affected IT asset to a user&apos;s organization in terms of availability.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Availability Requirement (AR)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#baseScore -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#baseScore">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies a score, between 0 and 10, that represents the intrinsic and fundamental characteristics of a vulnerability that are consistent over time and user environments.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Base Metric Score</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#baseVector -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#baseVector">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Base Metrics</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Base Metric Vector</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#collateralDamagePotential -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#collateralDamagePotential">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the potential for losss of life or physical assets through damange or theft of peroperty of requirement.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Collateral Damange Potential (CDP)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#confidentialityImpact -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#confidentialityImpact">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the impact on confidentiality of a successfully exploited vulnerability</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Confidentiality Impact</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#confidentialityRequirement -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#confidentialityRequirement">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the importance of the affected IT asset to a user&apos;s organization in terms of confidentiality.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Confidentiality Requirement (CR)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#displayLabel -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#displayLabel">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the text to be used as the label  in a human display</rdfs:comment>
-        <rdfs:label>Display Label</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#environmentalScore -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#environmentalScore">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Environment Score</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#environmentalVector -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#environmentalVector">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Environmental Metrics</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Environmental Metric Vector</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#exploitSubscore -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#exploitSubscore">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies the base exploit sub-score asisgned to a vulnerability by a source</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Exploit Subscore</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#exploitability -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#exploitability">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the current state of exploit techniques or code availability.  Public availability of easy-to-use exploit code increased the number of potential attackers by including those who are unskilled, thereby increasing the severity of the vulnerability.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Exportability (E)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#generationTime -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#generationTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the time and date when the CVSS base metrics were determined</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Generation Time</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#impactSubscore -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#impactSubscore">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies the base impact sub-score assigned to a vulnerability by a source</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Impact Sub-score</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#integrityImpact -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#integrityImpact">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the impact to integrity of a successfully exploited vulnerability</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Integrity Impact</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#integrityRequirement -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#integrityRequirement">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the importance of the affected IT asset to a user&apos;s organization in terms of integrity.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Integrity Requirement (IR)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#overallScore -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#overallScore">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies the overall score.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Overall Score</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#remediationLevel -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#remediationLevel">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the remediation level of a vulnerability.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Remediation Level (RL)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#reportConfidence -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#reportConfidence">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Report Confidence  (RC)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#score -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#score">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies the CVSS Score</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Score</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#source -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#source">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies the source of the CVSS metric in the form of a URL</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Source</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#targetDistribution -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#targetDistribution">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the proportion of vulnerability systems.  It is meant as an environment-specific indicator in order to approximate the precentage of systems that could be affected by the vulnerability.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Target Distribution (TD)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#temporalMultiplier -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#temporalMultiplier">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies the number between zero and one used in computations.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Temporal Multiplier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#temporalScore -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#temporalScore">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment>Specifies a score, between 0 and 10, that represents the characteristics of a vulnerability that are relevant and unique to a particular user&apos;s environments.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Temporal Score</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#temporalVector -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#temporalVector">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score for the Temporal Metrics</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>Temporal Metrics Vector</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#vector -->
-
-    <owl:DatatypeProperty rdf:about="http://nvd.nist.gov/cvss#vector">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a compressed textual representation that reflects the values used to drive the CVSS score</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS v2 Vector</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#BaseMetrics -->
-
-    <owl:Class rdf:about="http://nvd.nist.gov/cvss#BaseMetrics">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#accessComplexity"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#accessVector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#authenticationAttempts"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#availabilityImpact"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#confidentialityImpact"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#displayLabel"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#exploitSubscore"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#generationTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#impactSubscore"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#integrityImpact"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#score"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines the intrinsic and fundamental characteristics of a vulnerability that are constant with time and across user environments</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Base Metrics</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#CVSS -->
-
-    <owl:Class rdf:about="http://nvd.nist.gov/cvss#CVSS">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines Common Vulnerability Score System for a vulnerability</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#CVSSImpact -->
-
-    <owl:Class rdf:about="http://nvd.nist.gov/cvss#CVSSImpact">
-        <rdfs:subClassOf rdf:resource="http://nvd.nist.gov/cvss#CVSS"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#baseMetrics"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#environmentalMetrics"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#termporalMetrics"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#baseScore"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#baseVector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#environmentalScore"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#environmentalVector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#overallScore"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#temporalScore"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#temporalVector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines Common Vulnerability Score System for a vulnerability.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Impact</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#EnvironmentalMetrics -->
-
-    <owl:Class rdf:about="http://nvd.nist.gov/cvss#EnvironmentalMetrics">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#availabilityRequirement"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#collateralDamagePotential"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#confidentialityRequirement"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#displayLabel"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#generationTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#integrityRequirement"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#score"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#targetDistribution"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines the characteristics of a vulnerability that are relevant and unique to a particular user&apos;s environment.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Environmental Metrics</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://nvd.nist.gov/cvss#TemporalMetrics -->
-
-    <owl:Class rdf:about="http://nvd.nist.gov/cvss#TemporalMetrics">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#displayLabel"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#exploitability"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#generationTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#remediationLevel"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#reportConfidence"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#score"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#temporalMultiplier"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nvd.nist.gov/cvss#vector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines the characteristics of a vulnerability that change over time but not among user environments.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://nvd.nist.gov/cvss"/>
-        <rdfs:label>CVSS Temporal Metrics</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

@@ -1,1588 +1,1200 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/HTTP_Session#"
-     xml:base="http://cybox.mitre.org/objects/HTTP_Session"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:httpSessionObj="http://cybox.mitre.org/objects/HTTP_Session#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/HTTP_Session">
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/Port"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Created with TopBraid Composer</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a HTTP Session for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY httpSessionObj "http://cybox.mitre.org/objects/HTTP_Session#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/HTTP_Session#"
+	xmlns:httpSessionObj="http://cybox.mitre.org/objects/HTTP_Session#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/HTTP_Session">
+		<rdfs:label>Cyber Observable eXpression (CybOX) HTTP Session Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a HTTP Session for the  Cyber Observable eXpression (CybOX).  
 
 CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the CybOX HTTP Session object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Cyber Observable eXpression (CybOX) HTTP Session Ontology</rdfs:label>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#from -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#from">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
-        <rdfs:comment>Specifies the HTTP Request From header field, which defines the email address of the user making the request.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>From</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#host.domainName -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#host.domainName">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Hostname#Hostname"/>
-        <rdfs:comment>Specifies the HTTP Request Host header field, which the domain name of the server</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Host Domain Name</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#host.port -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#host.port">
-        <rdfs:subPropertyOf rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpClientRequest"/>
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
-        <rdfs:comment>Specifies the HTTP Request Host header field with the TCP port number on which the server is listening.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Host Port</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpClientRequest -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpClientRequest">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#HTTPClientRequest"/>
-        <rdfs:comment>Specifies the HTTP client request portion of a single HTTP request/response pair.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Client Request</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpProvisionalServerResponse -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpProvisionalServerResponse">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#HTTPServerResponse"/>
-        <rdfs:comment>Specifies an HTTP provisional server response that was sent before the regular HTTP response (captured in the HTTP_Server_Response field).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Provisional Server Response</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpRequestHeader.parsed -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpRequestHeader.parsed">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#HTTPRequestHeaderFields"/>
-        <rdfs:comment>Specifies the HTTP request header as a set of parsed HTTP header fields.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Header Parsed</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpRequestResponse -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpRequestResponse">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#HTTPRequestResponse"/>
-        <rdfs:comment>Specifies one or more HTTP Request/Response pair.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Responses</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpResponseHeader.parsed -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpResponseHeader.parsed">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#HTTPResponseHeaderFields"/>
-        <rdfs:comment>Specifies the HTTP response header as a set of parsed HTTP header fields.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Response-Header Parsed</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpServerResponse -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpServerResponse">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#HTTPServerResponse"/>
-        <rdfs:comment>Specifies the HTTP server response portion of a single HTTP request/response pair.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Server Response</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#location -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#location">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
-        <rdfs:comment>Specifies the HTTP Response Location header field, which defines the location used in redirection, or when a new resource has been created.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#referer -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#referer">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
-        <rdfs:comment>Specifies the HTTP Request Range Referer field, which defines the address of the previous web page from which a link to the currently requested page was followed.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Referer</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xForwardedFor -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xForwardedFor">
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address"/>
-                    <rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:comment>Specifies the non-standard HTTP Request X-Forwarded-For field, which is typically used to identify the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Forwarded-For</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xWapProfile -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xWapProfile">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
-        <rdfs:comment>Specifies the non-standard HTTP Request X-Wap-Profile field, which is typically used to link to an XML file on the Internet with a full description and details about the device currently connecting.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Wap-Profile</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#accept -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#accept">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Accept header field, which defines the Content-Types that are acceptable.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Accept</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#acceptCharset -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#acceptCharset">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Accept-Charset header field, which defines the character sets that are acceptable.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Accept-Charset</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#acceptDatetime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#acceptDatetime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Accept-Datetime header field, which defines the acceptable version time.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Accept-Datetime</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#acceptEncoding -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#acceptEncoding">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Accept-Encoding header field, which defines the acceptable encodings.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Accept-encoding</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#acceptLanguage -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#acceptLanguage">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Accept-Language header field, which defines the acceptable languages for response.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Accept-Language</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#acceptRanges -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#acceptRanges">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Accept-Ranges header field, which defines the partial content range types this server supports.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Accept-Ranges</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#accessControlAllowOrigin -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#accessControlAllowOrigin">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Access-Control-Allow-Origin header field, which defines which web sites can participate in cross-origin resource sharing.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Access-Control-Allow-Origin</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#age -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#age">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the HTTP Response Authorization header field, which defines the age the object has been in a proxy cache, in seconds.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Age</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#authorization -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#authorization">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Authorization header field, which defines the authentication credentials for use in HTTP authentication.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Authorization</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#cacheControl -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#cacheControl">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Cache-Control header field, which defines the directives that MUST be obeyed by all caching mechanisms along the request/response chain or the HTTP Response Cache-Control header field, which tells all caching mechanisms from server to client whether they may cache this object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Cache-Control</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#connection -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#connection">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Connection header field, which defines the type of connection that the user-agent would prefer.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Connection</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentDisposition -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentDisposition">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Content-Disposition header field, which provides a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-Disposition</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentEncoding -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentEncoding">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Content-Encoding header field, which defines the type of encoding used on the data.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-Encoding</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentLanguage -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentLanguage">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Content-Language header field, which defines the language the content is in.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-Language</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentLength -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentLength">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the HTTP Request Content-Length header field, which defines the length of the request body in octets. When specified in the HTTP Response Content-Length header field, it defines the length of the response body in octets.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-Length</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentMD5 -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentMD5">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Content-MD5 header field, which defines a Base64 encoded binary MD5 sum of the content of the request body. When specified in the HTTP Response Content-MD5 header field, it defines the base64-encoded binary MD5 sum of the content of the response.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-MD5</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentRange -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentRange">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Content-Range header field, which defines where in a full body message the partial message belongs.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-Range</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#contentType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#contentType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Content-Type header field, which defines a the MIME type of the body of the request (used with POST and PUT requests).  When specified inpecifies the HTTP Response Content-Type header field, it defines the MIME type of the content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Content-Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#cookie -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#cookie">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Cookie header field, which defines the HTTP cookie previously sent by the server.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Cookie</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#dateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#dateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the HTTP Request Date header field, which defines the date and time that the message was sent. When specifies in the HTTP Request Date header field, it defines the date and time that the message was sent.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Date</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#dnt -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#dnt">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Request DNT field, which is typically used to request that a web application disable their tracking of a user.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>DNT (Do Not Track)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#eTag -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#eTag">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response ETag header field, which defines an identifier for a specific version of a resource, often a message digest.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>ETag</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#expect -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#expect">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Expect header field, which defines the particular server behaviors that are required by the client.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Expect</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#expiresDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#expiresDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the HTTP Response Expires header field, which defines the date/time after which the response is considered stale.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Expires</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.body -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.body">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the data contained in the HTTP message body.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Message-Body Body</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.length -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.length">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <rdfs:comment>Specifies the length of the HTTP message body, in bytes.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Message-Body Length</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpRequestHeader.raw -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpRequestHeader.raw">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP request header as a raw, unparsed string.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTTP Request-Header Raw</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.method -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.method">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP method portion of the HTTP request line.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Line Method</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.value -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.value">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the value (typically a resource path) portion of the HTTP request line.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Line Value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.version -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.version">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP version portion of the HTTP request line.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Line Version</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpResponseHeader.raw -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpResponseHeader.raw">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP response header as a raw, unparsed string.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Response-Header Raw</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.reasonPhrase -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.reasonPhrase">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP reason phrase portion of the HTTP status line.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Status-Line Reason Phrase</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.statusCode -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.statusCode">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <rdfs:comment>Specifies the HTTP status code portion of the HTTP status line.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Status-Line Status Code</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.version -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.version">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP version portion of the HTTP status line.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Status-Line Version</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#ifMatch -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#ifMatch">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request If-Match header field, which allows the action to be performed if the client supplied entity matches the same entity on the server.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>If-Match</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#ifModifiedSinceDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#ifModifiedSinceDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the HTTP Request If-Modified-Since header field, which allows a 304 Not Modified response to be returned if content is unchanged since the input date/time.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>If-Modified since</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#ifNoneMatch -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#ifNoneMatch">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request If-Modified-Since header field, which allows the action to be performed only if the client supplied entity does not match the same entity on the server.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>If-None-Match</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#ifRange -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#ifRange">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request If-Range header field, which allows the client to request the part(s) of the entity that they are missing, or otherwise the new entity.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>If-Range</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#ifUnmodifiedSinceDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#ifUnmodifiedSinceDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the HTTP Request If-Unmodified-Since header field, which allows a response to be sent only if the entity has not been modified since a specific date/time.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>If-Unmodified-Since</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#lastModifiedDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#lastModifiedDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the HTTP Response Last-Modified header field, which defines the date/time for the requested object, in RFC 2822 format.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Last-Modified</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#link -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#link">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Link header field, which defines a typed relationship with another resource, where the relation type is defined by RFC 5988.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Link</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#maxForwards -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#maxForwards">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the HTTP Request Max-Forwards header field, which defines the maximum number of times the message can be forwarded through proxies or gateways.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Max-Forwards</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#ordinalPosition -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#ordinalPosition">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <rdfs:comment>Specifies the ordinal positioning of the HTTP request/response pair in the context of the HTTP session.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Ordinal Position</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#p3p -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#p3p">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response P3P header field, which sets P3P policy to be used by the browser.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>P3P</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#pragma -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#pragma">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request or Response Pragma header field, which defines any implementation-specific values that may have various anywhere along the request-response chain.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Pragma</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#proxyAuthenticate -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#proxyAuthenticate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Proxy-Authenticate header field, which defines the type of authentication necessary to access the proxy.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>proxy authenticate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#proxyAuthorization -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#proxyAuthorization">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Proxy-Authorization header field, which defines the authorization credentials for connecting to a proxy.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Proxy-Authorization</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#range -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#range">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Range header field, which defines the range, in bytes, for requesting only part of an entity (bytes are numbered from 0).</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Range</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#refresh -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#refresh">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Refresh header field, which specifies a given interval, in seconds, after which the current page should be refreshed.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Refresh</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#retryAfter -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#retryAfter">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the HTTP Response Retry-After header field, which defines the period, in seconds, after which the client should try again if an entity is temporarily unavailable.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Retry-After</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#server -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#server">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Server field, which defines a name for the responding server.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Server</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#sessionId -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#sessionId">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the unique identifier associated with the session</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Session ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#setCookie -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#setCookie">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Set-Cookie field, which defines an HTTP cookie.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Set-Cookie</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#strickTransportSecurity -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#strickTransportSecurity">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP response Strict-Transport-Security field, which defines the HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Strick-Transport-Security</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#te -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#te">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request TE field, which defines the transfer encodings the user agent is willing to accept.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>TE (Transfer Encodings)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#trailer -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#trailer">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Trailer field, which indicates that the given set of header fields is present in the trailer of a message encoded with chunked transfer-coding.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Trailer</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#transferEncoding -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#transferEncoding">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Transfer-Encoding field, which defines the form of encoding used to safely transfer the entity to the user.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Transfer-Encoding</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#userAgent -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#userAgent">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request User-Agent field, which defines the user agent string of the user agent.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>User-Agent</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#vary -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#vary">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response Vary field, which informs downstream proxies on how to match future request headers to decide whether the cached response can be used rather than requested a fresh one from the origin server.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Vary</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#via -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#via">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request Via field, which defines any proxies through which the request was sent. When specified in the HTTP Response, the Via field informs the client of proxies through which the response was sent.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Via</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#warning -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#warning">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Request and Response Warning field, which defines any general warnings about possible problems with the entity body.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>Warning</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#wwwAuthenticate -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#wwwAuthenticate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the HTTP Response WWW-Authenticate field, which defines the authentication scheme that should be used to access the requested entity.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>WWW-Authenticate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xATTDeviceId -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xATTDeviceId">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Request X-ATT-DeviceId field, which is typically used to identify the make, model, and firmware of AT&amp;amp;T devices.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-ATT-DeviceId</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xContentTypeOptions -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xContentTypeOptions">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Response X-Content-Type-Options field, which supports the &apos;nosniff&apos; parameter to prevent the MIME-sniffing of a response away from the declared content type.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Content-Type-Options</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xForwardedProto -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xForwardedProto">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Response X-Forwarded-Proto field, which identifies the originating protocol of an HTTP request.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Forwarded-Proto</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xFrameOptions -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xFrameOptions">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Response X-Frame-Options field, which is used as a form of clickjacking protection, supporting no rendering within a frame and no rendering if origin mismatch.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Frame-Options</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xPoweredBy -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xPoweredBy">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Response X-Powered-By field, which specifies the technology supporting the web application running on the server.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Powered-By</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xRequestedWith -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xRequestedWith">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Request X-Requested-With field, which is typically used to identify Ajax requests.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-Requested-With</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xUACompatible -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xUACompatible">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Response X-UA-Compatible field, which is used to recommend the preferred rendering engine to use to display the content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-UA-Compatible</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#xXSSProtection -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/HTTP_Session#xXSSProtection">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the non-standard HTTP Response X-XSS-Protection field, which is used as a cross-site scripting (XSS) filter.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>X-XSS-Protection</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#HTTPClientRequest -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/HTTP_Session#HTTPClientRequest">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpRequestHeader.parsed"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.body"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.length"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpRequestHeader.raw"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.method"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.value"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpRequestLine.version"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the details of an HTTP client request.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Client-Request</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#HTTPRequestHeaderFields -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/HTTP_Session#HTTPRequestHeaderFields">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#from"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#host.domainName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#host.port"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#referer"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xForwardedFor"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xWapProfile"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#accept"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#acceptCharset"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#acceptEncoding"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#acceptLanguage"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#authorization"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#cacheControl"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#connection"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentLength"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentMD5"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#cookie"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#dnt"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#expect"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#ifMatch"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#ifModifiedSinceDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#ifNoneMatch"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#ifRange"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#ifUnmodifiedSinceDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#maxForwards"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#pragma"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#proxyAuthorization"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#range"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#te"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#userAgent"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#via"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#warning"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xATTDeviceId"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xForwardedProto"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xRequestedWith"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes parsed HTTP request header fields.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Header Fields</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#HTTPRequestResponse -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/HTTP_Session#HTTPRequestResponse">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpClientRequest"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpServerResponse"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#ordinalPosition"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a single HTTP request/response pair.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Request-Response</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#HTTPResponseHeaderFields -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/HTTP_Session#HTTPResponseHeaderFields">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#location"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#acceptRanges"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#accessControlAllowOrigin"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#age"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#cacheControl"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#connection"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentDisposition"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentEncoding"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentLanguage"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentLength"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentMD5"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentRange"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#contentType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#dateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#eTag"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#expiresDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#lastModifiedDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#link"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#p3p"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#proxyAuthenticate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#proxyAuthorization"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#refresh"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#retryAfter"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#server"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#setCookie"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#strickTransportSecurity"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#trailer"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#transferEncoding"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#vary"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#via"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#wwwAuthenticate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xContentTypeOptions"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xFrameOptions"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xPoweredBy"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xUACompatible"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#xXSSProtection"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes parsed HTTP request header fields.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Response-Header Fields</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#HTTPServerResponse -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/HTTP_Session#HTTPServerResponse">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpResponseHeader.parsed"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.body"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpMessageBody.length"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpResponseHeader.raw"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.reasonPhrase"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.statusCode"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpStatusLine.version"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the details of an HTTP server response.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Server-Response</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/HTTP_Session#HTTPSession -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/HTTP_Session#HTTPSession">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#httpRequestResponse"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/HTTP_Session#sessionId"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes the details of an HTTP session.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
-        <rdfs:label>HTTP Session</rdfs:label>
-    </owl:Class>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Port"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">Created with TopBraid Composer</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&httpSessionObj;HTTPClientRequest">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpMessageBody.body"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpMessageBody.length"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpRequestHeader.parsed"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpRequestHeader.raw"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpRequestLine.method"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpRequestLine.value"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpRequestLine.version"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>HTTP Client-Request</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the details of an HTTP client request.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&httpSessionObj;HTTPRequestHeaderFields">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;accept"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;acceptCharset"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;acceptEncoding"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;acceptLanguage"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;authorization"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;cacheControl"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;connection"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentMD5"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;cookie"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;dnt"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;expect"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;from"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;host.domainName"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;host.port"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;ifMatch"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;ifModifiedSinceDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;ifNoneMatch"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;ifRange"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;ifUnmodifiedSinceDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;maxForwards"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;pragma"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;proxyAuthorization"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;range"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;referer"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;te"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;userAgent"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;via"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;warning"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xATTDeviceId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xForwardedFor"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xForwardedProto"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xRequestedWith"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xWapProfile"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>HTTP Request-Header Fields</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes parsed HTTP request header fields.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&httpSessionObj;HTTPRequestResponse">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpClientRequest"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpServerResponse"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;ordinalPosition"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>HTTP Request-Response</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single HTTP request/response pair.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&httpSessionObj;HTTPResponseHeaderFields">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;acceptRanges"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;accessControlAllowOrigin"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;age"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;cacheControl"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;connection"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentDisposition"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentEncoding"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentLanguage"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentMD5"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentRange"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;contentType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;dateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;eTag"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;expiresDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;lastModifiedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;link"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;location"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;p3p"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;proxyAuthenticate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;proxyAuthorization"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;refresh"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;retryAfter"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;server"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;setCookie"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;strickTransportSecurity"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;trailer"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;transferEncoding"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;vary"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;via"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;wwwAuthenticate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xContentTypeOptions"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xFrameOptions"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xPoweredBy"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xUACompatible"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;xXSSProtection"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>HTTP Response-Header Fields</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes parsed HTTP request header fields.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&httpSessionObj;HTTPServerResponse">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpMessageBody.body"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpMessageBody.length"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpResponseHeader.parsed"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpResponseHeader.raw"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpStatusLine.reasonPhrase"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpStatusLine.statusCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpStatusLine.version"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>HTTP Server-Response</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the details of an HTTP server response.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&httpSessionObj;HTTPSession">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;httpRequestResponse"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&httpSessionObj;sessionId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>HTTP Session</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the details of an HTTP session.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;accept">
+		<rdfs:label>Accept</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Accept header field, which defines the Content-Types that are acceptable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;acceptCharset">
+		<rdfs:label>Accept-Charset</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Accept-Charset header field, which defines the character sets that are acceptable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;acceptDatetime">
+		<rdfs:label>Accept-Datetime</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Accept-Datetime header field, which defines the acceptable version time.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;acceptEncoding">
+		<rdfs:label>Accept-encoding</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Accept-Encoding header field, which defines the acceptable encodings.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;acceptLanguage">
+		<rdfs:label>Accept-Language</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Accept-Language header field, which defines the acceptable languages for response.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;acceptRanges">
+		<rdfs:label>Accept-Ranges</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Accept-Ranges header field, which defines the partial content range types this server supports.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;accessControlAllowOrigin">
+		<rdfs:label>Access-Control-Allow-Origin</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Access-Control-Allow-Origin header field, which defines which web sites can participate in cross-origin resource sharing.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;age">
+		<rdfs:label>Age</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Authorization header field, which defines the age the object has been in a proxy cache, in seconds.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;authorization">
+		<rdfs:label>Authorization</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Authorization header field, which defines the authentication credentials for use in HTTP authentication.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;cacheControl">
+		<rdfs:label>Cache-Control</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Cache-Control header field, which defines the directives that MUST be obeyed by all caching mechanisms along the request/response chain or the HTTP Response Cache-Control header field, which tells all caching mechanisms from server to client whether they may cache this object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;connection">
+		<rdfs:label>Connection</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Connection header field, which defines the type of connection that the user-agent would prefer.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentDisposition">
+		<rdfs:label>Content-Disposition</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Content-Disposition header field, which provides a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentEncoding">
+		<rdfs:label>Content-Encoding</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Content-Encoding header field, which defines the type of encoding used on the data.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentLanguage">
+		<rdfs:label>Content-Language</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Content-Language header field, which defines the language the content is in.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentLength">
+		<rdfs:label>Content-Length</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Content-Length header field, which defines the length of the request body in octets. When specified in the HTTP Response Content-Length header field, it defines the length of the response body in octets.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentMD5">
+		<rdfs:label>Content-MD5</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Content-MD5 header field, which defines a Base64 encoded binary MD5 sum of the content of the request body. When specified in the HTTP Response Content-MD5 header field, it defines the base64-encoded binary MD5 sum of the content of the response.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentRange">
+		<rdfs:label>Content-Range</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Content-Range header field, which defines where in a full body message the partial message belongs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;contentType">
+		<rdfs:label>Content-Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Content-Type header field, which defines a the MIME type of the body of the request (used with POST and PUT requests).  When specified inpecifies the HTTP Response Content-Type header field, it defines the MIME type of the content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;cookie">
+		<rdfs:label>Cookie</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Cookie header field, which defines the HTTP cookie previously sent by the server.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;dateTime">
+		<rdfs:label>Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Date header field, which defines the date and time that the message was sent. When specifies in the HTTP Request Date header field, it defines the date and time that the message was sent.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;dnt">
+		<rdfs:label>DNT (Do Not Track)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Request DNT field, which is typically used to request that a web application disable their tracking of a user.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;eTag">
+		<rdfs:label>ETag</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response ETag header field, which defines an identifier for a specific version of a resource, often a message digest.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;expect">
+		<rdfs:label>Expect</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Expect header field, which defines the particular server behaviors that are required by the client.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;expiresDateTime">
+		<rdfs:label>Expires</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Expires header field, which defines the date/time after which the response is considered stale.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;from">
+		<rdfs:label>From</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request From header field, which defines the email address of the user making the request.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;host.domainName">
+		<rdfs:label>Host Domain Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Host header field, which the domain name of the server</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Hostname#Hostname"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;host.port">
+		<rdfs:subPropertyOf rdf:resource="&httpSessionObj;httpClientRequest"/>
+		<rdfs:label>Host Port</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Host header field with the TCP port number on which the server is listening.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;httpClientRequest">
+		<rdfs:label>HTTP Client Request</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP client request portion of a single HTTP request/response pair.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&httpSessionObj;HTTPClientRequest"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpMessageBody.body">
+		<rdfs:label>HTTP Message-Body Body</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the data contained in the HTTP message body.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpMessageBody.length">
+		<rdfs:label>HTTP Message-Body Length</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the length of the HTTP message body, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;httpProvisionalServerResponse">
+		<rdfs:label>HTTP Provisional Server Response</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an HTTP provisional server response that was sent before the regular HTTP response (captured in the HTTP_Server_Response field).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&httpSessionObj;HTTPServerResponse"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;httpRequestHeader.parsed">
+		<rdfs:label>HTTP Request-Header Parsed</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP request header as a set of parsed HTTP header fields.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&httpSessionObj;HTTPRequestHeaderFields"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpRequestHeader.raw">
+		<rdfs:label>HTTTP Request-Header Raw</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP request header as a raw, unparsed string.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpRequestLine.method">
+		<rdfs:label>HTTP Request-Line Method</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP method portion of the HTTP request line.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpRequestLine.value">
+		<rdfs:label>HTTP Request-Line Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the value (typically a resource path) portion of the HTTP request line.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpRequestLine.version">
+		<rdfs:label>HTTP Request-Line Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP version portion of the HTTP request line.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;httpRequestResponse">
+		<rdfs:label>HTTP Request-Responses</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more HTTP Request/Response pair.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&httpSessionObj;HTTPRequestResponse"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;httpResponseHeader.parsed">
+		<rdfs:label>HTTP Response-Header Parsed</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP response header as a set of parsed HTTP header fields.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&httpSessionObj;HTTPResponseHeaderFields"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpResponseHeader.raw">
+		<rdfs:label>HTTP Response-Header Raw</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP response header as a raw, unparsed string.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;httpServerResponse">
+		<rdfs:label>HTTP Server Response</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP server response portion of a single HTTP request/response pair.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&httpSessionObj;HTTPServerResponse"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpStatusLine.reasonPhrase">
+		<rdfs:label>HTTP Status-Line Reason Phrase</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP reason phrase portion of the HTTP status line.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpStatusLine.statusCode">
+		<rdfs:label>HTTP Status-Line Status Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP status code portion of the HTTP status line.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;httpStatusLine.version">
+		<rdfs:label>HTTP Status-Line Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP version portion of the HTTP status line.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;ifMatch">
+		<rdfs:label>If-Match</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request If-Match header field, which allows the action to be performed if the client supplied entity matches the same entity on the server.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;ifModifiedSinceDateTime">
+		<rdfs:label>If-Modified since</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request If-Modified-Since header field, which allows a 304 Not Modified response to be returned if content is unchanged since the input date/time.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;ifNoneMatch">
+		<rdfs:label>If-None-Match</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request If-Modified-Since header field, which allows the action to be performed only if the client supplied entity does not match the same entity on the server.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;ifRange">
+		<rdfs:label>If-Range</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request If-Range header field, which allows the client to request the part(s) of the entity that they are missing, or otherwise the new entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;ifUnmodifiedSinceDateTime">
+		<rdfs:label>If-Unmodified-Since</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request If-Unmodified-Since header field, which allows a response to be sent only if the entity has not been modified since a specific date/time.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;lastModifiedDateTime">
+		<rdfs:label>Last-Modified</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Last-Modified header field, which defines the date/time for the requested object, in RFC 2822 format.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;link">
+		<rdfs:label>Link</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Link header field, which defines a typed relationship with another resource, where the relation type is defined by RFC 5988.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;location">
+		<rdfs:label>Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Location header field, which defines the location used in redirection, or when a new resource has been created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;maxForwards">
+		<rdfs:label>Max-Forwards</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Max-Forwards header field, which defines the maximum number of times the message can be forwarded through proxies or gateways.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;ordinalPosition">
+		<rdfs:label>Ordinal Position</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ordinal positioning of the HTTP request/response pair in the context of the HTTP session.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;p3p">
+		<rdfs:label>P3P</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response P3P header field, which sets P3P policy to be used by the browser.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;pragma">
+		<rdfs:label>Pragma</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request or Response Pragma header field, which defines any implementation-specific values that may have various anywhere along the request-response chain.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;proxyAuthenticate">
+		<rdfs:label>proxy authenticate</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Proxy-Authenticate header field, which defines the type of authentication necessary to access the proxy.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;proxyAuthorization">
+		<rdfs:label>Proxy-Authorization</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Proxy-Authorization header field, which defines the authorization credentials for connecting to a proxy.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;range">
+		<rdfs:label>Range</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Range header field, which defines the range, in bytes, for requesting only part of an entity (bytes are numbered from 0).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;referer">
+		<rdfs:label>Referer</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Range Referer field, which defines the address of the previous web page from which a link to the currently requested page was followed.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;refresh">
+		<rdfs:label>Refresh</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Refresh header field, which specifies a given interval, in seconds, after which the current page should be refreshed.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;retryAfter">
+		<rdfs:label>Retry-After</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Retry-After header field, which defines the period, in seconds, after which the client should try again if an entity is temporarily unavailable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;server">
+		<rdfs:label>Server</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Server field, which defines a name for the responding server.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;sessionId">
+		<rdfs:label>Session ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with the session</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;setCookie">
+		<rdfs:label>Set-Cookie</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Set-Cookie field, which defines an HTTP cookie.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;strickTransportSecurity">
+		<rdfs:label>Strick-Transport-Security</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP response Strict-Transport-Security field, which defines the HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;te">
+		<rdfs:label>TE (Transfer Encodings)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request TE field, which defines the transfer encodings the user agent is willing to accept.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;trailer">
+		<rdfs:label>Trailer</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Trailer field, which indicates that the given set of header fields is present in the trailer of a message encoded with chunked transfer-coding.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;transferEncoding">
+		<rdfs:label>Transfer-Encoding</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Transfer-Encoding field, which defines the form of encoding used to safely transfer the entity to the user.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;userAgent">
+		<rdfs:label>User-Agent</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request User-Agent field, which defines the user agent string of the user agent.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;vary">
+		<rdfs:label>Vary</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response Vary field, which informs downstream proxies on how to match future request headers to decide whether the cached response can be used rather than requested a fresh one from the origin server.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;via">
+		<rdfs:label>Via</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request Via field, which defines any proxies through which the request was sent. When specified in the HTTP Response, the Via field informs the client of proxies through which the response was sent.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;warning">
+		<rdfs:label>Warning</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Request and Response Warning field, which defines any general warnings about possible problems with the entity body.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;wwwAuthenticate">
+		<rdfs:label>WWW-Authenticate</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the HTTP Response WWW-Authenticate field, which defines the authentication scheme that should be used to access the requested entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xATTDeviceId">
+		<rdfs:label>X-ATT-DeviceId</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Request X-ATT-DeviceId field, which is typically used to identify the make, model, and firmware of AT&amp;amp;T devices.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xContentTypeOptions">
+		<rdfs:label>X-Content-Type-Options</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Response X-Content-Type-Options field, which supports the &apos;nosniff&apos; parameter to prevent the MIME-sniffing of a response away from the declared content type.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;xForwardedFor">
+		<rdfs:label>X-Forwarded-For</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Request X-Forwarded-For field, which is typically used to identify the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xForwardedProto">
+		<rdfs:label>X-Forwarded-Proto</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Response X-Forwarded-Proto field, which identifies the originating protocol of an HTTP request.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xFrameOptions">
+		<rdfs:label>X-Frame-Options</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Response X-Frame-Options field, which is used as a form of clickjacking protection, supporting no rendering within a frame and no rendering if origin mismatch.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xPoweredBy">
+		<rdfs:label>X-Powered-By</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Response X-Powered-By field, which specifies the technology supporting the web application running on the server.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xRequestedWith">
+		<rdfs:label>X-Requested-With</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Request X-Requested-With field, which is typically used to identify Ajax requests.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xUACompatible">
+		<rdfs:label>X-UA-Compatible</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Response X-UA-Compatible field, which is used to recommend the preferred rendering engine to use to display the content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&httpSessionObj;xWapProfile">
+		<rdfs:label>X-Wap-Profile</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Request X-Wap-Profile field, which is typically used to link to an XML file on the Internet with a full description and details about the device currently connecting.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&httpSessionObj;xXSSProtection">
+		<rdfs:label>X-XSS-Protection</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the non-standard HTTP Response X-XSS-Protection field, which is used as a cross-site scripting (XSS) filter.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/HTTP_Session"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

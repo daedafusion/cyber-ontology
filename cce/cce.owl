@@ -1,460 +1,304 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cce.mitre.org/cce#"
-     xml:base="http://cce.mitre.org/cce"
-     xmlns:cce="http://cce.mitre.org/cce#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cce.mitre.org/cce">
-        <owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
-        <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0-001</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation for the Common Configuration Enumeration (CCE) which provides unique identifiers to system configuration issues in order to facility fast and accurate correlation of configuration data across multiple information sources and tools.  This ontology is compatible with the version 5 format of the Common Configuration Enumeration XML schema.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY cce "http://cce.mitre.org/cce#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cce.mitre.org/cce#"
+	xmlns:cce="http://cce.mitre.org/cce#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cce.mitre.org/cce">
+		<rdfs:label>Common Configuration Enumeration (CCE) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the Common Configuration Enumeration (CCE) which provides unique identifiers to system configuration issues in order to facility fast and accurate correlation of configuration data across multiple information sources and tools.  This ontology is compatible with the version 5 format of the Common Configuration Enumeration XML schema.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Common Configuration Enumeration (CCE) Ontology</rdfs:label>
-    </owl:Ontology>
-    
-
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cce.mitre.org/cce#configurationIssues -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#configurationIssues">
-        <rdfs:range rdf:resource="http://cce.mitre.org/cce#CCE"/>
-        <rdfs:comment>Specifies the CCE Name entries contained within the Configuration Issue Catalog.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Configuration Issues</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#creator -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#creator">
-        <rdfs:comment>Specifies the creator of the resource document</rdfs:comment>
-        <rdfs:label>Creator</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#platform -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#platform">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
-        <rdfs:comment>Specifies the platform associated with this configuration control</rdfs:comment>
-        <rdfs:label>Platform</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#publisher -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#publisher">
-        <rdfs:comment>Specifies the publisher of the resource, typically an organization</rdfs:comment>
-        <rdfs:label>Publisher</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#references -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#references">
-        <rdfs:range rdf:resource="http://cce.mitre.org/cce#CceReference"/>
-        <rdfs:comment>Specifies a set of references from published configuration guidance documents such as the NSA Security Guides, the Center for Internet Security Benchmarks, and the DISA STIGs. Authoritative vendor documentation such as Microsoft’s Security Compliance Manager represents acceptable reference material as well.</rdfs:comment>
-        <rdfs:label>Resource References</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#resource -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#resource">
-        <rdfs:range rdf:resource="http://cce.mitre.org/cce#CceResource"/>
-        <rdfs:comment>Specifies the Resource assoicated with the reference</rdfs:comment>
-        <rdfs:label>Resource</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#resources -->
-
-    <owl:ObjectProperty rdf:about="http://cce.mitre.org/cce#resources">
-        <rdfs:range rdf:resource="http://cce.mitre.org/cce#CceResource"/>
-        <rdfs:comment>Specifies the Configuration Issue Resources contained within the Configuration Issue Catalog.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Resources</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cce.mitre.org/cce#cceId -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#cceId">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies pseudorandom identifier tag assigned to the CCE entry</rdfs:comment>
-        <rdfs:label>CCE Identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#cceResourceId -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#cceResourceId">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the identifier for the Common Configuration Enumeration resource</rdfs:comment>
-        <rdfs:label>Resource Identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#creatorName -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#creatorName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the creator(s) of the resource document</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Creator Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#deprecated -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#deprecated">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the CCE entry is depreciated</rdfs:comment>
-        <rdfs:label>Deprecated</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#description -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#description">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a humanly understandable description of the configuration control. This description describes the control and allows an analyst to quickly and accurately recognize an entry.</rdfs:comment>
-        <rdfs:label>Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#format -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#format">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the format of the resource</rdfs:comment>
-        <rdfs:label>Format</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#issuedDate -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#issuedDate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment>Specifies the date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
-        <rdfs:label>Issued</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#lastModifiedDate -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#lastModifiedDate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment>Specifies the date the configuration control was last modified</rdfs:comment>
-        <rdfs:label>Last Modified</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#notes -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#notes">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a note associated with the resource</rdfs:comment>
-        <rdfs:label>Notes</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#parameters -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#parameters">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies parameters that would need to be specified in order to implement a CCE on a system.</rdfs:comment>
-        <rdfs:label>Parameters</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#publisherName -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#publisherName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the publisher of the resource, typically an organization</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Publisher Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#resourceId -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#resourceId">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the identifier of the resource</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Resource Id</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#section -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#section">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a specific section contained within the resource referenced that is applicable to this configuration control</rdfs:comment>
-        <rdfs:label>Section</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#technicalMechanism -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#technicalMechanism">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies for any given configuration issue there may be one or more ways to implement the desired result.</rdfs:comment>
-        <rdfs:label>Technical Mechanisms</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#title -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#title">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the title of the resource document</rdfs:comment>
-        <rdfs:label>Title</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cce.mitre.org/cce#version -->
-
-    <owl:DatatypeProperty rdf:about="http://cce.mitre.org/cce#version">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the version of the resource</rdfs:comment>
-        <rdfs:label>Version</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cce.mitre.org/cce#CCE -->
-
-    <owl:Class rdf:about="http://cce.mitre.org/cce#CCE">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#platform"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#cceId"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#deprecated"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#description"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#lastModifiedDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Represents a Common Configuration Enumeration (CCE) Entry</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>CCE</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cce.mitre.org/cce#CceReference -->
-
-    <owl:Class rdf:about="http://cce.mitre.org/cce#CceReference">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#resource"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#lastModifiedDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#resourceId"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#section"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Represents a reference for the Configuration Control</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>CCE Reference</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cce.mitre.org/cce#CceResource -->
-
-    <owl:Class rdf:about="http://cce.mitre.org/cce#CceResource">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#publisher"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#cceResourceId"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#format"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#issuedDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#lastModifiedDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#notes"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#publisherName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#title"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cce.mitre.org/cce#version"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Represents a published authoritative resource providing configuration guidance.  Such documents include the NSA Security Guides, the Center for Internet Security Benchmarks, and the DISA STIGs.  Authoritative vendor documentation such as Microsoft’s Security Compliance Manager represents acceptable reference material as well.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Resource</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cce.mitre.org/cce#ConfigurationIssueCatalog -->
-
-    <owl:Class rdf:about="http://cce.mitre.org/cce#ConfigurationIssueCatalog">
-        <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
-        <rdfs:comment>Characterizes a catalog of Configuration Issues</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
-        <rdfs:label>Configuration Issue Catalog</rdfs:label>
-    </owl:Class>
-    
-
+		<owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
+		<owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">v1.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&cce;CCE">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;cceId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;deprecated"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;description"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;lastModifiedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;platform"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CCE</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Represents a Common Configuration Enumeration (CCE) Entry</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cce;CceReference">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;lastModifiedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;resource"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;resourceId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;section"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CCE Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Represents a reference for the Configuration Control</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cce;CceResource">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;cceResourceId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;format"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;issuedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;lastModifiedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;notes"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;publisher"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;publisherName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;title"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cce;version"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Resource</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Represents a published authoritative resource providing configuration guidance.  Such documents include the NSA Security Guides, the Center for Internet Security Benchmarks, and the DISA STIGs.  Authoritative vendor documentation such as Microsoft’s Security Compliance Manager represents acceptable reference material as well.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cce;ConfigurationIssueCatalog">
+		<rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
+		<rdfs:label>Configuration Issue Catalog</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a catalog of Configuration Issues</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&cce;cceId">
+		<rdfs:label>CCE Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies pseudorandom identifier tag assigned to the CCE entry</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;cceResourceId">
+		<rdfs:label>Resource Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identifier for the Common Configuration Enumeration resource</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;configurationIssues">
+		<rdfs:label>Configuration Issues</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the CCE Name entries contained within the Configuration Issue Catalog.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+		<rdfs:range rdf:resource="&cce;CCE"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;creator">
+		<rdfs:label>Creator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the creator of the resource document</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;creatorName">
+		<rdfs:label>Creator Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the creator(s) of the resource document</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;deprecated">
+		<rdfs:label>Deprecated</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the CCE entry is depreciated</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;description">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a humanly understandable description of the configuration control. This description describes the control and allows an analyst to quickly and accurately recognize an entry.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;format">
+		<rdfs:label>Format</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the format of the resource</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;issuedDate">
+		<rdfs:label>Issued</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;lastModifiedDate">
+		<rdfs:label>Last Modified</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date the configuration control was last modified</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;notes">
+		<rdfs:label>Notes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a note associated with the resource</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;parameters">
+		<rdfs:label>Parameters</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies parameters that would need to be specified in order to implement a CCE on a system.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;platform">
+		<rdfs:label>Platform</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the platform associated with this configuration control</rdfs:comment>
+		<rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;publisher">
+		<rdfs:label>Publisher</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the publisher of the resource, typically an organization</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;publisherName">
+		<rdfs:label>Publisher Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the publisher of the resource, typically an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;references">
+		<rdfs:label>Resource References</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a set of references from published configuration guidance documents such as the NSA Security Guides, the Center for Internet Security Benchmarks, and the DISA STIGs. Authoritative vendor documentation such as Microsoft’s Security Compliance Manager represents acceptable reference material as well.</rdfs:comment>
+		<rdfs:range rdf:resource="&cce;CceReference"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;resource">
+		<rdfs:label>Resource</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Resource assoicated with the reference</rdfs:comment>
+		<rdfs:range rdf:resource="&cce;CceResource"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;resourceId">
+		<rdfs:label>Resource Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identifier of the resource</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cce;resources">
+		<rdfs:label>Resources</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Configuration Issue Resources contained within the Configuration Issue Catalog.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cce.mitre.org/cce"/>
+		<rdfs:range rdf:resource="&cce;CceResource"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;section">
+		<rdfs:label>Section</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a specific section contained within the resource referenced that is applicable to this configuration control</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;technicalMechanism">
+		<rdfs:label>Technical Mechanisms</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies for any given configuration issue there may be one or more ways to implement the desired result.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;title">
+		<rdfs:label>Title</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the title of the resource document</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cce;version">
+		<rdfs:label>Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the version of the resource</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;date">
+	</rdfs:Datatype>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

@@ -1,250 +1,176 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/Address#"
-     xml:base="http://cybox.mitre.org/objects/Address"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:addressObj="http://cybox.mitre.org/objects/Address#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Address">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of an Address for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY addressObj "http://cybox.mitre.org/objects/Address#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Address#"
+	xmlns:addressObj="http://cybox.mitre.org/objects/Address#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Address">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Address Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an Address for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox Address object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Address Ontology</rdfs:label>
-    </owl:Ontology>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&addressObj;Address">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;addressCategory"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;addressValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;isDestination"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;isSource"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;isSpoofed"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;vlanName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;vlanNum"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes cyber addresses.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&addressObj;EmailAddress">
+		<rdfs:subClassOf rdf:resource="&addressObj;Address"/>
+		<rdfs:label>Email address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an electronic mail (e-mail) address</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&addressObj;IPv4Address">
+		<rdfs:subClassOf rdf:resource="&addressObj;Address"/>
+		<rdfs:label>IPAddress</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an IP V4 Address</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&addressObj;IPv4Netmask">
+		<rdfs:subClassOf rdf:resource="&addressObj;Address"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&addressObj;vlanName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>IPv4Netmask</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an IP v4 Netmask</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&addressObj;IPv6Address">
+		<rdfs:subClassOf rdf:resource="&addressObj;Address"/>
+		<rdfs:label>IPV6Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an IP V6 Address</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&addressObj;IPv6Netmask">
+		<rdfs:subClassOf rdf:resource="&addressObj;Address"/>
+		<rdfs:label>IP v6 Net Mask</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an IP v6 Network Mask</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&addressObj;MACAddress">
+		<rdfs:subClassOf rdf:resource="&addressObj;Address"/>
+		<rdfs:label>MACAddress</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Media Access Control (MAC) Address</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;addressCategory">
+		<rdfs:label>Category</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address category that is being defined.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;addressValue">
+		<rdfs:label>Address Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual value of the address.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;isDestination">
+		<rdfs:label>Is Destination</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies if this is a &quot;Destination&quot; address.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;isSource">
+		<rdfs:label>Is Source</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies if this is a &quot;Source&quot; address.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;isSpoofed">
+		<rdfs:label>Is Spoofed</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the address is spoofed, i.e. forged to conceal its identity or true source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;vlanName">
+		<rdfs:label>VLAN Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the Virtual LAN to which the address belongs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&addressObj;vlanNum">
+		<rdfs:label>VLAN Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of the Virtual LAN to which the address belongs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#addressCategory -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#addressCategory">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the address category that is being defined.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Category</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#addressValue -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#addressValue">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the actual value of the address.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Address Value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#isDestination -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#isDestination">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies if this is a &quot;Destination&quot; address.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Is Destination</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#isSource -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#isSource">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies if this is a &quot;Source&quot; address.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Is Source</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#isSpoofed -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#isSpoofed">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the address is spoofed, i.e. forged to conceal its identity or true source.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Is Spoofed</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#vlanName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#vlanName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the Virtual LAN to which the address belongs.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>VLAN Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#vlanNum -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Address#vlanNum">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the number of the Virtual LAN to which the address belongs.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>VLAN Number</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-    <!-- http://cybox.mitre.org/objects/Address#Address -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#Address">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#addressCategory"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#addressValue"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#isDestination"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#isSource"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#isSpoofed"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#vlanName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#vlanNum"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes cyber addresses.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Address</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#EmailAddress -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#EmailAddress">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
-        <rdfs:comment>Characterizes an electronic mail (e-mail) address</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>Email address</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#IPv4Address -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
-        <rdfs:comment>Characterizes an IP V4 Address</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>IPAddress</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#IPv4Netmask -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv4Netmask">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Address#vlanName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes an IP v4 Netmask</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>IPv4Netmask</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#IPv6Address -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
-        <rdfs:comment>Characterizes an IP V6 Address</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>IPV6Address</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#IPv6Netmask -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#IPv6Netmask">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
-        <rdfs:comment>Characterizes an IP v6 Network Mask</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>IP v6 Net Mask</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Address#MACAddress -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Address#MACAddress">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Address#Address"/>
-        <rdfs:comment>Characterizes a Media Access Control (MAC) Address</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Address"/>
-        <rdfs:label>MACAddress</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

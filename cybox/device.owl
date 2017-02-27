@@ -1,203 +1,135 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/Device#"
-     xml:base="http://cybox.mitre.org/objects/Device"
-	 xmlns:deviceObj="http://cybox.mitre.org/objects/Device#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Device">
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Device Ontology</rdfs:label>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Device for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY deviceObj "http://cybox.mitre.org/objects/Device#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Device#"
+	xmlns:deviceObj="http://cybox.mitre.org/objects/Device#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Device">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Device Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Device for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0-000</owl:versionInfo>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#manufacturer -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Device#manufacturer">
-        <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:comment>Specifies the manufacturer of the device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Manufacturer</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#systemDetails -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Device#systemDetails">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#System"/>
-        <rdfs:comment>Specifies the details of the system that may be present on the device.  {@en-US}</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>System Details</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#description -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Device#description">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a brief description of the Device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#deviceType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Device#deviceType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of the device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Device Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#firmwareVersion -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Device#firmwareVersion">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the version of the firmware running on the device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Firmware Version</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#manufacturerName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Device#manufacturerName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the manufacturer of the device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Manufacturer Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#model -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Device#model">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the model identifier of the device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Model</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#serialNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Device#serialNumber">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the serial number of the Device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Serial Number</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Device#Device -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Device#Device">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#manufacturer"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#systemDetails"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#deviceType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#firmwareVersion"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#manufacturerName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#model"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Device#serialNumber"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize a specific Device.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <rdfs:label>Device</rdfs:label>
-    </owl:Class>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&deviceObj;Device">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;deviceType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;firmwareVersion"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;manufacturer"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;manufacturerName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;model"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;serialNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&deviceObj;systemDetails"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Device</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a specific Device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&deviceObj;description">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a brief description of the Device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&deviceObj;deviceType">
+		<rdfs:label>Device Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&deviceObj;firmwareVersion">
+		<rdfs:label>Firmware Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the version of the firmware running on the device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&deviceObj;manufacturer">
+		<rdfs:label>Manufacturer</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the manufacturer of the device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&deviceObj;manufacturerName">
+		<rdfs:label>Manufacturer Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the manufacturer of the device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&deviceObj;model">
+		<rdfs:label>Model</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the model identifier of the device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&deviceObj;serialNumber">
+		<rdfs:label>Serial Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the serial number of the Device.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&deviceObj;systemDetails">
+		<rdfs:label>System Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the details of the system that may be present on the device.  {@en-US}</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#System"/>
+	</owl:ObjectProperty>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

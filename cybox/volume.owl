@@ -1,354 +1,258 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/Volume#"
-     xml:base="http://cybox.mitre.org/objects/Volume"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:volumeObj="http://cybox.mitre.org/objects/Volume#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Volume">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Volume Ontology</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Volume for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY volumeObj "http://cybox.mitre.org/objects/Volume#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Volume#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:volumeObj="http://cybox.mitre.org/objects/Volume#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Volume">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Volume Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Volume for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox Volume object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    </owl:Ontology>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&volumeObj;UnixVolume">
+		<rdfs:subClassOf rdf:resource="&volumeObj;Volume"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;mountPoint"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;options"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Unix Volume</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Unix disk volumes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&volumeObj;Volume">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;actualAvailableAllocationUnits"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;bytesPerSector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;creationDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;devicePath"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;fileSystemFlags"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;fileSystemType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;isMounted"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;sectorsPerAllocationUnit"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;serialNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;totalAllocationUnits"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;volumeName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Volume</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize generic drive volumes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&volumeObj;WindowsVolume">
+		<rdfs:subClassOf rdf:resource="&volumeObj;Volume"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;driveLetter"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;driveType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&volumeObj;volumeAttributes"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Volume</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows disk volumes.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;actualAvailableAllocationUnits">
+		<rdfs:label>Actual Available Allocation Units</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of allocation units, or clusters, available on the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;bytesPerSector">
+		<rdfs:label>Bytes per Sector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of bytes allocated for each sector of the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;creationDateTime">
+		<rdfs:label>Creation Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date/time that the volume was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;devicePath">
+		<rdfs:label>Device Path</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full path to the volume, including the device on which it resides.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;driveLetter">
+		<rdfs:label>Drive Letter</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the drive letter of this windows volume object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;driveType">
+		<rdfs:label>Drive Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the drive type of this windows volume object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;fileSystemFlags">
+		<rdfs:label>File System Flags</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the particular flags set for the volume by the file system which is used on the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;fileSystemType">
+		<rdfs:label>File System Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the file system which is used on the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;isMounted">
+		<rdfs:label>Is Mounted</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the volume is mounted.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;mountPoint">
+		<rdfs:label>Mount Point</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the specific mounting point for the Unix volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;options">
+		<rdfs:label>Options</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any options used when mounting the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;sectorsPerAllocationUnit">
+		<rdfs:label>Sectors per Allocation Unit</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of disk sectors used for each allocation unit on the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;serialNumber">
+		<rdfs:label>Serial Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the serial number of the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;totalAllocationUnits">
+		<rdfs:label>Total Allocation Units</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the total number of allocation units available on the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;volumeAttributes">
+		<rdfs:label>Volume Attributes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the attributes of this windows volume object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&volumeObj;volumeName">
+		<rdfs:label>Volume Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the volume.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#actualAvailableAllocationUnits -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#actualAvailableAllocationUnits">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-        <rdfs:comment>Specifies the number of allocation units, or clusters, available on the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Actual Available Allocation Units</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#bytesPerSector -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#bytesPerSector">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <rdfs:comment>Specifies the number of bytes allocated for each sector of the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Bytes per Sector</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#creationDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#creationDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date/time that the volume was created.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Creation Time</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#devicePath -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#devicePath">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the full path to the volume, including the device on which it resides.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Device Path</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#driveLetter -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#driveLetter">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the drive letter of this windows volume object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Drive Letter</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#driveType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#driveType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the drive type of this windows volume object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Drive Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#fileSystemFlags -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#fileSystemFlags">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the particular flags set for the volume by the file system which is used on the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>File System Flags</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#fileSystemType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#fileSystemType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the file system which is used on the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>File System Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#isMounted -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#isMounted">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the volume is mounted.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Is Mounted</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#mountPoint -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#mountPoint">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the specific mounting point for the Unix volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Mount Point</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#options -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#options">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies any options used when mounting the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Options</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#sectorsPerAllocationUnit -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#sectorsPerAllocationUnit">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the number of disk sectors used for each allocation unit on the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Sectors per Allocation Unit</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#serialNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#serialNumber">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the serial number of the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Serial Number</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#totalAllocationUnits -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#totalAllocationUnits">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-        <rdfs:comment>Specifies the total number of allocation units available on the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Total Allocation Units</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#volumeAttributes -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#volumeAttributes">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the attributes of this windows volume object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Volume Attributes</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#volumeName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Volume#volumeName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the volume.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Volume Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#UnixVolume -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Volume#UnixVolume">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#mountPoint"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#options"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize Unix disk volumes.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Unix Volume</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#Volume -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Volume#Volume">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#actualAvailableAllocationUnits"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#bytesPerSector"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#creationDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#devicePath"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#fileSystemFlags"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#fileSystemType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#isMounted"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#sectorsPerAllocationUnit"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#serialNumber"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#totalAllocationUnits"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#volumeName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize generic drive volumes.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Volume"/>
-        <rdfs:label>Volume</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Volume#WindowsVolume -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Volume#WindowsVolume">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Volume#Volume"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#driveLetter"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#driveType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Volume#volumeAttributes"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize Windows disk volumes.</rdfs:comment>
-        <rdfs:label>Windows Volume</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

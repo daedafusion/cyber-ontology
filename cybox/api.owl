@@ -1,149 +1,96 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/API#"
-     xml:base="http://cybox.mitre.org/objects/API"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:apiObj="http://cybox.mitre.org/objects/API#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/API">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:label>Cyber Observable eXpression (CybOX) API Ontology</rdfs:label>
-        <rdfs:comment>This ontology provides a vocabulary and representation of an API for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY apiObj "http://cybox.mitre.org/objects/API#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/API#"
+	xmlns:apiObj="http://cybox.mitre.org/objects/API#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/API">
+		<rdfs:label>Cyber Observable eXpression (CybOX) API Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an API for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the Cybox API object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    </owl:Ontology>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&apiObj;API">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&apiObj;functionAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&apiObj;functionName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&apiObj;normalizedFunctionName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&apiObj;returnValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>API</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a specific Application Programming Interface.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&apiObj;functionAddress">
+		<rdfs:label>Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address of the API call in the binary.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&apiObj;functionName">
+		<rdfs:label>Function Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the exact name of the API function called, e.g. CreateFileEx.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&apiObj;normalizedFunctionName">
+		<rdfs:label>Normalized Function Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the normalized name of the API function called, e.g. CreateFile.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&apiObj;parameters">
+		<rdfs:label>Parameters</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any name/value pairs of the parameters passed into the API call.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Parameter"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&apiObj;returnValue">
+		<rdfs:label>return value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the return value of the API call.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/API#parameters -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/API#parameters">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#Parameter"/>
-        <rdfs:comment>Specifies any name/value pairs of the parameters passed into the API call.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
-        <rdfs:label>Parameters</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/API#functionAddress -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/API#functionAddress">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-        <rdfs:comment>Specifies the address of the API call in the binary.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
-        <rdfs:label>Address</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/API#functionName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/API#functionName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the exact name of the API function called, e.g. CreateFileEx.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
-        <rdfs:label>Function Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/API#normalizedFunctionName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/API#normalizedFunctionName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the normalized name of the API function called, e.g. CreateFile.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
-        <rdfs:label>Normalized Function Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/API#returnValue -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/API#returnValue">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the return value of the API call.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
-        <rdfs:label>return value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-
-    <!-- http://cybox.mitre.org/objects/API#API -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/API#API">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/API#functionAddress"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/API#functionName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/API#normalizedFunctionName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/API#returnValue"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize a specific Application Programming Interface.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/API"/>
-        <rdfs:label>API</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

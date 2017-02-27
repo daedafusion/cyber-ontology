@@ -1,93 +1,62 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/WindowsCriticalSection#"
-     xml:base="http://cybox.mitre.org/objects/WindowsCriticalSection"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:winCriticalSectionObj="http://cybox.mitre.org/objects/WindowsCriticalSection#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Windows Critical Section for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY winCriticalSectionObj "http://cybox.mitre.org/objects/WindowsCriticalSection#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/WindowsCriticalSection#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:winCriticalSectionObj="http://cybox.mitre.org/objects/WindowsCriticalSection#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Windows Critical Section Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Windows Critical Section for the  Cyber Observable eXpression (CybOX).  
 
 CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the CybOX Windows Critical Section object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Windows Critical Section Ontology</rdfs:label>
-    </owl:Ontology>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&winCriticalSectionObj;WindowsCriticalSection">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winCriticalSectionObj;address"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winCriticalSectionObj;spinCount"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Critical Section</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Windows Critical Section</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&winCriticalSectionObj;address">
+		<rdfs:label>Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address of the code that crated the critical section object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winCriticalSectionObj;spinCount">
+		<rdfs:label>Spin Count</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the spin count value for the critical section object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/WindowsCriticalSection#address -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection#address">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-        <rdfs:comment>Specifies the address of the code that crated the critical section object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
-        <rdfs:label>Address</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/WindowsCriticalSection#spinCount -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection#spinCount">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <rdfs:comment>Specifies the spin count value for the critical section object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
-        <rdfs:label>Spin Count</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/WindowsCriticalSection#WindowsCriticalSection -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/WindowsCriticalSection#WindowsCriticalSection">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection#address"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection#spinCount"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a Windows Critical Section</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsCriticalSection"/>
-        <rdfs:label>Windows Critical Section</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

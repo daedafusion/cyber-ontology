@@ -1,898 +1,628 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cpe.mitre.org/cpe#"
-     xml:base="http://cpe.mitre.org/cpe"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:cpe="http://cpe.mitre.org/cpe#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://cpe.mitre.org/cpe">
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
-        <owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
-		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Product"/>
-        <owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/Device"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.3-000</owl:versionInfo>
-        <rdfs:label>Common Platform Enumeration (CPE) Ontology</rdfs:label>
-        <rdfs:comment>Ontology that provides a vocabulary and representation for the Common Platform Enumeration (CPE) which provides a standardized method of describing and identifying classes of applications, operating systems, and hardware devices present among an enterprise&apos;s computing assets.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY cpe "http://cpe.mitre.org/cpe#">
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cpe.mitre.org/cpe#"
+	xmlns:cpe="http://cpe.mitre.org/cpe#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cpe.mitre.org/cpe">
+		<rdfs:label>Common Platform Enumeration (CPE) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Ontology that provides a vocabulary and representation for the Common Platform Enumeration (CPE) which provides a standardized method of describing and identifying classes of applications, operating systems, and hardware devices present among an enterprise&apos;s computing assets.
 
 The ontology is based on the Common Platform Enumeration schema maintained by NIST copyright 2011-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#alternateCPE -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#alternateCPE">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
-        <rdfs:comment>Specifies an alternate CPE that refers to the same platform but in a different format</rdfs:comment>
-        <rdfs:label>Alternate CPE</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#authorities -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#authorities">
-        <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:comment>Specifies one or more authorities responsible  for endorsing the identifier name.   Multiple authorities may endorse the  same identifier name.</rdfs:comment>
-        <rdfs:label>Authorities</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#changes -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#changes">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#ChangeDescription"/>
-        <rdfs:comment>Specifies one or more descriptions of any changes made to  the identifier name or associated metadata.</rdfs:comment>
-        <rdfs:label>Changes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#checkFactRef -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#checkFactRef">
-        <rdfs:comment>Specifies zero or more references to a check that evaluates to TRUE, FALSE, or ERROR. Examples of types of checks are OVAL and OCIL checks.</rdfs:comment>
-        <rdfs:label>Check Fact Reference</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#checks -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#checks">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CheckInfo"/>
-        <rdfs:comment>Specifies zero or more checks, such as an OVAL definition, that can confirm or reject an IT system as an instance of the named platform</rdfs:comment>
-        <rdfs:label>Checks</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#contents -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#contents">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
-        <rdfs:comment>Specifies the CPE Name entries contained within the Platform Catalog.</rdfs:comment>
-        <rdfs:label>Contents</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#deprecatedBy -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#deprecatedBy">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
-        <rdfs:comment>Specifies one or more CPE names that deprecated the identifier name.</rdfs:comment>
-        <rdfs:label>Deprecated By</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#deprecationInfo -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#deprecationInfo">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#DeprecationInfo"/>
-        <rdfs:comment>Specifies one or more deprecation entries for the given identifier name. It is possible for a single identifier name to have multiple deprecations that occur at different time periods.</rdfs:comment>
-        <rdfs:label>Deprecation Information:</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#factRef -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#factRef">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#CPE"/>
-        <rdfs:comment>Specifies possible sets of product via CPE Names</rdfs:comment>
-        <rdfs:label>Fact Reference</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#generator -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#generator">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
-        <rdfs:comment>Specifies information about the tool used to generate a specific CPE Dictionary</rdfs:comment>
-        <rdfs:label>Generator</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#logicalTest -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#logicalTest">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#LogicalTest"/>
-        <rdfs:comment>Specifies logical tests to form a complex logical test using AND, OR, and/or negate operators.  This result of evaluating the nested logical test will result in TRUE, FALSE, or ERROR.</rdfs:comment>
-        <rdfs:label>Logical Test</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#references -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#references">
-        <rdfs:range rdf:resource="http://cpe.mitre.org/cpe#ReferenceInfo"/>
-        <rdfs:comment>Specifies zero of more external references to additional descriptive material</rdfs:comment>
-        <rdfs:label>References</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#relatedDevice -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#relatedDevice">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Device#Device"/>
-        <rdfs:comment>Specifies a reference to the associated device to which the CPE names refers</rdfs:comment>
-        <rdfs:label>Related Device</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#relatedOperatingSystem -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#relatedOperatingSystem">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#OperatingSystemInfo"/>
-        <rdfs:comment>Specifies a reference to the associated operating system to which the CPE names refers</rdfs:comment>
-        <rdfs:label>Related Operating System</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#relatedProduct -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#relatedProduct">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Product#Product"/>
-        <rdfs:comment>Specifies a reference to the associated product to which the CPE names refers</rdfs:comment>
-        <rdfs:label>Related Product</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#submitter -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#submitter">
-        <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:comment>Specifies the  organization responsible for submitting the identifier name.</rdfs:comment>
-        <rdfs:label>Submitting Organization</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#vendor -->
-
-    <owl:ObjectProperty rdf:about="http://cpe.mitre.org/cpe#vendor">
-        <rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
-        <rdfs:comment>Specifies the identity of the person or organization that manufactured or created the product</rdfs:comment>
-        <rdfs:label>Vendor</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://scap.nist.gov/scap_core#generator -->
-
-    <owl:ObjectProperty rdf:about="http://scap.nist.gov/scap_core#generator">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#changeDate -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#changeDate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date and time when the change occurred.</rdfs:comment>
-        <rdfs:label>Date of Change</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#changeType -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#changeType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of change that occurred.</rdfs:comment>
-        <rdfs:label>Change Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#checkSystem -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#checkSystem">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies the URI for a particular version of OVAL or a related system testing language</rdfs:comment>
-        <rdfs:label>Check System URI</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#comments -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#comments">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies comments explaining the rationale for the  change.</rdfs:comment>
-        <rdfs:label>Comments</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#cpeName -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#cpeName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the Common Platform Enumeration item.</rdfs:comment>
-        <rdfs:label>CPE Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#deprecated -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#deprecated">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the CPE has been deprecated</rdfs:comment>
-        <rdfs:label>Deprecated</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#deprecationDate -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#deprecationDate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specified the date and time when the deprecation occurred.</rdfs:comment>
-        <rdfs:label>Date of Deprecation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#deprecationType -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#deprecationType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of the deprecation.</rdfs:comment>
-        <rdfs:label>Type of Deprecation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#description -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#description">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a description of an entity</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#edition -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#edition">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies edition-related terms applied by the vendor to the product</rdfs:comment>
-        <rdfs:label>Edition</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#evidenceExternalLink -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#evidenceExternalLink">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies an external link to a specific piece of evidence</rdfs:comment>
-        <rdfs:label>External Link to Evidence</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#evidenceType -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#evidenceType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of evidence</rdfs:comment>
-        <rdfs:label>Evidence Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#externalLink -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#externalLink">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a hyperlink to an external source of additional information</rdfs:comment>
-        <rdfs:label>External Link</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#generationDate -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#generationDate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date and time when the CPE Dictionary was generated.</rdfs:comment>
-        <rdfs:label>Generation Date</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#id -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#id">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the unique identifier associated with the instance</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#identifier -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#identifier">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies an identifier of a test written in that language</rdfs:comment>
-        <rdfs:label>Identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#language -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#language">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the language tags, per RFC5646, supported in the user interface of the product being described</rdfs:comment>
-        <rdfs:label>Language</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#logicalOperator -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#logicalOperator">
-       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the logical operator applied to the results of evaluating the factRef, checkFactRef, and 
+		<owl:imports rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Device"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Product"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
+		<owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.3-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&cpe;CPE">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;alternateCPE"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;cpeName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;deprecated"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;edition"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;language"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;other"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;part"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;productName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;relatedDevice"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;relatedOperatingSystem"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;relatedProduct"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;softwareEdition"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;submitter"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;targetSoftware"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;updateIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;vendor"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;version"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>CPE</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the label to be used in a human display</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;ChangeDescription">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;changeDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;changeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;evidenceExternalLink"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;evidenceType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Change Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of any changes made to the identifier name or associated metadata.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;CheckInfo">
+		<rdfs:subClassOf rdf:resource="&cpe;FactRef"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;checkSystem"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;description"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;externalLink"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;identifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Check fact ref</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a a check that always evaluates to a TRUE, FALSE, or ERROR</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;DeprecationInfo">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;deprecatedBy"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;deprecationDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;deprecationType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Deprecation Info</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the deprecation information for a specific deprecation of a given identifier name.  If a name is deprecated multiple times, there would be a separate instance of the deprecation element for each deprecation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;FactRef">
+		<rdfs:label>Fact ref</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;LogicalTest">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;logicalOperator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;negate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;testIdentifer"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Logical Test</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a logical test of a platform.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;Platform">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;logicalTest"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;platformIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Platform</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a description or qualifications of a particular IT platform type.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;PlatformCatalog">
+		<rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;generationDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;generator"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#generator"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Platform Catalog</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a catalog of Platform names represented as CPE names.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cpe;ReferenceInfo">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;externalLink"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cpe;title"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies reference information associated with a CPE</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&cpe;alternateCPE">
+		<rdfs:label>Alternate CPE</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an alternate CPE that refers to the same platform but in a different format</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;CPE"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;authorities">
+		<rdfs:label>Authorities</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more authorities responsible  for endorsing the identifier name.   Multiple authorities may endorse the  same identifier name.</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;changeDate">
+		<rdfs:label>Date of Change</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time when the change occurred.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;changeType">
+		<rdfs:label>Change Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of change that occurred.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;changes">
+		<rdfs:label>Changes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more descriptions of any changes made to  the identifier name or associated metadata.</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;ChangeDescription"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;checkFactRef">
+		<rdfs:label>Check Fact Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more references to a check that evaluates to TRUE, FALSE, or ERROR. Examples of types of checks are OVAL and OCIL checks.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;checkSystem">
+		<rdfs:label>Check System URI</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the URI for a particular version of OVAL or a related system testing language</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;checks">
+		<rdfs:label>Checks</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more checks, such as an OVAL definition, that can confirm or reject an IT system as an instance of the named platform</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;CheckInfo"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;comments">
+		<rdfs:label>Comments</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies comments explaining the rationale for the  change.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;contents">
+		<rdfs:label>Contents</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the CPE Name entries contained within the Platform Catalog.</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;CPE"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;cpeName">
+		<rdfs:label>CPE Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the Common Platform Enumeration item.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;deprecated">
+		<rdfs:label>Deprecated</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the CPE has been deprecated</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;deprecatedBy">
+		<rdfs:label>Deprecated By</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more CPE names that deprecated the identifier name.</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;CPE"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;deprecationDate">
+		<rdfs:label>Date of Deprecation</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specified the date and time when the deprecation occurred.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;deprecationInfo">
+		<rdfs:label>Deprecation Information:</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more deprecation entries for the given identifier name. It is possible for a single identifier name to have multiple deprecations that occur at different time periods.</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;DeprecationInfo"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;deprecationType">
+		<rdfs:label>Type of Deprecation</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the deprecation.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;description">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of an entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;edition">
+		<rdfs:label>Edition</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies edition-related terms applied by the vendor to the product</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;evidenceExternalLink">
+		<rdfs:label>External Link to Evidence</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an external link to a specific piece of evidence</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;evidenceType">
+		<rdfs:label>Evidence Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of evidence</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;externalLink">
+		<rdfs:label>External Link</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a hyperlink to an external source of additional information</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;factRef">
+		<rdfs:label>Fact Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies possible sets of product via CPE Names</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;CPE"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;generationDate">
+		<rdfs:label>Generation Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time when the CPE Dictionary was generated.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;generator">
+		<rdfs:label>Generator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information about the tool used to generate a specific CPE Dictionary</rdfs:comment>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;id">
+		<rdfs:label>ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with the instance</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;identifier">
+		<rdfs:label>Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an identifier of a test written in that language</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;language">
+		<rdfs:label>Language</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the language tags, per RFC5646, supported in the user interface of the product being described</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;logicalOperator">
+		<rdfs:label>Logical Operator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the logical operator applied to the results of evaluating the factRef, checkFactRef, and 
 logicalTest elements. The permitted operators are “AND” and “OR”.</rdfs:comment>
-        <rdfs:label>Logical Operator</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#negate -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#negate">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether the result of applying the operator should be negated. Possible values are “TRUE” and “FALSE”. Ignored if the result of applying the operator is “ERROR”</rdfs:comment>
-        <rdfs:label>Negate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#notes -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#notes">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies additional description material for the CPE</rdfs:comment>
-        <rdfs:label>Notes</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#other -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#other">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies any other general descriptive or identifying information which is vendor or product-specific and which does not logically fit in any other attribute value</rdfs:comment>
-        <rdfs:label>Other</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#part -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#part">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of part to which the CPE refers.  Valid part values are &apos;a&apos; for application, &apos;o&apos; for operating system, and &apos;h&apos; for hardware devices.</rdfs:comment>
-        <rdfs:label>Type of Part</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#platformIdentifier -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#platformIdentifier">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the unique identifier associated with the platform.</rdfs:comment>
-        <rdfs:label>Platform Identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#productName -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#productName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the product</rdfs:comment>
-        <rdfs:label>Product Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#remark -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#remark">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies additional description information.</rdfs:comment>
-        <rdfs:label>Remark</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#softwareEdition -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#softwareEdition">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies how the product is tailored to a particular market or class for end users</rdfs:comment>
-        <rdfs:label>Software Edition</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#targetHardware -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#targetHardware">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the instruction set architecture (e.g., x86) on which the product being described or identified operates.  Bytecode-intermediate languages, such as Java bytecode or Microsoft CLR) should be considered instruction set architectures.</rdfs:comment>
-        <rdfs:label>Target Hardware</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#targetSoftware -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#targetSoftware">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies how the product is tailored to a particular market or class of end users.</rdfs:comment>
-        <rdfs:label>Target Software</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#testIdentifer -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#testIdentifer">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a unique identifier for a logical test</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Test Identifer</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#title -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#title">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a human-readable title associated with the reference</rdfs:comment>
-        <rdfs:label>Title</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#updateIdentifier -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#updateIdentifier">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the vendor-specific alphanumeric strings characterizing the particular update, service pack, or point release of the product.</rdfs:comment>
-        <rdfs:label>Update</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#vendorName -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#vendorName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the vendor.</rdfs:comment>
-        <rdfs:label>Vendor Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#version -->
-
-    <owl:DatatypeProperty rdf:about="http://cpe.mitre.org/cpe#version">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the vendor-specific alphanumeric string characterizing the particular release version of the product.</rdfs:comment>
-        <rdfs:label>Version</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#CPE -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#CPE">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#alternateCPE"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#relatedDevice"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#relatedOperatingSystem"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#relatedProduct"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#submitter"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#vendor"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#cpeName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#deprecated"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#edition"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#language"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#other"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#part"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#productName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#softwareEdition"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#targetSoftware"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#updateIdentifier"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#version"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Specifies the label to be used in a human display</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>CPE</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#ChangeDescription -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#ChangeDescription">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#changeDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#changeType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#evidenceExternalLink"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#evidenceType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Specifies a description of any changes made to the identifier name or associated metadata.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Change Description</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#CheckInfo -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#CheckInfo">
-        <rdfs:subClassOf rdf:resource="http://cpe.mitre.org/cpe#FactRef"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#checkSystem"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#description"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#externalLink"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#identifier"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a a check that always evaluates to a TRUE, FALSE, or ERROR</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Check fact ref</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#DeprecationInfo -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#DeprecationInfo">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#deprecatedBy"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#deprecationDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#deprecationType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Specifies the deprecation information for a specific deprecation of a given identifier name.  If a name is deprecated multiple times, there would be a separate instance of the deprecation element for each deprecation.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Deprecation Info</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#FactRef -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#FactRef">
-        <rdfs:comment></rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Fact ref</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#LogicalTest -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#LogicalTest">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#logicalOperator"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#negate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#testIdentifer"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines a logical test of a platform.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Logical Test</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#Platform -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#Platform">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#logicalTest"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#platformIdentifier"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Defines a description or qualifications of a particular IT platform type.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Platform</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#PlatformCatalog -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#PlatformCatalog">
-        <rdfs:subClassOf rdf:resource="http://scap.nist.gov/scap_core#Catalog"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#generator"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://scap.nist.gov/scap_core#generator"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#generationDate"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a catalog of Platform names represented as CPE names.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Platform Catalog</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cpe.mitre.org/cpe#ReferenceInfo -->
-
-    <owl:Class rdf:about="http://cpe.mitre.org/cpe#ReferenceInfo">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#externalLink"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cpe.mitre.org/cpe#title"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Specifies reference information associated with a CPE</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
-        <rdfs:label>Reference</rdfs:label>
-    </owl:Class>
-    
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;logicalTest">
+		<rdfs:label>Logical Test</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies logical tests to form a complex logical test using AND, OR, and/or negate operators.  This result of evaluating the nested logical test will result in TRUE, FALSE, or ERROR.</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;LogicalTest"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;negate">
+		<rdfs:label>Negate</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the result of applying the operator should be negated. Possible values are “TRUE” and “FALSE”. Ignored if the result of applying the operator is “ERROR”</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;notes">
+		<rdfs:label>Notes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies additional description material for the CPE</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;other">
+		<rdfs:label>Other</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any other general descriptive or identifying information which is vendor or product-specific and which does not logically fit in any other attribute value</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;part">
+		<rdfs:label>Type of Part</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of part to which the CPE refers.  Valid part values are &apos;a&apos; for application, &apos;o&apos; for operating system, and &apos;h&apos; for hardware devices.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;platformIdentifier">
+		<rdfs:label>Platform Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with the platform.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;productName">
+		<rdfs:label>Product Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the product</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;references">
+		<rdfs:label>References</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero of more external references to additional descriptive material</rdfs:comment>
+		<rdfs:range rdf:resource="&cpe;ReferenceInfo"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;relatedDevice">
+		<rdfs:label>Related Device</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the associated device to which the CPE names refers</rdfs:comment>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Device#Device"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;relatedOperatingSystem">
+		<rdfs:label>Related Operating System</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the associated operating system to which the CPE names refers</rdfs:comment>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#OperatingSystemInfo"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;relatedProduct">
+		<rdfs:label>Related Product</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the associated product to which the CPE names refers</rdfs:comment>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Product#Product"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;remark">
+		<rdfs:label>Remark</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies additional description information.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;softwareEdition">
+		<rdfs:label>Software Edition</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how the product is tailored to a particular market or class for end users</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;submitter">
+		<rdfs:label>Submitting Organization</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the  organization responsible for submitting the identifier name.</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;targetHardware">
+		<rdfs:label>Target Hardware</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the instruction set architecture (e.g., x86) on which the product being described or identified operates.  Bytecode-intermediate languages, such as Java bytecode or Microsoft CLR) should be considered instruction set architectures.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;targetSoftware">
+		<rdfs:label>Target Software</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how the product is tailored to a particular market or class of end users.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;testIdentifer">
+		<rdfs:label>Test Identifer</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a unique identifier for a logical test</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cpe.mitre.org/cpe"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;title">
+		<rdfs:label>Title</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a human-readable title associated with the reference</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;updateIdentifier">
+		<rdfs:label>Update</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the vendor-specific alphanumeric strings characterizing the particular update, service pack, or point release of the product.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cpe;vendor">
+		<rdfs:label>Vendor</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identity of the person or organization that manufactured or created the product</rdfs:comment>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;vendorName">
+		<rdfs:label>Vendor Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the vendor.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cpe;version">
+		<rdfs:label>Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the vendor-specific alphanumeric string characterizing the particular release version of the product.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="http://scap.nist.gov/scap_core#generator">
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#ToolInformation"/>
+	</owl:ObjectProperty>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

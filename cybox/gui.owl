@@ -1,200 +1,142 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/GUI#"
-     xml:base="http://cybox.mitre.org/objects/GUI"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:guiObj="http://cybox.mitre.org/objects/GUI#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/GUI">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:label>Cyber Observable eXpression (CybOX) GUI Ontology</rdfs:label>
-        <rdfs:comment>This ontology provides a vocabulary and representation of a Graphical User Interface (GUI) for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY guiObj "http://cybox.mitre.org/objects/GUI#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/GUI#"
+	xmlns:guiObj="http://cybox.mitre.org/objects/GUI#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/GUI">
+		<rdfs:label>Cyber Observable eXpression (CybOX) GUI Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Graphical User Interface (GUI) for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the CybOX Gui, GUI Dialogbox, GUI Window object schemas maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-    </owl:Ontology>
-    
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&guiObj;GUI">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;height"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;width"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>GUI</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize generic GUI objects.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&guiObj;GUIDialogbox">
+		<rdfs:subClassOf rdf:resource="&guiObj;GUI"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;boxCaption"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;boxText"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>GUIDialogbox</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a GUI Dialog Box</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&guiObj;GUIWindow">
+		<rdfs:subClassOf rdf:resource="&guiObj;GUI"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;ownerWindow"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;parentWindow"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&guiObj;windowDisplayName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>GUIWindow</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize GUI windows.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;boxCaption">
+		<rdfs:label>Box Caption</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the caption associated with the dialog box.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;boxText">
+		<rdfs:label>Box Text</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the text contained inside the dialog box.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;height">
+		<rdfs:label>Height</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the height of the GUI object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;ownerWindow">
+		<rdfs:label>Owner Window</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the owner window of the window object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;parentWindow">
+		<rdfs:label>Parent Window</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the parent window of the window object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;width">
+		<rdfs:label>Width</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the width of the GUI object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&guiObj;windowDisplayName">
+		<rdfs:label>Window Display Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the display name or title bar text of the window object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#boxCaption -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#boxCaption">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the caption associated with the dialog box.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Box Caption</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#boxText -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#boxText">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the text contained inside the dialog box.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Box Text</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#height -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#height">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the height of the GUI object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Height</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#ownerWindow -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#ownerWindow">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the owner window of the window object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Owner Window</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#parentWindow -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#parentWindow">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the parent window of the window object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Parent Window</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#width -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#width">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Specifies the width of the GUI object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Width</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#windowDisplayName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/GUI#windowDisplayName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the display name or title bar text of the window object.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>Window Display Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-    <!-- http://cybox.mitre.org/objects/GUI#GUI -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/GUI#GUI">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#height"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#width"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize generic GUI objects.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>GUI</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#GUIDialogbox -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/GUI#GUIDialogbox">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/GUI#GUI"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#boxCaption"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#boxText"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a GUI Dialog Box</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>GUIDialogbox</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/GUI#GUIWindow -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/GUI#GUIWindow">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/GUI#GUI"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#ownerWindow"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#parentWindow"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/GUI#windowDisplayName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize GUI windows.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/GUI"/>
-        <rdfs:label>GUIWindow</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

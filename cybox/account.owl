@@ -1,788 +1,564 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://cybox.mitre.org/objects/Account#"
-     xml:base="http://cybox.mitre.org/objects/Account"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:accountObj="http://cybox.mitre.org/objects/Account#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://cybox.mitre.org/objects/Account">
-        <owl:imports rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/objects/Port"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.1.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology provides a vocabulary and representation of an Account for the  Cyber Observable eXpression (CybOX).  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY accountObj "http://cybox.mitre.org/objects/Account#">
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Account#"
+	xmlns:accountObj="http://cybox.mitre.org/objects/Account#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Account">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Account Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an Account for the  Cyber Observable eXpression (CybOX).  
 
 CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
 
 The ontology is based on the CybOX Account object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
 
 Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
-        <rdfs:label>Cyber Observable eXpression (CybOX) Account Ontology</rdfs:label>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#duration -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#groups -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Account#groups">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Account#Group"/>
-        <rdfs:comment>Specifies the list of groups to which the user account belongs to.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Groups</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#kerberos.delegationServicePort -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Account#kerberos.delegationServicePort">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
-        <rdfs:comment>Specifies the port for the Kerberos service.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Kerberos Delegation Service Port</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#privileges -->
-
-    <owl:ObjectProperty rdf:about="http://cybox.mitre.org/objects/Account#privileges">
-        <rdfs:range rdf:resource="http://cybox.mitre.org/objects/Account#Privilege"/>
-        <rdfs:comment>Specifies the privileges that the user account has.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Privileges</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#authentication.data -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#authentication.data">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the data used for the authentication type specified by the Authentication Type field. 
+		<owl:imports rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/NetworkProtocol"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Port"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&accountObj;Account">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;authentication.data"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;authentication.structuredAuthenticationMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;authentication.tokenProtectionMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;authentication.type"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;creationDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;disabled"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;domain"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;lastAccessedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;lastModifiedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;lockedOut"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Account</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize generic accounts.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;Group">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;groupID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;groupName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Group</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a group that a user account belongs to.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;Privilege">
+		<rdfs:label>Privilege</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a specific privilege that a user has.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;UnixGroup">
+		<rdfs:subClassOf rdf:resource="&accountObj;Group"/>
+		<rdfs:label>Unix group</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Unix Group</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;UnixPrivilege">
+		<rdfs:subClassOf rdf:resource="&accountObj;Privilege"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;permissionMask"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Unix Privilege</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Unix privilege</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;UnixUserAccount">
+		<rdfs:subClassOf rdf:resource="&accountObj;UserAccount"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;authentication.structuredAuthenticationMechanism"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;groupID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;lockedOut"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;loginShell"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;userID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Unix user account</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Unix user accounts.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;UserAccount">
+		<rdfs:subClassOf rdf:resource="&accountObj;Account"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;homeDirectory"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;lastLoginDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;passwordRequired"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;scriptPath"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;userFullName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;userPasswordAge"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;username"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>User account</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize generic user accounts.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;WindowsComputerAccount">
+		<rdfs:subClassOf rdf:resource="&accountObj;Account"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;computerAccountType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;fqdn.fullName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;fqdn.netBEUIName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;kerberos.delegationBitmask"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;kerberos.delegationServicePort"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;kerberos.delegatonServiceName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;kerberos.deletationServiceCompute"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;kerberos.deletationServiceUser"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;kerberos.ticket"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Computer Account</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows computer accounts.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;WindowsGroup">
+		<rdfs:subClassOf rdf:resource="&accountObj;Group"/>
+		<rdfs:label>Windows Group</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Windows Group of users and other groups</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;WindowsPrivilege">
+		<rdfs:subClassOf rdf:resource="&accountObj;Privilege"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&accountObj;userRight"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Privilege</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a privilege that a user may have within Windows.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&accountObj;WindowsUserAccount">
+		<rdfs:subClassOf rdf:resource="&accountObj;UserAccount"/>
+		<rdfs:label>Windows User Account</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows user accounts.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;authentication.data">
+		<rdfs:label>Authentication Data</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the data used for the authentication type specified by the Authentication Type field. 
 
 For example, if Authentication Type is set to &quot;Password&quot;, this would be the actual password value.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Authentication Data</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#authentication.structuredAuthenticationMechanism -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#authentication.structuredAuthenticationMechanism">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies a description of the authentication mechanism information.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Structured Authentication Mechanism Description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#authentication.tokenProtectionMechanism -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#authentication.tokenProtectionMechanism">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the method (typically algorithm) of protecting authentication tokens for this account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Authentication Token Protection Mechanism</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#authentication.type -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#authentication.type">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of authentication required by this Account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Authentication Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#computerAccountType -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#computerAccountType">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the type of the Windows computer account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Computer Account Type</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#creationDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#creationDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date and time that the account was created.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Creation Date &amp; Time</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#disabled -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#disabled">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether or not the account is disabled.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Account Disabled</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#domain -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#domain">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the domain that the account belongs to.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Domain</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#fqdn.fullName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#fqdn.fullName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the full name of the Windows computer account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Fully Qualified Full Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#fqdn.netBEUIName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#fqdn.netBEUIName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the NETBEUI name of the Windows computer account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Fully Qualified NetBEUI Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#groupID -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#groupID">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <rdfs:comment>Specifies the ID of the primary group to which the Unix user account belongs.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Group ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#groupName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#groupName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the Windows Group</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Group Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#homeDirectory -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#homeDirectory">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the fully-qualified path to the home directory of the user account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Home Directory</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#kerberos.delegationBitmask -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#kerberos.delegationBitmask">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
-        <rdfs:comment>Specifies the bitmask used in the Kerberos delegation for the Windows computer account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Kerberos Delegation Bitmask</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#kerberos.delegatonServiceName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#kerberos.delegatonServiceName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the Kerberos service.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Kerberos Delegaton Service Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#kerberos.deletationServiceCompute -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#kerberos.deletationServiceCompute">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the computer name for the Kerberos service.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Kerberos Deletation Computer Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#kerberos.deletationServiceUser -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#kerberos.deletationServiceUser">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the username for the Kerberos service.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Kerberos Deletation Service Username</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#kerberos.ticket -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#kerberos.ticket">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedLong"/>
-        <rdfs:comment>Specifies the ID of the Kerberos ticket assigned to the Windows computer account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Kerberos Ticket</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#lastAccessedDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#lastAccessedDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date and time that the account was last accessed.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Last Accessed</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#lastLoginDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#lastLoginDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date/time that the user account was last logged into.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Last Login</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#lastModifiedDateTime -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#lastModifiedDateTime">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment>Specifies the date and time that the account was last modified.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Last Modified Date</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#lockedOut -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#lockedOut">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether or not the account is locked out.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Account Locked Out</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#loginShell -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#loginShell">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the name of the default login shell used by the Unix user account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Login Shell</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#passwordRequired -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#passwordRequired">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Specifies whether a password is required for this user account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Password Required</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#permissionMask -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#permissionMask">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the Unix permissions mask for the privilege.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Permission Mask</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#scriptPath -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#scriptPath">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the fully-qualified path to the directory where the logon script for the user account resides.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Script Path</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#userFullName -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#userFullName">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the full name of the user for which this account was created.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>User Full Name</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#userID -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#userID">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:comment>Specifies the ID of the Unix user account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>User ID</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#userPasswordAge -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#userPasswordAge">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
-        <rdfs:comment>Specifies the current age of the user account&apos;s password.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>User Password Age</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#userRight -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#userRight">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies one right that a user may have.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>User Right</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#username -->
-
-    <owl:DatatypeProperty rdf:about="http://cybox.mitre.org/objects/Account#username">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the particular username of the user account.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Username</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#Account -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#Account">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#authentication.data"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#authentication.structuredAuthenticationMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#authentication.tokenProtectionMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#authentication.type"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#creationDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#disabled"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#domain"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#lastAccessedDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#lastModifiedDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#lockedOut"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize generic accounts.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Account</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#Group -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#Group">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#groupID"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#groupName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a group that a user account belongs to.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Group</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#Privilege -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#Privilege">
-        <rdfs:comment>Characterizes a specific privilege that a user has.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Privilege</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#UnixGroup -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#UnixGroup">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#Group"/>
-        <rdfs:comment>Characterizes a Unix Group</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Unix group</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#UnixPrivilege -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#UnixPrivilege">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#Privilege"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#permissionMask"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a Unix privilege</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Unix Privilege</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#UnixUserAccount -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#UnixUserAccount">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#UserAccount"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#authentication.structuredAuthenticationMechanism"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#groupID"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#lockedOut"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#loginShell"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#userID"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize Unix user accounts.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Unix user account</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#UserAccount -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#UserAccount">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#Account"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#homeDirectory"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#lastLoginDateTime"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#passwordRequired"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#scriptPath"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#userFullName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#userPasswordAge"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#username"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize generic user accounts.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>User account</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#WindowsComputerAccount -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#WindowsComputerAccount">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#Account"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#kerberos.delegationServicePort"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#computerAccountType"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#fqdn.fullName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#fqdn.netBEUIName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#kerberos.delegationBitmask"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#kerberos.delegatonServiceName"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#kerberos.deletationServiceCompute"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#kerberos.deletationServiceUser"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#kerberos.ticket"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterize Windows computer accounts.</rdfs:comment>
-        <rdfs:label>Windows Computer Account</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#WindowsGroup -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#WindowsGroup">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#Group"/>
-        <rdfs:comment>Characterizes a Windows Group of users and other groups</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Windows Group</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#WindowsPrivilege -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#WindowsPrivilege">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#Privilege"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://cybox.mitre.org/objects/Account#userRight"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a privilege that a user may have within Windows.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Windows Privilege</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://cybox.mitre.org/objects/Account#WindowsUserAccount -->
-
-    <owl:Class rdf:about="http://cybox.mitre.org/objects/Account#WindowsUserAccount">
-        <rdfs:subClassOf rdf:resource="http://cybox.mitre.org/objects/Account#UserAccount"/>
-        <rdfs:comment>Characterize Windows user accounts.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
-        <rdfs:label>Windows User Account</rdfs:label>
-    </owl:Class>
-    
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;authentication.structuredAuthenticationMechanism">
+		<rdfs:label>Structured Authentication Mechanism Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the authentication mechanism information.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;authentication.tokenProtectionMechanism">
+		<rdfs:label>Authentication Token Protection Mechanism</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the method (typically algorithm) of protecting authentication tokens for this account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;authentication.type">
+		<rdfs:label>Authentication Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of authentication required by this Account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;computerAccountType">
+		<rdfs:label>Computer Account Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the Windows computer account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;creationDateTime">
+		<rdfs:label>Creation Date &amp; Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time that the account was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;disabled">
+		<rdfs:label>Account Disabled</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether or not the account is disabled.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;domain">
+		<rdfs:label>Domain</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the domain that the account belongs to.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;fqdn.fullName">
+		<rdfs:label>Fully Qualified Full Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full name of the Windows computer account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;fqdn.netBEUIName">
+		<rdfs:label>Fully Qualified NetBEUI Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the NETBEUI name of the Windows computer account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;groupID">
+		<rdfs:label>Group ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ID of the primary group to which the Unix user account belongs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;groupName">
+		<rdfs:label>Group Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the Windows Group</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&accountObj;groups">
+		<rdfs:label>Groups</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the list of groups to which the user account belongs to.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&accountObj;Group"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;homeDirectory">
+		<rdfs:label>Home Directory</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the fully-qualified path to the home directory of the user account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;kerberos.delegationBitmask">
+		<rdfs:label>Kerberos Delegation Bitmask</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the bitmask used in the Kerberos delegation for the Windows computer account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&accountObj;kerberos.delegationServicePort">
+		<rdfs:label>Kerberos Delegation Service Port</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the port for the Kerberos service.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Port#Port"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;kerberos.delegatonServiceName">
+		<rdfs:label>Kerberos Delegaton Service Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the Kerberos service.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;kerberos.deletationServiceCompute">
+		<rdfs:label>Kerberos Deletation Computer Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the computer name for the Kerberos service.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;kerberos.deletationServiceUser">
+		<rdfs:label>Kerberos Deletation Service Username</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the username for the Kerberos service.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;kerberos.ticket">
+		<rdfs:label>Kerberos Ticket</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ID of the Kerberos ticket assigned to the Windows computer account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;lastAccessedDateTime">
+		<rdfs:label>Last Accessed</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time that the account was last accessed.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;lastLoginDateTime">
+		<rdfs:label>Last Login</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date/time that the user account was last logged into.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;lastModifiedDateTime">
+		<rdfs:label>Last Modified Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time that the account was last modified.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;lockedOut">
+		<rdfs:label>Account Locked Out</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether or not the account is locked out.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;loginShell">
+		<rdfs:label>Login Shell</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the default login shell used by the Unix user account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;passwordRequired">
+		<rdfs:label>Password Required</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether a password is required for this user account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;permissionMask">
+		<rdfs:label>Permission Mask</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Unix permissions mask for the privilege.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&accountObj;privileges">
+		<rdfs:label>Privileges</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the privileges that the user account has.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&accountObj;Privilege"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;scriptPath">
+		<rdfs:label>Script Path</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the fully-qualified path to the directory where the logon script for the user account resides.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;userFullName">
+		<rdfs:label>User Full Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full name of the user for which this account was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;userID">
+		<rdfs:label>User ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ID of the Unix user account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;userPasswordAge">
+		<rdfs:label>User Password Age</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the current age of the user account&apos;s password.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;duration"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;userRight">
+		<rdfs:label>User Right</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one right that a user may have.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&accountObj;username">
+		<rdfs:label>Username</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the particular username of the user account.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Account"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;duration">
+	</rdfs:Datatype>
 
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

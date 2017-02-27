@@ -1,231 +1,148 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://stix.mitre.org/stix_core#"
-     xml:base="http://stix.mitre.org/stix_core"
-	 xmlns:stix="http://stix.mitre.org/stix_core#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:core="tag:champtc:core#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://stix.mitre.org/stix_core">
-        <owl:versionIRI rdf:resource="http://stix.mitre.org/stix_core/1.2"/>
-        <owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
-        <owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
-        <owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
-        <owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
-        <rdfs:label>STIX Core Ontology</rdfs:label>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2.0-000</owl:versionInfo>
-        <rdfs:comment>This ontology specifies the STIX Package, which corresponds to the primary structure for bundling of information characterizes in Structured Threat Information eXpression (STIX). A STIX Package is used to bundle the various objects of the other eight top-level STIX components.</rdfs:comment>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#TTPs -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#TTPs">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
-        <rdfs:comment>Specifies references to one or more cyber threat adversary Tactics, Techniques or Procedures.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>TTPs</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#campaigns -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#campaigns">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CampaignBase"/>
-        <rdfs:comment>Specifies one or more cyber threat Campaigns.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Campaigns</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#coursesOfAction -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#coursesOfAction">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
-        <rdfs:comment>Specifies references to one or more Courses of Action.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Courses of Action</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#exploitTargets -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#exploitTargets">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ExploitTargetBase"/>
-        <rdfs:comment>Specifies references to one or more potential targets for exploitation.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Exploit Targets</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#incidents -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#incidents">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
-        <rdfs:comment>Specifies references to one or more cyber threat Incidents.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Incidents</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#indicators -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#indicators">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IndicatorBase"/>
-        <rdfs:comment>Specifies references to one or more cyber threat Indicators.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>indicators</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#killchains -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#killchains">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChain"/>
-        <rdfs:comment>Specifies references to one or more cyber kill chains.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Kill Chains</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#observables -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#observables">
-        <rdfs:comment>Specifies references to one or more cyber observables.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Observables</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#relatedPackages -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#relatedPackages">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stix_core#Package"/>
-        <rdfs:comment>Specifies references to one or more relationships to other Packages.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Related Packages</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#threatActors -->
-
-    <owl:ObjectProperty rdf:about="http://stix.mitre.org/stix_core#threatActors">
-        <rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
-        <rdfs:comment>Specifies references to one or more cyber Threat Actors.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Threat Actors</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#packageIntent -->
-
-    <owl:DatatypeProperty rdf:about="http://stix.mitre.org/stix_core#packageIntent">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Specifies the intended purpose(s) or use(s) for this package of STIX content.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Package Intent</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#profiles -->
-
-    <owl:DatatypeProperty rdf:about="http://stix.mitre.org/stix_core#profiles">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>Specifies a list of profiles that the STIX Package conforms to.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Profiles</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#relatedPackagesScope -->
-
-    <owl:DatatypeProperty rdf:about="http://stix.mitre.org/stix_core#relatedPackagesScope">
-        <rdfs:comment>Specifies how multiple related items should be interpreted in this relationship.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY core "tag:champtc:core#">
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY stix "http://stix.mitre.org/stix_core#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://stix.mitre.org/stix_core#"
+	xmlns:core="tag:champtc:core#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:stix="http://stix.mitre.org/stix_core#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://stix.mitre.org/stix_core">
+		<rdfs:label>STIX Core Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology specifies the STIX Package, which corresponds to the primary structure for bundling of information characterizes in Structured Threat Information eXpression (STIX). A STIX Package is used to bundle the various objects of the other eight top-level STIX components.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
+		<owl:versionIRI rdf:resource="http://stix.mitre.org/stix_core/1.2"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.2.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&stix;Package">
+		<rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#PackageBase"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;observables"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&stix;packageIntent"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Package</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&stix;TTPs">
+		<rdfs:label>TTPs</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more cyber threat adversary Tactics, Techniques or Procedures.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;campaigns">
+		<rdfs:label>Campaigns</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more cyber threat Campaigns.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CampaignBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;coursesOfAction">
+		<rdfs:label>Courses of Action</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more Courses of Action.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#CourseOfActionBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;exploitTargets">
+		<rdfs:label>Exploit Targets</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more potential targets for exploitation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ExploitTargetBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;incidents">
+		<rdfs:label>Incidents</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more cyber threat Incidents.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IncidentBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;indicators">
+		<rdfs:label>indicators</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more cyber threat Indicators.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IndicatorBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;killchains">
+		<rdfs:label>Kill Chains</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more cyber kill chains.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChain"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;observables">
+		<rdfs:label>Observables</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more cyber observables.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;packageIntent">
+		<rdfs:label>Package Intent</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the intended purpose(s) or use(s) for this package of STIX content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;profiles">
+		<rdfs:label>Profiles</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a list of profiles that the STIX Package conforms to.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;relatedPackages">
+		<rdfs:label>Related Packages</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more relationships to other Packages.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="&stix;Package"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&stix;relatedPackagesScope">
+		<rdfs:label>Related Packages Scope</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how multiple related items should be interpreted in this relationship.
 
 A value of &quot;inclusive&quot; specifies that a single conceptual relationship is being defined between the subject and the collection of objects indicated by the related items (i.e. the relationship is not necessarily relevant for any one particular object being referenced, but for the aggregated collection of objects referenced). 
 
 A value of &quot;exclusive&quot; specifies that multiple relationships are being defined between the specific subject and each object individually. 
 
 If not specified, a value of &quot;exclusive&quot; is used as the default.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Related Packages Scope</rdfs:label>
-    </owl:DatatypeProperty>
-    
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&stix;threatActors">
+		<rdfs:label>Threat Actors</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to one or more cyber Threat Actors.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ThreatActorBase"/>
+	</owl:ObjectProperty>
 
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://stix.mitre.org/stix_core#Package -->
-
-    <owl:Class rdf:about="http://stix.mitre.org/stix_core#Package">
-        <rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#PackageBase"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/stix_core#observables"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://stix.mitre.org/stix_core#packageIntent"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Characterizes a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/stix_core"/>
-        <rdfs:label>Package</rdfs:label>
-    </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
-

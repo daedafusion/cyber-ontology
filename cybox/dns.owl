@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY dnsObj "http://cybox.mitre.org/objects/DNS#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/DNS#"
+	xmlns:dnsObj="http://cybox.mitre.org/objects/DNS#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/DNS">
+		<rdfs:label>Cyber Observable eXpression (CybOX) DNS Query Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a DNS Query for the  Cyber Observable eXpression (CybOX).  
+
+CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX DNS Query object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Domain_Name"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&dnsObj;DNSCache">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:label>DNSCache</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize entries in a system&apos;s DNS cache.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&dnsObj;DNSCacheEntry">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;addressClass"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;cacheEntryTTL"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;description"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;domainName"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;entryType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;flags"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;ipAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;queriedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordData"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordDataLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;ttl"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>DNSCache Entry</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a single entry in a system&apos;s DNS cache.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&dnsObj;DNSQuery">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;serviceUsed"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;successful"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;transactionId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>DNS Query</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a single DNS query and its components.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&dnsObj;DNSRecord">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;addressClass"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;description"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;domainName"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;entryType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;flags"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;ipAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;queriedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordData"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordDataLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;recordType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&dnsObj;ttl"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>DNSRecord</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize an individual DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;additonRecords">
+		<rdfs:label>Addition Records</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any Additional resource records that were returned for the DNS query.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&dnsObj;DNSRecord"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;addressClass">
+		<rdfs:label>Address Class</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address class (e.g. IN, TXT, ANY, etc.) for the DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;answerResourceRecords">
+		<rdfs:label>Answer Resource Records</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any Answers resource records that were returned for the DNS query.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&dnsObj;DNSRecord"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;authorityResourceRecords">
+		<rdfs:label>Authority Resource Records</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any Authority resource records that were returned for the DNS query.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&dnsObj;DNSRecord"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;cacheEntryTTL">
+		<rdfs:label>Cache Entry TTL</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the time-to-live value for the DNS cache entry, or in other words the number of seconds before the entry expires.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;description">
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;dnsCacheEntries">
+		<rdfs:label>DNS Cache Entries</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more domain name system entries in the system&apos;s DNS cache.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&dnsObj;DNSCacheEntry"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;domainName">
+		<rdfs:label>Domain Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the domain to which the DNS cache entry points.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;entryType">
+		<rdfs:label>Entry Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the resource record type (e.g. SOA or A) for the DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;flags">
+		<rdfs:label>Flags</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the relevant flags for the DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;ipAddress">
+		<rdfs:label>IP Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the IP address to which the domain name in the DNS cache entry resolves to.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;queriedDateTime">
+		<rdfs:label>Queried Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time at which this DNS record was returned from a query.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;queryDateTime">
+		<rdfs:label>Date/Time Query Ran</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time that the DNS query was run.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;question.class">
+		<rdfs:label>Question Class</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the class of resource records being requested.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&dnsObj;question.name">
+		<rdfs:label>Question Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the domain name being queried.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;question.type">
+		<rdfs:label>Question Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of DNS query performed, in terms of the requested DNS record type.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;recordData">
+		<rdfs:label>Record Data</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies expression of the raw record data.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;anySimpleType"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;recordDataLength">
+		<rdfs:label>Data Length</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the length of raw data to be captured in the Record Data field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;recordName">
+		<rdfs:label>Record Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name for the DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;recordType">
+		<rdfs:label>Record Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;serviceUsed">
+		<rdfs:label>Service Used</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the service used to run the DNS Query.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;successful">
+		<rdfs:label>Successful</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether or not the DNS Query was successful.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;transactionId">
+		<rdfs:label>Transaction ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Transaction ID value of the DNS query message header.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&dnsObj;ttl">
+		<rdfs:label>Time to Live (TTL)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the time-to-live for the DNS record.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/DNS"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;anySimpleType">
+	</rdfs:Datatype>
+
+</rdf:RDF>

@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://oval.mitre.org/common#"
+     xml:base="http://oval.mitre.org/common"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oval="http://oval.mitre.org/common#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://oval.mitre.org/common">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.11-000</owl:versionInfo>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology provides a vocabulary and representation for the Open Vulnerability and Assessment Language (OVAL) common types.  
+
+The OVAL ontology provides a characterization of an information security community effort to standardize how to assess and report upon the machine state of computer systems. OVAL includes a language to encode system details, and an assortment of content repositories held throughout the community.  Tools and services that use OVAL for the three steps of system assessment — representing system information, expressing specific machine states, and reporting the results of an assessment — provide enterprises with accurate, consistent, and actionable information so they may improve their security. Use of OVAL also provides for reliable and reproducible information assurance metrics and enables interoperability and automation among security tools and services.
+
+The ontology is based on the OVAL schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Open Vulnerability and Assessment Language (OVAL) Common Types Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://oval.mitre.org/common#definitionID -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/common#definitionID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the OVAL-ID of the Definition. Definition Id&apos;s should be formated as &apos;oval:Organization DNS Name.oval:def:ID Value&apos; where organization DNS Name is of the form ‘org.mitre.oval’; and ID Value is an integer that is unique to the DNS name and ID Type pair that precedes it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/common"/>
+        <rdfs:label>OVAL Definition-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/common#objectID -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/common#objectID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the OVAL-ID of an Object. Object Id&apos;s should be formated as &apos;oval:Organization DNS Name.oval:obj:ID Value&apos; where organization DNS Name is of the form ‘org.mitre.oval’; and ID Value is an integer that is unique to the DNS name and ID Type pair that precedes it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/common"/>
+        <rdfs:label>OVAL Object-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/common#stateID -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/common#stateID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the OVAL-ID of a State. State Id&apos;s should be formated as &apos;oval:Organization DNS Name.oval:ste:ID Value&apos; where organization DNS Name is of the form ‘org.mitre.oval’; and ID Value is an integer that is unique to the DNS name and ID Type pair that precedes it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/common"/>
+        <rdfs:label>OVAL State-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/common#testID -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/common#testID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the OVAL-ID of a Test. Test Id&apos;s should be formated as &apos;oval:Organization DNS Name.oval:tst:ID Value&apos; where organization DNS Name is of the form ‘org.mitre.oval’; and ID Value is an integer that is unique to the DNS name and ID Type pair that precedes it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/common"/>
+        <rdfs:label>OVAL Test-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/common#timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/common#timestamp">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Specifies when the particular OVAL document was compiled.
+
+Note that the timestamp element does not specify when a definition (or set of definitions) was created or modified but rather when the actual document that contains the definition was created. For example, the document might have pulled a bunch of existing OVAL Definitions together, each of the definitions having been created at some point in the past. The timestamp in this case would be when the combined document was created</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/common"/>
+        <rdfs:label>Timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/common#variableID -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/common#variableID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the OVAL-ID of a Variable. Variable Id&apos;s should be formated as &apos;oval:Organization DNS Name.oval:var:ID Value&apos; where organization DNS Name is of the form ‘org.mitre.oval’; and ID Value is an integer that is unique to the DNS name and ID Type pair that precedes it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/common"/>
+        <rdfs:label>OVAL Variable-ID</rdfs:label>
+    </owl:DatatypeProperty>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

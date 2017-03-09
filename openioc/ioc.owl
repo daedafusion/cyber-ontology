@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY ioc "http://ioc.mandiant.com/IoC#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://ioc.mandiant.com/IoC#"
+	xmlns:ioc="http://ioc.mandiant.com/IoC#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://ioc.mandiant.com/IoC">
+		<rdfs:label>Open Indicators of Compromise (IOC) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the OpenIOC Indicator of Compromise.  The IoC ontology provides a characterization of threat indicators.
+
+The ontology is based on the OpenIOC 1.0 schema maintained by MANDIANT Corporation copyright 2013.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&ioc;IndicatorItem">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;comment"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;content.type"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;content.value"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;context.document"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;context.search"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;context.type"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Indicator item</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an item of an indicator expression</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ioc;IndicatorOfCompromise">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;author"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;author.Details"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;authoredDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;lastModifiedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;shortDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Indicator of Compromise</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an Indicator of Compromise</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ioc;IocIndicator">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;operator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>IoC Indicator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single indicator expression</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ioc;Link">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;reference"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;title"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;type"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;value"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Link</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a link to reference information.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ioc;Parameter">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;name"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;title"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ioc;value"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Parameter</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Parameter</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;author">
+		<rdfs:label>Author</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the author of the Indicator of Compromise</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ioc;author.Details">
+		<rdfs:label>Author Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to details about the author.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;authoredDateTime">
+		<rdfs:label>Authored Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time the Indicator of Compromise was authored.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;comment">
+		<rdfs:label>comment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;content.type">
+		<rdfs:label>content.type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;content.value">
+		<rdfs:label>content.value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;context.document">
+		<rdfs:label>Context Document</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the kind of item</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;context.search">
+		<rdfs:label>context.search</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;context.type">
+		<rdfs:label>context.type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ioc;definition">
+		<rdfs:label>Definition</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a definition for the Indicator of Compromise</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&ioc;IocIndicator"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;description">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an unstructured text description</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;id">
+		<rdfs:label>ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with this entity instance.
+
+The format of the identifier MUST be in the format of [construct-type]-[UUID], where [construct-type] should be associated with the entity&apos;s construct and [UUID] SHOULD correspond to a universally unique identifier.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ioc;indicatorItem">
+		<rdfs:label>Indicator Item</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more IoC Indicator expressions</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&ioc;IndicatorItem"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ioc;iocIndicator">
+		<rdfs:label>IoC Indicator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies IoC Indicators that are nested to create a complex expression</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&ioc;IocIndicator"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;keywords">
+		<rdfs:label>keywords</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies keywords associated with ther Indicator of Compromise</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;lastModifiedDateTime">
+		<rdfs:label>Last Modified</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time of the last time this Indicator of Compromise was modified.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ioc;links">
+		<rdfs:label>Links</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to one or more links that contain relationship information</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&ioc;Link"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;name">
+		<rdfs:label>name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://ioc.mandiant.com/IoC&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;operator">
+		<rdfs:label>Operator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the logic operator that applies to any indicator items that make up the expression</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ioc;param">
+		<rdfs:label>Parameter</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more parameters</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&ioc;Parameter"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;reference">
+		<rdfs:label>Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the reference</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;shortDescription">
+		<rdfs:label>Short Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a short, unstructured, text description of the entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;title">
+		<rdfs:label>Title</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Speciifies a title</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;type">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a type</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ioc;value">
+		<rdfs:label>Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the value</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://ioc.mandiant.com/IoC"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

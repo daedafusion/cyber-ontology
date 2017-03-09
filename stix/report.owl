@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY core "tag:champtc:core#">
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY report "http://stix.mitre.org/Report#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://stix.mitre.org/Report#"
+	xmlns:core="tag:champtc:core#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:report="http://stix.mitre.org/Report#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://stix.mitre.org/Report">
+		<rdfs:label>STIX Report Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) Report.  The Report ontology provides a characterization of the context to a given grouping of STIX content.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+		<owl:versionIRI rdf:resource="http://stix.mitre.org/Report/1.2"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.2.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&report;Report">
+		<rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#ReportBase"/>
+		<rdfs:label>Report</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a contextual wrapper for a given group of STIX content.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Report"/>
+		<core:appIconId rdf:datatype="&xsd;string">dl:com.champtc.champ.ui.core.stix.report</core:appIconId>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&report;relatedReports">
+		<rdfs:label>Related Reports</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to one or more related Reports</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Report"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ReportBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&report;reportIntent">
+		<rdfs:label>Intent</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the intended purpose(s) or use(s) of this report. 
+
+Examples of report intent include Threat Report, Indicators, PBX, and Campaign Characterization (these specific values are only provided to help explainthe property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Report Intent Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/Report"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

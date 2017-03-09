@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY semaphoreObj "http://cybox.mitre.org/objects/Semaphore#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Semaphore#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:semaphoreObj="http://cybox.mitre.org/objects/Semaphore#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Semaphore">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Semaphore Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Semaphore for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Semaphore object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&semaphoreObj;Semaphore">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&semaphoreObj;currentCount"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&semaphoreObj;isNamed"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&semaphoreObj;maximumCount"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&semaphoreObj;semaphoreName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Semaphore</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize generic semaphore objects.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&semaphoreObj;WindowsSemaphore">
+		<rdfs:subClassOf rdf:resource="&semaphoreObj;Semaphore"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&semaphoreObj;handle"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&semaphoreObj;securityAttributes"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Semaphore</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows Semaphore (synchronization) objects.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&semaphoreObj;currentCount">
+		<rdfs:label>Current Count</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the current count value for the semaphore.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Semaphore"/>
+		<rdfs:range rdf:resource="&xsd;unsignedInt"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&semaphoreObj;handle">
+		<rdfs:label>Handle</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the open Windows handle to the semaphore.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Semaphore"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&semaphoreObj;isNamed">
+		<rdfs:label>Named</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the Semaphore is named.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Semaphore"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&semaphoreObj;maximumCount">
+		<rdfs:label>Maximum Count</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the maximum count value for the semaphore.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Semaphore"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&semaphoreObj;securityAttributes">
+		<rdfs:label>Security Attributes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Windows security attributes for the semaphore.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Semaphore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&semaphoreObj;semaphoreName">
+		<rdfs:label>Semaphore Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the semaphore, if applicable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Semaphore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY eventLogObj "http://cybox.mitre.org/objects/EventLog#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/EventLog#"
+	xmlns:eventLogObj="http://cybox.mitre.org/objects/EventLog#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/EventLog">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Event Log Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an  EventLog for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows Event Log object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&eventLogObj;WindowsEventLog">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;blob"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;category"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;categoryNum"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;correlationActivityID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;correlationRelatedActivityID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;eventID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;eventType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;executionProcessID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;executionThreadID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;generationDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;index"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;logName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;machine"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;message"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;reserved"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;source"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;user"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&eventLogObj;writeDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Event Log</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize entries in the Windows event log.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;blob">
+		<rdfs:label>Blob</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the event data as a binary blob.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;base64Binary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;category">
+		<rdfs:label>Category</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the text associated with Category Number</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;categoryNum">
+		<rdfs:label>Category Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the event entry&apos;s category number, as defined by the source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;long"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;correlationActivityID">
+		<rdfs:label>Correlation Activity ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a globally unique identifier that identifies the current activity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;correlationRelatedActivityID">
+		<rdfs:label>Correlation Related Activity ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a globally unique identifier that identifies the activity to which control was transferred to.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;eventID">
+		<rdfs:label>Event ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ID of the event for which the event log entry was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;long"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;eventType">
+		<rdfs:label>Event Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the event type associated with the entry in the event log, e.g., warning, information, error.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;executionProcessID">
+		<rdfs:label>Execution Process ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Process ID (PID) of the process which created the event.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;executionThreadID">
+		<rdfs:label>Execution Thread ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Thread ID (TID) of the thread which created the event.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;generationDateTime">
+		<rdfs:label>Generation Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date/time the event was generated.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;index">
+		<rdfs:label>Index</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the index of the event entry in the log.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;long"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;logName">
+		<rdfs:label>Log Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the log</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;machine">
+		<rdfs:label>Machine</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the computer on which the event log entry was generated.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;message">
+		<rdfs:label>Message</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the rendered message string for the event.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;reserved">
+		<rdfs:label>Reserved</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a DWORD value that is always set to ELF_LOG_SIGNATURE (the value 0x654c664c), which is ASCII for eLfL.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;long"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;source">
+		<rdfs:label>Source</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the source that logged the event, typically the name of an application or sub-component.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;unformattedMessages">
+		<rdfs:label>Unformatted Messages</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more unformatted messages in the event log entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;user">
+		<rdfs:label>User</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the user (the security ID) responsible for the event.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&eventLogObj;writeDateTime">
+		<rdfs:label>Write Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date/time that the entry was written into the event log.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/EventLog"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

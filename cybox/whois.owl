@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY whoisObj "http://cybox.mitre.org/objects/Whois#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Whois#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:whoisObj="http://cybox.mitre.org/objects/Whois#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Whois">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Whois Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of Whois for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Whois object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Domain_Name"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/URI"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&whoisObj;Contact">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;address"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;contactID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;contactType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;emailAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;faxNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;name"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;organization.details"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;organization.name"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;phoneNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Contact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes whois contact information</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&whoisObj;Registrant">
+		<rdfs:subClassOf rdf:resource="&whoisObj;Contact"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;registrantID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Registrant</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the registrant information</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&whoisObj;Registrar">
+		<rdfs:subClassOf rdf:resource="&whoisObj;Contact"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;referalURL"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;registrarGUID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;registrarID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;whoisServer"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Registrar</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a registrar of Internet Domain Names</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&whoisObj;Whois">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;creationDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;dnssec"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;domainID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;domainName"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;expirationDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;ipAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;lookupDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;registrarInfo"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;remarks"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;serverName"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;sponsoringRegistrarName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&whoisObj;updateDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Whois</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Whois information for a domain.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;address">
+		<rdfs:label>Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address of the contact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;contactID">
+		<rdfs:label>Contact ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an ID for the contact. This can be presented as Contact ID, Billing ID, Admin ID, Tech ID, etc.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;contactType">
+		<rdfs:label>Contact Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies what type of contact this is.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;contacts">
+		<rdfs:label>Contact</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies ontact info that would be returned from a contact lookup.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&whoisObj;Contact"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;creationDate">
+		<rdfs:label>Creation Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date in which the registered domain was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;dnssec">
+		<rdfs:label>DNSSEC</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the DNSSEC field associated with a Whois entry. Acceptable values are: &quot;Signed&quot; or &quot;Unsigned&quot;.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;domainID">
+		<rdfs:label>Domain ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the domain id for the domain associated with this Whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;domainName">
+		<rdfs:label>Domain Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the corresponding domain name for this whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Domain_Name"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Domain_Name#DomainName"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;emailAddress">
+		<rdfs:label>Email Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the email address of the contact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#EmailAddress"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;expirationDate">
+		<rdfs:label>Expiration Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date in which the registered domain will expire.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;faxNumber">
+		<rdfs:label>Contact Fax Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the fax number of the contact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;ipAddress">
+		<rdfs:label>IP Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the corresponding ip address for this whois entry. The usually corresponds to a nameserver lookup.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;lookupDateTime">
+		<rdfs:label>Lookup Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date and time that the Whois record was queried.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;name">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the contact</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;nameservers">
+		<rdfs:label>Nameservers</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a list of nameserver entries for a Whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;organization.details">
+		<rdfs:label>Organization Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies defailed information about the organization this contact works for or is associated with.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;organization.name">
+		<rdfs:label>Organization Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies name of the organization this contact works for or is assoicated with.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;phoneNumber">
+		<rdfs:label>Phone Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the phone number of the contact.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;referalURL">
+		<rdfs:label>Referal URL</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the corresponding referral URL for registrar.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URL"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;registrantID">
+		<rdfs:label>Registrant ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the registrant id for a given registrant.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;registrants">
+		<rdfs:label>Registrants</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the registrant information associated with a domain lookup.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&whoisObj;Registrant"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;registrarGUID">
+		<rdfs:label>Registrar GUID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Registrar GUID field of a Whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;registrarID">
+		<rdfs:label>Registrar ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Registrar ID field of a Whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;registrarInfo">
+		<rdfs:label>Registrar Info</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies registrar info that would be returned from a registrar lookup.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&whoisObj;Registrar"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;remarks">
+		<rdfs:label>Remark</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any remarks associated with this Whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;serverName">
+		<rdfs:label>Server Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the corresponding server name for this whois entry. This usually corresponds to a nameserver lookup.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;sponsoringRegistrarName">
+		<rdfs:label>Sponsoring Registrar Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the sponsoring registrar for the domain.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;updateDate">
+		<rdfs:label>Last Updated</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date in which the registered domain information was last updated.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;whoisContacts">
+		<rdfs:label>Whois Contacts</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more registrar contacts</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&whoisObj;Contact"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&whoisObj;whoisServer">
+		<rdfs:label>Whois Server</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the corresponding whois server for this registrar.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/URI#URI"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&whoisObj;whoisStatus">
+		<rdfs:label>Whois Statuses</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a list of statuses for a given Whois entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Whois"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;date">
+	</rdfs:Datatype>
+
+</rdf:RDF>

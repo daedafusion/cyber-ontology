@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY ciq_common "http://www.oasis-open.org/ciq_common#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://www.oasis-open.org/ciq_common#"
+	xmlns:ciq_common="http://www.oasis-open.org/ciq_common#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://www.oasis-open.org/ciq_common">
+		<rdfs:label>OASIS Customer Information Quality (CIQ) Common Types Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) Specification V3.0 commonly used types in the name, address, and party ontologies.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;abbreviation">
+		<rdfs:label>Abbreviation</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the entry has been abbreviated</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;dataQuality.reliabilityLevel">
+		<rdfs:label>Data Quality Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes values to indicate the level of reliability of the data</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;dataQuality.validFromDateTime">
+		<rdfs:label>Valid From</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date the data quality is valid from</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;dataQuality.validToDateTime">
+		<rdfs:label>Valid To</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date the data quality is valid to</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;id">
+		<rdfs:label>Globally Unique Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a globally unique identifier for this definition</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;languageCode">
+		<rdfs:label>Language Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the language used (name of human language, e.g. en, en-US)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;language"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;parentId">
+		<rdfs:label>Parent Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identifier associate with an object&apos;s parent</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_common"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;status">
+		<rdfs:label>Status</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the status of the entity. e.g. Old, Current, Inactive, Active, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;textLine">
+		<rdfs:label>Text Line</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a line of text</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;textLineOrdinality">
+		<rdfs:label>Ordinality</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ordinality (e.g., 1,2, or 3) of this text line</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;validFromDateTime">
+		<rdfs:label>Date Valid From</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date from which data is valid.  Could be start date, issue date, validity start date, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_common;validToDateTime">
+		<rdfs:label>Date Valid To</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies date to which the data is valid.  Could be end date, expiry date, validity end date, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

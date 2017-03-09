@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY ciq_xal "http://www.oasis-open.org/ciq_xal#">
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY geo "http://www.w3.org/2003/01/geo/wgs84_pos#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://www.oasis-open.org/ciq_xal#"
+	xmlns:ciq_xal="http://www.oasis-open.org/ciq_xal#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://www.oasis-open.org/ciq_xal">
+		<rdfs:label>OASIS Customer Information Quality (CIQ) eXtensible Address Language (xAL) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) eXtensible Address Language (xAL) Specification V3.0.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_currency"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&ciq_xal;Address">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;addressType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;addressUsage"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;administrativeArea"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;country"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;deliveryMode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;freeTextAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geoCoordinates.datum"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geoCoordinates.datumCodeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geoCoordinates.meridian"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geoCoordinates.meridianCodeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geoCoordinates.projection"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geoCoordinates.projectionCodeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;locality"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postOffice"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postalDelliveryPoint"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postcode"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premises"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;ruralDelivery"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subAdministrativeArea"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subLocality"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfare"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines an address with geocode details</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;AdministrativeArea">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;adminAreaName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;adminAreaNameCodeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;adminAreaType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;asciiName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;digitalElevationModel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;featureInfo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geonameId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;lastModifiedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea1"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea2"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea3"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea4"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentCountry"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;population"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;referenceLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;timezoneId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Administrative Area</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines the details of the top-level area division in the country, such as state, district, province, island, region, etc. Note that some countries do not have this</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;Continent">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;continentCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;continentName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;featureInfo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geonameId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Continent</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes details about a continent</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;Country">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;area"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;asciiName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;callingCodes"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;capital"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;continent"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;countryFlagImage"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;countryFlagRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;countryName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;currency"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;digitalElevationModel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;featureInfo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;fipsCountryCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geonameId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;internetTLD"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;iso2CountryCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;iso3CountryCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;iso4CountryCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;isoNumericCountryCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;lastModifiedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;memberOfOECD"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postalCodeFormat"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subjectToEUSavingsDirective"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subjectToVAT"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Country</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines details about a country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;Locality">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;asciiName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;digitalElevationModel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;featureInfo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;geonameId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;lastModifiedDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;localityName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;localityNameCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;localityNameCodeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;localityType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea1"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea2"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea3"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentAdminArea4"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;parentCountry"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;population"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;referenceLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;timezoneId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Locality</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines the details of Locality which is a named densely populated area  (a place) such as town, village, suburb, etc. A locality composes of many individual addresses.  Many localities exist in an administrative area or a sub adminisrative area. A locality can also have sub localities. For example, a municipality locality can have many villages associated with it which are sub localities. Example: Tamil Nadu State, Erode District, Bhavani Taluk, Paruvachi Village is a valid address in India. Tamil Nadu is the Administrative Area, Erode is the sub admin area, Bhavani is the locality, and Paruvachi is the sub locality</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;PostOffice">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postOfficeName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postOfficeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Post Office</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a delivery point/installation where all mails are delivered and the post man/delivery service picks up the mails and delivers it to the recipients through a delivery mode. Examples are a rural post office where post is delivered, a post office containing post office boxes/personal mail boxes. Note that not all countries have PostOffice. Can be used to represent overseas military addresses also along with PostalDeliveryPoint element</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;PostalDeliveryPoint">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postalDeliveryPointName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postalDeliveryPointType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Postal Delivery Point</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a final mail delivery point where the mail is dropped off for recipients to pick them up directly. E.g. POBox, Private Bag,  pigeon hole, free mail numbers, etc.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;Postcode">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postcodeIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Postcode</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Define a container for a single free text or structured postcode. Note that not all countries have post codes</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;Premises">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;internalThoroughfare"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesTypeCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;referenceLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subPremisesConnector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Premises</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines the details of the Premises (could be building(s), site, loaction, property, premise, place) which is a landmark place which has a main address such as large mail user (e.g. Airport, Hospital, University) or could be a building (e.g. apartment, house)  or a building or complex of buildings (e.g. an apartment complex or shopping centre) or even a vacant land (e.g. LOT). A premises can have many sub-addresses such as apartments in a building having its own addresses or buildings within an airport having its own addresses including its own thoroughfares</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;RuralDelivery">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;ruralDeliveryName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;ruralDeliveryType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Rural Delivery</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a container for postal-specific delivery identifier for remote communities. Note that not all countries have RuralDelivery</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;SubPremises">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;internalThoroughfare"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;premisesNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;referenceLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subPremisesConnector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subPremisesName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subPremisesType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subPremisesTypeCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Sub-Premises</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines sub-premises, such as apartments and suites, within buildings, shops in malls, etc.  or sub-addresses in a land mark place such as airports, military bases, hospitals, etc.  Some countries have blocks within blocks</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;SubThoroughfare">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSuffix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;referenceLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareTypeCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Sub thoroughfare</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes another thoroughfare that is required to uniquely identify the location, such as an access route, intersection, corner, adjacent, boundary, etc</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xal;Thoroughfare">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierExtension"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierPrefix"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeFrom"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierRangeTo"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;identifierSeparator"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;postdirection"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;predirection"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;subThoroughfare"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareConnector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xal;thoroughfareTypeCode"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Thoroughfare</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the details of the Access route along which buildings/lot/land are located, such as street, road, channel, crescent, avenue, etc. This also includes canals/banks on which houses/boat houses are located where people live</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;addressID">
+		<rdfs:label>Address ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a unique address identifier such as postal delivery idetifier assigned to the address by local postal authority, e.g. DPID in Australia.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;addressIDType">
+		<rdfs:label>Address ID Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Type of address ID used. e.g. DPID, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;addressKeyRef">
+		<rdfs:label>Address Key Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference attribute Key of Address.</rdfs:comment>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;addressType">
+		<rdfs:label>Address Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of address.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;addressUsage">
+		<rdfs:label>Address Usage</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the purpose the address is used for. E.g.  Postal, residential, business,  exchange, update, create, delete, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;adminAreaName">
+		<rdfs:label>Administrative Area Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the Administrative Area entity</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;adminAreaNameCode">
+		<rdfs:label>Name Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies name of the administrative area represented as a code. e.g. &quot;CO&quot; for COLORADO</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;adminAreaNameCodeType">
+		<rdfs:label>Name Code Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the name code, which defines its format</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;adminAreaType">
+		<rdfs:label>Administrative Area Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the administrative area</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;administrativeArea">
+		<rdfs:label>Administrative Area</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the first-order administrative area for a country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;AdministrativeArea"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;alternateName">
+		<rdfs:label>Alternate Names</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an alternative name for the entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;area">
+		<rdfs:label>Area</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the area of the country in square kilometers</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;asciiName">
+		<rdfs:label>ASCII  Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ASCII name of the entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;callingCodes">
+		<rdfs:label>Calling Codes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the calling code for the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;capital">
+		<rdfs:label>Capital</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the capital of the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;Locality"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;continent">
+		<rdfs:label>Continent</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the continent in which the country resides.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;Continent"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;continentCode">
+		<rdfs:label>Continent Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the 2-character continent code</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;continentName">
+		<rdfs:label>Continent Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the continent</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;country">
+		<rdfs:label>Country</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the country associated with the address</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;Country"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;countryFlagImage">
+		<rdfs:label>Country Flag</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the image of the flag of the country based64 encoded</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;base64Binary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;countryFlagRef">
+		<rdfs:label>Country Flag Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the flag of the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;countryName">
+		<rdfs:label>Country</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the country</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;countryNameType">
+		<rdfs:label>Country Name Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes the type of name for the country.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;currency">
+		<rdfs:label>Currency</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the national currency of the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_currency#Currency"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;deliveryMode">
+		<rdfs:label>Delivery Mode</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the mode of delivery of address. For example: rural route, normal delivery, post office box, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;digitalElevationModel">
+		<rdfs:label>Digital Elevation Mode</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Digital Elevation Model, stm3 or gtopo30, average elevation of 3&apos;&apos;x3&apos;&apos; (ca 90mx90m) or 30&apos;&apos;x30&apos;&apos; (ca 900mx900m) area in meters, integer. srtm processed by cgiar/ciat.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;direction">
+		<rdfs:label>Direction</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the direction of latitude measurement offset from the equator</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;featureInfo">
+		<rdfs:label>Geonames Feature Class and Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Geonams Feature Class and Feature Code in the format {featureClass}.{featureCode}</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;fipsCountryCode">
+		<rdfs:label>FIPS 10-4 Country Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the country code per Federal Information Processing Standards (FIPS) 10-4</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;freeTextAddress">
+		<rdfs:label>Free Text Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a container for free text address elements where address elements are not parsed.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geoCoordinates.datum">
+		<rdfs:label>Geo Coordinates Datum</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the datum within with the measurement was taken</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geoCoordinates.datumCodeType">
+		<rdfs:label>Geo Coordinates Datum Code Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the datum code (e.g., EPSG, WGS-84).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geoCoordinates.meridian">
+		<rdfs:label>Geo Coordinates Meridian</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the meridian code that specifies the position of the meridian.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geoCoordinates.meridianCodeType">
+		<rdfs:label>Geo Coordinates Meridian Code Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of meridian code utilized (e.g., EPSG, GeoTIFF)</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geoCoordinates.projection">
+		<rdfs:label>Geo Coordinates Projection</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the projection within which the measurement was taken.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geoCoordinates.projectionCodeType">
+		<rdfs:label>Geo Coordinates Projection Code Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the projection code utilizes (e.g., EPSG)</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;geonameId">
+		<rdfs:label>Geoname Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the geoname identifier for the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierExtension">
+		<rdfs:label>Extension</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the value is an extension number of some identifier, e.g. 01 in Private Bag 2330-01, where the main number of the private bag is 2330, 12345-1223 in post code where 1223 is the extension</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identifier name.  Applicable to mail box office names such as PO BOX, GPO BOX, MAIL BAG NO., etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierNumber">
+		<rdfs:label>Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the value is number, e.g. 2020 in PoBox 2020. The actual value can be alpha-numeric.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierPrefix">
+		<rdfs:label>Prefix</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes that the element contains some value that is important, but not exactly the number itself. E.g. PoBox can be a prefix in PoBox 2020, street no. A-15, where A is the prefix and 15 is the number</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierRangeFrom">
+		<rdfs:label>Range From</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the element contains the lower value of a range, e.g. 25 in 25-37</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierRangeTo">
+		<rdfs:label>Range To</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the element contains the top value of a range, e.g. 25 in 25-37</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierSeparator">
+		<rdfs:label>Separator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the value is a separator that is expected to be preserved. Examples are / - #, as in 15-A where &quot;-&quot; is the separator</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;identifierSuffix">
+		<rdfs:label>Suffix</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the element contains some value that is important, but not exactly the number itself. E.g. &apos;bis&apos; in &apos;45 bis&apos;</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;internalThoroughfare">
+		<rdfs:label>Internal Thoroughfare</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the roads and streets within boundaries of larger complexes/premises such as hospitals, airports, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;internetTLD">
+		<rdfs:label>Internet TLD</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Internet Top-Level Domain (TLD) for the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;iso2CountryCode">
+		<rdfs:label>ISO 3166-1 alpha-2 Country Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the 2-character country code per ISO 3166-1 alpha-2</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;iso3CountryCode">
+		<rdfs:label>ISO 3166-1 alpha-3  Country Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the 3-character country code per ISO 3166-1 alpha-3</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;iso4CountryCode">
+		<rdfs:label>ISO 3166-1 alpha-4  Country Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the 4-character country code per ISO 3166-1 alpha-4</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;isoNumericCountryCode">
+		<rdfs:label>ISO 3166-1 numeric  Country Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the 3-digit country code per ISO 3166-1 numeric</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;languages">
+		<rdfs:label>Languages</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the languages spoken in a country ordered by the number of speakers.
+
+The language code is a &apos;locale&apos; where any two-letter primary-tag is an ISO-639 language abbreviation and any two-letter initial subtag is an ISO-3166 country code.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;lastModifiedDate">
+		<rdfs:label>Date Last Modified</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date last modified</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;locality">
+		<rdfs:label>Locality</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the details of Locality which is a named densely populated area  (a place) such as town, village, suburb, etc. A locality composes of many individual addresses.</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;Locality"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;localityName">
+		<rdfs:label>Locality Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the locality entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;localityNameCode">
+		<rdfs:label>Locality Name Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies name of the locality represented as a code.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;localityNameCodeType">
+		<rdfs:label>Locality Name Code Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the name code, which defines its format</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;localityType">
+		<rdfs:label>Locality Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of locality. e.g. suburb, area, zone, village, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;memberOfOECD">
+		<rdfs:label>Member of OECD</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the country is a member of the Organization for Economic Co-Operation and Development (OECD).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;neighbors">
+		<rdfs:label>neighbors</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the countries that neighbor the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;Country"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;parentAdminArea1">
+		<rdfs:label>Parent First-Order Administrative Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the first-order administrative division of a country, such as a state in the United States, that is parent to the entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;AdministrativeArea"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;parentAdminArea2">
+		<rdfs:label>Parent Second-Order Administrative Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a subdivision of a first-order administrative division of a country that is parent to the entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;AdministrativeArea"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;parentAdminArea3">
+		<rdfs:label>Parent Third-Order Administrative Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a subdivision of a second-order administrative division of a country that is parent to the entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;AdministrativeArea"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;parentAdminArea4">
+		<rdfs:label>Parent Fourth-Order Administrative Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a subdivision of a third-order administrative division of a country that is parent to the entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;AdministrativeArea"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;parentCountry">
+		<rdfs:label>Parent Country</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the country in to which the entity belongs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&ciq_xal;Country"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;population">
+		<rdfs:label>Population</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the population of the entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;postOffice">
+		<rdfs:label>Post Office</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a delivery point/installation where all mails are delivered and the post man/delivery service picks up the mails and delivers it to the recipients through a delivery mode.</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;PostOffice"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postOfficeName">
+		<rdfs:label>Post Office Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full combined name of the Post Office</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postOfficeType">
+		<rdfs:label>Post Office Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of postal delivery office from where the mail will be distributed to the final delivery point by a delivery mode.  Example: Post Office, Mail Collection Centre, Letter Carrier Depot,  Station, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postalCode">
+		<rdfs:label>Postal Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a postal code for the entity. An entity may have more than one postal code, depending upon its size.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postalCodeFormat">
+		<rdfs:label>Postal Code Format</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the format of the postal code for the country</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postalDeliveryPointName">
+		<rdfs:label>Postal Delivery Point Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full combined name of the Postal Delivery Point</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postalDeliveryPointType">
+		<rdfs:label>Postal Delivery Point Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the postal delivery point</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;postalDelliveryPoint">
+		<rdfs:label>Postal Delivery Point</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies where the mail is dropped off for recipients to pick them up directly. E.g. POBox, Private Bag,  pigeon hole, free mail numbers, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;PostalDeliveryPoint"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;postcode">
+		<rdfs:label>Post Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the post code.  Note that not all countries have post codes</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;Postcode"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postcodeIdentifier">
+		<rdfs:label>Postcode Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full combined name of the postcode.  The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067. This element can also be used to define the semantics of what each code in the post code means</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;postdirection">
+		<rdfs:label>Post-Direction</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the direction as a suffix, such as Archer Street North, where &quot;North&quot; is PostDirection.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;predirection">
+		<rdfs:label>Pre-Direction</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the direction as a prefix, such as North Archer Street, where &quot;North&quot; is PreDirection. {@en-US}</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;premises">
+		<rdfs:label>Premises</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Premises (could be building(s), site, loaction, property, premise, place) which is a landmark place which has a main address such as large mail user (e.g. Airport, Hospital, University) or could be a building (e.g. apartment, house)  or a building or complex of buildings (e.g. an apartment complex or shopping centre) or even a vacant land (e.g. LOT).</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;Premises"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;premisesLocation">
+		<rdfs:label>Premises Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies where in the building/landmark the premises is located, e.g. lobby, ground floor, penthouse, or where in a larger complex (e.g. airport) the address is located.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;premisesName">
+		<rdfs:label>Premises Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full combined name of the premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;premisesNumber">
+		<rdfs:label>Premises Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies data associated with the number of the premises. E.g.House 15, number range, number suffix.
+
+When range is specified, the beginning of the range should be specified as the value of the rangeFrom property, the end of the range should be specified as the value of the rangeTo poperty, and the character(s) used to separate the beginning and ending of the range should be specified as the value of the separator property</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;premisesType">
+		<rdfs:label>Premises Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the types of Premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;premisesTypeCode">
+		<rdfs:label>Premise Type Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of code use for Premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;range">
+		<rdfs:label>Range</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the value is a range, e.g. 25-37. 
+
+When range is specified, the beginning of the range should be specified as the value of the rangeFrom property, the end of the range should be specified as the value of the rangeTo poperty, and the character(s) used to separate the beginning and ending of the range should be specified as the value of the separator property</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;referenceLocation">
+		<rdfs:label>Reference Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the reference location information in support of the area. e.g. Territory of France</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;ruralDelivery">
+		<rdfs:label>Rural Delivery</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the postal-specific delivery identifier for remote communities. Note that not all countries have RuralDelivery</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;RuralDelivery"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;ruralDeliveryName">
+		<rdfs:label>Rural Delivery Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full combined name of the rural delivery</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;ruralDeliveryType">
+		<rdfs:label>Rural Delivery Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of rural delivery. For some addresses, delivery to rural areas happens via water, air or road</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;subAdministrativeArea">
+		<rdfs:label>SubAdmininstrative Area</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the second-order administrative division of the area. Note that not all countries have a subadministrative area</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;AdministrativeArea"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subAdministrativeAreaType">
+		<rdfs:label>Subadminstrative Area Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes the type of sub administrative area</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;subLocality">
+		<rdfs:label>SubLocality</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a locality that is smaller and is contained within the boundaries of its parent locality. Note that not all localities have sub locality. For example, many areas within a locality where each area is a sub locality</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subLocalityName">
+		<rdfs:label>Sub-Locality Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the sub-locality</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subLocalityNameCode">
+		<rdfs:label>Sublocality Name Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of locality represented as a code</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;subPremises">
+		<rdfs:label>SubPremises</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies sub-premises.   Examples of sub-premises are apartments and suites in buildings, shops in malls, etc.  or sub-addresses in a land mark place such as airports, military bases, hospitals, etc. Some countries have blocks within blocks</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;SubPremises"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subPremisesConnector">
+		<rdfs:label>Sub-Premises Connector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description that is required to logically connect the 2 premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subPremisesName">
+		<rdfs:label>Sub-Premises Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the sub-premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subPremisesType">
+		<rdfs:label>Sub-Premises Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Speicfies a type of sub-premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subPremisesTypeCode">
+		<rdfs:label>Sub-Premises Type Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of code used for sub-premises</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;subThoroughfare">
+		<rdfs:label>Subthoroughfare</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies another thoroughfare that is required to uniquely identify the location, such as an access route, intersection, corner, adjacent, boundary, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;Thoroughfare"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subjectToEUSavingsDirective">
+		<rdfs:label>Subject to EU Savings Directive</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the country is subject to the European Union Savings Directive</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;subjectToVAT">
+		<rdfs:label>Subject to VAT</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the country is subject to the European Union&apos;s Value Added Tax (VAT)</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;sublocalityType">
+		<rdfs:label>Sublocality Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of sublocality</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;supportingInfo">
+		<rdfs:label>Supporting Information</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies other supporting information</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xal;thoroughfare">
+		<rdfs:label>Thoroughfare</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the details of the Access route along which buildings/lot/land are located, such as street, road, channel, crescent, avenue, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xal;Thoroughfare"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;thoroughfareConnector">
+		<rdfs:label>Thoroughfare Connector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a value such as &quot;CORNER OF&quot; or &quot;VIA&quot; that can be used to connect more than one street name in order to identify the location.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;thoroughfareName">
+		<rdfs:label>Thoroughfare Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the fully combiined name of the thoroughfare. e.g. Full thoroughfare name or part of it, type of thoroughfare, old name, new name, reference data in support of the thoroughfare</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;thoroughfareNumber">
+		<rdfs:label>Thoroughfare Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the data associated with the number of the thoroughfare. E.g. 39 in 39 Baker Street, street range, street suffix</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;thoroughfareType">
+		<rdfs:label>Thoroughfare Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of thoroughfare. eg. primary road, secondary road, road branch (e.g. Lane 14), road sub branch (e.g. Alley 21), adjourning street, cross street, closest street, etc</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;thoroughfareTypeCode">
+		<rdfs:label>Thoroughfare Type Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Sspecifies the type of code use for thoroughfare</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xal;timezoneId">
+		<rdfs:label>Timezone Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the IANA timezone identifier</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;date">
+	</rdfs:Datatype>
+	
+	<owl:ObjectProperty rdf:about="&geo;location">
+	</owl:ObjectProperty>
+
+</rdf:RDF>

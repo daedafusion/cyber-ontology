@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY ciq_xnl "http://www.oasis-open.org/ciq_xnl#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://www.oasis-open.org/ciq_xnl#"
+	xmlns:ciq_xnl="http://www.oasis-open.org/ciq_xnl#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://www.oasis-open.org/ciq_xnl">
+		<rdfs:label>OASIS Customer Information Quality (CIQ) eXtensible Naming Language (xNL) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of the OASIS Customer Information Quality (CIQ) eXtensible Naming Language (xNL) Specification V3.0.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&ciq_xnl;Branch">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;Subdivison"/>
+		<rdfs:label>Branch</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a branch of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;BusinessUnit">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;Subdivison"/>
+		<rdfs:label>Business Unit</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a business unit of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;Department">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;Subdivison"/>
+		<rdfs:label>Department</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a department of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;Division">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;Subdivison"/>
+		<rdfs:label>Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a division of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;NameDetails">
+		<rdfs:label>Name details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies details about the party&apos;s name</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;OrganizationName">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;NameDetails"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;organizationName.fullName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;organizationNameType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Organization Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes details about an organization&apos;s name</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;PersonName">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;NameDetails"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personName.firstName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personName.lastName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personName.middleName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personName.nickname"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personName.precedingTitle"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personName.title"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ciq_xnl;personNameType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Person name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes details about a person&apos;s name</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;School">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;Subdivison"/>
+		<rdfs:label>School</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a school of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;Section">
+		<rdfs:subClassOf rdf:resource="&ciq_xnl;Subdivison"/>
+		<rdfs:label>Section</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a section of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ciq_xnl;Subdivison">
+		<rdfs:label>Subdivision</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a subdivision of an organization</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;jointNameConnector">
+		<rdfs:label>Joint Name Connector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the connector used to join more than one person name.  Example: Mr. Hunt AND Mrs Clark, where AND is the joint name connector.  If there is more than 2 names, then all names are connected using the this connector in the natural order.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;nameDetails">
+		<rdfs:label>Name Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies details about the names associated with the party</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&ciq_xnl;OrganizationName">
+					</rdf:Description>
+					<rdf:Description rdf:about="&ciq_xnl;PersonName">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;nameLine">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a name as a free-form text.  Use this when the type of the entity (person or organization) is unknown or is not broken down into individual elements (e.g., unstructured, unparsed) or is beyond the provided types.  The name represented may be formatted in the righ order or may not be as it is not parsed/broken into atomic fields</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;nameLineType">
+		<rdfs:label>Name Line Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies what the free form name line means.  For example, the type could be &quot;Unknown&quot;</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationIdType">
+		<rdfs:label>Organization ID Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of an organization ID</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.branch">
+		<rdfs:label>Organization Branch Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of a branch within an organization</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.businessUnit">
+		<rdfs:label>Organization Business Unit Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of a business unit within an organization</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.department">
+		<rdfs:label>Organization Department Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the department within an organization.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.division">
+		<rdfs:label>Organization Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the division within an organization.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.fullName">
+		<rdfs:label>Full Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full name of an organization, including its name, propriety type, liability type, etc.(e.g., Sakthisoft Pty. Ltd)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.nameOnly">
+		<rdfs:label>Organization Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies just the name of the organization.  For example, in &quot;Sakthisoft Pty. Ltd&quot;, &quot;Pty. Ltd&quot; is the legal entity for the organization name &quot;Sakthisoft&quot;</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.orgType">
+		<rdfs:label>organization name.org type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the organization.  &quot;Pty. Ltd&quot; in Sakthisoft Pty.Ltd, where &quot;Sakthisoft&quot; is the name of the organisation, &quot;Inc&quot; in ABC Inc, where &quot;ABC&quot; is organisation name.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.school">
+		<rdfs:label>Organization School Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of a school within an organization</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationName.section">
+		<rdfs:label>Organization Section Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of a section within an organization.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;organizationName.subdivision">
+		<rdfs:label>Organization Sub-Division</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a sub-division of the organization</rdfs:comment>
+		<rdfs:range rdf:resource="&ciq_xnl;Subdivison"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationNameType">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies just the type of an organization without its name. For example, in &quot;Sakthisoft Pty. Ltd&quot;, &quot;Pty. Ltd&quot; is the legal entity  or type for the organization name &quot;Sakthisoft&quot;, &quot;Inc.&quot; in &quot;ABC, Inc.&quot; &quot;Inc.&quot; is the type and &quot;ABC&quot; is the organization name</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;organizationNameUsage">
+		<rdfs:label>Organization Name Usage</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how an organization&apos;s name can be used and for what purposes.   It provides an indication of which name is a set of names to select for a given purpose. (e..g, used for legal purposes)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;otherNames">
+		<rdfs:label>Other Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any other additional names that are not directly used to identify or call the individual, such as names of ancestors, saints, etc.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;partyName">
+		<rdfs:label>Name of Party</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of a party when it is unknown whether the party is an person or an organziation.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;partyName.jointNameConnector">
+		<rdfs:label>party name.Joint name connector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the connector used to join more than one person name.
+
+E xample: Mr Hunt AND Mrs Clark, where AND is the JointNameConnector.  The flow is from the preceding to the following. If there is more than 2 names then all names are connected using this connector in the natural order.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;partyNameId">
+		<rdfs:label>Party Name ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a unique identifier for a party</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;partyNameType">
+		<rdfs:label>Party Name ID Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of a Party Name ID</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;partyNameUsage">
+		<rdfs:label>Party Name Usage</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how a party&apos;s name can be used and for what purposes (e.g., data exchange, contact, update, create).</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personId">
+		<rdfs:label>Person ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a unique identifier of a person</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personIdType">
+		<rdfs:label>Person ID Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a type of person ID</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.MaidenName">
+		<rdfs:label>Maiden Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the individual before marriage.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.aliases">
+		<rdfs:label>Aliases</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies other names by which the person is know.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.birthName">
+		<rdfs:label>Name at Birth</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name given to an individual at birth, but later changed (common in some cultures).</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.commonUse">
+		<rdfs:label>person name.Common use</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name that is comonly used by others, e.g., a simplied form of the official name.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.credentials">
+		<rdfs:label>Credentials</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an educational degree or credentials (e.g., PhD)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.firstName">
+		<rdfs:label>First Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the most important name element by which this particular individual is identified in the group (e.g., John, Sam, Brian for Anglo-Saxon cultures)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.formerName">
+		<rdfs:label>Former Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the former name of the individual</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.generationIdentifier">
+		<rdfs:label>Generation Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a generational identifier (e.g., Jr, Sr, 2nd, IV, etc.)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.knownAs">
+		<rdfs:label>Known As</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies names that the person is also known as</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.lastName">
+		<rdfs:label>Last Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name elemnt that identifies the group the individual belongs to and is identified by, such as last name, surname, family name, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.legalName">
+		<rdfs:label>Legal Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the individual&apos;s legal name</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.middleName">
+		<rdfs:label>Middle Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name element related to additional identification of the individual, such names are parents or places</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.nickname">
+		<rdfs:label>Nickname</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a simple nick name that is commonly used as part of the name (e.g., a fancy kick-boxer can be commonly known as Bill &quot;Storm&quot; Bababoons, where &quot;Storm&quot; is obviously an alias)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.officialName">
+		<rdfs:label>Official Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the official name of the person, e.g., as in the passport, incorporation certificate, etc.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.otherName">
+		<rdfs:label>Other Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any other additional names that are not directly used to identify or call the individual, such as names of ancestors, saints, etc.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.petName">
+		<rdfs:label>Pet Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a &quot;pet name&quot; by which the person is known to individuals that have a close relationship with the person.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.precedingTitle">
+		<rdfs:label>Preceding Title</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the preceding title of a person (e.g., His Excellency, Honorable, etc.)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.preferredName">
+		<rdfs:label>Preferred Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name that the individual prefers to be called by, e.g., &quot;Jim&quot; instead of &quot;James&quot;, &quot;Bill&quot; instead of &quot;William&quot;</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personName.title">
+		<rdfs:label>Title</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a title of some sorts, such as Mr, Miss, Ms (marriage status), or eduction such as Professor, Phd, Dr, etc.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ciq_xnl;personName.unofficialName">
+		<rdfs:label>Unofficial Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an unofficial name that the individual is known to go by.</rdfs:comment>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personNameType">
+		<rdfs:label>Person Name Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies common types of person names</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;personNameUsage">
+		<rdfs:label>Person Name Usage</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how a person&apos;s name can be used and for what purposes.  It provides an indication of which name is a set of names to select for a given purpose. (e..g, used for legal purposes)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subDivisionType">
+		<rdfs:label>Subdivision Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a type of subdivision of an organization</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivision.branchName">
+		<rdfs:label>SubDivision Branch Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the branch name of an organization&apos;s subdivision</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivision.businessUnitName">
+		<rdfs:label>subdivision.business unit name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the business unit name of an organization&apos;s subdivision</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivision.departmentName">
+		<rdfs:label>subdivision.department name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the department name of an organization&apos;s subdivision</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivision.divisionName">
+		<rdfs:label>subdivision.division name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the division name of an organization&apos;s subdivision</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivision.schoolName">
+		<rdfs:label>subdivision.school name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the school name of an organization&apos;s subdivision</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivision.sectionName">
+		<rdfs:label>subdivision.section name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the section name of an organization&apos;s subdivision</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://www.oasis-open.org/ciq_xnl"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ciq_xnl;subdivisionName">
+		<rdfs:label>Subdivision name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of a subdivision of an organziation (e.g. department, branch, division, section)</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY winHookObj "http://cybox.mitre.org/objects/WindowsHook#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/WindowsHook#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:winHookObj="http://cybox.mitre.org/objects/WindowsHook#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsHook">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Windows Hook Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Windows Hook for the  Cyber Observable eXpression (CybOX).  
+
+CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows Hook and Windows Kernel Hook object schemas maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Library"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/WindowsHandle"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&winHookObj;WindowsHook">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;handle"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookProcedureType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookingFunctionName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookingModule"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;threadID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Hook</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows hook procedure objects.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&winHookObj;WindowsKernelHook">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;digitalSignatureHooked"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;digitalSignatureHooking"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookedFunction"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookedModule"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;hookingAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winHookObj;kernelHookType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Kernel Hook</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows kernel function hooks.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&winHookObj;digitalSignatureHooked">
+		<rdfs:label>Digital Signature Hooked</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the digital signature of the hooked code.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#DigitalSignature"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&winHookObj;digitalSignatureHooking">
+		<rdfs:label>Digital Signature Hooking</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the digital signature of the hooking code.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cyboxCommon#DigitalSignature"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&winHookObj;handle">
+		<rdfs:label>Handle</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the handle associated with the  Windows hook procedure.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/WindowsHandle#WindowsHandle"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;hookDescription">
+		<rdfs:label>Hook Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the nature of the hook</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;hookProcedureType">
+		<rdfs:label>Hook Procedure Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type (i.e. WH_) of the Windows hook procedure, which refers to the type of event that the hook will intercept.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;hookedFunction">
+		<rdfs:label>Hooked Function</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the function that is hooked</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&winHookObj;hookedModule">
+		<rdfs:label>Hooked Modle</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the module that is hooked.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Library#Library"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;hookingAddress">
+		<rdfs:label>Hooking Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the address from where the hooking occurs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;hookingFunctionName">
+		<rdfs:label>Hooking Function Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the hooking function used by the Windows hook procedure.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&winHookObj;hookingModule">
+		<rdfs:label>Hooking Module</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the module that contains the hooking function used in the Windows hook procedure that is specified in the Hooking Function Name field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Library#Library"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;kernelHookType">
+		<rdfs:label>Kernel Hook Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of kernel hook being characterized.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winHookObj;threadID">
+		<rdfs:label>Thread ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ID of the thread associated with the Windows procedure, if applicable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsHook"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

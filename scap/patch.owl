@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY patch "http://scap.nist.gov/patch#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://scap.nist.gov/patch#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:patch="http://scap.nist.gov/patch#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://scap.nist.gov/patch">
+		<rdfs:label>Security Content Automation Protocol (SCAP) Patch Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the Security Content Automation Protocol (SCAP) Patch data type which provides a standardized method of describing and identifying patches to address vulnerabilities.  The SCAP is a method for using specific standards to enable automatedmpliance evaluation, vulnerability management, measurement, and policy compliance evaluation. 
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://scap.nist.gov/scap_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&patch;Patch">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&patch;deprecated"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&patch;patchIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&patch;patchName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&patch;superseded"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&patch;title"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Patch</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a patch</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&patch;check">
+		<rdfs:label>Checks</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more references to check systems associated with this patch.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="http://scap.nist.gov/scap_core#CheckReference"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&patch;deprecated">
+		<rdfs:label>Deprecated</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the patch has been depreciated and thus should not be used.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&patch;notes">
+		<rdfs:label>Notes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more notes associated with the patch.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&patch;patchIdentifier">
+		<rdfs:label>Patch Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a unique identifier for the patch</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&xsd;double"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&patch;patchName">
+		<rdfs:label>Patch Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the vendor-supplied for the patch.  The patch name should be in all lower-case and use underscores for spaces.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&patch;references">
+		<rdfs:label>References</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more references associated with the patch.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="http://scap.nist.gov/scap_core#Reference"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&patch;superseded">
+		<rdfs:label>Superseded</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that the patch has been superseded if true.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&patch;supersededBy">
+		<rdfs:label>Superseded By</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more patches that supersede this patch.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&patch;Patch"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&patch;supersedes">
+		<rdfs:label>Supersedes Patches</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies zero or more patches that are superceded by the referenced patch.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&patch;Patch"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&patch;title">
+		<rdfs:label>Title</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a human-formatted title for the patch</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/patch"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY codeObj "http://cybox.mitre.org/objects/Code#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Code#"
+	xmlns:codeObj="http://cybox.mitre.org/objects/Code#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Code">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Code Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of Code for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:ObjectProperty rdf:about="http://cybox.mitre.org/cyboxCommon#extractedFeature.codeSnippets">
+		<rdfs:range rdf:resource="&codeObj;Code"/>
+	</owl:ObjectProperty>
+	
+	<owl:Class rdf:about="&codeObj;Code">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codeDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codeLanguage"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codePurpose"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codeSegment"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codeSegmentXOR"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codeSegmentXOR.xorPattern"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;codeType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&codeObj;startAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Code</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a body of computer code.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Code"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codeDescription">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a brief description of the code that is encapsulated in this field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/Code&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codeLanguage">
+		<rdfs:label>Code Language</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes the code language used in the code.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Code"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codePurpose">
+		<rdfs:label>Code Purpose</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the purpose or flavor of code being characterized.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Code"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codeSegment">
+		<rdfs:label>Code Segment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an  arbitrary code segment in unencoded (plaintext or binary) format. Code would typically be included here within a CDATA section.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/Code&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codeSegmentXOR">
+		<rdfs:label>Code Segment XOR</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a segment of code that has been XORed with a pattern in order to avoid tripping anti-virus detection.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/Code&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codeSegmentXOR.xorPattern">
+		<rdfs:label>XOR Pattern</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a segment of code that has been XORed with a pattern in order to avoid tripping anti-virus detection.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/Code&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;codeType">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of code being characterized.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Code"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;processorFamily">
+		<rdfs:label>Processor Family</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the class of processor that the code snippet is targeting.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Code"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&codeObj;startAddress">
+		<rdfs:label>Start Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the start address of the code, if it was discovered inside a binary.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/Code&gt;</rdfs:isDefinedBy>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&codeObj;targetedPlatforms">
+		<rdfs:label>targeted platforms</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a list platforms that this code is targeted for.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:datatype="&xsd;string">&lt;http://cybox.mitre.org/objects/Code&gt;</rdfs:isDefinedBy>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cpe.mitre.org/cpe#Platform">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://cybox.mitre.org/cyboxCommon#PlatformSpecification">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+
+</rdf:RDF>

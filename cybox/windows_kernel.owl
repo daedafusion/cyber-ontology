@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY winKernelObj "http://cybox.mitre.org/objects/WindowsKernel#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/WindowsKernel#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:winKernelObj="http://cybox.mitre.org/objects/WindowsKernel#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsKernel">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Windows Kernel Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Windows Kernel for the  Cyber Observable eXpression (CybOX).  
+
+CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows Kernel object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&winKernelObj;IDTEntry">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;offsetHigh"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;offsetLow"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;offsetMiddle"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;selector"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;typeAttr"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Interrupt Descriptor Table (IDT) Entry</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single entry in the Interrupt Descriptor Table (IDT). Entries can be interrupt gates, task gates, and trap gates.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&winKernelObj;SSDTEntry">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;argumentTableBase"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;hooked"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;numberOfServices"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;serviceCounterTableBase"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winKernelObj;serviceTableBase"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>System Service Ddescriptor Table (SSDT) Entry</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single entry in the System Service Descriptor Table (SSDT).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&winKernelObj;WindowsKernel">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:label>Windows Kernel</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows Kernel structures.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;argumentTableBase">
+		<rdfs:label>Argument Table Base</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a pointer to an array of bytes, which indicate the number of bytes used by the function&apos;s arguments.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;hooked">
+		<rdfs:label>Hooked</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the SSDT entry is hooked.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&winKernelObj;idtEntries">
+		<rdfs:label>IDT Entries</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an entry in the he Windows Interrupt Descriptor Table (IDT).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&winKernelObj;IDTEntry"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;numberOfServices">
+		<rdfs:label>Number of Services</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of entries in the System Service Dispatch Table</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;offsetHigh">
+		<rdfs:label>Offset High</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the higher part of the interrupt function&apos;s offset address bits 16-31 in 32-bit, bits 32-63 in 64-bit).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;offsetLow">
+		<rdfs:label>Offset Low</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the lower part of the interrupt function&apos;s offset address (bits 0-15).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;offsetMiddle">
+		<rdfs:label>Offset Middle (64-bit Only)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies in 64-bit architectures, middle part of the interrupt function&apos;s offset address (bits 16-31).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;selector">
+		<rdfs:label>Selector</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifes a 16-bit value that points to a code segment selector in the Global Descriptot Table.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;serviceCounterTableBase">
+		<rdfs:label>Service Counter Table Base</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a pointer to an array of usage counters.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;serviceTableBase">
+		<rdfs:label>Service Table Base</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a pointer to the system service dispatch table, an array of function addresses which is indexed by the system call number.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&winKernelObj;ssdtEntries">
+		<rdfs:label>SSDT Entries</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an entry in the Windows System Service Descriptor Table (SSDT). 
+
+The SSDT is a structure that kernel uses to dispatch functions. KeServiceDescriptorTable is a table exported by the kernel that contains pointers to four SSDTs, one for the native API, one for user/GDI support, one of</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&winKernelObj;SSDTEntry"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winKernelObj;typeAttr">
+		<rdfs:label>Type Attributes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies A byte that encodes the gate type and interrupt attributes (e.g., the Descriptor Privilege Level) of the Interrupt Descriptor Table.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsKernel"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

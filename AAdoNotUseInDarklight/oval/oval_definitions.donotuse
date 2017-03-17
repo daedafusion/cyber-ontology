@@ -1,0 +1,1143 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://oval.mitre.org/definitions#"
+     xml:base="http://oval.mitre.org/definitions"
+     xmlns:common="http://oval.mitre.org/common#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oval_def="http://oval.mitre.org/definitions#">
+    <owl:Ontology rdf:about="http://oval.mitre.org/definitions">
+        <owl:imports rdf:resource="http://oval.mitre.org/common"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5.11-000</owl:versionInfo>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Open Vulnerability and Assessment Language (OVAL) Definition Ontology</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology provides a vocabulary and representation for the Open Vulnerability and Assessment Language (OVAL) Definition types.  
+
+The OVAL ontology provides a characterization of an information security community effort to standardize how to assess and report upon the machine state of computer systems. OVAL includes a language to encode system details, and an assortment of content repositories held throughout the community.  Tools and services that use OVAL for the three steps of system assessment — representing system information, expressing specific machine states, and reporting the results of an assessment — provide enterprises with accurate, consistent, and actionable information so they may improve their security. Use of OVAL also provides for reliable and reproducible information assurance metrics and enables interoperability and automation among security tools and services.
+
+The ontology is based on the OVAL schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014-2015, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+    </owl:Ontology>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anySimpleType -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://oval.mitre.org/definitions#affected -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#affected">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#AffectedSystem"/>
+        <rdfs:comment>Specifes information about the system(s) for which the definition has been written. Remember that this is just metadata and not part of the criteria. 
+
+The whose main purpose is to provide hints for tools using OVAL Definitions. For instance, to help a reporting tool only use Windows definitions, or to preselect only Red Hat definitions to be evaluated. Note, the inclusion of a particular platform or product does not mean the definition is physically checking for the existence of the platform or product. For the actual test to be performed, the correct test must still be included in the definition&apos;s criteria section</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Affected</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#criteria -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#criteria">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#Criteria"/>
+        <rdfs:comment>Specifies the set of criteria associated</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>criteria</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#criterion -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#criterion">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#Criterion"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>criterion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#definitionReference -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#definitionReference">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>definition reference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#extendedDefinition -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#extendedDefinition">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#ExtendedDefinition"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Extended Definition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#lliteralComponent -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#lliteralComponent">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#LiteralComponent"/>
+        <rdfs:comment>Specifies a literal component</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>lliteral component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#localVariableValue -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#localVariableValue">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://oval.mitre.org/definitions#ArithmeticFunction"/>
+                    <rdf:Description rdf:about="http://oval.mitre.org/definitions#LiteralComponent"/>
+                    <rdf:Description rdf:about="http://oval.mitre.org/definitions#ObjectComponent"/>
+                    <rdf:Description rdf:about="http://oval.mitre.org/definitions#Variable"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>Specifies where to obtain the value of the local variable</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>local variable value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#notes -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#notes">
+        <rdfs:comment>Specifies associated notes</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Notes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#objectComponent -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#objectComponent">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>object component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#objectReference -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#objectReference">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#Object"/>
+        <rdfs:comment>Specifies a reference to an existing OVAL Object declaration. The referenced OVAL Object specifies a set of OVAL Items to collect. Note that an OVAL Object might identify 0, 1, or many OVAL Items on a system. If no items are found on the system then an error should be reported when determining the value. If 1 or more OVAL Items are found then each OVAL Item will be considered and the ObjectComponent may have one or more values.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Object Reference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#possibleRestriction -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#possibleRestriction">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>possible restriction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#possibleValue -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#possibleValue">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>possible value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#reference -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#reference">
+        <rdfs:range rdf:resource="http://oval.mitre.org/definitions#Reference"/>
+        <rdfs:comment>Specifies one more external references.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#testReference -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#testReference">
+        <rdfs:comment>Specifies a reference to the actual test beign referenced.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Test Reference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#variableReference -->
+
+    <owl:ObjectProperty rdf:about="http://oval.mitre.org/definitions#variableReference">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>variable reference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://oval.mitre.org/definitions#applicabilityCheck -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#applicabilityCheck">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies that when true that the criteria is being used to determine whether the OVAL Definition applies to a given system.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Applicability Check</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#check -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#check">
+       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies how many items in the set defined by the OVAL Object (ignoring items with a status of Does Not Exist) must satisfy the state requirements.  
+
+For example, should the test check that all matching files have a specified version or that at least one file has the specified version?  Note that if the test does not contain any references to OVAL States, then the check attribute has no meaning and can be ignored during evaluation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Check</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#checkExistence -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#checkExistence">
+       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies how many items in the set defined by the OVAL Object must exist for the test to evaluate to true. The default value for this attribute is &apos;at_least_one_exists&apos; indicating that by default the test may evaluate to true if at least one item defined by the OVAL Object exists on the system. 
+
+For example, if a value of &apos;all_exist&apos; is given, every item defined by the OVAL Object must exist on the system for the test to evaluate to true. If the OVAL Object uses a variable reference, then every value of that variable must exist. Note that a pattern match defines a unique set of matching items found on a system. So when check_existence = &apos;all_exist&apos; and a regex matches anything on a system the test will evaluate to true (since all matching objects on the system were found on the system). When check_existence = &apos;all_exist&apos; and a regex does not match anything on a system the test will evaluate to false.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Check Existence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#class -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#class">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the specific class to which the definition belongs. The class gives a hint to a user so they can know what the definition writer is trying to say.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Class</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#comment -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#comment">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies  a short description of the criteria</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>CriteriaComment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#datatype -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#datatype">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the type of value being defined.  The set of values identified by a variable must comply with the specified datatype, otherwise an error should be reported.  For example, if the datatype of the variable is specified as boolean then the value(s) returned by the component / function should be &quot;true&quot;, &quot;false&quot;, &quot;1&quot;, or &quot;0&quot;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Datatype</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#deprecated -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#deprecated">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies that an id is no longer to be used or referenced but the information has been kept around for historic purposes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Deprecated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#description -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a textual description of the configuration state being addressed by the OVAL Definition. In the case of a definition from the vulnerability class, the reference is usually the Common Vulnerability and Exposures (CVE) Identifier, and this description field corresponds with the CVE description.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#family -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#family">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the family of the system(s) affected.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Family</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#hint -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#hint">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a short description of what the value means or represents</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Hint</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#itemField -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#itemField">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of the entity whose value will be retrieved from each OVAL Item collected by the referenced OVAL Object. 
+
+For example, if the object_ref references a win-def:file_object, the item_field may specify the &apos;version&apos; entity as the field to use as the value of the ObjectComponentType. Note that an OVAL Item may have 0, 1, or many entities whose name matches the specified itemField value. If an entity is not found with a name that matches the value of the itemField an error should be reported when determining the value of an ObjectComponent. If 1 or more matching entities are found in a single OVAL Item the value of the ObjectComponent is the list of the values from each of the matching entities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Item Field</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#negate -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#negate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies that the result of the criteria as a whole should be negated during analysis. For example, consider a criteria that evaluates to TRUE if certain software is installed. By negating this test, it now evaluates to TRUE if the software is NOT installed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Criteria Negate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#operation -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#operation">
+       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies how the individual entities should be evaluated (the default operation is &apos;equals&apos;).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Operation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#operator -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#operator">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the logical operator that binds the different statements inside a criteria together.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Operator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#platform -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#platform">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the platform(s) within the family that are affected.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Platform</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#product -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#product">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the product(s) within the family that are affected.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Product</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#recordField -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#recordField">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the name of a field in a record entity in an OVAL Item. 
+
+The recordField allows the value of a specific field to be retrieved from an entity with a datatype of &apos;record&apos;. If a field with a matching name attribute value is not found in the referenced OVAL Item entity an error should be reported when determining the value of the ObjectComponent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Record Field</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#refId -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#refId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the external id of the reference.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Ref ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#refURL -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#refURL">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>Specifies  the URL to the reference.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference URL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#referenceDefinitionId -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#referenceDefinitionId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the actual id of the OVAL Definition.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference Definition-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#referenceObjectId -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#referenceObjectId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the acutaly id of the OVAL Object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference Object-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#referenceTestId -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#referenceTestId">
+       <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the actual Id of the OVAL Test.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference Test-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#referenceVariableId -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#referenceVariableId">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the actual Id of the OVAL Variable.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference Variable-ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#source -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#source">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies where the reference is coming from. In other words, it identifies the reference repository being used.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#title -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#title">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies a short string that is used to quickly identify the definition to a human user.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#value -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#value">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
+        <rdfs:comment>Specifies a value</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#version -->
+
+    <owl:DatatypeProperty rdf:about="http://oval.mitre.org/definitions#version">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specifies the current version of the entity. Versions are integers, starting at 1 and incrementing every time a definition is modified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Definition Version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://oval.mitre.org/definitions#AffectedSystem -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#AffectedSystem">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#family"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#platform"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#product"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes the specific system, application, subsystem, library, etc. for which a definition has been written. If a definition is not tied to a specific product, then this element should not be included. The absence of the platform or product information can be thought of as definition applying to all platforms or products. The inclusion of a particular platform or product does not mean the definition is physically checking for the existence of the platform or product. For the actual test to be performed, the correct test must still be included in the definition&apos;s criteria section. To increase the utility of this element, care should be taken when assigning and using strings for product names. The schema places no restrictions on the values that can be assigned, potentially leading to many different representations of the same value. For example, &apos;Internet Explorer&apos; and &apos;IE&apos; might be used to refer to the same product. The current convention is to fully spell out all terms, and avoid the use of abbreviations at all costs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Affected System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#ArithmeticFunction -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#ArithmeticFunction">
+        <rdfs:comment>Characterizes an arithmetic function that takes two or more integer or float components and performs a basic mathematical function on them.  
+
+The result of this function is a single integer or float unless one of the components returns multiple values. In this case the specified arithmetic function would be performed multiple times and the end result would be an array of values for the local variable. For example assume a local_variable specifies the arithmetic function with an arithmeticOperation of &quot;add&quot; and has two sub-components under this function: the first component returns multiple values &quot;1&quot; and &quot;2&quot;, and the second component returns multiple values &quot;3&quot; and &quot;4&quot; and &quot;5&quot;. The LocalVariable element would be evaluated to have six values: 1+3, 1+4, 1+5, 2+3, 2+4, and 2+5.
+
+Note that if both an integer and float components are used then the result is a float.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Arithmetic Function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#ConstantVariable -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#ConstantVariable">
+        <rdfs:subClassOf rdf:resource="http://oval.mitre.org/definitions#Variable"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#datatype"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an extension of the Variable class and defines a variable with a constant value(s). 
+
+Each ContactVariable defines either a single value or an array of values to be used throughout the evaluation of the OVAL Definition File in which it has been defined. Constant variables cannot be over-ridden by an external source. The actual value of a constant variable is defined by the required value child element. An array of values can be specified by including multiple instances of the value element.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;http://oval.mitre.org/definition&gt;</rdfs:isDefinedBy>
+        <rdfs:label>Constant variable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Criteria -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Criteria">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#applicabilityCheck"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#negate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#operator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a container for a set of sub criteria, criteria, criterion, or extend_definition elements allowing complex logical trees to be constructed. Each referenced test is represented by a criterion element.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Criteria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Criterion -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Criterion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#testReference"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#applicabilityCheck"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#negate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#referenceTestId"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a test to be included in the definition&apos;s criteria.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Criterion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Definition -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Definition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#criteria"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#class"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#description"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#title"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a single OVAL Definition. A definition is the key structure in OVAL. It is analogous to the logical sentence or proposition: if a computer&apos;s state matches the configuration parameters laid out in the criteria, then that computer exhibits the state described. The Definition contains a section for various metadata related elements that describe the definition. This includes a description, version, affected system types, and reference information. The notes section of a definition should be used to hold information that might be helpful to someone examining the technical aspects of the definition. For example, why certain tests have been included in the criteria, or maybe a link to where further information can be found. The Definition also (unless the definition is deprecated) contains a criteria child element that joins individual tests together with a logical operator to specify the specific computer state being described.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>OVAL Definition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#ExtendedDefinition -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#ExtendedDefinition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#applicabilityCheck"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#negate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#referenceDefinitionId"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an extension to an existing Definition</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Extended Definition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#ExternalVariable -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#ExternalVariable">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#datatype"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:cardinality  rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an extension of the the Variable class and defines a variable with some external source. The actual value(s) for the variable is not provided within the OVAL file, but rather it is retrieved during the evaluation of the OVAL Definition from an external source. 
+
+An unbounded set of possible-value and possible-restriction can be specified that together specify the list of all possible values that an external source is allowed to supply for the external variable. In other words, the value assigned by an external source must match one of the possible-value or possible-restriction specified. Each possible-value element contains a single value that could be assigned to the given ExternalVariable while each possible-restriction element outlines a range of possible values. Note that it is not necessary to declare a variable&apos;s possible values, but the option is available if desired. If no possibles are specified, then the valid values are only bound to the specified datatype of the external variable.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>External Variable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#LiteralComponent -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#LiteralComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#datatype"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#value"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a literal value to be used as a component.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Literal Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#LocalVariable -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#LocalVariable">
+        <rdfs:subClassOf rdf:resource="http://oval.mitre.org/definitions#Variable"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#datatype"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an extension of the the Variable class and defines a variable with some local source. The actual value(s) for the variable is not provided in the OVAL Definition document but rather it is retrieved during the evaluation of the OVAL Definition. 
+
+Each local variable is defined by either a single component or a complex function, meaning that a value can be as simple as a literal string or as complex as multiple registry keys concatenated together. Note that if an individual component is used and it returns multiple values, then there will be multiple values associated with the LocalVariable. For example, if an object_component is used and it references a file object that identifies a set of 5 files, then the LocalVariable would represent these 5 values.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Local Variable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Object -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Object">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an OVAL Object that provides details that define a unique set of matching items to be used by an OVAL Test. 
+
+The author of a Object must define sufficient object entities to allow a user to identify a unique item to be collected and typically results in a single file, process, etc being identified.  But through the use of pattern matches, sets, and variables, multiple matching items can be identified.  The set of items matching the object can then be used by an OVAL test and compared against an OVAL state.
+
+This definition of OVAL Object serves as an abstract that is meant to be extended (via substitution groups) by the objects found in the component schemas. An actual object element is not valid. The use of this abstract element simplifies the OVAL schema by allowing individual objects to inherit any common elements and attributes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>OVAL Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#ObjectComponent -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#ObjectComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#objectReference"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#itemField"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#referenceObjectId"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a specific value or set of values on the local system to obtain.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Object Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#PossibleRestriction -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#PossibleRestriction">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#hint"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a range of possible expected value of an external variable.
+
+Each PossibleRestriction contains an unbounded list of restrictions  that each specify a range that an actual value may fall in. For example, a restriction may specify that a value must be less than 10. When multiple restrictions are present, a valid possible value would have to meet every restriction. One can think of the possible-values and possible-restrictions as an OR&apos;d list of possible values, and the restrictions as an AND&apos;d list of value descriptions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Possible Restriction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#PossibleValue -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#PossibleValue">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#hint"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#value"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a single expected value of an external variable..</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Possible Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Reference -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Reference">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#refId"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#refURL"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#source"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes definitive external reference associated with the OVAL Definition. For example, CVE Identifiers are used for referencing vulnerabilities. The intended purpose for this reference is to link the definition to a variety of other sources that address the same issue being specified by the OVAL Definition.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Reference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Restriction -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Restriction">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#operation"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#value"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes a restriction that is placed on expected values for an external variable. For example, a possible value may be restricted to a integer less than 10.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Restriction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#State -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#State">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#operator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an OVAL State as a collection of one or more characteristics pertaining to a specific object type that can be used during an evaluation of an object. 
+
+The OVAL State is used by an OVAL Test to determine if a unique set of items identified on a system meet certain characteristics.  This definition of OVAL State serves as an abstract that is meant to be extended (via substitution groups) by the states found in the component schemas. An actual state element is not valid. The use of this abstract class simplifies the OVAL schema by allowing individual states to inherit the optional notes child element, and the id and operator attributes. 
+
+When evaluating a particular state against an object, one should evaluate each individual entity separately. The individual results are then combined by the operator to produce an overall result. This process holds true even when there are multiple instances of the same entity. Evaluate each instance separately, taking the entity check attribute into account, and then combine everything using the operator.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>OVAL State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Test -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Test">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#operator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an OVAL Test which evaluates to true if both the check_existence  and check attributes are satisfied during evaluation. 
+
+The evaluation result for a test is determined by first evaluating the checkExistence attribute. If the result of evaluating the checkExistence attribute is true then the check attribute is evaluated. An interpreter may choose to always evaluate both the checkExistence and the check attributes, but once the checkExistence attribute evaluation has resulted in false the overall test result after evaluating the check attribute will not be affected.
+
+This definition of OVAL State serves as an abstract an abstract that is meant to be extended (via substitution groups) by the individual tests found in the component schemas. An OVAL Test is used to compare an object(s) against a defined state. An actual test element is not valid. The use of this abstract class simplifies the OVAL schema by allowing individual tests to inherit the optional notes child element, and the id and comment attributes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>OVAL Test</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://oval.mitre.org/definitions#Variable -->
+
+    <owl:Class rdf:about="http://oval.mitre.org/definitions#Variable">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#comment"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#datatype"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#deprecated"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://oval.mitre.org/definitions#version"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Characterizes an OVAL Variable that a way to define one or more values to be obtained at the time a definition is evaluated.
+
+This definition of OVAL Variable serves as an abstract element that is meant to be extended (via substitution groups) by the different types of variables. An actual variable element is not valid. The different variable types describe different sources for obtaining a value(s) for the variable. There are currently three types of variables; local, external, and constant. The value(s) of a variable is treated as if it were inserted where referenced. One of the main benefits of variables is that they allow tests to evaluate user-defined policy. For example, an OVAL Test might check to see if a password is at least a certain number of characters long, but this number depends upon the individual policy of the user. To solve this, the test for password length can be written to refer to a variable element that defines the length.
+
+Note that the &apos;record&apos; datatype is not permitted on variables.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://oval.mitre.org/definitions"/>
+        <rdfs:label>Variable</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

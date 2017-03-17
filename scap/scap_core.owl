@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY scap_core "http://scap.nist.gov/scap_core#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://scap.nist.gov/scap_core#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:scap_core="http://scap.nist.gov/scap_core#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://scap.nist.gov/scap_core">
+		<rdfs:label>Security Content Automation Protocol (SCAP) Core  Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the Security Content Automation Protocol (SCAP) core data types.  The SCAP is a method for using specific standards to enable automated compliance evaluation, vulnerability management, measurement, and policy compliance evaluation.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-001</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&scap_core;Catalog">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;catalogDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;catalogName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;catalogVersion"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;description"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Catalog</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a Catalog of information</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&scap_core;CheckReference">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;checkIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;checkSystem"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;externalLink"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Check Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a checking system specification URI, string content, and optional external file reference.  The checking system specification should be the URI for a particular version of OVAL or a related system testing language, and the content will should be an identifier of a test written in that language.  The external file reference could be used to point to the file in whcih the content test identifier is defined.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&scap_core;Reference">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;externalLink"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&scap_core;name"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Defines a general reference that is normally used to point to extra descriptive material, or a supplier&apos;s web site, or platform documentation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;catalogDate">
+		<rdfs:label>Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date the catalog was created or last updated.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;catalogName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the catalog</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;catalogVersion">
+		<rdfs:label>Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the version of the catalog</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;checkIdentifier">
+		<rdfs:label>Check Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an identifier of a test written in the check system language.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;checkSystem">
+		<rdfs:label>Check System URI</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;description">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a brief description of the catalog contents</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;externalLink">
+		<rdfs:label>External Link</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a URI to an external file or resource.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&scap_core;generator">
+		<rdfs:label>Generator</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information about the tool used to generate the catalog</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;id">
+		<rdfs:label>Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with this entity instance.
+
+An identifier MUST take the format [ns-prefix]:[construct-type]-[identifier], where [ns-prefix] should be the namespace prefix owned/controlled by the producer of the content
+
+The format of the Id must be in the format of [ns-prefix]:construct-type-[identifier], there the [ns-prefix] SHOULD be a namespace prefix bound to a namespace owned/controlled by the producer of the content, and [identifier] SHOULD correspond to a globally unique identifier or information that uniquely identifies the entity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;name">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a piece of human-readable text that provides a meaningful name.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&scap_core;notes">
+		<rdfs:label>Notes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more notes about an entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://scap.nist.gov/scap_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;date">
+	</rdfs:Datatype>
+
+</rdf:RDF>

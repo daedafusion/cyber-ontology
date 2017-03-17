@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY arpCacheObj "http://cybox.mitre.org/objects/ARPCache#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/ARPCache#"
+	xmlns:arpCacheObj="http://cybox.mitre.org/objects/ARPCache#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/ARPCache">
+		<rdfs:label>Cyber Observable eXpression (CybOX) ARP Cache Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a ARP Cache for the  Cyber Observable eXpression (CybOX).  
+
+CybOX provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX ARP Cache object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Address"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/System"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&arpCacheObj;ARPCache">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:label>ARPCache</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize entries in a system&apos;s address resolution protocol (ARP) cache.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&arpCacheObj;ARPCacheEntry">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&arpCacheObj;arpCacheEntryType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&arpCacheObj;ipAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&arpCacheObj;networkInterface"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&arpCacheObj;physicalAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>ARPCache Entry</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize an ARP Cache Entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&arpCacheObj;arpCacheEntries">
+		<rdfs:label>ARP Cache Entries</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more  address resolution protocol (ARP) cache entries.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+		<rdfs:range rdf:resource="&arpCacheObj;ARPCacheEntry"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&arpCacheObj;arpCacheEntryType">
+		<rdfs:label>ARP Cache Entry Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of ARP cache entry, which typically refers to the way the entry was added to the cache.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&arpCacheObj;ipAddress">
+		<rdfs:label>IP Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the IP address that is mapped to the physical address in the ARP cache entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv4Address">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://cybox.mitre.org/objects/Address#IPv6Address">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&arpCacheObj;networkInterface">
+		<rdfs:label>Network Interface</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the network interface to which the ARP cache entry belongs.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#NetworkInterface"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&arpCacheObj;physicalAddress">
+		<rdfs:label>Physical Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the physical (e.g. MAC-48) address that is mapped to the IP address in the ARP cache entry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/ARPCache"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Address#MACAddress"/>
+	</owl:ObjectProperty>
+
+</rdf:RDF>

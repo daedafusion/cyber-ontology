@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY marking "http://data-marking.mitre.org/Data_Marking#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://data-marking.mitre.org/Data_Marking#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:marking="http://data-marking.mitre.org/Data_Marking#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://data-marking.mitre.org/Data_Marking">
+		<rdfs:label>Data Markings Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation which provides a standardized method of describing data markings used to convey sensativity and the ability to share.</rdfs:comment>
+		<owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+		<owl:versionIRI rdf:resource="http://data-marking.mitre.org/Data_Marking/1.2"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.2.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&marking;Marking">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;controlledStructure"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;informationSource"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;markingData"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;markingId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Marking</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a structure for marking information to be applied to portions of STIX content</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&marking;MarkingStructure">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;markingStructureId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;modelName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;modelRef"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Marking Structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the marking information to be applied to STIX content.
+
+The MarkingStructure class provides a simple mechanism for leveraging externally defined marking systems, and it is intended to be extended to enable the expresssion of any structured or unstructured data marking mechanism.
+
+The MarkingStructure class is an abstract class, so it MUST be extended via a subclass to express additional activity information. The definition of this base class in the minimizes the inter-dependencies between ontologies.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&marking;SimpleMarking">
+		<rdfs:subClassOf rdf:resource="&marking;MarkingStructure"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;statement"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Simple Marking</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a simple marking used to allow users to make a text statement to mark the content.
+
+An example of a simple marking is to apply simple copyright information, for example &quot;Copyright 2014 Acme Inc.&quot;</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&marking;TLPMarking">
+		<rdfs:subClassOf rdf:resource="&marking;MarkingStructure"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;color"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Traffic Light Protocol (TLP) Marking</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a data marking scheme that follows the Traffic Light Protocol (TLP) designation.
+
+The Traffic Light Protocol marking was created by US-CERT and used throughout the cyber threat sharing industry to indicate how marked content may be shared via a color (RED, AMBER, GREEN, WHITE) ala &quot;traffic light&quot; scheme.   Each color provides an indication as to how the marked content should be treated with regards to sharing and with whom sharing is permitted.
+
+RED:  Sources use when information cannot be effectively acted upon by additional parties and could lead to impacts on a party&apos;s privacy, reputation, or opertions if misused.  Recepients may not share information with any prarties outside of the specific exchange, meeting, or conversation in which it was originally disclosed.
+
+AMBER: Sources use when information requires support to be effectively acted upon, but carries risk to privacy, reputation, or operations if shared outside of the organizations involved.  Recepients may only share information with members of their own organization who need to know, and only as widely as necessary to act on that information. 
+
+GREEN: Sources use when information is useful for teh awareness of all participating organizations as well as with peers within the broader community or sector.  Recepients may share information with peers and partner organizations within their sector or community, but not via publicly accessible channels.
+
+WHITE: Sources use when information carries minimal or no foreseeable risk of misuse, in accordance with applicable rules and procedures for public release.  Recepients may share information without restriction, subject to copyright controls.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&marking;TermsOfUseMarking">
+		<rdfs:subClassOf rdf:resource="&marking;MarkingStructure"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&marking;termsOfUse"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Terms of Use Marking</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a marking used to make a text statement to specify the Terms of Use of the marked content.
+
+For example, the Terms of Use marking can be used to communicate a simple statement, such as &quot;Acme Inc. is not responsible for the content of this file&quot;.  The Terms of Use marking is similar to the Simple Marking but has stronger semantic meaning.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&marking;color">
+		<rdfs:label>Color</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the TLP color designation of the marked structure</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;controlledStructure">
+		<rdfs:label>Controlled Structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specify the structures for which the Marking is to be applied.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&marking;handling">
+		<rdfs:label>Handling Instructions</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the appropriate data handling markings for the elements of this entity&apos;s characterization.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="&marking;SimpleMarking">
+					</rdf:Description>
+					<rdf:Description rdf:about="&marking;TLPMarking">
+					</rdf:Description>
+					<rdf:Description rdf:about="&marking;TermsOfUseMarking">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&marking;informationSource">
+		<rdfs:label>Information Source for markings</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the source of this information</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#InformationSource"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&marking;markingData">
+		<rdfs:label>Marking Data</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the marking information to be applied</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&marking;MarkingStructure"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;markingId">
+		<rdfs:label>Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with this Marking instance.
+
+The format of the identifier MUST be in the format of &quot;marking-[UUID]&quot;, where [UUID] SHOULD correspond to a universally unique identifier.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;markingStructureId">
+		<rdfs:label>Marking Structure ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with this MarkingSpec instance.
+
+The format of the identifier MUST be in the format of &quot;marking_spec-[UUID]&quot;, where [UUID] SHOULD correspond to a universally unique identifier. {@en-US}</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;modelName">
+		<rdfs:label>Marking Model Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the marking model to be applied within this Marking</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;modelRef">
+		<rdfs:label>Marking Model Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an external reference to an authoritative source on the marking model to be applied within this Marking Structure</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;statement">
+		<rdfs:label>Statement</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the statement to apply to the structure for which the Marking is to be applied.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&marking;termsOfUse">
+		<rdfs:label>terms of use</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the terms of use that apply to the structure for hwich the Marking is to be applied.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

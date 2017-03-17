@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY diskObj "http://cybox.mitre.org/objects/Disk#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/Disk#"
+	xmlns:diskObj="http://cybox.mitre.org/objects/Disk#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/Disk">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Disk Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an Disk for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the Cybox Disk object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&diskObj;Disk">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;diskType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;freeSpace"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Disk</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize disk drives.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&diskObj;DiskPartition">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;createdDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;deviceName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;mountPoint"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;partitionId"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;partitionLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&diskObj;partitionOffset"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Disk Partition</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize partitions of disk drives.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;createdDateTime">
+		<rdfs:label>Created Date &amp; Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date/time the partition was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;deviceName">
+		<rdfs:label>Device Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the device on which the partition resides.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;diskName">
+		<rdfs:label>Disk Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the disk.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&diskObj;diskPartitionList">
+		<rdfs:label>Disk Partition List</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the partitions that reside on the disk.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&diskObj;DiskPartition"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;diskSize">
+		<rdfs:label>Disk Size</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the size of the disk, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;diskType">
+		<rdfs:label>Disk Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of disk being characterized, e.g. removable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;freeSpace">
+		<rdfs:label>Free Space</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the amount of free space on the disk, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;mountPoint">
+		<rdfs:label>Mount Point</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the mount point of the partition.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;partitionId">
+		<rdfs:label>Partition Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the numerical identifier of the partition.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;partitionLength">
+		<rdfs:label>Partition Length</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the length of the partition, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;partitionOffset">
+		<rdfs:label>Partition Offset</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the starting offset of the partition, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;partitionType">
+		<rdfs:label>Partition Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of partition being characterized.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;spaceLeft">
+		<rdfs:label>Space Left</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the amount of space left on the partition, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;spaceUnused">
+		<rdfs:label>Space Unused</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the amount of space used on the partition, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&diskObj;totalSpace">
+		<rdfs:label>Total Space</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the total amount of space available on the partition, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/Disk"/>
+		<rdfs:range rdf:resource="&xsd;unsignedLong"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

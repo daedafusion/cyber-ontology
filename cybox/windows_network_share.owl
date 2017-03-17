@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY winNetShareObj "http://cybox.mitre.org/objects/WindowsNetworkShare#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/WindowsNetworkShare#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:winNetShareObj="http://cybox.mitre.org/objects/WindowsNetworkShare#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsNetworkShare">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Windows Network Share Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of a Windows Network Share for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows Network Share object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&winNetShareObj;WindowsNetworkShare">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;currentUses"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;localPath"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;maxUses"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;netName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;netShareType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_ALL"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_ATRIB"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_CREATE"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_DELETE"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_EXEC"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_PERM"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_READ"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winNetShareObj;permission.ACCESS_WRITE"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows Network Share</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows network shares.</rdfs:comment>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;currentUses">
+		<rdfs:label>Current Uses</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the current number of uses of the network share.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;localPath">
+		<rdfs:label>Local Path</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the fully-qualified path on the local system to the network share.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;maxUses">
+		<rdfs:label>Max Uses</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the maximum number of concurrent connections to the network share.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;netName">
+		<rdfs:label>Net Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the network name of the network share.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;netShareType">
+		<rdfs:label>Net Share Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the network share.</rdfs:comment>
+		<rdfs:domain rdf:resource="&winNetShareObj;WindowsNetworkShare"/>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_ALL">
+		<rdfs:label>ACCESS_ALL</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to read, write, create, execute, and delete resources, and to modify their attributes and permissions.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_ATRIB">
+		<rdfs:label>ACCESS_ATRIB</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to modify the resource&apos;s attributes (such as the date and time when a file was last modified).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_CREATE">
+		<rdfs:label>ACCESS_CREATE</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to create an instance of the resource (such as a file); data can be written to the resource as the resource is created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_DELETE">
+		<rdfs:label>ACCESS_DELETE</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to delete the resource.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_EXEC">
+		<rdfs:label>ACCESS_EXEC</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to execute the resource.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_PERM">
+		<rdfs:label>ACCESS_PERM</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to modify the permissions (read, write, create, execute, and delete) assigned to a resource for a user or application.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_READ">
+		<rdfs:label>ACCESS_READ</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the permission to read data from a resource and, by default, to execute the resource.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winNetShareObj;permission.ACCESS_WRITE">
+		<rdfs:label>ACCESS_WRITE</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">specifies the permission to write data to the resource.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsNetworkShare"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

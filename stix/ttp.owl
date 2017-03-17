@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY core "tag:champtc:core#">
+	<!ENTITY dc "http://purl.org/dc/elements/1.1/">
+	<!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY ttp "http://stix.mitre.org/TTP#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://stix.mitre.org/TTP#"
+	xmlns:core="tag:champtc:core#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:ttp="http://stix.mitre.org/TTP#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://stix.mitre.org/TTP">
+		<rdfs:label>STIX Tactics, Techniques, and Procedures (TTPs) Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the Structured Threat Information eXpression (STIX) TTP.  The STIX TTP ontology provides a characterization of a single STIX Tactic, Techiques, and Procedures (TTPs).
+
+TTP is a military term that means &quot;tactics, techniques, and procedures&quot;. In STIX it is used to represent adversarial behavior, such as what victims they target, what attack patterns and malware they use, and what resources (infrastructure, tools, personas) they leverage. Because it describes adversary behavior, which is a big part of STIX, the TTP construct is one of the most commonly used and expressive constructs. In the STIX relationship structure, TTPs are referenced from indicators to describe which TTPs an indicator indicates, from campaigns and threat actors to describe the TTPs that are leveraged in a campaign or by a threat actor, in an incident to describe which TTPs were used in the execution of an attack, and to other TTPs to describe relationships of various sorts among TTPs. TTPs also use the exploit target construct to describe which exploit targets a TTP might exploit.</rdfs:comment>
+		<owl:imports rdf:resource="http://data-marking.mitre.org/Data_Marking"/>
+		<owl:imports rdf:resource="http://stix.mitre.org/stixCommon"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_common"/>
+		<owl:versionIRI rdf:resource="http://stix.mitre.org/TTP/1.2"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.2.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&ttp;AttackPattern">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ttp;capecID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>TTP Attack Pattern Synopsis</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an individual attack pattern through the capture of information such as a textual description and a Common Attack Pattern Enumeration and Classification (CAPEC) reference.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ttp;Exploit">
+		<rdfs:label>Exploit</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an individual exploit instance through the capture of basic information such as the title and description of the exploit.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ttp;Infrastructure">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ttp;infrastructureType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Infrastructure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes adversarial infrastructure that an adversary may leverage.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<core:appIconId rdf:datatype="&xsd;string">dl:com.champtc.champ.ui.core.stix.infrastructure</core:appIconId>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ttp;MalwareInstance">
+		<rdfs:label>Malware instance</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a malware instance through the capture of basic information such as the type, name, and description of the malware.
+
+A malware instance may characterize anything from a specific malware sample to an entire family. .</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<core:appIconId rdf:datatype="&xsd;string">dl:com.champtc.champ.ui.core.stix.malware</core:appIconId>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&ttp;TTP">
+		<rdfs:subClassOf rdf:resource="http://stix.mitre.org/stixCommon#TTPBase"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ttp;resources.infrastructure"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&ttp;victimTargeting.targetedTechnicalDetails"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>TTP</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes adversarial mode of operations (often referred to as the adversary’s “Tactics, Techniques, and Procedures”). 
+
+The TTP class captures information that includes the victims targeted, the attack patterns and malware used, and the resources (infrastructure, tools, and personas) leveraged.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&ttp;behavior.attackPatterns">
+		<rdfs:label>Behavior Attack Patterns</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to one or more attack patterns that an adversary might leverage.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://capec.mitre.org/capec#AttackPattern">
+					</rdf:Description>
+					<rdf:Description rdf:about="&ttp;AttackPattern">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;behavior.exploits">
+		<rdfs:label>Behavior Exploits</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a set of one or more exploits that an adversary may leverage.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&ttp;Exploit"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;behavior.malware">
+		<rdfs:label>Behavior Malware</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more instances of malware that the attacker leverages to execute this TTP.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&ttp;MalwareInstance"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ttp;capecID">
+		<rdfs:label>CAPEC ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an identifier to a particular entry within the Common Attack Pattern Enumeration and Classification (CAPEC)</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;capecReference">
+		<rdfs:label>CAPEC Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a particular entry within the Common Attack Pattern Enumeration and Classification (CAPEC) registry.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://capec.mitre.org/capec#AttackPattern"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;exploitTargets">
+		<rdfs:label>Exploit Targets</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a set of one or more Exploit Targets potentially targeted by the TTP.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ExploitTargetBase"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ttp;infrastructureType">
+		<rdfs:label>Infrastructure Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of attacker infrastructure being described. 
+
+Examples of types of attacker infrastructure include Anonymization, Domain Registration, Hosting, and Communications - Social Networks (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Attack Infrastructure Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;intendedEffect">
+		<rdfs:label>Intended Effect</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the suspected intended effect for this TTP.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#IntendedEffectStatement"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;killChainPhases">
+		<rdfs:label>Kill Chain Phases</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a set of one or more kill chain phases (from one or more kill chains defined elsewhere) for which the TTP is asserted to be representative.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChainPhase"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;killChains">
+		<rdfs:label>Kill Chains</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to a set of one or more specific kill chain definitions.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#KillChain"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ttp;malwareInstanceName">
+		<rdfs:label>Malware Instance Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a name associated with this MalwareInstance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ttp;malwareInstanceType">
+		<rdfs:label>Malware Instance Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of malware. 
+
+Examples of types of malware include Adware, Exploit Kits, Ransomware, and Rootkit (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Malware Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;observableCharacterization">
+		<rdfs:label>Observable Characterization</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to the adversarial infrastructure through specification of a structured cyber Observables pattern.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;resources.infrastructure">
+		<rdfs:label>Infrastructure Resource Utilized</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to resources the adversary may leverage.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&ttp;Infrastructure"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;resources.personas">
+		<rdfs:label>Persona Resources Utilized</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specific a reference to a set of one or more personas that an adversary may leverage. 
+
+Different personas are often used as a method of masquerade.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://stix.mitre.org/stixCommon#CIQIdentity">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Organization">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Party">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Person">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;resources.tools">
+		<rdfs:label>Tool Resources Utilized</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the tools that the adversary uses to execute this TTP.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://stix.mitre.org/stixCommon#ToolInformation"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ttp;vicitimTargeting.targetedSystems">
+		<rdfs:label>Victim Targeted Systems</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of system that is targeted. 
+
+Examples of types of systems include Enterprise Systems, Industrial Control Systems, Mobile Systems, and Users - Application And Software (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the System Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;victimTargeting.identity">
+		<rdfs:label>Victim Targeted Identity</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to traits common to the people or organizations that are targeted.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://stix.mitre.org/stixCommon#CIQIdentity">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Organization">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Party">
+					</rdf:Description>
+					<rdf:Description rdf:about="http://www.oasis-open.org/ciq_xpil#Person">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&ttp;victimTargeting.targetedInformation">
+		<rdfs:label>Victim Targeted Information</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a type of information that is targeted.
+
+Examples of types of information include Information Assets, Information Assets - Customer PII, and Authentication Cookies (these specific values are only provided to help explain the property: they are neither recommended values nor necessarily part of any existing vocabulary).  The content creator may choose any arbitrary value or may constrain the set of possible values by referencing an externally-defined vocabulary or leveraging a formally defined vocabulary.
+
+By default, the Information Type Vocabulary is used to defined a restricted set of values.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&ttp;victimTargeting.targetedTechnicalDetails">
+		<rdfs:label>Victim Targeted Technical Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a reference to details of specific technologies targeted by the adversary. 
+
+It is implemented through specification of a structured cyber Observables pattern using the CybOX ObservablesType class.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://stix.mitre.org/TTP"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/cybox_core#Observables"/>
+	</owl:ObjectProperty>
+
+</rdf:RDF>

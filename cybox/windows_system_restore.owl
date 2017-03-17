@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY winSysRestoreObj "http://cybox.mitre.org/objects/WindowsSystemRestore#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/objects/WindowsSystemRestore#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:winSysRestoreObj="http://cybox.mitre.org/objects/WindowsSystemRestore#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/objects/WindowsSystemRestore">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Windows System Restore Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation of an Windows System Restore for the  Cyber Observable eXpression (CybOX).  
+
+CybOX  provides a common mechansim (structure and content) to convey the full range of potential cyber observable information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+
+The ontology is based on the CybOX Windows System Restore object schema maintained by The MITRE Corporation copyright 2012-2014.  The version number of the ontology is kept in sync with the schema in order to more easily relate between the ontology and the corresponding schema version.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">2.1.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&winSysRestoreObj;WindowsSystemRestorePoint">
+		<rdfs:subClassOf rdf:resource="http://cybox.mitre.org/cybox_core#Object"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;aclChangeSID"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;aclChangeUsername"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;backupFilename"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;changeEvent"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;changeLogEntryFlags"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;changeLogEntrySequenceNumber"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;changeLogEntryType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;changeLogFilename"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;createdDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;fileAttributes"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;newFilename"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;originalFilename"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;originalShortFilename"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;processName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;restorePointFullPath"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;restorePointName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&winSysRestoreObj;restorePointType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Windows System Restore Point</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize Windows system restore points.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;aclChangeSID">
+		<rdfs:label>ACL Change SID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the SID associated with a restore point change log event. This usually appears when the event flag includes &quot;ACL Info&quot;.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;aclChangeUsername">
+		<rdfs:label>ACL Change Username</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies  username associated with a restore point change log event. It usually appears when the event flag includes &quot;ACL Info&quot;.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;backupFilename">
+		<rdfs:label>Backup Filename</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the backup file name associated with a particular restore point change log event.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;changeEvent">
+		<rdfs:label>Change Event</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the change event associated with this restore point object (ex: &quot;System Checkpoint&quot;, &quot;Software Installation&quot;, etc.).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;changeLogEntryFlags">
+		<rdfs:label>Change Log Entry Flags</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the  flags associated with a restore point change log entry (ex: &quot;ACL Info, &quot;Short Name&quot;, etc.).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;changeLogEntrySequenceNumber">
+		<rdfs:label>Change Log Entry Sequence Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the change log sequence number associated with this restore point object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;long"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;changeLogEntryType">
+		<rdfs:label>Change Log Entry Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the changelog entry type associated with this restore point object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;changeLogFilename">
+		<rdfs:label>Change Log Filename</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the changelog file associated with the restore point.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;createdDateTime">
+		<rdfs:label>Created</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the creation date/time of the system restore point.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;fileAttributes">
+		<rdfs:label>File Attributes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the attributes of the file associated with this restore point object (ex: &quot;Directory&quot;).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;newFilename">
+		<rdfs:label>New Filename</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the new filename of the file associated with this restore point object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;originalFilename">
+		<rdfs:label>Original Filename</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the  original filename associated with this restore point change log event.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;originalShortFilename">
+		<rdfs:label>Original Short Filename</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the original Short filename (SFN) of the file associated with this restore point object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;processName">
+		<rdfs:label>Process Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the process name associated with this restore point object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;registryHiveList">
+		<rdfs:label>Registry Hive List</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the registry hives associated with this restore point.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;restorePointFullPath">
+		<rdfs:label>Restore Point Full Path</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the full path to the restore point.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;restorePointName">
+		<rdfs:label>Restore Point Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name associated with this restore point.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&winSysRestoreObj;restorePointType">
+		<rdfs:label>Restore Point Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the  type of restore point. (ex: &quot;Checkpoint&quot;).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/objects/WindowsSystemRestore"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+</rdf:RDF>

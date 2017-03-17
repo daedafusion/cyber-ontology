@@ -1,0 +1,2087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY core "tag:champtc:core#">
+	<!ENTITY cyboxCommon "http://cybox.mitre.org/cyboxCommon#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+	xmlns="http://cybox.mitre.org/cyboxCommon#"
+	xmlns:core="tag:champtc:core#"
+	xmlns:cyboxCommon="http://cybox.mitre.org/cyboxCommon#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	
+	<owl:Ontology rdf:about="http://cybox.mitre.org/cyboxCommon">
+		<rdfs:label>Cyber Observable eXpression (CybOX) Common Types Ontology</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">This ontology provides a vocabulary and representation for the  Cyber Observable eXpression (CybOX) core types.  
+
+CybOX provides a common mechansim (structure and content) for addressing cyber observables across and among this full range of use cases improving consistency, efficiency, interoperability,and overall situational awareness.
+
+Copyright (c) 2014, DaedaFusion, LLC.  All rights reserved.</rdfs:comment>
+		<owl:imports rdf:resource="http://cpe.mitre.org/cpe"/>
+		<owl:imports rdf:resource="http://cybox.mitre.org/objects/Process"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_xal"/>
+		<owl:imports rdf:resource="http://www.oasis-open.org/ciq_xpil"/>
+		<owl:versionInfo rdf:datatype="&xsd;string">1.0.0-000</owl:versionInfo>
+	</owl:Ontology>
+	
+	<owl:Class rdf:about="&cyboxCommon;ByteRun">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;byteRunData"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;byteRunLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;fileSystemOffset"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;imageOffset"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;offset"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Byte Run</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a list of byte runs from within a raw object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Compiler">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;compiler.platformSpecification"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;compilerName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;compilerVersion"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Compiler</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single compiler utilized during this build of this application.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;ConfigurationSetting">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;settingDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;settingName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;settingType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;settingValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Configuration Setting</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a particular configuration setting for a tool, application or other cyber object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Contributor">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributionEndDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributionLocation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributionStartDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributorEmail"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributorName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributorOrganization"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;contributorRole"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;individualDetails"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;locationDetails"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;organizationDetails"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Contributor</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a description of an individual who contributed as a source of cyber observation data.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;DataSegment">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;byteOrder"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;dataFormat"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;dataSegment"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;dataSize"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;dataSizeUnits"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;offset"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;searchDistance"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;searchWithin"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Data segment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes data segments that may be written/read/transmitted or otherwise utilized in actions or behaviors.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Dependency">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;dependencyDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;dependencyType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Dependency</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single dependency for a tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;DigitalSignature">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;certificateIssuer"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;certificateSubject"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;signatureDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;signatureExists"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;signatureVerified"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Digital signature</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes some of the basic information about a digital signature.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;EnvironmentVariable">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;envVarName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;envVarValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Environment Variable</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes an environment variable using a name/value pair.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Error">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;errorType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Error</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single error generated during the run of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;ExecutionEnvironment">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;commandLine"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;system"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;time.endDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;time.startDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;userAccount"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Execution Environment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the execution environment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;ExtractedString">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;byteStringValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;encoding"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;englishTranslation"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;offsetAddress"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;stringLanguage"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;stringLength"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;stringValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Extracted String</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single string extracted from a CybOX object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;FuzzyHashStructure">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;blockHash.fuzzyHashValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;blockHash.segmentCount"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;blockHash.segments"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;blockHash.simpleHashValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;blockSize"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Fuzzy hash structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the internal components of a cryptograhic fuzzy hash algorithmic calculation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Hash">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;hashType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Hash</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterize a single hash value.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;HashSegment">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;rawSegmentContent"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;segmentHash.fuzzyHashValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;segmentHash.simpleHashValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;triggerPoint"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Hash Segment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the internal components of a single trigger point-delimited segment in a cryptograhic fuzzy hash algorithmic calculation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;InternalString">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;content"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;key"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Internal Settings</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single internal string instance for this internationalization setting instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Library">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;libraryName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;libraryVersion"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Library</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a single library incorporated into the build of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Location">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;locationAddress"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;locationName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes geographic location information.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;MeasureSource">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;informationSourceType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;observableLocation"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;observationLocation"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;platform"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;processInstance"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;sightingCount"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;sourceClass"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;sourceDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;sourceName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;sourceType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;system"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;time.endDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;time.producedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;time.receivedDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;time.startDateTime"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Measure Source</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a description of a single cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Metadata">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;metadataType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;metadataValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Metadata</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes any non-context-specific metadata.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Parameter">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;ordinalPosition"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;parameterName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;parameterValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Parameter</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a function or argument parameter.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;PlatformIdentifier">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;externalReference"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;namingSystem"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;platformIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Platform Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a name for a platform using a particular naming system and also allowing a reference pointing to more information about that naming scheme. For example, one could provide a CPE (Common Platform Enumeration) name using the CPE naming format.   In this case, the system value could be &quot;CPE&quot; while the system_ref value could be &quot;http://scap.nist.gov/specifications/cpe/&quot;.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;PlatformSpecification">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;namingSystem"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;platformDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;platformIdentifier"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Platform Specification</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes a consistent approach to uniquely specifying a simple identity of a specific platform.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;Property">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;propertyDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;propertyName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;propertyValue"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Property</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the specification of a single Object Property.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;ToolConfiguration">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.buildScript"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.buildUtilityName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.buildUtilityPlatformSpecification"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.compilationDate"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.configurationSettingDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.label"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.outputLog"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.project"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;buildInfo.version"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Tool Configuration</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the configuration for a tool used as a cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<core:appIconId rdf:datatype="&xsd;string">dl:com.champtc.champ.ui.core.stix.tool</core:appIconId>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;ToolInformation">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;compensationModel"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;executionEnvironment"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;id"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolConfiguration"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolDescription"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolServicePack"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;toolVersion"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;vendor"/>
+				<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;vendorName"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Tool</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes the properties of a hardware or software tool, including those related to instances of its use.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<core:appIconId rdf:datatype="&xsd;string">dl:com.champtc.champ.ui.core.stix.tool</core:appIconId>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&cyboxCommon;ToolReference">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;externalReference"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&cyboxCommon;referenceType"/>
+				<owl:someValuesFrom rdf:resource="&rdfs;Literal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>Tool reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Characterizes reference to information or instances of a given tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<core:appIconId rdf:datatype="&xsd;string">dl:com.champtc.champ.ui.core.stix.tool</core:appIconId>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;blockHash.fuzzyHashValue">
+		<rdfs:label>Block Hash Value Fuzzy Hash Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a fuzzy hash calculation result value for this Block specified a single result value of a cryptograhic fuzzy hash function outputting a single complex string based hash value. (e.g. SSDEEP&apos;s Block1hash:Block2hash format).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;blockHash.segmentCount">
+		<rdfs:label>block hash.segment count</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the number of segments identified and utilized within this fuzzy hash calculation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;blockHash.segments">
+		<rdfs:label>Segments</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a single segment identified and utilized within this fuzzy hash calculation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;HashSegment"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;blockHash.simpleHashValue">
+		<rdfs:label>Block Hash Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a fuzzy hash calculation result value for this Block. Specifies a single result value of a basic cryptograhic hash function outputting a single hexbinary hash value.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;blockSize">
+		<rdfs:label>Block Size</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the calculated block size for this fuzzy hash calculation.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.buildScript">
+		<rdfs:label>Build Script</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual build script for this build of this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.buildUtilityName">
+		<rdfs:label>Build Utility Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the informally defined name of the utility used to build this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;buildInfo.buildUtilityPlatformSpecification">
+		<rdfs:label>Build Utility Platform Specification</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the build utility used to build this application.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cpe.mitre.org/cpe#Platform">
+					</rdf:Description>
+					<rdf:Description rdf:about="&cyboxCommon;PlatformSpecification">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.compilationDate">
+		<rdfs:label>Build Compilation Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the compilation date for the build of the tool. 
+
+In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;buildInfo.compilers">
+		<rdfs:label>Build Compilers</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the compilers utilized during this build of this application.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Compiler"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.configurationSettingDescription">
+		<rdfs:label>Build Configuration Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the configuration settings for this build of this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;buildInfo.configurationSettings">
+		<rdfs:label>Build Configuration Settings</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the configuration settings for this build of this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ConfigurationSetting"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.id">
+		<rdfs:label>Build Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an externally defined unique identifier of this build of this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.label">
+		<rdfs:label>Build Label</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any relevant label for this build of this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;buildInfo.libraries">
+		<rdfs:label>Build Libraries</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the libraries incorporated into the build of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Library"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.outputLog">
+		<rdfs:label>Build Output Log</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a capture of the output log of the build process.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.project">
+		<rdfs:label>Build Project Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the project name of this build of this application instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;buildInfo.version">
+		<rdfs:label>build Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the build utility used to build this application.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;byteOrder">
+		<rdfs:label>Byte Order</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the endianness of the unpacked (e.g., decoded, unencrypted, etc.) data stored within the DataSegment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;byteRunData">
+		<rdfs:label>Byterun Data</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a raw dump of the byte run data, typically enclosed within an XML CDATA section.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;anySimpleType"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;byteRunLength">
+		<rdfs:label>Byterun Length</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the lenght of the byte run</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;byteRuns">
+		<rdfs:label>byte runs</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a list of byte runs from the raw file or its storage medium.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ByteRun"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;byteStringValue">
+		<rdfs:label>Byte String Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the raw, byte-string representation of the string extracted from the CybOX object, in hexadecimal format.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;certificateIssuer">
+		<rdfs:label>Certificate Issuer</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the certificate issuer of the digital signature.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;certificateSubject">
+		<rdfs:label>Certificate Subject</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the certificate subject of the digital signature.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;commandLine">
+		<rdfs:label>Command Line</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the command line string used to run the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;compensationModel">
+		<rdfs:label>Compensation Model</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the compensation model used for the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;compiler.platformSpecification">
+		<rdfs:label>Platform Specification</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies this compiler instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cpe.mitre.org/cpe#Platform">
+					</rdf:Description>
+					<rdf:Description rdf:about="&cyboxCommon;PlatformSpecification">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;compilerName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the compiler.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;compilerVersion">
+		<rdfs:label>Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the version of the compiler.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;configurationSettings">
+		<rdfs:label>Configuration Settings</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the configuration settings of this tool instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ConfigurationSetting"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;content">
+		<rdfs:label>Content</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual content of this internal string instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributionEndDate">
+		<rdfs:label>Contribution End Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the end date for this contributor&apos;s involvement.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributionLocation">
+		<rdfs:label>Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information describing the location at which the contributory activity occured.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributionStartDate">
+		<rdfs:label>Contribution Start Date</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the start date for this contributor&apos;s involvement.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;date"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributorEmail">
+		<rdfs:label>Email</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the email of this contributor.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributorName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of this contributor.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributorOrganization">
+		<rdfs:label>Organization Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the organization name of this contributor.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributorPhone">
+		<rdfs:label>Phone Number</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies  a telephone number of this contributor.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;contributorRole">
+		<rdfs:label>Role</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the role played by this contributor.</rdfs:comment>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;contributors">
+		<rdfs:label>Contributors</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the individual contributors involved in this cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Contributor"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;creationDateTime">
+		<rdfs:label>Creation Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the date/time at which the entity was created.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;dataFormat">
+		<rdfs:label>Data Format</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of data contained in the Data_Segment element.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;dataSegment">
+		<rdfs:label>Data Segment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual segment of data being characterized.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;dataSize">
+		<rdfs:label>Data Size</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the size of the data segment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;dataSizeUnits">
+		<rdfs:label>Data Size Units</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies data size units associated with the dataSize property.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;dependencies">
+		<rdfs:label>Dependencies</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information describing the relevant dependencies for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Dependency"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;dependencyDescription">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of this dependency instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;dependencyType">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of this dependency instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;digitalSignatures">
+		<rdfs:label>Digital Signatures</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies one or more digital signatures for the associated entity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;DigitalSignature"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;encoding">
+		<rdfs:label>Encoding</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the encoding method used for the string extracted from the CybOX object, via a standardized controlled vocabulary.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;englishTranslation">
+		<rdfs:label>English Translation</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the English translation of the string, if it is not written in English.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;envVarName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the environment variable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;envVarValue">
+		<rdfs:label>Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the value of the environment variable</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;environmentVariables">
+		<rdfs:label>Environment Variables</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any environment variables associated with the process</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;EnvironmentVariable"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;errorCount">
+		<rdfs:label>Error Count</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the count of instances for this error in the tool run.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;errorInstances">
+		<rdfs:label>Error Instances</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual error output for each instance of this type of error.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;errorType">
+		<rdfs:label>Error Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type for this tool run error.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;errors">
+		<rdfs:label>Errors</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies any errors generated during the run of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Error"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;executionEnvironment">
+		<rdfs:label>Execution Environment</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information describing the execution environment of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ExecutionEnvironment"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;externalReference">
+		<rdfs:label>External Reference</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the hyperlink to the reference</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;extractedFeature.codeSnippets">
+		<rdfs:label>Code Snippets</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a set of code snippets extracted from a raw cyber object. 
+
+Instances should be of type codeObj:Code</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;extractedFeature.functions">
+		<rdfs:label>Extracted Feature Functions</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a set of references to functions called by a raw cyber object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;extractedFeature.imports">
+		<rdfs:label>extracted feature.imports</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies  a set of references to external resources imported by a raw cyber object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;extractedFeature.strings">
+		<rdfs:label>Extracted Feature Strings</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a set of static strings extracted from a raw cyber object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ExtractedString"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;fileSystemOffset">
+		<rdfs:label>File System Offset</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the offset of the beginning of the byte run as measured from the beginning of the relevant file system.
+
+This field is relevant only for byte runs of tiles in forensic analysis.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;fuzzyHashStructure">
+		<rdfs:label>Suzzy Hash Structure</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the key internal components of a fuzzy hash calculation with a given block size.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;FuzzyHashStructure"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;hash.details">
+		<rdfs:label>Hashes</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies details about any computed hash values for this the data.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Hash"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;hash.value">
+		<rdfs:label>Hash Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the value and type of a hash in the format hash-type:hash-value</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;hashType">
+		<rdfs:label>Hash Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of hash used in the Simple_Hash_Value or Fuzzy_Hash_Value elements, using a standardized controlled vocabulary.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;hashValue">
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;id">
+		<rdfs:label>Id</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the unique identifier associated with this entity instance.
+
+An identifier MUST take the format [ns-prefix]:[construct-type]-[UUID], where [ns-prefix] should be the namespace prefix owned/controlled by the producer of the content
+
+The format of the Id must be in the format of [ns-prefix]:construct-type-[UUID], there the [ns-prefix] SHOULD be a namespace prefix bound to a namespace owned/controlled by the producer of the content, and [UUID] SHOULD correspond to a globally unique identifier.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;identifier">
+		<rdfs:label>Identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a pre-defined name for the given platform using some naming scheme. For example, one could provide a CPE (Common Platform Enumeration) name using the CPE naming format.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;PlatformIdentifier"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;imageOffset">
+		<rdfs:label>Image Offset</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the offset of the beginning of the byte run as measured form the beginning of the relevant forensic image.
+
+This field is provided for forensic analysis purposes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;individualDetails">
+		<rdfs:label>Individual Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies details about the individual contributor.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Person"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;informationSourceType">
+		<rdfs:label>Information Source Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of information source leveraged for this cyber observation source,  through a standardized controlled vocabulary.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;internationalizationSettings">
+		<rdfs:label>International Settings</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information describing relevant internationalization setting for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;InternalString"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;key">
+		<rdfs:label>Key</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual key of this internal string instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;libraryName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the library</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;libraryVersion">
+		<rdfs:label>Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the version of the library.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;locationAddress">
+		<rdfs:label>Location Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;locationDetails">
+		<rdfs:label>Location Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies detailed information describing the location at which the contributory activity occured.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;locationName">
+		<rdfs:label>Location Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a location through a simple name.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;metadata">
+		<rdfs:label>Metadata</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies other relevant metadata including tool-specific fields.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Metadata"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;metadataSubdatum">
+		<rdfs:label>SubDatum</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies subdatum structures for this metadata field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Metadata"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;metadataType">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of name of a single metadata field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;metadataValue">
+		<rdfs:label>Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the value of name of a single metadata field.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;namingSystem">
+		<rdfs:label>Platform Identifier Naming System</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the naming system from which the indicated name was drawn.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;observableLocation">
+		<rdfs:label>Observable Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a relevant physical location for the associated Observable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;observationLocation">
+		<rdfs:label>Observation Location</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a relevant physical location for the observation measurement of the associated Observable.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xal#Address"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;offset">
+		<rdfs:label>Offset</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies where to start searching for the specified data segment in an object, in bytes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;offsetAddress">
+		<rdfs:label>Offset Address</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the location or offset of the specified string in the CybOX objects.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;ordinalPosition">
+		<rdfs:label>Ordinal Position</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ordinal position of the parameter with respect to the function where it is used.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;organizationDetails">
+		<rdfs:label>Organization Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies details about the contributor&apos;s organization.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;parameterName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the parameter.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;parameterValue">
+		<rdfs:label>Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual value of the parameter.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;parentId">
+		<rdfs:label>Parent ID</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the identifier for the parent object</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cybox_core"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;platform">
+		<rdfs:label>Platform</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a formal, standardized specification of the platform for this cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range>
+			<owl:Class>
+				<owl:unionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="http://cpe.mitre.org/cpe#Platform">
+					</rdf:Description>
+					<rdf:Description rdf:about="&cyboxCommon;PlatformSpecification">
+					</rdf:Description>
+				</owl:unionOf>
+			</owl:Class>
+		</rdfs:range>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;platformDescription">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies description of the indicated platform.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;platformIdentifier">
+		<rdfs:label>platform identifier</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a pre-defined name for the given platform using some naming scheme.  For example, one coupld provide a CPE (Common Platform Enumeration) name using the CPE naming format.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;processInstance">
+		<rdfs:label>Process Instance</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the process instance in which the mechanism of cyber observation executed. 
+
+Instance should be of type ProcessObj:ProcessObjectType.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Process#Process"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;processInstance.customProperties">
+		<rdfs:label>Process Instance Custom Properties</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a set of custom Object Properties that may not be defined in existing Properties schemas.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Property"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;propertyDescription">
+		<rdfs:label>Property Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of what this property represents.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;propertyName">
+		<rdfs:label>Property Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a name for this property.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;propertyValue">
+		<rdfs:label>Property Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the value of the property</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;rawSegmentContent">
+		<rdfs:label>Raw Segment Content</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the raw content of this segment of the hashed object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;anySimpleType"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;referenceType">
+		<rdfs:label>Reference Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the nature of the referenced material (documentation, source, executable, etc.).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;regionalInternetRegistry">
+		<rdfs:label>Regional Internet Registry (RIR)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the Regional Internet Registry (RIR).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;searchDistance">
+		<rdfs:label>Search Distance</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how far into an object should be ignored, in bytes, before starting to search for the specified data segment relative to the end of the previous data segment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;searchWithin">
+		<rdfs:label>Search Within</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies that at most N bytes are between data segments in related objects.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;integer"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;securityID">
+		<rdfs:label>Security ID (SID)</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the Security ID (SID) value assigned to the file</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;securityIDType">
+		<rdfs:label>Security Id (SID) Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of Security ID (SID) assigned to the file</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;segmentHash.fuzzyHashValue">
+		<rdfs:label>Segment Fuzzy Hash Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a single result value of a cryptograhic fuzzy hash function outputting a single complex string based hash value. (e.g. SSDEEP&apos;s Block1hash:Block2hash format).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;segmentHash.simpleHashValue">
+		<rdfs:label>Segment Hash</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a calculated hash value for this segment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;settingDescription">
+		<rdfs:label>Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the configuration item referenced in this configuration setting instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;settingName">
+		<rdfs:label>Setting Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the configuration item referenced by this configuration setting instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;settingType">
+		<rdfs:label>Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of the configuration item referenced in this configuration setting instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;settingValue">
+		<rdfs:label>Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies he value of this configuration setting instance.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;sightingCount">
+		<rdfs:label>Sighting Count</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies how many different identical instances of a given Observable may have been seen/sighted by the observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;signatureDescription">
+		<rdfs:label>Signature Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of the digitial signature</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;signatureExists">
+		<rdfs:label>Signature Exists</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies whether the digital signature exists.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;signatureVerified">
+		<rdfs:label>Signature Verified</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies if the digital signature is verified.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;boolean"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;sourceClass">
+		<rdfs:label>Source Class</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the high-level class of this cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;sourceDescription">
+		<rdfs:label>Source Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a generalized but structured description of this cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;sourceName">
+		<rdfs:label>Source Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a relevant name to this Discovery Method.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;sourceType">
+		<rdfs:label>Source Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the broad type of this cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;stringLanguage">
+		<rdfs:label>Language</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the language the string is written in, e.g. English.
+
+For consistency, we strongly recommend using the ISO 639-2 language code, if available. Please see http://www.loc.gov/standards/iso639-2/php/code_list.php for a list of ISO 639-2 codes.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;stringLength">
+		<rdfs:label>length</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the length, in characters, of the string extracted from the CybOX object.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;stringValue">
+		<rdfs:label>String Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the actual value of the string extracted from the CybOX object, if it is capable of being represented in the encoding scheme used in the document (most commonly UTF-8).</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;system">
+		<rdfs:label>System</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information describing the system on which the tool was executed.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/System#System"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;time.endDateTime">
+		<rdfs:label>End Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the ending time for this construct. 
+
+In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;time.producedDateTime">
+		<rdfs:label>Produced Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the time that this construct was produced. 
+
+In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;time.receivedDateTime">
+		<rdfs:label>Received Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the time that this construct was received. 
+
+In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;time.startDateTime">
+		<rdfs:label>Start Time</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the starting time for this construct. 
+
+In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;toolConfiguration">
+		<rdfs:label>Configuration</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information describing the configuration and usage of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ToolConfiguration"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolDescription">
+		<rdfs:label>Tool Description</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a generalized but structured descriptive information for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;toolHash.details">
+		<rdfs:label>Tool Hash Details</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies details about hash values computed on the tool file content in order to verify its integrity.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;Hash"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolHash.value">
+		<rdfs:label>Tool Hash Value</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the values, in the format of &apos;hash-type:hash-value&apos;, for any hash computed on the tool file content in order to verify its integrity</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolName">
+		<rdfs:label>Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;toolReferences">
+		<rdfs:label>Tool References</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies references to instances or additional information for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ToolReference"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolServicePack">
+		<rdfs:label>Service Pack</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an appropriate service pack descriptor for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolSpecificData">
+		<rdfs:range rdf:resource="&xsd;anyURI"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolType">
+		<rdfs:label>Tool Type</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the type of information source leveraged for this cyber observation source.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;toolVersion">
+		<rdfs:label>Version</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies an appropriate version descriptor of this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;tools">
+		<rdfs:label>Tools</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies a description of a set of automated tools.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&cyboxCommon;ToolInformation"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;triggerPoint">
+		<rdfs:label>Trigger Point</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the offset within the hashed object of the trigger point for this segment.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;hexBinary"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;usageContextAssumptions">
+		<rdfs:label>Usage Context Assumptions</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies descriptions of the various relevant usage context assumptions for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;userAccount">
+		<rdfs:label>User Account</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the user account that executed the tool. 
+
+userAccount should be an instance of type UserAccountObj:UserAccountObjectType.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://cybox.mitre.org/objects/Account#UserAccount"/>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&cyboxCommon;vendor">
+		<rdfs:label>Vendor</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies information identifying the vendor organization for this tool.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="http://www.oasis-open.org/ciq_xpil#Organization"/>
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&cyboxCommon;vendorName">
+		<rdfs:label>Vendor Name</rdfs:label>
+		<rdfs:comment rdf:datatype="&xsd;string">Specifies the name of the vendor that created the tool</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="http://cybox.mitre.org/cyboxCommon"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+	
+	<rdfs:Datatype rdf:about="&xsd;anySimpleType">
+	</rdfs:Datatype>
+	
+	<rdfs:Datatype rdf:about="&xsd;date">
+	</rdfs:Datatype>
+	
+	<owl:AnnotationProperty rdf:about="&core;appIconId">
+	</owl:AnnotationProperty>
+
+</rdf:RDF>
